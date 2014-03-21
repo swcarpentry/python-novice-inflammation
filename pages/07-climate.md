@@ -328,7 +328,7 @@ else:
 <div class="out">
 <pre>---------------------------------------------------------------------------
 ValueError                                Traceback (most recent call last)
-&lt;ipython-input-10-da21db395042&gt; in &lt;module&gt;()
+&lt;ipython-input-14-da21db395042&gt; in &lt;module&gt;()
       7     wrapper = csv.reader(reader)
       8     for record in wrapper:
 ----&gt; 9         year = int(record[0])
@@ -342,7 +342,7 @@ ValueError: invalid literal for int() with base 10: &#39;year&#39;</pre>
 <div>
 <p>Whoops. The first line of data returned by the server is:</p>
 <pre><code>year,data</code></pre>
-<p>and when we try to convert the string <code>'year'</code> to an integer, Python quite rightly complains. The fix is straightforward:</p>
+<p>and when we try to convert the string <code>'year'</code> to an integer, Python quite rightly complains. The fix is straightforward: we just need to ignore lines that start with the word <code>year</code>. And while we're at it, we'll put our results into a list instead of just printing them:</p>
 </div>
 
 
@@ -354,124 +354,444 @@ if response.status_code != 200:
 else:
     reader = cStringIO.StringIO(response.text)
     wrapper = csv.reader(reader)
+    results = []
     for record in wrapper:
         if record[0] != &#39;year&#39;:
             year = int(record[0])
             value = float(record[1])
-            print year, &#39;:&#39;, value</pre>
+            results.append([year, value])
+    print &#39;first five results&#39;
+    print results[:5]</pre>
 </div>
 
 <div class="out">
-<pre>1901 : -7.6724190712
-1902 : -7.8627114296
-1903 : -7.91078281403
-1904 : -8.15572929382
-1905 : -7.547311306
-1906 : -7.68410348892
-1907 : -8.41355323792
-1908 : -7.79092931747
-1909 : -8.23930549622
-1910 : -7.77461147308
-1911 : -8.11444664001
-1912 : -7.88540267944
-1913 : -7.98794031143
-1914 : -7.96593761444
-1915 : -7.14403915405
-1916 : -8.13297843933
-1917 : -8.49991416931
-1918 : -8.204662323
-1919 : -8.03598594666
-1920 : -7.83067989349
-1921 : -7.68577718735
-1922 : -8.33498954773
-1923 : -8.02212524414
-1924 : -7.57456827164
-1925 : -7.95162582397
-1926 : -7.79278945923
-1927 : -7.96172714233
-1928 : -7.23797512054
-1929 : -8.12365150452
-1930 : -7.30230569839
-1931 : -6.6463394165
-1932 : -7.82168865204
-1933 : -8.69313430786
-1934 : -7.96432733536
-1935 : -8.16696739197
-1936 : -8.59422492981
-1937 : -7.3392534256
-1938 : -6.85634899139
-1939 : -7.66910791397
-1940 : -6.7993812561
-1941 : -7.23310470581
-1942 : -7.09781265259
-1943 : -7.22318792343
-1944 : -6.60394668579
-1945 : -7.64634561539
-1946 : -7.73950958252
-1947 : -7.16152429581
-1948 : -7.65996932983
-1949 : -7.69635295868
-1950 : -8.51782989502
-1951 : -7.90392971039
-1952 : -6.68076992035
-1953 : -6.75395202637
-1954 : -7.33406448364
-1955 : -7.58600091934
-1956 : -8.27430534363
-1957 : -7.76330089569
-1958 : -6.90325784683
-1959 : -7.87138366699
-1960 : -6.95103311539
-1961 : -7.94641208649
-1962 : -7.46536016464
-1963 : -7.36332845688
-1964 : -8.24113082886
-1965 : -8.0782699585
-1966 : -7.83267879486
-1967 : -7.97359228134
-1968 : -7.36812067032
-1969 : -7.03929138184
-1970 : -7.72057342529
-1971 : -7.46978092194
-1972 : -9.52518749237
-1973 : -6.85334157944
-1974 : -8.42878723145
-1975 : -7.62185668945
-1976 : -7.58889532089
-1977 : -6.55725765228
-1978 : -7.99333572388
-1979 : -7.84571743011
-1980 : -7.04917144775
-1981 : -5.5066652298
-1982 : -8.51379394531
-1983 : -7.46353626251
-1984 : -7.41419839859
-1985 : -7.4329161644
-1986 : -7.7103509903
-1987 : -6.45378351212
-1988 : -6.61003017426
-1989 : -7.70648574829
-1990 : -7.67799854279
-1991 : -7.09514713287
-1992 : -7.69788742065
-1993 : -6.98641967773
-1994 : -6.88878011703
-1995 : -6.85032272339
-1996 : -7.33745718002
-1997 : -6.88342809677
-1998 : -5.18619298935
-1999 : -5.9755191803
-2000 : -6.72654485703
-2001 : -5.93072795868
-2002 : -6.85216426849
-2003 : -6.402592659
-2004 : -7.52971744537
-2005 : -5.863758564
-2006 : -5.54320955276
-2007 : -6.81929397583
-2008 : -7.20089578629
-2009 : -6.99701166153
+<pre>first five results
+[[1901, -7.67241907119751], [1902, -7.862711429595947], [1903, -7.910782814025879], [1904, -8.155729293823242], [1905, -7.547311305999756]]
 </pre>
+</div>
+
+
+<div class="challenges">
+<h4 id="challenges">Challenges</h4>
+<ol style="list-style-type: decimal">
+<li>FIXME</li>
+</ol>
+</div>
+
+### Step 4: Making a Reusable Function
+
+
+<div>
+<p>Now that we know how to get the data for Canada, let's create a function that will do the same thing for an arbitrary country. The steps are simple: copy the code we've written into a function that takes a 3-letter country code as a parameter, and insert that country code into the URL at the appropriate place:</p>
+</div>
+
+
+<div class="in">
+<pre>def get_annual_mean_temp_by_country(country):
+    &#39;&#39;&#39;Get the annual mean temperature for a country given its 3-letter ISO code (such as &#34;CAN&#34;).&#39;&#39;&#39;
+    url = &#39;http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/&#39; + country + &#39;.csv&#39;
+    response = requests.get(url)
+    if response.status_code != 200:
+        print &#39;Failed to get data:&#39;, response.status_code
+    else:
+        reader = cStringIO.StringIO(response.text)
+        wrapper = csv.reader(reader)
+        results = []
+        for record in wrapper:
+            if record[0] != &#39;year&#39;:
+                year = int(record[0])
+                value = float(record[1])
+                results.append([year, value])
+        return results</pre>
+</div>
+
+
+<div>
+<p>This works:</p>
+</div>
+
+
+<div class="in">
+<pre>canada = get_annual_mean_temp_by_country(&#39;CAN&#39;)
+print &#39;first five entries for Canada:&#39;, canada[:5]</pre>
+</div>
+
+<div class="out">
+<pre>first five entries for Canada: [[1901, -7.67241907119751], [1902, -7.862711429595947], [1903, -7.910782814025879], [1904, -8.155729293823242], [1905, -7.547311305999756]]
+</pre>
+</div>
+
+
+<div>
+<p>but there's a problem. Look what happens when we pass in an invalid country identifier:</p>
+</div>
+
+
+<div class="in">
+<pre>latveria = get_annual_mean_temp_by_country(&#39;LTV&#39;)
+print &#39;first five entries for Latveria:&#39;, latveria[:5]</pre>
+</div>
+
+<div class="out">
+<pre>first five entries for Latveria: []
+</pre>
+</div>
+
+
+<div>
+<p>Latveria doesn't exist, so why is our function returning an empty list rather than printing an error message? The non-appearance of an error message must mean that the response code was 200; if so, we would have gone into the <code>else</code> branch, assigned an empty list to <code>results</code>, and then... hm... All right, if the response code was 200 and there was no data, that would explain what we're seeing.</p>
+<blockquote>
+<h4>Editing vs. Copying</h4>
+<p>If we were writing this function in order to use it for real data analysis, we would go back and change it in place. Since we want to show both the flawed version and its replacement, we've copied it instead.</p>
+</blockquote>
+</div>
+
+
+<div class="in">
+<pre>def get_annual_mean_temp_by_country(country):
+    &#39;&#39;&#39;Get the annual mean temperature for a country given its 3-letter ISO code (such as &#34;CAN&#34;).&#39;&#39;&#39;
+    url = &#39;http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/&#39; + country + &#39;.csv&#39;
+    print &#39;url used is&#39;, url
+    response = requests.get(url)
+    print &#39;response code:&#39;, response.status_code
+    print &#39;length of data:&#39;, len(response.text)
+    if response.status_code != 200:
+        print &#39;Failed to get data:&#39;, response.status_code
+    else:
+        reader = cStringIO.StringIO(response.text)
+        wrapper = csv.reader(reader)
+        results = []
+        for record in wrapper:
+            if record[0] != &#39;year&#39;:
+                year = int(record[0])
+                value = float(record[1])
+                results.append([year, value])
+        return results
+
+latveria = get_annual_mean_temp_by_country(&#39;LTV&#39;)
+print &#39;number of records for Latveria:&#39;, len(latveria)</pre>
+</div>
+
+<div class="out">
+<pre>url used is http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/LTV.csv
+response code: 200
+length of data: 0
+number of records for Latveria: 0
+</pre>
+</div>
+
+
+<div>
+<p>Great: after a bit more experimenting, we discover that the site <em>always</em> returns a 200 status code. The only way to tell if there's real data or not will be to check if <code>response.text</code> is empty. Here's the updated function:</p>
+</div>
+
+
+<div class="in">
+<pre>def get_annual_mean_temp_by_country(country):
+    &#39;&#39;&#39;
+    Get the annual mean temperature for a country given its 3-letter ISO code (such as &#34;CAN&#34;).
+    Returns an empty list if the country code is invalid.
+    &#39;&#39;&#39;
+    url = &#39;http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/&#39; + country + &#39;.csv&#39;
+    response = requests.get(url)
+    results = []
+    if len(response.text) &gt; 0:
+        reader = cStringIO.StringIO(response.text)
+        wrapper = csv.reader(reader)
+        for record in wrapper:
+            if record[0] != &#39;year&#39;:
+                year = int(record[0])
+                value = float(record[1])
+                results.append([year, value])
+    return results
+
+print &#39;number of records for Canada:&#39;, len(get_annual_mean_temp_by_country(&#39;CAN&#39;))
+print &#39;number of records for Latveria:&#39;, len(get_annual_mean_temp_by_country(&#39;LTV&#39;))</pre>
+</div>
+
+<div class="out">
+<pre>number of records for Canada: 109
+number of records for Latveria: 0
+</pre>
+</div>
+
+
+<div class="challenges">
+<h4 id="challenges">Challenges</h4>
+<ol style="list-style-type: decimal">
+<li>FIXME: explore the fact that the first versions returned None when there was no data.</li>
+</ol>
+</div>
+
+### Step 5: Comparing Countries
+
+
+<div>
+<p>Now that we can get surface temperatures for different countries, we can write a function to compare those values. (We'll jump straight into writing a function because by now it's clear that's what we're eventually going to do anyway.) Here's our first cut:</p>
+</div>
+
+
+<div class="in">
+<pre>def diff_records(left, right):
+    &#39;&#39;&#39;Given lists of [year, value] pairs, return list of [year, difference] pairs.&#39;&#39;&#39;
+    num_years = len(left)
+    results = []
+    for i in range(num_years):
+        left_year, left_value = left[i]
+        right_year, right_value = right[i]
+        difference = left_value - right_value
+        results.append([left_year, difference])
+    return results</pre>
+</div>
+
+
+<div>
+<p>Here, we're using the number of entries in <code>left</code> (which we find with <code>len(left)</code>) to control our loop. The expression:</p>
+<pre><code>for i in range(num_years):</code></pre>
+<p>runs <code>i</code> from 0 to <code>num_years-1</code>, which corresponds exactly to the legal indices of <code>left</code>. Inside the loop we unpack the left and right years and values from the list entries, then append a pair containing a year and a difference to <code>results</code>, which we return at the end.</p>
+<p>To see if this function works, we can run a couple of tests on made-up data:</p>
+</div>
+
+
+<div class="in">
+<pre>print &#39;one record:&#39;, diff_records([[1900, 1.0]],
+                                  [[1900, 2.0]])
+print &#39;two records:&#39;, diff_records([[1900, 1.0], [1901, 10.0]],
+                                   [[1900, 2.0], [1901, 20.0]])</pre>
+</div>
+
+<div class="out">
+<pre>one record: [[1900, -1.0]]
+two records: [[1900, -1.0], [1901, -10.0]]
+</pre>
+</div>
+
+
+<div>
+<p>That looks pretty good—but what about these cases?</p>
+</div>
+
+
+<div class="in">
+<pre>print &#39;mis-matched years:&#39;, diff_records([[1900, 1.0]],
+                                         [[1999, 2.0]])
+print &#39;left is shorter&#39;, diff_records([[1900, 1.0]],
+                                      [[1900, 10.0], [1901, 20.0]])
+print &#39;right is shorter&#39;, diff_records([[1900, 1.0], [1901, 2.0]],
+                                       [[1900, 10.0]])</pre>
+</div>
+
+<div class="out">
+<pre>---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+&lt;ipython-input-27-7582f56db8bf&gt; in &lt;module&gt;()
+      4                                       [[1900, 10.0], [1901, 20.0]])
+      5 print &#39;right is shorter&#39;, diff_records([[1900, 1.0], [1901, 2.0]],
+----&gt; 6                                        [[1900, 10.0]])
+
+&lt;ipython-input-23-67464343fd99&gt; in diff_records(left, right)
+      5     for i in range(num_years):
+      6         left_year, left_value = left[i]
+----&gt; 7         right_year, right_value = right[i]
+      8         difference = left_value - right_value
+      9         results.append([left_year, difference])
+
+IndexError: list index out of rangemis-matched years: [[1900, -1.0]]
+left is shorter [[1900, -9.0]]
+right is shorter</pre>
+</div>
+
+
+<div>
+<p>The first test gives us an answer even though the years didn't match: we get a result, but it's meaningless. The second case gives us a partial result, again without telling us there's a problem, while the third crashes because we're using <code>left</code> to determine the number of records, but <code>right</code> doesn't have that many.</p>
+<p>The first two problems are actually worse than the third because they are <a href="../../gloss.html#silent-failure">silent failures</a>: the function does the wrong thing, but doesn't indicate that in any way. Let's make it a little more robust:</p>
+</div>
+
+
+<div class="in">
+<pre>def diff_records(left, right):
+    &#39;&#39;&#39;
+    Given lists of [year, value] pairs, return list of [year, difference] pairs.
+    Fails if the inputs are not for exactly corresponding years.
+    &#39;&#39;&#39;
+    assert len(left) == len(right), \
+           &#39;Inputs have different lengths.&#39;
+    num_years = len(left)
+    results = []
+    for i in range(num_years):
+        left_year, left_value = left[i]
+        right_year, right_value = right[i]
+        assert left_year == right_year, \
+               &#39;Record {0} is for different years: {1} vs {2}&#39;.format(i, left_year, right_year)
+        difference = left_value - right_value
+        results.append([left_year, difference])
+    return results</pre>
+</div>
+
+<div class="out">
+<pre>
+</pre>
+</div>
+
+
+<div>
+<p>Do our &quot;good&quot; tests pass?</p>
+</div>
+
+
+<div class="in">
+<pre>print &#39;one record:&#39;, diff_records([[1900, 1.0]],
+                                  [[1900, 2.0]])
+print &#39;two records:&#39;, diff_records([[1900, 1.0], [1901, 10.0]],
+                                   [[1900, 2.0], [1901, 20.0]])</pre>
+</div>
+
+<div class="out">
+<pre>one record: [[1900, -1.0]]
+two records: [[1900, -1.0], [1901, -10.0]]
+</pre>
+</div>
+
+
+<div>
+<p>What about our the three tests that we now expect to fail?</p>
+</div>
+
+
+<div class="in">
+<pre>print &#39;mis-matched years:&#39;, diff_records([[1900, 1.0]],
+                                         [[1999, 2.0]])</pre>
+</div>
+
+<div class="out">
+<pre>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-30-c101917a748e&gt; in &lt;module&gt;()
+      1 print &#39;mis-matched years:&#39;, diff_records([[1900, 1.0]],
+----&gt; 2                                          [[1999, 2.0]])
+
+&lt;ipython-input-28-d41327791c15&gt; in diff_records(left, right)
+     10         left_year, left_value = left[i]
+     11         right_year, right_value = right[i]
+---&gt; 12         assert left_year == right_year,                &#39;Record {0} is for different years: {1} vs {2}&#39;.format(i, left_year, right_year)
+     13         difference = left_value - right_value
+     14         results.append([left_year, difference])
+
+AssertionError: Record 0 is for different years: 1900 vs 1999mis-matched years:</pre>
+</div>
+
+
+<div class="in">
+<pre>print &#39;left is shorter&#39;, diff_records([[1900, 1.0]],
+                                      [[1900, 10.0], [1901, 20.0]])</pre>
+</div>
+
+<div class="out">
+<pre>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-31-682d448d921e&gt; in &lt;module&gt;()
+      1 print &#39;left is shorter&#39;, diff_records([[1900, 1.0]],
+----&gt; 2                                       [[1900, 10.0], [1901, 20.0]])
+
+&lt;ipython-input-28-d41327791c15&gt; in diff_records(left, right)
+      4     Fails if the inputs are not for exactly corresponding years.
+      5     &#39;&#39;&#39;
+----&gt; 6     assert len(left) == len(right),            &#39;Inputs have different lengths.&#39;
+      7     num_years = len(left)
+      8     results = []
+
+AssertionError: Inputs have different lengths. left is shorter</pre>
+</div>
+
+
+<div class="in">
+<pre>print &#39;right is shorter&#39;, diff_records([[1900, 1.0], [1901, 2.0]],
+                                       [[1900, 10.0]])</pre>
+</div>
+
+<div class="out">
+<pre>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-32-a475e608dd70&gt; in &lt;module&gt;()
+      1 print &#39;right is shorter&#39;, diff_records([[1900, 1.0], [1901, 2.0]],
+----&gt; 2                                        [[1900, 10.0]])
+
+&lt;ipython-input-28-d41327791c15&gt; in diff_records(left, right)
+      4     Fails if the inputs are not for exactly corresponding years.
+      5     &#39;&#39;&#39;
+----&gt; 6     assert len(left) == len(right),            &#39;Inputs have different lengths.&#39;
+      7     num_years = len(left)
+      8     results = []
+
+AssertionError: Inputs have different lengths. right is shorter</pre>
+</div>
+
+
+<div>
+<p>Excellent: the assertions we've added will now alert us if we try to work with badly-formatted or inconsistent data.</p>
+<blockquote>
+<h4>There's a Better Way to Do It</h4>
+<p>We had to run each test in a cell of its own because Python stops executed the code in a cell as soon as an assertion fails, and we want to make sure all three tests actually run. A <a href="../../gloss.html#unit-testing">unit testing</a> library would handle this for us, and do much else as well; we cover unit testing libraries in our intermediate lesson on Python.</p>
+</blockquote>
+</div>
+
+
+<div class="challenges">
+<h4 id="challenges">Challenges</h4>
+<ol style="list-style-type: decimal">
+<li><p>FIXME: ask whether the data getter should be change to use assertions on country names or data.</p></li>
+<li><p>FIXME: use <code>zip</code> to iterate through the lists.</p></li>
+</ol>
+</div>
+
+### Step 6: Putting It All Together
+
+
+<div class="in">
+<pre>%matplotlib inline
+
+from matplotlib import pyplot as plt
+
+australia = get_annual_mean_temp_by_country(&#39;AUS&#39;)
+canada = get_annual_mean_temp_by_country(&#39;CAN&#39;)
+diff = diff_records(australia, canada)
+plt.plot(diff)
+plt.show()</pre>
+</div>
+
+<div class="out">
+<pre></pre>
+</div>
+
+
+<div>
+<p>That's not what we want: the library has interpreted our list of pairs as two corresponding curves rather than as the (x,y) coordinates for one curve. Let's convert our list of (year, difference) pairs into a NumPy array:</p>
+</div>
+
+
+<div class="in">
+<pre>import numpy as np
+d = np.array(diff)</pre>
+</div>
+
+
+<div>
+<p>and then plot the first column against the second:</p>
+</div>
+
+
+<div class="in">
+<pre>plt.plot(d[:, 0], d[:, 1])
+plt.show()</pre>
+</div>
+
+<div class="out">
+<pre></pre>
+</div>
+
+
+<div>
+<p>It looks like the difference is slowly decreasing, but the signal is very noisy. At this point, if we wanted a real answer, it would be time to break out a curve-fitting library.</p>
 </div>
 
 
