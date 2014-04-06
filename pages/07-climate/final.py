@@ -9,7 +9,7 @@ def compare_countries(left_country, right_country):
     left_data = get_country_temperatures(left_country)
     right_data = get_country_temperatures(right_country)
     result = []
-    for ( (left_year, left_value), (right_year, right_value) ) in zip(canada, brazil):
+    for ( (left_year, left_value), (right_year, right_value) ) in zip(left_country, right_country):
         assert left_year == right_year, 'Year mismatch: {0} vs {1}'.format(left_year, right_year)
         result.append([left_year, left_value - right_value])
     return result
