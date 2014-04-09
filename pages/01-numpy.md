@@ -577,7 +577,9 @@ pyplot.show()</pre>
 </div>
 
 <div class="out">
-<pre></pre>
+<pre>
+<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_74_0.png">
+</pre>
 </div>
 
 
@@ -593,7 +595,9 @@ pyplot.show()</pre>
 </div>
 
 <div class="out">
-<pre></pre>
+<pre>
+<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_76_0.png">
+</pre>
 </div>
 
 
@@ -614,7 +618,11 @@ pyplot.show()</pre>
 
 <div class="out">
 <pre>maximum inflammation per day
+
+<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_78_1.png">
 minimum inflammation per day
+
+<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_78_3.png">
 </pre>
 </div>
 
@@ -665,7 +673,9 @@ plt.show()</pre>
 </div>
 
 <div class="out">
-<pre></pre>
+<pre>
+<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_83_0.png">
+</pre>
 </div>
 
 
