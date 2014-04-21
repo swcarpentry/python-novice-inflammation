@@ -41,7 +41,9 @@ analyze(&#39;inflammation-01.csv&#39;)</pre>
 </div>
 
 <div class="out">
-<pre></pre>
+<pre>
+<img src="../../novice/python/03-loop_files/novice/python/03-loop_2_0.png">
+</pre>
 </div>
 
 
@@ -55,7 +57,9 @@ analyze(&#39;inflammation-01.csv&#39;)</pre>
 </div>
 
 <div class="out">
-<pre></pre>
+<pre>
+<img src="../../novice/python/03-loop_files/novice/python/03-loop_4_0.png">
+</pre>
 </div>
 
 
@@ -377,8 +381,14 @@ for f in filenames:
 
 <div class="out">
 <pre>inflammation-01.csv
+
+<img src="../../novice/python/03-loop_files/novice/python/03-loop_49_1.png">
 inflammation-02.csv
+
+<img src="../../novice/python/03-loop_files/novice/python/03-loop_49_3.png">
 inflammation-03.csv
+
+<img src="../../novice/python/03-loop_files/novice/python/03-loop_49_5.png">
 </pre>
 </div>
 
