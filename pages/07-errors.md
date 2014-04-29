@@ -101,12 +101,12 @@ KeyError                                  Traceback (most recent call last)
       1 from errors_02 import print_friday_message
 ----&gt; 2 print_friday_message()
 
-/Users/jhamrick/project/swc/novice/python/errors_02.pyc in print_friday_message()
+/Users/jhamrick/project/swc/novice/python/errors_02.py in print_friday_message()
      13 
      14 def print_friday_message():
 ---&gt; 15     print_message(&#34;Friday&#34;)
 
-/Users/jhamrick/project/swc/novice/python/errors_02.pyc in print_message(day)
+/Users/jhamrick/project/swc/novice/python/errors_02.py in print_message(day)
       9         &#34;sunday&#34;: &#34;Aw, the weekend is almost over.&#34;
      10     }
 ---&gt; 11     print messages[day]
@@ -171,6 +171,41 @@ IndentationError: unexpected indent
 </div>
 
 
+<div>
+<h4 id="whitespace-tabs-and-spaces">Whitespace: tabs and spaces</h4>
+<p>A quick note on indentation errors: they can sometimes be insidious, especially if you are mixing spaces and tabs. Because they are both &quot;whitespace&quot;, it is difficult to visually tell the difference! The IPython notebook actually gives us a bit of a hint, but not all Python editors will do that. In the following example, the first two lines are using a tab for indentation, while the third line uses four spaces.</p>
+</div>
+
+
+<div class="in">
+<pre>def some_function():
+	msg = &#34;hello, world!&#34;
+	print msg
+    return msg</pre>
+</div>
+
+<div class="out">
+<pre>  File &#34;&lt;ipython-input-5-653b36fbcd41&gt;&#34;, line 4
+    return msg
+              ^
+IndentationError: unindent does not match any outer indentation level
+</pre>
+</div>
+
+
+<div>
+<p>By default, one tab is equivalent to eight spaces, so the only way to mix tabs and spaces is to make it look like this! In general, is is better to just <strong>never use tabs</strong> and <strong>always use spaces</strong>, because it can make things very confusing.</p>
+</div>
+
+
+<div class="in">
+<pre>def some_function():
+	msg = &#34;hello, world!&#34;
+	print msg
+        return msg</pre>
+</div>
+
+
 <div class="challenges">
 <h4 id="challenge-identifying-syntax-errors">Challenge: identifying syntax errors</h4>
 <ol>
@@ -204,7 +239,7 @@ IndentationError: unexpected indent
 <div class="out">
 <pre>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&lt;ipython-input-5-9d7b17ad5387&gt; in &lt;module&gt;()
+&lt;ipython-input-7-9d7b17ad5387&gt; in &lt;module&gt;()
 ----&gt; 1 print a
 
 NameError: name &#39;a&#39; is not defined</pre>
@@ -224,7 +259,7 @@ NameError: name &#39;a&#39; is not defined</pre>
 <div class="out">
 <pre>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&lt;ipython-input-6-9553ee03b645&gt; in &lt;module&gt;()
+&lt;ipython-input-8-9553ee03b645&gt; in &lt;module&gt;()
 ----&gt; 1 print hello
 
 NameError: name &#39;hello&#39; is not defined</pre>
@@ -245,7 +280,7 @@ print &#34;The count is: &#34; + str(count)</pre>
 <div class="out">
 <pre>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&lt;ipython-input-7-dd6a12d7ca5c&gt; in &lt;module&gt;()
+&lt;ipython-input-9-dd6a12d7ca5c&gt; in &lt;module&gt;()
       1 for number in range(10):
 ----&gt; 2     count = count + number
       3 print &#34;The count is: &#34; + str(count)
@@ -269,7 +304,7 @@ print &#34;The count is: &#34; + str(count)</pre>
 <div class="out">
 <pre>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&lt;ipython-input-8-d77d40059aea&gt; in &lt;module&gt;()
+&lt;ipython-input-10-d77d40059aea&gt; in &lt;module&gt;()
       1 Count = 0
       2 for number in range(10):
 ----&gt; 3     count = count + number
@@ -322,7 +357,7 @@ Letter #2 is b
 Letter #3 is c
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
-&lt;ipython-input-9-d817f55b7d6c&gt; in &lt;module&gt;()
+&lt;ipython-input-11-d817f55b7d6c&gt; in &lt;module&gt;()
       3 print &#34;Letter #2 is &#34; + letters[1]
       4 print &#34;Letter #3 is &#34; + letters[2]
 ----&gt; 5 print &#34;Letter #4 is &#34; + letters[3]
@@ -351,7 +386,7 @@ print &#34;The capital of Oregon is: &#34; + us_state_capitals[&#39;oregon&#39;]
 <div class="out">
 <pre>---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
-&lt;ipython-input-10-27fa113dd73c&gt; in &lt;module&gt;()
+&lt;ipython-input-12-27fa113dd73c&gt; in &lt;module&gt;()
       6 }
       7 
 ----&gt; 8 print &#34;The capital of Oregon is: &#34; + us_state_capitals[&#39;oregon&#39;]
@@ -379,7 +414,7 @@ print &#34;The capital of Massachusetts is: &#34; + us_state_capitals[&#39;massa
 <div class="out">
 <pre>---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
-&lt;ipython-input-11-ae1dac4c6a45&gt; in &lt;module&gt;()
+&lt;ipython-input-13-ae1dac4c6a45&gt; in &lt;module&gt;()
       6 }
       7 
 ----&gt; 8 print &#34;The capital of Massachusetts is: &#34; + us_state_capitals[&#39;massachussetts&#39;]
