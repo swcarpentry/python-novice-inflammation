@@ -339,7 +339,7 @@ print message</pre>
 
 
 <div>
-<p>The last types of errors that we&#39;ll be covering in this lesson are errors having to do with containers (like lists and dictionaries) and the items within them. If you try to access an item in a list or a dictionary that does not exist, then you will get an error! This makes sense. Think about a real life example: if you asked someone for a number between 1 and 10, and they gave you the number 15, you would probably be annoyed that they did not follow your instructions! Python gets similarly annoyed:</p>
+<p>The last types of errors that we&#39;ll be covering in this lesson are errors having to do with containers (like lists and dictionaries) and the items within them. If you try to access an item in a list or a dictionary that does not exist, then you will get an error! This makes sense. Think about a real life example: if you asked someone what day they would like to get coffee, and they answered &quot;caturday&quot;, you might be a bit annoyed (though, perhaps after being amused that someone thought of the idea of caturday). Python gets similarly annoyed if you try to ask it for an item that doesn&#39;t exist:</p>
 </div>
 
 
