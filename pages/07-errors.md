@@ -24,6 +24,7 @@ root: ../..
 <li><code>SyntaxError</code> and <code>IndentationError</code></li>
 <li><code>NameError</code></li>
 <li><code>KeyError</code> and <code>IndexError</code></li>
+<li><code>IOError</code></li>
 </ul>
 </li>
 </ul>
@@ -339,7 +340,7 @@ print message</pre>
 
 
 <div>
-<p>The last types of errors that we&#39;ll be covering in this lesson are errors having to do with containers (like lists and dictionaries) and the items within them. If you try to access an item in a list or a dictionary that does not exist, then you will get an error! This makes sense. Think about a real life example: if you asked someone what day they would like to get coffee, and they answered &quot;caturday&quot;, you might be a bit annoyed (though, perhaps after being amused that someone thought of the idea of caturday). Python gets similarly annoyed if you try to ask it for an item that doesn&#39;t exist:</p>
+<p>Next up are errors having to do with containers (like lists and dictionaries) and the items within them. If you try to access an item in a list or a dictionary that does not exist, then you will get an error! This makes sense. Think about a real life example: if you asked someone what day they would like to get coffee, and they answered &quot;caturday&quot;, you might be a bit annoyed (though, perhaps after being amused that someone thought of the idea of caturday). Python gets similarly annoyed if you try to ask it for an item that doesn&#39;t exist:</p>
 </div>
 
 
@@ -448,6 +449,54 @@ print &#34;The third month in fall is: &#34; + seasons[&#39;fal&#39;][3]
 print &#34;The second month in winter is: &#34; + seasons[&#39;Winter&#39;][1]</pre>
 </div>
 
+### File errors
+
+
+<div>
+<p>The last type of error we&#39;ll cover today are those associated with reading and writing files: <code>IOError</code>. The &quot;IO&quot; in <code>IOError</code> stands for &quot;input/output&quot;, which is just a fancy way of saying &quot;writing/reading&quot;.</p>
+<p>If you try to read a file that does not exist, you will recieve an <code>IOError</code> telling you so. This is the most common reason why you would receive <code>IOError</code>, and if the error messages says &quot;no such file or directory&quot;, then you know you have just tried to access a file that does not exist:</p>
+</div>
+
+
+<div class="in">
+<pre>file_handle = open(&#39;myfile.txt&#39;, &#39;r&#39;)</pre>
+</div>
+
+<div class="out">
+<pre>---------------------------------------------------------------------------
+IOError                                   Traceback (most recent call last)
+&lt;ipython-input-14-f6e1ac4aee96&gt; in &lt;module&gt;()
+----&gt; 1 file_handle = open(&#39;myfile.txt&#39;, &#39;r&#39;)
+
+IOError: [Errno 2] No such file or directory: &#39;myfile.txt&#39;</pre>
+</div>
+
+
+<div>
+<p>One reason for receiving this error is that you specified an incorrect path to the file. For example, if I am currently in a folder called <code>myproject</code>, and I have a file in <code>myproject/writing/myfile.txt</code>, but I try to just open <code>myfile.txt</code>, this will fail. The correct path would be <code>writing/myfile.txt</code>. It is also possible (like with <code>NameError</code> and <code>KeyError</code>) that you just made a typo.</p>
+</div>
+
+
+<div>
+<p>Another issue could be that you used the &quot;read&quot; flag instead of the &quot;write&quot; flag. Python will not give you an error if you try to open a file for writing when the file does not exist. However, if you meant to open a file for reading, but accidentally opened it for writing, and then try to read from it, you will get an error telling you that the file was not opened for reading:</p>
+</div>
+
+
+<div class="in">
+<pre>file_handle = open(&#39;myfile.txt&#39;, &#39;w&#39;)
+file_handle.read()</pre>
+</div>
+
+<div class="out">
+<pre>---------------------------------------------------------------------------
+IOError                                   Traceback (most recent call last)
+&lt;ipython-input-15-b846479bc61f&gt; in &lt;module&gt;()
+      1 file_handle = open(&#39;myfile.txt&#39;, &#39;w&#39;)
+----&gt; 2 file_handle.read()
+
+IOError: File not open for reading</pre>
+</div>
+
 
 <div class="keypoints">
 <h4 id="key-points">Key Points</h4>
@@ -456,5 +505,6 @@ print &#34;The second month in winter is: &#34; + seasons[&#39;Winter&#39;][1]</
 <li>An error having to do with the &quot;grammar&quot; or syntax of the program is called a <code>SyntaxError</code>. If the issue has to do with how the code is indented, then it will be called an <code>IndentationError</code>.</li>
 <li>A <code>NameError</code> will occur if you use a variable that has not been defined (either because you meant to use quotes around a string, you forgot to define the variable, or you just made a typo).</li>
 <li>Containers like lists and dictionaries will generate errors if you try to access items in them that do not exist. For lists, this type of error is called an <code>IndexError</code>; for dictionaries, it is called a <code>KeyError</code>.</li>
+<li>Trying to read a file that does not exist will give you an <code>IOError</code>. Trying to read a file that is open for writing, or writing to a file that is open for reading, will also give you an <code>IOError</code>.</li>
 </ul>
 </div>
