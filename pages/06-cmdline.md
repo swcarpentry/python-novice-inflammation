@@ -280,18 +280,34 @@ main()
 
 <div>
 <blockquote>
-<h4>The Right Way to Do It</h4>
-<p>If our programs can take complex parameters or multiple filenames, we shouldn't handle <code>sys.argv</code> directly. Instead, we should use Python's <code>argparse</code> library, which handles common cases in a systematic way, and also makes it easy for us to provide sensible error messages for our users.</p>
+<h4 id="the-right-way-to-do-it">The Right Way to Do It</h4>
+<p>If our programs can take complex parameters or multiple filenames,
+we shouldn&#39;t handle <code>sys.argv</code> directly.
+Instead,
+we should use Python&#39;s <code>argparse</code> library,
+which handles common cases in a systematic way,
+and also makes it easy for us to provide sensible error messages for our users.</p>
 </blockquote>
 </div>
 
 
 <div class="challenges">
 <h4 id="challenges">Challenges</h4>
-<ol style="list-style-type: decimal">
-<li><p>Write a command-line program that does addition and subtraction: <sub>~</sub> python arith.py 1 + 2 3 python arith.py 3 - 4 -1 <sub>~</sub></p>
-<p>What goes wrong if you try to add multiplication using '*' to the program?</p></li>
-<li><p>Using the <code>glob</code> module introduced <a href="earlier">03-loop.ipynb</a>, write a simple version of <code>ls</code> that shows files in the current directory with a particular suffix: <sub>~</sub> python my_ls.py py left.py right.py zero.py <sub>~</sub></p></li>
+<ol>
+<li><p>Write a command-line program that does addition and subtraction:</p>
+<pre><code>$ python arith.py 1 + 2
+3
+</code></pre><pre><code>$ python arith.py 3 - 4
+-1
+</code></pre><p>What goes wrong if you try to add multiplication using &#39;*&#39; to the program?</p>
+</li>
+<li><p>Using the <code>glob</code> module introduced <a href="earlier">03-loop.ipynb</a>,
+write a simple version of <code>ls</code> that shows files in the current directory with a particular suffix:</p>
+<pre><code>$ python my_ls.py py
+left.py
+right.py
+zero.py
+</code></pre></li>
 </ol>
 </div>
 
