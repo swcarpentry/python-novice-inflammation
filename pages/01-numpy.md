@@ -230,7 +230,10 @@ print &#39;weight in kilograms is now:&#39;, weight_kg, &#39;and weight in pound
 age = <span class="dv">122</span>
 mass = mass * <span class="fl">2.0</span>
 age = age - <span class="dv">20</span></code></pre></li>
-<li><p>What does the following program print out? <sub>~</sub>python first, second = 'Grace', 'Hopper' third, fourth = second, first print third, fourth <sub>~</sub></p></li>
+<li><p>What does the following program print out?</p>
+<pre class="sourceCode python"><code class="sourceCode python">first, second = <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hopper&#39;</span>
+third, fourth = second, first
+<span class="dt">print</span> third, fourth</code></pre></li>
 </ol>
 </div>
 
