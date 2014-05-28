@@ -661,16 +661,30 @@ h.show()</pre>
 
 
 <div class="">
-<p>We can now explore our data with just a few keystrokes, which means we can concentrate on our science and not on our programming.</p>
+<p>We can now explore our data with just a few keystrokes,
+which means we can concentrate on our science
+and not on our programming.</p>
 </div>
 
 
 <div class="challenges">
 <h4 id="challenges">Challenges</h4>
-<ol style="list-style-type: decimal">
-<li><p>Why did we transpose our data outside our heat map function? Why not have the function perform the transpose?</p></li>
-<li><p>Why does the heat map function return the grid rather than displaying it immediately? Do you think this is a good or bad design choice?</p></li>
-<li><p>Explain what the overall effect of this code is: <sub>~</sub> temp = left left = right right = temp <sub>~</sub> Compare it to: <sub>~</sub> left, right = right, left <sub>~</sub> Do they always do the same thing? Which do you find easier to read?</p></li>
+<ol>
+<li><p>Why did we transpose our data outside our heat map function?
+Why not have the function perform the transpose?</p>
+</li>
+<li><p>Why does the heat map function return the grid rather than displaying it immediately?
+Do you think this is a good or bad design choice?</p>
+</li>
+<li><p>Explain what the overall effect of this code is:</p>
+<pre><code>temp = left
+left = right
+right = temp
+</code></pre><p>Compare it to:</p>
+<pre><code>left, right = right, left
+</code></pre><p>Do they always do the same thing?
+Which do you find easier to read?</p>
+</li>
 </ol>
 </div>
 
