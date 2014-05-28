@@ -365,19 +365,38 @@ print &#39;span of data:&#39;, span(diff)</pre>
 
 
 <div class="">
-<p>We don't expect <code>diff</code> to have the value 20.0 after this function call, so the name <code>diff</code> cannot refer to the same thing inside <code>span</code> as it does in the main body of our program. And yes, we could probably choose a different name than <code>diff</code> in our main program in this case, but we don't want to have to read every line of NumPy to see what variable names its functions use before calling any of those functions, just in case they change the values of our variables.</p>
+<p>We don&#39;t expect <code>diff</code> to have the value 20.0 after this function call,
+so the name <code>diff</code> cannot refer to the same thing inside <code>span</code> as it does in the main body of our program.
+And yes,
+we could probably choose a different name than <code>diff</code> in our main program in this case,
+but we don&#39;t want to have to read every line of NumPy to see what variable names its functions use
+before calling any of those functions,
+just in case they change the values of our variables.</p>
 </div>
 
 
 <div class="">
-<p>The big idea here is <a href="../../gloss.html#encapsulation">encapsulation</a>, and it's the key to writing correct, comprehensible programs. A function's job is to turn several operations into one so that we can think about a single function call instead of a dozen or a hundred statements each time we want to do something. That only works if functions don't interfere with each other; if they do, we have to pay attention to the details once again, which quickly overloads our short-term memory.</p>
+<p>The big idea here is <a href="../../gloss.html#encapsulation">encapsulation</a>,
+and it&#39;s the key to writing correct, comprehensible programs.
+A function&#39;s job is to turn several operations into one
+so that we can think about a single function call
+instead of a dozen or a hundred statements
+each time we want to do something.
+That only works if functions don&#39;t interfere with each other;
+if they do,
+we have to pay attention to the details once again,
+which quickly overloads our short-term memory.</p>
 </div>
 
 
 <div class="challenges">
 <h4 id="challenges">Challenges</h4>
-<ol style="list-style-type: decimal">
-<li>We previously wrote functions called <code>fence</code> and <code>outer</code>. Draw a diagram showing how the call stack changes when we run the following: <sub>~</sub>python print outer(fence('carbon', '+')) <sub>~</sub></li>
+<ol>
+<li><p>We previously wrote functions called <code>fence</code> and <code>outer</code>.
+Draw a diagram showing how the call stack changes when we run the following:</p>
+<pre><code class="language-python"><span class="keyword">print</span> outer(fence(<span class="string">'carbon'</span>, <span class="string">'+'</span>))
+</code></pre>
+</li>
 </ol>
 </div>
 
