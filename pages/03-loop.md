@@ -221,10 +221,35 @@ print &#39;after the loop, letter is&#39;, letter</pre>
 
 <div class="challenges">
 <h4 id="challenges">Challenges</h4>
-<ol style="list-style-type: decimal">
-<li><p>Python has a built-in function called <code>range</code> that creates a list of numbers: <code>range(3)</code> produces <code>[0, 1, 2]</code>, <code>range(2, 5)</code> produces <code>[2, 3, 4]</code>, and <code>range(2, 10, 3)</code> produces <code>[2, 5, 8]</code>. Using <code>range</code>, write a function that prints the <span class="math">\(N\)</span> natural numbers: <sub>~</sub>python print_N(3) 1 2 3 <sub>~</sub></p></li>
-<li><p>Exponentiation is built into Python: <sub>~</sub>python print 2**4 16 <sub>~</sub> It also has a function called <code>pow</code> that calculates the same value. Write a function called <code>expo</code> that uses a loop to calculate the same result.</p></li>
-<li><p>Python's strings have methods, just like NumPy's arrays. One of these is called <code>reverse</code>: <sub>~</sub>python print 'Newton'.reverse() notweN <sub>~</sub> Write a function called <code>rev</code> that does the same thing: <sub>~</sub>python print rev('Newton') notweN <sub>~</sub> As always, be sure to include a docstring.</p></li>
+<ol>
+<li><p>Python has a built-in function called <code>range</code> that creates a list of numbers:
+<code>range(3)</code> produces <code>[0, 1, 2]</code>, <code>range(2, 5)</code> produces <code>[2, 3, 4]</code>, and <code>range(2, 10, 3)</code> produces <code>[2, 5, 8]</code>.
+Using <code>range</code>,
+write a function that prints the $N$ natural numbers:</p>
+<pre><code class="language-python">print_N(<span class="number">3</span>)
+<span class="number">1</span>
+<span class="number">2</span>
+<span class="number">3</span>
+</code></pre>
+</li>
+<li><p>Exponentiation is built into Python:</p>
+<pre><code class="language-python"><span class="keyword">print</span> <span class="number">2</span>**<span class="number">4</span>
+<span class="number">16</span>
+</code></pre>
+<p>It also has a function called <code>pow</code> that calculates the same value.
+Write a function called <code>expo</code> that uses a loop to calculate the same result.</p>
+</li>
+<li><p>Python&#39;s strings have methods, just like NumPy&#39;s arrays.
+One of these is called <code>reverse</code>:</p>
+<pre><code class="language-python"><span class="keyword">print</span> <span class="string">'Newton'</span>.reverse()
+notweN
+</code></pre>
+<p>Write a function called <code>rev</code> that does the same thing:</p>
+<pre><code class="language-python"><span class="keyword">print</span> rev(<span class="string">'Newton'</span>)
+notweN
+</code></pre>
+<p>As always, be sure to include a docstring.</p>
+</li>
 </ol>
 </div>
 
