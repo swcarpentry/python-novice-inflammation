@@ -245,7 +245,7 @@ AssertionError: Calculated upper Y coordinate invalid</pre>
 
 <div class="in">
 <pre>assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
-assert range_overlap([ (0.0, 1.0), (0.0, 2.0) ]) == (0.0, 1.0)
+assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
 assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)</pre>
 </div>
 
@@ -308,11 +308,12 @@ AssertionError: </pre>
 
 <div class="in">
 <pre>def test_range_overlap():
-    assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
-    assert range_overlap([ (0.0, 1.0), (0.0, 2.0) ]) == (0.0, 1.0)
-    assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
     assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
-    assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None</pre>
+    assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
+    assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
+    assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
+    assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
+    </pre>
 </div>
 
 
@@ -332,17 +333,18 @@ AssertionError                            Traceback (most recent call last)
 ----&gt; 1 test_range_overlap()
 
 &lt;ipython-input-12-34c3659163fc&gt; in test_range_overlap()
-      3     assert range_overlap([ (0.0, 1.0), (0.0, 2.0) ]) == (0.0, 1.0)
-      4     assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
-----&gt; 5     assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
-      6     assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
+----&gt; 2     assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
+      3     assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
+      4     assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
+      5     assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
+
 
 AssertionError: </pre>
 </div>
 
 
 <div class="">
-<p>The first of the tests that was supposed to produce <code>None</code> fails, so we know there's something wrong with our function. What we <em>don't</em> know, though, is whether the last of our five tests passed or failed, because Python halted the program as soon as it spotted the first error. Still, some information is better than none, and if we trace the behavior of the function with that input, we realize that we're initializing <code>lowest</code> and <code>highest</code> to 0.0 and 1.0 respectively, regardless of the input values. This violates another important rule of programming: &quot;<a href="../../rules.html#always-initialize-from-data">always initialize from data</a>&quot;. We'll leave it as an exercise to fix <code>range_overlap</code>.</p>
+<p>The first of the tests that was supposed to produce <code>None</code> fails, so we know there's something wrong with our function. What we <em>don't</em> know, though, is whether the other four tests passed or failed, because Python halted the program as soon as it spotted the first error. Still, some information is better than none, and if we trace the behavior of the function with that input, we realize that we're initializing <code>lowest</code> and <code>highest</code> to 0.0 and 1.0 respectively, regardless of the input values. This violates another important rule of programming: &quot;<a href="../../rules.html#always-initialize-from-data">always initialize from data</a>&quot;. We'll leave it as an exercise to fix <code>range_overlap</code>.</p>
 </div>
 
 
