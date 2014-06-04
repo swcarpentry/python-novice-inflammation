@@ -239,12 +239,7 @@ write a function that prints the $N$ natural numbers:</p>
 <p>It also has a function called <code>pow</code> that calculates the same value.
 Write a function called <code>expo</code> that uses a loop to calculate the same result.</p>
 </li>
-<li><p>Python&#39;s strings have methods, just like NumPy&#39;s arrays.
-One of these is called <code>reverse</code>:</p>
-<pre><code class="language-python"><span class="keyword">print</span> <span class="string">'Newton'</span>.reverse()
-notweN
-</code></pre>
-<p>Write a function called <code>rev</code> that does the same thing:</p>
+<li><p>Write a function called <code>rev</code> that reverses the order of a Python string:</p>
 <pre><code class="language-python"><span class="keyword">print</span> rev(<span class="string">'Newton'</span>)
 notweN
 </code></pre>
