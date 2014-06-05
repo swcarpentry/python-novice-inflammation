@@ -239,7 +239,7 @@ write a function that prints the $N$ natural numbers:</p>
 <p>It also has a function called <code>pow</code> that calculates the same value.
 Write a function called <code>expo</code> that uses a loop to calculate the same result.</p>
 </li>
-<li><p>Write a function called <code>rev</code> that reverses the order of a Python string:</p>
+<li><p>Write a function called <code>rev</code> that takes a string as input, and produces a new string with the characters in reverse order:</p>
 <pre><code class="language-python"><span class="keyword">print</span> rev(<span class="string">'Newton'</span>)
 notweN
 </code></pre>
