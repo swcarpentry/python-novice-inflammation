@@ -6,57 +6,52 @@ root: ../..
 ## Creating Functions
 
 
-<div class="">
-<p>If we only had one data set to analyze,
+If we only had one data set to analyze,
 it would probably be faster to load the file into a spreadsheet
 and use that to plot some simple statistics.
 But we have twelve files to check,
 and may have more in future.
 In this lesson,
-we&#39;ll learn how to write a function
-so that we can repeat several operations with a single command.</p>
-</div>
+we'll learn how to write a function
+so that we can repeat several operations with a single command.
 
 
-<div class="objectives">
-<h4 id="objectives">Objectives</h4>
-<ul>
-<li>Define a function that takes parameters.</li>
-<li>Return a value from a function.</li>
-<li>Test and debug a function.</li>
-<li>Explain what a call stack is, and trace changes to the call stack as functions are called.</li>
-<li>Set default values for function parameters.</li>
-<li>Explain why we should divide programs into small, single-purpose functions.</li>
-</ul>
+<div class="objectives" markdown="1">
+#### Objectives
+
+*   Define a function that takes parameters.
+*   Return a value from a function.
+*   Test and debug a function.
+*   Explain what a call stack is, and trace changes to the call stack as functions are called.
+*   Set default values for function parameters.
+*   Explain why we should divide programs into small, single-purpose functions.
 </div>
 
 ### Defining a Function
 
 
-<div class="">
-<p>Let&#39;s start by defining a function <code>fahr_to_kelvin</code> that converts temperatures from Fahrenheit to Kelvin:</p>
-</div>
+Let's start by defining a function `fahr_to_kelvin` that converts temperatures from Fahrenheit to Kelvin:
 
 
 <pre class="in"><code>def fahr_to_kelvin(temp):
     return ((temp - 32) * (5/9)) + 273.15</code></pre>
 
 
-<div class="">
-<p>The definition opens with the word <code>def</code>,
+The definition opens with the word `def`,
 which is followed by the name of the function
 and a parenthesized list of parameter names.
-The <a href="../../gloss.html#function-body">body</a> of the function&mdash;the
+The [body](../../gloss.html#function-body) of the function&mdash;the
 statements that are executed when it runs&mdash;is indented below the definition line,
-typically by four spaces.</p>
-<p>When we call the function,
+typically by four spaces.
+
+When we call the function,
 the values we pass to it are assigned to those variables
 so that we can use them inside the function.
 Inside the function,
-we use a <a href="../../gloss.html#return-statement">return statement</a> to send a result back to whoever asked for it.</p>
-<p>Let&#39;s try running our function.
-Calling our own function is no different from calling any other function:</p>
-</div>
+we use a [return statement](../../gloss.html#return-statement) to send a result back to whoever asked for it.
+
+Let's try running our function.
+Calling our own function is no different from calling any other function:
 
 
 <pre class="in"><code>print &#39;freezing point of water:&#39;, fahr_to_kelvin(32)
@@ -67,29 +62,27 @@ boiling point of water: 273.15
 </code></pre></div>
 
 
-<div>
-<p>We&#39;ve successfully called the function that we defined,
+We've successfully called the function that we defined,
 and we have access to the value that we returned.
-Unfortunately, the value returned doesn&#39;t look right.
-What went wrong?</p>
-</div>
+Unfortunately, the value returned doesn't look right.
+What went wrong?
 
 ### Debugging a Function
 
 
-<div>
-<p><em>Debugging</em> is when we fix a piece of code
+*Debugging* is when we fix a piece of code
 that we know is working incorrectly.
-In this case, we know that <code>fahr_to_kelvin</code>
+In this case, we know that `fahr_to_kelvin`
 is giving us the wrong answer,
-so let&#39;s find out why.</p>
-<p>For big pieces of code,
-there are tools called <em>debuggers</em> that aid in this process.</p>
-<p>We just have a short function,
-so we&#39;ll debug by choosing some parameter value,
+so let's find out why.
+
+For big pieces of code,
+there are tools called *debuggers* that aid in this process.
+
+We just have a short function,
+so we'll debug by choosing some parameter value,
 breaking our function into small parts,
-and printing out the value of each part.</p>
-</div>
+and printing out the value of each part.
 
 
 <pre class="in"><code># We&#39;ll use temp = 212, the boiling point of water, which was incorrect
@@ -105,10 +98,8 @@ print &#34;212 - 32:&#34;, 212 - 32</code></pre>
 </code></pre></div>
 
 
-<div>
-<p>Aha! The problem comes when we multiply by <code>5/9</code>.
-This is because <code>5/9</code> is actually 0.</p>
-</div>
+Aha! The problem comes when we multiply by `5/9`.
+This is because `5/9` is actually 0.
 
 
 <pre class="in"><code>5/9</code></pre>
@@ -116,17 +107,15 @@ This is because <code>5/9</code> is actually 0.</p>
 <div class="out"><pre class='out'><code>0</code></pre></div>
 
 
-<div class="">
-<p>Computers store numbers in one of two ways:
-as <a href="../../gloss.html#integer">integers</a>
-or as <a href="../../gloss.html#float">floating-point numbers</a> (or floats).
+Computers store numbers in one of two ways:
+as [integers](../../gloss.html#integer)
+or as [floating-point numbers](../../gloss.html#float-point-number) (or floats).
 The first are the numbers we usually count with;
 the second have fractional parts.
-Addition, subtraction and multiplication work on both as we&#39;d expect,
+Addition, subtraction and multiplication work on both as we'd expect,
 but division works differently.
 If we divide one integer by another,
-we get the quotient without the remainder:</p>
-</div>
+we get the quotient without the remainder:
 
 
 <pre class="in"><code>print &#39;10/3 is:&#39;, 10/3</code></pre>
@@ -135,11 +124,9 @@ we get the quotient without the remainder:</p>
 </code></pre></div>
 
 
-<div class="">
-<p>If either part of the division is a float,
+If either part of the division is a float,
 on the other hand,
-the computer creates a floating-point answer:</p>
-</div>
+the computer creates a floating-point answer:
 
 
 <pre class="in"><code>print &#39;10.0/3 is:&#39;, 10.0/3</code></pre>
@@ -148,23 +135,19 @@ the computer creates a floating-point answer:</p>
 </code></pre></div>
 
 
-<div class="">
-<p>The computer does this for historical reasons:
+The computer does this for historical reasons:
 integer operations were much faster on early machines,
 and this behavior is actually useful in a lot of situations.
-It&#39;s still confusing,
+It's still confusing,
 though,
 so Python 3 produces a floating-point answer when dividing integers if it needs to.
-We&#39;re still using Python 2.7 in this class,
+We're still using Python 2.7 in this class,
 though,
-so if we want <code>5/9</code> to give us the right answer,
-we have to write it as <code>5.0/9</code>, <code>5/9.0</code>, or some other variation.</p>
-</div>
+so if we want `5/9` to give us the right answer,
+we have to write it as `5.0/9`, `5/9.0`, or some other variation.
 
 
-<div>
-<p>Let&#39;s fix our <code>fahr_to_kelvin</code> function with this new knowledge.</p>
-</div>
+Let's fix our `fahr_to_kelvin` function with this new knowledge.
 
 
 <pre class="in"><code>def fahr_to_kelvin(temp):
@@ -178,17 +161,13 @@ boiling point of water: 373.15
 </code></pre></div>
 
 
-<div class="">
-<p>It works!</p>
-</div>
+It works!
 
 ### Composing Functions
 
 
-<div>
-<p>Now that we&#39;ve seen how to turn Fahrenheit into Kelvin,
-it&#39;s easy to turn Kelvin into Celsius:</p>
-</div>
+Now that we've seen how to turn Fahrenheit into Kelvin,
+it's easy to turn Kelvin into Celsius:
 
 
 <pre class="in"><code>def kelvin_to_celsius(temp):
@@ -200,13 +179,11 @@ print &#39;absolute zero in Celsius:&#39;, kelvin_to_celsius(0.0)</code></pre>
 </code></pre></div>
 
 
-<div class="">
-<p>What about converting Fahrenheit to Celsius?
+What about converting Fahrenheit to Celsius?
 We could write out the formula,
-but we don&#39;t need to.
+but we don't need to.
 Instead,
-we can <a href="../../gloss.html#function-composition">compose</a> the two functions we have already created:</p>
-</div>
+we can [compose](../../gloss.html#function-composition) the two functions we have already created:
 
 
 <pre class="in"><code>def fahr_to_celsius(temp):
@@ -220,153 +197,122 @@ print &#39;freezing point of water in Celsius:&#39;, fahr_to_celsius(32.0)</code
 </code></pre></div>
 
 
-<div class="">
-<p>This is our first taste of how larger programs are built:
+This is our first taste of how larger programs are built:
 we define basic operations,
 then combine them in ever-large chunks to get the effect we want.
 Real-life functions will usually be larger than the ones shown here&mdash;typically half a dozen to a few dozen lines&mdash;but
-they shouldn&#39;t ever be much longer than that,
-or the next person who reads it won&#39;t be able to understand what&#39;s going on.</p>
-</div>
+they shouldn't ever be much longer than that,
+or the next person who reads it won't be able to understand what's going on.
 
 
-<div class="challenges">
-<h4 id="challenges">Challenges</h4>
-<ol>
-<li><p>&quot;Adding&quot; two strings produces their concatention:
-<code>&#39;a&#39; + &#39;b&#39;</code> is <code>&#39;ab&#39;</code>.
-Write a function called <code>fence</code> that takes two parameters called <code>original</code> and <code>wrapper</code>
-and returns a new string that has the wrapper character at the beginning and end of the original:</p>
-<pre><code class="language-python"><span class="keyword">print</span> fence(<span class="string">'name'</span>, <span class="string">'*'</span>)
-*name*
-</code></pre>
-</li>
-<li><p>If the variable <code>s</code> refers to a string,
-then <code>s[0]</code> is the string&#39;s first character
-and <code>s[-1]</code> is its last.
-Write a function called <code>outer</code>
-that returns a string made up of just the first and last characters of its input:</p>
-<pre><code class="language-python"><span class="keyword">print</span> outer(<span class="string">'helium'</span>)
-hm
-</code></pre>
-</li>
-</ol>
+<div class="challenges" markdown="1">
+#### Challenges
+
+1.  "Adding" two strings produces their concatention:
+    `'a' + 'b'` is `'ab'`.
+    Write a function called `fence` that takes two parameters called `original` and `wrapper`
+    and returns a new string that has the wrapper character at the beginning and end of the original:
+
+    ~~~python
+    print fence('name', '*')
+    *name*
+    ~~~
+
+1.  If the variable `s` refers to a string,
+    then `s[0]` is the string's first character
+    and `s[-1]` is its last.
+    Write a function called `outer`
+    that returns a string made up of just the first and last characters of its input:
+
+    ~~~python
+    print outer('helium')
+    hm
+    ~~~
 </div>
 
 ### The Call Stack
 
 
-<div class="">
-<p>Let&#39;s take a closer look at what happens when we call <code>fahr_to_celsius(32.0)</code>.
+Let's take a closer look at what happens when we call `fahr_to_celsius(32.0)`.
 To make things clearer,
-we&#39;ll start by putting the initial value 32.0 in a variable
-and store the final result in one as well:</p>
-</div>
+we'll start by putting the initial value 32.0 in a variable
+and store the final result in one as well:
 
 
 <pre class="in"><code>original = 32.0
 final = fahr_to_celsius(original)</code></pre>
 
 
-<div class="">
-<p>The diagram below shows what memory looks like after the first line has been executed:</p>
-</div>
+The diagram below shows what memory looks like after the first line has been executed:
 
 
-<div class="">
-<p><img src="img/python-call-stack-01.svg" alt="Call Stack (Initial State)" /></p>
-</div>
+<img src="img/python-call-stack-01.svg" alt="Call Stack (Initial State)" />
 
 
-<div class="">
-<p>When we call <code>fahr_to_celsius</code>,
-Python <em>doesn&#39;t</em> create the variable <code>temp</code> right away.
+When we call `fahr_to_celsius`,
+Python *doesn't* create the variable `temp` right away.
 Instead,
-it creates something called a <a href="../../gloss.html#stack-frame">stack frame</a>
-to keep track of the variables defined by <code>fahr_to_kelvin</code>.
+it creates something called a [stack frame](../../gloss.html#stack-frame)
+to keep track of the variables defined by `fahr_to_kelvin`.
 Initially,
-this stack frame only holds the value of <code>temp</code>:</p>
-</div>
+this stack frame only holds the value of `temp`:
 
 
-<div class="">
-<p><img src="img/python-call-stack-02.svg" alt="Call Stack Immediately After First Function Call" /></p>
-</div>
+<img src="img/python-call-stack-02.svg" alt="Call Stack Immediately After First Function Call" />
 
 
-<div class="">
-<p>When we call <code>fahr_to_kelvin</code> inside <code>fahr_to_celsius</code>,
-Python creates another stack frame to hold <code>fahr_to_kelvin</code>&#39;s variables:</p>
-</div>
+When we call `fahr_to_kelvin` inside `fahr_to_celsius`,
+Python creates another stack frame to hold `fahr_to_kelvin`'s variables:
 
 
-<div class="">
-<p><img src="img/python-call-stack-03.svg" alt="Call Stack During First Nested Function Call" /></p>
-</div>
+<img src="img/python-call-stack-03.svg" alt="Call Stack During First Nested Function Call" />
 
 
-<div class="">
-<p>It does this because there are now two variables in play called <code>temp</code>:
-the parameter to <code>fahr_to_celsius</code>,
-and the parameter to <code>fahr_to_kelvin</code>.
+It does this because there are now two variables in play called `temp`:
+the parameter to `fahr_to_celsius`,
+and the parameter to `fahr_to_kelvin`.
 Having two variables with the same name in the same part of the program would be ambiguous,
 so Python (and every other modern programming language) creates a new stack frame for each function call
-to keep that function&#39;s variables separate from those defined by other functions.</p>
-<p>When the call to <code>fahr_to_kelvin</code> returns a value,
-Python throws away <code>fahr_to_kelvin</code>&#39;s stack frame
-and creates a new variable in the stack frame for <code>fahr_to_celsius</code> to hold the temperature in Kelvin:</p>
-</div>
+to keep that function's variables separate from those defined by other functions.
+
+When the call to `fahr_to_kelvin` returns a value,
+Python throws away `fahr_to_kelvin`'s stack frame
+and creates a new variable in the stack frame for `fahr_to_celsius` to hold the temperature in Kelvin:
 
 
-<div class="">
-<p><img src="img/python-call-stack-04.svg" alt="Call Stack After Return From First Nested Function Call" /></p>
-</div>
+<img src="img/python-call-stack-04.svg" alt="Call Stack After Return From First Nested Function Call" />
 
 
-<div class="">
-<p>It then calls <code>kelvin_to_celsius</code>,
-which means it creates a stack frame to hold that function&#39;s variables:</p>
-</div>
+It then calls `kelvin_to_celsius`,
+which means it creates a stack frame to hold that function's variables:
 
 
-<div class="">
-<p><img src="img/python-call-stack-05.svg" alt="Call Stack During Call to Second Nested Function" /></p>
-</div>
+<img src="img/python-call-stack-05.svg" alt="Call Stack During Call to Second Nested Function" />
 
 
-<div class="">
-<p>Once again,
-Python throws away that stack frame when <code>kelvin_to_celsius</code> is done
-and creates the variable <code>result</code> in the stack frame for <code>fahr_to_celsius</code>:</p>
-</div>
+Once again,
+Python throws away that stack frame when `kelvin_to_celsius` is done
+and creates the variable `result` in the stack frame for `fahr_to_celsius`:
 
 
-<div class="">
-<p><img src="img/python-call-stack-06.svg" alt="Call Stack After Second Nested Function Returns" /></p>
-</div>
+<img src="img/python-call-stack-06.svg" alt="Call Stack After Second Nested Function Returns" />
 
 
-<div class="">
-<p>Finally,
-when <code>fahr_to_celsius</code> is done,
-Python throws away <em>its</em> stack frame
-and puts its result in a new variable called <code>final</code>
-that lives in the stack frame we started with:</p>
-</div>
+Finally,
+when `fahr_to_celsius` is done,
+Python throws away *its* stack frame
+and puts its result in a new variable called `final`
+that lives in the stack frame we started with:
 
 
-<div class="">
-<p><img src="img/python-call-stack-07.svg" alt="Call Stack After All Functions Have Finished" /></p>
-</div>
+<img src="img/python-call-stack-07.svg" alt="Call Stack After All Functions Have Finished" />
 
 
-<div class="">
-<p>This final stack frame is always there;
+This final stack frame is always there;
 it holds the variables we defined outside the functions in our code.
-What it <em>doesn&#39;t</em> hold is the variables that were in the various stack frames.
-If we try to get the value of <code>temp</code> after our functions have finished running,
-Python tells us that there&#39;s no such thing:</p>
-</div>
+What it *doesn't* hold is the variables that were in the various stack frames.
+If we try to get the value of `temp` after our functions have finished running,
+Python tells us that there's no such thing:
 
 
 <pre class="in"><code>print &#39;final value of temp after all function calls:&#39;, temp</code></pre>
@@ -379,12 +325,10 @@ NameError                                 Traceback (most recent call last)
 NameError: name &#39;temp&#39; is not defined</code></pre><pre class='out'><code>final value of temp after all function calls:</code></pre></div>
 
 
-<div class="">
-<p>Why go to all this trouble?
+Why go to all this trouble?
 Well,
-here&#39;s a function called <code>span</code> that calculates the difference between
-the mininum and maximum values in an array:</p>
-</div>
+here's a function called `span` that calculates the difference between
+the mininum and maximum values in an array:
 
 
 <pre class="in"><code>import numpy
@@ -400,10 +344,8 @@ print &#39;span of data&#39;, span(data)</code></pre>
 </code></pre></div>
 
 
-<div class="">
-<p>Notice that <code>span</code> assigns a value to a variable called <code>diff</code>.
-We might very well use a variable with the same name to hold data:</p>
-</div>
+Notice that `span` assigns a value to a variable called `diff`.
+We might very well use a variable with the same name to hold data:
 
 
 <pre class="in"><code>diff = numpy.loadtxt(fname=&#39;inflammation-01.csv&#39;, delimiter=&#39;,&#39;)
@@ -413,65 +355,57 @@ print &#39;span of data:&#39;, span(diff)</code></pre>
 </code></pre></div>
 
 
-<div class="">
-<p>We don&#39;t expect <code>diff</code> to have the value 20.0 after this function call,
-so the name <code>diff</code> cannot refer to the same thing inside <code>span</code> as it does in the main body of our program.
+We don't expect `diff` to have the value 20.0 after this function call,
+so the name `diff` cannot refer to the same thing inside `span` as it does in the main body of our program.
 And yes,
-we could probably choose a different name than <code>diff</code> in our main program in this case,
-but we don&#39;t want to have to read every line of NumPy to see what variable names its functions use
+we could probably choose a different name than `diff` in our main program in this case,
+but we don't want to have to read every line of NumPy to see what variable names its functions use
 before calling any of those functions,
-just in case they change the values of our variables.</p>
-</div>
+just in case they change the values of our variables.
 
 
-<div class="">
-<p>The big idea here is <a href="../../gloss.html#encapsulation">encapsulation</a>,
-and it&#39;s the key to writing correct, comprehensible programs.
-A function&#39;s job is to turn several operations into one
+The big idea here is [encapsulation](../../gloss.html#encapsulation),
+and it's the key to writing correct, comprehensible programs.
+A function's job is to turn several operations into one
 so that we can think about a single function call
 instead of a dozen or a hundred statements
 each time we want to do something.
-That only works if functions don&#39;t interfere with each other;
+That only works if functions don't interfere with each other;
 if they do,
 we have to pay attention to the details once again,
-which quickly overloads our short-term memory.</p>
-</div>
+which quickly overloads our short-term memory.
 
 
-<div class="challenges">
-<h4 id="challenges">Challenges</h4>
-<ol>
-<li><p>We previously wrote functions called <code>fence</code> and <code>outer</code>.
-Draw a diagram showing how the call stack changes when we run the following:</p>
-<pre><code class="language-python"><span class="keyword">print</span> outer(fence(<span class="string">'carbon'</span>, <span class="string">'+'</span>))
-</code></pre>
-</li>
-</ol>
+<div class="challenges" markdown="1">
+#### Challenges
+
+1.  We previously wrote functions called `fence` and `outer`.
+    Draw a diagram showing how the call stack changes when we run the following:
+    
+    ~~~python
+    print outer(fence('carbon', '+'))
+    ~~~
 </div>
 
 ### Testing and Documenting
 
 
-<div class="">
-<p>Once we start putting things in functions so that we can re-use them,
+Once we start putting things in functions so that we can re-use them,
 we need to start testing that those functions are working correctly.
 To see how to do this,
-let&#39;s write a function to center a dataset around a particular value:</p>
-</div>
+let's write a function to center a dataset around a particular value:
 
 
 <pre class="in"><code>def center(data, desired):
     return (data - data.mean()) + desired</code></pre>
 
 
-<div class="">
-<p>We could test this on our actual data,
-but since we don&#39;t know what the values ought to be,
+We could test this on our actual data,
+but since we don't know what the values ought to be,
 it will be hard to tell if the result was correct.
 Instead,
-let&#39;s use NumPy to create a matrix of 0&#39;s
-and then center that around 3:</p>
-</div>
+let's use NumPy to create a matrix of 0's
+and then center that around 3:
 
 
 <pre class="in"><code>z = numpy.zeros((2,2))
@@ -482,10 +416,8 @@ print center(z, 3)</code></pre>
 </code></pre></div>
 
 
-<div class="">
-<p>That looks right,
-so let&#39;s try <code>center</code> on our real data:</p>
-</div>
+That looks right,
+so let's try `center` on our real data:
 
 
 <pre class="in"><code>data = numpy.loadtxt(fname=&#39;inflammation-01.csv&#39;, delimiter=&#39;,&#39;)
@@ -501,10 +433,8 @@ print center(data, 0)</code></pre>
 </code></pre></div>
 
 
-<div class="">
-<p>It&#39;s hard to tell from the default output whether the result is correct,
-but there are a few simple tests that will reassure us:</p>
-</div>
+It's hard to tell from the default output whether the result is correct,
+but there are a few simple tests that will reassure us:
 
 
 <pre class="in"><code>print &#39;original min, mean, and max are:&#39;, data.min(), data.mean(), data.max()
@@ -516,13 +446,11 @@ min, mean, and and max of centered data are: -6.14875 -3.49054118942e-15 13.8512
 </code></pre></div>
 
 
-<div class="">
-<p>That seems almost right:
+That seems almost right:
 the original mean was about 6.1,
 so the lower bound from zero is how about -6.1.
-The mean of the centered data isn&#39;t quite zero&mdash;we&#39;ll explore why not in the challenges&mdash;but it&#39;s pretty close.
-We can even go further and check that the standard deviation hasn&#39;t changed:</p>
-</div>
+The mean of the centered data isn't quite zero&mdash;we'll explore why not in the challenges&mdash;but it's pretty close.
+We can even go further and check that the standard deviation hasn't changed:
 
 
 <pre class="in"><code>print &#39;std dev before and after:&#39;, data.std(), centered.std()</code></pre>
@@ -531,11 +459,9 @@ We can even go further and check that the standard deviation hasn&#39;t changed:
 </code></pre></div>
 
 
-<div class="">
-<p>Those values look the same,
-but we probably wouldn&#39;t notice if they were different in the sixth decimal place.
-Let&#39;s do this instead:</p>
-</div>
+Those values look the same,
+but we probably wouldn't notice if they were different in the sixth decimal place.
+Let's do this instead:
 
 
 <pre class="in"><code>print &#39;difference in standard deviations before and after:&#39;, data.std() - centered.std()</code></pre>
@@ -544,16 +470,15 @@ Let&#39;s do this instead:</p>
 </code></pre></div>
 
 
-<div class="">
-<p>Again,
+Again,
 the difference is very small.
-It&#39;s still possible that our function is wrong,
+It's still possible that our function is wrong,
 but it seems unlikely enough that we should probably get back to doing our analysis.
 We have one more task first, though:
-we should write some <a href="../../gloss.html#documentation">documentation</a> for our function
-to remind ourselves later what it&#39;s for and how to use it.</p>
-<p>The usual way to put documentation in software is to add <a href="../../gloss.html#comment">comments</a> like this:</p>
-</div>
+we should write some [documentation](../../gloss.html#documentation) for our function
+to remind ourselves later what it's for and how to use it.
+
+The usual way to put documentation in software is to add [comments](../../gloss.html#comment) like this:
 
 
 <pre class="in"><code># center(data, desired): return a new array containing the original data centered around the desired value.
@@ -561,11 +486,9 @@ def center(data, desired):
     return (data - data.mean()) + desired</code></pre>
 
 
-<div class="">
-<p>There&#39;s a better way, though.
-If the first thing in a function is a string that isn&#39;t assigned to a variable,
-that string is attached to the function as its documentation:</p>
-</div>
+There's a better way, though.
+If the first thing in a function is a string that isn't assigned to a variable,
+that string is attached to the function as its documentation:
 
 
 <pre class="in"><code>def center(data, desired):
@@ -573,9 +496,7 @@ that string is attached to the function as its documentation:</p>
     return (data - data.mean()) + desired</code></pre>
 
 
-<div class="">
-<p>This is better because we can now ask Python&#39;s built-in help system to show us the documentation for the function:</p>
-</div>
+This is better because we can now ask Python's built-in help system to show us the documentation for the function:
 
 
 <pre class="in"><code>help(center)</code></pre>
@@ -588,12 +509,10 @@ center(data, desired)
 </code></pre></div>
 
 
-<div class="">
-<p>A string like this is called a <a href="../../gloss.html#docstring">docstring</a>.
-We don&#39;t need to use triple quotes when we write one,
+A string like this is called a [docstring](../../gloss.html#docstring).
+We don't need to use triple quotes when we write one,
 but if we do,
-we can break the string across multiple lines:</p>
-</div>
+we can break the string across multiple lines:
 
 
 <pre class="in"><code>def center(data, desired):
@@ -612,39 +531,35 @@ center(data, desired)
 </code></pre></div>
 
 
-<div class="challenges">
-<h4 id="challenges">Challenges</h4>
-<ol>
-<li><p>Write a function called <code>analyze</code> that takes a filename as a parameter
-and displays the three graphs produced in the <a href="01-numpy.ipynb">previous lesson</a>,
-i.e.,
-<code>analyze(&#39;inflammation-01.csv&#39;)</code> should produce the graphs already shown,
-while <code>analyze(&#39;inflammation-02.csv&#39;)</code> should produce corresponding graphs for the second data set.
-Be sure to give your function a docstring.</p>
-</li>
-<li><p>Write a function <code>rescale</code> that takes an array as input
-and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
-(If $L$ and $H$ are the lowest and highest values in the original array,
-then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
-Be sure to give the function a docstring.</p>
-</li>
-<li><p>Run the commands <code>help(numpy.arange)</code> and <code>help(numpy.linspace)</code>
-to see how to use these functions to generate regularly-spaced values,
-then use those values to test your <code>rescale</code> function.</p>
-</li>
-</ol>
+<div class="challenges" markdown="1">
+#### Challenges
+
+1.  Write a function called `analyze` that takes a filename as a parameter
+    and displays the three graphs produced in the [previous lesson](01-numpy.ipynb),
+    i.e.,
+    `analyze('inflammation-01.csv')` should produce the graphs already shown,
+    while `analyze('inflammation-02.csv')` should produce corresponding graphs for the second data set.
+    Be sure to give your function a docstring.
+
+2.  Write a function `rescale` that takes an array as input
+    and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
+    (If $L$ and $H$ are the lowest and highest values in the original array,
+    then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
+    Be sure to give the function a docstring.
+
+3.  Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
+    to see how to use these functions to generate regularly-spaced values,
+    then use those values to test your `rescale` function.
 </div>
 
 ### Defining Defaults
 
 
-<div class="">
-<p>We have passed parameters to functions in two ways:
-directly, as in <code>span(data)</code>,
-and by name, as in <code>numpy.loadtxt(fname=&#39;something.csv&#39;, delimiter=&#39;,&#39;)</code>.
+We have passed parameters to functions in two ways:
+directly, as in `span(data)`,
+and by name, as in `numpy.loadtxt(fname='something.csv', delimiter=',')`.
 In fact,
-we can pass the filename to <code>loadtxt</code> without the <code>fname=</code>:</p>
-</div>
+we can pass the filename to `loadtxt` without the `fname=`:
 
 
 <pre class="in"><code>numpy.loadtxt(&#39;inflammation-01.csv&#39;, delimiter=&#39;,&#39;)</code></pre>
@@ -658,9 +573,7 @@ we can pass the filename to <code>loadtxt</code> without the <code>fname=</code>
        [ 0.,  0.,  1., ...,  1.,  1.,  0.]])</code></pre></div>
 
 
-<div class="">
-<p>but we still need to say <code>delimiter=</code>:</p>
-</div>
+but we still need to say `delimiter=`:
 
 
 <pre class="in"><code>numpy.loadtxt(&#39;inflammation-01.csv&#39;, &#39;,&#39;)</code></pre>
@@ -680,11 +593,9 @@ TypeError                                 Traceback (most recent call last)
 TypeError: data type &#34;,&#34; not understood</code></pre></div>
 
 
-<div class="">
-<p>To understand what&#39;s going on,
+To understand what's going on,
 and make our own functions easier to use,
-let&#39;s re-define our <code>center</code> function like this:</p>
-</div>
+let's re-define our `center` function like this:
 
 
 <pre class="in"><code>def center(data, desired=0.0):
@@ -693,11 +604,9 @@ let&#39;s re-define our <code>center</code> function like this:</p>
     return (data - data.mean()) + desired</code></pre>
 
 
-<div class="">
-<p>The key change is that the second parameter is now written <code>desired=0.0</code> instead of just <code>desired</code>.
+The key change is that the second parameter is now written `desired=0.0` instead of just `desired`.
 If we call the function with two arguments,
-it works as it did before:</p>
-</div>
+it works as it did before:
 
 
 <pre class="in"><code>test_data = numpy.zeros((2, 2))
@@ -708,10 +617,8 @@ print center(test_data, 3)</code></pre>
 </code></pre></div>
 
 
-<div class="">
-<p>But we can also now call it with just one parameter,
-in which case <code>desired</code> is automatically assigned the <a href="../../gloss.html#default-parameter-value">default value</a> of 0.0:</p>
-</div>
+But we can also now call it with just one parameter,
+in which case `desired` is automatically assigned the [default value](../../gloss.html#default-parameter-value) of 0.0:
 
 
 <pre class="in"><code>more_data = 5 + numpy.zeros((2, 2))
@@ -725,14 +632,12 @@ centered data: [[ 0.  0.]
 </code></pre></div>
 
 
-<div class="">
-<p>This is handy:
+This is handy:
 if we usually want a function to work one way,
 but occasionally need it to do something else,
 we can allow people to pass a parameter when they need to
 but provide a default to make the normal case easier.
-The example below shows how Python matches values to parameters:</p>
-</div>
+The example below shows how Python matches values to parameters:
 
 
 <pre class="in"><code>def display(a=1, b=2, c=3):
@@ -754,12 +659,10 @@ a: 55 b: 66 c: 3
 </code></pre></div>
 
 
-<div class="">
-<p>As this example shows,
+As this example shows,
 parameters are matched up from left to right,
-and any that haven&#39;t been given a value explicitly get their default value.
-We can override this behavior by naming the value as we pass it in:</p>
-</div>
+and any that haven't been given a value explicitly get their default value.
+We can override this behavior by naming the value as we pass it in:
 
 
 <pre class="in"><code>print &#39;only setting the value of c&#39;
@@ -770,10 +673,8 @@ a: 1 b: 2 c: 77
 </code></pre></div>
 
 
-<div class="">
-<p>With that in hand,
-let&#39;s look at the help for <code>numpy.loadtxt</code>:</p>
-</div>
+With that in hand,
+let's look at the help for `numpy.loadtxt`:
 
 
 <pre class="in"><code>help(numpy.loadtxt)</code></pre>
@@ -866,65 +767,69 @@ loadtxt(fname, dtype=&lt;type &#39;float&#39;&gt;, comments=&#39;#&#39;, delimit
 </code></pre></div>
 
 
-<div class="">
-<p>There&#39;s a lot of information here,
-but the most important part is the first couple of lines:</p>
-<pre><code class="language-python">loadtxt(fname, dtype=&lt;type <span class="string">'float'</span>&gt;, comments=<span class="string">'#'</span>, delimiter=<span class="built_in">None</span>, converters=<span class="built_in">None</span>, skiprows=<span class="number">0</span>, usecols=<span class="built_in">None</span>,
-        unpack=<span class="built_in">False</span>, ndmin=<span class="number">0</span>)
-</code></pre>
-<p>This tells us that <code>loadtxt</code> has one parameter called <code>fname</code> that doesn&#39;t have a default value,
+There's a lot of information here,
+but the most important part is the first couple of lines:
+
+~~~python
+loadtxt(fname, dtype=<type 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None,
+        unpack=False, ndmin=0)
+~~~
+
+This tells us that `loadtxt` has one parameter called `fname` that doesn't have a default value,
 and eight others that do.
-If we call the function like this:</p>
-<pre><code class="language-python">numpy.loadtxt(<span class="string">'inflammation-01.csv'</span>, <span class="string">','</span>)
-</code></pre>
-<p>then the filename is assigned to <code>fname</code> (which is what we want),
-but the delimiter string <code>&#39;,&#39;</code> is assigned to <code>dtype</code> rather than <code>delimiter</code>,
-because <code>dtype</code> is the second parameter in the list.
-That&#39;s why we don&#39;t have to provide <code>fname=</code> for the filename,
-but <em>do</em> have to provide <code>delimiter=</code> for the second parameter.</p>
+If we call the function like this:
+
+~~~python
+numpy.loadtxt('inflammation-01.csv', ',')
+~~~
+
+then the filename is assigned to `fname` (which is what we want),
+but the delimiter string `','` is assigned to `dtype` rather than `delimiter`,
+because `dtype` is the second parameter in the list.
+That's why we don't have to provide `fname=` for the filename,
+but *do* have to provide `delimiter=` for the second parameter.
+
+
+<div class="challenges" markdown="1">
+#### Challenges
+
+1.  Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
+    but will allow the caller to specify lower and upper bounds if they want.
+    Compare your implementation to your neighbor's:
+    do the two functions always behave the same way?
 </div>
 
 
-<div class="challenges">
-<h4 id="challenges">Challenges</h4>
-<ol>
-<li>Rewrite the <code>rescale</code> function so that it scales data to lie between 0.0 and 1.0 by default,
-but will allow the caller to specify lower and upper bounds if they want.
-Compare your implementation to your neighbor&#39;s:
-do the two functions always behave the same way?</li>
-</ol>
+<div class="keypoints" markdown="1">
+#### Key Points
+
+*   Define a function using `def name(...params...)`.
+*   The body of a function must be indented.
+*   Call a function using `name(...values...)`.
+*   Numbers are stored as integers or floating-point numbers.
+*   Integer division produces the whole part of the answer (not the fractional part).
+*   Each time a function is called, a new stack frame is created on the [call stack](../../gloss.html#call-stack) to hold its parameters and local variables.
+*   Python looks for variables in the current stack frame before looking for them at the top level.
+*   Use `help(thing)` to view help for something.
+*   Put docstrings in functions to provide help for that function.
+*   Specify default values for parameters when defining a function using `name=value` in the parameter list.
+*   Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).
 </div>
 
 
-<div class="keypoints">
-<h4 id="key-points">Key Points</h4>
-<ul>
-<li>Define a function using <code>def name(...params...)</code>.</li>
-<li>The body of a function must be indented.</li>
-<li>Call a function using <code>name(...values...)</code>.</li>
-<li>Numbers are stored as integers or floating-point numbers.</li>
-<li>Integer division produces the whole part of the answer (not the fractional part).</li>
-<li>Each time a function is called, a new stack frame is created on the <a href="../../gloss.html#call-stack">call stack</a> to hold its parameters and local variables.</li>
-<li>Python looks for variables in the current stack frame before looking for them at the top level.</li>
-<li>Use <code>help(thing)</code> to view help for something.</li>
-<li>Put docstrings in functions to provide help for that function.</li>
-<li>Specify default values for parameters when defining a function using <code>name=value</code> in the parameter list.</li>
-<li>Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).</li>
-</ul>
-</div>
+#### Next Steps
 
+We now have a function called `analyze` to visualize a single data set.
+We could use it to explore all 12 of our current data sets like this:
 
-<div class="">
-<h4 id="next-steps">Next Steps</h4>
-<p>We now have a function called <code>analyze</code> to visualize a single data set.
-We could use it to explore all 12 of our current data sets like this:</p>
-<pre><code class="language-python">analyze(<span class="string">'inflammation-01.csv'</span>)
-analyze(<span class="string">'inflammation-02.csv'</span>)
+~~~python
+analyze('inflammation-01.csv')
+analyze('inflammation-02.csv')
 ...
-analyze(<span class="string">'inflammation-12.csv'</span>)
-</code></pre>
-<p>but the chances of us typing all 12 filenames correctly aren&#39;t great,
-and we&#39;ll be even worse off if we get another hundred files.
+analyze('inflammation-12.csv')
+~~~
+
+but the chances of us typing all 12 filenames correctly aren't great,
+and we'll be even worse off if we get another hundred files.
 What we need is a way to tell Python to do something once for each file,
-and that will be the subject of the next lesson.</p>
-</div>
+and that will be the subject of the next lesson.

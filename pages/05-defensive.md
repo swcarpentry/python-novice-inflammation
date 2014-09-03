@@ -6,66 +6,60 @@ root: ../..
 ## Defensive Programming
 
 
-<div class="">
-<p>Our previous lessons have introduced the basic tools of programming:
+Our previous lessons have introduced the basic tools of programming:
 variables and lists,
 file I/O,
 loops,
 conditionals,
 and functions.
-What they <em>haven&#39;t</em> done is show us how to tell
+What they *haven't* done is show us how to tell
 whether a program is getting the right answer,
-and how to tell if it&#39;s <em>still</em> getting the right answer
-as we make changes to it.</p>
-<p>To achieve that,
-we need to:</p>
-<ul>
-<li>write programs that check their own operation,</li>
-<li>write and run tests for widely-used functions, and</li>
-<li>make sure we know what &quot;correct&quot; actually means.</li>
-</ul>
-<p>The good news is,
+and how to tell if it's *still* getting the right answer
+as we make changes to it.
+
+To achieve that,
+we need to:
+
+*   write programs that check their own operation,
+*   write and run tests for widely-used functions, and
+*   make sure we know what "correct" actually means.
+
+The good news is,
 doing these things will speed up our programming,
 not slow it down.
 As in real carpentry&mdash;the kind done with lumber&mdash;the time saved
 by measuring carefully before cutting a piece of wood
-is much greater than the time that measuring takes.</p>
-</div>
+is much greater than the time that measuring takes.
 
 
-<div class="">
-<h4 id="objectives">Objectives</h4>
-<ul>
-<li>Explain what an assertion is.</li>
-<li>Add assertions to programs that correctly check the program&#39;s state.</li>
-<li>Correctly add precondition and postcondition assertions to functions.</li>
-<li>Explain what test-driven development is, and use it when creating new functions.</li>
-<li>Explain why variables should be initialized using actual data values rather than arbitrary constants.</li>
-<li>Debug code containing an error systematically.</li>
-</ul>
-</div>
+#### Objectives
+
+*   Explain what an assertion is.
+*   Add assertions to programs that correctly check the program's state.
+*   Correctly add precondition and postcondition assertions to functions.
+*   Explain what test-driven development is, and use it when creating new functions.
+*   Explain why variables should be initialized using actual data values rather than arbitrary constants.
+*   Debug code containing an error systematically.
 
 ### Assertions
 
 
-<div class="">
-<p>The first step toward getting the right answers from our programs
-is to assume that mistakes <em>will</em> happen
+The first step toward getting the right answers from our programs
+is to assume that mistakes *will* happen
 and to guard against them.
-This is called <a href="../../gloss.html#defensive-programming">defensive programming</a>,
-and the most common way to do it is to add <a href="../../gloss.html#assertion">assertions</a> to our code
+This is called [defensive programming](../../gloss.html#defensive-programming),
+and the most common way to do it is to add [assertions](../../gloss.html#assertion) to our code
 so that it checks itself as it runs.
 An assertion is simply a statement that something must be true at a certain point in a program.
 When Python sees one,
-it checks that the assertion&#39;s condition.
-If it&#39;s true,
+it checks that the assertion's condition.
+If it's true,
 Python does nothing,
-but if it&#39;s false,
+but if it's false,
 Python halts the program immediately
 and prints the error message provided.
 For example,
-this piece of code halts as soon as the loop encounters a value that isn&#39;t positive:</p>
-</div>
+this piece of code halts as soon as the loop encounters a value that isn't positive:
 
 
 <pre class="in"><code>numbers = [1.5, 2.3, 0.7, -0.001, 4.4]
@@ -87,28 +81,26 @@ AssertionError                            Traceback (most recent call last)
 AssertionError: Data should only contain positive values</code></pre></div>
 
 
-<div class="">
-<p>Programs like the Firefox browser are full of assertions:
+Programs like the Firefox browser are full of assertions:
 10-20% of the code they contain
 are there to check that the other 80-90% are working correctly.
 Broadly speaking,
-assertions fall into three categories:</p>
-<ul>
-<li>A <a href="../../gloss.html#precondition">precondition</a> is something that must be true
-at the start of a function in order for it to work correctly.</li>
-<li>A <a href="../../gloss.html#postcondition">postcondition</a> is something that
-the function guarantees is true when it finishes.</li>
-<li>An <a href="../../gloss.html#invariant">invariant</a> is something that is always true
-at a particular point inside a piece of code.</li>
-</ul>
-<p>For example,
-suppose we are representing rectangles using a tuple of four coordinates <code>(x0, y0, x1, y1)</code>.
+assertions fall into three categories:
+
+-   A [precondition](../../gloss.html#precondition) is something that must be true
+ at the start of a function in order for it to work correctly.
+-   A [postcondition](../../gloss.html#postcondition) is something that
+ the function guarantees is true when it finishes.
+-   An [invariant](../../gloss.html#invariant) is something that is always true
+ at a particular point inside a piece of code.
+
+For example,
+suppose we are representing rectangles using a tuple of four coordinates `(x0, y0, x1, y1)`.
 In order to do some calculations,
 we need to normalize the rectangle so that it is at the origin
 and 1.0 units long on its longest axis.
 This function does that,
-but checks that its input is correctly formatted and that its result makes sense:</p>
-</div>
+but checks that its input is correctly formatted and that its result makes sense:
 
 
 <pre class="in"><code>def normalize_rectangle(rect):
@@ -133,9 +125,7 @@ but checks that its input is correctly formatted and that its result makes sense
     return (0, 0, upper_x, upper_y)</code></pre>
 
 
-<div class="">
-<p>The preconditions on lines 2, 4, and 5 catch invalid inputs:</p>
-</div>
+The preconditions on lines 2, 4, and 5 catch invalid inputs:
 
 
 <pre class="in"><code>print normalize_rectangle( (0.0, 1.0, 2.0) ) # missing the fourth coordinate</code></pre>
@@ -172,11 +162,9 @@ AssertionError                            Traceback (most recent call last)
 AssertionError: Invalid X coordinates</code></pre></div>
 
 
-<div class="">
-<p>The post-conditions help us catch bugs by telling us when our calculations cannot have been correct.
+The post-conditions help us catch bugs by telling us when our calculations cannot have been correct.
 For example,
-if we normalize a rectangle that is taller than it is wide everything seems OK:</p>
-</div>
+if we normalize a rectangle that is taller than it is wide everything seems OK:
 
 
 <pre class="in"><code>print normalize_rectangle( (0.0, 0.0, 1.0, 5.0) )</code></pre>
@@ -185,10 +173,8 @@ if we normalize a rectangle that is taller than it is wide everything seems OK:<
 </code></pre></div>
 
 
-<div class="">
-<p>but if we normalize one that&#39;s wider than it is tall,
-the assertion is triggered:</p>
-</div>
+but if we normalize one that's wider than it is tall,
+the assertion is triggered:
 
 
 <pre class="in"><code>print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )</code></pre>
@@ -208,110 +194,104 @@ AssertionError                            Traceback (most recent call last)
 AssertionError: Calculated upper Y coordinate invalid</code></pre></div>
 
 
-<div class="">
-<p>Re-reading our function,
-we realize that line 10 should divide <code>dy</code> by <code>dx</code> rather than <code>dx</code> by <code>dy</code>.
+Re-reading our function,
+we realize that line 10 should divide `dy` by `dx` rather than `dx` by `dy`.
 (You can display line numbers by typing Ctrl-M, then L.)
 If we had left out the assertion at the end of the function,
 we would have created and returned something that had the right shape as a valid answer,
-but wasn&#39;t.
+but wasn't.
 Detecting and debugging that would almost certainly have taken more time in the long run
-than writing the assertion.</p>
-<p>But assertions aren&#39;t just about catching errors:
+than writing the assertion.
+
+But assertions aren't just about catching errors:
 they also help people understand programs.
 Each assertion gives the person reading the program
 a chance to check (consciously or otherwise)
-that their understanding matches what the code is doing.</p>
-<p>Most good programmers follow two rules when adding assertions to their code.
-The first is, &quot;<a href="../../rules.html#fail-early-fail-often">fail early, fail often</a>&quot;.
-The greater the distance between when and where an error occurs and when it&#39;s noticed,
+that their understanding matches what the code is doing.
+
+Most good programmers follow two rules when adding assertions to their code.
+The first is, "[fail early, fail often](../../rules.html#fail-early-fail-often)".
+The greater the distance between when and where an error occurs and when it's noticed,
 the harder the error will be to debug,
-so good code catches mistakes as early as possible.</p>
-<p>The second rule is, &quot;<a href="../../rules.html#turn-bugs-into-assertions-or-tests">turn bugs into assertions or tests</a>&quot;.
+so good code catches mistakes as early as possible.
+
+The second rule is, "[turn bugs into assertions or tests](../../rules.html#turn-bugs-into-assertions-or-tests)".
 If you made a mistake in a piece of code,
 the odds are good that you have made other mistakes nearby,
 or will make the same mistake (or a related one)
 the next time you change it.
-Writing assertions to check that you haven&#39;t <a href="../../gloss.html#regression">regressed</a>
-(i.e., haven&#39;t re-introduced an old problem)
+Writing assertions to check that you haven't [regressed](../../gloss.html#regression)
+(i.e., haven't re-introduced an old problem)
 can save a lot of time in the long run,
 and helps to warn people who are reading the code
 (including your future self)
-that this bit is tricky.</p>
-</div>
+that this bit is tricky.
 
 
-<div class="">
-<h4 id="challenges">Challenges</h4>
-<ol>
-<li><p>Suppose you are writing a function called <code>average</code> that calculates the average of the numbers in a list.
-What pre-conditions and post-conditions would you write for it?
-Compare your answer to your neighbor&#39;s:
-can you think of a function that will past your tests but not hers or vice versa?</p>
-</li>
-<li><p>Explain in words what the assertions in this code check,
-and for each one,
-give an example of input that will make that assertion fail.</p>
-<pre><code>def running(values):
-assert len(values) &gt; 0
-result = [values[0]]
-for v in values[1:]:
-assert result[-1] &gt;= 0
-result.append(result[-1] + v)
-assert result[-1] &gt;= result[0]
-return result
-</code></pre></li>
-</ol>
-</div>
+#### Challenges
+
+1. Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
+ What pre-conditions and post-conditions would you write for it?
+ Compare your answer to your neighbor's:
+ can you think of a function that will past your tests but not hers or vice versa?
+
+2. Explain in words what the assertions in this code check,
+ and for each one,
+ give an example of input that will make that assertion fail.
+ 
+ ~~~
+ def running(values):
+ assert len(values) > 0
+ result = [values[0]]
+ for v in values[1:]:
+ assert result[-1] >= 0
+ result.append(result[-1] + v)
+ assert result[-1] >= result[0]
+ return result
+ ~~~
 
 ### Test-Driven Development
 
 
-<div class="">
-<p>An assertion checks that something is true at a particular point in the program.
+An assertion checks that something is true at a particular point in the program.
 The next step is to check the overall behavior of a piece of code,
 i.e.,
-to make sure that it produces the right output when it&#39;s given a particular input.
+to make sure that it produces the right output when it's given a particular input.
 For example,
 suppose we need to find where two or more time series overlap.
 The range of each time series is represented as a pair of numbers,
 which are the time the interval started and ended.
-The output is the largest range that they all include:</p>
-</div>
+The output is the largest range that they all include:
 
 
-<div class="">
-<p><img src="img/python-overlapping-ranges.svg" alt="Overlapping Ranges" /></p>
-</div>
+<img src="img/python-overlapping-ranges.svg" alt="Overlapping Ranges" />
 
 
-<div class="">
-<p>Most novice programmers would solve this problem like this:</p>
-<ol>
-<li>Write a function <code>range_overlap</code>.</li>
-<li>Call it interactively on two or three different inputs.</li>
-<li>If it produces the wrong answer, fix the function and re-run that test.</li>
-</ol>
-<p>This clearly works&mdash;after all, thousands of scientists are doing it right now&mdash;but
-there&#39;s a better way:</p>
-<ol>
-<li>Write a short function for each test.</li>
-<li>Write a <code>range_overlap</code> function that should pass those tests.</li>
-<li>If <code>range_overlap</code> produces any wrong answers, fix it and re-run the test functions.</li>
-</ol>
-<p>Writing the tests <em>before</em> writing the function they exercise
-is called <a href="../../gloss.html#test-driven-development">test-driven development</a> (TDD).
-Its advocates believe it produces better code faster because:</p>
-<ol>
-<li>If people write tests after writing the thing to be tested,
-they are subject to confirmation bias,
-i.e.,
-they subconsciously write tests to show that their code is correct,
-rather than to find errors.</li>
-<li>Writing tests helps programmers figure out what the function is actually supposed to do.</li>
-</ol>
-<p>Here are three test functions for <code>range_overlap</code>:</p>
-</div>
+Most novice programmers would solve this problem like this:
+
+1. Write a function `range_overlap`.
+2. Call it interactively on two or three different inputs.
+3. If it produces the wrong answer, fix the function and re-run that test.
+
+This clearly works&mdash;after all, thousands of scientists are doing it right now&mdash;but
+there's a better way:
+
+1. Write a short function for each test.
+2. Write a `range_overlap` function that should pass those tests.
+3. If `range_overlap` produces any wrong answers, fix it and re-run the test functions.
+
+Writing the tests *before* writing the function they exercise
+is called [test-driven development](../../gloss.html#test-driven-development) (TDD).
+Its advocates believe it produces better code faster because:
+
+1. If people write tests after writing the thing to be tested,
+ they are subject to confirmation bias,
+ i.e.,
+ they subconsciously write tests to show that their code is correct,
+ rather than to find errors.
+2. Writing tests helps programmers figure out what the function is actually supposed to do.
+
+Here are three test functions for `range_overlap`:
 
 
 <pre class="in"><code>assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
@@ -328,49 +308,59 @@ AssertionError                            Traceback (most recent call last)
 AssertionError: </code></pre></div>
 
 
-<div class="">
-<p>The error is actually reassuring:
-we haven&#39;t written <code>range_overlap</code> yet,
+The error is actually reassuring:
+we haven't written `range_overlap` yet,
 so if the tests passed,
 it would be a sign that someone else had
-and that we were accidentally using their function.</p>
-<p>And as a bonus of writing these tests,
-we&#39;ve implicitly defined what our input and output look like:
+and that we were accidentally using their function.
+
+And as a bonus of writing these tests,
+we've implicitly defined what our input and output look like:
 we expect a list of pairs as input,
-and produce a single pair as output.</p>
-<p>Something important is missing, though.
-We don&#39;t have any tests for the case where the ranges don&#39;t overlap at all:</p>
-<pre><code>assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == ???
-</code></pre><p>What should <code>range_overlap</code> do in this case:
+and produce a single pair as output.
+
+Something important is missing, though.
+We don't have any tests for the case where the ranges don't overlap at all:
+
+~~~
+assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == ???
+~~~
+
+What should `range_overlap` do in this case:
 fail with an error message,
-produce a special value like <code>(0.0, 0.0)</code> to signal that there&#39;s no overlap,
+produce a special value like `(0.0, 0.0)` to signal that there's no overlap,
 or something else?
 Any actual implementation of the function will do one of these things;
 writing the tests first helps us figure out which is best
-<em>before</em> we&#39;re emotionally invested in whatever we happened to write
-before we realized there was an issue.</p>
-<p>And what about this case?</p>
-<pre><code>assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == ???
-</code></pre><p>Do two segments that touch at their endpoints overlap or not?
-Mathematicians usually say &quot;yes&quot;,
-but engineers usually say &quot;no&quot;.
-The best answer is &quot;whatever is most useful in the rest of our program&quot;,
+*before* we're emotionally invested in whatever we happened to write
+before we realized there was an issue.
+
+And what about this case?
+
+~~~
+assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == ???
+~~~
+
+Do two segments that touch at their endpoints overlap or not?
+Mathematicians usually say "yes",
+but engineers usually say "no".
+The best answer is "whatever is most useful in the rest of our program",
 but again,
-any actual implementation of <code>range_overlap</code> is going to do <em>something</em>,
-and whatever it is ought to be consistent with what it does when there&#39;s no overlap at all.</p>
-<p>Since we&#39;re planning to use the range this function returns
+any actual implementation of `range_overlap` is going to do *something*,
+and whatever it is ought to be consistent with what it does when there's no overlap at all.
+
+Since we're planning to use the range this function returns
 as the X axis in a time series chart,
-we decide that:</p>
-<ol>
-<li>every overlap has to have non-zero width, and</li>
-<li>we will return the special value <code>None</code> when there&#39;s no overlap.</li>
-</ol>
-<p><code>None</code> is built into Python,
-and means &quot;nothing here&quot;.
-(Other languages often call the equivalent value <code>null</code> or <code>nil</code>).
+we decide that:
+
+1. every overlap has to have non-zero width, and
+2. we will return the special value `None` when there's no overlap.
+
+`None` is built into Python,
+and means "nothing here".
+(Other languages often call the equivalent value `null` or `nil`).
 With that decision made,
-we can finish writing our last two tests:</p>
-</div>
+we can finish writing our last two tests:
 
 
 <pre class="in"><code>assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
@@ -385,11 +375,9 @@ AssertionError                            Traceback (most recent call last)
 AssertionError: </code></pre></div>
 
 
-<div class="">
-<p>Again,
-we get an error because we haven&#39;t written our function,
-but we&#39;re now ready to do so:</p>
-</div>
+Again,
+we get an error because we haven't written our function,
+but we're now ready to do so:
 
 
 <pre class="in"><code>def range_overlap(ranges):
@@ -402,14 +390,12 @@ but we&#39;re now ready to do so:</p>
     return (lowest, highest)</code></pre>
 
 
-<div class="">
-<p>(Take a moment to think about why we use <code>max</code> to raise <code>lowest</code>
-and <code>min</code> to lower <code>highest</code>.)
-We&#39;d now like to re-run our tests,
-but they&#39;re scattered across three different cells.
+(Take a moment to think about why we use `max` to raise `lowest`
+and `min` to lower `highest`.)
+We'd now like to re-run our tests,
+but they're scattered across three different cells.
 To make running them easier,
-let&#39;s put them all in a function:</p>
-</div>
+let's put them all in a function:
 
 
 <pre class="in"><code>def test_range_overlap():
@@ -420,9 +406,7 @@ let&#39;s put them all in a function:</p>
     assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)</code></pre>
 
 
-<div class="">
-<p>We can now test <code>range_overlap</code> with a single function call:</p>
-</div>
+We can now test `range_overlap` with a single function call:
 
 
 <pre class="in"><code>test_range_overlap()</code></pre>
@@ -442,260 +426,269 @@ AssertionError                            Traceback (most recent call last)
 AssertionError: </code></pre></div>
 
 
-<div class="">
-<p>The first of the tests that was supposed to produce <code>None</code> fails,
-so we know there&#39;s something wrong with our function.
-What we <em>don&#39;t</em> know,
+The first of the tests that was supposed to produce `None` fails,
+so we know there's something wrong with our function.
+What we *don't* know,
 though,
 is whether the other four tests passed or failed,
 because Python halted the program as soon as it spotted the first error.
 Still,
 some information is better than none,
 and if we trace the behavior of the function with that input,
-we realize that we&#39;re initializing <code>lowest</code> and <code>highest</code> to 0.0 and 1.0 respectively,
+we realize that we're initializing `lowest` and `highest` to 0.0 and 1.0 respectively,
 regardless of the input values.
 This violates another important rule of programming:
-&quot;<a href="../../rules.html#always-initialize-from-data">always initialize from data</a>&quot;.
-We&#39;ll leave it as an exercise to fix <code>range_overlap</code>.</p>
-</div>
+"[always initialize from data](../../rules.html#always-initialize-from-data)".
+We'll leave it as an exercise to fix `range_overlap`.
 
 
-<div class="challenges">
-<h4 id="challenges">Challenges</h4>
-<ol>
-<li>Fix <code>range_overlap</code>. Re-run <code>test_range_overlap</code> after each change you make.</li>
-</ol>
+<div class="challenges" markdown="1">
+#### Challenges
+
+1. Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
 </div>
 
 ### Debugging
 
 
-<div class="">
-<p>Once testing has uncovered problems,
+Once testing has uncovered problems,
 the next step is to fix them.
 Many novices do this by making more-or-less random changes to their code
 until it seems to produce the right answer,
-but that&#39;s very inefficient
-(and the result is usually only correct for the one case they&#39;re testing).
+but that's very inefficient
+(and the result is usually only correct for the one case they're testing).
 The more experienced a programmer is,
 the more systematically they debug,
-and most follow some variation on the rules explained below.</p>
-<h4 id="know-what-it-s-supposed-to-do">Know What It&#39;s Supposed to Do</h4>
-<p>The first step in debugging something is to
-<a href="../../rules.html#know-what-its-supposed-to-do">know what it&#39;s supposed to do</a>.
-&quot;My program doesn&#39;t work&quot; isn&#39;t good enough:
+and most follow some variation on the rules explained below.
+
+#### Know What It's Supposed to Do
+
+The first step in debugging something is to
+[know what it's supposed to do](../../rules.html#know-what-its-supposed-to-do).
+"My program doesn't work" isn't good enough:
 in order to diagnose and fix problems,
 we need to be able to tell correct output from incorrect.
 If we can write a test case for the failing case&mdash;i.e.,
-if we can assert that with <em>these</em> inputs,
-the function should produce <em>that</em> result&mdash;
-then we&#39;re ready to start debugging.
-If we can&#39;t,
-then we need to figure out how we&#39;re going to know when we&#39;ve fixed things.</p>
-<p>But writing test cases for scientific software is frequently harder than
+if we can assert that with *these* inputs,
+the function should produce *that* result&mdash;
+then we're ready to start debugging.
+If we can't,
+then we need to figure out how we're going to know when we've fixed things.
+
+But writing test cases for scientific software is frequently harder than
 writing test cases for commercial applications,
 because if we knew what the output of the scientific code was supposed to be,
-we wouldn&#39;t be running the software:
-we&#39;d be writing up our results and moving on to the next program.
+we wouldn't be running the software:
+we'd be writing up our results and moving on to the next program.
 In practice,
-scientists tend to do the following:</p>
-<ol>
-<li><p><em>Test with simplified data.</em>
-Before doing statistics on a real data set,
-we should try calculating statistics for a single record,
-for two identical records,
-for two records whose values are one step apart,
-or for some other case where we can calculate the right answer by hand.</p>
-</li>
-<li><p><em>Test a simplified case.</em>
-If our program is supposed to simulate
-magnetic eddies in rapidly-rotating blobs of supercooled helium,
-our first test should be a blob of helium that isn&#39;t rotating,
-and isn&#39;t being subjected to any external electromagnetic fields.
-Similarly,
-if we&#39;re looking at the effects of climate change on speciation,
-our first test should hold temperature, precipitation, and other factors constant.</p>
-</li>
-<li><p><em>Compare to an oracle.</em>
-A <a href="../../gloss.html#test-oracle">test oracle</a> is something&mdash;experimental data,
-an older program whose results are trusted,
-or even a human expert&mdash;against which we can compare the results of our new program.
-If we have a test oracle,
-we should store its output for particular cases
-so that we can compare it with our new results as often as we like
-without re-running that program.</p>
-</li>
-<li><p><em>Check conservation laws.</em>
-Mass, energy, and other quantitites are conserved in physical systems,
-so they should be in programs as well.
-Similarly,
-if we are analyzing patient data,
-the number of records should either stay the same or decrease
-as we move from one analysis to the next
-(since we might throw away outliers or records with missing values).
-If &quot;new&quot; patients start appearing out of nowhere as we move through our pipeline,
-it&#39;s probably a sign that something is wrong.</p>
-</li>
-<li><p><em>Visualize.</em>
-Data analysts frequently use simple visualizations to check both
-the science they&#39;re doing
-and the correctness of their code
-(just as we did in the <a href="01-numpy.html">opening lesson</a> of this tutorial).
-This should only be used for debugging as a last resort,
-though,
-since it&#39;s very hard to compare two visualizations automatically.</p>
-</li>
-</ol>
-<h4 id="make-it-fail-every-time">Make It Fail Every Time</h4>
-<p>We can only debug something when it fails,
+scientists tend to do the following:
+
+1. *Test with simplified data.*
+ Before doing statistics on a real data set,
+ we should try calculating statistics for a single record,
+ for two identical records,
+ for two records whose values are one step apart,
+ or for some other case where we can calculate the right answer by hand.
+
+2. *Test a simplified case.*
+ If our program is supposed to simulate
+ magnetic eddies in rapidly-rotating blobs of supercooled helium,
+ our first test should be a blob of helium that isn't rotating,
+ and isn't being subjected to any external electromagnetic fields.
+ Similarly,
+ if we're looking at the effects of climate change on speciation,
+ our first test should hold temperature, precipitation, and other factors constant.
+
+3. *Compare to an oracle.*
+ A [test oracle](../../gloss.html#test-oracle) is something&mdash;experimental data,
+ an older program whose results are trusted,
+ or even a human expert&mdash;against which we can compare the results of our new program.
+ If we have a test oracle,
+ we should store its output for particular cases
+ so that we can compare it with our new results as often as we like
+ without re-running that program.
+
+4. *Check conservation laws.*
+ Mass, energy, and other quantitites are conserved in physical systems,
+ so they should be in programs as well.
+ Similarly,
+ if we are analyzing patient data,
+ the number of records should either stay the same or decrease
+ as we move from one analysis to the next
+ (since we might throw away outliers or records with missing values).
+ If "new" patients start appearing out of nowhere as we move through our pipeline,
+ it's probably a sign that something is wrong.
+
+5. *Visualize.*
+ Data analysts frequently use simple visualizations to check both
+ the science they're doing
+ and the correctness of their code
+ (just as we did in the [opening lesson](01-numpy.html) of this tutorial).
+ This should only be used for debugging as a last resort,
+ though,
+ since it's very hard to compare two visualizations automatically.
+
+#### Make It Fail Every Time
+
+We can only debug something when it fails,
 so the second step is always to find a test case that
-<a href="../../rules.html#make-it-fail-every-time">makes it fail every time</a>.
-The &quot;every time&quot; part is important because
+[makes it fail every time](../../rules.html#make-it-fail-every-time).
+The "every time" part is important because
 few things are more frustrating than debugging an intermittent problem:
 if we have to call a function a dozen times to get a single failure,
-the odds are good that we&#39;ll scroll past the failure when it actually occurs.</p>
-<p>As part of this,
-it&#39;s always important to check that our code is &quot;plugged in&quot;,
+the odds are good that we'll scroll past the failure when it actually occurs.
+
+As part of this,
+it's always important to check that our code is "plugged in",
 i.e.,
-that we&#39;re actually exercising the problem that we think we are.
+that we're actually exercising the problem that we think we are.
 Every programmer has spent hours chasing a bug,
 only to realize that they were actually calling their code on the wrong data set
 or with the wrong configuration parameters,
 or are using the wrong version of the software entirely.
-Mistakes like these are particularly likely to happen when we&#39;re tired,
+Mistakes like these are particularly likely to happen when we're tired,
 frustrated,
 and up against a deadline,
 which is one of the reasons late-night (or overnight) coding sessions
-are almost never worthwhile.</p>
-<h4 id="make-it-fail-fast">Make It Fail Fast</h4>
-<p>If it takes 20 minutes for the bug to surface,
+are almost never worthwhile.
+
+#### Make It Fail Fast
+
+If it takes 20 minutes for the bug to surface,
 we can only do three experiments an hour.
-That doesn&#39;t must mean we&#39;ll get less data in more time:
-we&#39;re also more likely to be distracted by other things as we wait for our program to fail,
-which means the time we <em>are</em> spending on the problem is less focused.
-It&#39;s therefore critical to <a href="../../rules.html#make-it-fail-fast">make it fail fast</a>.</p>
-<p>As well as making the program fail fast in time,
+That doesn't must mean we'll get less data in more time:
+we're also more likely to be distracted by other things as we wait for our program to fail,
+which means the time we *are* spending on the problem is less focused.
+It's therefore critical to [make it fail fast](../../rules.html#make-it-fail-fast).
+
+As well as making the program fail fast in time,
 we want to make it fail fast in space,
 i.e.,
-we want to localize the failure to the smallest possible region of code:</p>
-<ol>
-<li><p>The smaller the gap between cause and effect,
-the easier the connection is to find.
-Many programmers therefore use a divide and conquer strategy to find bugs,
-i.e.,
-if the output of a function is wrong,
-they check whether things are OK in the middle,
-then concentrate on either the first or second half,
-and so on.</p>
-</li>
-<li><p>N things can interact in N<sup>2/2</sup> different ways,
-so every line of code that <em>isn&#39;t</em> run as part of a test
-means more than one thing we don&#39;t need to worry about.</p>
-</li>
-</ol>
-<h4 id="change-one-thing-at-a-time-for-a-reason">Change One Thing at a Time, For a Reason</h4>
-<p>Replacing random chunks of code is unlikely to do much good.
+we want to localize the failure to the smallest possible region of code:
+
+1. The smaller the gap between cause and effect,
+ the easier the connection is to find.
+ Many programmers therefore use a divide and conquer strategy to find bugs,
+ i.e.,
+ if the output of a function is wrong,
+ they check whether things are OK in the middle,
+ then concentrate on either the first or second half,
+ and so on.
+
+2. N things can interact in N<sup>2/2</sup> different ways,
+ so every line of code that *isn't* run as part of a test
+ means more than one thing we don't need to worry about.
+
+#### Change One Thing at a Time, For a Reason
+
+Replacing random chunks of code is unlikely to do much good.
 (After all,
 if you got it wrong the first time,
-you&#39;ll probably get it wrong the second and third as well.)
+you'll probably get it wrong the second and third as well.)
 Good programmers therefore
-<a href="../../rules.html#change-one-thing-at-a-time">change one thing at a time, for a reason</a>
+[change one thing at a time, for a reason](../../rules.html#change-one-thing-at-a-time)
 They are either trying to gather more information
-(&quot;is the bug still there if we change the order of the loops?&quot;)
+("is the bug still there if we change the order of the loops?")
 or test a fix
-(&quot;can we make the bug go away by sorting our data before processing it?&quot;).</p>
-<p>Every time we make a change,
+("can we make the bug go away by sorting our data before processing it?").
+ 
+Every time we make a change,
 however small,
 we should re-run our tests immediately,
 because the more things we change at once,
-the harder it is to know what&#39;s responsible for what
+the harder it is to know what's responsible for what
 (those N<sup>2</sup> interactions again).
-And we should re-run <em>all</em> of our tests:
+And we should re-run *all* of our tests:
 more than half of fixes made to code introduce (or re-introduce) bugs,
-so re-running all of our tests tells us whether we have <a href="../../gloss.html#regression">regressed</a>.</p>
-<h4 id="keep-track-of-what-you-ve-done">Keep Track of What You&#39;ve Done</h4>
-<p>Good scientists keep track of what they&#39;ve done
+so re-running all of our tests tells us whether we have [regressed](../../gloss.html#regression).
+
+#### Keep Track of What You've Done
+
+Good scientists keep track of what they've done
 so that they can reproduce their work,
-and so that they don&#39;t waste time repeating the same experiments
-or running ones whose results won&#39;t be interesting.
+and so that they don't waste time repeating the same experiments
+or running ones whose results won't be interesting.
 Similarly,
 debugging works best when we
-<a href="../../rules.html#keep-track-of-what-youve-done">keep track of what we&#39;ve done</a>
+[keep track of what we've done](../../rules.html#keep-track-of-what-youve-done)
 and how well it worked.
 If we find ourselves asking,
-&quot;Did left followed by right with an odd number of lines cause the crash?
+"Did left followed by right with an odd number of lines cause the crash?
 Or was it right followed by left?
-Or was I using an even number of lines?&quot;
-then it&#39;s time to step away from the computer,
+Or was I using an even number of lines?"
+then it's time to step away from the computer,
 take a deep breath,
-and start working more systematically.</p>
-<p>Records are particularly useful when the time comes to ask for help.
+and start working more systematically.
+ 
+Records are particularly useful when the time comes to ask for help.
 People are more likely to listen to us
 when we can explain clearly what we did,
-and we&#39;re better able to give them the information they need to be useful.</p>
-<blockquote>
-<h4 id="version-control-revisited">Version Control Revisited</h4>
-<p>Version control is often used to reset software to a known state during debugging,
-and to explore recent changes to code that might be responsible for bugs.
-In particular,
-most version control systems have a <code>blame</code> command
-that will show who last changed particular lines of code...</p>
-</blockquote>
-<h4 id="be-humble">Be Humble</h4>
-<p>And speaking of help:
-if we can&#39;t find a bug in 10 minutes,
-we should <a href="../../rules.html#be-humble">be humble</a> and ask for help.
+and we're better able to give them the information they need to be useful.
+
+> #### Version Control Revisited
+>
+> Version control is often used to reset software to a known state during debugging,
+> and to explore recent changes to code that might be responsible for bugs.
+> In particular,
+> most version control systems have a `blame` command
+> that will show who last changed particular lines of code...
+
+#### Be Humble
+
+And speaking of help:
+if we can't find a bug in 10 minutes,
+we should [be humble](../../rules.html#be-humble) and ask for help.
 Just explaining the problem aloud is often useful,
-since hearing what we&#39;re thinking helps us spot inconsistencies and hidden assumptions.</p>
-<p>Asking for help also helps alleviate confirmation bias.
+since hearing what we're thinking helps us spot inconsistencies and hidden assumptions.
+
+Asking for help also helps alleviate confirmation bias.
 If we have just spent an hour writing a complicated program,
 we want it to work,
-so we&#39;re likely to keep telling ourselves why it should,
-rather than searching for the reason it doesn&#39;t.
-People who aren&#39;t emotionally invested in the code can be more objective,
-which is why they&#39;re often able to spot the simple mistakes we have overlooked.</p>
-<p>Part of being humble is learning from our mistakes.
+so we're likely to keep telling ourselves why it should,
+rather than searching for the reason it doesn't.
+People who aren't emotionally invested in the code can be more objective,
+which is why they're often able to spot the simple mistakes we have overlooked.
+
+Part of being humble is learning from our mistakes.
 Programmers tend to get the same things wrong over and over:
-either they don&#39;t understand the language and libraries they&#39;re working with,
+either they don't understand the language and libraries they're working with,
 or their model of how things work is wrong.
 In either case,
 taking note of why the error occurred
 and checking for it next time
-quickly turns into not making the mistake at all.</p>
-<p>And that is what makes us most productive in the long run.
+quickly turns into not making the mistake at all.
+
+And that is what makes us most productive in the long run.
 As the saying goes,
-&quot;<a href="../../rules.html#week-hard-work-hour-thought">A week of hard work can sometimes save you an hour of thought</a>.&quot;
+"[A week of hard work can sometimes save you an hour of thought](../../rules.html#week-hard-work-hour-thought)."
 If we train ourselves to avoid making some kinds of mistakes,
 to break our code into modular, testable chunks,
 and to turn every assumption (or mistake) into an assertion,
-it will actually take us <em>less</em> time to produce working programs,
-not more.</p>
+it will actually take us *less* time to produce working programs,
+not more.
+
+
+<div class="keypoints" markdown="1">
+#### Key Points
+
+*   Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do.
+*   Put assertions in programs to check their state as they run, and to help readers understand how those programs are supposed to work.
+*   Use preconditions to check that the inputs to a function are safe to use.
+*   Use postconditions to check that the output from a function is safe to use.
+*   Write tests before writing code in order to help determine exactly what that code is supposed to do.
+*   Know what code is supposed to do *before* trying to debug it.
+*   Make it fail every time.
+*   Make it fail fast.
+*   Change one thing at a time, and for a reason.
+*   Keep track of what you've done.
+*   Be humble.
 </div>
 
 
-<div class="keypoints">
-<h4 id="key-points">Key Points</h4>
-<ul>
-<li>Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do.</li>
-<li>Put assertions in programs to check their state as they run, and to help readers understand how those programs are supposed to work.</li>
-<li>Use preconditions to check that the inputs to a function are safe to use.</li>
-<li>Use postconditions to check that the output from a function is safe to use.</li>
-<li>Write tests before writing code in order to help determine exactly what that code is supposed to do.</li>
-<li>Know what code is supposed to do <em>before</em> trying to debug it.</li>
-<li>Make it fail every time.</li>
-<li>Make it fail fast.</li>
-<li>Change one thing at a time, and for a reason.</li>
-<li>Keep track of what you&#39;ve done.</li>
-<li>Be humble.</li>
-</ul>
-</div>
+#### Next Steps
 
-
-<div class="">
-<h4 id="next-steps">Next Steps</h4>
-<p>We have now seen the basics of building and testing Python code in the IPython Notebook.
+We have now seen the basics of building and testing Python code in the IPython Notebook.
 The last thing we need to learn is how to build command-line programs
 that we can use in pipelines and shell scripts,
-so that we can integrate our tools with other people&#39;s work.
-This will be the subject of our next and final lesson.</p>
-</div>
+so that we can integrate our tools with other people's work.
+This will be the subject of our next and final lesson.
