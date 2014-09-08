@@ -45,14 +45,13 @@ To do all that, we'll have to learn a little bit about programming.
 
 
 Words are useful,
-but what's more useful are the sentences and stories we use them to build.
+but what's more useful are the sentences and stories we build with them.
 Similarly,
 while a lot of powerful tools are built into languages like Python,
-even more lives in the [libraries](../../gloss.html#library) they are used to build.
+even more live in the [libraries](../../gloss.html#library) they are used to build.
 
 In order to load our inflammation data,
-we need to [import](../../gloss.html#import) a library called NumPy
-that knows how to operate on matrices:
+we need to [import](../../gloss.html#import) a library called NumPy. In general you should use this library if you want to do fancy things with numbers, especially if you have matrices. We can load NumPy using:
 
 
 <pre class="in"><code>import numpy</code></pre>
@@ -78,7 +77,7 @@ we can ask the library to read our data file for us:
 The expression `numpy.loadtxt(...)` is a [function call](../../gloss.html#function-call)
 that asks Python to run the function `loadtxt` that belongs to the `numpy` library.
 This [dotted notation](../../gloss.html#dotted-notation) is used everywhere in Python
-to refer to the parts of things as `whole.part`.
+to refer to the parts of things as `thing.component`.
 
 `numpy.loadtxt` has two [parameters](../../gloss.html#parameter):
 the name of the file we want to read,
@@ -105,7 +104,7 @@ but didn't save the data in memory.
 To do that,
 we need to [assign](../../gloss.html#assignment) the array to a [variable](../../gloss.html#variable).
 A variable is just a name for a value,
-such as `x`, `current_temperature`, or `subject_id`.
+such as `x`, `current_temperature`, or `subject_id`. Python's variables must begin with a letter.
 We can create a new variable simply by assigning a value to it using `=`:
 
 
@@ -299,7 +298,8 @@ the index is how many steps we have to take from the start to get the item we wa
 > rather than the lower left.
 > This is consistent with the way mathematicians draw matrices,
 > but different from the Cartesian coordinates.
-> The indices are (row, column) instead of (column, row) for the same reason.
+> The indices are (row, column) instead of (column, row) for the same reason, 
+> which can be confusing when plotting data.
 
 
 An index like `[30, 20]` selects a single element of an array,
@@ -541,7 +541,7 @@ The mathematician Richard Hamming once said,
 "The purpose of computing is insight, not numbers,"
 and the best way to develop insight is often to visualize data.
 Visualization deserves an entire lecture (or course) of its own,
-but we can explore a few features of Python's `matplotlib` here.
+but we can explore a few features of Python's `matplotlib` here. While there is no "official" plotting library, this package is the de facto standard.
 First,
 let's tell the IPython Notebook that we want our plots displayed inline,
 rather than in a separate viewing window:

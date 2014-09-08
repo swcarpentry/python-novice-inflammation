@@ -239,16 +239,16 @@ that this bit is tricky.
  and for each one,
  give an example of input that will make that assertion fail.
  
- ~~~
- def running(values):
- assert len(values) > 0
- result = [values[0]]
- for v in values[1:]:
- assert result[-1] >= 0
- result.append(result[-1] + v)
- assert result[-1] >= result[0]
- return result
- ~~~
+  ~~~python
+  def running(values):
+      assert len(values) > 0
+      result = [values[0]]
+      for v in values[1:]:
+          assert result[-1] >= 0
+          result.append(result[-1] + v)
+          assert result[-1] >= result[0]
+      return result
+  ~~~
 
 ### Test-Driven Development
 
