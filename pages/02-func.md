@@ -146,6 +146,29 @@ though,
 so if we want `5/9` to give us the right answer,
 we have to write it as `5.0/9`, `5/9.0`, or some other variation.
 
+Another way to create a floating-point answer is to explicitly tell the computer that you desire one. This is achieved by casting one of the numbers:
+
+
+<pre class="in"><code>print &#39;float(10)/3 is:&#39;, float(10)/3</code></pre>
+
+<div class="out"><pre class='out'><code>float(10)/3 is: 3.33333333333
+</code></pre></div>
+
+
+The advantage to this method is it can be used with existing variables. Let's take a look:
+
+
+<pre class="in"><code>a = 10
+b = 3
+print &#39;a/b is:&#39;, a/b
+print &#39;float(a)/b is:&#39;, float(a)/b</code></pre>
+
+<div class="out"><pre class='out'><code>a/b is: 3
+float(a)/b is: 3.33333333333
+</code></pre></div>
+
+
+See that was much easier than redefining `a` or `b`!
 
 Let's fix our `fahr_to_kelvin` function with this new knowledge.
 
