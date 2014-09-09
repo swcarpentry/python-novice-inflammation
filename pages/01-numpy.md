@@ -337,26 +337,6 @@ We don't have to start slices at 0:
 </code></pre></div>
 
 
-and we don't have to take all the values in the slice---if we provide a [stride](../../gloss.html#stride),
-Python takes values spaced that far apart:
-
-
-<pre class="in"><code>print data[0:10:3, 0:10:2]</code></pre>
-
-<div class="out"><pre class='out'><code>[[ 0.  1.  1.  4.  8.]
- [ 0.  2.  4.  2.  6.]
- [ 0.  2.  4.  2.  5.]
- [ 0.  1.  1.  5.  5.]]
-</code></pre></div>
-
-
-Here,
-we have taken rows 0, 3, 6, and 9,
-and columns 0, 2, 4, 6, and 8.
-(Again, we always include the lower bound,
-but stop when we reach or cross the upper bound.)
-
-
 We also don't have to include the upper and lower bound on the slice.
 If we don't include the lower bound,
 Python uses 0 by default;
@@ -562,7 +542,7 @@ pyplot.imshow(data)
 pyplot.show()</code></pre>
 
 <div class="out">
-<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_74_0.png">
+<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_71_0.png">
 </div>
 
 
@@ -577,7 +557,7 @@ pyplot.plot(ave_inflammation)
 pyplot.show()</code></pre>
 
 <div class="out">
-<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_76_0.png">
+<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_73_0.png">
 </div>
 
 
@@ -601,10 +581,10 @@ pyplot.show()</code></pre>
 
 <div class="out"><pre class='out'><code>maximum inflammation per day
 </code></pre>
-<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_78_1.png">
+<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_75_1.png">
 <pre class='out'><code>minimum inflammation per day
 </code></pre>
-<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_78_3.png">
+<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_75_3.png">
 </div>
 
 
@@ -655,7 +635,7 @@ plt.tight_layout()
 plt.show()</code></pre>
 
 <div class="out">
-<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_83_0.png">
+<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_80_0.png">
 </div>
 
 
