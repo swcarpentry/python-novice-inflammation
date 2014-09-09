@@ -212,7 +212,7 @@ so we should always use it when we can.
 #### Challenges
 
 1.  Python has a built-in function called `range` that creates a list of numbers:
-    `range(3)` produces `[0, 1, 2]`, `range(2, 5)` produces `[2, 3, 4]`, and `range(2, 10, 3)` produces `[2, 5, 8]`.
+    `range(3)` produces `[0, 1, 2]`, `range(2, 5)` produces `[2, 3, 4]`.
     Using `range`,
     write a function that prints the $N$ natural numbers:
     
