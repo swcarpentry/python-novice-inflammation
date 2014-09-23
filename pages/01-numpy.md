@@ -105,7 +105,9 @@ To do that,
 we need to [assign](../../gloss.html#assignment) the array to a [variable](../../gloss.html#variable).
 A variable is just a name for a value,
 such as `x`, `current_temperature`, or `subject_id`. Python's variables must begin with a letter.
-We can create a new variable simply by assigning a value to it using `=`:
+We can create a new variable simply by assigning a value to it using `=`.  As an illustration, let's
+step back and instead of considering a table of data, consider the simplest "collection" of data, a single
+value.  The line below assigns a value to a variable:
 
 
 <pre class="in"><code>weight_kg = 55</code></pre>
@@ -181,8 +183,8 @@ Since `weight_lb` doesn't "remember" where its value came from,
 it isn't automatically updated when `weight_kg` changes.
 This is different from the way spreadsheets work.
 
-Now that we know how to assign things to variables,
-let's re-run `numpy.loadtxt` and save its result:
+Just as we can assign a single value to a variable, we can also assign an array of values
+to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its result:
 
 
 <pre class="in"><code>data = numpy.loadtxt(fname=&#39;inflammation-01.csv&#39;, delimiter=&#39;,&#39;)</code></pre>
