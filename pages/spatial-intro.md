@@ -24,10 +24,10 @@ Original materials by <a href="https://github.com/synapticarbors">Joshua
 Adelman</a>; modified by <a href="http://www.randalolson.com/">Randy Olson</a>
 
 We are examining some simple spatial coordinate data, specifically the location
-of all of the previous Software Carpentry bootcamps. The data set is stored in
+of all of the previous Software Carpentry workshops. The data set is stored in
 [comma-separated values](../../gloss.html#csv) (CSV) format. After the header
 line (marked with a `#`), each row contains the latitude and longitude for each
-bootcamp, separated by a comma.
+workshop, separated by a comma.
 
     # Latitude, Longitude
     43.661476,-79.395189
@@ -191,7 +191,7 @@ Projection](http://en.wikipedia.org/wiki/Robinson_projection).
 
 The parameters `lat_0` and `lon_0` define the center of the map. Now let's add
 some features to our map using methods defined by the `bm` object. We will also
-use the object itself to get the coordinates of the bootcamps in the projection
+use the object itself to get the coordinates of the workshops in the projection
 given our original longitudes and latitudes. We will also tell pyplot to make
 the figure 12 inches by 12 inches to make it more legible.
 
@@ -226,7 +226,7 @@ visualization of our data.
 ### Exercise 2
 
 1. Integrate the coloring scheme from Exercise 1 into the Basemap projection.
-2. Try out a different projection that better shows the boot camp locations in
+2. Try out a different projection that better shows the workshop locations in
 North America. Here is the list of projections in Basemap:
 http://matplotlib.org/basemap/users/mapsetup.html
 
