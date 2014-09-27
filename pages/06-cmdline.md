@@ -334,7 +334,7 @@ This is yet another rule of programming:
 "[test the simple things first](../../rules.html#test-simple-first)".
 
 We want our program to process each file separately,
-so we need a looop that executes once for each filename.
+so we need a loop that executes once for each filename.
 If we specify the files on the command line,
 the filenames will be in `sys.argv`,
 but we need to be careful:
