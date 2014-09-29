@@ -365,7 +365,9 @@ The simplest operations with data are arithmetic:  add, subtract, multiply,
 and divide.  When you do such operations on arrays, the operation is done on each
 individual element of the array.  Thus:
 
+
 <pre class="in"><code>doubledata = data * 2.0</code></pre>
+
 
 will create a new array `doubledata` whose elements have the value of two times
 the value of the *corresponding* elements in `data`.  If, instead of taking an array
@@ -373,8 +375,10 @@ and doing arithmetic with a single value (as above) you did the arithmetic opera
 with another array of the same size and shape, the operation will be done on
 *corresponding* elements of the two arrays.  Thus:
 
+
 <pre class="in"><code>doubledata = data * 2.0
 tripledata = doubledata + data</code></pre>
+
 
 will give you an array where `tripledata[0,0]` will equal `doubledata[0,0]` plus `data[0,0]`,
 and so on for all other elements of the arrays.
