@@ -370,18 +370,47 @@ individual element of the array.  Thus:
 
 
 will create a new array `doubledata` whose elements have the value of two times
-the value of the *corresponding* elements in `data`.  If, instead of taking an array
+the value of the *corresponding* elements in `data`.
+
+
+<pre class="in"><code>print &#39;original:&#39;
+print data[:3, 36:]
+print &#39;doubledata:&#39;
+print doubledata[:3, 36:]</code></pre>
+
+<div class="out"><pre class='out'><code>original:
+[[ 2.  3.  0.  0.]
+ [ 1.  1.  0.  1.]
+ [ 2.  2.  1.  1.]]
+doubledata:
+[[ 4.  6.  0.  0.]
+ [ 2.  2.  0.  2.]
+ [ 4.  4.  2.  2.]]
+</code></pre></div>
+
+
+If, instead of taking an array
 and doing arithmetic with a single value (as above) you did the arithmetic operation
 with another array of the same size and shape, the operation will be done on
 *corresponding* elements of the two arrays.  Thus:
 
 
-<pre class="in"><code>doubledata = data * 2.0
-tripledata = doubledata + data</code></pre>
+<pre class="in"><code>tripledata = doubledata + data</code></pre>
 
 
 will give you an array where `tripledata[0,0]` will equal `doubledata[0,0]` plus `data[0,0]`,
 and so on for all other elements of the arrays.
+
+
+<pre class="in"><code>print &#39;tripledata:&#39;
+print tripledata[:3, 36:]</code></pre>
+
+<div class="out"><pre class='out'><code>tripledata:
+[[ 6.  9.  0.  0.]
+ [ 3.  3.  0.  3.]
+ [ 6.  6.  3.  3.]]
+</code></pre></div>
+
 
 Often, we want to do more than add, subtract, multiply, and divide values of data.
 Arrays also know how to do more complex operations on their values.
