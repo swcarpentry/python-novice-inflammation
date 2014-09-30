@@ -105,7 +105,9 @@ To do that,
 we need to [assign](../../gloss.html#assignment) the array to a [variable](../../gloss.html#variable).
 A variable is just a name for a value,
 such as `x`, `current_temperature`, or `subject_id`. Python's variables must begin with a letter.
-We can create a new variable simply by assigning a value to it using `=`:
+We can create a new variable simply by assigning a value to it using `=`.  As an illustration, let's
+step back and instead of considering a table of data, consider the simplest "collection" of data, a single
+value.  The line below assigns a value to a variable:
 
 
 <pre class="in"><code>weight_kg = 55</code></pre>
@@ -181,8 +183,8 @@ Since `weight_lb` doesn't "remember" where its value came from,
 it isn't automatically updated when `weight_kg` changes.
 This is different from the way spreadsheets work.
 
-Now that we know how to assign things to variables,
-let's re-run `numpy.loadtxt` and save its result:
+Just as we can assign a single value to a variable, we can also assign an array of values
+to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its result:
 
 
 <pre class="in"><code>data = numpy.loadtxt(fname=&#39;inflammation-01.csv&#39;, delimiter=&#39;,&#39;)</code></pre>
@@ -359,6 +361,59 @@ print small</code></pre>
 
 
 Arrays also know how to perform common mathematical operations on their values.
+The simplest operations with data are arithmetic:  add, subtract, multiply, 
+and divide.  When you do such operations on arrays, the operation is done on each
+individual element of the array.  Thus:
+
+
+<pre class="in"><code>doubledata = data * 2.0</code></pre>
+
+
+will create a new array `doubledata` whose elements have the value of two times
+the value of the *corresponding* elements in `data`.
+
+
+<pre class="in"><code>print &#39;original:&#39;
+print data[:3, 36:]
+print &#39;doubledata:&#39;
+print doubledata[:3, 36:]</code></pre>
+
+<div class="out"><pre class='out'><code>original:
+[[ 2.  3.  0.  0.]
+ [ 1.  1.  0.  1.]
+ [ 2.  2.  1.  1.]]
+doubledata:
+[[ 4.  6.  0.  0.]
+ [ 2.  2.  0.  2.]
+ [ 4.  4.  2.  2.]]
+</code></pre></div>
+
+
+If, instead of taking an array
+and doing arithmetic with a single value (as above) you did the arithmetic operation
+with another array of the same size and shape, the operation will be done on
+*corresponding* elements of the two arrays.  Thus:
+
+
+<pre class="in"><code>tripledata = doubledata + data</code></pre>
+
+
+will give you an array where `tripledata[0,0]` will equal `doubledata[0,0]` plus `data[0,0]`,
+and so on for all other elements of the arrays.
+
+
+<pre class="in"><code>print &#39;tripledata:&#39;
+print tripledata[:3, 36:]</code></pre>
+
+<div class="out"><pre class='out'><code>tripledata:
+[[ 6.  9.  0.  0.]
+ [ 3.  3.  0.  3.]
+ [ 6.  6.  3.  3.]]
+</code></pre></div>
+
+
+Often, we want to do more than add, subtract, multiply, and divide values of data.
+Arrays also know how to do more complex operations on their values.
 If we want to find the average inflammation for all patients on all days,
 for example,
 we can just ask the array for its mean value
