@@ -652,14 +652,3 @@ the program now does everything we set out to do.
     *   If no filenames are given, it reports the number of lines in standard input.
     *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
 </div>
-
-
-<div class="keypoints" markdown="1">
-#### Key Points
-
-*   The `sys` library connects a Python program to the system it is running on.
-*   The list `sys.argv` contains the command-line arguments that a program was run with.
-*   Avoid silent failures.
-*   The "file" `sys.stdin` connects to a program's standard input.
-*   The "file" `sys.stdout` connects to a program's standard output.
-</div>

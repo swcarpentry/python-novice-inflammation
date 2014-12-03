@@ -818,38 +818,3 @@ but *do* have to provide `delimiter=` for the second parameter.
     Compare your implementation to your neighbor's:
     do the two functions always behave the same way?
 </div>
-
-
-<div class="keypoints" markdown="1">
-#### Key Points
-
-*   Define a function using `def name(...params...)`.
-*   The body of a function must be indented.
-*   Call a function using `name(...values...)`.
-*   Numbers are stored as integers or floating-point numbers.
-*   Integer division produces the whole part of the answer (not the fractional part).
-*   Each time a function is called, a new stack frame is created on the **call stack** to hold its parameters and local variables.
-*   Python looks for variables in the current stack frame before looking for them at the top level.
-*   Use `help(thing)` to view help for something.
-*   Put docstrings in functions to provide help for that function.
-*   Specify default values for parameters when defining a function using `name=value` in the parameter list.
-*   Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).
-</div>
-
-
-#### Next Steps
-
-We now have a function called `analyze` to visualize a single data set.
-We could use it to explore all 12 of our current data sets like this:
-
-~~~python
-analyze('inflammation-01.csv')
-analyze('inflammation-02.csv')
-...
-analyze('inflammation-12.csv')
-~~~
-
-but the chances of us typing all 12 filenames correctly aren't great,
-and we'll be even worse off if we get another hundred files.
-What we need is a way to tell Python to do something once for each file,
-and that will be the subject of the next lesson.

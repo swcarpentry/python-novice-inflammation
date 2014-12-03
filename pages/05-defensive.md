@@ -664,24 +664,6 @@ and to turn every assumption (or mistake) into an assertion,
 it will actually take us *less* time to produce working programs,
 not more.
 
-
-<div class="keypoints" markdown="1">
-#### Key Points
-
-*   Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do.
-*   Put assertions in programs to check their state as they run, and to help readers understand how those programs are supposed to work.
-*   Use preconditions to check that the inputs to a function are safe to use.
-*   Use postconditions to check that the output from a function is safe to use.
-*   Write tests before writing code in order to help determine exactly what that code is supposed to do.
-*   Know what code is supposed to do *before* trying to debug it.
-*   Make it fail every time.
-*   Make it fail fast.
-*   Change one thing at a time, and for a reason.
-*   Keep track of what you've done.
-*   Be humble.
-</div>
-
-
 #### Next Steps
 
 We have now seen the basics of building and testing Python code in the IPython Notebook.

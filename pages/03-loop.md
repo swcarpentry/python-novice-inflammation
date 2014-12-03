@@ -405,30 +405,3 @@ and their minima show the same staircase structure.
     and runs `analyze` for each file whose name matches the pattern.
 </div>
 
-
-#### Key Points
-
-*   Use `for variable in collection` to process the elements of a collection one at a time.
-*   The body of a for loop must be indented.
-*   Use `len(thing)` to determine the length of something that contains other values.
-*   `[value1, value2, value3, ...]` creates a list.
-*   Lists are indexed and sliced in the same way as strings and arrays.
-*   Lists are mutable (i.e., their values can be changed in place).
-*   Strings are immutable (i.e., the characters in them cannot be changed).
-*   Use `glob.glob(pattern)` to create a list of files whose names match a pattern.
-*   Use `*` in a pattern to match zero or more characters, and `?` to match any single character.
-
-
-#### Next Steps
-
-We have now solved our original problem:
-we can analyze any number of data files with a single command.
-More importantly,
-we have met two of the most important ideas in programming:
-
-1.  Use functions to make code easier to re-use and easier to understand.
-1.  Use lists and arrays to store related values, and loops to repeat operations on them.
-
-We have one more big idea to introduce,
-and then we will be able to go back and create a heat map
-like the one we initially used to display our first data set.

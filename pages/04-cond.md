@@ -639,29 +639,3 @@ and not on our programming.
     Do they always do the same thing?
     Which do you find easier to read?
 </div>
-
-
-<div class="keypoints" markdown="1">
-#### Key Points
-
-*   Use the `ImageGrid` class from the `ipythonblocks` library to create simple "images" made of colored blocks.
-*   Specify colors use (red, green, blue) triples, each component of which is an integer in the range 0..255.
-*   Use `if condition` to start a conditional statement, `elif condition` to provide additional tests, and `else` to provide a default.
-*   The bodies of the branches of conditional statements must be indented.
-*   Use `==` to test for equality.
-*   `X and Y` is only true if both X and Y are true.
-*   `X or Y` is true if either X or Y, or both, are true.
-*   Zero, the empty string, and the empty list are considered false; all other numbers, strings, and lists are considered true.
-*   Nest loops to operate on multi-dimensional data.
-*   Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior.
-</div>
-
-
-#### Next Steps
-
-Our final heatmap function is 17 lines long,
-which means that if there's a 95% chance of each line being correct,
-the odds of the whole function being right are only 41%.
-Before we go any further,
-we need to learn how to test whether our code is doing what we want it to do,
-and that will be the subject of the next lesson.
