@@ -18,10 +18,10 @@ Words are useful,
 but what's more useful are the sentences and stories we build with them.
 Similarly,
 while a lot of powerful tools are built into languages like Python,
-even more live in the [libraries](../../gloss.html#library) they are used to build.
+even more live in the **libraries** they are used to build.
 
 In order to load our inflammation data,
-we need to [import](../../gloss.html#import) a library called NumPy. In general you should use this library if you want to do fancy things with numbers, especially if you have matrices. We can load NumPy using:
+we need to **import** a library called NumPy. In general you should use this library if you want to do fancy things with numbers, especially if you have matrices. We can load NumPy using:
 
 
 <pre class="in"><code>import numpy</code></pre>
@@ -44,15 +44,15 @@ we can ask the library to read our data file for us:
        [ 0.,  0.,  1., ...,  1.,  1.,  0.]])</code></pre></div>
 
 
-The expression `numpy.loadtxt(...)` is a [function call](../../gloss.html#function-call)
+The expression `numpy.loadtxt(...)` is a **function call**
 that asks Python to run the function `loadtxt` that belongs to the `numpy` library.
-This [dotted notation](../../gloss.html#dotted-notation) is used everywhere in Python
+This **dotted notation** is used everywhere in Python
 to refer to the parts of things as `thing.component`.
 
-`numpy.loadtxt` has two [parameters](../../gloss.html#parameter):
+`numpy.loadtxt` has two **parameters**:
 the name of the file we want to read,
-and the [delimiter](../../gloss.html#delimiter) that separates values on a line.
-These both need to be character strings (or [strings](../../gloss.html#string) for short),
+and the **delimiter** that separates values on a line.
+These both need to be character strings (or **strings** for short),
 so we put them in quotes.
 
 When we are finished typing and press Shift+Enter,
@@ -72,7 +72,7 @@ when there's nothing interesting after the decimal point.
 Our call to `numpy.loadtxt` read our file,
 but didn't save the data in memory.
 To do that,
-we need to [assign](../../gloss.html#assignment) the array to a [variable](../../gloss.html#variable).
+we need to **assign** the array to a **variable**.
 A variable is just a name for a value,
 such as `x`, `current_temperature`, or `subject_id`. Python's variables must begin with a letter.
 We can create a new variable simply by assigning a value to it using `=`.  As an illustration, let's
@@ -204,7 +204,7 @@ we can print the variable's value:
 Now that our data is in memory,
 we can start doing things with it.
 First,
-let's ask what [type](../../gloss.html#data-type) of thing `data` refers to:
+let's ask what **type** of thing `data` refers to:
 
 
 <pre class="in"><code>print type(data)</code></pre>
@@ -214,7 +214,7 @@ let's ask what [type](../../gloss.html#data-type) of thing `data` refers to:
 
 
 The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library.
-We can see what its [shape](../../gloss.html#shape) is like this:
+We can see what its **shape** is like this:
 
 
 <pre class="in"><code>print data.shape</code></pre>
@@ -224,7 +224,7 @@ We can see what its [shape](../../gloss.html#shape) is like this:
 
 
 This tells us that `data` has 60 rows and 40 columns.
-`data.shape` is a [member](../../gloss.html#member) of `data`,
+`data.shape` is a **member** of `data`,
 i.e.,
 a value that is stored as part of a larger value.
 We use the same dotted notation for the members of values
@@ -233,7 +233,7 @@ because they have the same part-and-whole relationship.
 
 
 If we want to get a single value from the matrix,
-we must provide an [index](../../gloss.html#index) in square brackets,
+we must provide an **index** in square brackets,
 just as we do in math:
 
 
@@ -290,7 +290,7 @@ for the first four (rows) patients like this:
 </code></pre></div>
 
 
-The [slice](../../gloss.html#slice) `0:4` means,
+The **slice** `0:4` means,
 "Start at index 0 and go up to, but not including, index 4."
 Again,
 the up-to-but-not-including takes a bit of getting used to,
@@ -395,7 +395,7 @@ we can just ask the array for its mean value
 </code></pre></div>
 
 
-`mean` is a [method](../../gloss.html#method) of the array,
+`mean` is a **method** of the array,
 i.e.,
 a function that belongs to it
 in the same way that the member `shape` does.
@@ -508,7 +508,7 @@ which is the average inflammation per patient across all days.
 <div class="challenges" markdown="1">
 #### Challenges
 
-A subsection of an array is called a [slice](../../gloss.html#slice).
+A subsection of an array is called a **slice**.
 We can take slices of character strings as well:
 </div>
 
@@ -532,7 +532,7 @@ last three characters: gen
     Given those answers,
     explain what `element[1:-1]` does.
 
-1.  The expression `element[3:3]` produces an [empty string](../../gloss.html#empty-string),
+1.  The expression `element[3:3]` produces an **empty string**,
     i.e., a string that contains no characters.
     If `data` holds our array of patient data,
     what does `data[3:3, 4:4]` produce?
@@ -632,7 +632,7 @@ or something is wrong with our data.
 ### Wrapping Up
 
 
-It's very common to create an [alias](../../gloss.html#alias) for a library when importing it
+It's very common to create an **alias** for a library when importing it
 in order to reduce the amount of typing we have to do.
 Here are our three plots side by side using aliases for `numpy` and `pyplot`:
 
