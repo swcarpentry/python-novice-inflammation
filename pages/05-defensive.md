@@ -34,13 +34,11 @@ we need to:
 The good news is,
 doing these things will speed up our programming,
 not slow it down.
-As in real carpentry&mdash;the kind done with lumber&mdash;the time saved
+As in real carpentry --- the kind done with lumber --- the time saved
 by measuring carefully before cutting a piece of wood
 is much greater than the time that measuring takes.
 
-
 ### Assertions
-
 
 The first step toward getting the right answers from our programs
 is to assume that mistakes *will* happen
@@ -59,25 +57,26 @@ and prints the error message provided.
 For example,
 this piece of code halts as soon as the loop encounters a value that isn't positive:
 
-
-<pre class="in"><code>numbers = [1.5, 2.3, 0.7, -0.001, 4.4]
+~~~ {.python}
+numbers = [1.5, 2.3, 0.7, -0.001, 4.4]
 total = 0.0
 for n in numbers:
-    assert n &gt;= 0.0, &#39;Data should only contain positive values&#39;
+    assert n &gt;= 0.0, 'Data should only contain positive values'
     total += n
-print &#39;total is:&#39;, total</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
+print 'total is:', total
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-19-33d87ea29ae4&gt; in &lt;module&gt;()
       2 total = 0.0
       3 for n in numbers:
-----&gt; 4     assert n &gt;= 0.0, &#39;Data should only contain positive values&#39;
+----&gt; 4     assert n &gt;= 0.0, 'Data should only contain positive values'
       5     total += n
-      6 print &#39;total is:&#39;, total
+      6 print 'total is:', total
 
-AssertionError: Data should only contain positive values</code></pre></div>
-
+AssertionError: Data should only contain positive values
+~~~
 
 Programs like the Firefox browser are full of assertions:
 10-20% of the code they contain
@@ -99,13 +98,13 @@ and 1.0 units long on its longest axis.
 This function does that,
 but checks that its input is correctly formatted and that its result makes sense:
 
-
-<pre class="in"><code>def normalize_rectangle(rect):
-    &#39;&#39;&#39;Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.&#39;&#39;&#39;
-    assert len(rect) == 4, &#39;Rectangles must contain 4 coordinates&#39;
+~~~ {.python}
+def normalize_rectangle(rect):
+    '''Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.'''
+    assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
     x0, y0, x1, y1 = rect
-    assert x0 &lt; x1, &#39;Invalid X coordinates&#39;
-    assert y0 &lt; y1, &#39;Invalid Y coordinates&#39;
+    assert x0 &lt; x1, 'Invalid X coordinates'
+    assert y0 &lt; y1, 'Invalid Y coordinates'
     
     dx = x1 - x0
     dy = y1 - y0
@@ -116,80 +115,84 @@ but checks that its input is correctly formatted and that its result makes sense
         scaled = float(dx) / dy
         upper_x, upper_y = scaled, 1.0
 
-    assert 0 &lt; upper_x &lt;= 1.0, &#39;Calculated upper X coordinate invalid&#39;
-    assert 0 &lt; upper_y &lt;= 1.0, &#39;Calculated upper Y coordinate invalid&#39;
+    assert 0 &lt; upper_x &lt;= 1.0, 'Calculated upper X coordinate invalid'
+    assert 0 &lt; upper_y &lt;= 1.0, 'Calculated upper Y coordinate invalid'
 
-    return (0, 0, upper_x, upper_y)</code></pre>
-
+    return (0, 0, upper_x, upper_y)
+~~~
 
 The preconditions on lines 2, 4, and 5 catch invalid inputs:
 
-
-<pre class="in"><code>print normalize_rectangle( (0.0, 1.0, 2.0) ) # missing the fourth coordinate</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
+~~~ {.python}
+print normalize_rectangle( (0.0, 1.0, 2.0) ) # missing the fourth coordinate
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-21-3a97b1dcab70&gt; in &lt;module&gt;()
 ----&gt; 1 print normalize_rectangle( (0.0, 1.0, 2.0) ) # missing the fourth coordinate
 
 &lt;ipython-input-20-408dc39f3915&gt; in normalize_rectangle(rect)
       1 def normalize_rectangle(rect):
-      2     &#39;&#39;&#39;Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.&#39;&#39;&#39;
-----&gt; 3     assert len(rect) == 4, &#39;Rectangles must contain 4 coordinates&#39;
+      2     '''Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.'''
+----&gt; 3     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
       4     x0, y0, x1, y1 = rect
-      5     assert x0 &lt; x1, &#39;Invalid X coordinates&#39;
+      5     assert x0 &lt; x1, 'Invalid X coordinates'
 
-AssertionError: Rectangles must contain 4 coordinates</code></pre></div>
+AssertionError: Rectangles must contain 4 coordinates
+~~~
 
-
-<pre class="in"><code>print normalize_rectangle( (4.0, 2.0, 1.0, 5.0) ) # X axis inverted</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
+~~~ {.python}
+print normalize_rectangle( (4.0, 2.0, 1.0, 5.0) ) # X axis inverted
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-22-f05ae7878a45&gt; in &lt;module&gt;()
 ----&gt; 1 print normalize_rectangle( (4.0, 2.0, 1.0, 5.0) ) # X axis inverted
 
 &lt;ipython-input-20-408dc39f3915&gt; in normalize_rectangle(rect)
-      3     assert len(rect) == 4, &#39;Rectangles must contain 4 coordinates&#39;
+      3     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
       4     x0, y0, x1, y1 = rect
-----&gt; 5     assert x0 &lt; x1, &#39;Invalid X coordinates&#39;
-      6     assert y0 &lt; y1, &#39;Invalid Y coordinates&#39;
+----&gt; 5     assert x0 &lt; x1, 'Invalid X coordinates'
+      6     assert y0 &lt; y1, 'Invalid Y coordinates'
       7 
 
-AssertionError: Invalid X coordinates</code></pre></div>
-
+AssertionError: Invalid X coordinates
+~~~
 
 The post-conditions help us catch bugs by telling us when our calculations cannot have been correct.
 For example,
 if we normalize a rectangle that is taller than it is wide everything seems OK:
 
-
-<pre class="in"><code>print normalize_rectangle( (0.0, 0.0, 1.0, 5.0) )</code></pre>
-
-<div class="out"><pre class='out'><code>(0, 0, 0.2, 1.0)
-</code></pre></div>
-
+~~~ {.python}
+print normalize_rectangle( (0.0, 0.0, 1.0, 5.0) )
+~~~
+~~~ {.output}
+(0, 0, 0.2, 1.0)
+~~~
 
 but if we normalize one that's wider than it is tall,
 the assertion is triggered:
 
-
-<pre class="in"><code>print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
+~~~ {.python}
+print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-24-5f0ef7954aeb&gt; in &lt;module&gt;()
 ----&gt; 1 print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )
 
 &lt;ipython-input-20-408dc39f3915&gt; in normalize_rectangle(rect)
      16 
-     17     assert 0 &lt; upper_x &lt;= 1.0, &#39;Calculated upper X coordinate invalid&#39;
----&gt; 18     assert 0 &lt; upper_y &lt;= 1.0, &#39;Calculated upper Y coordinate invalid&#39;
+     17     assert 0 &lt; upper_x &lt;= 1.0, 'Calculated upper X coordinate invalid'
+---&gt; 18     assert 0 &lt; upper_y &lt;= 1.0, 'Calculated upper Y coordinate invalid'
      19 
      20     return (0, 0, upper_x, upper_y)
 
-AssertionError: Calculated upper Y coordinate invalid</code></pre></div>
-
+AssertionError: Calculated upper Y coordinate invalid
+~~~
 
 Re-reading our function,
 we realize that line 10 should divide `dy` by `dx` rather than `dx` by `dy`.
@@ -224,31 +227,7 @@ and helps to warn people who are reading the code
 (including your future self)
 that this bit is tricky.
 
-
-#### Challenges
-
-1. Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
- What pre-conditions and post-conditions would you write for it?
- Compare your answer to your neighbor's:
- can you think of a function that will past your tests but not hers or vice versa?
-
-2. Explain in words what the assertions in this code check,
- and for each one,
- give an example of input that will make that assertion fail.
- 
-  ~~~python
-  def running(values):
-      assert len(values) > 0
-      result = [values[0]]
-      for v in values[1:]:
-          assert result[-1] >= 0
-          result.append(result[-1] + v)
-          assert result[-1] >= result[0]
-      return result
-  ~~~
-
-### Test-Driven Development
-
+## Test-Driven Development
 
 An assertion checks that something is true at a particular point in the program.
 The next step is to check the overall behavior of a piece of code,
@@ -260,50 +239,49 @@ The range of each time series is represented as a pair of numbers,
 which are the time the interval started and ended.
 The output is the largest range that they all include:
 
-
 <img src="img/python-overlapping-ranges.svg" alt="Overlapping Ranges" />
-
 
 Most novice programmers would solve this problem like this:
 
-1. Write a function `range_overlap`.
-2. Call it interactively on two or three different inputs.
-3. If it produces the wrong answer, fix the function and re-run that test.
+1.  Write a function `range_overlap`.
+2.  Call it interactively on two or three different inputs.
+3.  If it produces the wrong answer, fix the function and re-run that test.
 
-This clearly works&mdash;after all, thousands of scientists are doing it right now&mdash;but
+This clearly works --- after all, thousands of scientists are doing it right now --- but
 there's a better way:
 
-1. Write a short function for each test.
-2. Write a `range_overlap` function that should pass those tests.
-3. If `range_overlap` produces any wrong answers, fix it and re-run the test functions.
+1.  Write a short function for each test.
+2.  Write a `range_overlap` function that should pass those tests.
+3.  If `range_overlap` produces any wrong answers, fix it and re-run the test functions.
 
 Writing the tests *before* writing the function they exercise
 is called **test-driven development** (TDD).
 Its advocates believe it produces better code faster because:
 
-1. If people write tests after writing the thing to be tested,
- they are subject to confirmation bias,
- i.e.,
- they subconsciously write tests to show that their code is correct,
- rather than to find errors.
-2. Writing tests helps programmers figure out what the function is actually supposed to do.
+1.  If people write tests after writing the thing to be tested,
+    they are subject to confirmation bias,
+    i.e.,
+    they subconsciously write tests to show that their code is correct,
+    rather than to find errors.
+2.  Writing tests helps programmers figure out what the function is actually supposed to do.
 
 Here are three test functions for `range_overlap`:
 
-
-<pre class="in"><code>assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
+~~~ {.python}
+assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
 assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
-assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
+assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-25-d8be150fbef6&gt; in &lt;module&gt;()
       1 assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
 ----&gt; 2 assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
       3 assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
 
-AssertionError: </code></pre></div>
-
+AssertionError: 
+~~~
 
 The error is actually reassuring:
 we haven't written `range_overlap` yet,
@@ -319,7 +297,7 @@ and produce a single pair as output.
 Something important is missing, though.
 We don't have any tests for the case where the ranges don't overlap at all:
 
-~~~
+~~~ {.python}
 assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == ???
 ~~~
 
@@ -334,7 +312,7 @@ before we realized there was an issue.
 
 And what about this case?
 
-~~~
+~~~ {.python}
 assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == ???
 ~~~
 
@@ -350,8 +328,8 @@ Since we're planning to use the range this function returns
 as the X axis in a time series chart,
 we decide that:
 
-1. every overlap has to have non-zero width, and
-2. we will return the special value `None` when there's no overlap.
+1.  every overlap has to have non-zero width, and
+2.  we will return the special value `None` when there's no overlap.
 
 `None` is built into Python,
 and means "nothing here".
@@ -359,33 +337,34 @@ and means "nothing here".
 With that decision made,
 we can finish writing our last two tests:
 
-
-<pre class="in"><code>assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
-assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
+~~~ {.python}
+assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
+assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-26-d877ef460ba2&gt; in &lt;module&gt;()
 ----&gt; 1 assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
       2 assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
 
-AssertionError: </code></pre></div>
-
+AssertionError: 
+~~~
 
 Again,
 we get an error because we haven't written our function,
 but we're now ready to do so:
 
-
-<pre class="in"><code>def range_overlap(ranges):
-    &#39;&#39;&#39;Return common overlap among a set of [low, high] ranges.&#39;&#39;&#39;
+~~~ {.python}
+def range_overlap(ranges):
+    '''Return common overlap among a set of [low, high] ranges.'''
     lowest = 0.0
     highest = 1.0
     for (low, high) in ranges:
         lowest = max(lowest, low)
         highest = min(highest, high)
-    return (lowest, highest)</code></pre>
-
+    return (lowest, highest)
+~~~
 
 (Take a moment to think about why we use `max` to raise `lowest`
 and `min` to lower `highest`.)
@@ -394,21 +373,22 @@ but they're scattered across three different cells.
 To make running them easier,
 let's put them all in a function:
 
-
-<pre class="in"><code>def test_range_overlap():
+~~~ {.python}
+def test_range_overlap():
     assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
     assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
     assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
     assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
-    assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)</code></pre>
-
+    assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
+~~~
 
 We can now test `range_overlap` with a single function call:
 
-
-<pre class="in"><code>test_range_overlap()</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
+~~~ {.python}
+test_range_overlap()
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-29-cf9215c96457&gt; in &lt;module&gt;()
 ----&gt; 1 test_range_overlap()
@@ -420,8 +400,8 @@ AssertionError                            Traceback (most recent call last)
       4     assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
       5     assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
 
-AssertionError: </code></pre></div>
-
+AssertionError: 
+~~~
 
 The first of the tests that was supposed to produce `None` fails,
 so we know there's something wrong with our function.
@@ -438,15 +418,7 @@ This violates another important rule of programming:
 "[always initialize from data](../../rules.html#always-initialize-from-data)".
 We'll leave it as an exercise to fix `range_overlap`.
 
-
-<div class="challenges" markdown="1">
-#### Challenges
-
-1. Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
-</div>
-
-### Debugging
-
+## Debugging
 
 Once testing has uncovered problems,
 the next step is to fix them.
@@ -458,16 +430,16 @@ The more experienced a programmer is,
 the more systematically they debug,
 and most follow some variation on the rules explained below.
 
-#### Know What It's Supposed to Do
+### Know What It's Supposed to Do
 
 The first step in debugging something is to
 [know what it's supposed to do](../../rules.html#know-what-its-supposed-to-do).
 "My program doesn't work" isn't good enough:
 in order to diagnose and fix problems,
 we need to be able to tell correct output from incorrect.
-If we can write a test case for the failing case&mdash;i.e.,
+If we can write a test case for the failing case --- i.e.,
 if we can assert that with *these* inputs,
-the function should produce *that* result&mdash;
+the function should produce *that* result --- 
 then we're ready to start debugging.
 If we can't,
 then we need to figure out how we're going to know when we've fixed things.
@@ -480,52 +452,52 @@ we'd be writing up our results and moving on to the next program.
 In practice,
 scientists tend to do the following:
 
-1. *Test with simplified data.*
- Before doing statistics on a real data set,
- we should try calculating statistics for a single record,
- for two identical records,
- for two records whose values are one step apart,
- or for some other case where we can calculate the right answer by hand.
+1.  *Test with simplified data.*
+    Before doing statistics on a real data set,
+    we should try calculating statistics for a single record,
+    for two identical records,
+    for two records whose values are one step apart,
+    or for some other case where we can calculate the right answer by hand.
 
-2. *Test a simplified case.*
- If our program is supposed to simulate
- magnetic eddies in rapidly-rotating blobs of supercooled helium,
- our first test should be a blob of helium that isn't rotating,
- and isn't being subjected to any external electromagnetic fields.
- Similarly,
- if we're looking at the effects of climate change on speciation,
- our first test should hold temperature, precipitation, and other factors constant.
+2.  *Test a simplified case.*
+    If our program is supposed to simulate
+    magnetic eddies in rapidly-rotating blobs of supercooled helium,
+    our first test should be a blob of helium that isn't rotating,
+    and isn't being subjected to any external electromagnetic fields.
+    Similarly,
+    if we're looking at the effects of climate change on speciation,
+    our first test should hold temperature, precipitation, and other factors constant.
 
-3. *Compare to an oracle.*
- A **test oracle** is something&mdash;experimental data,
- an older program whose results are trusted,
- or even a human expert&mdash;against which we can compare the results of our new program.
- If we have a test oracle,
- we should store its output for particular cases
- so that we can compare it with our new results as often as we like
- without re-running that program.
+3.  *Compare to an oracle.*
+    A **test oracle** is something --- experimental data,
+    an older program whose results are trusted,
+    or even a human expert --- against which we can compare the results of our new program.
+    If we have a test oracle,
+    we should store its output for particular cases
+    so that we can compare it with our new results as often as we like
+    without re-running that program.
 
-4. *Check conservation laws.*
- Mass, energy, and other quantitites are conserved in physical systems,
- so they should be in programs as well.
- Similarly,
- if we are analyzing patient data,
- the number of records should either stay the same or decrease
- as we move from one analysis to the next
- (since we might throw away outliers or records with missing values).
- If "new" patients start appearing out of nowhere as we move through our pipeline,
- it's probably a sign that something is wrong.
+4.  *Check conservation laws.*
+    Mass, energy, and other quantitites are conserved in physical systems,
+    so they should be in programs as well.
+    Similarly,
+    if we are analyzing patient data,
+    the number of records should either stay the same or decrease
+    as we move from one analysis to the next
+    (since we might throw away outliers or records with missing values).
+    If "new" patients start appearing out of nowhere as we move through our pipeline,
+    it's probably a sign that something is wrong.
 
-5. *Visualize.*
- Data analysts frequently use simple visualizations to check both
- the science they're doing
- and the correctness of their code
- (just as we did in the [opening lesson](01-numpy.html) of this tutorial).
- This should only be used for debugging as a last resort,
- though,
- since it's very hard to compare two visualizations automatically.
+5.  *Visualize.*
+    Data analysts frequently use simple visualizations to check both
+    the science they're doing
+    and the correctness of their code
+    (just as we did in the [opening lesson](01-numpy.html) of this tutorial).
+    This should only be used for debugging as a last resort,
+    though,
+    since it's very hard to compare two visualizations automatically.
 
-#### Make It Fail Every Time
+### Make It Fail Every Time
 
 We can only debug something when it fails,
 so the second step is always to find a test case that
@@ -549,7 +521,7 @@ and up against a deadline,
 which is one of the reasons late-night (or overnight) coding sessions
 are almost never worthwhile.
 
-#### Make It Fail Fast
+### Make It Fail Fast
 
 If it takes 20 minutes for the bug to surface,
 we can only do three experiments an hour.
@@ -563,20 +535,20 @@ we want to make it fail fast in space,
 i.e.,
 we want to localize the failure to the smallest possible region of code:
 
-1. The smaller the gap between cause and effect,
- the easier the connection is to find.
- Many programmers therefore use a divide and conquer strategy to find bugs,
- i.e.,
- if the output of a function is wrong,
- they check whether things are OK in the middle,
- then concentrate on either the first or second half,
- and so on.
+1.  The smaller the gap between cause and effect,
+    the easier the connection is to find.
+    Many programmers therefore use a divide and conquer strategy to find bugs,
+    i.e.,
+    if the output of a function is wrong,
+    they check whether things are OK in the middle,
+    then concentrate on either the first or second half,
+    and so on.
 
-2. N things can interact in N<sup>2/2</sup> different ways,
- so every line of code that *isn't* run as part of a test
- means more than one thing we don't need to worry about.
+2.  N things can interact in N<sup>2/2</sup> different ways,
+    so every line of code that *isn't* run as part of a test
+    means more than one thing we don't need to worry about.
 
-#### Change One Thing at a Time, For a Reason
+### Change One Thing at a Time, For a Reason
 
 Replacing random chunks of code is unlikely to do much good.
 (After all,
@@ -599,7 +571,7 @@ And we should re-run *all* of our tests:
 more than half of fixes made to code introduce (or re-introduce) bugs,
 so re-running all of our tests tells us whether we have regressed.
 
-#### Keep Track of What You've Done
+### Keep Track of What You've Done
 
 Good scientists keep track of what they've done
 so that they can reproduce their work,
@@ -622,7 +594,7 @@ People are more likely to listen to us
 when we can explain clearly what we did,
 and we're better able to give them the information they need to be useful.
 
-> #### Version Control Revisited
+> ## Version Control Revisited {.callout}
 >
 > Version control is often used to reset software to a known state during debugging,
 > and to explore recent changes to code that might be responsible for bugs.
@@ -630,7 +602,7 @@ and we're better able to give them the information they need to be useful.
 > most version control systems have a `blame` command
 > that will show who last changed particular lines of code...
 
-#### Be Humble
+### Be Humble
 
 And speaking of help:
 if we can't find a bug in 10 minutes,
@@ -664,10 +636,38 @@ and to turn every assumption (or mistake) into an assertion,
 it will actually take us *less* time to produce working programs,
 not more.
 
-#### Next Steps
+### Next Steps
 
 We have now seen the basics of building and testing Python code in the IPython Notebook.
 The last thing we need to learn is how to build command-line programs
 that we can use in pipelines and shell scripts,
 so that we can integrate our tools with other people's work.
 This will be the subject of our next and final lesson.
+
+#### Challenges
+
+1. Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
+ What pre-conditions and post-conditions would you write for it?
+ Compare your answer to your neighbor's:
+ can you think of a function that will past your tests but not hers or vice versa?
+
+2. Explain in words what the assertions in this code check,
+ and for each one,
+ give an example of input that will make that assertion fail.
+ 
+  ~~~python
+  def running(values):
+      assert len(values) > 0
+      result = [values[0]]
+      for v in values[1:]:
+          assert result[-1] >= 0
+          result.append(result[-1] + v)
+          assert result[-1] >= result[0]
+      return result
+  ~~~
+
+<div class="challenges" markdown="1">
+#### Challenges
+
+1. Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
+</div>

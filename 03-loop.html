@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Programming with Python</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+      </div>
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          <h1 class="title">Programming with Python</h1>
+          <h2 class="subtitle">Analyzing Multiple Data Sets</h2>
+          <div id="learning-objectives" class="objectives">
+          <h2>Learning Objectives</h2>
+          <ul>
+          <li>Explain what a for loop does.</li>
+          <li>Correctly write for loops to repeat simple calculations.</li>
+          <li>Trace changes to a loop variable as the loop runs.</li>
+          <li>Trace changes to other variables as they are updated by a for loop.</li>
+          <li>Explain what a list is.</li>
+          <li>Create and index lists of simple values.</li>
+          <li>Use a library function to get a list of filenames that match a simple wildcard pattern.</li>
+          <li>Use a for loop to process multiple files.</li>
+          </ul>
+          </div>
+          <p>We have created a function called <code>analyze</code> that creates graphs of the minimum, average, and maximum daily inflammation rates for a single data set:</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy <span class="ch">as</span> np
+          <span class="ch">from</span> matplotlib <span class="ch">import</span> pyplot <span class="ch">as</span> plt
+          
+          <span class="kw">def</span> analyze(filename):
+              data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
+              
+              plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+              
+              plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+              plt.ylabel(<span class="st">&#39;average&#39;</span>)
+              plt.plot(data.mean(<span class="dv">0</span>))
+              
+              plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+              plt.ylabel(<span class="st">&#39;max&#39;</span>)
+              plt.plot(data.<span class="dt">max</span>(<span class="dv">0</span>))
+              
+              plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
+              plt.ylabel(<span class="st">&#39;min&#39;</span>)
+              plt.plot(data.<span class="dt">min</span>(<span class="dv">0</span>))
+              
+              plt.tight_layout()
+              plt.show()
+          
+          analyze(<span class="st">&#39;inflammation-01.csv&#39;</span>)</code></pre>
+          <p><img src="../../novice/python/03-loop_files/novice/python/03-loop_2_0.png"></p>
+          <p>We can use it to analyze other data sets one by one:</p>
+          <pre class="sourceCode python"><code class="sourceCode python">analyze(<span class="st">&#39;inflammation-02.csv&#39;</span>)</code></pre>
+          <p><img src="../../novice/python/03-loop_files/novice/python/03-loop_4_0.png"></p>
+          <p>but we have a dozen data sets right now and more on the way. We want to create plots for all our data sets with a single statement. To do that, we'll have to teach the computer how to repeat things.</p>
+          <h2 id="for-loops">For Loops</h2>
+          <p>Suppose we want to print each character in the word &quot;lead&quot; on a line of its own. One way is to use four <code>print</code> statements:</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> print_characters(element):
+              <span class="dt">print</span> element[<span class="dv">0</span>]
+              <span class="dt">print</span> element[<span class="dv">1</span>]
+              <span class="dt">print</span> element[<span class="dv">2</span>]
+              <span class="dt">print</span> element[<span class="dv">3</span>]
+          
+          print_characters(<span class="st">&#39;lead&#39;</span>)</code></pre>
+          <pre class="output"><code>l
+          e
+          a
+          d</code></pre>
+          <p>but that's a bad approach for two reasons:</p>
+          <ol style="list-style-type: decimal">
+          <li><p>It doesn't scale: if we want to print the characters in a string that's hundreds of letters long, we'd be better off just typing them in.</p></li>
+          <li><p>It's fragile: if we give it a longer string, it only prints part of the data, and if we give it a shorter one, it produces an error because we're asking for characters that don't exist.</p></li>
+          </ol>
+          <pre class="sourceCode python"><code class="sourceCode python">print_characters(<span class="st">&#39;tin&#39;</span>)</code></pre>
+          <h2 id="section" class="error"><sub>~</sub></h2>
+          <p>IndexError Traceback (most recent call last) &lt;ipython-input-13-5bc7311e0bf3&gt; in &lt;module&gt;() ----&gt; 1 print_characters('tin')</p>
+          <p>&lt;ipython-input-12-11460561ea56&gt; in print_characters(element) 3 print element[1] 4 print element[2] ----&gt; 5 print element[3] 6 7 print_characters('lead')</p>
+          <p>IndexError: string index out of range <sub>~</sub> {.output} t i n <sub>~</sub></p>
+          <p>Here's a better approach:</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> print_characters(element):
+              <span class="kw">for</span> char in element:
+                  <span class="dt">print</span> char
+          
+          print_characters(<span class="st">&#39;lead&#39;</span>)</code></pre>
+          <p>This is shorter---certainly shorter than something that prints every character in a hundred-letter string---and more robust as well:</p>
+          <pre class="sourceCode python"><code class="sourceCode python">print_characters(<span class="st">&#39;oxygen&#39;</span>)</code></pre>
+          <p>The improved version of <code>print_characters</code> uses a <strong>for loop</strong> to repeat an operation---in this case, printing---once for each thing in a collection. The general form of a loop is:</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> variable in collection:
+              do things <span class="kw">with</span> variable</code></pre>
+          <p>We can call the <strong>loop variable</strong> anything we like, but there must be a colon at the end of the line starting the loop, and we must indent the body of the loop.</p>
+          <p>Here's another loop that repeatedly updates a variable:</p>
+          <pre class="sourceCode python"><code class="sourceCode python">length = <span class="dv">0</span>
+          <span class="kw">for</span> vowel in <span class="st">&#39;aeiou&#39;</span>:
+              length = length + <span class="dv">1</span>
+          <span class="dt">print</span> <span class="st">&#39;There are&#39;</span>, length, <span class="st">&#39;vowels&#39;</span></code></pre>
+          <p>It's worth tracing the execution of this little program step by step. Since there are five characters in <code>'aeiou'</code>, the statement on line 3 will be executed five times. The first time around, <code>length</code> is zero (the value assigned to it on line 1) and <code>vowel</code> is <code>'a'</code>. The statement adds 1 to the old value of <code>length</code>, producing 1, and updates <code>length</code> to refer to that new value. The next time around, <code>vowel</code> is <code>'e'</code> and <code>length</code> is 1, so <code>length</code> is updated to be 2. After three more updates, <code>length</code> is 5; since there is nothing left in <code>'aeiou'</code> for Python to process, the loop finishes and the <code>print</code> statement on line 4 tells us our final answer.</p>
+          <p>Note that a loop variable is just a variable that's being used to record progress in a loop. It still exists after the loop is over, and we can re-use variables previously defined as loop variables as well:</p>
+          <pre class="sourceCode python"><code class="sourceCode python">letter = <span class="st">&#39;z&#39;</span>
+          <span class="kw">for</span> letter in <span class="st">&#39;abc&#39;</span>:
+              <span class="dt">print</span> letter
+          <span class="dt">print</span> <span class="st">&#39;after the loop, letter is&#39;</span>, letter</code></pre>
+          <p>Note also that finding the length of a string is such a common operation that Python actually has a built-in function to do it called <code>len</code>:</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="dt">len</span>(<span class="st">&#39;aeiou&#39;</span>)</code></pre>
+          <p><code>len</code> is much faster than any function we could write ourselves, and much easier to read than a two-line loop; it will also give us the length of many other things that we haven't met yet, so we should always use it when we can.</p>
+          <h2 id="lists">Lists</h2>
+          <p>Just as a <code>for</code> loop is a way to do operations many times, a list is a way to store many values. Unlike NumPy arrays, there are built into the language. We create a list by putting values inside square brackets:</p>
+          <pre class="sourceCode python"><code class="sourceCode python">odds = [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>]
+          <span class="dt">print</span> <span class="st">&#39;odds are:&#39;</span>, odds</code></pre>
+          <p>We select individual elements from lists by indexing them:</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;first and last:&#39;</span>, odds[<span class="dv">0</span>], odds[-<span class="dv">1</span>]</code></pre>
+          <p>and if we loop over a list, the loop variable is assigned elements one at a time:</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> number in odds:
+              <span class="dt">print</span> number</code></pre>
+          <p>There is one important difference between lists and strings: we can change the values in a list, but we cannot change the characters in a string. For example:</p>
+          <pre class="sourceCode python"><code class="sourceCode python">names = [<span class="st">&#39;Newton&#39;</span>, <span class="st">&#39;Darwing&#39;</span>, <span class="st">&#39;Turing&#39;</span>] <span class="co"># typo in Darwin&#39;s name</span>
+          <span class="dt">print</span> <span class="st">&#39;names is originally:&#39;</span>, names
+          names[<span class="dv">1</span>] = <span class="st">&#39;Darwin&#39;</span> <span class="co"># correct the name</span>
+          <span class="dt">print</span> <span class="st">&#39;final value of names:&#39;</span>, names</code></pre>
+          <p>works, but:</p>
+          <pre class="sourceCode python"><code class="sourceCode python">name = <span class="st">&#39;Bell&#39;</span>
+          name[<span class="dv">0</span>] = <span class="st">&#39;b&#39;</span></code></pre>
+          <p>does not.</p>
+          <div id="ch-ch-ch-changes" class="callout">
+          <h2>Ch-Ch-Ch-Changes</h2>
+          <p>Data that can be changed is called <strong>mutable</strong>, while data that cannot be is called <strong>immutable</strong>. Like strings, numbers are immutable: there's no way to make the number 0 have the value 1 or vice versa (at least, not in Python --- there actually <em>are</em> languages that will let people do this, with predictably confusing results). Lists and arrays, on the other hand, are mutable: both can be modified after they have been created.</p>
+          <p>Programs that modify data in place can be harder to understand than ones that don't because readers may have to mentally sum up many lines of code in order to figure out what the value of something actually is. On the other hand, programs that modify data in place instead of creating copies that are almost identical to the original every time they want to make a small change are much more efficient.</p>
+          </div>
+          <p>There are many ways to change the contents of in lists besides assigning to elements:</p>
+          <pre class="sourceCode python"><code class="sourceCode python">odds.append(<span class="dv">11</span>)
+          <span class="dt">print</span> <span class="st">&#39;odds after adding a value:&#39;</span>, odds</code></pre>
+          <p>FIXME: output</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">del</span> odds[<span class="dv">0</span>]
+          <span class="dt">print</span> <span class="st">&#39;odds after removing the first element:&#39;</span>, odds</code></pre>
+          <p>FIXME: output</p>
+          <pre class="sourceCode python"><code class="sourceCode python">odds.reverse()
+          <span class="dt">print</span> <span class="st">&#39;odds after reversing:&#39;</span>, odds</code></pre>
+          <p>FIXME: output</p>
+          <h2 id="processing-multiple-files">Processing Multiple Files</h2>
+          <p>We now have almost everything we need to process all our data files. The only thing that's missing is a library with a rather unpleasant name:</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> glob</code></pre>
+          <p>The <code>glob</code> library contains a single function, also called <code>glob</code>, that finds files whose names match a pattern. We provide those patterns as strings: the character <code>*</code> matches zero or more characters, while <code>?</code> matches any one character. We can use this to get the names of all the IPython Notebooks we have created so far:</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> glob.glob(<span class="st">&#39;*.ipynb&#39;</span>)</code></pre>
+          <pre class="output"><code>[&#39;01-numpy.ipynb&#39;, &#39;02-func.ipynb&#39;, &#39;03-loop.ipynb&#39;, &#39;04-cond.ipynb&#39;, &#39;05-defensive.ipynb&#39;, &#39;06-cmdline.ipynb&#39;, &#39;spatial-intro.ipynb&#39;]</code></pre>
+          <p>or to get the names of all our CSV data files:</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> glob.glob(<span class="st">&#39;*.csv&#39;</span>)</code></pre>
+          <pre class="output"><code>[&#39;inflammation-01.csv&#39;, &#39;inflammation-02.csv&#39;, &#39;inflammation-03.csv&#39;, &#39;inflammation-04.csv&#39;, &#39;inflammation-05.csv&#39;, &#39;inflammation-06.csv&#39;, &#39;inflammation-07.csv&#39;, &#39;inflammation-08.csv&#39;, &#39;inflammation-09.csv&#39;, &#39;inflammation-10.csv&#39;, &#39;inflammation-11.csv&#39;, &#39;inflammation-12.csv&#39;, &#39;small-01.csv&#39;, &#39;small-02.csv&#39;, &#39;small-03.csv&#39;]</code></pre>
+          <p>As these examples show, <code>glob.glob</code>'s result is a list of strings, which means we can loop over it to do something with each filename in turn. In our case, the &quot;something&quot; we want is our <code>analyze</code> function. Let's test it by analyzing the first three files in the list:</p>
+          <pre class="sourceCode python"><code class="sourceCode python">filenames = glob.glob(<span class="st">&#39;*.csv&#39;</span>)
+          filenames = filenames[<span class="dv">0</span>:<span class="dv">3</span>]
+          <span class="kw">for</span> f in filenames:
+              <span class="dt">print</span> f
+              analyze(f)</code></pre>
+          <pre class="output"><code>inflammation-01.csv</code></pre>
+          <p><img src="../../novice/python/03-loop_files/novice/python/03-loop_49_1.png"> <sub>~</sub> {.output} inflammation-02.csv <sub>~</sub></p>
+          <p><img src="../../novice/python/03-loop_files/novice/python/03-loop_49_3.png"></p>
+          <pre class="output"><code>inflammation-03.csv</code></pre>
+          <p><img src="../../novice/python/03-loop_files/novice/python/03-loop_49_5.png"></p>
+          <p>Sure enough, the maxima of these data sets show exactly the same ramp as the first, and their minima show the same staircase structure.</p>
+          <div class="challenges" markdown="1">
+          <h4>Challenges</h4>
+          <ol style="list-style-type: decimal">
+          <li><p>Python has a built-in function called <code>range</code> that creates a list of numbers: <code>range(3)</code> produces <code>[0, 1, 2]</code>, <code>range(2, 5)</code> produces <code>[2, 3, 4]</code>. Using <code>range</code>, write a function that prints the <span class="math"><em>N</em></span> natural numbers:</p>
+          <pre class="sourceCode python"><code class="sourceCode python">print_N(<span class="dv">3</span>)
+          <span class="dv">1</span>
+          <span class="dv">2</span>
+          <span class="dv">3</span></code></pre></li>
+          <li><p>Exponentiation is built into Python:</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="dv">5</span>**<span class="dv">3</span>
+          <span class="dv">125</span></code></pre>
+          <p>It also has a function called <code>pow</code> that calculates the same value. Write a function called <code>expo</code> that uses a loop to calculate the same result.</p></li>
+          <li><p>Write a function called <code>rev</code> that takes a string as input, and produces a new string with the characters in reverse order:</p>
+          <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> rev(<span class="st">&#39;Newton&#39;</span>)
+          notweN</code></pre>
+          As always, be sure to include a docstring.</li>
+          </ol>
+          </div>
+          <div class="challenges" markdown="1">
+          <h4>Challenges</h4>
+          <ol style="list-style-type: decimal">
+          <li>Write a function called <code>total</code> that calculates the sum of the values in a list. (Python has a built-in function called <code>sum</code> that does this for you. Please don't use it for this exercise.)</li>
+          </ol>
+          </div>
+          <div class="challenges" markdown="1">
+          <h4>Challenges</h4>
+          <ol style="list-style-type: decimal">
+          <li>Write a function called <code>analyze_all</code> that takes a filename pattern as its sole argument and runs <code>analyze</code> for each file whose name matches the pattern.</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Email</a>
+        <a class="label swc-blue-bg" href="http://github.com/swcarpentry">GitHub</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+        <a class="bugreport label swc-blue-bg" href="mailto:admin@software-carpentry.org?subject=bug%20in%20{{page.path}}">Bug Report</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>
