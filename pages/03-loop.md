@@ -252,7 +252,7 @@ does not.
 > Like strings,
 > numbers are immutable:
 > there's no way to make the number 0 have the value 1 or vice versa
-> (at least, not in Python&mdash;there actually *are* languages that will let people do this,
+> (at least, not in Python --- there actually *are* languages that will let people do this,
 > with predictably confusing results).
 > Lists and arrays,
 > on the other hand,

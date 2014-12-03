@@ -31,8 +31,8 @@ def fahr_to_kelvin(temp):
 The definition opens with the word `def`,
 which is followed by the name of the function
 and a parenthesized list of parameter names.
-The **body** of the function&mdash;the
-statements that are executed when it runs&mdash;is indented below the definition line,
+The **body** of the function --- the
+statements that are executed when it runs --- is indented below the definition line,
 typically by four spaces.
 
 When we call the function,
@@ -212,7 +212,7 @@ freezing point of water in Celsius: 0.0
 This is our first taste of how larger programs are built:
 we define basic operations,
 then combine them in ever-large chunks to get the effect we want.
-Real-life functions will usually be larger than the ones shown here&mdash;typically half a dozen to a few dozen lines&mdash;but
+Real-life functions will usually be larger than the ones shown here --- typically half a dozen to a few dozen lines --- but
 they shouldn't ever be much longer than that,
 or the next person who reads it won't be able to understand what's going on.
 
@@ -410,7 +410,7 @@ min, mean, and and max of centered data are: -6.14875 -3.49054118942e-15 13.8512
 That seems almost right:
 the original mean was about 6.1,
 so the lower bound from zero is how about -6.1.
-The mean of the centered data isn't quite zero&mdash;we'll explore why not in the challenges&mdash;but it's pretty close.
+The mean of the centered data isn't quite zero --- we'll explore why not in the challenges --- but it's pretty close.
 We can even go further and check that the standard deviation hasn't changed:
 
 ~~~ {.python}

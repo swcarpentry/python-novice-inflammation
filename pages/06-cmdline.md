@@ -53,20 +53,15 @@ we need to know how to handle command-line arguments in a program,
 and how to get at standard input.
 We'll tackle these questions in turn below.
 
-
 ### Command-Line Arguments
 
-
 Using the text editor of your choice,
-save the following in a text file:
+save the following in a text file called `sys-version.py`:
 
-
-<pre class="in"><code>!cat sys-version.py</code></pre>
-
-<div class="out"><pre class='out'><code>import sys
-print &#39;version is&#39;, sys.version
-</code></pre></div>
-
+~~~ {.python}
+import sys
+print 'version is', sys.version
+~~~
 
 The first line imports a library called `sys`,
 which is short for "system".
@@ -74,23 +69,21 @@ It defines values such as `sys.version`,
 which describes which version of Python we are running.
 We can run this script from within the IPython Notebook like this:
 
-
 <pre class="in"><code>%run sys-version.py</code></pre>
 
-<div class="out"><pre class='out'><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20) 
+~~~ {.output}
+version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20) 
 [GCC 4.0.1 (Apple Inc. build 5493)]
-</code></pre></div>
-
+~~~
 
 or like this:
 
-
 <pre class="in"><code>!ipython sys-version.py</code></pre>
 
-<div class="out"><pre class='out'><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20) 
+~~~ {.output}
+version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20) 
 [GCC 4.0.1 (Apple Inc. build 5493)]
-</code></pre></div>
-
+~~~
 
 The first method, `%run`,
 uses a special command in the IPython Notebook to run a program in a `.py` file.
@@ -98,16 +91,12 @@ The second method is more general:
 the exclamation mark `!` tells the Notebook to run a shell command,
 and it just so happens that the command we run is `ipython` with the name of the script.
 
+Here's another script called `argv-list.py` that does something more interesting:
 
-Here's another script that does something more interesting:
-
-
-<pre class="in"><code>!cat argv-list.py</code></pre>
-
-<div class="out"><pre class='out'><code>import sys
-print &#39;sys.argv is&#39;, sys.argv
-</code></pre></div>
-
+~~~ {.python}
+import sys
+print 'sys.argv is', sys.argv
+~~~
 
 The strange name `argv` stands for "argument values".
 Whenever Python runs a program,
@@ -116,26 +105,24 @@ and puts them in the list `sys.argv`
 so that the program can determine what they were.
 If we run this program with no arguments:
 
-
 <pre class="in"><code>!ipython argv-list.py</code></pre>
 
-<div class="out"><pre class='out'><code>sys.argv is [&#39;/Users/gwilson/s/bc/python/novice/argv-list.py&#39;]
-</code></pre></div>
-
+~~~ {.output}
+sys.argv is ['/Users/gwilson/s/bc/python/novice/argv-list.py']
+~~~
 
 the only thing in the list is the full path to our script,
 which is always `sys.argv[0]`.
 If we run it with a few arguments, however:
 
-
-<pre class="in"><code>!ipython argv-list.py first second third</code></pre>
-
-<div class="out"><pre class='out'><code>sys.argv is [&#39;/Users/gwilson/s/bc/python/novice/argv-list.py&#39;, &#39;first&#39;, &#39;second&#39;, &#39;third&#39;]
-</code></pre></div>
-
+~~~ {.input}
+$ argv-list.py first second third
+~~~
+~~~ {.output}
+sys.argv is ['/Users/gwilson/s/bc/python/novice/argv-list.py', 'first', 'second', 'third']
+~~~
 
 then Python adds each of those arguments to that magic list.
-
 
 With this in hand,
 let's build a version of `readings.py` that always prints the per-patient mean of a single data file.
@@ -144,57 +131,53 @@ and a placeholder for the function that does the actual work.
 By convention this function is usually called `main`,
 though we can call it whatever we want:
 
-
 <pre class="in"><code>!cat readings-01.py</code></pre>
 
-<div class="out"><pre class='out'><code>import sys
+~~~ {.python}
+import sys
 import numpy as np
 
 def main():
     script = sys.argv[0]
     filename = sys.argv[1]
-    data = np.loadtxt(filename, delimiter=&#39;,&#39;)
+    data = np.loadtxt(filename, delimiter=',')
     for m in data.mean(axis=1):
         print m
-</code></pre></div>
-
+~~~
 
 This function gets the name of the script from `sys.argv[0]`,
 because that's where it's always put,
 and the name of the file to process from `sys.argv[1]`.
 Here's a simple test:
 
-
 <pre class="in"><code>%run readings-01.py inflammation-01.csv</code></pre>
-
 
 There is no output because we have defined a function,
 but haven't actually called it.
 Let's add a call to `main`:
 
-
 <pre class="in"><code>!cat readings-02.py</code></pre>
 
-<div class="out"><pre class='out'><code>import sys
+~~~ {.python}
+import sys
 import numpy as np
 
 def main():
     script = sys.argv[0]
     filename = sys.argv[1]
-    data = np.loadtxt(filename, delimiter=&#39;,&#39;)
+    data = np.loadtxt(filename, delimiter=',')
     for m in data.mean(axis=1):
         print m
 
 main()
-</code></pre></div>
-
+~~~
 
 and run that:
 
-
 <pre class="in"><code>%run readings-02.py inflammation-01.csv</code></pre>
 
-<div class="out"><pre class='out'><code>5.45
+~~~ {.output}
+5.45
 5.425
 6.1
 5.9
@@ -254,10 +237,9 @@ and run that:
 6.4
 7.05
 5.9
-</code></pre></div>
+~~~
 
-
-> #### The Right Way to Do It
+> ## The Right Way to Do It {.callout}
 >
 > If our programs can take complex parameters or multiple filenames,
 > we shouldn't handle `sys.argv` directly.
@@ -266,6 +248,272 @@ and run that:
 > which handles common cases in a systematic way,
 > and also makes it easy for us to provide sensible error messages for our users.
 
+## Handling Multiple Files
+
+The next step is to teach our program how to handle multiple files.
+Since 60 lines of output per file is a lot to page through,
+we'll start by creating three smaller files,
+each of which has three days of data for two patients:
+
+~~~ {.input}
+$ ls small-*.csv
+~~~
+~~~ {.output}
+small-01.csv small-02.csv small-03.csv
+~~~
+
+~~~ {.input}
+$ cat small-01.csv
+~~~
+~~~ {.output}
+0,0,1
+0,1,2
+~~~
+
+~~~ {.input}
+$ python readings-02.py small-01.csv
+~~~
+~~~ {.output}
+0.333333333333
+1.0
+~~~
+
+Using small data files as input also allows us to check our results more easily:
+here,
+for example,
+we can see that our program is calculating the mean correctly for each line,
+whereas we were really taking it on faith before.
+This is yet another rule of programming:
+"[test the simple things first](../../rules.html#test-simple-first)".
+
+We want our program to process each file separately,
+so we need a loop that executes once for each filename.
+If we specify the files on the command line,
+the filenames will be in `sys.argv`,
+but we need to be careful:
+`sys.argv[0]` will always be the name of our script,
+rather than the name of a file.
+We also need to handle an unknown number of filenames,
+since our program could be run for any number of files.
+
+The solution to both problems is to loop over the contents of `sys.argv[1:]`.
+The '1' tells Python to start the slice at location 1,
+so the program's name isn't included;
+since we've left off the upper bound,
+the slice runs to the end of the list,
+and includes all the filenames.
+Here's our changed program
+`readings-03.py`:
+
+~~~ {.python}
+import sys
+import numpy as np
+
+def main():
+    script = sys.argv[0]
+    for filename in sys.argv[1:]:
+        data = np.loadtxt(filename, delimiter=',')
+        for m in data.mean(axis=1):
+            print m
+
+main()
+~~~
+
+and here it is in action:
+
+~~~ {.input{
+$ python readings-03.py small-01.csv small-02.csv
+~~~
+~~~ {.output}
+0.333333333333
+1.0
+13.6666666667
+11.0
+~~~
+
+> ## The Right Way to Do It {.callout}
+>
+> At this point,
+> we have created three versions of our script called `readings-01.py`,
+> `readings-02.py`, and `readings-03.py`.
+> We wouldn't do this in real life:
+> instead,
+> we would have one file called `readings.py` that we committed to version control
+> every time we got an enhancement working.
+> For teaching,
+> though,
+> we need all the successive versions side by side.
+
+## Handling Command-Line Flags
+
+The next step is to teach our program to pay attention to the `--min`, `--mean`, and `--max` flags.
+These always appear before the names of the files,
+so we could just do this:
+
+~~~ {.python}
+import sys
+import numpy as np
+
+def main():
+    script = sys.argv[0]
+    action = sys.argv[1]
+    filenames = sys.argv[2:]
+
+    for f in filenames:
+        data = np.loadtxt(f, delimiter=',')
+
+        if action == '--min':
+            values = data.min(axis=1)
+        elif action == '--mean':
+            values = data.mean(axis=1)
+        elif action == '--max':
+            values = data.max(axis=1)
+
+        for m in values:
+            print m
+
+main()
+~~~
+
+This works:
+
+~~~ {.input}
+$ python readings-04.py --max small-01.csv
+~~~
+~~~ {.output}
+1.0
+2.0
+~~~
+
+but there are several things wrong with it:
+
+1.  `main` is too large to read comfortably.
+
+2.  If `action` isn't one of the three recognized flags,
+    the program loads each file but does nothing with it
+    (because none of the branches in the conditional match).
+    **Silent failures** like this
+    are always hard to debug.
+
+This version pulls the processing of each file out of the loop into a function of its own.
+It also checks that `action` is one of the allowed flags
+before doing any processing,
+so that the program fails fast:
+
+~~~ {.python}
+import sys
+import numpy as np
+
+def main():
+    script = sys.argv[0]
+    action = sys.argv[1]
+    filenames = sys.argv[2:]
+    assert action in ['--min', '--mean', '--max'], \
+           'Action is not one of --min, --mean, or --max: ' + action
+    for f in filenames:
+        process(f, action)
+
+def process(filename, action):
+    data = np.loadtxt(filename, delimiter=',')
+
+    if action == '--min':
+        values = data.min(axis=1)
+    elif action == '--mean':
+        values = data.mean(axis=1)
+    elif action == '--max':
+        values = data.max(axis=1)
+
+    for m in values:
+        print m
+
+main()
+~~~
+
+This is four lines longer than its predecessor,
+but broken into more digestible chunks of 8 and 12 lines.
+
+Python has a module named [argparse](http://docs.python.org/dev/library/argparse.html)
+that helps handle complex command-line flags. We will not cover this module in this lesson
+but you can go to Tshepang Lekhonkhobe's [Argparse tutorial](http://docs.python.org/dev/howto/argparse.html)
+that is part of Python's Official Documentation.
+
+## Handling Standard Input
+
+The next thing our program has to do is read data from standard input if no filenames are given
+so that we can put it in a pipeline,
+redirect input to it,
+and so on.
+Let's experiment in another script called `count-stdin.py`:
+
+~~~ {.python}
+import sys
+
+count = 0
+for line in sys.stdin:
+    count += 1
+
+print count, 'lines in standard input'
+~~~
+
+This little program reads lines from a special "file" called `sys.stdin`,
+which is automatically connected to the program's standard input.
+We don't have to open it --- Python and the operating system
+take care of that when the program starts up --- 
+but we can do almost anything with it that we could do to a regular file.
+Let's try running it as if it were a regular command-line program:
+
+~~~ {.input}
+$ python count-stdin.py &lt; small-01.csv
+~~~
+~~~ {.output}
+2 lines in standard input
+~~~
+
+A common mistake is to try to run something that reads from standard input like this:
+
+~~~ {.input}
+$ count_stdin.py small-01.csv
+~~~
+
+i.e., to forget the `<` character that redirect the file to standard input.
+In this case,
+there's nothing in standard input,
+so the program waits at the start of the loop for someone to type something on the keyboard.
+Since there's no way for us to do this,
+our program is stuck,
+and we have to halt it using the `Interrupt` option from the `Kernel` menu in the Notebook.
+
+We now need to rewrite the program so that it loads data from `sys.stdin` if no filenames are provided.
+Luckily,
+`numpy.loadtxt` can handle either a filename or an open file as its first parameter,
+so we don't actually need to change `process`.
+That leaves `main`:
+
+~~~ {.python}
+def main():
+    script = sys.argv[0]
+    action = sys.argv[1]
+    filenames = sys.argv[2:]
+    assert action in ['--min', '--mean', '--max'], \
+           'Action is not one of --min, --mean, or --max: ' + action
+    if len(filenames) == 0:
+        process(sys.stdin, action)
+    else:
+        for f in filenames:
+            process(f, action)
+~~~
+
+Let's try it out:
+
+~~~ {.python}
+0.333333333333
+1.0
+~~~
+
+That's better.
+In fact,
+that's done:
+the program now does everything we set out to do.
 
 <div class="challenges" markdown="1">
 #### Challenges
@@ -292,213 +540,6 @@ and run that:
     ~~~
 </div>
 
-### Handling Multiple Files
-
-
-The next step is to teach our program how to handle multiple files.
-Since 60 lines of output per file is a lot to page through,
-we'll start by creating three smaller files,
-each of which has three days of data for two patients:
-
-
-<pre class="in"><code>!ls small-*.csv</code></pre>
-
-<div class="out"><pre class='out'><code>small-01.csv small-02.csv small-03.csv
-</code></pre></div>
-
-
-<pre class="in"><code>!cat small-01.csv</code></pre>
-
-<div class="out"><pre class='out'><code>0,0,1
-0,1,2
-</code></pre></div>
-
-
-<pre class="in"><code>%run readings-02.py small-01.csv</code></pre>
-
-<div class="out"><pre class='out'><code>0.333333333333
-1.0
-</code></pre></div>
-
-
-Using small data files as input also allows us to check our results more easily:
-here,
-for example,
-we can see that our program is calculating the mean correctly for each line,
-whereas we were really taking it on faith before.
-This is yet another rule of programming:
-"[test the simple things first](../../rules.html#test-simple-first)".
-
-We want our program to process each file separately,
-so we need a loop that executes once for each filename.
-If we specify the files on the command line,
-the filenames will be in `sys.argv`,
-but we need to be careful:
-`sys.argv[0]` will always be the name of our script,
-rather than the name of a file.
-We also need to handle an unknown number of filenames,
-since our program could be run for any number of files.
-
-The solution to both problems is to loop over the contents of `sys.argv[1:]`.
-The '1' tells Python to start the slice at location 1,
-so the program's name isn't included;
-since we've left off the upper bound,
-the slice runs to the end of the list,
-and includes all the filenames.
-Here's our changed program:
-
-
-<pre class="in"><code>!cat readings-03.py</code></pre>
-
-<div class="out"><pre class='out'><code>import sys
-import numpy as np
-
-def main():
-    script = sys.argv[0]
-    for filename in sys.argv[1:]:
-        data = np.loadtxt(filename, delimiter=&#39;,&#39;)
-        for m in data.mean(axis=1):
-            print m
-
-main()
-</code></pre></div>
-
-
-and here it is in action:
-
-
-<pre class="in"><code>%run readings-03.py small-01.csv small-02.csv</code></pre>
-
-<div class="out"><pre class='out'><code>0.333333333333
-1.0
-13.6666666667
-11.0
-</code></pre></div>
-
-
-Note:
-at this point,
-we have created three versions of our script called `readings-01.py`,
-`readings-02.py`, and `readings-03.py`.
-We wouldn't do this in real life:
-instead,
-we would have one file called `readings.py` that we committed to version control
-every time we got an enhancement working.
-For teaching,
-though,
-we need all the successive versions side by side.
-
-
-<div class="challenges" markdown="1">
-#### Challenges
-
-1.  Write a program called `check.py` that takes the names of one or more inflammation data files as arguments
-    and checks that all the files have the same number of rows and columns.
-    What is the best way to test your program?
-</div>
-
-### Handling Command-Line Flags
-
-
-The next step is to teach our program to pay attention to the `--min`, `--mean`, and `--max` flags.
-These always appear before the names of the files,
-so we could just do this:
-
-
-<pre class="in"><code>!cat readings-04.py</code></pre>
-
-<div class="out"><pre class='out'><code>import sys
-import numpy as np
-
-def main():
-    script = sys.argv[0]
-    action = sys.argv[1]
-    filenames = sys.argv[2:]
-
-    for f in filenames:
-        data = np.loadtxt(f, delimiter=&#39;,&#39;)
-
-        if action == &#39;--min&#39;:
-            values = data.min(axis=1)
-        elif action == &#39;--mean&#39;:
-            values = data.mean(axis=1)
-        elif action == &#39;--max&#39;:
-            values = data.max(axis=1)
-
-        for m in values:
-            print m
-
-main()
-</code></pre></div>
-
-
-This works:
-
-
-<pre class="in"><code>%run readings-04.py --max small-01.csv</code></pre>
-
-<div class="out"><pre class='out'><code>1.0
-2.0
-</code></pre></div>
-
-
-but there are seveal things wrong with it:
-
-1.  `main` is too large to read comfortably.
-
-2.  If `action` isn't one of the three recognized flags,
-    the program loads each file but does nothing with it
-    (because none of the branches in the conditional match).
-    **Silent failures** like this
-    are always hard to debug.
-
-This version pulls the processing of each file out of the loop into a function of its own.
-It also checks that `action` is one of the allowed flags
-before doing any processing,
-so that the program fails fast:
-
-
-<pre class="in"><code>!cat readings-05.py</code></pre>
-
-<div class="out"><pre class='out'><code>import sys
-import numpy as np
-
-def main():
-    script = sys.argv[0]
-    action = sys.argv[1]
-    filenames = sys.argv[2:]
-    assert action in [&#39;--min&#39;, &#39;--mean&#39;, &#39;--max&#39;], \
-           &#39;Action is not one of --min, --mean, or --max: &#39; + action
-    for f in filenames:
-        process(f, action)
-
-def process(filename, action):
-    data = np.loadtxt(filename, delimiter=&#39;,&#39;)
-
-    if action == &#39;--min&#39;:
-        values = data.min(axis=1)
-    elif action == &#39;--mean&#39;:
-        values = data.mean(axis=1)
-    elif action == &#39;--max&#39;:
-        values = data.max(axis=1)
-
-    for m in values:
-        print m
-
-main()
-</code></pre></div>
-
-
-This is four lines longer than its predecessor,
-but broken into more digestible chunks of 8 and 12 lines.
-
-
-Python has a module named [argparse](http://docs.python.org/dev/library/argparse.html)
-that helps handle complex command-line flags. We will not cover this module in this lesson
-but you can go to Tshepang Lekhonkhobe's [Argparse tutorial](http://docs.python.org/dev/howto/argparse.html)
-that is part of Python's Official Documentation.
-
-
 <div class="challenges" markdown="1">
 #### Challenges
 
@@ -516,134 +557,13 @@ that is part of Python's Official Documentation.
     it displays the means of the data.
 </div>
 
-### Handling Standard Input
+<div class="challenges" markdown="1">
+#### Challenges
 
-
-The next thing our program has to do is read data from standard input if no filenames are given
-so that we can put it in a pipeline,
-redirect input to it,
-and so on.
-Let's experiment in another script:
-
-
-<pre class="in"><code>!cat count-stdin.py</code></pre>
-
-<div class="out"><pre class='out'><code>import sys
-
-count = 0
-for line in sys.stdin:
-    count += 1
-
-print count, &#39;lines in standard input&#39;
-</code></pre></div>
-
-
-This little program reads lines from a special "file" called `sys.stdin`,
-which is automatically connected to the program's standard input.
-We don't have to open it&mdash;Python and the operating system
-take care of that when the program starts up&mdash;
-but we can do almost anything with it that we could do to a regular file.
-Let's try running it as if it were a regular command-line program:
-
-
-<pre class="in"><code>!ipython count-stdin.py &lt; small-01.csv</code></pre>
-
-<div class="out"><pre class='out'><code>2 lines in standard input
-</code></pre></div>
-
-
-What if we run it using `%run`?
-
-
-<pre class="in"><code>%run count-stdin.py &lt; small-01.csv</code></pre>
-
-<div class="out"><pre class='out'><code>0 lines in standard input
-</code></pre></div>
-
-
-As you can see,
-`%run` doesn't understand file redirection:
-that's a shell thing.
-
-A common mistake is to try to run something that reads from standard input like this:
-
-~~~
-!ipython count_stdin.py small-01.csv
-~~~
-
-i.e., to forget the `<` character that redirect the file to standard input.
-In this case,
-there's nothing in standard input,
-so the program waits at the start of the loop for someone to type something on the keyboard.
-Since there's no way for us to do this,
-our program is stuck,
-and we have to halt it using the `Interrupt` option from the `Kernel` menu in the Notebook.
-
-We now need to rewrite the program so that it loads data from `sys.stdin` if no filenames are provided.
-Luckily,
-`numpy.loadtxt` can handle either a filename or an open file as its first parameter,
-so we don't actually need to change `process`.
-That leaves `main`:
-
-
-~~~
-def main():
-    script = sys.argv[0]
-    action = sys.argv[1]
-    filenames = sys.argv[2:]
-    assert action in ['--min', '--mean', '--max'], \
-           'Action is not one of --min, --mean, or --max: ' + action
-    if len(filenames) == 0:
-        process(sys.stdin, action)
-    else:
-        for f in filenames:
-            process(f, action)
-~~~
-
-
-Let's try it out
-(we'll see in a moment why we send the output through `head`):
-
-
-<pre class="in"><code>!ipython readings-06.py --mean &lt; small-01.csv | head -10</code></pre>
-
-<div class="out"><pre class='out'><code>[TerminalIPythonApp] CRITICAL | Bad config encountered during initialization:
-[TerminalIPythonApp] CRITICAL | Unrecognized flag: &#39;--mean&#39;
-=========
- IPython
-=========
-
-Tools for Interactive Computing in Python
-=========================================
-
-    A Python shell with automatic history (input and output), dynamic object
-    introspection, easier configuration, command completion, access to the
-    system shell and more.  IPython can also be embedded in running programs.
-</code></pre></div>
-
-
-Whoops:
-why are we getting IPython's help rather than the line-by-line average of our data?
-The answer is that IPython has a hard time telling
-which command-line arguments are meant for it,
-and which are meant for the program it's running.
-To make our meaning clear,
-we have to use `--` (a double dash)
-to separate the two:
-
-
-<pre class="in"><code>!ipython readings-06.py -- --mean &lt; small-01.csv</code></pre>
-
-<div class="out"><pre class='out'><code>0.333333333333
-1.0
-</code></pre></div>
-
-
-That's better.
-In fact,
-that's done:
-the program now does everything we set out to do.
-
+1.  Write a program called `check.py` that takes the names of one or more inflammation data files as arguments
+    and checks that all the files have the same number of rows and columns.
+    What is the best way to test your program?
+</div>
 
 <div class="challenges" markdown="1">
 #### Challenges

@@ -106,7 +106,7 @@ first element of color is: 10
 
 Unlike lists and arrays,
 though,
-tuples cannot be changed after they are created&mdash;in technical terms,
+tuples cannot be changed after they are created --- in technical terms,
 they are **immutable**:
 
 ~~~ {.python}
@@ -439,7 +439,7 @@ heatmap.show()
 
 FIXME: grid-06.txt
 
-That's a bit better&mdash;but now the contrast between the colors isn't great enough.
+That's a bit better --- but now the contrast between the colors isn't great enough.
 And there still aren't very many fuchsia cells:
 we may want to widen the band around the mean that gets that color.
 
@@ -587,8 +587,8 @@ and not on our programming.
 <div class="challenges" markdown="1">
 #### Challenges
 
-1.  Will changing the nesting of the loops in the code above&mdash;i.e.,
-    wrapping the Y-axis loop around the X-axis loop&mdash;change the final image?
+1.  Will changing the nesting of the loops in the code above --- i.e.,
+    wrapping the Y-axis loop around the X-axis loop --- change the final image?
     Why or why not?
 
 2.  Python (and most other languages in the C family) provides **in-place operators**
