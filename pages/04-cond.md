@@ -69,9 +69,9 @@ grid lines on: True
 The obvious thing to do with a grid like this is color in its cells,
 but in order to do that,
 we need to know how computers represent color.
-The most common schemes are [RGB](../../gloss.html#rgb),
+The most common schemes are **RGB**,
 which is short for "red, green, blue".
-RGB is an [additive color model](../../gloss.html#additive-color-model):
+RGB is an **additive color model**:
 every shade is some combination of red, green, and blue intensities.
 We can think of these three values as being the axes in a cube:
 
@@ -80,7 +80,7 @@ We can think of these three values as being the axes in a cube:
 An RGB color is an example of a multi-part value:
 like a Cartesian coordinate,
 it is one thing with several parts.
-We can represent such a value in Python using a [tuple](../../gloss.html#tuple),
+We can represent such a value in Python using a **tuple**,
 which we write using parentheses instead of the square brackets used for a list:
 
 
@@ -107,7 +107,7 @@ just as we do with lists and arrays:
 Unlike lists and arrays,
 though,
 tuples cannot be changed after they are created&mdash;in technical terms,
-they are [immutable](../../gloss.html#immutable):
+they are **immutable**:
 
 
 <pre class="in"><code>color[0] = 40
@@ -196,7 +196,7 @@ c.show()</code></pre>
 
 The other thing we need in order to create a heat map of our own
 is a way to pick a color based on a data value.
-The tool Python gives us for doing this is called a [conditional statement](../../gloss.html#conditional-statement),
+The tool Python gives us for doing this is called a **conditional statement**,
 and looks like this:
 
 
@@ -371,8 +371,8 @@ de
 
 
 As the diagram below shows,
-the [inner loop](../../gloss.html#inner-loop) runs from start to finish
-each time the [outer loop](../../gloss.html#outer-loop) runs once:
+the **inner loop** runs from start to finish
+each time the **outer loop** runs once:
 
 
 <img src="img/python-flowchart-nested-loops.svg" alt="Execution of Nested Loops" />
@@ -406,7 +406,7 @@ the colors show where `x` is less than, equal to, or greater than `y`.
     wrapping the Y-axis loop around the X-axis loop&mdash;change the final image?
     Why or why not?
 
-2.  Python (and most other languages in the C family) provides [in-place operators](../../gloss.html#in-place-operator)
+2.  Python (and most other languages in the C family) provides **in-place operators**
     that work like this:
     
     ~~~python

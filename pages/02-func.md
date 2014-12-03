@@ -37,7 +37,7 @@ Let's start by defining a function `fahr_to_kelvin` that converts temperatures f
 The definition opens with the word `def`,
 which is followed by the name of the function
 and a parenthesized list of parameter names.
-The [body](../../gloss.html#function-body) of the function&mdash;the
+The **body** of the function&mdash;the
 statements that are executed when it runs&mdash;is indented below the definition line,
 typically by four spaces.
 
@@ -45,7 +45,7 @@ When we call the function,
 the values we pass to it are assigned to those variables
 so that we can use them inside the function.
 Inside the function,
-we use a [return statement](../../gloss.html#return-statement) to send a result back to whoever asked for it.
+we use a **return statement** to send a result back to whoever asked for it.
 
 Let's try running our function.
 Calling our own function is no different from calling any other function:
@@ -105,8 +105,8 @@ This is because `5/9` is actually 0.
 
 
 Computers store numbers in one of two ways:
-as [integers](../../gloss.html#integer)
-or as [floating-point numbers](../../gloss.html#float-point-number) (or floats).
+as **integers**
+or as **floating-point numbers** (or floats).
 The first are the numbers we usually count with;
 the second have fractional parts.
 Addition, subtraction and multiplication work on both as we'd expect,
@@ -203,7 +203,7 @@ What about converting Fahrenheit to Celsius?
 We could write out the formula,
 but we don't need to.
 Instead,
-we can [compose](../../gloss.html#function-composition) the two functions we have already created:
+we can **compose** the two functions we have already created:
 
 
 <pre class="in"><code>def fahr_to_celsius(temp):
@@ -272,7 +272,7 @@ The diagram below shows what memory looks like after the first line has been exe
 When we call `fahr_to_celsius`,
 Python *doesn't* create the variable `temp` right away.
 Instead,
-it creates something called a [stack frame](../../gloss.html#stack-frame)
+it creates something called a **stack frame**
 to keep track of the variables defined by `fahr_to_kelvin`.
 Initially,
 this stack frame only holds the value of `temp`:
@@ -384,7 +384,7 @@ before calling any of those functions,
 just in case they change the values of our variables.
 
 
-The big idea here is [encapsulation](../../gloss.html#encapsulation),
+The big idea here is **encapsulation**,
 and it's the key to writing correct, comprehensible programs.
 A function's job is to turn several operations into one
 so that we can think about a single function call
@@ -495,10 +495,10 @@ the difference is very small.
 It's still possible that our function is wrong,
 but it seems unlikely enough that we should probably get back to doing our analysis.
 We have one more task first, though:
-we should write some [documentation](../../gloss.html#documentation) for our function
+we should write some **documentation** for our function
 to remind ourselves later what it's for and how to use it.
 
-The usual way to put documentation in software is to add [comments](../../gloss.html#comment) like this:
+The usual way to put documentation in software is to add **comments** like this:
 
 
 <pre class="in"><code># center(data, desired): return a new array containing the original data centered around the desired value.
@@ -529,7 +529,7 @@ center(data, desired)
 </code></pre></div>
 
 
-A string like this is called a [docstring](../../gloss.html#docstring).
+A string like this is called a **docstring**.
 We don't need to use triple quotes when we write one,
 but if we do,
 we can break the string across multiple lines:
@@ -638,7 +638,7 @@ print center(test_data, 3)</code></pre>
 
 
 But we can also now call it with just one parameter,
-in which case `desired` is automatically assigned the [default value](../../gloss.html#default-parameter-value) of 0.0:
+in which case `desired` is automatically assigned the **default value** of 0.0:
 
 
 <pre class="in"><code>more_data = 5 + numpy.zeros((2, 2))
@@ -828,7 +828,7 @@ but *do* have to provide `delimiter=` for the second parameter.
 *   Call a function using `name(...values...)`.
 *   Numbers are stored as integers or floating-point numbers.
 *   Integer division produces the whole part of the answer (not the fractional part).
-*   Each time a function is called, a new stack frame is created on the [call stack](../../gloss.html#call-stack) to hold its parameters and local variables.
+*   Each time a function is called, a new stack frame is created on the **call stack** to hold its parameters and local variables.
 *   Python looks for variables in the current stack frame before looking for them at the top level.
 *   Use `help(thing)` to view help for something.
 *   Put docstrings in functions to provide help for that function.

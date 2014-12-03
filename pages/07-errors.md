@@ -28,7 +28,7 @@ Once you know *why* you get certain types of errors,
 they become much easier to fix.
 
 Errors in Python have a very specific form,
-called a [traceback](../../gloss.html#traceback).
+called a **traceback**.
 Let's examine one:
 
 
@@ -54,7 +54,7 @@ This particular traceback has two levels. You can determine the number of levels
 1. The first shows code from the cell above, with an arrow pointing to Line 2 (which is `favorite_ice_cream()`).
 2. The second shows some code in another function (`favorite_ice_cream`, located in the file `errors_01.py`), with an arrow pointing to Line 7 (which is `print ice_creams[3]`).
 
-The last level is the actual place where the error occurred. The other level(s) show what function the program executed to get to the next level down. So, in this case, the program first performed a [function call](../../gloss.html#function-call) to the function `favorite_ice_cream`. Inside this function, the program encountered an error on Line 7, when it tried to run the code `print ice_creams[3]`.
+The last level is the actual place where the error occurred. The other level(s) show what function the program executed to get to the next level down. So, in this case, the program first performed a **function call** to the function `favorite_ice_cream`. Inside this function, the program encountered an error on Line 7, when it tried to run the code `print ice_creams[3]`.
 
 > #### Long tracebacks
 > Sometimes, you might see a traceback that is very long -- sometimes they might even be 20 levels deep! This can make it seem like something horrible happened, but really it just means that your program called many functions before it ran into the error. Most of the time, you can just pay attention to the bottom-most level, which is the actual place where the error occurred.
@@ -204,7 +204,7 @@ NameError: name &#39;a&#39; is not defined</code></pre></div>
 
 Variable name errors come with some of the most informative error messages, which are usually of the form "name 'the_variable_name' is not defined".
 
-*Why* does this error message occur? That's harder question to answer, because it depends on what your code is supposed to do. However, there are a few very common reasons why you might have an undefined variable. The first is that you meant to use a [string](../../gloss.html#string), but forgot to put quotes around it:
+*Why* does this error message occur? That's harder question to answer, because it depends on what your code is supposed to do. However, there are a few very common reasons why you might have an undefined variable. The first is that you meant to use a **string**, but forgot to put quotes around it:
 
 
 <pre class="in"><code>print hello</code></pre>
@@ -234,7 +234,7 @@ NameError                                 Traceback (most recent call last)
 NameError: name &#39;count&#39; is not defined</code></pre></div>
 
 
-Finally, the third possibility is that you made a typo when you were writing your code. Let's say we fixed the error above by adding the line `Count = 0` before the for loop. Frustratingly, this actually does not fix the error! Remember that variables are [case-sensitive](../../gloss.html#case-sensitive), so the variable `count` is different from `Count`. We still get the same error, because we still have not defined `count`:
+Finally, the third possibility is that you made a typo when you were writing your code. Let's say we fixed the error above by adding the line `Count = 0` before the for loop. Frustratingly, this actually does not fix the error! Remember that variables are **case-sensitive**, so the variable `count` is different from `Count`. We still get the same error, because we still have not defined `count`:
 
 
 <pre class="in"><code>Count = 0
