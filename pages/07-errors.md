@@ -4,19 +4,17 @@ title: Programming with Python
 subtitle: Errors and Exceptions
 minutes: 30
 ---
-#### Objectives
-
-*   To be able to read a traceback, and determine the following relevant pieces of information:
-    * The file, function, and line number on which the error occurred
-    * The type of the error
-    * The error message
-*   To be able to describe the types of situations in which the following errors occur:
-    * `SyntaxError` and `IndentationError`
-    * `NameError`
-    * `KeyError` and `IndexError`
-    * `IOError`
-
-### The anatomy of an error
+> ## Learning Objectives {.objectives}
+>
+> *   To be able to read a traceback, and determine the following relevant pieces of information:
+>     * The file, function, and line number on which the error occurred
+>     * The type of the error
+>     * The error message
+> *   To be able to describe the types of situations in which the following errors occur:
+>     * `SyntaxError` and `IndentationError`
+>     * `NameError`
+>     * `KeyError` and `IndexError`
+>     * `IOError`
 
 Every programmer encounters errors,
 both those who are just beginning,
@@ -29,8 +27,9 @@ and when you are likely to encounter them can help a lot.
 Once you know *why* you get certain types of errors,
 they become much easier to fix.
 
-
-Errors in Python have a very specific form, called a [traceback](../../gloss.html#traceback). Let's examine one:
+Errors in Python have a very specific form,
+called a [traceback](../../gloss.html#traceback).
+Let's examine one:
 
 
 <pre class="in"><code>from errors_01 import favorite_ice_cream

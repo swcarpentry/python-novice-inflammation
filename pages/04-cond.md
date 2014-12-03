@@ -4,6 +4,16 @@ title: Programming with Python
 subtitle: Making Choices
 minutes: 30
 ---
+> ## Learning Objectives {.objectives}
+>
+> *   Create a simple "image" made out of colored blocks.
+> *   Explain how the RGB model represents colors.
+> *   Explain the similarities and differences between tuples and lists.
+> *   Write conditional statements including `if`, `elif`, and `else` branches.
+> *   Correctly evaluate expressions containing `and` and `or`.
+> *   Correctly write and interpret code containing nested loops and conditionals.
+> *   Explain the advantages of putting frequently-modified code in a function.
+
 Our previous lessons have shown us how to manipulate data,
 define our own functions,
 and repeat things.
@@ -14,18 +24,6 @@ We want programs to make choices based on the values they are manipulating.
 To help us see what decisions they're making,
 we'll start by looking at how computers manipulate images.
 
-
-<div class="objectives" markdown="1">
-#### Objectives
-
-*   Create a simple "image" made out of colored blocks.
-*   Explain how the RGB model represents colors.
-*   Explain the similarities and differences between tuples and lists.
-*   Write conditional statements including `if`, `elif`, and `else` branches.
-*   Correctly evaluate expressions containing `and` and `or`.
-*   Correctly write and interpret code containing nested loops and conditionals.
-*   Explain the advantages of putting frequently-modified code in a function.
-</div>
 
 ### Image Grids
 

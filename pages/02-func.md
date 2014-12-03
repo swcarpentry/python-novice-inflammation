@@ -4,6 +4,15 @@ title: Programming with Python
 subtitle: Creating Functions
 minutes: 30
 ---
+> ## Learning Objectives {.objectives}
+>
+> *   Define a function that takes parameters.
+> *   Return a value from a function.
+> *   Test and debug a function.
+> *   Explain what a call stack is, and trace changes to the call stack as functions are called.
+> *   Set default values for function parameters.
+> *   Explain why we should divide programs into small, single-purpose functions.
+
 If we only had one data set to analyze,
 it would probably be faster to load the file into a spreadsheet
 and use that to plot some simple statistics.
@@ -14,16 +23,6 @@ we'll learn how to write a function
 so that we can repeat several operations with a single command.
 
 
-<div class="objectives" markdown="1">
-#### Objectives
-
-*   Define a function that takes parameters.
-*   Return a value from a function.
-*   Test and debug a function.
-*   Explain what a call stack is, and trace changes to the call stack as functions are called.
-*   Set default values for function parameters.
-*   Explain why we should divide programs into small, single-purpose functions.
-</div>
 
 ### Defining a Function
 
