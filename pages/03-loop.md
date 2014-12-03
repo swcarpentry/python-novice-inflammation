@@ -1,11 +1,9 @@
 ---
-layout: lesson
-root: ../..
+layout: page
+title: Programming with Python
+subtitle: Analyzing Multiple Data Sets
+minutes: 30
 ---
-
-## Analyzing Multiple Data Sets
-
-
 We have created a function called `analyze` that creates graphs of the minimum, average, and maximum daily inflammation rates
 for a single data set:
 

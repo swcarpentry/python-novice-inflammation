@@ -1,11 +1,9 @@
 ---
-layout: lesson
-root: ../..
+layout: page
+title: Programming with Python
+subtitle: Command-Line Programs
+minutes: 30
 ---
-
-## Command-Line Programs
-
-
 The IPython Notebook and other interactive tools are great for prototyping code and exploring data,
 but sooner or later we will want to use our program in a pipeline
 or run it in a shell script to process thousands of data files.

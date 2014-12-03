@@ -1,11 +1,9 @@
 ---
-layout: lesson
-root: ../..
+layout: page
+title: Programming with Python
+subtitle: Creating Functions
+minutes: 30
 ---
-
-## Creating Functions
-
-
 If we only had one data set to analyze,
 it would probably be faster to load the file into a spreadsheet
 and use that to plot some simple statistics.

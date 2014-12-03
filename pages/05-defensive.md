@@ -1,11 +1,9 @@
 ---
-layout: lesson
-root: ../..
+layout: page
+title: Programming with Python
+subtitle: Defensive Programming
+minutes: 30
 ---
-
-## Defensive Programming
-
-
 Our previous lessons have introduced the basic tools of programming:
 variables and lists,
 file I/O,

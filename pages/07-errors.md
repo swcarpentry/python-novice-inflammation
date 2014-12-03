@@ -1,15 +1,9 @@
 ---
-layout: lesson
-root: ../..
+layout: page
+title: Programming with Python
+subtitle: Errors and Exceptions
+minutes: 30
 ---
-
-## Python errors and exceptions
-
-
-Every programmer encounters errors, both those who are just beginning, and those who have been programming for years. Encountering errors and exceptions can be very frustrating at times, and can make coding feel like a hopeless endeavour. However, understanding what the **different types of errors** are and when you are likely to encounter them can help a lot! Once you know *why* you get certain types of errors, they become much easier to fix.
-
-
-<div class="objectives" markdown="1">
 #### Objectives
 
 *   To be able to read a traceback, and determine the following relevant pieces of information:
@@ -21,9 +15,19 @@ Every programmer encounters errors, both those who are just beginning, and those
     * `NameError`
     * `KeyError` and `IndexError`
     * `IOError`
-</div>
 
 ### The anatomy of an error
+
+Every programmer encounters errors,
+both those who are just beginning,
+and those who have been programming for years.
+Encountering errors and exceptions can be very frustrating at times,
+and can make coding feel like a hopeless endeavour.
+However,
+understanding what the different types of errors are
+and when you are likely to encounter them can help a lot.
+Once you know *why* you get certain types of errors,
+they become much easier to fix.
 
 
 Errors in Python have a very specific form, called a [traceback](../../gloss.html#traceback). Let's examine one:
