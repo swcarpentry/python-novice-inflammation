@@ -31,40 +31,388 @@ Errors in Python have a very specific form,
 called a **traceback**.
 Let's examine one:
 
-
-<pre class="in"><code>from errors_01 import favorite_ice_cream
-favorite_ice_cream()</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
+~~~ {.python}
+from errors_01 import favorite_ice_cream
+favorite_ice_cream()
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 &lt;ipython-input-1-9d0462a5b07c&gt; in &lt;module&gt;()
       1 from errors_01 import favorite_ice_cream
 ----&gt; 2 favorite_ice_cream()
 
 /Users/jhamrick/project/swc/novice/python/errors_01.pyc in favorite_ice_cream()
-      5         &#34;strawberry&#34;
+      5         "strawberry"
       6     ]
 ----&gt; 7     print ice_creams[3]
 
-IndexError: list index out of range</code></pre></div>
+IndexError: list index out of range
+~~~
 
+This particular traceback has two levels.
+You can determine the number of levels by looking for the number of arrows on the left hand side.
+In this case:
 
-This particular traceback has two levels. You can determine the number of levels by looking for the number of arrows on the left hand side. In this case:
+1.  The first shows code from the cell above,
+    with an arrow pointing to Line 2 (which is `favorite_ice_cream()`).
 
-1. The first shows code from the cell above, with an arrow pointing to Line 2 (which is `favorite_ice_cream()`).
-2. The second shows some code in another function (`favorite_ice_cream`, located in the file `errors_01.py`), with an arrow pointing to Line 7 (which is `print ice_creams[3]`).
+2.  The second shows some code in another function (`favorite_ice_cream`, located in the file `errors_01.py`),
+    with an arrow pointing to Line 7 (which is `print ice_creams[3]`).
 
-The last level is the actual place where the error occurred. The other level(s) show what function the program executed to get to the next level down. So, in this case, the program first performed a **function call** to the function `favorite_ice_cream`. Inside this function, the program encountered an error on Line 7, when it tried to run the code `print ice_creams[3]`.
+The last level is the actual place where the error occurred.
+The other level(s) show what function the program executed to get to the next level down.
+So, in this case, the program first performed a **function call** to the function `favorite_ice_cream`.
+Inside this function,
+the program encountered an error on Line 7, when it tried to run the code `print ice_creams[3]`.
 
-> #### Long tracebacks
-> Sometimes, you might see a traceback that is very long -- sometimes they might even be 20 levels deep! This can make it seem like something horrible happened, but really it just means that your program called many functions before it ran into the error. Most of the time, you can just pay attention to the bottom-most level, which is the actual place where the error occurred.
+> ## Long Tracebacks {.callout}
+>
+> Sometimes, you might see a traceback that is very long -- sometimes they might even be 20 levels deep!
+> This can make it seem like something horrible happened,
+> but really it just means that your program called many functions before it ran into the error.
+> Most of the time,
+> you can just pay attention to the bottom-most level,
+> which is the actual place where the error occurred.
 
-So what error did the program actually encounter? In the last line of the traceback, Python helpfully tells us the category or **type of error** (in this case, it is an `IndexError`) and a more detailed **error message** (in this case, it says "list index out of range"). 
+So what error did the program actually encounter?
+In the last line of the traceback,
+Python helpfully tells us the category or **type of error** (in this case, it is an `IndexError`)
+and a more detailed **error message** (in this case, it says "list index out of range"). 
 
-If you encounter an error and don't know what it means, it is still important to read the traceback closely. That way, if you fix the error, but encounter a new one, you can tell that the error changed! Additionally, sometimes just knowing *where* the error occurred is enough to fix it, even if you don't entirely understand the message.
+If you encounter an error and don't know what it means,
+it is still important to read the traceback closely.
+That way,
+if you fix the error,
+but encounter a new one,
+you can tell that the error changed.
+Additionally,
+sometimes just knowing *where* the error occurred is enough to fix it,
+even if you don't entirely understand the message.
 
-If you do encounter an error you don't recognize, try looking at the [official documentation on errors](http://docs.python.org/2/library/exceptions.html). However, note that you may not always be able to find the error there, as it is possible to create custom errors. In that case, hopefully the custom error message is informative enough to help you figure out what went wrong!
+If you do encounter an error you don't recognize,
+try looking at the [official documentation on errors](http://docs.python.org/2/library/exceptions.html).
+However,
+note that you may not always be able to find the error there,
+as it is possible to create custom errors.
+In that case,
+hopefully the custom error message is informative enough to help you figure out what went wrong.
 
+## Syntax Errors
+
+When you forget a colon at the end of a line,
+accidentally add one space too many when indenting under an `if` statement,
+or forget a parentheses,
+you will encounter a **syntax error**.
+This means that Python couldn't figure out how to read your program.
+This is similar to forgetting punctuation in English:
+
+> this text is difficult to read there is no punctuation there is also no capitalization
+> why is this hard because you have to figure out where each sentence ends
+> you also have to figure out where each sentence begins
+> to some extent it might be ambiguous if there should be a sentence break or not
+
+People can typically figure out what is meant by text with no punctuation,
+but people are much smarter than computers.
+If Python doesn't know how to read the program,
+it will just give up and inform you with an error.
+For example:
+
+~~~ {.python}
+def some_function()
+    msg = "hello, world!"
+    print msg
+     return msg
+~~~
+~~~ {.error}
+  File "&lt;ipython-input-3-6bb841ea1423&gt;", line 1
+    def some_function()
+                       ^
+SyntaxError: invalid syntax
+~~~
+
+Here, Python tells us that there is a `SyntaxError` on line 1,
+and even puts a little arrow in the place where there is an issue.
+In this case the problem is that the function definition is missing a colon at the end.
+
+Actually, the function above has *two* issues with syntax.
+If we fix the problem with the colon,
+we see that there is *also* an `IndentationError`,
+which means that the lines in the function definition do not all have the same indentation:
+
+~~~ {.python}
+def some_function():
+    msg = "hello, world!"
+    print msg
+     return msg
+~~~
+~~~ {.error}
+  File "&lt;ipython-input-4-ae290e7659cb&gt;", line 4
+    return msg
+    ^
+IndentationError: unexpected indent
+~~~
+
+Both `SyntaxError` and `IndentationError` indicate a problem with the syntax of your program,
+but an `IndentationError` is more specific:
+it *always* means that there is a problem with how your code is indented.
+
+> ## Tabs and Spaces {.callout}
+>
+> A quick note on indentation errors:
+> they can sometimes be insidious,
+> especially if you are mixing spaces and tabs.
+> Because they are both **whitespace**,
+> it is difficult to visually tell the difference.
+> The IPython notebook actually gives us a bit of a hint,
+> but not all Python editors will do that.
+> In the following example,
+> the first two lines are using a tab for indentation,
+> while the third line uses four spaces:
+> 
+> ~~~ {.python}
+> def some_function():
+>     msg = "hello, world!"
+>     print msg
+>     return msg
+> ~~~
+> ~~~ {.error}
+>   File "&lt;ipython-input-5-653b36fbcd41&gt;", line 4
+>     return msg
+>               ^
+> IndentationError: unindent does not match any outer indentation level
+> ~~~
+>
+> By default, one tab is equivalent to eight spaces,
+> so the only way to mix tabs and spaces is to make it look like this.
+> In general, is is better to just never use tabs and always use spaces,
+> because it can make things very confusing.
+
+## Variable Name Errors
+
+Another very common type of error is called a `NameError`,
+and occurs when you try to use a variable that does not exist.
+For example:
+
+~~~ {.python}
+print a
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+&lt;ipython-input-7-9d7b17ad5387&gt; in &lt;module&gt;()
+----&gt; 1 print a
+
+NameError: name 'a' is not defined
+~~~
+
+Variable name errors come with some of the most informative error messages,
+which are usually of the form "name 'the_variable_name' is not defined".
+
+Why does this error message occur?
+That's harder question to answer,
+because it depends on what your code is supposed to do.
+However,
+there are a few very common reasons why you might have an undefined variable.
+The first is that you meant to use a **string**, but forgot to put quotes around it:
+
+~~~ {.python}
+print hello
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+&lt;ipython-input-8-9553ee03b645&gt; in &lt;module&gt;()
+----&gt; 1 print hello
+
+NameError: name 'hello' is not defined
+~~~
+
+The second is that you just forgot to create the variable before using it.
+In the following example,
+`count` should have been defined (e.g., with `count = 0`) before the for loop:
+
+~~~ {.python}
+for number in range(10):
+    count = count + number
+print "The count is: " + str(count)
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+&lt;ipython-input-9-dd6a12d7ca5c&gt; in &lt;module&gt;()
+      1 for number in range(10):
+----&gt; 2     count = count + number
+      3 print "The count is: " + str(count)
+
+NameError: name 'count' is not defined
+~~~
+
+Finally, the third possibility is that you made a typo when you were writing your code.
+Let's say we fixed the error above by adding the line `Count = 0` before the for loop.
+Frustratingly, this actually does not fix the error.
+Remember that variables are **case-sensitive**,
+so the variable `count` is different from `Count`. We still get the same error, because we still have not defined `count`:
+
+~~~ {.python}
+Count = 0
+for number in range(10):
+    count = count + number
+print "The count is: " + str(count)
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+&lt;ipython-input-10-d77d40059aea&gt; in &lt;module&gt;()
+      1 Count = 0
+      2 for number in range(10):
+----&gt; 3     count = count + number
+      4 print "The count is: " + str(count)
+
+NameError: name 'count' is not defined
+~~~
+
+## Item Errors
+
+Next up are errors having to do with containers (like lists and dictionaries) and the items within them.
+If you try to access an item in a list or a dictionary that does not exist,
+then you will get an error.
+This makes sense:
+if you asked someone what day they would like to get coffee,
+and they answered "caturday",
+you might be a bit annoyed.
+Python gets similarly annoyed if you try to ask it for an item that doesn't exist:
+
+~~~ {.python}
+letters = ['a', 'b', 'c']
+print "Letter #1 is " + letters[0]
+print "Letter #2 is " + letters[1]
+print "Letter #3 is " + letters[2]
+print "Letter #4 is " + letters[3]
+~~~
+~~~ {.output}
+Letter #1 is a
+Letter #2 is b
+Letter #3 is c
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+&lt;ipython-input-11-d817f55b7d6c&gt; in &lt;module&gt;()
+      3 print "Letter #2 is " + letters[1]
+      4 print "Letter #3 is " + letters[2]
+----&gt; 5 print "Letter #4 is " + letters[3]
+
+IndexError: list index out of range
+~~~
+
+Here,
+Python is telling us that there is an `IndexError` in our code, meaning we tried to access a list index that did not exist.
+We get a similar error in the case of dictionaries:
+
+~~~ {.python}
+us_state_capitals = {
+    'california': 'sacramento',
+    'virginia': 'richmond',
+    'new york': 'albany',
+    'massachusetts': 'boston'
+}
+
+print "The capital of Oregon is: " + us_state_capitals['oregon']
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+&lt;ipython-input-12-27fa113dd73c&gt; in &lt;module&gt;()
+      6 }
+      7 
+----&gt; 8 print "The capital of Oregon is: " + us_state_capitals['oregon']
+
+KeyError: 'oregon'
+~~~
+
+In this case, we get a `KeyError`,
+which means that the key we requested (`'oregon'`, as the error message tells us) is not present in the dictionary.
+This might be because it genuinely does not exist in the dictionary,
+but it could *also* be due to a typo.
+This is similar to the case we discussed above,
+where you can sometimes receive a `NameError` due to a typo.
+For example:
+
+~~~ {.python}
+us_state_capitals = {
+    'california': 'sacramento',
+    'virginia': 'richmond',
+    'new york': 'albany',
+    'massachusetts': 'boston'
+}
+
+print "The capital of Massachusetts is: " + us_state_capitals['massachussetts']
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+&lt;ipython-input-13-ae1dac4c6a45&gt; in &lt;module&gt;()
+      6 }
+      7 
+----&gt; 8 print "The capital of Massachusetts is: " + us_state_capitals['massachussetts']
+
+KeyError: 'massachussetts'
+~~~
+
+## File Errors
+
+The last type of error we'll cover today are those associated with reading and writing files: `IOError`.
+The "IO" in `IOError` stands for "input/output",
+which is just a fancy way of saying "writing/reading".
+If you try to read a file that does not exist,
+you will recieve an `IOError` telling you so.
+This is the most common reason why you would receive `IOError`,
+and if the error messages says "no such file or directory",
+then you know you have just tried to access a file that does not exist:
+
+~~~ {.python}
+file_handle = open('myfile.txt', 'r')
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
+IOError                                   Traceback (most recent call last)
+&lt;ipython-input-14-f6e1ac4aee96&gt; in &lt;module&gt;()
+----&gt; 1 file_handle = open('myfile.txt', 'r')
+
+IOError: [Errno 2] No such file or directory: 'myfile.txt'
+~~~
+
+One reason for receiving this error is that you specified an incorrect path to the file.
+For example,
+if I am currently in a folder called `myproject`,
+and I have a file in `myproject/writing/myfile.txt`,
+but I try to just open `myfile.txt`,
+this will fail.
+The correct path would be `writing/myfile.
+xt`. It is also possible (like with `NameError` and `KeyError`) that you just made a typo.
+
+Another issue could be that you used the "read" flag instead of the "write" flag.
+Python will not give you an error if you try to open a file for writing when the file does not exist.
+However,
+if you meant to open a file for reading,
+but accidentally opened it for writing,
+and then try to read from it,
+you will get an error telling you that the file was not opened for reading:
+
+~~~ {.python}
+file_handle = open('myfile.txt', 'w')
+file_handle.read()
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
+IOError                                   Traceback (most recent call last)
+&lt;ipython-input-15-b846479bc61f&gt; in &lt;module&gt;()
+      1 file_handle = open('myfile.txt', 'w')
+----&gt; 2 file_handle.read()
+
+IOError: File not open for reading
+~~~
 
 <div class="challenges" markdown="1">
 #### Challenge: reading error messages
@@ -80,10 +428,12 @@ Read the traceback below, and identify the following pieces of information about
 </div>
 
 
-<pre class="in"><code>from errors_02 import print_friday_message
-print_friday_message()</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
+~~~ {.python}
+from errors_02 import print_friday_message
+print_friday_message()
+~~~
+~~~ {.error}
+---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
 &lt;ipython-input-2-e4c4cbafeeb5&gt; in &lt;module&gt;()
       1 from errors_02 import print_friday_message
@@ -92,83 +442,17 @@ KeyError                                  Traceback (most recent call last)
 /Users/jhamrick/project/swc/novice/python/errors_02.py in print_friday_message()
      13 
      14 def print_friday_message():
----&gt; 15     print_message(&#34;Friday&#34;)
+---&gt; 15     print_message("Friday")
 
 /Users/jhamrick/project/swc/novice/python/errors_02.py in print_message(day)
-      9         &#34;sunday&#34;: &#34;Aw, the weekend is almost over.&#34;
+      9         "sunday": "Aw, the weekend is almost over."
      10     }
 ---&gt; 11     print messages[day]
      12 
      13 
 
-KeyError: &#39;Friday&#39;</code></pre></div>
-
-### Syntax errors
-
-
-When you forget a colon at the end of a line, accidentally add one space too many when indenting under an `if` statement, or forget a parentheses, you will encounter a **syntax error**. This means that Python couldn't figure out how to read your program. This is similar to forgetting punctuation in English:
-
-> this text is difficult to read there is no punctuation there is also no capitalization why is this hard because you have to figure out where each sentence ends you also have to figure out where each sentence begins to some extent it might be ambiguous if there should be a sentence break or not
-
-People can typically figure out what is meant by text with no punctuation, but people are much smarter than computers! If Python doesn't know how to read the program, it will just give up, and inform you with an error. For example:
-
-
-<pre class="in"><code>def some_function()
-    msg = &#34;hello, world!&#34;
-    print msg
-     return msg</code></pre>
-
-<div class="out"><pre class='err'><code>  File &#34;&lt;ipython-input-3-6bb841ea1423&gt;&#34;, line 1
-    def some_function()
-                       ^
-SyntaxError: invalid syntax
-</code></pre></div>
-
-
-Here, Python tells us that there is a `SyntaxError` on line 1, and even puts a little arrow in the place where there is an issue. In this case, the problem is that the function definition is missing a colon at the end.
-
-Actually, the function above has *two* issues with syntax. If we fix the problem with the colon, we see that there is *also* an `IndentationError`, which means that the lines in the function definition do not all have the same indentation:
-
-
-<pre class="in"><code>def some_function():
-    msg = &#34;hello, world!&#34;
-    print msg
-     return msg</code></pre>
-
-<div class="out"><pre class='err'><code>  File &#34;&lt;ipython-input-4-ae290e7659cb&gt;&#34;, line 4
-    return msg
-    ^
-IndentationError: unexpected indent
-</code></pre></div>
-
-
-Both `SyntaxError` and `IndentationError` indicate a problem with the syntax of your program, but an `IndentationError` is more specific: it *always* means that there is a problem with how your code is indented.
-
-
-#### Whitespace: tabs and spaces
-
-A quick note on indentation errors: they can sometimes be insidious, especially if you are mixing spaces and tabs. Because they are both "whitespace", it is difficult to visually tell the difference! The IPython notebook actually gives us a bit of a hint, but not all Python editors will do that. In the following example, the first two lines are using a tab for indentation, while the third line uses four spaces.
-
-
-<pre class="in"><code>def some_function():
-	msg = &#34;hello, world!&#34;
-	print msg
-    return msg</code></pre>
-
-<div class="out"><pre class='err'><code>  File &#34;&lt;ipython-input-5-653b36fbcd41&gt;&#34;, line 4
-    return msg
-              ^
-IndentationError: unindent does not match any outer indentation level
-</code></pre></div>
-
-
-By default, one tab is equivalent to eight spaces, so the only way to mix tabs and spaces is to make it look like this! In general, is is better to just never use tabs and always use spaces, because it can make things very confusing.
-
-
-<pre class="in"><code>def some_function():
-	msg = &#34;hello, world!&#34;
-	print msg
-        return msg</code></pre>
+KeyError: 'Friday'
+~~~
 
 
 <div class="challenges" markdown="1">
@@ -181,76 +465,11 @@ By default, one tab is equivalent to eight spaces, so the only way to mix tabs a
 </div>
 
 
-<pre class="in"><code>def another_function
-  print &#34;Syntax errors are annoying.&#34;
-   print &#34;But at least python tells us about them!&#34;
-  print &#34;So they are usually not too hard to fix.&#34;</code></pre>
-
-### Variable name errors
-
-
-Another very common type of error is called a `NameError`, and occurs when you try to use a variable that does not exist. For example:
-
-
-<pre class="in"><code>print a</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
-NameError                                 Traceback (most recent call last)
-&lt;ipython-input-7-9d7b17ad5387&gt; in &lt;module&gt;()
-----&gt; 1 print a
-
-NameError: name &#39;a&#39; is not defined</code></pre></div>
-
-
-Variable name errors come with some of the most informative error messages, which are usually of the form "name 'the_variable_name' is not defined".
-
-*Why* does this error message occur? That's harder question to answer, because it depends on what your code is supposed to do. However, there are a few very common reasons why you might have an undefined variable. The first is that you meant to use a **string**, but forgot to put quotes around it:
-
-
-<pre class="in"><code>print hello</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
-NameError                                 Traceback (most recent call last)
-&lt;ipython-input-8-9553ee03b645&gt; in &lt;module&gt;()
-----&gt; 1 print hello
-
-NameError: name &#39;hello&#39; is not defined</code></pre></div>
-
-
-The second is that you just forgot to create the variable before using it. In the following example, `count` should have been defined (e.g., with `count = 0`) before the for loop:
-
-
-<pre class="in"><code>for number in range(10):
-    count = count + number
-print &#34;The count is: &#34; + str(count)</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
-NameError                                 Traceback (most recent call last)
-&lt;ipython-input-9-dd6a12d7ca5c&gt; in &lt;module&gt;()
-      1 for number in range(10):
-----&gt; 2     count = count + number
-      3 print &#34;The count is: &#34; + str(count)
-
-NameError: name &#39;count&#39; is not defined</code></pre></div>
-
-
-Finally, the third possibility is that you made a typo when you were writing your code. Let's say we fixed the error above by adding the line `Count = 0` before the for loop. Frustratingly, this actually does not fix the error! Remember that variables are **case-sensitive**, so the variable `count` is different from `Count`. We still get the same error, because we still have not defined `count`:
-
-
-<pre class="in"><code>Count = 0
-for number in range(10):
-    count = count + number
-print &#34;The count is: &#34; + str(count)</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
-NameError                                 Traceback (most recent call last)
-&lt;ipython-input-10-d77d40059aea&gt; in &lt;module&gt;()
-      1 Count = 0
-      2 for number in range(10):
-----&gt; 3     count = count + number
-      4 print &#34;The count is: &#34; + str(count)
-
-NameError: name &#39;count&#39; is not defined</code></pre></div>
+~~~ {.python}
+def another_function
+  print "Syntax errors are annoying."
+   print "But at least python tells us about them!"
+  print "So they are usually not too hard to fix."</code></pre>
 
 
 <div class="challenges" markdown="1">
@@ -263,83 +482,14 @@ NameError: name &#39;count&#39; is not defined</code></pre></div>
 </div>
 
 
-<pre class="in"><code>for number in range(10):
+~~~ {.python}
+for number in range(10):
     # use a if the number is a multiple of 3, otherwise use b
     if (Number % 3) == 0:
         message = message + a
     else:
-        message = message + &#34;b&#34;
+        message = message + "b"
 print message</code></pre>
-
-### Item errors
-
-
-Next up are errors having to do with containers (like lists and dictionaries) and the items within them. If you try to access an item in a list or a dictionary that does not exist, then you will get an error! This makes sense. Think about a real life example: if you asked someone what day they would like to get coffee, and they answered "caturday", you might be a bit annoyed (though, perhaps after being amused that someone thought of the idea of caturday). Python gets similarly annoyed if you try to ask it for an item that doesn't exist:
-
-
-<pre class="in"><code>letters = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-print &#34;Letter #1 is &#34; + letters[0]
-print &#34;Letter #2 is &#34; + letters[1]
-print &#34;Letter #3 is &#34; + letters[2]
-print &#34;Letter #4 is &#34; + letters[3]</code></pre>
-
-<div class="out"><pre class='out'><code>Letter #1 is a
-Letter #2 is b
-Letter #3 is c
-</code></pre><pre class='err'><code>---------------------------------------------------------------------------
-IndexError                                Traceback (most recent call last)
-&lt;ipython-input-11-d817f55b7d6c&gt; in &lt;module&gt;()
-      3 print &#34;Letter #2 is &#34; + letters[1]
-      4 print &#34;Letter #3 is &#34; + letters[2]
-----&gt; 5 print &#34;Letter #4 is &#34; + letters[3]
-
-IndexError: list index out of range</code></pre></div>
-
-
-Here, Python is telling us that there is an `IndexError` in our code, meaning we tried to access a *list index* that did not exist.
-
-We get a similar error in the case of dictionaries:
-
-
-<pre class="in"><code>us_state_capitals = {
-    &#39;california&#39;: &#39;sacramento&#39;,
-    &#39;virginia&#39;: &#39;richmond&#39;,
-    &#39;new york&#39;: &#39;albany&#39;,
-    &#39;massachusetts&#39;: &#39;boston&#39;
-}
-
-print &#34;The capital of Oregon is: &#34; + us_state_capitals[&#39;oregon&#39;]</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
-KeyError                                  Traceback (most recent call last)
-&lt;ipython-input-12-27fa113dd73c&gt; in &lt;module&gt;()
-      6 }
-      7 
-----&gt; 8 print &#34;The capital of Oregon is: &#34; + us_state_capitals[&#39;oregon&#39;]
-
-KeyError: &#39;oregon&#39;</code></pre></div>
-
-
-In this case, we get a `KeyError`, which means that the key we requested (`'oregon'`, as the error message tells us) is not present in the dictionary. This might be because it genuinely does not exist in the dictionary, but it could *also* be due to a typo. This is similar to the case we discussed above, where you can sometimes receive a `NameError` due to a typo. For example:
-
-
-<pre class="in"><code>us_state_capitals = {
-    &#39;california&#39;: &#39;sacramento&#39;,
-    &#39;virginia&#39;: &#39;richmond&#39;,
-    &#39;new york&#39;: &#39;albany&#39;,
-    &#39;massachusetts&#39;: &#39;boston&#39;
-}
-
-print &#34;The capital of Massachusetts is: &#34; + us_state_capitals[&#39;massachussetts&#39;]</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
-KeyError                                  Traceback (most recent call last)
-&lt;ipython-input-13-ae1dac4c6a45&gt; in &lt;module&gt;()
-      6 }
-      7 
-----&gt; 8 print &#34;The capital of Massachusetts is: &#34; + us_state_capitals[&#39;massachussetts&#39;]
-
-KeyError: &#39;massachussetts&#39;</code></pre></div>
 
 
 <div class="challenges" markdown="1">
@@ -352,49 +502,15 @@ KeyError: &#39;massachussetts&#39;</code></pre></div>
 </div>
 
 
-<pre class="in"><code>seasons = {
-    &#39;spring&#39;: [&#39;march&#39;, &#39;april&#39;, &#39;may&#39;],
-    &#39;summer&#39;: [&#39;june&#39;, &#39;july&#39;, &#39;august&#39;],
-    &#39;fall&#39;: [&#39;september&#39;, &#39;october&#39;, &#39;november&#39;],
-    &#39;winter&#39;: [&#39;december&#39;, &#39;january&#39;, &#39;february&#39;]
+~~~ {.python}
+seasons = {
+    'spring': ['march', 'april', 'may'],
+    'summer': ['june', 'july', 'august'],
+    'fall': ['september', 'october', 'november'],
+    'winter': ['december', 'january', 'february']
 }
 
-print &#34;The first month in spring is: &#34; + seasons[&#39;spring&#39;][0]
-print &#34;The third month in summer is: &#34; + seasons[&#39;summer&#39;][3]
-print &#34;The third month in fall is: &#34; + seasons[&#39;fal&#39;][3]
-print &#34;The second month in winter is: &#34; + seasons[&#39;Winter&#39;][1]</code></pre>
-
-### File errors
-
-
-The last type of error we'll cover today are those associated with reading and writing files: `IOError`. The "IO" in `IOError` stands for "input/output", which is just a fancy way of saying "writing/reading".
-
-If you try to read a file that does not exist, you will recieve an `IOError` telling you so. This is the most common reason why you would receive `IOError`, and if the error messages says "no such file or directory", then you know you have just tried to access a file that does not exist:
-
-
-<pre class="in"><code>file_handle = open(&#39;myfile.txt&#39;, &#39;r&#39;)</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
-IOError                                   Traceback (most recent call last)
-&lt;ipython-input-14-f6e1ac4aee96&gt; in &lt;module&gt;()
-----&gt; 1 file_handle = open(&#39;myfile.txt&#39;, &#39;r&#39;)
-
-IOError: [Errno 2] No such file or directory: &#39;myfile.txt&#39;</code></pre></div>
-
-
-One reason for receiving this error is that you specified an incorrect path to the file. For example, if I am currently in a folder called `myproject`, and I have a file in `myproject/writing/myfile.txt`, but I try to just open `myfile.txt`, this will fail. The correct path would be `writing/myfile.txt`. It is also possible (like with `NameError` and `KeyError`) that you just made a typo.
-
-
-Another issue could be that you used the "read" flag instead of the "write" flag. Python will not give you an error if you try to open a file for writing when the file does not exist. However, if you meant to open a file for reading, but accidentally opened it for writing, and then try to read from it, you will get an error telling you that the file was not opened for reading:
-
-
-<pre class="in"><code>file_handle = open(&#39;myfile.txt&#39;, &#39;w&#39;)
-file_handle.read()</code></pre>
-
-<div class="out"><pre class='err'><code>---------------------------------------------------------------------------
-IOError                                   Traceback (most recent call last)
-&lt;ipython-input-15-b846479bc61f&gt; in &lt;module&gt;()
-      1 file_handle = open(&#39;myfile.txt&#39;, &#39;w&#39;)
-----&gt; 2 file_handle.read()
-
-IOError: File not open for reading</code></pre></div>
+print "The first month in spring is: " + seasons['spring'][0]
+print "The third month in summer is: " + seasons['summer'][3]
+print "The third month in fall is: " + seasons['fal'][3]
+print "The second month in winter is: " + seasons['Winter'][1]</code></pre>
