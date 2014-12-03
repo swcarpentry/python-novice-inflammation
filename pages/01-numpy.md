@@ -683,33 +683,3 @@ the graphs will actually be squeezed together more closely.)
 1.  Modify the program to display the three plots on top of one another instead of side by side.
 </div>
 
-
-<div class="keypoints" markdown="1">
-#### Key Points
-
-*   Import a library into a program using `import libraryname`.
-*   Use the `numpy` library to work with arrays in Python.
-*   Use `variable = value` to assign a value to a variable in order to record it in memory.
-*   Variables are created on demand whenever a value is assigned to them.
-*   Use `print something` to display the value of `something`.
-*   The expression `array.shape` gives the shape of an array.
-*   Use `array[x, y]` to select a single element from an array.
-*   Array indices start at 0, not 1.
-*   Use `low:high` to specify a slice that includes the indices from `low` to `high-1`.
-*   All the indexing and slicing that works on arrays also works on strings.
-*   Use `# some kind of explanation` to add comments to programs.
-*   Use `array.mean()`, `array.max()`, and `array.min()` to calculate simple statistics.
-*   Use `array.mean(axis=0)` or `array.mean(axis=1)` to calculate statistics across the specified axis.
-*   Use the `pyplot` library from `matplotlib` for creating simple visualizations.
-</div>
-
-
-#### Next Steps
-
-Our work so far has convinced us that something's wrong with our first data file.
-We would like to check the other 11 the same way,
-but typing in the same commands repeatedly is tedious and error-prone.
-Since computers don't get bored (that we know of),
-we should create a way to do a complete analysis with a single command,
-and then figure out how to repeat that step once for each file.
-These operations are the subjects of the next two lessons.

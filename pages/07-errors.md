@@ -71,12 +71,12 @@ If you do encounter an error you don't recognize, try looking at the [official d
 
 Read the traceback below, and identify the following pieces of information about it:
 
-1.  How many **levels** does the traceback have?
-2.  What is the **file name** where the error occurred?
-3.  What is the **function name** where the error occurred?
-4.  On which **line number** in this function did the error occurr?
-5.  What is the **type of error**?
-6.  What is the **error message**?
+1.  How many levels does the traceback have?
+2.  What is the file name where the error occurred?
+3.  What is the function name where the error occurred?
+4.  On which line number in this function did the error occurr?
+5.  What is the type of error?
+6.  What is the error message?
 </div>
 
 
@@ -162,7 +162,7 @@ IndentationError: unindent does not match any outer indentation level
 </code></pre></div>
 
 
-By default, one tab is equivalent to eight spaces, so the only way to mix tabs and spaces is to make it look like this! In general, is is better to just **never use tabs** and **always use spaces**, because it can make things very confusing.
+By default, one tab is equivalent to eight spaces, so the only way to mix tabs and spaces is to make it look like this! In general, is is better to just never use tabs and always use spaces, because it can make things very confusing.
 
 
 <pre class="in"><code>def some_function():
@@ -398,14 +398,3 @@ IOError                                   Traceback (most recent call last)
 ----&gt; 2 file_handle.read()
 
 IOError: File not open for reading</code></pre></div>
-
-
-<div class="keypoints" markdown="1">
-#### Key Points
-
-*   Tracebacks can look intimidating, but they give us a lot of useful information about what went wrong in our program, including where the error occurred and what type of error it was.
-*   An error having to do with the "grammar" or syntax of the program is called a `SyntaxError`. If the issue has to do with how the code is indented, then it will be called an `IndentationError`.
-*   A `NameError` will occur if you use a variable that has not been defined (either because you meant to use quotes around a string, you forgot to define the variable, or you just made a typo).
-*   Containers like lists and dictionaries will generate errors if you try to access items in them that do not exist. For lists, this type of error is called an `IndexError`; for dictionaries, it is called a `KeyError`.
-*   Trying to read a file that does not exist will give you an `IOError`. Trying to read a file that is open for writing, or writing to a file that is open for reading, will also give you an `IOError`.
-</div>
