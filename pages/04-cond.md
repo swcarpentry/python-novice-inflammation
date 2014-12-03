@@ -1,11 +1,9 @@
 ---
-layout: lesson
-root: ../..
+layout: page
+title: Programming with Python
+subtitle: Making Choices
+minutes: 30
 ---
-
-## Making Choices
-
-
 Our previous lessons have shown us how to manipulate data,
 define our own functions,
 and repeat things.
