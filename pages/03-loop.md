@@ -4,6 +4,17 @@ title: Programming with Python
 subtitle: Analyzing Multiple Data Sets
 minutes: 30
 ---
+> ## Learning Objectives {.objectives}
+>
+> *   Explain what a for loop does.
+> *   Correctly write for loops to repeat simple calculations.
+> *   Trace changes to a loop variable as the loop runs.
+> *   Trace changes to other variables as they are updated by a for loop.
+> *   Explain what a list is.
+> *   Create and index lists of simple values.
+> *   Use a library function to get a list of filenames that match a simple wildcard pattern.
+> *   Use a for loop to process multiple files.
+
 We have created a function called `analyze` that creates graphs of the minimum, average, and maximum daily inflammation rates
 for a single data set:
 
@@ -55,19 +66,6 @@ We want to create plots for all our data sets with a single statement.
 To do that,
 we'll have to teach the computer how to repeat things.
 
-
-<div class="objectives" markdown="1">
-#### Objectives
-
-*   Explain what a for loop does.
-*   Correctly write for loops to repeat simple calculations.
-*   Trace changes to a loop variable as the loop runs.
-*   Trace changes to other variables as they are updated by a for loop.
-*   Explain what a list is.
-*   Create and index lists of simple values.
-*   Use a library function to get a list of filenames that match a simple wildcard pattern.
-*   Use a for loop to process multiple files.
-</div>
 
 ### For Loops
 

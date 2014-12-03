@@ -4,6 +4,15 @@ title: Programming with Python
 subtitle: Defensive Programming
 minutes: 30
 ---
+> ## Learning Objectives {.objectives}
+>
+> *   Explain what an assertion is.
+> *   Add assertions to programs that correctly check the program's state.
+> *   Correctly add precondition and postcondition assertions to functions.
+> *   Explain what test-driven development is, and use it when creating new functions.
+> *   Explain why variables should be initialized using actual data values rather than arbitrary constants.
+> *   Debug code containing an error systematically.
+
 Our previous lessons have introduced the basic tools of programming:
 variables and lists,
 file I/O,
@@ -29,15 +38,6 @@ As in real carpentry&mdash;the kind done with lumber&mdash;the time saved
 by measuring carefully before cutting a piece of wood
 is much greater than the time that measuring takes.
 
-
-#### Objectives
-
-*   Explain what an assertion is.
-*   Add assertions to programs that correctly check the program's state.
-*   Correctly add precondition and postcondition assertions to functions.
-*   Explain what test-driven development is, and use it when creating new functions.
-*   Explain why variables should be initialized using actual data values rather than arbitrary constants.
-*   Debug code containing an error systematically.
 
 ### Assertions
 
