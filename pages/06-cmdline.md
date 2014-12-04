@@ -515,60 +515,66 @@ In fact,
 that's done:
 the program now does everything we set out to do.
 
-<div class="challenges" markdown="1">
-#### Challenges
+> ## FIXME {.challenge}
+> 
+> Write a command-line program that does addition and subtraction:
+> 
+> ~~~ {.python}
+> $ python arith.py 1 + 2
+> ~~~
+> ~~~ {.output}
+> 3
+> ~~~
+> $ python arith.py 3 - 4
+> ~~~
+> ~~~ {.output}
+> -1
+> ~~~
+> 
+> What goes wrong if you try to add multiplication using '*' to the program?
 
-1.  Write a command-line program that does addition and subtraction:
+> ## FIXME {.challenge}
+>
+> Using the `glob` module introduced [03-loop.ipynb](earlier),
+> write a simple version of `ls` that shows files in the current directory with a particular suffix:
+>     
+> ~~~ {.python}
+> $ python my_ls.py py
+> ~~~
+> ~~~ {.output}
+> left.py
+> right.py
+> zero.py
+> ~~~
 
-    ~~~
-    $ python arith.py 1 + 2
-    3
-    $ python arith.py 3 - 4
-    -1
-    ~~~
+> ## FIXME {.challenge}
+> 
+> Rewrite this program so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
+> Is the code easier to read?
+> Is the program easier to understand?
 
-    What goes wrong if you try to add multiplication using '*' to the program?
+> ## FIXME {.challenge}
+> 
+> Separately,
+> modify the program so that if no parameters are given
+> (i.e., no action is specified and no filenames are given),
+> it prints a message explaining how it should be used.
 
-2.  Using the `glob` module introduced [03-loop.ipynb](earlier),
-    write a simple version of `ls` that shows files in the current directory with a particular suffix:
-    
-    ~~~
-    $ python my_ls.py py
-    left.py
-    right.py
-    zero.py
-    ~~~
-</div>
+> ## FIXME {.challenge}
+> 
+> Separately,
+> modify the program so that if no action is given
+> it displays the means of the data.
 
-<div class="challenges" markdown="1">
-#### Challenges
+> ## FIXME {.challenge}
+> 
+> Write a program called `check.py` that takes the names of one or more inflammation data files as arguments
+> and checks that all the files have the same number of rows and columns.
+> What is the best way to test your program?
 
-1.  Rewrite this program so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
-    Is the code easier to read?
-    Is the program easier to understand?
-
-2.  Separately,
-    modify the program so that if no parameters are given
-    (i.e., no action is specified and no filenames are given),
-    it prints a message explaining how it should be used.
-
-3.  Separately,
-    modify the program so that if no action is given
-    it displays the means of the data.
-</div>
-
-<div class="challenges" markdown="1">
-#### Challenges
-
-1.  Write a program called `check.py` that takes the names of one or more inflammation data files as arguments
-    and checks that all the files have the same number of rows and columns.
-    What is the best way to test your program?
-</div>
-
-<div class="challenges" markdown="1">
-#### Challenges
-
-1.  Write a program called `line-count.py` that works like the Unix `wc` command:
-    *   If no filenames are given, it reports the number of lines in standard input.
-    *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
-</div>
+> ## FIXME {.challenge}
+> 
+> Write a program called `line-count.py` that works like the Unix `wc` command:
+> 
+> *   If no filenames are given, it reports the number of lines in standard input.
+> *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.

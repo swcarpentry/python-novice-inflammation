@@ -586,74 +586,72 @@ and that we want a tight layout.
 if we leave out that call to `plt.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
 
-<div class="challenges" markdown="1">
-#### Challenges
+> ## FIXME {.challenge}
+>
+> Modify the program to display the three plots on top of one another instead of side by side.
 
-1.  Modify the program to display the three plots on top of one another instead of side by side.
-</div>
+> ## FIXME {.challenge}
+>
+> Draw diagrams showing what variables refer to what values after each statement in the following program:
+> 
+> ~~~ {.python}
+> mass = 47.5
+> age = 122
+> mass = mass * 2.0
+> age = age - 20
+> ~~~
 
+> ## FIXME {.challenge}
+>
+> What does the following program print out?
+> 
+> ~~~ {.python}
+> first, second = 'Grace', 'Hopper'
+> third, fourth = second, first
+> print third, fourth
+> ~~~
 
-<div class="challenges" markdown="1">
-#### Challenges
+> ## FIXME {.challenge}
+>
+> A section of an array is called a **slice**.
+> We can take slices of character strings as well:
+> 
+> ~~~ {.python}
+> element = 'oxygen'
+> print 'first three characters:', element[0:3]
+> print 'last three characters:', element[3:6]
+> ~~~
+> 
+> ~~~ {.output}
+> first three characters: oxy
+> last three characters: gen
+> ~~~
+> 
+> What is the value of `element[:4]`?
+> What about `element[4:]`?
+> Or `element[:]`?
+> 
+> What is `element[-1]`?
+> What is `element[-2]`?
+> Given those answers,
+> explain what `element[1:-1]` does.
 
-1.  Draw diagrams showing what variables refer to what values after each statement in the following program:
+> ## FIXME {.challenge}
+>
+> The expression `element[3:3]` produces an **empty string**,
+> i.e., a string that contains no characters.
+> If `data` holds our array of patient data,
+> what does `data[3:3, 4:4]` produce?
+> What about `data[3:3, :]`?
 
-    ~~~python
-    mass = 47.5
-    age = 122
-    mass = mass * 2.0
-    age = age - 20
-    ~~~
+> ## FIXME {.challenge}
+>
+> Why do all of our plots stop just short of the upper end of our graph?
 
-1.  What does the following program print out?
+> ## FIXME {.challenge}
+>
+> Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?
 
-    ~~~python
-    first, second = 'Grace', 'Hopper'
-    third, fourth = second, first
-    print third, fourth
-    ~~~
-</div>
-
-<div class="challenges" markdown="1">
-#### Challenges
-
-A subsection of an array is called a **slice**.
-We can take slices of character strings as well:
-</div>
-
-~~~ {.python}
-element = 'oxygen'
-print 'first three characters:', element[0:3]
-print 'last three characters:', element[3:6]
-~~~
-
-~~~ {.output}
-first three characters: oxy
-last three characters: gen
-~~~
-
-<div class="challenges" markdown="1">
-1.  What is the value of `element[:4]`?
-    What about `element[4:]`?
-    Or `element[:]`?
-
-1.  What is `element[-1]`?
-    What is `element[-2]`?
-    Given those answers,
-    explain what `element[1:-1]` does.
-
-1.  The expression `element[3:3]` produces an **empty string**,
-    i.e., a string that contains no characters.
-    If `data` holds our array of patient data,
-    what does `data[3:3, 4:4]` produce?
-    What about `data[3:3, :]`?
-</div>
-
-<div class="challenges" markdown="1">
-#### Challenges
-
-1.  Why do all of our plots stop just short of the upper end of our graph?
-    Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?
-
-2.  Create a plot showing the standard deviation of the inflammation data for each day across all patients.
-</div>
+> ## FIXME {.challenge}
+>
+> Create a plot showing the standard deviation of the inflammation data for each day across all patients.

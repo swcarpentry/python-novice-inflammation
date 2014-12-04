@@ -545,91 +545,95 @@ We can now explore our data with just a few keystrokes,
 which means we can concentrate on our science
 and not on our programming.
 
-<div class="challenges" markdown="1">
-#### Challenges
+> ## FIXME {.challenge}
+> 
+> Fill in the `____` in the code below to create a bar that changes color from dark blue to black.
+> 
+> ~~~ {.python}
+> bar = ImageGrid(10, 1)
+> for x in range(10):
+>     bar[x, 0] = (0, 0, ____)
+> bar.show()
+> ~~~
 
-1.  Fill in the `____` in the code below to create a bar that changes color from dark blue to black.
+> ## FIXME {.challenge}
+> 
+> Why do computers use red, green, and blue as their primary colors?
 
-    ~~~python
-    bar = ImageGrid(10, 1)
-    for x in range(10):
-        bar[x, 0] = (0, 0, ____)
-    bar.show()
-    ~~~
+> ## FIXME {.challenge}
+> 
+> `True` and `False` aren't the only values in Python that are true and false.
+> In fact, *any* value can be used in an `if` or `elif`.
+> After reading and running the code below,
+> explain what the rule is for which values are considered true and which are considered false.
+> (Note that if the body of a conditional is a single statement, we can write it on the same line as the `if`.)
+>     
+> ~~~ {.python}
+> if '': print 'empty string is true'
+> if 'word': print 'word is true'
+> if []: print 'empty list is true'
+> if [1, 2, 3]: print 'non-empty list is true'
+> if 0: print 'zero is true'
+> if 1: print 'one is true'
+> ~~~
 
-2.  Why do computers use red, green, and blue as their primary colors?
-</div>
+> ## FIXME {.challenge}
+> 
+> Write a function called `near` that returns `True` if its first parameter is within 10% of its second
+> and `False` otherwise.
+> Compare your implementation with your partner's:
+> do you return the same answer for all possible pairs of numbers?
 
-<div class="challenges" markdown="1">
-#### Challenges
+> ## FIXME {.challenge}
+>
+> Will changing the nesting of the loops in the code above --- i.e.,
+> wrapping the Y-axis loop around the X-axis loop --- change the final image?
+> Why or why not?
 
-1.  `True` and `False` aren't the only values in Python that are true and false.
-    In fact, *any* value can be used in an `if` or `elif`.
-    After reading and running the code below,
-    explain what the rule is for which values are considered true and which are considered false.
-    (Note that if the body of a conditional is a single statement, we can write it on the same line as the `if`.)
-    
-    ~~~python
-    if '': print 'empty string is true'
-    if 'word': print 'word is true'
-    if []: print 'empty list is true'
-    if [1, 2, 3]: print 'non-empty list is true'
-    if 0: print 'zero is true'
-    if 1: print 'one is true'
-    ~~~
+> ## FIXME {.challenge}
+>
+> Python (and most other languages in the C family) provides **in-place operators**
+> that work like this:
+>     
+> ~~~ {.python}
+> x = 1  # original value
+> x += 1 # add one to x, assigning result back to x
+> x *= 3 # multiply x by 3
+> print x
+> ~~~
+> ~~~ {.output}
+> 6
+> ~~~
+>     
+> Rewrite the code that sums the positive and negative numbers in a list
+> using in-place operators.
+> Do you think the result is more or less readable than the original?
 
-2.  Write a function called `near` that returns `True` if its first parameter is within 10% of its second
-    and `False` otherwise.
-    Compare your implementation with your partner's:
-    do you return the same answer for all possible pairs of numbers?
-</div>
+> ## FIXME {.challenge}
+>
+> Why did we transpose our data outside our heat map function?
+> Why not have the function perform the transpose?
 
-<div class="challenges" markdown="1">
-#### Challenges
+> ## FIXME {.challenge}
+>
+> Why does the heat map function return the grid rather than displaying it immediately?
+> Do you think this is a good or bad design choice?
 
-1.  Will changing the nesting of the loops in the code above --- i.e.,
-    wrapping the Y-axis loop around the X-axis loop --- change the final image?
-    Why or why not?
-
-2.  Python (and most other languages in the C family) provides **in-place operators**
-    that work like this:
-    
-    ~~~python
-    x = 1  # original value
-    x += 1 # add one to x, assigning result back to x
-    x *= 3 # multiply x by 3
-    print x
-    6
-    ~~~
-    
-    Rewrite the code that sums the positive and negative numbers in a list
-    using in-place operators.
-    Do you think the result is more or less readable than the original?
-</div>
-
-<div class="challenges" markdown="1">
-#### Challenges
-
-1.  Why did we transpose our data outside our heat map function?
-    Why not have the function perform the transpose?
-
-2.  Why does the heat map function return the grid rather than displaying it immediately?
-    Do you think this is a good or bad design choice?
-
-3.  Explain what the overall effect of this code is:
-
-    ~~~
-    temp = left
-    left = right
-    right = temp
-    ~~~
-    
-    Compare it to:
-    
-    ~~~
-    left, right = right, left
-    ~~~
-    
-    Do they always do the same thing?
-    Which do you find easier to read?
-</div>
+> ## FIXME {.challenge}
+>
+> Explain what the overall effect of this code is:
+> 
+> ~~~ {.python}
+> temp = left
+> left = right
+> right = temp
+> ~~~
+>     
+> Compare it to:
+>     
+> ~~~ {.python}
+> left, right = right, left
+> ~~~
+>     
+> Do they always do the same thing?
+> Which do you find easier to read?
