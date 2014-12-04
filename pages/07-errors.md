@@ -414,103 +414,94 @@ IOError                                   Traceback (most recent call last)
 IOError: File not open for reading
 ~~~
 
-<div class="challenges" markdown="1">
-#### Challenge: reading error messages
+> ## Reading Error Messages {.challenge}
+> 
+> Read the traceback below, and identify the following pieces of information about it:
+> 
+> 1.  How many levels does the traceback have?
+> 2.  What is the file name where the error occurred?
+> 3.  What is the function name where the error occurred?
+> 4.  On which line number in this function did the error occurr?
+> 5.  What is the type of error?
+> 6.  What is the error message?
+> 
+> ~~~ {.python}
+> from errors_02 import print_friday_message
+> print_friday_message()
+> ~~~
+> ~~~ {.error}
+> ---------------------------------------------------------------------------
+> KeyError                                  Traceback (most recent call last)
+> &lt;ipython-input-2-e4c4cbafeeb5&gt; in &lt;module&gt;()
+>       1 from errors_02 import print_friday_message
+> ----&gt; 2 print_friday_message()
+> 
+> /Users/jhamrick/project/swc/novice/python/errors_02.py in print_friday_message()
+>      13 
+>      14 def print_friday_message():
+> ---&gt; 15     print_message("Friday")
+> 
+> /Users/jhamrick/project/swc/novice/python/errors_02.py in print_message(day)
+>       9         "sunday": "Aw, the weekend is almost over."
+>      10     }
+> ---&gt; 11     print messages[day]
+>      12 
+>      13 
+> 
+> KeyError: 'Friday'
+> ~~~
 
-Read the traceback below, and identify the following pieces of information about it:
+> ## Identifying Syntax Errors {.challenge}
+> 
+> 1. Read the code below, and (without running it) try to identify what the errors are.
+> 2. Run the cell, and read the error message. Is it a `SyntaxError` or an `IndentationError`?
+> 3. Fix the error.
+> 4. Repeat steps 2 and 3, until you have fixed all the errors.
+> 
+> 
+> ~~~ {.python}
+> def another_function
+>   print "Syntax errors are annoying."
+>    print "But at least python tells us about them!"
+>   print "So they are usually not too hard to fix."
+> ~~~
 
-1.  How many levels does the traceback have?
-2.  What is the file name where the error occurred?
-3.  What is the function name where the error occurred?
-4.  On which line number in this function did the error occurr?
-5.  What is the type of error?
-6.  What is the error message?
-</div>
+> ## Identifying Variable Name Errors {.challenge}
+> 
+> 1. Read the code below, and (without running it) try to identify what the errors are.
+> 2. Run the cell, and read the error message. What type of `NameError` do you think this is? In other words, is it a string with no quotes, a misspelled variable, or a variable that should have been defined but was not?
+> 3. Fix the error.
+> 4. Repeat steps 2 and 3, until you have fixed all the errors.
+> 
+> 
+> ~~~ {.python}
+> for number in range(10):
+>     # use a if the number is a multiple of 3, otherwise use b
+>     if (Number % 3) == 0:
+>         message = message + a
+>     else:
+>         message = message + "b"
+> print message
+> ~~~
 
-
-~~~ {.python}
-from errors_02 import print_friday_message
-print_friday_message()
-~~~
-~~~ {.error}
----------------------------------------------------------------------------
-KeyError                                  Traceback (most recent call last)
-&lt;ipython-input-2-e4c4cbafeeb5&gt; in &lt;module&gt;()
-      1 from errors_02 import print_friday_message
-----&gt; 2 print_friday_message()
-
-/Users/jhamrick/project/swc/novice/python/errors_02.py in print_friday_message()
-     13 
-     14 def print_friday_message():
----&gt; 15     print_message("Friday")
-
-/Users/jhamrick/project/swc/novice/python/errors_02.py in print_message(day)
-      9         "sunday": "Aw, the weekend is almost over."
-     10     }
----&gt; 11     print messages[day]
-     12 
-     13 
-
-KeyError: 'Friday'
-~~~
-
-
-<div class="challenges" markdown="1">
-#### Challenge: identifying syntax errors
-
-1. Read the code below, and (without running it) try to identify what the errors are.
-2. Run the cell, and read the error message. Is it a `SyntaxError` or an `IndentationError`?
-3. Fix the error.
-4. Repeat steps 2 and 3, until you have fixed all the errors.
-</div>
-
-
-~~~ {.python}
-def another_function
-  print "Syntax errors are annoying."
-   print "But at least python tells us about them!"
-  print "So they are usually not too hard to fix."</code></pre>
-
-
-<div class="challenges" markdown="1">
-#### Challenge: identifying variable name errors
-
-1. Read the code below, and (without running it) try to identify what the errors are.
-2. Run the cell, and read the error message. What type of `NameError` do you think this is? In other words, is it a string with no quotes, a misspelled variable, or a variable that should have been defined but was not?
-3. Fix the error.
-4. Repeat steps 2 and 3, until you have fixed all the errors.
-</div>
-
-
-~~~ {.python}
-for number in range(10):
-    # use a if the number is a multiple of 3, otherwise use b
-    if (Number % 3) == 0:
-        message = message + a
-    else:
-        message = message + "b"
-print message</code></pre>
-
-
-<div class="challenges" markdown="1">
-#### Challenge: identifying item errors
-
-1. Read the code below, and (without running it) try to identify what the errors are.
-2. Run the cell, and read the error message. Is it an `IndexError` or a `KeyError`?
-3. Fix the error.
-4. Repeat steps 2 and 3, until you have fixed all the errors.
-</div>
-
-
-~~~ {.python}
-seasons = {
-    'spring': ['march', 'april', 'may'],
-    'summer': ['june', 'july', 'august'],
-    'fall': ['september', 'october', 'november'],
-    'winter': ['december', 'january', 'february']
-}
-
-print "The first month in spring is: " + seasons['spring'][0]
-print "The third month in summer is: " + seasons['summer'][3]
-print "The third month in fall is: " + seasons['fal'][3]
-print "The second month in winter is: " + seasons['Winter'][1]</code></pre>
+> ## Identifying Item Errors {.challenge}
+> 
+> 1. Read the code below, and (without running it) try to identify what the errors are.
+> 2. Run the cell, and read the error message. Is it an `IndexError` or a `KeyError`?
+> 3. Fix the error.
+> 4. Repeat steps 2 and 3, until you have fixed all the errors.
+> 
+> ~~~ {.python}
+> seasons = {
+>     'spring': ['march', 'april', 'may'],
+>     'summer': ['june', 'july', 'august'],
+>     'fall': ['september', 'october', 'november'],
+>     'winter': ['december', 'january', 'february']
+> }
+> ~~~
+> ~~~ {.output}
+> print "The first month in spring is: " + seasons['spring'][0]
+> print "The third month in summer is: " + seasons['summer'][3]
+> print "The third month in fall is: " + seasons['fal'][3]
+> print "The second month in winter is: " + seasons['Winter'][1]
+> ~~~

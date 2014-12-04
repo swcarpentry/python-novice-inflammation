@@ -636,38 +636,30 @@ and to turn every assumption (or mistake) into an assertion,
 it will actually take us *less* time to produce working programs,
 not more.
 
-### Next Steps
+> ## FIXME {.challenge}
+> 
+> Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
+> What pre-conditions and post-conditions would you write for it?
+> Compare your answer to your neighbor's:
+> can you think of a function that will past your tests but not hers or vice versa?
 
-We have now seen the basics of building and testing Python code in the IPython Notebook.
-The last thing we need to learn is how to build command-line programs
-that we can use in pipelines and shell scripts,
-so that we can integrate our tools with other people's work.
-This will be the subject of our next and final lesson.
+> ## FIXME {.challenge}
+> 
+> Explain in words what the assertions in this code check,
+> and for each one,
+> give an example of input that will make that assertion fail.
+>  
+> ~~~ {.python}
+> def running(values):
+>     assert len(values) > 0
+>     result = [values[0]]
+>     for v in values[1:]:
+>         assert result[-1] >= 0
+>         result.append(result[-1] + v)
+>         assert result[-1] >= result[0]
+>     return result
+> ~~~
 
-#### Challenges
-
-1. Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
- What pre-conditions and post-conditions would you write for it?
- Compare your answer to your neighbor's:
- can you think of a function that will past your tests but not hers or vice versa?
-
-2. Explain in words what the assertions in this code check,
- and for each one,
- give an example of input that will make that assertion fail.
- 
-  ~~~python
-  def running(values):
-      assert len(values) > 0
-      result = [values[0]]
-      for v in values[1:]:
-          assert result[-1] >= 0
-          result.append(result[-1] + v)
-          assert result[-1] >= result[0]
-      return result
-  ~~~
-
-<div class="challenges" markdown="1">
-#### Challenges
-
-1. Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
-</div>
+> ## FIXME {.challenge}
+> 
+> Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.

@@ -238,48 +238,51 @@
           plt.show()</code></pre>
           <p><img src="../../novice/python/01-numpy_files/novice/python/01-numpy_80_0.png"></p>
           <p>The first two lines re-load our libraries as <code>np</code> and <code>plt</code>, which are the aliases most Python programmers use. The call to <code>loadtxt</code> reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we're creating three sub-plots, what to draw for each one, and that we want a tight layout. (Perversely, if we leave out that call to <code>plt.tight_layout()</code>, the graphs will actually be squeezed together more closely.)</p>
-          <div class="challenges" markdown="1">
-          <h4>Challenges</h4>
-          <ol style="list-style-type: decimal">
-          <li>Modify the program to display the three plots on top of one another instead of side by side.</li>
-          </ol>
+          <div id="fixme" class="challenge">
+          <h2>FIXME</h2>
+          <p>Modify the program to display the three plots on top of one another instead of side by side.</p>
           </div>
-          <div class="challenges" markdown="1">
-          <h4>Challenges</h4>
-          <ol style="list-style-type: decimal">
-          <li><p>Draw diagrams showing what variables refer to what values after each statement in the following program:</p>
+          <div id="fixme-1" class="challenge">
+          <h2>FIXME</h2>
+          <p>Draw diagrams showing what variables refer to what values after each statement in the following program:</p>
           <pre class="sourceCode python"><code class="sourceCode python">mass = <span class="fl">47.5</span>
           age = <span class="dv">122</span>
           mass = mass * <span class="fl">2.0</span>
-          age = age - <span class="dv">20</span></code></pre></li>
-          <li><p>What does the following program print out?</p>
+          age = age - <span class="dv">20</span></code></pre>
+          </div>
+          <div id="fixme-2" class="challenge">
+          <h2>FIXME</h2>
+          <p>What does the following program print out?</p>
           <pre class="sourceCode python"><code class="sourceCode python">first, second = <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hopper&#39;</span>
           third, fourth = second, first
-          <span class="dt">print</span> third, fourth</code></pre></li>
-          </ol>
+          <span class="dt">print</span> third, fourth</code></pre>
           </div>
-          <div class="challenges" markdown="1">
-          <h4>Challenges</h4>
-          A subsection of an array is called a <strong>slice</strong>. We can take slices of character strings as well:
-          </div>
+          <div id="fixme-3" class="challenge">
+          <h2>FIXME</h2>
+          <p>A section of an array is called a <strong>slice</strong>. We can take slices of character strings as well:</p>
           <pre class="sourceCode python"><code class="sourceCode python">element = <span class="st">&#39;oxygen&#39;</span>
           <span class="dt">print</span> <span class="st">&#39;first three characters:&#39;</span>, element[<span class="dv">0</span>:<span class="dv">3</span>]
           <span class="dt">print</span> <span class="st">&#39;last three characters:&#39;</span>, element[<span class="dv">3</span>:<span class="dv">6</span>]</code></pre>
           <pre class="output"><code>first three characters: oxy
           last three characters: gen</code></pre>
-          <div class="challenges" markdown="1">
-          <ol style="list-style-type: decimal">
-          <li><p>What is the value of <code>element[:4]</code>? What about <code>element[4:]</code>? Or <code>element[:]</code>?</p></li>
-          <li><p>What is <code>element[-1]</code>? What is <code>element[-2]</code>? Given those answers, explain what <code>element[1:-1]</code> does.</p></li>
-          <li>The expression <code>element[3:3]</code> produces an <strong>empty string</strong>, i.e., a string that contains no characters. If <code>data</code> holds our array of patient data, what does <code>data[3:3, 4:4]</code> produce? What about <code>data[3:3, :]</code>?</li>
-          </ol>
+          <p>What is the value of <code>element[:4]</code>? What about <code>element[4:]</code>? Or <code>element[:]</code>?</p>
+          <p>What is <code>element[-1]</code>? What is <code>element[-2]</code>? Given those answers, explain what <code>element[1:-1]</code> does.</p>
           </div>
-          <div class="challenges" markdown="1">
-          <h4>Challenges</h4>
-          <ol style="list-style-type: decimal">
-          <li><p>Why do all of our plots stop just short of the upper end of our graph? Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?</p></li>
-          <li>Create a plot showing the standard deviation of the inflammation data for each day across all patients.</li>
-          </ol>
+          <div id="fixme-4" class="challenge">
+          <h2>FIXME</h2>
+          <p>The expression <code>element[3:3]</code> produces an <strong>empty string</strong>, i.e., a string that contains no characters. If <code>data</code> holds our array of patient data, what does <code>data[3:3, 4:4]</code> produce? What about <code>data[3:3, :]</code>?</p>
+          </div>
+          <div id="fixme-5" class="challenge">
+          <h2>FIXME</h2>
+          <p>Why do all of our plots stop just short of the upper end of our graph?</p>
+          </div>
+          <div id="fixme-6" class="challenge">
+          <h2>FIXME</h2>
+          <p>Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?</p>
+          </div>
+          <div id="fixme-7" class="challenge">
+          <h2>FIXME</h2>
+          <p>Create a plot showing the standard deviation of the inflammation data for each day across all patients.</p>
           </div>
         </div>
       </div>

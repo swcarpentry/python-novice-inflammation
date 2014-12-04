@@ -729,68 +729,66 @@ because `dtype` is the second parameter in the list.
 That's why we don't have to provide `fname=` for the filename,
 but *do* have to provide `delimiter=` for the second parameter.
 
-<div class="challenges" markdown="1">
-#### Challenges
+> ## FIXME {.challenge}
+>
+> "Adding" two strings produces their concatention:
+> `'a' + 'b'` is `'ab'`.
+> Write a function called `fence` that takes two parameters called `original` and `wrapper`
+> and returns a new string that has the wrapper character at the beginning and end of the original:
+> 
+> ~~~ {.python}
+> print fence('name', '*')
+> *name*
+> ~~~
 
-1.  "Adding" two strings produces their concatention:
-    `'a' + 'b'` is `'ab'`.
-    Write a function called `fence` that takes two parameters called `original` and `wrapper`
-    and returns a new string that has the wrapper character at the beginning and end of the original:
+> ## FIXME {.challenge}
+>
+> If the variable `s` refers to a string,
+> then `s[0]` is the string's first character
+> and `s[-1]` is its last.
+> Write a function called `outer`
+> that returns a string made up of just the first and last characters of its input:
+> 
+> ~~~ {.python}
+> print outer('helium')
+> hm
+> ~~~
 
-    ~~~python
-    print fence('name', '*')
-    *name*
-    ~~~
+> ## FIXME {.challenge}
+>
+> We previously wrote functions called `fence` and `outer`.
+> Draw a diagram showing how the call stack changes when we run the following:
+>     
+> ~~~ {.python}
+> print outer(fence('carbon', '+'))
+> ~~~
 
-1.  If the variable `s` refers to a string,
-    then `s[0]` is the string's first character
-    and `s[-1]` is its last.
-    Write a function called `outer`
-    that returns a string made up of just the first and last characters of its input:
+> ## FIXME {.challenge}
+>
+> Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
+> but will allow the caller to specify lower and upper bounds if they want.
+> Compare your implementation to your neighbor's:
+> do the two functions always behave the same way?
 
-    ~~~python
-    print outer('helium')
-    hm
-    ~~~
-</div>
+> ## FIXME {.challenge}
+>
+> Write a function called `analyze` that takes a filename as a parameter
+> and displays the three graphs produced in the [previous lesson](01-numpy.ipynb),
+> i.e.,
+> `analyze('inflammation-01.csv')` should produce the graphs already shown,
+> while `analyze('inflammation-02.csv')` should produce corresponding graphs for the second data set.
+> Be sure to give your function a docstring.
 
-<div class="challenges" markdown="1">
-#### Challenges
+> ## FIXME {.challenge}
+>
+> Write a function `rescale` that takes an array as input
+> and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
+> (If $L$ and $H$ are the lowest and highest values in the original array,
+> then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
+> Be sure to give the function a docstring.
 
-1.  We previously wrote functions called `fence` and `outer`.
-    Draw a diagram showing how the call stack changes when we run the following:
-    
-    ~~~python
-    print outer(fence('carbon', '+'))
-    ~~~
-</div>
-
-<div class="challenges" markdown="1">
-#### Challenges
-
-1.  Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
-    but will allow the caller to specify lower and upper bounds if they want.
-    Compare your implementation to your neighbor's:
-    do the two functions always behave the same way?
-</div>
-
-<div class="challenges" markdown="1">
-#### Challenges
-
-1.  Write a function called `analyze` that takes a filename as a parameter
-    and displays the three graphs produced in the [previous lesson](01-numpy.ipynb),
-    i.e.,
-    `analyze('inflammation-01.csv')` should produce the graphs already shown,
-    while `analyze('inflammation-02.csv')` should produce corresponding graphs for the second data set.
-    Be sure to give your function a docstring.
-
-2.  Write a function `rescale` that takes an array as input
-    and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
-    (If $L$ and $H$ are the lowest and highest values in the original array,
-    then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
-    Be sure to give the function a docstring.
-
-3.  Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
-    to see how to use these functions to generate regularly-spaced values,
-    then use those values to test your `rescale` function.
-</div>
+> ## FIXME {.challenge}
+>
+> Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
+> to see how to use these functions to generate regularly-spaced values,
+> then use those values to test your `rescale` function.

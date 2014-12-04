@@ -361,53 +361,51 @@ Sure enough,
 the maxima of these data sets show exactly the same ramp as the first,
 and their minima show the same staircase structure.
 
-<div class="challenges" markdown="1">
-#### Challenges
+> FIXME {.challenge}
+> 
+> Python has a built-in function called `range` that creates a list of numbers:
+> `range(3)` produces `[0, 1, 2]`, `range(2, 5)` produces `[2, 3, 4]`.
+> Using `range`,
+> write a function that prints the $N$ natural numbers:
+>     
+> ~~~ {.python}
+> print_N(3)
+> 1
+> 2
+> 3
+> ~~~
 
-1.  Python has a built-in function called `range` that creates a list of numbers:
-    `range(3)` produces `[0, 1, 2]`, `range(2, 5)` produces `[2, 3, 4]`.
-    Using `range`,
-    write a function that prints the $N$ natural numbers:
-    
-    ~~~python
-    print_N(3)
-    1
-    2
-    3
-    ~~~
+> FIXME {.challenge}
+> 
+> Exponentiation is built into Python:
+> 
+~~~ {.python}
+> print 5**3
+> 125
+> ~~~
+>     
+> It also has a function called `pow` that calculates the same value.
+> Write a function called `expo` that uses a loop to calculate the same result.
 
-1.  Exponentiation is built into Python:
+> FIXME {.challenge}
+> 
+> Write a function called `rev` that takes a string as input,
+> and produces a new string with the characters in reverse order:
+>     
+> ~~~ {.python}
+> print rev('Newton')
+> notweN
+> ~~~
+>     
+> As always, be sure to include a docstring.
 
-    ~~~python
-    print 5**3
-    125
-    ~~~
-    
-    It also has a function called `pow` that calculates the same value.
-    Write a function called `expo` that uses a loop to calculate the same result.
+> FIXME {.challenge}
+> 
+> Write a function called `total` that calculates the sum of the values in a list.
+> (Python has a built-in function called `sum` that does this for you.
+> Please don't use it for this exercise.)
 
-1.  Write a function called `rev` that takes a string as input, and produces a new string with the characters in reverse order:
-    
-    ~~~python
-    print rev('Newton')
-    notweN
-    ~~~
-    
-    As always, be sure to include a docstring.
-</div>
-
-<div class="challenges" markdown="1">
-#### Challenges
-
-1.  Write a function called `total` that calculates the sum of the values in a list.
-    (Python has a built-in function called `sum` that does this for you.
-    Please don't use it for this exercise.)
-</div>
-
-<div class="challenges" markdown="1">
-#### Challenges
-
-1.  Write a function called `analyze_all` that takes a filename pattern as its sole argument
-    and runs `analyze` for each file whose name matches the pattern.
-</div>
-
+> FIXME {.challenge}
+> 
+> Write a function called `analyze_all` that takes a filename pattern as its sole argument
+> and runs `analyze` for each file whose name matches the pattern.

@@ -299,56 +299,63 @@
           h.show()</code></pre>
           <p>FIXME: grid-10.txt</p>
           <p>We can now explore our data with just a few keystrokes, which means we can concentrate on our science and not on our programming.</p>
-          <div class="challenges" markdown="1">
-          <h4>Challenges</h4>
-          <ol style="list-style-type: decimal">
-          <li><p>Fill in the <code>____</code> in the code below to create a bar that changes color from dark blue to black.</p>
+          <div id="fixme" class="challenge">
+          <h2>FIXME</h2>
+          <p>Fill in the <code>____</code> in the code below to create a bar that changes color from dark blue to black.</p>
           <pre class="sourceCode python"><code class="sourceCode python">bar = ImageGrid(<span class="dv">10</span>, <span class="dv">1</span>)
           <span class="kw">for</span> x in <span class="dt">range</span>(<span class="dv">10</span>):
               bar[x, <span class="dv">0</span>] = (<span class="dv">0</span>, <span class="dv">0</span>, ____)
-          bar.show()</code></pre></li>
-          <li>Why do computers use red, green, and blue as their primary colors?</li>
-          </ol>
+          bar.show()</code></pre>
           </div>
-          <div class="challenges" markdown="1">
-          <h4>Challenges</h4>
-          <ol style="list-style-type: decimal">
-          <li><p><code>True</code> and <code>False</code> aren't the only values in Python that are true and false. In fact, <em>any</em> value can be used in an <code>if</code> or <code>elif</code>. After reading and running the code below, explain what the rule is for which values are considered true and which are considered false. (Note that if the body of a conditional is a single statement, we can write it on the same line as the <code>if</code>.)</p>
+          <div id="fixme-1" class="challenge">
+          <h2>FIXME</h2>
+          <p>Why do computers use red, green, and blue as their primary colors?</p>
+          </div>
+          <div id="fixme-2" class="challenge">
+          <h2>FIXME</h2>
+          <p><code>True</code> and <code>False</code> aren't the only values in Python that are true and false. In fact, <em>any</em> value can be used in an <code>if</code> or <code>elif</code>. After reading and running the code below, explain what the rule is for which values are considered true and which are considered false. (Note that if the body of a conditional is a single statement, we can write it on the same line as the <code>if</code>.)</p>
           <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> <span class="st">&#39;&#39;</span>: <span class="dt">print</span> <span class="st">&#39;empty string is true&#39;</span>
           <span class="kw">if</span> <span class="st">&#39;word&#39;</span>: <span class="dt">print</span> <span class="st">&#39;word is true&#39;</span>
           <span class="kw">if</span> []: <span class="dt">print</span> <span class="st">&#39;empty list is true&#39;</span>
           <span class="kw">if</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]: <span class="dt">print</span> <span class="st">&#39;non-empty list is true&#39;</span>
           <span class="kw">if</span> <span class="dv">0</span>: <span class="dt">print</span> <span class="st">&#39;zero is true&#39;</span>
-          <span class="kw">if</span> <span class="dv">1</span>: <span class="dt">print</span> <span class="st">&#39;one is true&#39;</span></code></pre></li>
-          <li>Write a function called <code>near</code> that returns <code>True</code> if its first parameter is within 10% of its second and <code>False</code> otherwise. Compare your implementation with your partner's: do you return the same answer for all possible pairs of numbers?</li>
-          </ol>
+          <span class="kw">if</span> <span class="dv">1</span>: <span class="dt">print</span> <span class="st">&#39;one is true&#39;</span></code></pre>
           </div>
-          <div class="challenges" markdown="1">
-          <h4>Challenges</h4>
-          <ol style="list-style-type: decimal">
-          <li><p>Will changing the nesting of the loops in the code above --- i.e., wrapping the Y-axis loop around the X-axis loop --- change the final image? Why or why not?</p></li>
-          <li><p>Python (and most other languages in the C family) provides <strong>in-place operators</strong> that work like this:</p>
+          <div id="fixme-3" class="challenge">
+          <h2>FIXME</h2>
+          <p>Write a function called <code>near</code> that returns <code>True</code> if its first parameter is within 10% of its second and <code>False</code> otherwise. Compare your implementation with your partner's: do you return the same answer for all possible pairs of numbers?</p>
+          </div>
+          <div id="fixme-4" class="challenge">
+          <h2>FIXME</h2>
+          <p>Will changing the nesting of the loops in the code above --- i.e., wrapping the Y-axis loop around the X-axis loop --- change the final image? Why or why not?</p>
+          </div>
+          <div id="fixme-5" class="challenge">
+          <h2>FIXME</h2>
+          <p>Python (and most other languages in the C family) provides <strong>in-place operators</strong> that work like this:</p>
           <pre class="sourceCode python"><code class="sourceCode python">x = <span class="dv">1</span>  <span class="co"># original value</span>
           x += <span class="dv">1</span> <span class="co"># add one to x, assigning result back to x</span>
           x *= <span class="dv">3</span> <span class="co"># multiply x by 3</span>
-          <span class="dt">print</span> x
-          <span class="dv">6</span></code></pre>
-          Rewrite the code that sums the positive and negative numbers in a list using in-place operators. Do you think the result is more or less readable than the original?</li>
-          </ol>
+          <span class="dt">print</span> x</code></pre>
+          <pre class="output"><code>6</code></pre>
+          <p>Rewrite the code that sums the positive and negative numbers in a list using in-place operators. Do you think the result is more or less readable than the original?</p>
           </div>
-          <div class="challenges" markdown="1">
-          <h4>Challenges</h4>
-          <ol style="list-style-type: decimal">
-          <li><p>Why did we transpose our data outside our heat map function? Why not have the function perform the transpose?</p></li>
-          <li><p>Why does the heat map function return the grid rather than displaying it immediately? Do you think this is a good or bad design choice?</p></li>
-          <li><p>Explain what the overall effect of this code is:</p>
-          <pre><code>temp = left
+          <div id="fixme-6" class="challenge">
+          <h2>FIXME</h2>
+          <p>Why did we transpose our data outside our heat map function? Why not have the function perform the transpose?</p>
+          </div>
+          <div id="fixme-7" class="challenge">
+          <h2>FIXME</h2>
+          <p>Why does the heat map function return the grid rather than displaying it immediately? Do you think this is a good or bad design choice?</p>
+          </div>
+          <div id="fixme-8" class="challenge">
+          <h2>FIXME</h2>
+          <p>Explain what the overall effect of this code is:</p>
+          <pre class="sourceCode python"><code class="sourceCode python">temp = left
           left = right
           right = temp</code></pre>
           <p>Compare it to:</p>
-          <pre><code>left, right = right, left</code></pre>
-          Do they always do the same thing? Which do you find easier to read?</li>
-          </ol>
+          <pre class="sourceCode python"><code class="sourceCode python">left, right = right, left</code></pre>
+          <p>Do they always do the same thing? Which do you find easier to read?</p>
           </div>
         </div>
       </div>
