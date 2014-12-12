@@ -27,248 +27,248 @@
         <div class="span10 offset1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Reference</h2>
-          <h2 id="analyzing-patient-data"><a href="01-numpy.html">Analyzing Patient Data</a></h2>
-          <ul>
-          <li>Import a library into a program using <code>import libraryname</code>.</li>
-          <li>Use the <code>numpy</code> library to work with arrays in Python.</li>
-          <li>Use <code>variable = value</code> to assign a value to a variable in order to record it in memory.</li>
-          <li>Variables are created on demand whenever a value is assigned to them.</li>
-          <li>Use <code>print something</code> to display the value of <code>something</code>.</li>
-          <li>The expression <code>array.shape</code> gives the shape of an array.</li>
-          <li>Use <code>array[x, y]</code> to select a single element from an array.</li>
-          <li>Array indices start at 0, not 1.</li>
-          <li>Use <code>low:high</code> to specify a slice that includes the indices from <code>low</code> to <code>high-1</code>.</li>
-          <li>All the indexing and slicing that works on arrays also works on strings.</li>
-          <li>Use <code># some kind of explanation</code> to add comments to programs.</li>
-          <li>Use <code>array.mean()</code>, <code>array.max()</code>, and <code>array.min()</code> to calculate simple statistics.</li>
-          <li>Use <code>array.mean(axis=0)</code> or <code>array.mean(axis=1)</code> to calculate statistics across the specified axis.</li>
-          <li>Use the <code>pyplot</code> library from <code>matplotlib</code> for creating simple visualizations.</li>
-          </ul>
-          <h2 id="creating-functions"><a href="02-func.html">Creating Functions</a></h2>
-          <ul>
-          <li>Define a function using <code>def name(...params...)</code>.</li>
-          <li>The body of a function must be indented.</li>
-          <li>Call a function using <code>name(...values...)</code>.</li>
-          <li>Numbers are stored as integers or floating-point numbers.</li>
-          <li>Integer division produces the whole part of the answer (not the fractional part).</li>
-          <li>Each time a function is called, a new stack frame is created on the <strong>call stack</strong> to hold its parameters and local variables.</li>
-          <li>Python looks for variables in the current stack frame before looking for them at the top level.</li>
-          <li>Use <code>help(thing)</code> to view help for something.</li>
-          <li>Put docstrings in functions to provide help for that function.</li>
-          <li>Specify default values for parameters when defining a function using <code>name=value</code> in the parameter list.</li>
-          <li>Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).</li>
-          </ul>
-          <h2 id="analyzing-multiple-data-sets"><a href="03-loop.html">Analyzing Multiple Data Sets</a></h2>
-          <ul>
-          <li>Use <code>for variable in collection</code> to process the elements of a collection one at a time.</li>
-          <li>The body of a for loop must be indented.</li>
-          <li>Use <code>len(thing)</code> to determine the length of something that contains other values.</li>
-          <li><code>[value1, value2, value3, ...]</code> creates a list.</li>
-          <li>Lists are indexed and sliced in the same way as strings and arrays.</li>
-          <li>Lists are mutable (i.e., their values can be changed in place).</li>
-          <li>Strings are immutable (i.e., the characters in them cannot be changed).</li>
-          <li>Use <code>glob.glob(pattern)</code> to create a list of files whose names match a pattern.</li>
-          <li>Use <code>*</code> in a pattern to match zero or more characters, and <code>?</code> to match any single character.</li>
-          </ul>
-          <h2 id="making-choices"><a href="04-cond.html">Making Choices</a></h2>
-          <ul>
-          <li>Use the <code>ImageGrid</code> class from the <code>ipythonblocks</code> library to create simple &quot;images&quot; made of colored blocks.</li>
-          <li>Specify colors use (red, green, blue) triples, each component of which is an integer in the range 0..255.</li>
-          <li>Use <code>if condition</code> to start a conditional statement, <code>elif condition</code> to provide additional tests, and <code>else</code> to provide a default.</li>
-          <li>The bodies of the branches of conditional statements must be indented.</li>
-          <li>Use <code>==</code> to test for equality.</li>
-          <li><code>X and Y</code> is only true if both X and Y are true.</li>
-          <li><code>X or Y</code> is true if either X or Y, or both, are true.</li>
-          <li>Zero, the empty string, and the empty list are considered false; all other numbers, strings, and lists are considered true.</li>
-          <li>Nest loops to operate on multi-dimensional data.</li>
-          <li>Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior.</li>
-          </ul>
-          <h2 id="defensive-programming"><a href="05-defensive.html">Defensive Programming</a></h2>
-          <ul>
-          <li>Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do.</li>
-          <li>Put assertions in programs to check their state as they run, and to help readers understand how those programs are supposed to work.</li>
-          <li>Use preconditions to check that the inputs to a function are safe to use.</li>
-          <li>Use postconditions to check that the output from a function is safe to use.</li>
-          <li>Write tests before writing code in order to help determine exactly what that code is supposed to do.</li>
-          <li>Know what code is supposed to do <em>before</em> trying to debug it.</li>
-          <li>Make it fail every time.</li>
-          <li>Make it fail fast.</li>
-          <li>Change one thing at a time, and for a reason.</li>
-          <li>Keep track of what you've done.</li>
-          <li>Be humble.</li>
-          </ul>
-          <h2 id="command-line-programs"><a href="06-cmdline.html">Command-Line Programs</a></h2>
-          <ul>
-          <li>The <code>sys</code> library connects a Python program to the system it is running on.</li>
-          <li>The list <code>sys.argv</code> contains the command-line arguments that a program was run with.</li>
-          <li>Avoid silent failures.</li>
-          <li>The &quot;file&quot; <code>sys.stdin</code> connects to a program's standard input.</li>
-          <li>The &quot;file&quot; <code>sys.stdout</code> connects to a program's standard output.</li>
-          </ul>
-          <h2 id="errors-and-exceptions"><a href="07-errors.html">Errors and Exceptions</a></h2>
-          <ul>
-          <li>Tracebacks can look intimidating, but they give us a lot of useful information about what went wrong in our program, including where the error occurred and what type of error it was.</li>
-          <li>An error having to do with the &quot;grammar&quot; or syntax of the program is called a <code>SyntaxError</code>. If the issue has to do with how the code is indented, then it will be called an <code>IndentationError</code>.</li>
-          <li>A <code>NameError</code> will occur if you use a variable that has not been defined (either because you meant to use quotes around a string, you forgot to define the variable, or you just made a typo).</li>
-          <li>Containers like lists and dictionaries will generate errors if you try to access items in them that do not exist. For lists, this type of error is called an <code>IndexError</code>; for dictionaries, it is called a <code>KeyError</code>.</li>
-          <li>Trying to read a file that does not exist will give you an <code>IOError</code>. Trying to read a file that is open for writing, or writing to a file that is open for reading, will also give you an <code>IOError</code>.</li>
-          </ul>
-          <h2 id="glossary">Glossary</h2>
-          <dl>
-          <dt>silent failure</dt>
-          <dd>FIXME
-          </dd>
-          <dt>additive color model</dt>
-          <dd>FIXME
-          </dd>
-          <dt>alias</dt>
-          <dd>FIXME
-          </dd>
-          <dt>assertion</dt>
-          <dd>FIXME
-          </dd>
-          <dt>assign</dt>
-          <dd>FIXME
-          </dd>
-          <dt>body</dt>
-          <dd>FIXME
-          </dd>
-          <dt>case-sensitive</dt>
-          <dd>FIXME
-          </dd>
-          <dt>comment</dt>
-          <dd>FIXME
-          </dd>
-          <dt>compose</dt>
-          <dd>FIXME
-          </dd>
-          <dt>conditional statement</dt>
-          <dd>FIXME
-          </dd>
-          <dt>default value</dt>
-          <dd>FIXME
-          </dd>
-          <dt>defensive programming</dt>
-          <dd>FIXME
-          </dd>
-          <dt>delimiter</dt>
-          <dd>FIXME
-          </dd>
-          <dt>docstring</dt>
-          <dd>FIXME
-          </dd>
-          <dt>documentation</dt>
-          <dd>FIXME
-          </dd>
-          <dt>dotted notation</dt>
-          <dd>FIXME
-          </dd>
-          <dt>empty string</dt>
-          <dd>FIXME
-          </dd>
-          <dt>encapsulation</dt>
-          <dd>FIXME
-          </dd>
-          <dt>floating-point numbers</dt>
-          <dd>FIXME
-          </dd>
-          <dt>for loop</dt>
-          <dd>FIXME
-          </dd>
-          <dt>function call</dt>
-          <dd>FIXME
-          </dd>
-          <dt>immutable</dt>
-          <dd>FIXME
-          </dd>
-          <dt>import</dt>
-          <dd>FIXME
-          </dd>
-          <dt>in-place operators</dt>
-          <dd>FIXME
-          </dd>
-          <dt>index</dt>
-          <dd>FIXME
-          </dd>
-          <dt>inner loop</dt>
-          <dd>FIXME
-          </dd>
-          <dt>integer</dt>
-          <dd>FIXME
-          </dd>
-          <dt>invariant</dt>
-          <dd>FIXME
-          </dd>
-          <dt>library</dt>
-          <dd>FIXME
-          </dd>
-          <dt>loop variable</dt>
-          <dd>FIXME
-          </dd>
-          <dt>member</dt>
-          <dd>FIXME
-          </dd>
-          <dt>method</dt>
-          <dd>FIXME
-          </dd>
-          <dt>outer loop</dt>
-          <dd>FIXME
-          </dd>
-          <dt>parameter</dt>
-          <dd>FIXME
-          </dd>
-          <dt>postcondition</dt>
-          <dd>FIXME
-          </dd>
-          <dt>precondition</dt>
-          <dd>FIXME
-          </dd>
-          <dt>regression</dt>
-          <dd>FIXME
-          </dd>
-          <dt>return statement</dt>
-          <dd>FIXME
-          </dd>
-          <dt>RGB</dt>
-          <dd>FIXME
-          </dd>
-          <dt>shape</dt>
-          <dd>FIXME
-          </dd>
-          <dt>slice</dt>
-          <dd>FIXME
-          </dd>
-          <dt>stack frame</dt>
-          <dd>FIXME
-          </dd>
-          <dt>standard input</dt>
-          <dd>FIXME
-          </dd>
-          <dt>string</dt>
-          <dd>FIXME
-          </dd>
-          <dt>syntax error</dt>
-          <dd>FIXME
-          </dd>
-          <dt>test oracle</dt>
-          <dd>FIXME
-          </dd>
-          <dt>test-driven development</dt>
-          <dd>FIXME
-          </dd>
-          <dt>traceback</dt>
-          <dd>FIXME
-          </dd>
-          <dt>tuple</dt>
-          <dd>FIXME
-          </dd>
-          <dt>type</dt>
-          <dd>FIXME
-          </dd>
-          <dt>type of error</dt>
-          <dd>FIXME
-          </dd>
-          </dl>
+<h2 id="analyzing-patient-data"><a href="01-numpy.html">Analyzing Patient Data</a></h2>
+<ul>
+<li>Import a library into a program using <code>import libraryname</code>.</li>
+<li>Use the <code>numpy</code> library to work with arrays in Python.</li>
+<li>Use <code>variable = value</code> to assign a value to a variable in order to record it in memory.</li>
+<li>Variables are created on demand whenever a value is assigned to them.</li>
+<li>Use <code>print something</code> to display the value of <code>something</code>.</li>
+<li>The expression <code>array.shape</code> gives the shape of an array.</li>
+<li>Use <code>array[x, y]</code> to select a single element from an array.</li>
+<li>Array indices start at 0, not 1.</li>
+<li>Use <code>low:high</code> to specify a slice that includes the indices from <code>low</code> to <code>high-1</code>.</li>
+<li>All the indexing and slicing that works on arrays also works on strings.</li>
+<li>Use <code># some kind of explanation</code> to add comments to programs.</li>
+<li>Use <code>array.mean()</code>, <code>array.max()</code>, and <code>array.min()</code> to calculate simple statistics.</li>
+<li>Use <code>array.mean(axis=0)</code> or <code>array.mean(axis=1)</code> to calculate statistics across the specified axis.</li>
+<li>Use the <code>pyplot</code> library from <code>matplotlib</code> for creating simple visualizations.</li>
+</ul>
+<h2 id="creating-functions"><a href="02-func.html">Creating Functions</a></h2>
+<ul>
+<li>Define a function using <code>def name(...params...)</code>.</li>
+<li>The body of a function must be indented.</li>
+<li>Call a function using <code>name(...values...)</code>.</li>
+<li>Numbers are stored as integers or floating-point numbers.</li>
+<li>Integer division produces the whole part of the answer (not the fractional part).</li>
+<li>Each time a function is called, a new stack frame is created on the <strong>call stack</strong> to hold its parameters and local variables.</li>
+<li>Python looks for variables in the current stack frame before looking for them at the top level.</li>
+<li>Use <code>help(thing)</code> to view help for something.</li>
+<li>Put docstrings in functions to provide help for that function.</li>
+<li>Specify default values for parameters when defining a function using <code>name=value</code> in the parameter list.</li>
+<li>Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).</li>
+</ul>
+<h2 id="analyzing-multiple-data-sets"><a href="03-loop.html">Analyzing Multiple Data Sets</a></h2>
+<ul>
+<li>Use <code>for variable in collection</code> to process the elements of a collection one at a time.</li>
+<li>The body of a for loop must be indented.</li>
+<li>Use <code>len(thing)</code> to determine the length of something that contains other values.</li>
+<li><code>[value1, value2, value3, ...]</code> creates a list.</li>
+<li>Lists are indexed and sliced in the same way as strings and arrays.</li>
+<li>Lists are mutable (i.e., their values can be changed in place).</li>
+<li>Strings are immutable (i.e., the characters in them cannot be changed).</li>
+<li>Use <code>glob.glob(pattern)</code> to create a list of files whose names match a pattern.</li>
+<li>Use <code>*</code> in a pattern to match zero or more characters, and <code>?</code> to match any single character.</li>
+</ul>
+<h2 id="making-choices"><a href="04-cond.html">Making Choices</a></h2>
+<ul>
+<li>Use the <code>ImageGrid</code> class from the <code>ipythonblocks</code> library to create simple &quot;images&quot; made of colored blocks.</li>
+<li>Specify colors use (red, green, blue) triples, each component of which is an integer in the range 0..255.</li>
+<li>Use <code>if condition</code> to start a conditional statement, <code>elif condition</code> to provide additional tests, and <code>else</code> to provide a default.</li>
+<li>The bodies of the branches of conditional statements must be indented.</li>
+<li>Use <code>==</code> to test for equality.</li>
+<li><code>X and Y</code> is only true if both X and Y are true.</li>
+<li><code>X or Y</code> is true if either X or Y, or both, are true.</li>
+<li>Zero, the empty string, and the empty list are considered false; all other numbers, strings, and lists are considered true.</li>
+<li>Nest loops to operate on multi-dimensional data.</li>
+<li>Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior.</li>
+</ul>
+<h2 id="defensive-programming"><a href="05-defensive.html">Defensive Programming</a></h2>
+<ul>
+<li>Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do.</li>
+<li>Put assertions in programs to check their state as they run, and to help readers understand how those programs are supposed to work.</li>
+<li>Use preconditions to check that the inputs to a function are safe to use.</li>
+<li>Use postconditions to check that the output from a function is safe to use.</li>
+<li>Write tests before writing code in order to help determine exactly what that code is supposed to do.</li>
+<li>Know what code is supposed to do <em>before</em> trying to debug it.</li>
+<li>Make it fail every time.</li>
+<li>Make it fail fast.</li>
+<li>Change one thing at a time, and for a reason.</li>
+<li>Keep track of what you've done.</li>
+<li>Be humble.</li>
+</ul>
+<h2 id="command-line-programs"><a href="06-cmdline.html">Command-Line Programs</a></h2>
+<ul>
+<li>The <code>sys</code> library connects a Python program to the system it is running on.</li>
+<li>The list <code>sys.argv</code> contains the command-line arguments that a program was run with.</li>
+<li>Avoid silent failures.</li>
+<li>The &quot;file&quot; <code>sys.stdin</code> connects to a program's standard input.</li>
+<li>The &quot;file&quot; <code>sys.stdout</code> connects to a program's standard output.</li>
+</ul>
+<h2 id="errors-and-exceptions"><a href="07-errors.html">Errors and Exceptions</a></h2>
+<ul>
+<li>Tracebacks can look intimidating, but they give us a lot of useful information about what went wrong in our program, including where the error occurred and what type of error it was.</li>
+<li>An error having to do with the &quot;grammar&quot; or syntax of the program is called a <code>SyntaxError</code>. If the issue has to do with how the code is indented, then it will be called an <code>IndentationError</code>.</li>
+<li>A <code>NameError</code> will occur if you use a variable that has not been defined (either because you meant to use quotes around a string, you forgot to define the variable, or you just made a typo).</li>
+<li>Containers like lists and dictionaries will generate errors if you try to access items in them that do not exist. For lists, this type of error is called an <code>IndexError</code>; for dictionaries, it is called a <code>KeyError</code>.</li>
+<li>Trying to read a file that does not exist will give you an <code>IOError</code>. Trying to read a file that is open for writing, or writing to a file that is open for reading, will also give you an <code>IOError</code>.</li>
+</ul>
+<h2 id="glossary">Glossary</h2>
+<dl>
+<dt><span id="silent-failure">silent failure</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="additive-color-model">additive color model</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="alias">alias</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="assertion">assertion</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="assign">assign</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="body">body</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="case-sensitive">case-sensitive</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="comment">comment</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="compose">compose</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="conditional-statement">conditional statement</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="default-value">default value</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="defensive-programming">defensive programming</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="delimiter">delimiter</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="docstring">docstring</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="documentation">documentation</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="dotted-notation">dotted notation</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="empty-string">empty string</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="encapsulation">encapsulation</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="floating-point-numbers">floating-point numbers</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="for-loop">for loop</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="function-call">function call</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="immutable">immutable</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="import">import</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="in-place-operators">in-place operators</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="index">index</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="inner-loop">inner loop</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="integer">integer</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="invariant">invariant</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="library">library</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="loop-variable">loop variable</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="member">member</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="method">method</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="outer-loop">outer loop</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="parameter">parameter</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="postcondition">postcondition</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="precondition">precondition</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="regression">regression</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="return-statement">return statement</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="rgb">RGB</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="shape">shape</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="slice">slice</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="stack-frame">stack frame</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="standard-input">standard input</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="string">string</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="syntax-error">syntax error</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="test-oracle">test oracle</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="test-driven-development">test-driven development</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="traceback">traceback</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="tuple">tuple</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="type">type</span></dt>
+<dd>FIXME
+</dd>
+<dt><span id="type-of-error">type of error</span></dt>
+<dd>FIXME
+</dd>
+</dl>
         </div>
       </div>
       <div class="footer">
