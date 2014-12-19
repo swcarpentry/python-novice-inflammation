@@ -463,7 +463,7 @@ but we can do almost anything with it that we could do to a regular file.
 Let's try running it as if it were a regular command-line program:
 
 ~~~ {.input}
-$ python count-stdin.py &lt; small-01.csv
+$ python count-stdin.py < small-01.csv
 ~~~
 ~~~ {.output}
 2 lines in standard input

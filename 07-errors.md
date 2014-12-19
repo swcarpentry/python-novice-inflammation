@@ -38,14 +38,14 @@ favorite_ice_cream()
 ~~~ {.error}
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
-&lt;ipython-input-1-9d0462a5b07c&gt; in &lt;module&gt;()
+<ipython-input-1-9d0462a5b07c> in <module>()
       1 from errors_01 import favorite_ice_cream
-----&gt; 2 favorite_ice_cream()
+----> 2 favorite_ice_cream()
 
 /Users/jhamrick/project/swc/novice/python/errors_01.pyc in favorite_ice_cream()
       5         "strawberry"
       6     ]
-----&gt; 7     print ice_creams[3]
+----> 7     print ice_creams[3]
 
 IndexError: list index out of range
 ~~~
@@ -125,7 +125,7 @@ def some_function()
      return msg
 ~~~
 ~~~ {.error}
-  File "&lt;ipython-input-3-6bb841ea1423&gt;", line 1
+  File "<ipython-input-3-6bb841ea1423>", line 1
     def some_function()
                        ^
 SyntaxError: invalid syntax
@@ -147,7 +147,7 @@ def some_function():
      return msg
 ~~~
 ~~~ {.error}
-  File "&lt;ipython-input-4-ae290e7659cb&gt;", line 4
+  File "<ipython-input-4-ae290e7659cb>", line 4
     return msg
     ^
 IndentationError: unexpected indent
@@ -177,7 +177,7 @@ it *always* means that there is a problem with how your code is indented.
 >     return msg
 > ~~~
 > ~~~ {.error}
->   File "&lt;ipython-input-5-653b36fbcd41&gt;", line 4
+>   File "<ipython-input-5-653b36fbcd41>", line 4
 >     return msg
 >               ^
 > IndentationError: unindent does not match any outer indentation level
@@ -200,8 +200,8 @@ print a
 ~~~ {.error}
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&lt;ipython-input-7-9d7b17ad5387&gt; in &lt;module&gt;()
-----&gt; 1 print a
+<ipython-input-7-9d7b17ad5387> in <module>()
+----> 1 print a
 
 NameError: name 'a' is not defined
 ~~~
@@ -222,8 +222,8 @@ print hello
 ~~~ {.error}
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&lt;ipython-input-8-9553ee03b645&gt; in &lt;module&gt;()
-----&gt; 1 print hello
+<ipython-input-8-9553ee03b645> in <module>()
+----> 1 print hello
 
 NameError: name 'hello' is not defined
 ~~~
@@ -240,9 +240,9 @@ print "The count is: " + str(count)
 ~~~ {.error}
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&lt;ipython-input-9-dd6a12d7ca5c&gt; in &lt;module&gt;()
+<ipython-input-9-dd6a12d7ca5c> in <module>()
       1 for number in range(10):
-----&gt; 2     count = count + number
+----> 2     count = count + number
       3 print "The count is: " + str(count)
 
 NameError: name 'count' is not defined
@@ -263,10 +263,10 @@ print "The count is: " + str(count)
 ~~~ {.error}
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&lt;ipython-input-10-d77d40059aea&gt; in &lt;module&gt;()
+<ipython-input-10-d77d40059aea> in <module>()
       1 Count = 0
       2 for number in range(10):
-----&gt; 3     count = count + number
+----> 3     count = count + number
       4 print "The count is: " + str(count)
 
 NameError: name 'count' is not defined
@@ -298,10 +298,10 @@ Letter #3 is c
 ~~~ {.error}
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
-&lt;ipython-input-11-d817f55b7d6c&gt; in &lt;module&gt;()
+<ipython-input-11-d817f55b7d6c> in <module>()
       3 print "Letter #2 is " + letters[1]
       4 print "Letter #3 is " + letters[2]
-----&gt; 5 print "Letter #4 is " + letters[3]
+----> 5 print "Letter #4 is " + letters[3]
 
 IndexError: list index out of range
 ~~~
@@ -323,10 +323,10 @@ print "The capital of Oregon is: " + us_state_capitals['oregon']
 ~~~ {.error}
 ---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
-&lt;ipython-input-12-27fa113dd73c&gt; in &lt;module&gt;()
+<ipython-input-12-27fa113dd73c> in <module>()
       6 }
       7 
-----&gt; 8 print "The capital of Oregon is: " + us_state_capitals['oregon']
+----> 8 print "The capital of Oregon is: " + us_state_capitals['oregon']
 
 KeyError: 'oregon'
 ~~~
@@ -352,10 +352,10 @@ print "The capital of Massachusetts is: " + us_state_capitals['massachussetts']
 ~~~ {.error}
 ---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
-&lt;ipython-input-13-ae1dac4c6a45&gt; in &lt;module&gt;()
+<ipython-input-13-ae1dac4c6a45> in <module>()
       6 }
       7 
-----&gt; 8 print "The capital of Massachusetts is: " + us_state_capitals['massachussetts']
+----> 8 print "The capital of Massachusetts is: " + us_state_capitals['massachussetts']
 
 KeyError: 'massachussetts'
 ~~~
@@ -377,8 +377,8 @@ file_handle = open('myfile.txt', 'r')
 ~~~ {.error}
 ---------------------------------------------------------------------------
 IOError                                   Traceback (most recent call last)
-&lt;ipython-input-14-f6e1ac4aee96&gt; in &lt;module&gt;()
-----&gt; 1 file_handle = open('myfile.txt', 'r')
+<ipython-input-14-f6e1ac4aee96> in <module>()
+----> 1 file_handle = open('myfile.txt', 'r')
 
 IOError: [Errno 2] No such file or directory: 'myfile.txt'
 ~~~
@@ -407,9 +407,9 @@ file_handle.read()
 ~~~ {.error}
 ---------------------------------------------------------------------------
 IOError                                   Traceback (most recent call last)
-&lt;ipython-input-15-b846479bc61f&gt; in &lt;module&gt;()
+<ipython-input-15-b846479bc61f> in <module>()
       1 file_handle = open('myfile.txt', 'w')
-----&gt; 2 file_handle.read()
+----> 2 file_handle.read()
 
 IOError: File not open for reading
 ~~~
@@ -432,19 +432,19 @@ IOError: File not open for reading
 > ~~~ {.error}
 > ---------------------------------------------------------------------------
 > KeyError                                  Traceback (most recent call last)
-> &lt;ipython-input-2-e4c4cbafeeb5&gt; in &lt;module&gt;()
+> <ipython-input-2-e4c4cbafeeb5> in <module>()
 >       1 from errors_02 import print_friday_message
-> ----&gt; 2 print_friday_message()
+> ----> 2 print_friday_message()
 > 
 > /Users/jhamrick/project/swc/novice/python/errors_02.py in print_friday_message()
 >      13 
 >      14 def print_friday_message():
-> ---&gt; 15     print_message("Friday")
+> ---> 15     print_message("Friday")
 > 
 > /Users/jhamrick/project/swc/novice/python/errors_02.py in print_message(day)
 >       9         "sunday": "Aw, the weekend is almost over."
 >      10     }
-> ---&gt; 11     print messages[day]
+> ---> 11     print messages[day]
 >      12 
 >      13 
 > 
