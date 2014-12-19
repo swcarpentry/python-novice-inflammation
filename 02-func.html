@@ -124,8 +124,8 @@ final = fahr_to_celsius(original)</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;final value of temp after all function calls:&#39;</span>, temp</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&amp;lt;ipython-input-12-ffd9b4dbd5f1&amp;gt; in &amp;lt;module&amp;gt;()
-----&amp;gt; 1 print &#39;final value of temp after all function calls:&#39;, temp
+&lt;ipython-input-12-ffd9b4dbd5f1&gt; in &lt;module&gt;()
+----&gt; 1 print &#39;final value of temp after all function calls:&#39;, temp
 
 NameError: name &#39;temp&#39; is not defined</code></pre>
 <pre class="output"><code>final value of temp after all function calls:</code></pre>
@@ -195,7 +195,7 @@ center(data, desired)
 <p>A string like this is called a <strong>docstring</strong>. We don't need to use triple quotes when we write one, but if we do, we can break the string across multiple lines:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
     <span class="co">&#39;&#39;&#39;Return a new array containing the original data centered around the desired value.</span>
-<span class="co">    Example: center([1, 2, 3], 0) =&amp;gt; [-1, 0, 1]&#39;&#39;&#39;</span>
+<span class="co">    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]&#39;&#39;&#39;</span>
     <span class="kw">return</span> (data - data.mean()) + desired
 
 <span class="dt">help</span>(center)</code></pre>
@@ -203,7 +203,7 @@ center(data, desired)
 
 center(data, desired)
     Return a new array containing the original data centered around the desired value.
-    Example: center([1, 2, 3], 0) =&amp;gt; [-1, 0, 1]
+    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]
 </code></pre>
 <h2 id="defining-defaults">Defining Defaults</h2>
 <p>We have passed parameters to functions in two ways: directly, as in <code>span(data)</code>, and by name, as in <code>numpy.loadtxt(fname='something.csv', delimiter=',')</code>. In fact, we can pass the filename to <code>loadtxt</code> without the <code>fname=</code>:</p>
@@ -213,13 +213,13 @@ center(data, desired)
 <pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;,&#39;</span>)</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
-&amp;lt;ipython-input-26-e3bc6cf4fd6a&amp;gt; in &amp;lt;module&amp;gt;()
-----&amp;gt; 1 numpy.loadtxt(&#39;inflammation-01.csv&#39;, &#39;,&#39;)
+&lt;ipython-input-26-e3bc6cf4fd6a&gt; in &lt;module&gt;()
+----&gt; 1 numpy.loadtxt(&#39;inflammation-01.csv&#39;, &#39;,&#39;)
 
 /Users/gwilson/anaconda/lib/python2.7/site-packages/numpy/lib/npyio.pyc in loadtxt(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin)
     775     try:
     776         # Make sure we&#39;re dealing with a proper dtype
---&amp;gt; 777         dtype = np.dtype(dtype)
+--&gt; 777         dtype = np.dtype(dtype)
     778         defconv = _getconv(dtype)
     779 
 
@@ -227,7 +227,7 @@ TypeError: data type &quot;,&quot; not understood</code></pre>
 <p>To understand what's going on, and make our own functions easier to use, let's re-define our <code>center</code> function like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired=<span class="fl">0.0</span>):
     <span class="co">&#39;&#39;&#39;Return a new array containing the original data centered around the desired value (0 by default).</span>
-<span class="co">    Example: center([1, 2, 3], 0) =&amp;gt; [-1, 0, 1]&#39;&#39;&#39;</span>
+<span class="co">    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]&#39;&#39;&#39;</span>
     <span class="kw">return</span> (data - data.mean()) + desired</code></pre>
 <p>The key change is that the second parameter is now written <code>desired=0.0</code> instead of just <code>desired</code>. If we call the function with two arguments, it works as it did before:</p>
 <pre class="sourceCode python"><code class="sourceCode python">test_data = numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))
@@ -267,7 +267,7 @@ a: 1 b: 2 c: 77</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">help</span>(numpy.loadtxt)</code></pre>
 <pre class="output"><code>Help on function loadtxt in module numpy.lib.npyio:
 
-loadtxt(fname, dtype=&amp;lt;type &#39;float&#39;&amp;gt;, comments=&#39;#&#39;, delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
+loadtxt(fname, dtype=&lt;type &#39;float&#39;&gt;, comments=&#39;#&#39;, delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
     Load data from a text file.
     
     Each row in the text file must have the same number of values.
@@ -331,23 +331,23 @@ loadtxt(fname, dtype=&amp;lt;type &#39;float&#39;&amp;gt;, comments=&#39;#&#39;,
     
     Examples
     --------
-    &amp;gt;&amp;gt;&amp;gt; from StringIO import StringIO   # StringIO behaves like a file object
-    &amp;gt;&amp;gt;&amp;gt; c = StringIO(&quot;0 1\n2 3&quot;)
-    &amp;gt;&amp;gt;&amp;gt; np.loadtxt(c)
+    &gt;&gt;&gt; from StringIO import StringIO   # StringIO behaves like a file object
+    &gt;&gt;&gt; c = StringIO(&quot;0 1\n2 3&quot;)
+    &gt;&gt;&gt; np.loadtxt(c)
     array([[ 0.,  1.],
            [ 2.,  3.]])
     
-    &amp;gt;&amp;gt;&amp;gt; d = StringIO(&quot;M 21 72\nF 35 58&quot;)
-    &amp;gt;&amp;gt;&amp;gt; np.loadtxt(d, dtype={&#39;names&#39;: (&#39;gender&#39;, &#39;age&#39;, &#39;weight&#39;),
+    &gt;&gt;&gt; d = StringIO(&quot;M 21 72\nF 35 58&quot;)
+    &gt;&gt;&gt; np.loadtxt(d, dtype={&#39;names&#39;: (&#39;gender&#39;, &#39;age&#39;, &#39;weight&#39;),
     ...                      &#39;formats&#39;: (&#39;S1&#39;, &#39;i4&#39;, &#39;f4&#39;)})
     array([(&#39;M&#39;, 21, 72.0), (&#39;F&#39;, 35, 58.0)],
-          dtype=[(&#39;gender&#39;, &#39;|S1&#39;), (&#39;age&#39;, &#39;&amp;lt;i4&#39;), (&#39;weight&#39;, &#39;&amp;lt;f4&#39;)])
+          dtype=[(&#39;gender&#39;, &#39;|S1&#39;), (&#39;age&#39;, &#39;&lt;i4&#39;), (&#39;weight&#39;, &#39;&lt;f4&#39;)])
     
-    &amp;gt;&amp;gt;&amp;gt; c = StringIO(&quot;1,0,2\n3,0,4&quot;)
-    &amp;gt;&amp;gt;&amp;gt; x, y = np.loadtxt(c, delimiter=&#39;,&#39;, usecols=(0, 2), unpack=True)
-    &amp;gt;&amp;gt;&amp;gt; x
+    &gt;&gt;&gt; c = StringIO(&quot;1,0,2\n3,0,4&quot;)
+    &gt;&gt;&gt; x, y = np.loadtxt(c, delimiter=&#39;,&#39;, usecols=(0, 2), unpack=True)
+    &gt;&gt;&gt; x
     array([ 1.,  3.])
-    &amp;gt;&amp;gt;&amp;gt; y
+    &gt;&gt;&gt; y
     array([ 2.,  4.])
 </code></pre>
 <p>There's a lot of information here, but the most important part is the first couple of lines:</p>

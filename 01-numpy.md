@@ -189,7 +189,7 @@ let's ask what **type** of thing `data` refers to:
 print type(data)
 ~~~
 ~~~ {.output}
-&lt;type 'numpy.ndarray'&gt;
+<type 'numpy.ndarray'>
 ~~~
 
 The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library.

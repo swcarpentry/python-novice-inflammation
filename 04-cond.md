@@ -116,8 +116,8 @@ print 'first element of color after change:', color[0]
 ~~~ {.error}
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
-&lt;ipython-input-11-9c3dd30a4e52&gt; in &lt;module&gt;()
-----&gt; 1 color[0] = 40
+<ipython-input-11-9c3dd30a4e52> in <module>()
+----> 1 color[0] = 40
       2 print 'first element of color after change:', color[0]
 
 TypeError: 'tuple' object does not support item assignment
@@ -136,8 +136,8 @@ Let's see what a few RGB colors actually look like:
 
 ~~~ {.python}
 row = ImageGrid(8, 1)
-row[0, 0] = (0, 0, 0)   # no color =&gt; black
-row[1, 0] = (255, 255, 255) # all colors =&gt; white
+row[0, 0] = (0, 0, 0)   # no color => black
+row[1, 0] = (255, 255, 255) # all colors => white
 row[2, 0] = (255, 0, 0) # all red
 row[3, 0] = (0, 255, 0) # all green
 row[4, 0] = (0, 0, 255) # all blue
@@ -186,7 +186,7 @@ and looks like this:
 
 ~~~ {.python}
 num = 37
-if num &gt; 100:
+if num > 100:
     print 'greater'
 else:
     print 'not greater'
@@ -215,7 +215,7 @@ Python simply does nothing if the test is false:
 ~~~ {.python}
 num = 53
 print 'before conditional...'
-if num &gt; 100:
+if num > 100:
     print '53 is greater than 100'
 print '...after conditional'
 ~~~
@@ -230,7 +230,7 @@ This makes it simple to write a function that returns the sign of a number:
 
 ~~~ {.python}
 def sign(num):
-    if num &gt; 0:
+    if num > 0:
         return 1
     elif num == 0:
         return 0
@@ -254,7 +254,7 @@ We can also combine tests using `and` and `or`.
 `and` is only true if both parts are true:
 
 ~~~ {.python}
-if (1 &gt; 0) and (-1 &gt; 0):
+if (1 > 0) and (-1 > 0):
     print 'both parts are true'
 else:
     print 'one part is not true'
@@ -266,7 +266,7 @@ one part is not true
 while `or` is true if either part is true:
 
 ~~~ {.python}
-if (1 &lt; 0) or ('left' &lt; 'right'):
+if (1 < 0) or ('left' < 'right'):
     print 'at least one test is true'
 ~~~
 ~~~ {.output}
@@ -288,7 +288,7 @@ we can write this:
 numbers = [-5, 3, 2, -1, 9, 6]
 total = 0
 for n in numbers:
-    if n &gt;= 0:
+    if n >= 0:
         total = total + n
 print 'sum of positive values:', total
 ~~~
@@ -303,7 +303,7 @@ We could equally well calculate the positive and negative sums in a single loop:
 pos_total = 0
 neg_total = 0
 for n in numbers:
-    if n &gt;= 0:
+    if n >= 0:
         pos_total = pos_total + n
     else:
         neg_total = neg_total + n
@@ -341,7 +341,7 @@ We can combine nesting and conditionals to create patterns in an image:
 square = ImageGrid(5, 5)
 for x in range(square.width):
     for y in range(square.height):
-        if x &lt; y:
+        if x < y:
             square[x, y] = colors['Fuchsia']
         elif x == y:
             square[x, y] = colors['Olive']
@@ -390,7 +390,7 @@ Here's the code:
 ~~~ {.python}
 for x in range(width):
     for y in range(height):
-        if data[x, y] &lt; data.mean():
+        if data[x, y] < data.mean():
             heatmap[x, y] = colors['Red']
         elif data[x, y] == data.mean():
             heatmap[x, y] = colors['Green']
@@ -428,9 +428,9 @@ heatmap = ImageGrid(width, height, block_size=5)
 center = flipped.mean()
 for x in range(width):
     for y in range(height):
-        if flipped[x, y] &lt; (0.8 * center):
+        if flipped[x, y] < (0.8 * center):
             heatmap[x, y] = colors['Orchid']
-        elif flipped[x, y] &gt; (1.2 * center):
+        elif flipped[x, y] > (1.2 * center):
             heatmap[x, y] = colors['HotPink']
         else:
             heatmap[x, y] = colors['Fuchsia']
@@ -455,9 +455,9 @@ def make_heatmap(values, low_color, mid_color, high_color, low_band, high_band, 
     center = values.mean()
     for x in range(width):
         for y in range(height):
-            if values[x, y] &lt; low_band * center:
+            if values[x, y] < low_band * center:
                 result[x, y] = low_color
-            elif values[x, y] &gt; high_band * center:
+            elif values[x, y] > high_band * center:
                 result[x, y] = high_color
             else:
                 result[x, y] = mid_color
@@ -504,9 +504,9 @@ def make_heatmap(values,
     center = values.mean()
     for x in range(width):
         for y in range(height):
-            if values[x, y] &lt; low_band * center:
+            if values[x, y] < low_band * center:
                 result[x, y] = low_color
-            elif values[x, y] &gt; high_band * center:
+            elif values[x, y] > high_band * center:
                 result[x, y] = high_color
             else:
                 result[x, y] = mid_color
