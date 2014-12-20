@@ -62,6 +62,6 @@ To do all that, we'll have to learn a little bit about programming.
 ## Other Resources
 
 *   [Motivation](motivation.html)
-*   [Reference Guide](reference.html)
-*   [Next Steps](discussion.html)
+*   [Reference](reference.html)
+*   [Discussion](discussion.html)
 *   [Instructor's Guide](instructors.html)
