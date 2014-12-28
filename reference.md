@@ -91,8 +91,7 @@ subtitle: Reference
 
 ## Glossary
 
-silent failure
-:   FIXME
+
 
 additive color model
 :   A way to represent colors as the sum of contributions from primary colors
@@ -115,7 +114,9 @@ body
 :   FIXME
 
 case-sensitive
-:   FIXME
+:   Treating text as if upper and lower case characters of the same letter are different.
+See also: [case insensitive](#case-insensitive).
+
 
 comment
 :   A remark in a program that is intended to help human readers understand what is going on,
@@ -129,124 +130,180 @@ compose
 :   FIXME
 
 conditional statement
-:   FIXME
+:   A statement in a program that might or might not be executed
+depending on whether a test is true or false.
+
 
 default value
-:   FIXME
+:   A value to use for a [parameter](#parameter) if nothing is specified explicitly.
 
 defensive programming
-:   FIXME
+:   The practice of writing programs that check their own operation to catch errors as early as possible.
 
 delimiter
-:   FIXME
+:   A character or characters used to separate individual values,
+such as the commas between columns in a [CSV](#csv) file.
 
 docstring
-:   FIXME
+:   Short for "documentation string",
+this refers to textual documentation embedded in Python programs.
+Unlike comments,
+docstrings are preserved in the running program
+and can be examined in interactive sessions.
 
 documentation
-:   FIXME
+:   Human-language text written to explain what software does,
+how it works,
+or how to use it.
 
 dotted notation
-:   FIXME
+:   A two-part notation used in many programming languages
+in which `thing.component` refers to the `component` belonging to `thing`.
 
 empty string
-:   FIXME
+:   A character string containing no characters,
+often thought of as the "zero" of text.
 
 encapsulation
-:   FIXME
+:   The practice of hiding something's implementation details
+so that the rest of a program can worry about *what* it does
+rather than *how* it does it.
 
 floating-point numbers
-:   FIXME
+:   A number containing a fractional part and an exponent.
+See also: [integer](#integer).
 
 for loop
-:   FIXME
+:   A loop that is executed once for each value in some kind of set, list, or range.
+See also: [while loop](#while-loop).
 
 function call
-:   FIXME
+:   A use of a function in another piece of software.
 
 immutable
-:   FIXME
+:   Unchangeable.
+The value of immutable data cannot be altered after it has been created.
+See also: [mutable](#mutable).
 
 import
-:   FIXME
+:   To load a [library](#library) into a program.
+
 
 in-place operators
-:   FIXME
+:   An operator such as `+=` that provides a shorthand notation for
+the common case in which the variable being assigned to
+is also an operand on the right hand side of the assignment.
+For example,
+the statement `x += 3` means the same thing as `x = x + 3`.
 
 index
-:   FIXME
+:   A subscript that specifies the location of a single value in a collection,
+such as a single pixel in an image.
 
 inner loop
-:   FIXME
+:   A loop that is inside another loop.
+See also: [outer loop](#outer-loop).
 
 integer
-:   FIXME
+:   A whole number, such as -12343.
+See also: [floating-point number](#float).
 
 invariant
-:   FIXME
+:   An expression whose value doesn't change during the execution of a program,
+typically used in an [assertion](#assertion).
+See also: [precondition](#precondition), [postcondition](#postcondition).
 
 library
-:   FIXME
+:   A family of code units (functions, classes, variables) that implement a set of
+related tasks.
 
 loop variable
-:   FIXME
+:   The variable that keeps track of the progress of the loop.
 
 member
-:   FIXME
+:   A variable contained within an [object](#object).
 
 method
-:   FIXME
+:   A function which is tied to a particular [object](#object).
+Each of an object's methods typically implements one of the things it can do,
+or one of the questions it can answer.
 
 outer loop
-:   FIXME
+:   A loop that contains another loop.
+See also: [inner loop](#inner-loop).
 
 parameter
-:   FIXME
+:   A variable named in the function's declaration that is used to hold a value passed into the call.
+The term is often used interchangeably (and inconsistently) with [argument](#argument).
 
 postcondition
-:   FIXME
+:   A condition that a function (or other block of code) guarantees is true
+once it has finished running.
+Postconditions are often represented using [assertions](#assertion).
 
 precondition
-:   FIXME
+:   A condition that must be true in order for a function (or other block of code) to run correctly.
+
 
 regression
-:   FIXME
+:   To re-introduce a bug that was once fixed.
 
 return statement
-:   FIXME
+:   A statement that causes a function to stop executing and return a value to its caller immediately.
+
 
 RGB
-:   FIXME
+:   An [additive model](#additive-color-model)
+that represents colors as combinations of red, green, and blue.
+Each color's value is typically in the range 0..255
+(i.e., a one-byte integer).
 
 shape
-:   FIXME
+:   An array's dimensions, represented as a vector.
+For example, a 5&times;3 array's shape is `(5,3)`.
+
+silent failure
+:   Failing without producing any warning messages.
+Silent failures are hard to detect and debug.
 
 slice
-:   FIXME
+:   A regular subsequence of a larger sequence,
+such as the first five elements or every second element.
 
 stack frame
-:   FIXME
+:   A data structure that provides storage for a function's local variables.
+Each time a function is called,
+a new stack frame is created
+and put on the top of the [call stack](#call-stack).
+When the function returns,
+the stack frame is discarded.
 
 standard input
-:   FIXME
+:   A process's default input stream.
+In interactive command-line applications,
+it is typically connected to the keyboard;;
+in a [pipe](#pipe),
+it receives data from the [standard output](#standard-output) of the preceding process.
 
 string
-:   FIXME
+:   Short for "character string",
+a [sequence](#sequence) of zero or more characters.
 
 syntax error
 :   FIXME
 
 test oracle
-:   FIXME
+:   A program, device, data set, or human being
+against which the results of a test can be compared.
 
 test-driven development
-:   FIXME
+:   The practice of writing unit tests *before* writing the code they test.
 
 traceback
 :   FIXME
 
 tuple
-:   FIXME
+:   An [immutable](#immutable) [sequence](#sequence) of values.
 
 type
 :   FIXME

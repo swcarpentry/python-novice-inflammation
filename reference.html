@@ -115,9 +115,6 @@
 </ul>
 <h2 id="glossary">Glossary</h2>
 <dl>
-<dt><span id="silent-failure">silent failure</span></dt>
-<dd>FIXME
-</dd>
 <dt><span id="additive-color-model">additive color model</span></dt>
 <dd>A way to represent colors as the sum of contributions from primary colors such as <a href="#rgb">red, green, and blue</a>.
 </dd>
@@ -134,7 +131,7 @@
 <dd>FIXME
 </dd>
 <dt><span id="case-sensitive">case-sensitive</span></dt>
-<dd>FIXME
+<dd>Treating text as if upper and lower case characters of the same letter are different. See also: <a href="#case-insensitive">case insensitive</a>.
 </dd>
 <dt><span id="comment">comment</span></dt>
 <dd>A remark in a program that is intended to help human readers understand what is going on, but is ignored by the computer. Comments in Python, R, and the Unix shell start with a <code>#</code> character and run to the end of the line; comments in SQL start with <code>--</code>, and other languages have other conventions.
@@ -143,124 +140,127 @@
 <dd>FIXME
 </dd>
 <dt><span id="conditional-statement">conditional statement</span></dt>
-<dd>FIXME
+<dd>A statement in a program that might or might not be executed depending on whether a test is true or false.
 </dd>
 <dt><span id="default-value">default value</span></dt>
-<dd>FIXME
+<dd>A value to use for a <a href="#parameter">parameter</a> if nothing is specified explicitly.
 </dd>
 <dt><span id="defensive-programming">defensive programming</span></dt>
-<dd>FIXME
+<dd>The practice of writing programs that check their own operation to catch errors as early as possible.
 </dd>
 <dt><span id="delimiter">delimiter</span></dt>
-<dd>FIXME
+<dd>A character or characters used to separate individual values, such as the commas between columns in a <a href="#csv">CSV</a> file.
 </dd>
 <dt><span id="docstring">docstring</span></dt>
-<dd>FIXME
+<dd>Short for &quot;documentation string&quot;, this refers to textual documentation embedded in Python programs. Unlike comments, docstrings are preserved in the running program and can be examined in interactive sessions.
 </dd>
 <dt><span id="documentation">documentation</span></dt>
-<dd>FIXME
+<dd>Human-language text written to explain what software does, how it works, or how to use it.
 </dd>
 <dt><span id="dotted-notation">dotted notation</span></dt>
-<dd>FIXME
+<dd>A two-part notation used in many programming languages in which <code>thing.component</code> refers to the <code>component</code> belonging to <code>thing</code>.
 </dd>
 <dt><span id="empty-string">empty string</span></dt>
-<dd>FIXME
+<dd>A character string containing no characters, often thought of as the &quot;zero&quot; of text.
 </dd>
 <dt><span id="encapsulation">encapsulation</span></dt>
-<dd>FIXME
+<dd>The practice of hiding something's implementation details so that the rest of a program can worry about <em>what</em> it does rather than <em>how</em> it does it.
 </dd>
 <dt><span id="floating-point-numbers">floating-point numbers</span></dt>
-<dd>FIXME
+<dd>A number containing a fractional part and an exponent. See also: <a href="#integer">integer</a>.
 </dd>
 <dt><span id="for-loop">for loop</span></dt>
-<dd>FIXME
+<dd>A loop that is executed once for each value in some kind of set, list, or range. See also: <a href="#while-loop">while loop</a>.
 </dd>
 <dt><span id="function-call">function call</span></dt>
-<dd>FIXME
+<dd>A use of a function in another piece of software.
 </dd>
 <dt><span id="immutable">immutable</span></dt>
-<dd>FIXME
+<dd>Unchangeable. The value of immutable data cannot be altered after it has been created. See also: <a href="#mutable">mutable</a>.
 </dd>
 <dt><span id="import">import</span></dt>
-<dd>FIXME
+<dd>To load a <a href="#library">library</a> into a program.
 </dd>
 <dt><span id="in-place-operators">in-place operators</span></dt>
-<dd>FIXME
+<dd>An operator such as <code>+=</code> that provides a shorthand notation for the common case in which the variable being assigned to is also an operand on the right hand side of the assignment. For example, the statement <code>x += 3</code> means the same thing as <code>x = x + 3</code>.
 </dd>
 <dt><span id="index">index</span></dt>
-<dd>FIXME
+<dd>A subscript that specifies the location of a single value in a collection, such as a single pixel in an image.
 </dd>
 <dt><span id="inner-loop">inner loop</span></dt>
-<dd>FIXME
+<dd>A loop that is inside another loop. See also: <a href="#outer-loop">outer loop</a>.
 </dd>
 <dt><span id="integer">integer</span></dt>
-<dd>FIXME
+<dd>A whole number, such as -12343. See also: <a href="#float">floating-point number</a>.
 </dd>
 <dt><span id="invariant">invariant</span></dt>
-<dd>FIXME
+<dd>An expression whose value doesn't change during the execution of a program, typically used in an <a href="#assertion">assertion</a>. See also: <a href="#precondition">precondition</a>, <a href="#postcondition">postcondition</a>.
 </dd>
 <dt><span id="library">library</span></dt>
-<dd>FIXME
+<dd>A family of code units (functions, classes, variables) that implement a set of related tasks.
 </dd>
 <dt><span id="loop-variable">loop variable</span></dt>
-<dd>FIXME
+<dd>The variable that keeps track of the progress of the loop.
 </dd>
 <dt><span id="member">member</span></dt>
-<dd>FIXME
+<dd>A variable contained within an <a href="#object">object</a>.
 </dd>
 <dt><span id="method">method</span></dt>
-<dd>FIXME
+<dd>A function which is tied to a particular <a href="#object">object</a>. Each of an object's methods typically implements one of the things it can do, or one of the questions it can answer.
 </dd>
 <dt><span id="outer-loop">outer loop</span></dt>
-<dd>FIXME
+<dd>A loop that contains another loop. See also: <a href="#inner-loop">inner loop</a>.
 </dd>
 <dt><span id="parameter">parameter</span></dt>
-<dd>FIXME
+<dd>A variable named in the function's declaration that is used to hold a value passed into the call. The term is often used interchangeably (and inconsistently) with <a href="#argument">argument</a>.
 </dd>
 <dt><span id="postcondition">postcondition</span></dt>
-<dd>FIXME
+<dd>A condition that a function (or other block of code) guarantees is true once it has finished running. Postconditions are often represented using <a href="#assertion">assertions</a>.
 </dd>
 <dt><span id="precondition">precondition</span></dt>
-<dd>FIXME
+<dd>A condition that must be true in order for a function (or other block of code) to run correctly.
 </dd>
 <dt><span id="regression">regression</span></dt>
-<dd>FIXME
+<dd>To re-introduce a bug that was once fixed.
 </dd>
 <dt><span id="return-statement">return statement</span></dt>
-<dd>FIXME
+<dd>A statement that causes a function to stop executing and return a value to its caller immediately.
 </dd>
 <dt><span id="rgb">RGB</span></dt>
-<dd>FIXME
+<dd>An <a href="#additive-color-model">additive model</a> that represents colors as combinations of red, green, and blue. Each color's value is typically in the range 0..255 (i.e., a one-byte integer).
 </dd>
 <dt><span id="shape">shape</span></dt>
-<dd>FIXME
+<dd>An array's dimensions, represented as a vector. For example, a 5×3 array's shape is <code>(5,3)</code>.
+</dd>
+<dt><span id="silent-failure">silent failure</span></dt>
+<dd>Failing without producing any warning messages. Silent failures are hard to detect and debug.
 </dd>
 <dt><span id="slice">slice</span></dt>
-<dd>FIXME
+<dd>A regular subsequence of a larger sequence, such as the first five elements or every second element.
 </dd>
 <dt><span id="stack-frame">stack frame</span></dt>
-<dd>FIXME
+<dd>A data structure that provides storage for a function's local variables. Each time a function is called, a new stack frame is created and put on the top of the <a href="#call-stack">call stack</a>. When the function returns, the stack frame is discarded.
 </dd>
 <dt><span id="standard-input">standard input</span></dt>
-<dd>FIXME
+<dd>A process's default input stream. In interactive command-line applications, it is typically connected to the keyboard;; in a <a href="#pipe">pipe</a>, it receives data from the <a href="#standard-output">standard output</a> of the preceding process.
 </dd>
 <dt><span id="string">string</span></dt>
-<dd>FIXME
+<dd>Short for &quot;character string&quot;, a <a href="#sequence">sequence</a> of zero or more characters.
 </dd>
 <dt><span id="syntax-error">syntax error</span></dt>
 <dd>FIXME
 </dd>
 <dt><span id="test-oracle">test oracle</span></dt>
-<dd>FIXME
+<dd>A program, device, data set, or human being against which the results of a test can be compared.
 </dd>
 <dt><span id="test-driven-development">test-driven development</span></dt>
-<dd>FIXME
+<dd>The practice of writing unit tests <em>before</em> writing the code they test.
 </dd>
 <dt><span id="traceback">traceback</span></dt>
 <dd>FIXME
 </dd>
 <dt><span id="tuple">tuple</span></dt>
-<dd>FIXME
+<dd>An <a href="#immutable">immutable</a> <a href="#sequence">sequence</a> of values.
 </dd>
 <dt><span id="type">type</span></dt>
 <dd>FIXME
