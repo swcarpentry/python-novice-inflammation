@@ -95,16 +95,21 @@ silent failure
 :   FIXME
 
 additive color model
-:   FIXME
+:   A way to represent colors as the sum of contributions from primary colors
+such as [red, green, and blue](#rgb).
 
 alias
 :   FIXME
 
 assertion
-:   FIXME
+:   An expression which is supposed to be true at a particular point in a program.
+Programmers typically put assertions in their code to check for errors;
+if the assertion fails (i.e., if the expression evaluates as false),
+the program halts and produces an error message.
+See also: [invariant](#invariant), [precondition](#precondition), [postcondition](#postcondition).
 
 assign
-:   FIXME
+:   To give a value a name by associating a variable with it.
 
 body
 :   FIXME
@@ -113,7 +118,12 @@ case-sensitive
 :   FIXME
 
 comment
-:   FIXME
+:   A remark in a program that is intended to help human readers understand what is going on,
+but is ignored by the computer.
+Comments in Python, R, and the Unix shell start with a `#` character and run to the end of the line;
+comments in SQL start with `--`,
+and other languages have other conventions.
+
 
 compose
 :   FIXME
