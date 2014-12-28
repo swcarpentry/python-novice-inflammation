@@ -586,11 +586,11 @@ and that we want a tight layout.
 if we leave out that call to `plt.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
 
-> ## FIXME {.challenge}
+> ## Moving plots around {.challenge}
 >
 > Modify the program to display the three plots on top of one another instead of side by side.
 
-> ## FIXME {.challenge}
+> ## What's inside the box? {.challenge}
 >
 > Draw diagrams showing what variables refer to what values after each statement in the following program:
 > 
@@ -601,7 +601,7 @@ the graphs will actually be squeezed together more closely.)
 > age = age - 20
 > ~~~
 
-> ## FIXME {.challenge}
+> ## Sorting out references {.challenge}
 >
 > What does the following program print out?
 > 
@@ -611,7 +611,7 @@ the graphs will actually be squeezed together more closely.)
 > print third, fourth
 > ~~~
 
-> ## FIXME {.challenge}
+> ## Slicing strings {.challenge}
 >
 > A section of an array is called a **slice**.
 > We can take slices of character strings as well:
@@ -636,7 +636,7 @@ the graphs will actually be squeezed together more closely.)
 > Given those answers,
 > explain what `element[1:-1]` does.
 
-> ## FIXME {.challenge}
+> ## Thin slices {.challenge}
 >
 > The expression `element[3:3]` produces an **empty string**,
 > i.e., a string that contains no characters.
@@ -644,14 +644,14 @@ the graphs will actually be squeezed together more closely.)
 > what does `data[3:3, 4:4]` produce?
 > What about `data[3:3, :]`?
 
-> ## FIXME {.challenge}
+> ## Check your understanding: plot scaling {.challenge}
 >
 > Why do all of our plots stop just short of the upper end of our graph?
 
-> ## FIXME {.challenge}
+> ## Check your understanding: drawing straight lines {.challenge}
 >
 > Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?
 
-> ## FIXME {.challenge}
+> ## Make your own plot {.challenge}
 >
 > Create a plot showing the standard deviation of the inflammation data for each day across all patients.
