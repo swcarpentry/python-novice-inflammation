@@ -98,7 +98,7 @@ additive color model
     such as [red, green, and blue](#rgb).
 
 alias
-:   FIXME
+:   (a library): To give a [library](#library) a nickname while importing it.
 
 assertion
 :   An expression which is supposed to be true at a particular point in a program.
@@ -111,7 +111,7 @@ assign
 :   To give a value a name by associating a variable with it.
 
 body
-:   FIXME
+:   (of a function): the statements that are executed when a function runs
 
 case-sensitive
 :   Treating text as if upper and lower case characters of the same letter are different.
@@ -126,7 +126,7 @@ comment
     and other languages have other conventions.
 
 compose
-:   FIXME
+:   To apply one function to the result of another, such as `f(g(x))`
 
 conditional statement
 :   A statement in a program that might or might not be executed
@@ -282,7 +282,8 @@ string
     a [sequence](#sequence) of zero or more characters.
 
 syntax error
-:   FIXME
+:   CHECKME: a programming error that occurs when statements are in an order or contain characters
+    not expected by the programming language
 
 test oracle
 :   A program, device, data set, or human being
@@ -292,13 +293,15 @@ test-driven development
 :   The practice of writing unit tests *before* writing the code they test.
 
 traceback
-:   FIXME
+:   CHECKME In Python, a list of the sequence of function calls that led to an error.
 
 tuple
 :   An [immutable](#immutable) [sequence](#sequence) of values.
 
 type
-:   FIXME
+:   CHECKME The classification of something in a program (for example, the contents of a variable)
+    as a kind of number (e.g. real, integer), [string](#string), or something else.
 
 type of error
-:   FIXME
+:   CHECKME Indicates the nature of an error in a program, for example, `IOError` in Python refers to problems in input/output. 
+    See also [syntax error](#syntax-error).
