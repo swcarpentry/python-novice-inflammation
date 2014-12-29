@@ -100,6 +100,10 @@ additive color model
 alias
 :   (a library): To give a [library](#library) a nickname while importing it.
 
+argument
+:   A value given to a function or program when it runs. 
+    The term is often used interchangeably (and inconsistently) with [parameter](#parameter).
+
 assertion
 :   An expression which is supposed to be true at a particular point in a program.
     Programmers typically put assertions in their code to check for errors;
@@ -111,12 +115,18 @@ assign
 :   To give a value a name by associating a variable with it.
 
 body
-:   (of a function): the statements that are executed when a function runs
+:   (of a function): the statements that are executed when a function runs.
+
+call stack
+:   A data structure inside a running program that keeps track of active function calls.
+
+case-insensitive
+:   Treating text as if upper and lower case characters of the same letter were the same.
+    See also: [case-sensitive](#case-sensitive).
 
 case-sensitive
 :   Treating text as if upper and lower case characters of the same letter are different.
-    See also: [case insensitive](#case-insensitive).
-
+    See also: [case-insensitive](#case-insensitive).
 
 comment
 :   A remark in a program that is intended to help human readers understand what is going on,
@@ -126,12 +136,15 @@ comment
     and other languages have other conventions.
 
 compose
-:   To apply one function to the result of another, such as `f(g(x))`
+:   To apply one function to the result of another, such as `f(g(x))`.
 
 conditional statement
 :   A statement in a program that might or might not be executed
     depending on whether a test is true or false.
 
+comma-separated values 
+:   (CSV) A common textual representation for tables
+    in which the values in each row are separated by commas.
 
 default value
 :   A value to use for a [parameter](#parameter) if nothing is specified explicitly.
@@ -141,7 +154,7 @@ defensive programming
 
 delimiter
 :   A character or characters used to separate individual values,
-    such as the commas between columns in a [CSV](#csv) file.
+    such as the commas between columns in a [CSV](#comma-separated-values) file.
 
 docstring
 :   Short for "documentation string",
@@ -166,7 +179,7 @@ encapsulation
     so that the rest of a program can worry about *what* it does
     rather than *how* it does it.
 
-floating-point numbers
+floating-point number
 :   A number containing a fractional part and an exponent.
     See also: [integer](#integer).
 
@@ -200,7 +213,7 @@ inner loop
 :   A loop that is inside another loop. See also: [outer loop](#outer-loop).
 
 integer
-:   A whole number, such as -12343. See also: [floating-point number](#float).
+:   A whole number, such as -12343. See also: [floating-point number](#floating-point-number).
 
 invariant
 :   An expression whose value doesn't change during the execution of a program,
@@ -222,6 +235,9 @@ method
     Each of an object's methods typically implements one of the things it can do,
     or one of the questions it can answer.
 
+object
+:   FIXME
+
 outer loop
 :   A loop that contains another loop.
     See also: [inner loop](#inner-loop).
@@ -230,6 +246,9 @@ parameter
 :   A variable named in the function's declaration that is used to hold a value passed into the call.
     The term is often used interchangeably (and inconsistently) with [argument](#argument).
 
+pipe
+:   A connection from the output of one program to the input of another.
+    When two or more programs are connected in this way, they are called a "pipeline".
 
 postcondition
 :   A condition that a function (or other block of code) guarantees is true
@@ -252,6 +271,9 @@ RGB
     that represents colors as combinations of red, green, and blue.
     Each color's value is typically in the range 0..255
     (i.e., a one-byte integer).
+
+sequence
+:   FIXME
 
 shape
 :   An array's dimensions, represented as a vector.
@@ -277,6 +299,13 @@ standard input
     it is typically connected to the keyboard; in a [pipe](#pipe),
     it receives data from the [standard output](#standard-output) of the preceding process.
 
+standard output
+:   A process's default output stream.
+    In interactive command-line applications,
+    data sent to standard output is displayed on the screen;
+    in a [pipe](#pipe),
+    it is passed to the [standard input](#standard-input) of the next process.
+
 string
 :   Short for "character string",
     a [sequence](#sequence) of zero or more characters.
@@ -300,8 +329,12 @@ tuple
 
 type
 :   CHECKME The classification of something in a program (for example, the contents of a variable)
-    as a kind of number (e.g. real, integer), [string](#string), or something else.
+    as a kind of number (e.g. [floating-point](#float), [integer](#integer)), [string](#string), or something else.
 
 type of error
 :   CHECKME Indicates the nature of an error in a program, for example, `IOError` in Python refers to problems in input/output. 
     See also [syntax error](#syntax-error).
+
+while loop
+:   A loop that keeps executing as long as some condition is true.
+    See also: [for loop](#for-loop).
