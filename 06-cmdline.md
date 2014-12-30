@@ -515,7 +515,7 @@ In fact,
 that's done:
 the program now does everything we set out to do.
 
-> ## FIXME {.challenge}
+> ## Arithmetic on the command line {.challenge}
 > 
 > Write a command-line program that does addition and subtraction:
 > 
@@ -533,7 +533,7 @@ the program now does everything we set out to do.
 > 
 > What goes wrong if you try to add multiplication using '*' to the program?
 
-> ## FIXME {.challenge}
+> ## Finding particular files {.challenge}
 >
 > Using the `glob` module introduced [03-loop.ipynb](earlier),
 > write a simple version of `ls` that shows files in the current directory with a particular suffix:
@@ -547,32 +547,33 @@ the program now does everything we set out to do.
 > zero.py
 > ~~~
 
-> ## FIXME {.challenge}
+> ## Changing flags {.challenge}
 > 
+> FIXME: not clear what "this program" refers to in the line below.
 > Rewrite this program so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
 > Is the code easier to read?
 > Is the program easier to understand?
 
-> ## FIXME {.challenge}
+> ## Adding a help message {.challenge}
 > 
 > Separately,
 > modify the program so that if no parameters are given
 > (i.e., no action is specified and no filenames are given),
 > it prints a message explaining how it should be used.
 
-> ## FIXME {.challenge}
+> ## Adding a default action {.challenge}
 > 
 > Separately,
 > modify the program so that if no action is given
 > it displays the means of the data.
 
-> ## FIXME {.challenge}
+> ## A file-checker {.challenge}
 > 
 > Write a program called `check.py` that takes the names of one or more inflammation data files as arguments
 > and checks that all the files have the same number of rows and columns.
 > What is the best way to test your program?
 
-> ## FIXME {.challenge}
+> ## Counting lines {.challenge}
 > 
 > Write a program called `line-count.py` that works like the Unix `wc` command:
 > 
