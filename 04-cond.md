@@ -545,7 +545,7 @@ We can now explore our data with just a few keystrokes,
 which means we can concentrate on our science
 and not on our programming.
 
-> ## FIXME {.challenge}
+> ## Making a colorbar {.challenge}
 > 
 > Fill in the `____` in the code below to create a bar that changes color from dark blue to black.
 > 
@@ -556,11 +556,11 @@ and not on our programming.
 > bar.show()
 > ~~~
 
-> ## FIXME {.challenge}
+> ## Why RGB? {.challenge}
 > 
 > Why do computers use red, green, and blue as their primary colors?
 
-> ## FIXME {.challenge}
+> ## What is truth? {.challenge}
 > 
 > `True` and `False` aren't the only values in Python that are true and false.
 > In fact, *any* value can be used in an `if` or `elif`.
@@ -577,20 +577,20 @@ and not on our programming.
 > if 1: print 'one is true'
 > ~~~
 
-> ## FIXME {.challenge}
+> ## Close enough {.challenge}
 > 
 > Write a function called `near` that returns `True` if its first parameter is within 10% of its second
 > and `False` otherwise.
 > Compare your implementation with your partner's:
 > do you return the same answer for all possible pairs of numbers?
 
-> ## FIXME {.challenge}
+> ## Nested loops {.challenge}
 >
 > Will changing the nesting of the loops in the code above --- i.e.,
 > wrapping the Y-axis loop around the X-axis loop --- change the final image?
 > Why or why not?
 
-> ## FIXME {.challenge}
+> ## In-place operators {.challenge}
 >
 > Python (and most other languages in the C family) provides **in-place operators**
 > that work like this:
@@ -609,17 +609,17 @@ and not on our programming.
 > using in-place operators.
 > Do you think the result is more or less readable than the original?
 
-> ## FIXME {.challenge}
+> ## Where to change data {.challenge}
 >
 > Why did we transpose our data outside our heat map function?
 > Why not have the function perform the transpose?
 
-> ## FIXME {.challenge}
+> ## Design choice: return versus display {.challenge}
 >
 > Why does the heat map function return the grid rather than displaying it immediately?
 > Do you think this is a good or bad design choice?
 
-> ## FIXME {.challenge}
+> ## Tuples and exchanges {.challenge}
 >
 > Explain what the overall effect of this code is:
 > 
