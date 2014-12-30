@@ -361,7 +361,7 @@ Sure enough,
 the maxima of these data sets show exactly the same ramp as the first,
 and their minima show the same staircase structure.
 
-> FIXME {.challenge}
+> From 1 to N {.challenge}
 > 
 > Python has a built-in function called `range` that creates a list of numbers:
 > `range(3)` produces `[0, 1, 2]`, `range(2, 5)` produces `[2, 3, 4]`.
@@ -375,7 +375,7 @@ and their minima show the same staircase structure.
 > 3
 > ~~~
 
-> FIXME {.challenge}
+> Computing powers with loops {.challenge}
 > 
 > Exponentiation is built into Python:
 > 
@@ -387,7 +387,7 @@ and their minima show the same staircase structure.
 > It also has a function called `pow` that calculates the same value.
 > Write a function called `expo` that uses a loop to calculate the same result.
 
-> FIXME {.challenge}
+> Reverse a string {.challenge}
 > 
 > Write a function called `rev` that takes a string as input,
 > and produces a new string with the characters in reverse order:
@@ -399,13 +399,13 @@ and their minima show the same staircase structure.
 >     
 > As always, be sure to include a docstring.
 
-> FIXME {.challenge}
+> Sum a list {.challenge}
 > 
 > Write a function called `total` that calculates the sum of the values in a list.
 > (Python has a built-in function called `sum` that does this for you.
 > Please don't use it for this exercise.)
 
-> FIXME {.challenge}
+> Multi-file analysis {.challenge}
 > 
 > Write a function called `analyze_all` that takes a filename pattern as its sole argument
 > and runs `analyze` for each file whose name matches the pattern.
