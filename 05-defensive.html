@@ -28,7 +28,7 @@
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Defensive Programming</h2>
 <div id="learning-objectives" class="objectives objectives">
-<h2>Learning Objectives</h2>
+<h2 id="learning-objectives" class="objectives objectives">Learning Objectives</h2>
 <ul>
 <li>Explain what an assertion is.</li>
 <li>Add assertions to programs that correctly check the program's state.</li>
@@ -266,12 +266,12 @@ AssertionError: </code></pre>
 <p>Asking for help also helps alleviate confirmation bias. If we have just spent an hour writing a complicated program, we want it to work, so we're likely to keep telling ourselves why it should, rather than searching for the reason it doesn't. People who aren't emotionally invested in the code can be more objective, which is why they're often able to spot the simple mistakes we have overlooked.</p>
 <p>Part of being humble is learning from our mistakes. Programmers tend to get the same things wrong over and over: either they don't understand the language and libraries they're working with, or their model of how things work is wrong. In either case, taking note of why the error occurred and checking for it next time quickly turns into not making the mistake at all.</p>
 <p>And that is what makes us most productive in the long run. As the saying goes, &quot;<a href="../../rules.html#week-hard-work-hour-thought">A week of hard work can sometimes save you an hour of thought</a>.&quot; If we train ourselves to avoid making some kinds of mistakes, to break our code into modular, testable chunks, and to turn every assumption (or mistake) into an assertion, it will actually take us <em>less</em> time to produce working programs, not more.</p>
-<div id="fixme" class="challenge">
-<h2>FIXME</h2>
-<p>Suppose you are writing a function called <code>average</code> that calculates the average of the numbers in a list. What pre-conditions and post-conditions would you write for it? Compare your answer to your neighbor's: can you think of a function that will past your tests but not hers or vice versa?</p>
+<div id="pre--and-post-conditions" class="challenge">
+<h2>Pre- and post-conditions</h2>
+<p>Suppose you are writing a function called <code>average</code> that calculates the average of the numbers in a list. What pre-conditions and post-conditions would you write for it? Compare your answer to your neighbor's: can you think of a function that will pass your tests but not hers or vice versa?</p>
 </div>
-<div id="fixme-1" class="challenge">
-<h2>FIXME</h2>
+<div id="testing-assertions" class="challenge">
+<h2>Testing assertions</h2>
 <p>Explain in words what the assertions in this code check, and for each one, give an example of input that will make that assertion fail.</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> running(values):
     <span class="kw">assert</span> <span class="dt">len</span>(values) &gt; <span class="dv">0</span>
@@ -282,8 +282,8 @@ AssertionError: </code></pre>
         <span class="kw">assert</span> result[-<span class="dv">1</span>] &gt;= result[<span class="dv">0</span>]
     <span class="kw">return</span> result</code></pre>
 </div>
-<div id="fixme-2" class="challenge">
-<h2>FIXME</h2>
+<div id="fixing-and-testing" class="challenge">
+<h2>Fixing and testing</h2>
 <p>Fix <code>range_overlap</code>. Re-run <code>test_range_overlap</code> after each change you make.</p>
 </div>
         </div>

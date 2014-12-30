@@ -636,14 +636,14 @@ and to turn every assumption (or mistake) into an assertion,
 it will actually take us *less* time to produce working programs,
 not more.
 
-> ## FIXME {.challenge}
+> ## Pre- and post-conditions {.challenge}
 > 
 > Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
 > What pre-conditions and post-conditions would you write for it?
 > Compare your answer to your neighbor's:
-> can you think of a function that will past your tests but not hers or vice versa?
+> can you think of a function that will pass your tests but not hers or vice versa?
 
-> ## FIXME {.challenge}
+> ## Testing assertions {.challenge}
 > 
 > Explain in words what the assertions in this code check,
 > and for each one,
@@ -660,6 +660,6 @@ not more.
 >     return result
 > ~~~
 
-> ## FIXME {.challenge}
+> ## Fixing and testing {.challenge}
 > 
 > Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
