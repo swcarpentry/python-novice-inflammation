@@ -43,11 +43,13 @@ We want to:
 
 To do all that, we'll have to learn a little bit about programming.
 
-> ## Prerequisites
->
-> FIXME
-> A short paragraph describing what learners need to know
-> before tackling this lesson.
+## Prerequisites
+
+Learners need to understand the concepts of files and directories
+(including the working directory) and how to start a Python
+interpreter before tackling this lesson.
+
+
 
 ## Topics
 
