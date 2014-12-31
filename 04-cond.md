@@ -48,7 +48,7 @@ grid = ImageGrid(5, 3)
 grid.show()
 ~~~
 
-FIXME: grid-01.txt
+![](img/grid-01.png)
 
 Just like a NumPy array,
 an `ImageGrid` has some properties that hold information about it:
@@ -147,7 +147,7 @@ row[7, 0] = (0, 255, 255) # green and blue
 row.show()
 ~~~
 
-FIXME: grid-02.txt
+![](img/grid-02.png)
 
 Simple color values like `(0,255,0)` are easy enough to decipher with a bit of practice,
 but what color is `(214,90,127)`?
@@ -175,7 +175,7 @@ c[2, 1] = colors['HotPink']
 c.show()
 ~~~
 
-FIXME: grid-03.txt
+![](img/grid-03.png)
 
 ## Conditionals
 
@@ -350,7 +350,7 @@ for x in range(square.width):
 square.show()
 ~~~
 
-FIXME: grid-04.txt
+![](img/grid-04.png)
 
 This is our first hand-made data visualization:
 the colors show where `x` is less than, equal to, or greater than `y`.
@@ -399,7 +399,7 @@ for x in range(width):
 heatmap.show()
 ~~~
 
-FIXME: grid-05.txt
+![](img/grid-05.png)
 
 This may be what we asked for,
 but both the image and the code are hideous:
@@ -437,7 +437,7 @@ for x in range(width):
 heatmap.show()
 ~~~
 
-FIXME: grid-06.txt
+![](img/grid-06.png)
 
 That's a bit better --- but now the contrast between the colors isn't great enough.
 And there still aren't very many fuchsia cells:
@@ -472,7 +472,7 @@ h = make_heatmap(flipped, colors['Orchid'], colors['Fuchsia'], colors['HotPink']
 h.show()
 ~~~
 
-FIXME: grid-07.txt
+![](img/grid-07.png)
 
 That seems right,
 so let's widen the band and use more dramatic colors:
@@ -482,7 +482,7 @@ h = make_heatmap(flipped, colors['Gray'], colors['YellowGreen'], colors['SpringG
 h.show()
 ~~~
 
-FIXME: grid-08.txt
+![](img/grid-08.png)
 
 We'll probably want to experiment a bit more before publishing,
 but writing a function has made experimenting easy.
@@ -528,7 +528,7 @@ h = make_heatmap(flipped, 0.5, 1.5, colors['Gray'], colors['YellowGreen'], color
 h.show()
 ~~~
 
-FIXME: grid-09.txt
+![](img/grid-09.png)
 
 We can now leave out everything except the data being visualized,
 or provide the data and the bands
@@ -539,7 +539,7 @@ h = make_heatmap(flipped, 0.4, 1.6)
 h.show()
 ~~~
 
-FIXME: grid-10.txt
+![](img/grid-10.png)
 
 We can now explore our data with just a few keystrokes,
 which means we can concentrate on our science

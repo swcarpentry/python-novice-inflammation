@@ -47,7 +47,10 @@
 <p>Once we have <code>ImageGrid</code> loaded, we can use it to create a very simple grid of colored cells:</p>
 <pre class="sourceCode python"><code class="sourceCode python">grid = ImageGrid(<span class="dv">5</span>, <span class="dv">3</span>)
 grid.show()</code></pre>
-<p>FIXME: grid-01.txt</p>
+<div class="figure">
+<img src="img/grid-01.png" />
+
+</div>
 <p>Just like a NumPy array, an <code>ImageGrid</code> has some properties that hold information about it:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;grid width:&#39;</span>, grid.width
 <span class="dt">print</span> <span class="st">&#39;grid height:&#39;</span>, grid.height
@@ -89,7 +92,10 @@ row[<span class="dv">5</span>, <span class="dv">0</span>] = (<span class="dv">25
 row[<span class="dv">6</span>, <span class="dv">0</span>] = (<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">255</span>) <span class="co"># red and blue</span>
 row[<span class="dv">7</span>, <span class="dv">0</span>] = (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">255</span>) <span class="co"># green and blue</span>
 row.show()</code></pre>
-<p>FIXME: grid-02.txt</p>
+<div class="figure">
+<img src="img/grid-02.png" />
+
+</div>
 <p>Simple color values like <code>(0,255,0)</code> are easy enough to decipher with a bit of practice, but what color is <code>(214,90,127)</code>? To help us, <code>ipythonblocks</code> provides a function called <code>show_color</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> ipythonblocks <span class="ch">import</span> show_color
 show_color(<span class="dv">214</span>, <span class="dv">90</span>, <span class="dv">127</span>)</code></pre>
@@ -104,7 +110,10 @@ c[<span class="dv">1</span>, <span class="dv">1</span>] = colors[<span class="st
 c[<span class="dv">2</span>, <span class="dv">0</span>] = colors[<span class="st">&#39;LimeGreen&#39;</span>]
 c[<span class="dv">2</span>, <span class="dv">1</span>] = colors[<span class="st">&#39;HotPink&#39;</span>]
 c.show()</code></pre>
-<p>FIXME: grid-03.txt</p>
+<div class="figure">
+<img src="img/grid-03.png" />
+
+</div>
 <h2 id="conditionals">Conditionals</h2>
 <p>The other thing we need in order to create a heat map of our own is a way to pick a color based on a data value. The tool Python gives us for doing this is called a <strong>conditional statement</strong>, and looks like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python">num = <span class="dv">37</span>
@@ -192,7 +201,10 @@ de</code></pre>
         <span class="kw">else</span>:
             square[x, y] = colors[<span class="st">&#39;SlateGray&#39;</span>]
 square.show()</code></pre>
-<p>FIXME: grid-04.txt</p>
+<div class="figure">
+<img src="img/grid-04.png" />
+
+</div>
 <p>This is our first hand-made data visualization: the colors show where <code>x</code> is less than, equal to, or greater than <code>y</code>.</p>
 <h2 id="creating-a-heat-map">Creating a Heat Map</h2>
 <p>The last step is to turn our data into something we can see. As in previous lessons, the first step is to get the data into memory:</p>
@@ -214,7 +226,10 @@ heatmap = ImageGrid(width, height)</code></pre>
         <span class="kw">else</span>:
             heatmap[x, y] = colors[<span class="st">&#39;Blue&#39;</span>]
 heatmap.show()</code></pre>
-<p>FIXME: grid-05.txt</p>
+<div class="figure">
+<img src="img/grid-05.png" />
+
+</div>
 <p>This may be what we asked for, but both the image and the code are hideous:</p>
 <ol style="list-style-type: decimal">
 <li>It's too large for us to view the whole thing at once on a small laptop screen.</li>
@@ -245,7 +260,10 @@ center = flipped.mean()
         <span class="kw">else</span>:
             heatmap[x, y] = colors[<span class="st">&#39;Fuchsia&#39;</span>]
 heatmap.show()</code></pre>
-<p>FIXME: grid-06.txt</p>
+<div class="figure">
+<img src="img/grid-06.png" />
+
+</div>
 <p>That's a bit better --- but now the contrast between the colors isn't great enough. And there still aren't very many fuchsia cells: we may want to widen the band around the mean that gets that color.</p>
 <p>We could rewrite our loop a third time, but the right thing to do is to put our code in a function so that we can experiment with bands and colors more easily.</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> make_heatmap(values, low_color, mid_color, high_color, low_band, high_band, block_size):
@@ -265,11 +283,17 @@ heatmap.show()</code></pre>
 <p>To test this function, we'll run it with the settings we just used:</p>
 <pre class="sourceCode python"><code class="sourceCode python">h = make_heatmap(flipped, colors[<span class="st">&#39;Orchid&#39;</span>], colors[<span class="st">&#39;Fuchsia&#39;</span>], colors[<span class="st">&#39;HotPink&#39;</span>], <span class="fl">0.8</span>, <span class="fl">1.2</span>, <span class="dv">5</span>)
 h.show()</code></pre>
-<p>FIXME: grid-07.txt</p>
+<div class="figure">
+<img src="img/grid-07.png" />
+
+</div>
 <p>That seems right, so let's widen the band and use more dramatic colors:</p>
 <pre class="sourceCode python"><code class="sourceCode python">h = make_heatmap(flipped, colors[<span class="st">&#39;Gray&#39;</span>], colors[<span class="st">&#39;YellowGreen&#39;</span>], colors[<span class="st">&#39;SpringGreen&#39;</span>], <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="dv">5</span>)
 h.show()</code></pre>
-<p>FIXME: grid-08.txt</p>
+<div class="figure">
+<img src="img/grid-08.png" />
+
+</div>
 <p>We'll probably want to experiment a bit more before publishing, but writing a function has made experimenting easy. We can make it even easier by re-defining our function one more time to give the parameters default values. While we're at it, let's put the low and high bands at the front, since they're more likely to change than our color choices:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> make_heatmap(values,
                  low_band=<span class="fl">0.5</span>, high_band=<span class="fl">1.5</span>,
@@ -293,11 +317,17 @@ h.show()</code></pre>
 <p>Again, our first test is to re-run it with the same values as before (which we give it in a different order, since we've changed the order of parameters):</p>
 <pre class="sourceCode python"><code class="sourceCode python">h = make_heatmap(flipped, <span class="fl">0.5</span>, <span class="fl">1.5</span>, colors[<span class="st">&#39;Gray&#39;</span>], colors[<span class="st">&#39;YellowGreen&#39;</span>], colors[<span class="st">&#39;SpringGreen&#39;</span>], <span class="dv">5</span>)
 h.show()</code></pre>
-<p>FIXME: grid-09.txt</p>
+<div class="figure">
+<img src="img/grid-09.png" />
+
+</div>
 <p>We can now leave out everything except the data being visualized, or provide the data and the bands and re-use the default colors and block size:</p>
 <pre class="sourceCode python"><code class="sourceCode python">h = make_heatmap(flipped, <span class="fl">0.4</span>, <span class="fl">1.6</span>)
 h.show()</code></pre>
-<p>FIXME: grid-10.txt</p>
+<div class="figure">
+<img src="img/grid-10.png" />
+
+</div>
 <p>We can now explore our data with just a few keystrokes, which means we can concentrate on our science and not on our programming.</p>
 <div id="making-a-colorbar" class="challenge">
 <h2>Making a colorbar</h2>
