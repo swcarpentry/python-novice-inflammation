@@ -28,7 +28,7 @@
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Analyzing Patient Data</h2>
 <div id="learning-objectives" class="objectives objectives">
-<h2>Learning Objectives</h2>
+<h2 id="learning-objectives" class="objectives objectives">Learning Objectives</h2>
 <ul>
 <li>Explain what a library is, and what libraries are used for.</li>
 <li>Load a Python library and use the things it contains.</li>
@@ -43,7 +43,7 @@
 <p>In order to load our inflammation data, we need to <strong>import</strong> a library called NumPy. In general you should use this library if you want to do fancy things with numbers, especially if you have matrices. We can load NumPy using:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy</code></pre>
 <p>Importing a library is like getting a piece of lab equipment out of a storage locker and setting it up on the bench. Once it's done, we can ask the library to read our data file for us:</p>
-<pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(fname=&amp;<span class="co">#39;inflammation-01.csv&amp;#39;, delimiter=&amp;#39;,&amp;#39;)</span></code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)</code></pre>
 <pre class="output"><code>array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
        [ 0.,  1.,  2., ...,  1.,  0.,  1.],
        [ 0.,  1.,  1., ...,  2.,  1.,  1.],
