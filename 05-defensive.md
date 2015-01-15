@@ -68,7 +68,7 @@ print 'total is:', total
 ~~~ {.error}
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
-<ipython-input-19-33d87ea29ae4> in <module&gt;()
+<ipython-input-19-33d87ea29ae4> in <module>()
       2 total = 0.0
       3 for n in numbers:
 ----> 4     assert n >= 0.0, 'Data should only contain positive values'
