@@ -100,13 +100,13 @@ print_characters('tin')
 ~~~ {.error}
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
-&lt;ipython-input-13-5bc7311e0bf3&gt; in &lt;module&gt;()
-----&gt; 1 print_characters('tin')
+<ipython-input-13-5bc7311e0bf3> in <module>()
+----> 1 print_characters('tin')
 
-&lt;ipython-input-12-11460561ea56&gt; in print_characters(element)
+<ipython-input-12-11460561ea56> in print_characters(element)
       3     print element[1]
       4     print element[2]
-----&gt; 5     print element[3]
+----> 5     print element[3]
       6 
       7 print_characters('lead')
 

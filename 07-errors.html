@@ -51,14 +51,14 @@
 favorite_ice_cream()</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
-&amp;lt;ipython-input-1-9d0462a5b07c&amp;gt; in &amp;lt;module&amp;gt;()
+&lt;ipython-input-1-9d0462a5b07c&gt; in &lt;module&gt;()
       1 from errors_01 import favorite_ice_cream
-----&amp;gt; 2 favorite_ice_cream()
+----&gt; 2 favorite_ice_cream()
 
 /Users/jhamrick/project/swc/novice/python/errors_01.pyc in favorite_ice_cream()
       5         &quot;strawberry&quot;
       6     ]
-----&amp;gt; 7     print ice_creams[3]
+----&gt; 7     print ice_creams[3]
 
 IndexError: list index out of range</code></pre>
 <p>This particular traceback has two levels. You can determine the number of levels by looking for the number of arrows on the left hand side. In this case:</p>
@@ -84,7 +84,7 @@ IndexError: list index out of range</code></pre>
     msg = <span class="st">&quot;hello, world!&quot;</span>
     <span class="dt">print</span> msg
      <span class="kw">return</span> msg</code></pre>
-<pre class="error"><code>  File &quot;&amp;lt;ipython-input-3-6bb841ea1423&amp;gt;&quot;, line 1
+<pre class="error"><code>  File &quot;&lt;ipython-input-3-6bb841ea1423&gt;&quot;, line 1
     def some_function()
                        ^
 SyntaxError: invalid syntax</code></pre>
@@ -94,7 +94,7 @@ SyntaxError: invalid syntax</code></pre>
     msg = <span class="st">&quot;hello, world!&quot;</span>
     <span class="dt">print</span> msg
      <span class="kw">return</span> msg</code></pre>
-<pre class="error"><code>  File &quot;&amp;lt;ipython-input-4-ae290e7659cb&amp;gt;&quot;, line 4
+<pre class="error"><code>  File &quot;&lt;ipython-input-4-ae290e7659cb&gt;&quot;, line 4
     return msg
     ^
 IndentationError: unexpected indent</code></pre>
@@ -106,7 +106,7 @@ IndentationError: unexpected indent</code></pre>
     msg = <span class="st">&quot;hello, world!&quot;</span>
     <span class="dt">print</span> msg
     <span class="kw">return</span> msg</code></pre>
-<pre class="error"><code>  File &quot;&amp;lt;ipython-input-5-653b36fbcd41&amp;gt;&quot;, line 4
+<pre class="error"><code>  File &quot;&lt;ipython-input-5-653b36fbcd41&gt;&quot;, line 4
     return msg
               ^
 IndentationError: unindent does not match any outer indentation level</code></pre>
@@ -117,8 +117,8 @@ IndentationError: unindent does not match any outer indentation level</code></pr
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> a</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&amp;lt;ipython-input-7-9d7b17ad5387&amp;gt; in &amp;lt;module&amp;gt;()
-----&amp;gt; 1 print a
+&lt;ipython-input-7-9d7b17ad5387&gt; in &lt;module&gt;()
+----&gt; 1 print a
 
 NameError: name &#39;a&#39; is not defined</code></pre>
 <p>Variable name errors come with some of the most informative error messages, which are usually of the form &quot;name 'the_variable_name' is not defined&quot;.</p>
@@ -126,8 +126,8 @@ NameError: name &#39;a&#39; is not defined</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> hello</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&amp;lt;ipython-input-8-9553ee03b645&amp;gt; in &amp;lt;module&amp;gt;()
-----&amp;gt; 1 print hello
+&lt;ipython-input-8-9553ee03b645&gt; in &lt;module&gt;()
+----&gt; 1 print hello
 
 NameError: name &#39;hello&#39; is not defined</code></pre>
 <p>The second is that you just forgot to create the variable before using it. In the following example, <code>count</code> should have been defined (e.g., with <code>count = 0</code>) before the for loop:</p>
@@ -136,9 +136,9 @@ NameError: name &#39;hello&#39; is not defined</code></pre>
 <span class="dt">print</span> <span class="st">&quot;The count is: &quot;</span> + <span class="dt">str</span>(count)</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&amp;lt;ipython-input-9-dd6a12d7ca5c&amp;gt; in &amp;lt;module&amp;gt;()
+&lt;ipython-input-9-dd6a12d7ca5c&gt; in &lt;module&gt;()
       1 for number in range(10):
-----&amp;gt; 2     count = count + number
+----&gt; 2     count = count + number
       3 print &quot;The count is: &quot; + str(count)
 
 NameError: name &#39;count&#39; is not defined</code></pre>
@@ -149,10 +149,10 @@ NameError: name &#39;count&#39; is not defined</code></pre>
 <span class="dt">print</span> <span class="st">&quot;The count is: &quot;</span> + <span class="dt">str</span>(count)</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&amp;lt;ipython-input-10-d77d40059aea&amp;gt; in &amp;lt;module&amp;gt;()
+&lt;ipython-input-10-d77d40059aea&gt; in &lt;module&gt;()
       1 Count = 0
       2 for number in range(10):
-----&amp;gt; 3     count = count + number
+----&gt; 3     count = count + number
       4 print &quot;The count is: &quot; + str(count)
 
 NameError: name &#39;count&#39; is not defined</code></pre>
@@ -168,10 +168,10 @@ Letter #2 is b
 Letter #3 is c</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
-&amp;lt;ipython-input-11-d817f55b7d6c&amp;gt; in &amp;lt;module&amp;gt;()
+&lt;ipython-input-11-d817f55b7d6c&gt; in &lt;module&gt;()
       3 print &quot;Letter #2 is &quot; + letters[1]
       4 print &quot;Letter #3 is &quot; + letters[2]
-----&amp;gt; 5 print &quot;Letter #4 is &quot; + letters[3]
+----&gt; 5 print &quot;Letter #4 is &quot; + letters[3]
 
 IndexError: list index out of range</code></pre>
 <p>Here, Python is telling us that there is an <code>IndexError</code> in our code, meaning we tried to access a list index that did not exist. We get a similar error in the case of dictionaries:</p>
@@ -185,10 +185,10 @@ IndexError: list index out of range</code></pre>
 <span class="dt">print</span> <span class="st">&quot;The capital of Oregon is: &quot;</span> + us_state_capitals[<span class="st">&#39;oregon&#39;</span>]</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
-&amp;lt;ipython-input-12-27fa113dd73c&amp;gt; in &amp;lt;module&amp;gt;()
+&lt;ipython-input-12-27fa113dd73c&gt; in &lt;module&gt;()
       6 }
       7 
-----&amp;gt; 8 print &quot;The capital of Oregon is: &quot; + us_state_capitals[&#39;oregon&#39;]
+----&gt; 8 print &quot;The capital of Oregon is: &quot; + us_state_capitals[&#39;oregon&#39;]
 
 KeyError: &#39;oregon&#39;</code></pre>
 <p>In this case, we get a <code>KeyError</code>, which means that the key we requested (<code>'oregon'</code>, as the error message tells us) is not present in the dictionary. This might be because it genuinely does not exist in the dictionary, but it could <em>also</em> be due to a typo. This is similar to the case we discussed above, where you can sometimes receive a <code>NameError</code> due to a typo. For example:</p>
@@ -202,10 +202,10 @@ KeyError: &#39;oregon&#39;</code></pre>
 <span class="dt">print</span> <span class="st">&quot;The capital of Massachusetts is: &quot;</span> + us_state_capitals[<span class="st">&#39;massachussetts&#39;</span>]</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
-&amp;lt;ipython-input-13-ae1dac4c6a45&amp;gt; in &amp;lt;module&amp;gt;()
+&lt;ipython-input-13-ae1dac4c6a45&gt; in &lt;module&gt;()
       6 }
       7 
-----&amp;gt; 8 print &quot;The capital of Massachusetts is: &quot; + us_state_capitals[&#39;massachussetts&#39;]
+----&gt; 8 print &quot;The capital of Massachusetts is: &quot; + us_state_capitals[&#39;massachussetts&#39;]
 
 KeyError: &#39;massachussetts&#39;</code></pre>
 <h2 id="file-errors">File Errors</h2>
@@ -213,8 +213,8 @@ KeyError: &#39;massachussetts&#39;</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python">file_handle = <span class="dt">open</span>(<span class="st">&#39;myfile.txt&#39;</span>, <span class="st">&#39;r&#39;</span>)</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 IOError                                   Traceback (most recent call last)
-&amp;lt;ipython-input-14-f6e1ac4aee96&amp;gt; in &amp;lt;module&amp;gt;()
-----&amp;gt; 1 file_handle = open(&#39;myfile.txt&#39;, &#39;r&#39;)
+&lt;ipython-input-14-f6e1ac4aee96&gt; in &lt;module&gt;()
+----&gt; 1 file_handle = open(&#39;myfile.txt&#39;, &#39;r&#39;)
 
 IOError: [Errno 2] No such file or directory: &#39;myfile.txt&#39;</code></pre>
 <p>One reason for receiving this error is that you specified an incorrect path to the file. For example, if I am currently in a folder called <code>myproject</code>, and I have a file in <code>myproject/writing/myfile.txt</code>, but I try to just open <code>myfile.txt</code>, this will fail. The correct path would be <code>writing/myfile. xt</code>. It is also possible (like with <code>NameError</code> and <code>KeyError</code>) that you just made a typo.</p>
@@ -223,9 +223,9 @@ IOError: [Errno 2] No such file or directory: &#39;myfile.txt&#39;</code></pre>
 file_handle.read()</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 IOError                                   Traceback (most recent call last)
-&amp;lt;ipython-input-15-b846479bc61f&amp;gt; in &amp;lt;module&amp;gt;()
+&lt;ipython-input-15-b846479bc61f&gt; in &lt;module&gt;()
       1 file_handle = open(&#39;myfile.txt&#39;, &#39;w&#39;)
-----&amp;gt; 2 file_handle.read()
+----&gt; 2 file_handle.read()
 
 IOError: File not open for reading</code></pre>
 <div id="reading-error-messages" class="challenge">
@@ -243,19 +243,19 @@ IOError: File not open for reading</code></pre>
 print_friday_message()</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
-&amp;lt;ipython-input-2-e4c4cbafeeb5&amp;gt; in &amp;lt;module&amp;gt;()
+&lt;ipython-input-2-e4c4cbafeeb5&gt; in &lt;module&gt;()
       1 from errors_02 import print_friday_message
-----&amp;gt; 2 print_friday_message()
+----&gt; 2 print_friday_message()
 
 /Users/jhamrick/project/swc/novice/python/errors_02.py in print_friday_message()
      13 
      14 def print_friday_message():
----&amp;gt; 15     print_message(&quot;Friday&quot;)
+---&gt; 15     print_message(&quot;Friday&quot;)
 
 /Users/jhamrick/project/swc/novice/python/errors_02.py in print_message(day)
       9         &quot;sunday&quot;: &quot;Aw, the weekend is almost over.&quot;
      10     }
----&amp;gt; 11     print messages[day]
+---&gt; 11     print messages[day]
      12 
      13 
 
@@ -312,10 +312,10 @@ print &quot;The second month in winter is: &quot; + seasons[&#39;Winter&#39;][1]
         </div>
       </div>
       <div class="footer">
-        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Email</a>
-        <a class="label swc-blue-bg" href="http://github.com/swcarpentry">GitHub</a>
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/python-novice-inflammation">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
         <a class="label swc-blue-bg" href="LICENSE.html">License</a>
-        <a class="bugreport label swc-blue-bg" href="mailto:admin@software-carpentry.org?subject=bug%20in%20{{page.path}}">Bug Report</a>
       </div>
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
