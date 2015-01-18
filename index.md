@@ -43,13 +43,11 @@ We want to:
 
 To do all that, we'll have to learn a little bit about programming.
 
-## Prerequisites
+## Prerequisites {.prereq}
 
 Learners need to understand the concepts of files and directories
 (including the working directory) and how to start a Python
 interpreter before tackling this lesson.
-
-
 
 ## Topics
 
