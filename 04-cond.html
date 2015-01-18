@@ -72,16 +72,16 @@ color is: (10, 20, 30)</code></pre>
 <span class="dt">print</span> <span class="st">&#39;first element of color after change:&#39;</span>, color[<span class="dv">0</span>]</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
-&amp;lt;ipython-input-11-9c3dd30a4e52&amp;gt; in &amp;lt;module&amp;gt;()
-----&amp;gt; 1 color[0] = 40
+&lt;ipython-input-11-9c3dd30a4e52&gt; in &lt;module&gt;()
+----&gt; 1 color[0] = 40
       2 print &#39;first element of color after change:&#39;, color[0]
 
 TypeError: &#39;tuple&#39; object does not support item assignment</code></pre>
 <p>If a tuple represents an RGB color, its red, green, and blue components can take on values between 0 and 255. The upper bound may seem odd, but it's the largest number that can be represented in an 8-bit byte (i.e., 2<sup>8</sup>-1). This makes it easy for computers to manipulate colors, while providing fine enough gradations to fool most human eyes, most of the time.</p>
 <p>Let's see what a few RGB colors actually look like:</p>
 <pre class="sourceCode python"><code class="sourceCode python">row = ImageGrid(<span class="dv">8</span>, <span class="dv">1</span>)
-row[<span class="dv">0</span>, <span class="dv">0</span>] = (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)   <span class="co"># no color =&amp;gt; black</span>
-row[<span class="dv">1</span>, <span class="dv">0</span>] = (<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">255</span>) <span class="co"># all colors =&amp;gt; white</span>
+row[<span class="dv">0</span>, <span class="dv">0</span>] = (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)   <span class="co"># no color =&gt; black</span>
+row[<span class="dv">1</span>, <span class="dv">0</span>] = (<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">255</span>) <span class="co"># all colors =&gt; white</span>
 row[<span class="dv">2</span>, <span class="dv">0</span>] = (<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>) <span class="co"># all red</span>
 row[<span class="dv">3</span>, <span class="dv">0</span>] = (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">0</span>) <span class="co"># all green</span>
 row[<span class="dv">4</span>, <span class="dv">0</span>] = (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">255</span>) <span class="co"># all blue</span>
@@ -108,7 +108,7 @@ c.show()</code></pre>
 <h2 id="conditionals">Conditionals</h2>
 <p>The other thing we need in order to create a heat map of our own is a way to pick a color based on a data value. The tool Python gives us for doing this is called a <strong>conditional statement</strong>, and looks like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python">num = <span class="dv">37</span>
-<span class="kw">if</span> num &amp;gt; <span class="dv">100</span>:
+<span class="kw">if</span> num &gt; <span class="dv">100</span>:
     <span class="dt">print</span> <span class="st">&#39;greater&#39;</span>
 <span class="kw">else</span>:
     <span class="dt">print</span> <span class="st">&#39;not greater&#39;</span>
@@ -121,14 +121,14 @@ done
 <p>Conditional statements don't have to include an <code>else</code>. If there isn't one, Python simply does nothing if the test is false:</p>
 <pre class="sourceCode python"><code class="sourceCode python">num = <span class="dv">53</span>
 <span class="dt">print</span> <span class="st">&#39;before conditional...&#39;</span>
-<span class="kw">if</span> num &amp;gt; <span class="dv">100</span>:
+<span class="kw">if</span> num &gt; <span class="dv">100</span>:
     <span class="dt">print</span> <span class="st">&#39;53 is greater than 100&#39;</span>
 <span class="dt">print</span> <span class="st">&#39;...after conditional&#39;</span></code></pre>
 <pre class="output"><code>before conditional...
 ...after conditional</code></pre>
 <p>We can also chain several tests together using <code>elif</code>, which is short for &quot;else if&quot;. This makes it simple to write a function that returns the sign of a number:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> sign(num):
-    <span class="kw">if</span> num &amp;gt; <span class="dv">0</span>:
+    <span class="kw">if</span> num &gt; <span class="dv">0</span>:
         <span class="kw">return</span> <span class="dv">1</span>
     <span class="kw">elif</span> num == <span class="dv">0</span>:
         <span class="kw">return</span> <span class="dv">0</span>
@@ -139,13 +139,13 @@ done
 <pre class="output"><code>sign of -3: -1</code></pre>
 <p>One important thing to notice in the code above is that we use a double equals sign <code>==</code> to test for equality rather than a single equals sign because the latter is used to mean assignment. This convention was inherited from C, and while many other programming languages work the same way, it does take a bit of getting used to...</p>
 <p>We can also combine tests using <code>and</code> and <code>or</code>. <code>and</code> is only true if both parts are true:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> (<span class="dv">1</span> &amp;gt; <span class="dv">0</span>) and (-<span class="dv">1</span> &amp;gt; <span class="dv">0</span>):
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> (<span class="dv">1</span> &gt; <span class="dv">0</span>) and (-<span class="dv">1</span> &gt; <span class="dv">0</span>):
     <span class="dt">print</span> <span class="st">&#39;both parts are true&#39;</span>
 <span class="kw">else</span>:
     <span class="dt">print</span> <span class="st">&#39;one part is not true&#39;</span></code></pre>
 <pre class="output"><code>one part is not true</code></pre>
 <p>while <code>or</code> is true if either part is true:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> (<span class="dv">1</span> &amp;lt; <span class="dv">0</span>) or (<span class="st">&#39;left&#39;</span> &amp;lt; <span class="st">&#39;right&#39;</span>):
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> (<span class="dv">1</span> &lt; <span class="dv">0</span>) or (<span class="st">&#39;left&#39;</span> &lt; <span class="st">&#39;right&#39;</span>):
     <span class="dt">print</span> <span class="st">&#39;at least one test is true&#39;</span></code></pre>
 <pre class="output"><code>at least one test is true</code></pre>
 <p>In this case, &quot;either&quot; means &quot;either or both&quot;, not &quot;either one or the other but not both&quot;.</p>
@@ -154,7 +154,7 @@ done
 <pre class="sourceCode python"><code class="sourceCode python">numbers = [-<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">2</span>, -<span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">6</span>]
 total = <span class="dv">0</span>
 <span class="kw">for</span> n in numbers:
-    <span class="kw">if</span> n &amp;gt;= <span class="dv">0</span>:
+    <span class="kw">if</span> n &gt;= <span class="dv">0</span>:
         total = total + n
 <span class="dt">print</span> <span class="st">&#39;sum of positive values:&#39;</span>, total</code></pre>
 <pre class="output"><code>sum of positive values: 20
@@ -163,7 +163,7 @@ total = <span class="dv">0</span>
 <pre class="sourceCode python"><code class="sourceCode python">pos_total = <span class="dv">0</span>
 neg_total = <span class="dv">0</span>
 <span class="kw">for</span> n in numbers:
-    <span class="kw">if</span> n &amp;gt;= <span class="dv">0</span>:
+    <span class="kw">if</span> n &gt;= <span class="dv">0</span>:
         pos_total = pos_total + n
     <span class="kw">else</span>:
         neg_total = neg_total + n
@@ -185,7 +185,7 @@ de</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python">square = ImageGrid(<span class="dv">5</span>, <span class="dv">5</span>)
 <span class="kw">for</span> x in <span class="dt">range</span>(square.width):
     <span class="kw">for</span> y in <span class="dt">range</span>(square.height):
-        <span class="kw">if</span> x &amp;lt; y:
+        <span class="kw">if</span> x &lt; y:
             square[x, y] = colors[<span class="st">&#39;Fuchsia&#39;</span>]
         <span class="kw">elif</span> x == y:
             square[x, y] = colors[<span class="st">&#39;Olive&#39;</span>]
@@ -207,7 +207,7 @@ heatmap = ImageGrid(width, height)</code></pre>
 <p>The third step is to decide <em>how</em> we are going to color the cells in the heat map. To keep things simple, we will use red, green, and blue as our colors, and compare data values to the data set's mean. Here's the code:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> x in <span class="dt">range</span>(width):
     <span class="kw">for</span> y in <span class="dt">range</span>(height):
-        <span class="kw">if</span> data[x, y] &amp;lt; data.mean():
+        <span class="kw">if</span> data[x, y] &lt; data.mean():
             heatmap[x, y] = colors[<span class="st">&#39;Red&#39;</span>]
         <span class="kw">elif</span> data[x, y] == data.mean():
             heatmap[x, y] = colors[<span class="st">&#39;Green&#39;</span>]
@@ -238,9 +238,9 @@ heatmap = ImageGrid(width, height, block_size=<span class="dv">5</span>)
 center = flipped.mean()
 <span class="kw">for</span> x in <span class="dt">range</span>(width):
     <span class="kw">for</span> y in <span class="dt">range</span>(height):
-        <span class="kw">if</span> flipped[x, y] &amp;lt; (<span class="fl">0.8</span> * center):
+        <span class="kw">if</span> flipped[x, y] &lt; (<span class="fl">0.8</span> * center):
             heatmap[x, y] = colors[<span class="st">&#39;Orchid&#39;</span>]
-        <span class="kw">elif</span> flipped[x, y] &amp;gt; (<span class="fl">1.2</span> * center):
+        <span class="kw">elif</span> flipped[x, y] &gt; (<span class="fl">1.2</span> * center):
             heatmap[x, y] = colors[<span class="st">&#39;HotPink&#39;</span>]
         <span class="kw">else</span>:
             heatmap[x, y] = colors[<span class="st">&#39;Fuchsia&#39;</span>]
@@ -255,9 +255,9 @@ heatmap.show()</code></pre>
     center = values.mean()
     <span class="kw">for</span> x in <span class="dt">range</span>(width):
         <span class="kw">for</span> y in <span class="dt">range</span>(height):
-            <span class="kw">if</span> values[x, y] &amp;lt; low_band * center:
+            <span class="kw">if</span> values[x, y] &lt; low_band * center:
                 result[x, y] = low_color
-            <span class="kw">elif</span> values[x, y] &amp;gt; high_band * center:
+            <span class="kw">elif</span> values[x, y] &gt; high_band * center:
                 result[x, y] = high_color
             <span class="kw">else</span>:
                 result[x, y] = mid_color
@@ -282,9 +282,9 @@ h.show()</code></pre>
     center = values.mean()
     <span class="kw">for</span> x in <span class="dt">range</span>(width):
         <span class="kw">for</span> y in <span class="dt">range</span>(height):
-            <span class="kw">if</span> values[x, y] &amp;lt; low_band * center:
+            <span class="kw">if</span> values[x, y] &lt; low_band * center:
                 result[x, y] = low_color
-            <span class="kw">elif</span> values[x, y] &amp;gt; high_band * center:
+            <span class="kw">elif</span> values[x, y] &gt; high_band * center:
                 result[x, y] = high_color
             <span class="kw">else</span>:
                 result[x, y] = mid_color

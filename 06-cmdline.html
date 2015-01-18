@@ -276,7 +276,7 @@ count = <span class="dv">0</span>
 
 <span class="dt">print</span> count, <span class="st">&#39;lines in standard input&#39;</span></code></pre>
 <p>This little program reads lines from a special &quot;file&quot; called <code>sys.stdin</code>, which is automatically connected to the program's standard input. We don't have to open it --- Python and the operating system take care of that when the program starts up --- but we can do almost anything with it that we could do to a regular file. Let's try running it as if it were a regular command-line program:</p>
-<pre class="input"><code>$ python count-stdin.py &amp;lt; small-01.csv</code></pre>
+<pre class="input"><code>$ python count-stdin.py &lt; small-01.csv</code></pre>
 <pre class="output"><code>2 lines in standard input</code></pre>
 <p>A common mistake is to try to run something that reads from standard input like this:</p>
 <pre class="input"><code>$ count_stdin.py small-01.csv</code></pre>

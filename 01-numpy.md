@@ -36,7 +36,7 @@ Once it's done,
 we can ask the library to read our data file for us:
 
 ~~~ {.python}
-numpy.loadtxt(fname=&#39;inflammation-01.csv&#39;, delimiter=&#39;,&#39;)
+numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ~~~
 ~~~ {.output}
 array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
@@ -189,7 +189,7 @@ let's ask what **type** of thing `data` refers to:
 print type(data)
 ~~~
 ~~~ {.output}
-&lt;type 'numpy.ndarray'&gt;
+<type 'numpy.ndarray'>
 ~~~
 
 The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library.

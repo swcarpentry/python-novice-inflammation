@@ -291,8 +291,8 @@ print 'final value of temp after all function calls:', temp
 ~~~ {.error}
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-&lt;ipython-input-12-ffd9b4dbd5f1&gt; in &lt;module&gt;()
-----&gt; 1 print 'final value of temp after all function calls:', temp
+<ipython-input-12-ffd9b4dbd5f1> in <module>()
+----> 1 print 'final value of temp after all function calls:', temp
 
 NameError: name 'temp' is not defined
 ~~~
@@ -478,7 +478,7 @@ we can break the string across multiple lines:
 ~~~ {.python}
 def center(data, desired):
     '''Return a new array containing the original data centered around the desired value.
-    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]'''
+    Example: center([1, 2, 3], 0) => [-1, 0, 1]'''
     return (data - data.mean()) + desired
 
 help(center)
@@ -488,7 +488,7 @@ Help on function center in module __main__:
 
 center(data, desired)
     Return a new array containing the original data centered around the desired value.
-    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]
+    Example: center([1, 2, 3], 0) => [-1, 0, 1]
 
 ~~~
 
@@ -520,13 +520,13 @@ numpy.loadtxt('inflammation-01.csv', ',')
 ~~~ {.error}
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
-&lt;ipython-input-26-e3bc6cf4fd6a&gt; in &lt;module&gt;()
-----&gt; 1 numpy.loadtxt('inflammation-01.csv', ',')
+<ipython-input-26-e3bc6cf4fd6a> in <module>()
+----> 1 numpy.loadtxt('inflammation-01.csv', ',')
 
 /Users/gwilson/anaconda/lib/python2.7/site-packages/numpy/lib/npyio.pyc in loadtxt(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin)
     775     try:
     776         # Make sure we're dealing with a proper dtype
---&gt; 777         dtype = np.dtype(dtype)
+--> 777         dtype = np.dtype(dtype)
     778         defconv = _getconv(dtype)
     779 
 
@@ -540,7 +540,7 @@ let's re-define our `center` function like this:
 ~~~ {.python}
 def center(data, desired=0.0):
     '''Return a new array containing the original data centered around the desired value (0 by default).
-    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]'''
+    Example: center([1, 2, 3], 0) => [-1, 0, 1]'''
     return (data - data.mean()) + desired
 ~~~
 
@@ -622,7 +622,7 @@ help(numpy.loadtxt)
 ~~~ {.output}
 Help on function loadtxt in module numpy.lib.npyio:
 
-loadtxt(fname, dtype=&lt;type 'float'&gt;, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
+loadtxt(fname, dtype=<type 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
     Load data from a text file.
     
     Each row in the text file must have the same number of values.
@@ -686,23 +686,23 @@ loadtxt(fname, dtype=&lt;type 'float'&gt;, comments='#', delimiter=None, convert
     
     Examples
     --------
-    &gt;&gt;&gt; from StringIO import StringIO   # StringIO behaves like a file object
-    &gt;&gt;&gt; c = StringIO("0 1\n2 3")
-    &gt;&gt;&gt; np.loadtxt(c)
+    >>> from StringIO import StringIO   # StringIO behaves like a file object
+    >>> c = StringIO("0 1\n2 3")
+    >>> np.loadtxt(c)
     array([[ 0.,  1.],
            [ 2.,  3.]])
     
-    &gt;&gt;&gt; d = StringIO("M 21 72\nF 35 58")
-    &gt;&gt;&gt; np.loadtxt(d, dtype={'names': ('gender', 'age', 'weight'),
+    >>> d = StringIO("M 21 72\nF 35 58")
+    >>> np.loadtxt(d, dtype={'names': ('gender', 'age', 'weight'),
     ...                      'formats': ('S1', 'i4', 'f4')})
     array([('M', 21, 72.0), ('F', 35, 58.0)],
-          dtype=[('gender', '|S1'), ('age', '&lt;i4'), ('weight', '&lt;f4')])
+          dtype=[('gender', '|S1'), ('age', '<i4'), ('weight', '<f4')])
     
-    &gt;&gt;&gt; c = StringIO("1,0,2\n3,0,4")
-    &gt;&gt;&gt; x, y = np.loadtxt(c, delimiter=',', usecols=(0, 2), unpack=True)
-    &gt;&gt;&gt; x
+    >>> c = StringIO("1,0,2\n3,0,4")
+    >>> x, y = np.loadtxt(c, delimiter=',', usecols=(0, 2), unpack=True)
+    >>> x
     array([ 1.,  3.])
-    &gt;&gt;&gt; y
+    >>> y
     array([ 2.,  4.])
 
 ~~~
