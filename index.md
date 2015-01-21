@@ -43,7 +43,7 @@ We want to:
 
 To do all that, we'll have to learn a little bit about programming.
 
-> ## Prerequisites
+> ## Prerequisites {.prereq}
 >
 > FIXME
 > A short paragraph describing what learners need to know
