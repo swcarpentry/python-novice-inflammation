@@ -27,7 +27,7 @@
         <div class="span10 offset1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Analyzing Multiple Data Sets</h2>
-<div id="learning-objectives" class="objectives objectives">
+<div id="learning-objectives" class="objectives">
 <h2>Learning Objectives</h2>
 <ul>
 <li>Explain what a for loop does.</li>
@@ -65,10 +65,10 @@
     plt.show()
 
 analyze(<span class="st">&#39;inflammation-01.csv&#39;</span>)</code></pre>
-<p><img src="../../novice/python/03-loop_files/novice/python/03-loop_2_0.png"></p>
+<p><img src="fig/03-loop_2_0.png" alt="Analysis of inflammation-01.csv" /> </p>
 <p>We can use it to analyze other data sets one by one:</p>
 <pre class="sourceCode python"><code class="sourceCode python">analyze(<span class="st">&#39;inflammation-02.csv&#39;</span>)</code></pre>
-<p><img src="../../novice/python/03-loop_files/novice/python/03-loop_4_0.png"></p>
+<p><img src="fig/03-loop_4_0.png" alt="Analysis of inflammation-02.csv" /> </p>
 <p>but we have a dozen data sets right now and more on the way. We want to create plots for all our data sets with a single statement. To do that, we'll have to teach the computer how to repeat things.</p>
 <h2 id="for-loops">For Loops</h2>
 <p>Suppose we want to print each character in the word &quot;lead&quot; on a line of its own. One way is to use four <code>print</code> statements:</p>
@@ -168,10 +168,11 @@ filenames = filenames[<span class="dv">0</span>:<span class="dv">3</span>]
     <span class="dt">print</span> f
     analyze(f)</code></pre>
 <pre class="output"><code>inflammation-01.csv</code></pre>
-<p><img src="../../novice/python/03-loop_files/novice/python/03-loop_49_1.png"> <sub>~</sub> {.output} inflammation-02.csv <sub>~</sub></p>
-<p><img src="../../novice/python/03-loop_files/novice/python/03-loop_49_3.png"></p>
+<p><img src="fig/03-loop_49_1.png" alt="Analysis of inflammation-01.csv" /> </p>
+<pre class="output"><code>inflammation-02.csv</code></pre>
+<p><img src="fig/03-loop_49_3.png" alt="Analysis of inflammation-02.csv" /> </p>
 <pre class="output"><code>inflammation-03.csv</code></pre>
-<p><img src="../../novice/python/03-loop_files/novice/python/03-loop_49_5.png"></p>
+<p><img src="fig/03-loop_49_5.png" alt="Analysis of inflammation-02.csv" /> </p>
 <p>Sure enough, the maxima of these data sets show exactly the same ramp as the first, and their minima show the same staircase structure.</p>
 <blockquote>
 <p>FIXME {.challenge}</p>

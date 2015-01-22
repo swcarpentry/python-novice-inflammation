@@ -27,8 +27,8 @@
         <div class="span10 offset1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Analyzing Patient Data</h2>
-<div id="learning-objectives" class="objectives objectives">
-<h2 id="learning-objectives" class="objectives objectives">Learning Objectives</h2>
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
 <ul>
 <li>Explain what a library is, and what libraries are used for.</li>
 <li>Load a Python library and use the things it contains.</li>
@@ -68,17 +68,17 @@
 <pre class="output"><code>weight in kilograms is now: 57.5</code></pre>
 <p>As the example above shows, we can print several things at once by separating them with commas.</p>
 <p>If we imagine the variable as a sticky note with a name written on it, assignment is like putting the sticky note on a particular value:</p>
-<p><img src="img/python-sticky-note-variables-01.svg" alt="Variables as Sticky Notes" /></p>
+<p><img src="fig/python-sticky-note-variables-01.svg" alt="Variables as Sticky Notes" /> </p>
 <p>This means that assigning a value to one variable does <em>not</em> change the values of other variables. For example, let's store the subject's weight in pounds in a variable:</p>
 <pre class="sourceCode python"><code class="sourceCode python">weight_lb = <span class="fl">2.2</span> * weight_kg
 <span class="dt">print</span> <span class="st">&#39;weight in kilograms:&#39;</span>, weight_kg, <span class="st">&#39;and in pounds:&#39;</span>, weight_lb</code></pre>
 <pre class="output"><code>weight in kilograms: 57.5 and in pounds: 126.5</code></pre>
-<p><img src="img/python-sticky-note-variables-02.svg" alt="Creating Another Variable" /></p>
+<p><img src="fig/python-sticky-note-variables-02.svg" alt="Creating Another Variable" /> </p>
 <p>and then change <code>weight_kg</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python">weight_kg = <span class="fl">100.0</span>
 <span class="dt">print</span> <span class="st">&#39;weight in kilograms is now:&#39;</span>, weight_kg, <span class="st">&#39;and weight in pounds is still:&#39;</span>, weight_lb</code></pre>
 <pre class="output"><code>weight in kilograms is now: 100.0 and weight in pounds is still: 126.5</code></pre>
-<p><img src="img/python-sticky-note-variables-03.svg" alt="Updating a Variable" /></p>
+<p><img src="fig/python-sticky-note-variables-03.svg" alt="Updating a Variable" /> </p>
 <p>Since <code>weight_lb</code> doesn't &quot;remember&quot; where its value came from, it isn't automatically updated when <code>weight_kg</code> changes. This is different from the way spreadsheets work.</p>
 <p>Just as we can assign a single value to a variable, we can also assign an array of values to a variable using the same syntax. Let's re-run <code>numpy.loadtxt</code> and save its result:</p>
 <pre class="sourceCode python"><code class="sourceCode python">data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)</code></pre>
@@ -173,7 +173,7 @@ standard deviation: 4.61383319712</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;maximum inflammation for patient 2:&#39;</span>, data[<span class="dv">2</span>, :].<span class="dt">max</span>()</code></pre>
 <pre class="output"><code>maximum inflammation for patient 2: 19.0</code></pre>
 <p>What if we need the maximum inflammation for <em>all</em> patients, or the average for each day? As the diagram below shows, we want to perform the operation across an axis:</p>
-<p><img src="img/python-operations-across-axes.svg" alt="Operations Across Axes" /></p>
+<p><img src="fig/python-operations-across-axes.svg" alt="Operations Across Axes" /> </p>
 <p>To support this, most array methods allow us to specify the axis we want to work on. If we ask for the average across axis 0, we get:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> data.mean(axis=<span class="dv">0</span>)</code></pre>
 <pre class="output"><code>[  0.           0.45         1.11666667   1.75         2.43333333   3.15
@@ -200,19 +200,19 @@ standard deviation: 4.61383319712</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> matplotlib <span class="ch">import</span> pyplot
 pyplot.imshow(data)
 pyplot.show()</code></pre>
-<p><img src="../../novice/python/01-numpy_files/novice/python/01-numpy_71_0.png"></p>
+<p><img src="fig/01-numpy_71_0.png" alt="Heatmap of the Data" /> </p>
 <p>Blue regions in this heat map are low values, while red shows high values. As we can see, inflammation rises and falls over a 40-day period. Let's take a look at the average inflammation over time:</p>
 <pre class="sourceCode python"><code class="sourceCode python">ave_inflammation = data.mean(axis=<span class="dv">0</span>)
 pyplot.plot(ave_inflammation)
 pyplot.show()</code></pre>
-<p><img src="../../novice/python/01-numpy_files/novice/python/01-numpy_73_0.png"></p>
+<p><img src="fig/01-numpy_73_0.png" alt="Average Inflammation Over Time" /> </p>
 <p>Here, we have put the average per day across all patients in the variable <code>ave_inflammation</code>, then asked <code>pyplot</code> to create and display a line graph of those values. The result is roughly a linear rise and fall, which is suspicious: based on other studies, we expect a sharper rise and slower fall. Let's have a look at two other statistics:</p>
 <pre class="sourceCode python"><code class="sourceCode python">pyplot.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
 pyplot.show()</code></pre>
-<p><img src="../../novice/python/01-numpy_files/novice/python/01-numpy_75_1.png"></p>
+<p><img src="fig/01-numpy_75_1.png" alt="Maximum Value Along The First Axis" /> </p>
 <pre class="sourceCode python"><code class="sourceCode python">pyplot.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
 pyplot.show()</code></pre>
-<p><img src="../../novice/python/01-numpy_files/novice/python/01-numpy_75_3.png"></p>
+<p><img src="fig/01-numpy_75_3.png" alt="Minimum Value Along The First Axis" /> </p>
 <p>The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there's a mistake in our calculations or something is wrong with our data.</p>
 <p>It's very common to create an <strong>alias</strong> for a library when importing it in order to reduce the amount of typing we have to do. Here are our three plots side by side using aliases for <code>numpy</code> and <code>pyplot</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy <span class="ch">as</span> np
@@ -236,7 +236,7 @@ plt.plot(data.<span class="dt">min</span>(<span class="dv">0</span>))
 
 plt.tight_layout()
 plt.show()</code></pre>
-<p><img src="../../novice/python/01-numpy_files/novice/python/01-numpy_80_0.png"></p>
+<p><img src="fig/01-numpy_80_0.png" alt="The Previous Plots as Subplots" /> </p>
 <p>The first two lines re-load our libraries as <code>np</code> and <code>plt</code>, which are the aliases most Python programmers use. The call to <code>loadtxt</code> reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we're creating three sub-plots, what to draw for each one, and that we want a tight layout. (Perversely, if we leave out that call to <code>plt.tight_layout()</code>, the graphs will actually be squeezed together more closely.)</p>
 <div id="fixme" class="challenge">
 <h2>FIXME</h2>

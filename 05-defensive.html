@@ -27,8 +27,8 @@
         <div class="span10 offset1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Defensive Programming</h2>
-<div id="learning-objectives" class="objectives objectives">
-<h2 id="learning-objectives" class="objectives objectives">Learning Objectives</h2>
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
 <ul>
 <li>Explain what an assertion is.</li>
 <li>Add assertions to programs that correctly check the program's state.</li>
@@ -144,7 +144,7 @@ AssertionError: Calculated upper Y coordinate invalid</code></pre>
 <p>The second rule is, &quot;<a href="../../rules.html#turn-bugs-into-assertions-or-tests">turn bugs into assertions or tests</a>&quot;. If you made a mistake in a piece of code, the odds are good that you have made other mistakes nearby, or will make the same mistake (or a related one) the next time you change it. Writing assertions to check that you haven't <strong>regressed</strong> (i.e., haven't re-introduced an old problem) can save a lot of time in the long run, and helps to warn people who are reading the code (including your future self) that this bit is tricky.</p>
 <h2 id="test-driven-development">Test-Driven Development</h2>
 <p>An assertion checks that something is true at a particular point in the program. The next step is to check the overall behavior of a piece of code, i.e., to make sure that it produces the right output when it's given a particular input. For example, suppose we need to find where two or more time series overlap. The range of each time series is represented as a pair of numbers, which are the time the interval started and ended. The output is the largest range that they all include:</p>
-<p><img src="img/python-overlapping-ranges.svg" alt="Overlapping Ranges" /></p>
+<p><img src="fig/python-overlapping-ranges.svg" alt="Overlapping Ranges" /> </p>
 <p>Most novice programmers would solve this problem like this:</p>
 <ol style="list-style-type: decimal">
 <li>Write a function <code>range_overlap</code>.</li>
