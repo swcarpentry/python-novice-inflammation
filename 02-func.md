@@ -24,6 +24,7 @@ so that we can repeat several operations with a single command.
 
 Let's start by defining a function `fahr_to_kelvin` that converts temperatures from Fahrenheit to Kelvin:
 
+~~~ {.python}
 def fahr_to_kelvin(temp):
     return ((temp - 32) * (5/9)) + 273.15
 ~~~
