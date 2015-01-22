@@ -27,7 +27,7 @@
         <div class="span10 offset1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Creating Functions</h2>
-<div id="learning-objectives" class="objectives objectives">
+<div id="learning-objectives" class="objectives">
 <h2>Learning Objectives</h2>
 <ul>
 <li>Define a function that takes parameters.</li>
@@ -40,7 +40,8 @@
 </div>
 <p>If we only had one data set to analyze, it would probably be faster to load the file into a spreadsheet and use that to plot some simple statistics. But we have twelve files to check, and may have more in future. In this lesson, we'll learn how to write a function so that we can repeat several operations with a single command.</p>
 <p>Let's start by defining a function <code>fahr_to_kelvin</code> that converts temperatures from Fahrenheit to Kelvin:</p>
-<p>def fahr_to_kelvin(temp): return ((temp - 32) * (5/9)) + 273.15 <sub>~</sub></p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_kelvin(temp):
+    <span class="kw">return</span> ((temp - <span class="dv">32</span>) * (<span class="dv">5</span>/<span class="dv">9</span>)) + <span class="fl">273.15</span></code></pre>
 <p>The definition opens with the word <code>def</code>, which is followed by the name of the function and a parenthesized list of parameter names. The <strong>body</strong> of the function --- the statements that are executed when it runs --- is indented below the definition line, typically by four spaces.</p>
 <p>When we call the function, the values we pass to it are assigned to those variables so that we can use them inside the function. Inside the function, we use a <strong>return statement</strong> to send a result back to whoever asked for it.</p>
 <p>Let's try running our function. Calling our own function is no different from calling any other function:</p>
