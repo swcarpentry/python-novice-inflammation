@@ -124,7 +124,7 @@ we can print several things at once by separating them with commas.
 If we imagine the variable as a sticky note with a name written on it,
 assignment is like putting the sticky note on a particular value:
 
-<img src="img/python-sticky-note-variables-01.svg" alt="Variables as Sticky Notes" />
+![Variables as Sticky Notes](fig/python-sticky-note-variables-01.svg)\ 
 
 This means that assigning a value to one variable does *not* change the values of other variables.
 For example,
@@ -138,7 +138,7 @@ print 'weight in kilograms:', weight_kg, 'and in pounds:', weight_lb
 weight in kilograms: 57.5 and in pounds: 126.5
 ~~~
 
-<img src="img/python-sticky-note-variables-02.svg" alt="Creating Another Variable" />
+![Creating Another Variable](fig/python-sticky-note-variables-02.svg)\ 
 
 and then change `weight_kg`:
 
@@ -150,7 +150,7 @@ print 'weight in kilograms is now:', weight_kg, 'and weight in pounds is still:'
 weight in kilograms is now: 100.0 and weight in pounds is still: 126.5
 ~~~
 
-<img src="img/python-sticky-note-variables-03.svg" alt="Updating a Variable" />
+![Updating a Variable](fig/python-sticky-note-variables-03.svg)\ 
 
 Since `weight_lb` doesn't "remember" where its value came from,
 it isn't automatically updated when `weight_kg` changes.
@@ -434,7 +434,7 @@ or the average for each day?
 As the diagram below shows,
 we want to perform the operation across an axis:
 
-<img src="img/python-operations-across-axes.svg" alt="Operations Across Axes" />
+![Operations Across Axes](fig/python-operations-across-axes.svg)\ 
 
 To support this,
 most array methods allow us to specify the axis we want to work on.
@@ -500,7 +500,7 @@ pyplot.imshow(data)
 pyplot.show()
 ~~~
 
-<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_71_0.png">
+![Heatmap of the Data](fig/01-numpy_71_0.png)\ 
 
 Blue regions in this heat map are low values, while red shows high values.
 As we can see,
@@ -513,7 +513,7 @@ pyplot.plot(ave_inflammation)
 pyplot.show()
 ~~~
 
-<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_73_0.png">
+![Average Inflammation Over Time](fig/01-numpy_73_0.png)\ 
 
 Here,
 we have put the average per day across all patients in the variable `ave_inflammation`,
@@ -529,14 +529,14 @@ pyplot.plot(data.max(axis=0))
 pyplot.show()
 ~~~
 
-<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_75_1.png">
+![Maximum Value Along The First Axis](fig/01-numpy_75_1.png)\ 
 
 ~~~ {.python}
 pyplot.plot(data.min(axis=0))
 pyplot.show()
 ~~~
 
-<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_75_3.png">
+![Minimum Value Along The First Axis](fig/01-numpy_75_3.png)\ 
 
 The maximum value rises and falls perfectly smoothly,
 while the minimum seems to be a step function.
@@ -572,7 +572,7 @@ plt.tight_layout()
 plt.show()
 ~~~
 
-<img src="../../novice/python/01-numpy_files/novice/python/01-numpy_80_0.png">
+![The Previous Plots as Subplots](fig/01-numpy_80_0.png)\ 
 
 The first two lines re-load our libraries as `np` and `plt`,
 which are the aliases most Python programmers use.
