@@ -239,7 +239,7 @@ The range of each time series is represented as a pair of numbers,
 which are the time the interval started and ended.
 The output is the largest range that they all include:
 
-<img src="img/python-overlapping-ranges.svg" alt="Overlapping Ranges" />
+![Overlapping Ranges](fig/python-overlapping-ranges.svg)\ 
 
 Most novice programmers would solve this problem like this:
 
