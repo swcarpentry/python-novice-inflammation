@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Programming with Python</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+      </div>
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          <h1 class="title">Programming with Python</h1>
+          <h2 class="subtitle">The Call Stack</h2>
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
+<ul>
+<li>Explain what a call stack is, and trace changes to the call stack as functions are called.</li>
+</ul>
+</div>
+<p>Let's take a closer look at what happens when we call <code>fahr_to_celsius(32.0)</code>. To make things clearer, we'll start by putting the initial value 32.0 in a variable and store the final result in one as well:</p>
+<pre class="sourceCode python"><code class="sourceCode python">original = <span class="fl">32.0</span>
+final = fahr_to_celsius(original)</code></pre>
+<p>The diagram below shows what memory looks like after the first line has been executed:</p>
+<p><img src="fig/python-call-stack-01.svg" alt="Call Stack (Initial State)" /><br /> When we call <code>fahr_to_celsius</code>, Python <em>doesn't</em> create the variable <code>temp</code> right away. Instead, it creates something called a <strong>stack frame</strong> to keep track of the variables defined by <code>fahr_to_kelvin</code>. Initially, this stack frame only holds the value of <code>temp</code>:</p>
+<p><img src="fig/python-call-stack-02.svg" alt="Call Stack Immediately After First Function Call" /><br /> When we call <code>fahr_to_kelvin</code> inside <code>fahr_to_celsius</code>, Python creates another stack frame to hold <code>fahr_to_kelvin</code>'s variables:</p>
+<p><img src="fig/python-call-stack-03.svg" alt="Call Stack During First Nested Function Call" /><br /> It does this because there are now two variables in play called <code>temp</code>: the parameter to <code>fahr_to_celsius</code>, and the parameter to <code>fahr_to_kelvin</code>. Having two variables with the same name in the same part of the program would be ambiguous, so Python (and every other modern programming language) creates a new stack frame for each function call to keep that function's variables separate from those defined by other functions.</p>
+<p>When the call to <code>fahr_to_kelvin</code> returns a value, Python throws away <code>fahr_to_kelvin</code>'s stack frame and creates a new variable in the stack frame for <code>fahr_to_celsius</code> to hold the temperature in Kelvin:</p>
+<p><img src="fig/python-call-stack-04.svg" alt="Call Stack After Return From First Nested Function Call" /><br /> It then calls <code>kelvin_to_celsius</code>, which means it creates a stack frame to hold that function's variables:</p>
+<p><img src="fig/python-call-stack-05.svg" alt="Call Stack During Call to Second Nested Function" /><br /> Once again, Python throws away that stack frame when <code>kelvin_to_celsius</code> is done and creates the variable <code>result</code> in the stack frame for <code>fahr_to_celsius</code>:</p>
+<p><img src="fig/python-call-stack-06.svg" alt="Call Stack After Second Nested Function Returns" /><br /> Finally, when <code>fahr_to_celsius</code> is done, Python throws away <em>its</em> stack frame and puts its result in a new variable called <code>final</code> that lives in the stack frame we started with:</p>
+<p><img src="fig/python-call-stack-07.svg" alt="Call Stack After All Functions Have Finished" /><br /> This final stack frame is always there; it holds the variables we defined outside the functions in our code. What it <em>doesn't</em> hold is the variables that were in the various stack frames. If we try to get the value of <code>temp</code> after our functions have finished running, Python tells us that there's no such thing:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;final value of temp after all function calls:&#39;</span>, temp</code></pre>
+<pre class="error"><code>---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+&lt;ipython-input-12-ffd9b4dbd5f1&gt; in &lt;module&gt;()
+----&gt; 1 print &#39;final value of temp after all function calls:&#39;, temp
+
+NameError: name &#39;temp&#39; is not defined</code></pre>
+<pre class="output"><code>final value of temp after all function calls:</code></pre>
+<p>Why go to all this trouble? Well, here's a function called <code>span</code> that calculates the difference between the mininum and maximum values in an array:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy
+
+<span class="kw">def</span> span(a):
+    diff = a.<span class="dt">max</span>() - a.<span class="dt">min</span>()
+    <span class="kw">return</span> diff
+
+data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
+<span class="dt">print</span> <span class="st">&#39;span of data&#39;</span>, span(data)</code></pre>
+<pre class="output"><code> span of data 20.0</code></pre>
+<p>Notice that <code>span</code> assigns a value to a variable called <code>diff</code>. We might very well use a variable with the same name to hold data:</p>
+<pre class="sourceCode python"><code class="sourceCode python">diff = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
+<span class="dt">print</span> <span class="st">&#39;span of data:&#39;</span>, span(diff)</code></pre>
+<pre class="output"><code>span of data: 20.0</code></pre>
+<p>We don't expect <code>diff</code> to have the value 20.0 after this function call, so the name <code>diff</code> cannot refer to the same thing inside <code>span</code> as it does in the main body of our program. And yes, we could probably choose a different name than <code>diff</code> in our main program in this case, but we don't want to have to read every line of NumPy to see what variable names its functions use before calling any of those functions, just in case they change the values of our variables.</p>
+<p>The big idea here is <strong>encapsulation</strong>, and it's the key to writing correct, comprehensible programs. A function's job is to turn several operations into one so that we can think about a single function call instead of a dozen or a hundred statements each time we want to do something. That only works if functions don't interfere with each other; if they do, we have to pay attention to the details once again, which quickly overloads our short-term memory.</p>
+<div id="fixme" class="challenge">
+<h2>FIXME</h2>
+<p>We previously wrote functions called <code>fence</code> and <code>outer</code>. Draw a diagram showing how the call stack changes when we run the following:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> outer(fence(<span class="st">&#39;carbon&#39;</span>, <span class="st">&#39;+&#39;</span>))</code></pre>
+</div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/python-novice-inflammation">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>

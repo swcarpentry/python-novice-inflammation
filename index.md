@@ -21,7 +21,7 @@ so that you can share you work with them easily,
 and to use that language *well*.
 
 We are studying inflammation in patients who have been given a new treatment for arthritis,
-and need to analyze the first dozen data sets.
+We need to analyze the first dozen data sets.
 The data sets are stored in **comma-separated values** (CSV) format:
 each row holds information for a single patient,
 and the columns represent successive days.
@@ -52,12 +52,16 @@ To do all that, we'll have to learn a little bit about programming.
 ## Topics
 
 1.  [Analyzing Patient Data](01-numpy.html)
-2.  [Creating Functions](02-func.html)
-3.  [Analyzing Multiple Data Sets](03-loop.html)
-4.  [Making Choices](04-cond.html)
-5.  [Defensive Programming](05-defensive.html)
-6.  [Command-Line Programs](06-cmdline.html)
-7.  [Errors and Exceptions](07-errors.html)
+2.  [Creating Functions](02-functions.html)
+3.  [Debugging a Function](03-debugging.html)
+4.  [The Call Stack](04-call-stack.html)
+5.  [Testing and Documenting Functions](05-testing.html)
+6.  [Defining Defaults](06-func-defaults.html)
+7.  [Analyzing Multiple Data Sets](07-loop.html)
+8   [Making Choices](08-cond.html)
+9.  [Defensive Programming](09-defensive.html)
+10. [Command-Line Programs](10-cmdline.html)
+11. [Errors and Exceptions](11-errors.html)
 
 ## Other Resources
 

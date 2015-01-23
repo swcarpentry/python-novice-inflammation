@@ -61,10 +61,12 @@
 <span class="dt">print</span> <span class="st">&#39;version is&#39;</span>, sys.version</code></pre>
 <p>The first line imports a library called <code>sys</code>, which is short for &quot;system&quot;. It defines values such as <code>sys.version</code>, which describes which version of Python we are running. We can run this script from within the IPython Notebook like this:</p>
 <pre class="in"><code>%run sys-version.py</code></pre>
+
 <pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20) 
 [GCC 4.0.1 (Apple Inc. build 5493)]</code></pre>
 <p>or like this:</p>
 <pre class="in"><code>!ipython sys-version.py</code></pre>
+
 <pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20) 
 [GCC 4.0.1 (Apple Inc. build 5493)]</code></pre>
 <p>The first method, <code>%run</code>, uses a special command in the IPython Notebook to run a program in a <code>.py</code> file. The second method is more general: the exclamation mark <code>!</code> tells the Notebook to run a shell command, and it just so happens that the command we run is <code>ipython</code> with the name of the script.</p>
@@ -73,6 +75,7 @@
 <span class="dt">print</span> <span class="st">&#39;sys.argv is&#39;</span>, sys.argv</code></pre>
 <p>The strange name <code>argv</code> stands for &quot;argument values&quot;. Whenever Python runs a program, it takes all of the values given on the command line and puts them in the list <code>sys.argv</code> so that the program can determine what they were. If we run this program with no arguments:</p>
 <pre class="in"><code>!ipython argv-list.py</code></pre>
+
 <pre class="output"><code>sys.argv is [&#39;/Users/gwilson/s/bc/python/novice/argv-list.py&#39;]</code></pre>
 <p>the only thing in the list is the full path to our script, which is always <code>sys.argv[0]</code>. If we run it with a few arguments, however:</p>
 <pre class="input"><code>$ argv-list.py first second third</code></pre>
@@ -80,6 +83,7 @@
 <p>then Python adds each of those arguments to that magic list.</p>
 <p>With this in hand, let's build a version of <code>readings.py</code> that always prints the per-patient mean of a single data file. The first step is to write a function that outlines our implementation, and a placeholder for the function that does the actual work. By convention this function is usually called <code>main</code>, though we can call it whatever we want:</p>
 <pre class="in"><code>!cat readings-01.py</code></pre>
+
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="ch">import</span> numpy <span class="ch">as</span> np
 
@@ -91,8 +95,10 @@
         <span class="dt">print</span> m</code></pre>
 <p>This function gets the name of the script from <code>sys.argv[0]</code>, because that's where it's always put, and the name of the file to process from <code>sys.argv[1]</code>. Here's a simple test:</p>
 <pre class="in"><code>%run readings-01.py inflammation-01.csv</code></pre>
+
 <p>There is no output because we have defined a function, but haven't actually called it. Let's add a call to <code>main</code>:</p>
 <pre class="in"><code>!cat readings-02.py</code></pre>
+
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="ch">import</span> numpy <span class="ch">as</span> np
 
@@ -106,6 +112,7 @@
 main()</code></pre>
 <p>and run that:</p>
 <pre class="in"><code>%run readings-02.py inflammation-01.csv</code></pre>
+
 <pre class="output"><code>5.45
 5.425
 6.1
