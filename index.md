@@ -20,7 +20,7 @@ to use whatever language your colleagues are using,
 so that you can share you work with them easily,
 and to use that language *well*.
 
-We are studying inflammation in patients who have been given a new treatment for arthritis,
+We are studying inflammation in patients who have been given a new treatment for arthritis.
 We need to analyze the first dozen data sets.
 The data sets are stored in **comma-separated values** (CSV) format:
 each row holds information for a single patient,
