@@ -58,7 +58,7 @@ To do all that, we'll have to learn a little bit about programming.
 5.  [Testing and Documenting Functions](05-testing.html)
 6.  [Defining Defaults](06-func-defaults.html)
 7.  [Analyzing Multiple Data Sets](07-loop.html)
-8   [Making Choices](08-cond.html)
+8.   [Making Choices](08-cond.html)
 9.  [Defensive Programming](09-defensive.html)
 10. [Command-Line Programs](10-cmdline.html)
 11. [Errors and Exceptions](11-errors.html)
