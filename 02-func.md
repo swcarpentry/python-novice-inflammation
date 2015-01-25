@@ -24,6 +24,7 @@ so that we can repeat several operations with a single command.
 
 Let's start by defining a function `fahr_to_kelvin` that converts temperatures from Fahrenheit to Kelvin:
 
+~~~ {.python}
 def fahr_to_kelvin(temp):
     return ((temp - 32) * (5/9)) + 273.15
 ~~~
@@ -230,7 +231,7 @@ final = fahr_to_celsius(original)
 
 The diagram below shows what memory looks like after the first line has been executed:
 
-<img src="img/python-call-stack-01.svg" alt="Call Stack (Initial State)" />
+![Call Stack (Initial State)](fig/python-call-stack-01.svg)\ 
 
 When we call `fahr_to_celsius`,
 Python *doesn't* create the variable `temp` right away.
@@ -240,12 +241,12 @@ to keep track of the variables defined by `fahr_to_kelvin`.
 Initially,
 this stack frame only holds the value of `temp`:
 
-<img src="img/python-call-stack-02.svg" alt="Call Stack Immediately After First Function Call" />
+![Call Stack Immediately After First Function Call](fig/python-call-stack-02.svg)\ 
 
 When we call `fahr_to_kelvin` inside `fahr_to_celsius`,
 Python creates another stack frame to hold `fahr_to_kelvin`'s variables:
 
-<img src="img/python-call-stack-03.svg" alt="Call Stack During First Nested Function Call" />
+![Call Stack During First Nested Function Call](fig/python-call-stack-03.svg)\ 
 
 It does this because there are now two variables in play called `temp`:
 the parameter to `fahr_to_celsius`,
@@ -258,18 +259,18 @@ When the call to `fahr_to_kelvin` returns a value,
 Python throws away `fahr_to_kelvin`'s stack frame
 and creates a new variable in the stack frame for `fahr_to_celsius` to hold the temperature in Kelvin:
 
-<img src="img/python-call-stack-04.svg" alt="Call Stack After Return From First Nested Function Call" />
+![Call Stack After Return From First Nested Function Call](fig/python-call-stack-04.svg)\ 
 
 It then calls `kelvin_to_celsius`,
 which means it creates a stack frame to hold that function's variables:
 
-<img src="img/python-call-stack-05.svg" alt="Call Stack During Call to Second Nested Function" />
+![Call Stack During Call to Second Nested Function](fig/python-call-stack-05.svg)\ 
 
 Once again,
 Python throws away that stack frame when `kelvin_to_celsius` is done
 and creates the variable `result` in the stack frame for `fahr_to_celsius`:
 
-<img src="img/python-call-stack-06.svg" alt="Call Stack After Second Nested Function Returns" />
+![Call Stack After Second Nested Function Returns](fig/python-call-stack-06.svg)\ 
 
 Finally,
 when `fahr_to_celsius` is done,
@@ -277,7 +278,7 @@ Python throws away *its* stack frame
 and puts its result in a new variable called `final`
 that lives in the stack frame we started with:
 
-<img src="img/python-call-stack-07.svg" alt="Call Stack After All Functions Have Finished" />
+![Call Stack After All Functions Have Finished](fig/python-call-stack-07.svg)\ 
 
 This final stack frame is always there;
 it holds the variables we defined outside the functions in our code.

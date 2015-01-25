@@ -321,7 +321,7 @@ main()
 
 and here it is in action:
 
-~~~ {.input{
+~~~ {.input}
 $ python readings-03.py small-01.csv small-02.csv
 ~~~
 ~~~ {.output}
