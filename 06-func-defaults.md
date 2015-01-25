@@ -2,7 +2,7 @@
 layout: page
 title: Programming with Python
 subtitle: Defining Defaults
-minutes: 30
+minutes: 10
 ---
 > ## Learning Objectives {.objectives}
 >

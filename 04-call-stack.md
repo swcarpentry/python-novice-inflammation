@@ -2,7 +2,7 @@
 layout: page
 title: Programming with Python
 subtitle: The Call Stack
-minutes: 30
+minutes: 10
 ---
 > ## Learning Objectives {.objectives}
 >

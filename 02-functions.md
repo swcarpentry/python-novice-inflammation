@@ -2,7 +2,7 @@
 layout: topic
 title: Programming with Python
 subtitle: Creating Functions
-minutes: 30
+minutes: 10
 ---
 > ## Learning Objectives {.objectives}
 >
