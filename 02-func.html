@@ -27,8 +27,8 @@
         <div class="span10 offset1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Creating Functions</h2>
-<div id="learning-objectives" class="objectives objectives">
-<h2 id="learning-objectives" class="objectives objectives">Learning Objectives</h2>
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
 <ul>
 <li>Define a function that takes parameters.</li>
 <li>Return a value from a function.</li>
@@ -40,7 +40,8 @@
 </div>
 <p>If we only had one data set to analyze, it would probably be faster to load the file into a spreadsheet and use that to plot some simple statistics. But we have twelve files to check, and may have more in future. In this lesson, we'll learn how to write a function so that we can repeat several operations with a single command.</p>
 <p>Let's start by defining a function <code>fahr_to_kelvin</code> that converts temperatures from Fahrenheit to Kelvin:</p>
-<p>def fahr_to_kelvin(temp): return ((temp - 32) * (5/9)) + 273.15 <sub>~</sub></p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_kelvin(temp):
+    <span class="kw">return</span> ((temp - <span class="dv">32</span>) * (<span class="dv">5</span>/<span class="dv">9</span>)) + <span class="fl">273.15</span></code></pre>
 <p>The definition opens with the word <code>def</code>, which is followed by the name of the function and a parenthesized list of parameter names. The <strong>body</strong> of the function --- the statements that are executed when it runs --- is indented below the definition line, typically by four spaces.</p>
 <p>When we call the function, the values we pass to it are assigned to those variables so that we can use them inside the function. Inside the function, we use a <strong>return statement</strong> to send a result back to whoever asked for it.</p>
 <p>Let's try running our function. Calling our own function is no different from calling any other function:</p>
@@ -106,20 +107,20 @@ boiling point of water: 373.15</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python">original = <span class="fl">32.0</span>
 final = fahr_to_celsius(original)</code></pre>
 <p>The diagram below shows what memory looks like after the first line has been executed:</p>
-<p><img src="img/python-call-stack-01.svg" alt="Call Stack (Initial State)" /></p>
+<p><img src="fig/python-call-stack-01.svg" alt="Call Stack (Initial State)" /> </p>
 <p>When we call <code>fahr_to_celsius</code>, Python <em>doesn't</em> create the variable <code>temp</code> right away. Instead, it creates something called a <strong>stack frame</strong> to keep track of the variables defined by <code>fahr_to_kelvin</code>. Initially, this stack frame only holds the value of <code>temp</code>:</p>
-<p><img src="img/python-call-stack-02.svg" alt="Call Stack Immediately After First Function Call" /></p>
+<p><img src="fig/python-call-stack-02.svg" alt="Call Stack Immediately After First Function Call" /> </p>
 <p>When we call <code>fahr_to_kelvin</code> inside <code>fahr_to_celsius</code>, Python creates another stack frame to hold <code>fahr_to_kelvin</code>'s variables:</p>
-<p><img src="img/python-call-stack-03.svg" alt="Call Stack During First Nested Function Call" /></p>
+<p><img src="fig/python-call-stack-03.svg" alt="Call Stack During First Nested Function Call" /> </p>
 <p>It does this because there are now two variables in play called <code>temp</code>: the parameter to <code>fahr_to_celsius</code>, and the parameter to <code>fahr_to_kelvin</code>. Having two variables with the same name in the same part of the program would be ambiguous, so Python (and every other modern programming language) creates a new stack frame for each function call to keep that function's variables separate from those defined by other functions.</p>
 <p>When the call to <code>fahr_to_kelvin</code> returns a value, Python throws away <code>fahr_to_kelvin</code>'s stack frame and creates a new variable in the stack frame for <code>fahr_to_celsius</code> to hold the temperature in Kelvin:</p>
-<p><img src="img/python-call-stack-04.svg" alt="Call Stack After Return From First Nested Function Call" /></p>
+<p><img src="fig/python-call-stack-04.svg" alt="Call Stack After Return From First Nested Function Call" /> </p>
 <p>It then calls <code>kelvin_to_celsius</code>, which means it creates a stack frame to hold that function's variables:</p>
-<p><img src="img/python-call-stack-05.svg" alt="Call Stack During Call to Second Nested Function" /></p>
+<p><img src="fig/python-call-stack-05.svg" alt="Call Stack During Call to Second Nested Function" /> </p>
 <p>Once again, Python throws away that stack frame when <code>kelvin_to_celsius</code> is done and creates the variable <code>result</code> in the stack frame for <code>fahr_to_celsius</code>:</p>
-<p><img src="img/python-call-stack-06.svg" alt="Call Stack After Second Nested Function Returns" /></p>
+<p><img src="fig/python-call-stack-06.svg" alt="Call Stack After Second Nested Function Returns" /> </p>
 <p>Finally, when <code>fahr_to_celsius</code> is done, Python throws away <em>its</em> stack frame and puts its result in a new variable called <code>final</code> that lives in the stack frame we started with:</p>
-<p><img src="img/python-call-stack-07.svg" alt="Call Stack After All Functions Have Finished" /></p>
+<p><img src="fig/python-call-stack-07.svg" alt="Call Stack After All Functions Have Finished" /> </p>
 <p>This final stack frame is always there; it holds the variables we defined outside the functions in our code. What it <em>doesn't</em> hold is the variables that were in the various stack frames. If we try to get the value of <code>temp</code> after our functions have finished running, Python tells us that there's no such thing:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;final value of temp after all function calls:&#39;</span>, temp</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------

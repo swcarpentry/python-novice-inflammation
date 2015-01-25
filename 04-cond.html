@@ -27,8 +27,8 @@
         <div class="span10 offset1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Making Choices</h2>
-<div id="learning-objectives" class="objectives objectives">
-<h2 id="learning-objectives" class="objectives objectives">Learning Objectives</h2>
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
 <ul>
 <li>Create a simple &quot;image&quot; made out of colored blocks.</li>
 <li>Explain how the RGB model represents colors.</li>
@@ -59,7 +59,7 @@ grid.show()</code></pre>
 grid height: 3
 grid lines on: True</code></pre>
 <p>The obvious thing to do with a grid like this is color in its cells, but in order to do that, we need to know how computers represent color. The most common schemes are <strong>RGB</strong>, which is short for &quot;red, green, blue&quot;. RGB is an <strong>additive color model</strong>: every shade is some combination of red, green, and blue intensities. We can think of these three values as being the axes in a cube:</p>
-<p><img src="img/color-cube.png" alt="RGB Color Cube" /></p>
+<p><img src="fig/color-cube.png" alt="RGB Color Cube" /> </p>
 <p>An RGB color is an example of a multi-part value: like a Cartesian coordinate, it is one thing with several parts. We can represent such a value in Python using a <strong>tuple</strong>, which we write using parentheses instead of the square brackets used for a list:</p>
 <pre class="sourceCode python"><code class="sourceCode python">position = (<span class="fl">12.3</span>, <span class="fl">45.6</span>)
 <span class="dt">print</span> <span class="st">&#39;position is:&#39;</span>, position
@@ -126,7 +126,7 @@ c.show()</code></pre>
 done
 </code></pre>
 <p>The second line of this code uses the keyword <code>if</code> to tell Python that we want to make a choice. If the test that follows it is true, the body of the <code>if</code> (i.e., the lines indented underneath it) are executed. If the test is false, the body of the <code>else</code> is executed instead. Only one or the other is ever executed:</p>
-<p><img src="img/python-flowchart-conditional.svg" alt="Executing a Conditional" /></p>
+<p><img src="fig/python-flowchart-conditional.svg" alt="Executing a Conditional" /> </p>
 <p>Conditional statements don't have to include an <code>else</code>. If there isn't one, Python simply does nothing if the test is false:</p>
 <pre class="sourceCode python"><code class="sourceCode python">num = <span class="dv">53</span>
 <span class="dt">print</span> <span class="st">&#39;before conditional...&#39;</span>
@@ -189,7 +189,7 @@ ce
 da
 de</code></pre>
 <p>As the diagram below shows, the <strong>inner loop</strong> runs from start to finish each time the <strong>outer loop</strong> runs once:</p>
-<p><img src="img/python-flowchart-nested-loops.svg" alt="Execution of Nested Loops" /></p>
+<p><img src="fig/python-flowchart-nested-loops.svg" alt="Execution of Nested Loops" /> </p>
 <p>We can combine nesting and conditionals to create patterns in an image:</p>
 <pre class="sourceCode python"><code class="sourceCode python">square = ImageGrid(<span class="dv">5</span>, <span class="dv">5</span>)
 <span class="kw">for</span> x in <span class="dt">range</span>(square.width):

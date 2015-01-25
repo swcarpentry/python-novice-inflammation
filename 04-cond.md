@@ -73,7 +73,7 @@ RGB is an **additive color model**:
 every shade is some combination of red, green, and blue intensities.
 We can think of these three values as being the axes in a cube:
 
-<img src="img/color-cube.png" alt="RGB Color Cube" />
+![RGB Color Cube](fig/color-cube.png)\ 
 
 An RGB color is an example of a multi-part value:
 like a Cartesian coordinate,
@@ -206,7 +206,7 @@ If the test is false,
 the body of the `else` is executed instead.
 Only one or the other is ever executed:
 
-<img src="img/python-flowchart-conditional.svg" alt="Executing a Conditional" />
+![Executing a Conditional](fig/python-flowchart-conditional.svg)\ 
 
 Conditional statements don't have to include an `else`.
 If there isn't one,
@@ -333,7 +333,7 @@ As the diagram below shows,
 the **inner loop** runs from start to finish
 each time the **outer loop** runs once:
 
-<img src="img/python-flowchart-nested-loops.svg" alt="Execution of Nested Loops" />
+![Execution of Nested Loops](fig/python-flowchart-nested-loops.svg)\ 
 
 We can combine nesting and conditionals to create patterns in an image:
 

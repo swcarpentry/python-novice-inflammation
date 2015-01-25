@@ -46,7 +46,7 @@ def analyze(filename):
 analyze('inflammation-01.csv')
 ~~~
 
-<img src="../../novice/python/03-loop_files/novice/python/03-loop_2_0.png">
+![Analysis of inflammation-01.csv](fig/03-loop_2_0.png)\ 
 
 We can use it to analyze other data sets one by one:
 
@@ -54,7 +54,7 @@ We can use it to analyze other data sets one by one:
 analyze('inflammation-02.csv')
 ~~~
 
-<img src="../../novice/python/03-loop_files/novice/python/03-loop_4_0.png">
+![Analysis of inflammation-02.csv](fig/03-loop_4_0.png)\ 
 
 but we have a dozen data sets right now and more on the way.
 We want to create plots for all our data sets with a single statement.
@@ -344,18 +344,19 @@ for f in filenames:
 inflammation-01.csv
 ~~~
 
-<img src="../../novice/python/03-loop_files/novice/python/03-loop_49_1.png">
+![Analysis of inflammation-01.csv](fig/03-loop_49_1.png)\ 
+
 ~~~ {.output}
 inflammation-02.csv
 ~~~
 
-<img src="../../novice/python/03-loop_files/novice/python/03-loop_49_3.png">
+![Analysis of inflammation-02.csv](fig/03-loop_49_3.png)\ 
 
 ~~~ {.output}
 inflammation-03.csv
 ~~~
 
-<img src="../../novice/python/03-loop_files/novice/python/03-loop_49_5.png">
+![Analysis of inflammation-02.csv](fig/03-loop_49_5.png)\ 
 
 Sure enough,
 the maxima of these data sets show exactly the same ramp as the first,
