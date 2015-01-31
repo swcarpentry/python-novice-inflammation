@@ -15,46 +15,11 @@ minutes: 30
 > *   Use a library function to get a list of filenames that match a simple wildcard pattern.
 > *   Use a for loop to process multiple files.
 
-We have created a function called `analyze`
-that creates graphs of the minimum, average, and maximum daily inflammation rates
-for a single data set:
+In the last lesson,
+we wrote some code that plots some values of interest from our first inflammation dataset,
+and reveals some suspicious features in it, such as from `inflammation-01.csv`
 
-~~~ {.python}
-import numpy as np
-from matplotlib import pyplot as plt
-
-def analyze(filename):
-    data = np.loadtxt(fname=filename, delimiter=',')
-    
-    plt.figure(figsize=(10.0, 3.0))
-    
-    plt.subplot(1, 3, 1)
-    plt.ylabel('average')
-    plt.plot(data.mean(0))
-    
-    plt.subplot(1, 3, 2)
-    plt.ylabel('max')
-    plt.plot(data.max(0))
-    
-    plt.subplot(1, 3, 3)
-    plt.ylabel('min')
-    plt.plot(data.min(0))
-    
-    plt.tight_layout()
-    plt.show()
-
-analyze('inflammation-01.csv')
-~~~
-
-![Analysis of inflammation-01.csv](fig/03-loop_2_0.png)\ 
-
-We can use it to analyze other data sets one by one:
-
-~~~ {.python}
-analyze('inflammation-02.csv')
-~~~
-
-![Analysis of inflammation-02.csv](fig/03-loop_4_0.png)\ 
+![Analysis of inflammation-01.csv](fig/03-loop_2_0.png)\
 
 but we have a dozen data sets right now and more on the way.
 We want to create plots for all our data sets with a single statement.
@@ -107,7 +72,7 @@ IndexError                                Traceback (most recent call last)
       3     print element[1]
       4     print element[2]
 ----> 5     print element[3]
-      6 
+      6
       7 print_characters('lead')
 
 IndexError: string index out of range
@@ -329,7 +294,7 @@ As these examples show,
 which means we can loop over it
 to do something with each filename in turn.
 In our case,
-the "something" we want is our `analyze` function.
+the "something" we want is the code that generates those plots of our inflammation data.
 Let's test it by analyzing the first three files in the list:
 
 ~~~ {.python}
@@ -337,76 +302,86 @@ filenames = glob.glob('*.csv')
 filenames = filenames[0:3]
 for f in filenames:
     print f
-    analyze(f)
+
+    data = numpy.loadtxt(fname=f, delimiter=',')
+
+    pyplot.figure(figsize=(10.0, 3.0))
+
+    pyplot.subplot(1, 3, 1)
+    pyplot.ylabel('average')
+    pyplot.plot(data.mean(axis=0))
+
+    pyplot.subplot(1, 3, 2)
+    pyplot.ylabel('max')
+    pyplot.plot(data.max(axis=0))
+
+    pyplot.subplot(1, 3, 3)
+    pyplot.ylabel('min')
+    pyplot.plot(data.min(axis=0))
+
+    pyplot.tight_layout()
+    pyplot.show()
 ~~~
 
 ~~~ {.output}
 inflammation-01.csv
 ~~~
 
-![Analysis of inflammation-01.csv](fig/03-loop_49_1.png)\ 
+![Analysis of inflammation-01.csv](fig/03-loop_49_1.png)\
+
 
 ~~~ {.output}
 inflammation-02.csv
 ~~~
 
-![Analysis of inflammation-02.csv](fig/03-loop_49_3.png)\ 
+![Analysis of inflammation-02.csv](fig/03-loop_49_3.png)\
+
 
 ~~~ {.output}
 inflammation-03.csv
 ~~~
 
-![Analysis of inflammation-02.csv](fig/03-loop_49_5.png)\ 
+![Analysis of inflammation-03.csv](fig/03-loop_49_5.png)\
 
 Sure enough,
-the maxima of these data sets show exactly the same ramp as the first,
-and their minima show the same staircase structure.
+the maxima of the first two data sets show exactly the same ramp as the first,
+and their minima show the same staircase structure;
+a different situation has been revealed in the third dataset,
+where the maxima are a bit less regular, but the minima are consistently zero.
 
-> FIXME {.challenge}
-> 
+> ## FIXME {.challenge}
+>
 > Python has a built-in function called `range` that creates a list of numbers:
 > `range(3)` produces `[0, 1, 2]`, `range(2, 5)` produces `[2, 3, 4]`.
 > Using `range`,
-> write a function that prints the $N$ natural numbers:
->     
+> write a loop that uses `range` to print the first 3 natural numbers:
+>
 > ~~~ {.python}
-> print_N(3)
 > 1
 > 2
 > 3
 > ~~~
 
-> FIXME {.challenge}
-> 
+> ## FIXME {.challenge}
+>
 > Exponentiation is built into Python:
-> 
-~~~ {.python}
+>
+>~~~ {.python}
 > print 5**3
 > 125
 > ~~~
->     
+>
 > It also has a function called `pow` that calculates the same value.
-> Write a function called `expo` that uses a loop to calculate the same result.
+> Write a loop to calculate the same result.
 
-> FIXME {.challenge}
-> 
-> Write a function called `rev` that takes a string as input,
-> and produces a new string with the characters in reverse order:
->     
-> ~~~ {.python}
-> print rev('Newton')
-> notweN
-> ~~~
->     
-> As always, be sure to include a docstring.
+> ## FIXME {.challenge}
+>
+> Write a loop that takes a string,
+> and produces a new string with the characters in reverse order,
+> so `'Newton'` becomes `'notweN'`.
 
-> FIXME {.challenge}
-> 
-> Write a function called `total` that calculates the sum of the values in a list.
+> ## FIXME {.challenge}
+>
+> Write a loop calculates the sum of the values in a list.
 > (Python has a built-in function called `sum` that does this for you.
 > Please don't use it for this exercise.)
-
-> FIXME {.challenge}
-> 
-> Write a function called `analyze_all` that takes a filename pattern as its sole argument
-> and runs `analyze` for each file whose name matches the pattern.

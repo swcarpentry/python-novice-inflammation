@@ -37,7 +37,7 @@
 <li>Explain why we should divide programs into small, single-purpose functions.</li>
 </ul>
 </div>
-<p>If we only had one data set to analyze, it would probably be faster to load the file into a spreadsheet and use that to plot some simple statistics. But we have twelve files to check, and may have more in future. In this lesson, we'll learn how to write a function so that we can repeat several operations with a single command.</p>
+<p>At this point, we've written code to draw some interesting features in our inflammation data, loop over all our data files to quickly draw these plots for each of them, and have Python make decisions based on what it sees in our data. But, our code is getting pretty long and complicated; what if we had thousands of datasets, and didn't want to generate a figure for every single one? Commenting out the figure-drawing code is a nuisance. Also, what if we want to use that code again, on a different dataset or at a different point in our program? Cutting and pasting it is going to make our code get very long and very repetative, very quickly. We'd like a way to package our code so that it is easier to reuse, and Python provides for this by letting us define things called 'functions' - a shorthand way of re-executing longer pieces of code.</p>
 <p>Let's start by defining a function <code>fahr_to_kelvin</code> that converts temperatures from Fahrenheit to Kelvin:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_kelvin(temp):
     <span class="kw">return</span> ((temp - <span class="dv">32</span>) * (<span class="dv">5</span>/<span class="dv">9</span>)) + <span class="fl">273.15</span></code></pre>
@@ -85,7 +85,7 @@ float(a)/b is: 3.33333333333</code></pre>
 <span class="dt">print</span> <span class="st">&#39;boiling point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">212</span>)</code></pre>
 <pre class="output"><code>freezing point of water: 273.15
 boiling point of water: 373.15</code></pre>
-<h2 id="composing-functions">Composing Functions</h2>
+<h3 id="composing-functions">Composing Functions</h3>
 <p>Now that we've seen how to turn Fahrenheit into Kelvin, it's easy to turn Kelvin into Celsius:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> kelvin_to_celsius(temp):
     <span class="kw">return</span> temp - <span class="fl">273.15</span>
@@ -101,6 +101,45 @@ boiling point of water: 373.15</code></pre>
 <span class="dt">print</span> <span class="st">&#39;freezing point of water in Celsius:&#39;</span>, fahr_to_celsius(<span class="fl">32.0</span>)</code></pre>
 <pre class="output"><code>freezing point of water in Celsius: 0.0</code></pre>
 <p>This is our first taste of how larger programs are built: we define basic operations, then combine them in ever-large chunks to get the effect we want. Real-life functions will usually be larger than the ones shown here --- typically half a dozen to a few dozen lines --- but they shouldn't ever be much longer than that, or the next person who reads it won't be able to understand what's going on.</p>
+<h3 id="tidying-up">Tidying up</h3>
+<p>Now that we know how to wrap bits of code up in functions, we can make our inflammation analyasis easier to read and easier to reuse. First, let's make an <code>analyze</code> function that generates our plots:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> analyze(filename):
+
+  data = numpy.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
+
+  pyplot.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+
+  pyplot.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+  pyplot.ylabel(<span class="st">&#39;average&#39;</span>)
+  pyplot.plot(data.mean(axis=<span class="dv">0</span>))
+
+  pyplot.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+  pyplot.ylabel(<span class="st">&#39;max&#39;</span>)
+  pyplot.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+
+  pyplot.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
+  pyplot.ylabel(<span class="st">&#39;min&#39;</span>)
+  pyplot.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+
+  pyplot.tight_layout()
+  pyplot.show()</code></pre>
+<p>and another function called <code>detectProblems</code> that checks for those systematics we noticed:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> detectProblems(filename):
+
+  data = numpy.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
+
+  <span class="kw">if</span> data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">0</span>] == <span class="dv">0</span> and data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">20</span>] == <span class="dv">20</span>:
+    <span class="dt">print</span> <span class="st">&#39;Suspicious looking maxima!&#39;</span>
+  <span class="kw">elif</span> data.<span class="dt">min</span>(axis=<span class="dv">0</span>).<span class="dt">sum</span>() == <span class="dv">0</span>:
+    <span class="dt">print</span> <span class="st">&#39;Minima add up to zero!&#39;</span>
+  <span class="kw">else</span>:
+    <span class="dt">print</span> <span class="st">&#39;Seems OK!&#39;</span></code></pre>
+<p>Notice that rather than jumbling this code together in one giant <code>for</code> loop, we can now read and reuse both ideas separately. We can reproduce the previous analysis with a much simpler <code>for</code> loop:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> f in filenames:
+  <span class="dt">print</span> f
+  analyze(f)
+  detectProblems(f)</code></pre>
+<p>By giving our functions human-readable names, we can more easily read and understand what is happening in the <code>for</code> loop. Even better, if at some later date we want to use either of those pieces of code again, we can do so in a single line.</p>
 <h2 id="testing-and-documenting">Testing and Documenting</h2>
 <p>Once we start putting things in functions so that we can re-use them, we need to start testing that those functions are working correctly. To see how to do this, let's write a function to center a dataset around a particular value:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
