@@ -12,14 +12,21 @@ minutes: 30
 > *   Set default values for function parameters.
 > *   Explain why we should divide programs into small, single-purpose functions.
 
-If we only had one data set to analyze,
-it would probably be faster to load the file into a spreadsheet
-and use that to plot some simple statistics.
-But we have twelve files to check,
-and may have more in future.
-In this lesson,
-we'll learn how to write a function
-so that we can repeat several operations with a single command.
+At this point,
+we've written code to draw some interesting features in our inflammation data,
+loop over all our data files to quickly draw these plots for each of them,
+and have Python make decisions based on what it sees in our data.
+But, our code is getting pretty long and complicated;
+what if we had thousands of datasets,
+and didn't want to generate a figure for every single one?
+Commenting out the figure-drawing code is a nuisance.
+Also, what if we want to use that code again,
+on a different dataset or at a different point in our program?
+Cutting and pasting it is going to make our code get very long and very repetative,
+very quickly.
+We'd like a way to package our code so that it is easier to reuse,
+and Python provides for this by letting us define things called 'functions' -
+a shorthand way of re-executing longer pieces of code.
 
 Let's start by defining a function `fahr_to_kelvin` that converts temperatures from Fahrenheit to Kelvin:
 
@@ -176,7 +183,7 @@ freezing point of water: 273.15
 boiling point of water: 373.15
 ~~~
 
-## Composing Functions
+### Composing Functions
 
 Now that we've seen how to turn Fahrenheit into Kelvin,
 it's easy to turn Kelvin into Celsius:
@@ -215,6 +222,69 @@ then combine them in ever-large chunks to get the effect we want.
 Real-life functions will usually be larger than the ones shown here --- typically half a dozen to a few dozen lines --- but
 they shouldn't ever be much longer than that,
 or the next person who reads it won't be able to understand what's going on.
+
+### Tidying up
+
+Now that we know how to wrap bits of code up in functions,
+we can make our inflammation analyasis easier to read and easier to reuse.
+First, let's make an `analyze` function that generates our plots:
+
+~~~ {.python}
+def analyze(filename):
+
+  data = numpy.loadtxt(fname=filename, delimiter=',')
+
+  pyplot.figure(figsize=(10.0, 3.0))
+
+  pyplot.subplot(1, 3, 1)
+  pyplot.ylabel('average')
+  pyplot.plot(data.mean(axis=0))
+
+  pyplot.subplot(1, 3, 2)
+  pyplot.ylabel('max')
+  pyplot.plot(data.max(axis=0))
+
+  pyplot.subplot(1, 3, 3)
+  pyplot.ylabel('min')
+  pyplot.plot(data.min(axis=0))
+
+  pyplot.tight_layout()
+  pyplot.show()
+~~~
+
+and another function called `detectProblems` that checks for those systematics
+we noticed:
+
+~~~ {.python}
+def detectProblems(filename):
+
+  data = numpy.loadtxt(fname=filename, delimiter=',')
+
+  if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
+    print 'Suspicious looking maxima!'
+  elif data.min(axis=0).sum() == 0:
+    print 'Minima add up to zero!'
+  else:
+    print 'Seems OK!'
+~~~
+
+Notice that rather than jumbling this code together in one giant `for` loop,
+we can now read and reuse both ideas separately.
+We can reproduce the previous analysis with a much simpler `for` loop:
+
+~~~ {.python}
+for f in filenames:
+  print f
+  analyze(f)
+  detectProblems(f)
+~~~
+
+By giving our functions human-readable names,
+we can more easily read and understand what is happening in the `for` loop.
+Even better, if at some later date we want to use either of those pieces of code again,
+we can do so in a single line.
+
+
 
 ## Testing and Documenting
 
