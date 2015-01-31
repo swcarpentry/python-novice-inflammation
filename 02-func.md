@@ -9,7 +9,6 @@ minutes: 30
 > *   Define a function that takes parameters.
 > *   Return a value from a function.
 > *   Test and debug a function.
-> *   Explain what a call stack is, and trace changes to the call stack as functions are called.
 > *   Set default values for function parameters.
 > *   Explain why we should divide programs into small, single-purpose functions.
 
@@ -217,139 +216,6 @@ Real-life functions will usually be larger than the ones shown here --- typicall
 they shouldn't ever be much longer than that,
 or the next person who reads it won't be able to understand what's going on.
 
-## The Call Stack
-
-Let's take a closer look at what happens when we call `fahr_to_celsius(32.0)`.
-To make things clearer,
-we'll start by putting the initial value 32.0 in a variable
-and store the final result in one as well:
-
-~~~ {.python}
-original = 32.0
-final = fahr_to_celsius(original)
-~~~
-
-The diagram below shows what memory looks like after the first line has been executed:
-
-![Call Stack (Initial State)](fig/python-call-stack-01.svg)\ 
-
-When we call `fahr_to_celsius`,
-Python *doesn't* create the variable `temp` right away.
-Instead,
-it creates something called a **stack frame**
-to keep track of the variables defined by `fahr_to_kelvin`.
-Initially,
-this stack frame only holds the value of `temp`:
-
-![Call Stack Immediately After First Function Call](fig/python-call-stack-02.svg)\ 
-
-When we call `fahr_to_kelvin` inside `fahr_to_celsius`,
-Python creates another stack frame to hold `fahr_to_kelvin`'s variables:
-
-![Call Stack During First Nested Function Call](fig/python-call-stack-03.svg)\ 
-
-It does this because there are now two variables in play called `temp`:
-the parameter to `fahr_to_celsius`,
-and the parameter to `fahr_to_kelvin`.
-Having two variables with the same name in the same part of the program would be ambiguous,
-so Python (and every other modern programming language) creates a new stack frame for each function call
-to keep that function's variables separate from those defined by other functions.
-
-When the call to `fahr_to_kelvin` returns a value,
-Python throws away `fahr_to_kelvin`'s stack frame
-and creates a new variable in the stack frame for `fahr_to_celsius` to hold the temperature in Kelvin:
-
-![Call Stack After Return From First Nested Function Call](fig/python-call-stack-04.svg)\ 
-
-It then calls `kelvin_to_celsius`,
-which means it creates a stack frame to hold that function's variables:
-
-![Call Stack During Call to Second Nested Function](fig/python-call-stack-05.svg)\ 
-
-Once again,
-Python throws away that stack frame when `kelvin_to_celsius` is done
-and creates the variable `result` in the stack frame for `fahr_to_celsius`:
-
-![Call Stack After Second Nested Function Returns](fig/python-call-stack-06.svg)\ 
-
-Finally,
-when `fahr_to_celsius` is done,
-Python throws away *its* stack frame
-and puts its result in a new variable called `final`
-that lives in the stack frame we started with:
-
-![Call Stack After All Functions Have Finished](fig/python-call-stack-07.svg)\ 
-
-This final stack frame is always there;
-it holds the variables we defined outside the functions in our code.
-What it *doesn't* hold is the variables that were in the various stack frames.
-If we try to get the value of `temp` after our functions have finished running,
-Python tells us that there's no such thing:
-
-~~~ {.python}
-print 'final value of temp after all function calls:', temp
-~~~
-~~~ {.error}
----------------------------------------------------------------------------
-NameError                                 Traceback (most recent call last)
-<ipython-input-12-ffd9b4dbd5f1> in <module>()
-----> 1 print 'final value of temp after all function calls:', temp
-
-NameError: name 'temp' is not defined
-~~~
-~~~ {.output}
-final value of temp after all function calls:
-~~~
-
-Why go to all this trouble?
-Well,
-here's a function called `span` that calculates the difference between
-the mininum and maximum values in an array:
-
-~~~ {.python}
-import numpy
-
-def span(a):
-    diff = a.max() - a.min()
-    return diff
-
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-print 'span of data', span(data)
-~~~
-~~~ {.output}
- span of data 20.0
-~~~
-
-Notice that `span` assigns a value to a variable called `diff`.
-We might very well use a variable with the same name to hold data:
-
-~~~ {.python}
-diff = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-print 'span of data:', span(diff)
-~~~
-~~~ {.output}
-span of data: 20.0
-~~~
-
-We don't expect `diff` to have the value 20.0 after this function call,
-so the name `diff` cannot refer to the same thing inside `span` as it does in the main body of our program.
-And yes,
-we could probably choose a different name than `diff` in our main program in this case,
-but we don't want to have to read every line of NumPy to see what variable names its functions use
-before calling any of those functions,
-just in case they change the values of our variables.
-
-The big idea here is **encapsulation**,
-and it's the key to writing correct, comprehensible programs.
-A function's job is to turn several operations into one
-so that we can think about a single function call
-instead of a dozen or a hundred statements
-each time we want to do something.
-That only works if functions don't interfere with each other;
-if they do,
-we have to pay attention to the details once again,
-which quickly overloads our short-term memory.
-
 ## Testing and Documenting
 
 Once we start putting things in functions so that we can re-use them,
@@ -389,7 +255,7 @@ print center(data, 0)
 [[-6.14875 -6.14875 -5.14875 ..., -3.14875 -6.14875 -6.14875]
  [-6.14875 -5.14875 -4.14875 ..., -5.14875 -6.14875 -5.14875]
  [-6.14875 -5.14875 -5.14875 ..., -4.14875 -5.14875 -5.14875]
- ..., 
+ ...,
  [-6.14875 -5.14875 -5.14875 ..., -5.14875 -5.14875 -5.14875]
  [-6.14875 -6.14875 -6.14875 ..., -6.14875 -4.14875 -6.14875]
  [-6.14875 -6.14875 -5.14875 ..., -5.14875 -5.14875 -6.14875]]
@@ -508,7 +374,7 @@ numpy.loadtxt('inflammation-01.csv', delimiter=',')
 array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
        [ 0.,  1.,  2., ...,  1.,  0.,  1.],
        [ 0.,  1.,  1., ...,  2.,  1.,  1.],
-       ..., 
+       ...,
        [ 0.,  1.,  1., ...,  1.,  1.,  1.],
        [ 0.,  0.,  0., ...,  0.,  2.,  0.],
        [ 0.,  0.,  1., ...,  1.,  1.,  0.]])~~~
@@ -529,7 +395,7 @@ TypeError                                 Traceback (most recent call last)
     776         # Make sure we're dealing with a proper dtype
 --> 777         dtype = np.dtype(dtype)
     778         defconv = _getconv(dtype)
-    779 
+    779
 
 TypeError: data type "," not understood
 ~~~
@@ -625,9 +491,9 @@ Help on function loadtxt in module numpy.lib.npyio:
 
 loadtxt(fname, dtype=<type 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
     Load data from a text file.
-    
+
     Each row in the text file must have the same number of values.
-    
+
     Parameters
     ----------
     fname : file or str
@@ -667,24 +533,24 @@ loadtxt(fname, dtype=<type 'float'>, comments='#', delimiter=None, converters=No
         Otherwise mono-dimensional axes will be squeezed.
         Legal values: 0 (default), 1 or 2.
         .. versionadded:: 1.6.0
-    
+
     Returns
     -------
     out : ndarray
         Data read from the text file.
-    
+
     See Also
     --------
     load, fromstring, fromregex
     genfromtxt : Load data with missing values handled as specified.
     scipy.io.loadmat : reads MATLAB data files
-    
+
     Notes
     -----
     This function aims to be a fast reader for simply formatted files.  The
     `genfromtxt` function provides more sophisticated handling of, e.g.,
     lines with missing values.
-    
+
     Examples
     --------
     >>> from StringIO import StringIO   # StringIO behaves like a file object
@@ -692,13 +558,13 @@ loadtxt(fname, dtype=<type 'float'>, comments='#', delimiter=None, converters=No
     >>> np.loadtxt(c)
     array([[ 0.,  1.],
            [ 2.,  3.]])
-    
+
     >>> d = StringIO("M 21 72\nF 35 58")
     >>> np.loadtxt(d, dtype={'names': ('gender', 'age', 'weight'),
     ...                      'formats': ('S1', 'i4', 'f4')})
     array([('M', 21, 72.0), ('F', 35, 58.0)],
           dtype=[('gender', '|S1'), ('age', '<i4'), ('weight', '<f4')])
-    
+
     >>> c = StringIO("1,0,2\n3,0,4")
     >>> x, y = np.loadtxt(c, delimiter=',', usecols=(0, 2), unpack=True)
     >>> x
@@ -736,7 +602,7 @@ but *do* have to provide `delimiter=` for the second parameter.
 > `'a' + 'b'` is `'ab'`.
 > Write a function called `fence` that takes two parameters called `original` and `wrapper`
 > and returns a new string that has the wrapper character at the beginning and end of the original:
-> 
+>
 > ~~~ {.python}
 > print fence('name', '*')
 > *name*
@@ -749,19 +615,10 @@ but *do* have to provide `delimiter=` for the second parameter.
 > and `s[-1]` is its last.
 > Write a function called `outer`
 > that returns a string made up of just the first and last characters of its input:
-> 
+>
 > ~~~ {.python}
 > print outer('helium')
 > hm
-> ~~~
-
-> ## FIXME {.challenge}
->
-> We previously wrote functions called `fence` and `outer`.
-> Draw a diagram showing how the call stack changes when we run the following:
->     
-> ~~~ {.python}
-> print outer(fence('carbon', '+'))
 > ~~~
 
 > ## FIXME {.challenge}
@@ -793,3 +650,22 @@ but *do* have to provide `delimiter=` for the second parameter.
 > Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
 > to see how to use these functions to generate regularly-spaced values,
 > then use those values to test your `rescale` function.
+
+> ## FIXME {.challenge}
+>
+> What does the following piece of code display when run - and why?
+>
+> ~~~ {.python}
+> f = 0
+> k = 0
+>
+> def f2k(f):
+>   k = ((f-32)*(5.0/9.0)) + 273.15
+>   return k
+>
+> f2k(8)
+> f2k(41)
+> f2k(32)
+>
+> print k
+> ~~~
