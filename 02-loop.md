@@ -382,6 +382,6 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 
 > ## FIXME {.challenge}
 >
-> Write a loop calculates the sum of the values in a list.
+> Write a loop that calculates the sum of the values in a list.
 > (Python has a built-in function called `sum` that does this for you.
 > Please don't use it for this exercise.)

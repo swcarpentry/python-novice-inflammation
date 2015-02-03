@@ -122,7 +122,7 @@ We can check for this inside the `for` loop we wrote with the following conditio
 
 ~~~ {.python}
 if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
-  print 'Suspicious looking maxima!'
+    print 'Suspicious looking maxima!'
 ~~~
 
 We also saw a different problem in the third dataset;
@@ -131,14 +131,14 @@ We can also check for this with an `elif` condition:
 
 ~~~{.python}
 elif data.min(axis=0).sum() == 0:
-  print 'Minima add up to zero!'
+    print 'Minima add up to zero!'
 ~~~
 
 And if neither of these conditions are true, we can use `else` to give the all-clear:
 
 ~~~ {.python}
 else:
-  print 'Seems OK!'
+    print 'Seems OK!'
 ~~~
 
 In this way,
