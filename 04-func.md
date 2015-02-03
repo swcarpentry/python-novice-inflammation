@@ -232,24 +232,24 @@ First, let's make an `analyze` function that generates our plots:
 ~~~ {.python}
 def analyze(filename):
 
-  data = np.loadtxt(fname=filename, delimiter=',')
+    data = np.loadtxt(fname=filename, delimiter=',')
 
-  plt.figure(figsize=(10.0, 3.0))
+    plt.figure(figsize=(10.0, 3.0))
 
-  plt.subplot(1, 3, 1)
-  plt.ylabel('average')
-  plt.plot(data.mean(axis=0))
+    plt.subplot(1, 3, 1)
+    plt.ylabel('average')
+    plt.plot(data.mean(axis=0))
 
-  plt.subplot(1, 3, 2)
-  plt.ylabel('max')
-  plt.plot(data.max(axis=0))
+    plt.subplot(1, 3, 2)
+    plt.ylabel('max')
+    plt.plot(data.max(axis=0))
 
-  plt.subplot(1, 3, 3)
-  plt.ylabel('min')
-  plt.plot(data.min(axis=0))
+    plt.subplot(1, 3, 3)
+    plt.ylabel('min')
+    plt.plot(data.min(axis=0))
 
-  plt.tight_layout()
-  plt.show()
+    plt.tight_layout()
+    plt.show()
 ~~~
 
 and another function called `detectProblems` that checks for those systematics
@@ -258,14 +258,14 @@ we noticed:
 ~~~ {.python}
 def detectProblems(filename):
 
-  data = np.loadtxt(fname=filename, delimiter=',')
+    data = np.loadtxt(fname=filename, delimiter=',')
 
-  if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
-    print 'Suspicious looking maxima!'
-  elif data.min(axis=0).sum() == 0:
-    print 'Minima add up to zero!'
-  else:
-    print 'Seems OK!'
+    if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
+        print 'Suspicious looking maxima!'
+    elif data.min(axis=0).sum() == 0:
+        print 'Minima add up to zero!'
+    else:
+        print 'Seems OK!'
 ~~~
 
 Notice that rather than jumbling this code together in one giant `for` loop,
@@ -274,9 +274,9 @@ We can reproduce the previous analysis with a much simpler `for` loop:
 
 ~~~ {.python}
 for f in filenames:
-  print f
-  analyze(f)
-  detectProblems(f)
+    print f
+    analyze(f)
+    detectProblems(f)
 ~~~
 
 By giving our functions human-readable names,
