@@ -82,13 +82,13 @@ done
 <h2 id="checking-our-data">Checking our Data</h2>
 <p>Now that we've seen how conditionals work, we can use them to check for the suspicious features we saw in our inflammation data. In the first couple of plots, the maximum inflammation per day seemed to rise like a straight line, one unit per day. We can check for this inside the <code>for</code> loop we wrote with the following conditional:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">0</span>] == <span class="dv">0</span> and data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">20</span>] == <span class="dv">20</span>:
-  <span class="dt">print</span> <span class="st">&#39;Suspicious looking maxima!&#39;</span></code></pre>
+    <span class="dt">print</span> <span class="st">&#39;Suspicious looking maxima!&#39;</span></code></pre>
 <p>We also saw a different problem in the third dataset; the minima per day were all zero (looks like a healthy person snuck into our study). We can also check for this with an <code>elif</code> condition:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">elif</span> data.<span class="dt">min</span>(axis=<span class="dv">0</span>).<span class="dt">sum</span>() == <span class="dv">0</span>:
-  <span class="dt">print</span> <span class="st">&#39;Minima add up to zero!&#39;</span></code></pre>
+    <span class="dt">print</span> <span class="st">&#39;Minima add up to zero!&#39;</span></code></pre>
 <p>And if neither of these conditions are true, we can use <code>else</code> to give the all-clear:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">else</span>:
-  <span class="dt">print</span> <span class="st">&#39;Seems OK!&#39;</span></code></pre>
+    <span class="dt">print</span> <span class="st">&#39;Seems OK!&#39;</span></code></pre>
 <p>In this way, we can ask Python to do something different depending on the condition of our data. Here we printed messages in all cases, but we could also imagine not using the <code>else</code> catch-all so that messages are only printed when something is wrong, freeing us from having to manually examine every plot for features we've seen before, or doing all manner of other things to respond to changing conditions in our data.</p>
 <div id="fixme" class="challenge">
 <h2>FIXME</h2>

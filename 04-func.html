@@ -105,40 +105,40 @@ boiling point of water: 373.15</code></pre>
 <p>Now that we know how to wrap bits of code up in functions, we can make our inflammation analyasis easier to read and easier to reuse. First, let's make an <code>analyze</code> function that generates our plots:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> analyze(filename):
 
-  data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
+    data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
 
-  plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+    plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
 
-  plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
-  plt.ylabel(<span class="st">&#39;average&#39;</span>)
-  plt.plot(data.mean(axis=<span class="dv">0</span>))
+    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+    plt.ylabel(<span class="st">&#39;average&#39;</span>)
+    plt.plot(data.mean(axis=<span class="dv">0</span>))
 
-  plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
-  plt.ylabel(<span class="st">&#39;max&#39;</span>)
-  plt.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+    plt.ylabel(<span class="st">&#39;max&#39;</span>)
+    plt.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
 
-  plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
-  plt.ylabel(<span class="st">&#39;min&#39;</span>)
-  plt.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
+    plt.ylabel(<span class="st">&#39;min&#39;</span>)
+    plt.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
 
-  plt.tight_layout()
-  plt.show()</code></pre>
+    plt.tight_layout()
+    plt.show()</code></pre>
 <p>and another function called <code>detectProblems</code> that checks for those systematics we noticed:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> detectProblems(filename):
 
-  data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
+    data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
 
-  <span class="kw">if</span> data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">0</span>] == <span class="dv">0</span> and data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">20</span>] == <span class="dv">20</span>:
-    <span class="dt">print</span> <span class="st">&#39;Suspicious looking maxima!&#39;</span>
-  <span class="kw">elif</span> data.<span class="dt">min</span>(axis=<span class="dv">0</span>).<span class="dt">sum</span>() == <span class="dv">0</span>:
-    <span class="dt">print</span> <span class="st">&#39;Minima add up to zero!&#39;</span>
-  <span class="kw">else</span>:
-    <span class="dt">print</span> <span class="st">&#39;Seems OK!&#39;</span></code></pre>
+    <span class="kw">if</span> data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">0</span>] == <span class="dv">0</span> and data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">20</span>] == <span class="dv">20</span>:
+        <span class="dt">print</span> <span class="st">&#39;Suspicious looking maxima!&#39;</span>
+    <span class="kw">elif</span> data.<span class="dt">min</span>(axis=<span class="dv">0</span>).<span class="dt">sum</span>() == <span class="dv">0</span>:
+        <span class="dt">print</span> <span class="st">&#39;Minima add up to zero!&#39;</span>
+    <span class="kw">else</span>:
+        <span class="dt">print</span> <span class="st">&#39;Seems OK!&#39;</span></code></pre>
 <p>Notice that rather than jumbling this code together in one giant <code>for</code> loop, we can now read and reuse both ideas separately. We can reproduce the previous analysis with a much simpler <code>for</code> loop:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> f in filenames:
-  <span class="dt">print</span> f
-  analyze(f)
-  detectProblems(f)</code></pre>
+    <span class="dt">print</span> f
+    analyze(f)
+    detectProblems(f)</code></pre>
 <p>By giving our functions human-readable names, we can more easily read and understand what is happening in the <code>for</code> loop. Even better, if at some later date we want to use either of those pieces of code again, we can do so in a single line.</p>
 <h2 id="testing-and-documenting">Testing and Documenting</h2>
 <p>Once we start putting things in functions so that we can re-use them, we need to start testing that those functions are working correctly. To see how to do this, let's write a function to center a dataset around a particular value:</p>
