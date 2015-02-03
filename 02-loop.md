@@ -303,24 +303,24 @@ filenames = filenames[0:3]
 for f in filenames:
     print f
 
-    data = numpy.loadtxt(fname=f, delimiter=',')
+    data = np.loadtxt(fname=f, delimiter=',')
 
-    pyplot.figure(figsize=(10.0, 3.0))
+    plt.figure(figsize=(10.0, 3.0))
 
-    pyplot.subplot(1, 3, 1)
-    pyplot.ylabel('average')
-    pyplot.plot(data.mean(axis=0))
+    plt.subplot(1, 3, 1)
+    plt.ylabel('average')
+    plt.plot(data.mean(axis=0))
 
-    pyplot.subplot(1, 3, 2)
-    pyplot.ylabel('max')
-    pyplot.plot(data.max(axis=0))
+    plt.subplot(1, 3, 2)
+    plt.ylabel('max')
+    plt.plot(data.max(axis=0))
 
-    pyplot.subplot(1, 3, 3)
-    pyplot.ylabel('min')
-    pyplot.plot(data.min(axis=0))
+    plt.subplot(1, 3, 3)
+    plt.ylabel('min')
+    plt.plot(data.min(axis=0))
 
-    pyplot.tight_layout()
-    pyplot.show()
+    plt.tight_layout()
+    plt.show()
 ~~~
 
 ~~~ {.output}

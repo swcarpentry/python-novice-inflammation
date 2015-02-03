@@ -544,30 +544,32 @@ Neither result seems particularly likely,
 so either there's a mistake in our calculations
 or something is wrong with our data.
 
-Here are our three plots side by side:
+It's very common to create an **alias** for a library when importing it
+in order to reduce the amount of typing we have to do.
+Here are our three plots side by side using aliases for `numpy` and `pyplot`:
 
 ~~~ {.python}
-import numpy
-from matplotlib import pyplot
+import numpy as np
+from matplotlib import pyplot as plt
 
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
-pyplot.figure(figsize=(10.0, 3.0))
+plt.figure(figsize=(10.0, 3.0))
 
-pyplot.subplot(1, 3, 1)
-pyplot.ylabel('average')
-pyplot.plot(data.mean(axis=0))
+plt.subplot(1, 3, 1)
+plt.ylabel('average')
+plt.plot(data.mean(axis=0))
 
-pyplot.subplot(1, 3, 2)
-pyplot.ylabel('max')
-pyplot.plot(data.max(axis=0))
+plt.subplot(1, 3, 2)
+plt.ylabel('max')
+plt.plot(data.max(axis=0))
 
-pyplot.subplot(1, 3, 3)
-pyplot.ylabel('min')
-pyplot.plot(data.min(axis=0))
+plt.subplot(1, 3, 3)
+plt.ylabel('min')
+plt.plot(data.min(axis=0))
 
-pyplot.tight_layout()
-pyplot.show()
+plt.tight_layout()
+plt.show()
 ~~~
 
 ![The Previous Plots as Subplots](fig/01-numpy_80_0.png)\
@@ -579,7 +581,7 @@ that we're creating three sub-plots,
 what to draw for each one,
 and that we want a tight layout.
 (Perversely,
-if we leave out that call to `pyplot.tight_layout()`,
+if we leave out that call to `plt.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
 
 > ## FIXME {.challenge}

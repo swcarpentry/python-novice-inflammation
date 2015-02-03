@@ -232,24 +232,24 @@ First, let's make an `analyze` function that generates our plots:
 ~~~ {.python}
 def analyze(filename):
 
-  data = numpy.loadtxt(fname=filename, delimiter=',')
+  data = np.loadtxt(fname=filename, delimiter=',')
 
-  pyplot.figure(figsize=(10.0, 3.0))
+  plt.figure(figsize=(10.0, 3.0))
 
-  pyplot.subplot(1, 3, 1)
-  pyplot.ylabel('average')
-  pyplot.plot(data.mean(axis=0))
+  plt.subplot(1, 3, 1)
+  plt.ylabel('average')
+  plt.plot(data.mean(axis=0))
 
-  pyplot.subplot(1, 3, 2)
-  pyplot.ylabel('max')
-  pyplot.plot(data.max(axis=0))
+  plt.subplot(1, 3, 2)
+  plt.ylabel('max')
+  plt.plot(data.max(axis=0))
 
-  pyplot.subplot(1, 3, 3)
-  pyplot.ylabel('min')
-  pyplot.plot(data.min(axis=0))
+  plt.subplot(1, 3, 3)
+  plt.ylabel('min')
+  plt.plot(data.min(axis=0))
 
-  pyplot.tight_layout()
-  pyplot.show()
+  plt.tight_layout()
+  plt.show()
 ~~~
 
 and another function called `detectProblems` that checks for those systematics
@@ -258,7 +258,7 @@ we noticed:
 ~~~ {.python}
 def detectProblems(filename):
 
-  data = numpy.loadtxt(fname=filename, delimiter=',')
+  data = np.loadtxt(fname=filename, delimiter=',')
 
   if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
     print 'Suspicious looking maxima!'
