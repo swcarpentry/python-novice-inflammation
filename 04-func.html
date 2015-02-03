@@ -105,28 +105,28 @@ boiling point of water: 373.15</code></pre>
 <p>Now that we know how to wrap bits of code up in functions, we can make our inflammation analyasis easier to read and easier to reuse. First, let's make an <code>analyze</code> function that generates our plots:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> analyze(filename):
 
-  data = numpy.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
+  data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
 
-  pyplot.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+  plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
 
-  pyplot.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
-  pyplot.ylabel(<span class="st">&#39;average&#39;</span>)
-  pyplot.plot(data.mean(axis=<span class="dv">0</span>))
+  plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+  plt.ylabel(<span class="st">&#39;average&#39;</span>)
+  plt.plot(data.mean(axis=<span class="dv">0</span>))
 
-  pyplot.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
-  pyplot.ylabel(<span class="st">&#39;max&#39;</span>)
-  pyplot.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+  plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+  plt.ylabel(<span class="st">&#39;max&#39;</span>)
+  plt.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
 
-  pyplot.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
-  pyplot.ylabel(<span class="st">&#39;min&#39;</span>)
-  pyplot.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+  plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
+  plt.ylabel(<span class="st">&#39;min&#39;</span>)
+  plt.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
 
-  pyplot.tight_layout()
-  pyplot.show()</code></pre>
+  plt.tight_layout()
+  plt.show()</code></pre>
 <p>and another function called <code>detectProblems</code> that checks for those systematics we noticed:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> detectProblems(filename):
 
-  data = numpy.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
+  data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
 
   <span class="kw">if</span> data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">0</span>] == <span class="dv">0</span> and data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">20</span>] == <span class="dv">20</span>:
     <span class="dt">print</span> <span class="st">&#39;Suspicious looking maxima!&#39;</span>

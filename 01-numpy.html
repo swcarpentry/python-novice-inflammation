@@ -205,29 +205,29 @@ pyplot.show()</code></pre>
 pyplot.show()</code></pre>
 <p><img src="fig/01-numpy_75_1.png" alt="Maximum Value Along The First Axis" /><br /> <sub>~</sub> {.python} pyplot.plot(data.min(axis=0)) pyplot.show() <sub>~</sub></p>
 <p><img src="fig/01-numpy_75_3.png" alt="Minimum Value Along The First Axis" /><br /> The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there's a mistake in our calculations or something is wrong with our data.</p>
-<p>Here are our three plots side by side:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy
-<span class="ch">from</span> matplotlib <span class="ch">import</span> pyplot
+<p>It's very common to create an <strong>alias</strong> for a library when importing it in order to reduce the amount of typing we have to do. Here are our three plots side by side using aliases for <code>numpy</code> and <code>pyplot</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy <span class="ch">as</span> np
+<span class="ch">from</span> matplotlib <span class="ch">import</span> pyplot <span class="ch">as</span> plt
 
-data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
+data = np.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
 
-pyplot.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
 
-pyplot.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
-pyplot.ylabel(<span class="st">&#39;average&#39;</span>)
-pyplot.plot(data.mean(axis=<span class="dv">0</span>))
+plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+plt.ylabel(<span class="st">&#39;average&#39;</span>)
+plt.plot(data.mean(axis=<span class="dv">0</span>))
 
-pyplot.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
-pyplot.ylabel(<span class="st">&#39;max&#39;</span>)
-pyplot.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+plt.ylabel(<span class="st">&#39;max&#39;</span>)
+plt.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
 
-pyplot.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
-pyplot.ylabel(<span class="st">&#39;min&#39;</span>)
-pyplot.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
+plt.ylabel(<span class="st">&#39;min&#39;</span>)
+plt.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
 
-pyplot.tight_layout()
-pyplot.show()</code></pre>
-<p><img src="fig/01-numpy_80_0.png" alt="The Previous Plots as Subplots" /><br /> The call to <code>loadtxt</code> reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we're creating three sub-plots, what to draw for each one, and that we want a tight layout. (Perversely, if we leave out that call to <code>pyplot.tight_layout()</code>, the graphs will actually be squeezed together more closely.)</p>
+plt.tight_layout()
+plt.show()</code></pre>
+<p><img src="fig/01-numpy_80_0.png" alt="The Previous Plots as Subplots" /><br /> The call to <code>loadtxt</code> reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we're creating three sub-plots, what to draw for each one, and that we want a tight layout. (Perversely, if we leave out that call to <code>plt.tight_layout()</code>, the graphs will actually be squeezed together more closely.)</p>
 <div id="fixme" class="challenge">
 <h2>FIXME</h2>
 <p>Modify the program to display the three plots on top of one another instead of side by side.</p>
