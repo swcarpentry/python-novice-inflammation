@@ -666,7 +666,7 @@ because `dtype` is the second parameter in the list.
 That's why we don't have to provide `fname=` for the filename,
 but *do* have to provide `delimiter=` for the second parameter.
 
-> ## FIXME {.challenge}
+> ## Combining strings {.challenge}
 >
 > "Adding" two strings produces their concatention:
 > `'a' + 'b'` is `'ab'`.
@@ -678,7 +678,7 @@ but *do* have to provide `delimiter=` for the second parameter.
 > *name*
 > ~~~
 
-> ## FIXME {.challenge}
+> ## Selecting characters from strings {.challenge}
 >
 > If the variable `s` refers to a string,
 > then `s[0]` is the string's first character
@@ -691,14 +691,14 @@ but *do* have to provide `delimiter=` for the second parameter.
 > hm
 > ~~~
 
-> ## FIXME {.challenge}
+> ## Rescaling, with parameters {.challenge}
 >
 > Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
 > but will allow the caller to specify lower and upper bounds if they want.
 > Compare your implementation to your neighbor's:
 > do the two functions always behave the same way?
 
-> ## FIXME {.challenge}
+> ## Automatic plots {.challenge}
 >
 > Write a function called `analyze` that takes a filename as a parameter
 > and displays the three graphs produced in the [previous lesson](01-numpy.ipynb),
@@ -707,7 +707,7 @@ but *do* have to provide `delimiter=` for the second parameter.
 > while `analyze('inflammation-02.csv')` should produce corresponding graphs for the second data set.
 > Be sure to give your function a docstring.
 
-> ## FIXME {.challenge}
+> ## Rescaling an array {.challenge}
 >
 > Write a function `rescale` that takes an array as input
 > and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
@@ -715,13 +715,13 @@ but *do* have to provide `delimiter=` for the second parameter.
 > then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
 > Be sure to give the function a docstring.
 
-> ## FIXME {.challenge}
+> ## Testing your function {.challenge}
 >
 > Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
 > to see how to use these functions to generate regularly-spaced values,
 > then use those values to test your `rescale` function.
 
-> ## FIXME {.challenge}
+> ## Variables inside and outside functions {.challenge}
 >
 > What does the following piece of code display when run - and why?
 >

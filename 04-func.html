@@ -351,36 +351,36 @@ loadtxt(fname, dtype=&lt;type &#39;float&#39;&gt;, comments=&#39;#&#39;, delimit
 <p>This tells us that <code>loadtxt</code> has one parameter called <code>fname</code> that doesn't have a default value, and eight others that do. If we call the function like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;,&#39;</span>)</code></pre>
 <p>then the filename is assigned to <code>fname</code> (which is what we want), but the delimiter string <code>','</code> is assigned to <code>dtype</code> rather than <code>delimiter</code>, because <code>dtype</code> is the second parameter in the list. That's why we don't have to provide <code>fname=</code> for the filename, but <em>do</em> have to provide <code>delimiter=</code> for the second parameter.</p>
-<div id="fixme" class="challenge">
-<h2>FIXME</h2>
+<div id="combining-strings" class="challenge">
+<h2>Combining strings</h2>
 <p>&quot;Adding&quot; two strings produces their concatention: <code>'a' + 'b'</code> is <code>'ab'</code>. Write a function called <code>fence</code> that takes two parameters called <code>original</code> and <code>wrapper</code> and returns a new string that has the wrapper character at the beginning and end of the original:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> fence(<span class="st">&#39;name&#39;</span>, <span class="st">&#39;*&#39;</span>)
 *name*</code></pre>
 </div>
-<div id="fixme-1" class="challenge">
-<h2>FIXME</h2>
+<div id="selecting-characters-from-strings" class="challenge">
+<h2>Selecting characters from strings</h2>
 <p>If the variable <code>s</code> refers to a string, then <code>s[0]</code> is the string's first character and <code>s[-1]</code> is its last. Write a function called <code>outer</code> that returns a string made up of just the first and last characters of its input:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> outer(<span class="st">&#39;helium&#39;</span>)
 hm</code></pre>
 </div>
-<div id="fixme-2" class="challenge">
-<h2>FIXME</h2>
+<div id="rescaling-with-parameters" class="challenge">
+<h2>Rescaling, with parameters</h2>
 <p>Rewrite the <code>rescale</code> function so that it scales data to lie between 0.0 and 1.0 by default, but will allow the caller to specify lower and upper bounds if they want. Compare your implementation to your neighbor's: do the two functions always behave the same way?</p>
 </div>
-<div id="fixme-3" class="challenge">
-<h2>FIXME</h2>
+<div id="automatic-plots" class="challenge">
+<h2>Automatic plots</h2>
 <p>Write a function called <code>analyze</code> that takes a filename as a parameter and displays the three graphs produced in the <a href="01-numpy.ipynb">previous lesson</a>, i.e., <code>analyze('inflammation-01.csv')</code> should produce the graphs already shown, while <code>analyze('inflammation-02.csv')</code> should produce corresponding graphs for the second data set. Be sure to give your function a docstring.</p>
 </div>
-<div id="fixme-4" class="challenge">
-<h2>FIXME</h2>
+<div id="rescaling-an-array" class="challenge">
+<h2>Rescaling an array</h2>
 <p>Write a function <code>rescale</code> that takes an array as input and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0. (If <span class="math"><em>L</em></span> and <span class="math"><em>H</em></span> are the lowest and highest values in the original array, then the replacement for a value <span class="math"><em>v</em></span> should be <span class="math">(<em>v</em> − <em>L</em>)/(<em>H</em> − <em>L</em>)</span>.) Be sure to give the function a docstring.</p>
 </div>
-<div id="fixme-5" class="challenge">
-<h2>FIXME</h2>
+<div id="testing-your-function" class="challenge">
+<h2>Testing your function</h2>
 <p>Run the commands <code>help(numpy.arange)</code> and <code>help(numpy.linspace)</code> to see how to use these functions to generate regularly-spaced values, then use those values to test your <code>rescale</code> function.</p>
 </div>
-<div id="fixme-6" class="challenge">
-<h2>FIXME</h2>
+<div id="variables-inside-and-outside-functions" class="challenge">
+<h2>Variables inside and outside functions</h2>
 <p>What does the following piece of code display when run - and why?</p>
 <pre class="sourceCode python"><code class="sourceCode python">f = <span class="dv">0</span>
 k = <span class="dv">0</span>

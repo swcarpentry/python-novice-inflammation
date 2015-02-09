@@ -90,8 +90,8 @@ done
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">else</span>:
     <span class="dt">print</span> <span class="st">&#39;Seems OK!&#39;</span></code></pre>
 <p>In this way, we can ask Python to do something different depending on the condition of our data. Here we printed messages in all cases, but we could also imagine not using the <code>else</code> catch-all so that messages are only printed when something is wrong, freeing us from having to manually examine every plot for features we've seen before, or doing all manner of other things to respond to changing conditions in our data.</p>
-<div id="fixme" class="challenge">
-<h2>FIXME</h2>
+<div id="what-is-truth" class="challenge">
+<h2>What is truth?</h2>
 <p><code>True</code> and <code>False</code> aren't the only values in Python that are true and false. In fact, <em>any</em> value can be used in an <code>if</code> or <code>elif</code>. After reading and running the code below, explain what the rule is for which values are considered true and which are considered false. (Note that if the body of a conditional is a single statement, we can write it on the same line as the <code>if</code>.)</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> <span class="st">&#39;&#39;</span>: <span class="dt">print</span> <span class="st">&#39;empty string is true&#39;</span>
 <span class="kw">if</span> <span class="st">&#39;word&#39;</span>: <span class="dt">print</span> <span class="st">&#39;word is true&#39;</span>
@@ -100,12 +100,12 @@ done
 <span class="kw">if</span> <span class="dv">0</span>: <span class="dt">print</span> <span class="st">&#39;zero is true&#39;</span>
 <span class="kw">if</span> <span class="dv">1</span>: <span class="dt">print</span> <span class="st">&#39;one is true&#39;</span></code></pre>
 </div>
-<div id="fixme-1" class="challenge">
-<h2>FIXME</h2>
+<div id="close-enough" class="challenge">
+<h2>Close enough</h2>
 <p>Write some conditions that print <code>True</code> if the variable <code>a</code> is within 10% of the variable <code>b</code> and <code>False</code> otherwise. Compare your implementation with your partner's: do you get the same answer for all possible pairs of numbers?</p>
 </div>
-<div id="fixme-2" class="challenge">
-<h2>FIXME</h2>
+<div id="in-place-operators" class="challenge">
+<h2>In-place operators</h2>
 <p>Python (and most other languages in the C family) provides <strong>in-place operators</strong> that work like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python">x = <span class="dv">1</span>  <span class="co"># original value</span>
 x += <span class="dv">1</span> <span class="co"># add one to x, assigning result back to x</span>
@@ -114,8 +114,8 @@ x *= <span class="dv">3</span> <span class="co"># multiply x by 3</span>
 <pre class="output"><code>6</code></pre>
 <p>Write some code that sums the positive and negative numbers in a list separately, using in-place operators. Do you think the result is more or less readable than writing the same without in-place operators?</p>
 </div>
-<div id="fixme-3" class="challenge">
-<h2>FIXME</h2>
+<div id="tuples-and-exchanges" class="challenge">
+<h2>Tuples and exchanges</h2>
 <p>Explain what the overall effect of this code is:</p>
 <pre class="sourceCode python"><code class="sourceCode python">temp = left
 left = right
