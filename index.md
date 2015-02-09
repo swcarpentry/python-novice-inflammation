@@ -1,5 +1,5 @@
 ---
-layout: lesson
+layout: page
 title: Programming with Python
 ---
 The best way to learn how to program is to do something useful,
@@ -43,11 +43,11 @@ We want to:
 
 To do all that, we'll have to learn a little bit about programming.
 
-## Prerequisites {.prereq}
-
-Learners need to understand the concepts of files and directories
-(including the working directory) and how to start a Python
-interpreter before tackling this lesson.
+> ## Prerequisites {.prereq}
+>
+> Learners need to understand the concepts of files and directories
+> (including the working directory) and how to start a Python
+> interpreter before tackling this lesson.
 
 ## Topics
 
