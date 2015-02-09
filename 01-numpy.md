@@ -42,7 +42,7 @@ numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
        [ 0.,  1.,  2., ...,  1.,  0.,  1.],
        [ 0.,  1.,  1., ...,  2.,  1.,  1.],
-       ..., 
+       ...,
        [ 0.,  1.,  1., ...,  1.,  1.,  1.],
        [ 0.,  0.,  0., ...,  0.,  2.,  0.],
        [ 0.,  0.,  1., ...,  1.,  1.,  0.]])
@@ -124,7 +124,7 @@ we can print several things at once by separating them with commas.
 If we imagine the variable as a sticky note with a name written on it,
 assignment is like putting the sticky note on a particular value:
 
-![Variables as Sticky Notes](fig/python-sticky-note-variables-01.svg)\ 
+![Variables as Sticky Notes](fig/python-sticky-note-variables-01.svg)\
 
 This means that assigning a value to one variable does *not* change the values of other variables.
 For example,
@@ -138,7 +138,7 @@ print 'weight in kilograms:', weight_kg, 'and in pounds:', weight_lb
 weight in kilograms: 57.5 and in pounds: 126.5
 ~~~
 
-![Creating Another Variable](fig/python-sticky-note-variables-02.svg)\ 
+![Creating Another Variable](fig/python-sticky-note-variables-02.svg)\
 
 and then change `weight_kg`:
 
@@ -150,7 +150,7 @@ print 'weight in kilograms is now:', weight_kg, 'and weight in pounds is still:'
 weight in kilograms is now: 100.0 and weight in pounds is still: 126.5
 ~~~
 
-![Updating a Variable](fig/python-sticky-note-variables-03.svg)\ 
+![Updating a Variable](fig/python-sticky-note-variables-03.svg)\
 
 Since `weight_lb` doesn't "remember" where its value came from,
 it isn't automatically updated when `weight_kg` changes.
@@ -174,7 +174,7 @@ print data
 [[ 0.  0.  1. ...,  3.  0.  0.]
  [ 0.  1.  2. ...,  1.  0.  1.]
  [ 0.  1.  1. ...,  2.  1.  1.]
- ..., 
+ ...,
  [ 0.  1.  1. ...,  1.  1.  1.]
  [ 0.  0.  0. ...,  0.  2.  0.]
  [ 0.  0.  1. ...,  1.  1.  0.]]
@@ -249,7 +249,7 @@ the index is how many steps we have to take from the start to get the item we wa
 > rather than the lower left.
 > This is consistent with the way mathematicians draw matrices,
 > but different from the Cartesian coordinates.
-> The indices are (row, column) instead of (column, row) for the same reason, 
+> The indices are (row, column) instead of (column, row) for the same reason,
 > which can be confusing when plotting data.
 
 An index like `[30, 20]` selects a single element of an array,
@@ -434,7 +434,7 @@ or the average for each day?
 As the diagram below shows,
 we want to perform the operation across an axis:
 
-![Operations Across Axes](fig/python-operations-across-axes.svg)\ 
+![Operations Across Axes](fig/python-operations-across-axes.svg)\
 
 To support this,
 most array methods allow us to specify the axis we want to work on.
@@ -500,7 +500,7 @@ pyplot.imshow(data)
 pyplot.show()
 ~~~
 
-![Heatmap of the Data](fig/01-numpy_71_0.png)\ 
+![Heatmap of the Data](fig/01-numpy_71_0.png)\
 
 Blue regions in this heat map are low values, while red shows high values.
 As we can see,
@@ -513,7 +513,7 @@ pyplot.plot(ave_inflammation)
 pyplot.show()
 ~~~
 
-![Average Inflammation Over Time](fig/01-numpy_73_0.png)\ 
+![Average Inflammation Over Time](fig/01-numpy_73_0.png)\
 
 Here,
 we have put the average per day across all patients in the variable `ave_inflammation`,
@@ -529,14 +529,14 @@ pyplot.plot(data.max(axis=0))
 pyplot.show()
 ~~~
 
-![Maximum Value Along The First Axis](fig/01-numpy_75_1.png)\ 
+![Maximum Value Along The First Axis](fig/01-numpy_75_1.png)\
 
 ~~~ {.python}
 pyplot.plot(data.min(axis=0))
 pyplot.show()
 ~~~
 
-![Minimum Value Along The First Axis](fig/01-numpy_75_3.png)\ 
+![Minimum Value Along The First Axis](fig/01-numpy_75_3.png)\
 
 The maximum value rises and falls perfectly smoothly,
 while the minimum seems to be a step function.
@@ -558,24 +558,22 @@ plt.figure(figsize=(10.0, 3.0))
 
 plt.subplot(1, 3, 1)
 plt.ylabel('average')
-plt.plot(data.mean(0))
+plt.plot(data.mean(axis=0))
 
 plt.subplot(1, 3, 2)
 plt.ylabel('max')
-plt.plot(data.max(0))
+plt.plot(data.max(axis=0))
 
 plt.subplot(1, 3, 3)
 plt.ylabel('min')
-plt.plot(data.min(0))
+plt.plot(data.min(axis=0))
 
 plt.tight_layout()
 plt.show()
 ~~~
 
-![The Previous Plots as Subplots](fig/01-numpy_80_0.png)\ 
+![The Previous Plots as Subplots](fig/01-numpy_80_0.png)\
 
-The first two lines re-load our libraries as `np` and `plt`,
-which are the aliases most Python programmers use.
 The call to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
 how large we want the figure to be,
@@ -593,7 +591,7 @@ the graphs will actually be squeezed together more closely.)
 > ## FIXME {.challenge}
 >
 > Draw diagrams showing what variables refer to what values after each statement in the following program:
-> 
+>
 > ~~~ {.python}
 > mass = 47.5
 > age = 122
@@ -604,7 +602,7 @@ the graphs will actually be squeezed together more closely.)
 > ## FIXME {.challenge}
 >
 > What does the following program print out?
-> 
+>
 > ~~~ {.python}
 > first, second = 'Grace', 'Hopper'
 > third, fourth = second, first
@@ -615,22 +613,22 @@ the graphs will actually be squeezed together more closely.)
 >
 > A section of an array is called a **slice**.
 > We can take slices of character strings as well:
-> 
+>
 > ~~~ {.python}
 > element = 'oxygen'
 > print 'first three characters:', element[0:3]
 > print 'last three characters:', element[3:6]
 > ~~~
-> 
+>
 > ~~~ {.output}
 > first three characters: oxy
 > last three characters: gen
 > ~~~
-> 
+>
 > What is the value of `element[:4]`?
 > What about `element[4:]`?
 > Or `element[:]`?
-> 
+>
 > What is `element[-1]`?
 > What is `element[-2]`?
 > Given those answers,
