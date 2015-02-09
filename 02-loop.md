@@ -350,7 +350,7 @@ and their minima show the same staircase structure;
 a different situation has been revealed in the third dataset,
 where the maxima are a bit less regular, but the minima are consistently zero.
 
-> ## FIXME {.challenge}
+> ## From 1 to N {.challenge}
 >
 > Python has a built-in function called `range` that creates a list of numbers:
 > `range(3)` produces `[0, 1, 2]`, `range(2, 5)` produces `[2, 3, 4]`.
@@ -363,7 +363,7 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > 3
 > ~~~
 
-> ## FIXME {.challenge}
+> ## Computing powers with loops {.challenge}
 >
 > Exponentiation is built into Python:
 >
@@ -375,13 +375,13 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > It also has a function called `pow` that calculates the same value.
 > Write a loop to calculate the same result.
 
-> ## FIXME {.challenge}
+> ## Reverse a string {.challenge}
 >
 > Write a loop that takes a string,
 > and produces a new string with the characters in reverse order,
 > so `'Newton'` becomes `'notweN'`.
 
-> ## FIXME {.challenge}
+> ## Sum a list {.challenge}
 >
 > Write a loop that calculates the sum of the values in a list.
 > (Python has a built-in function called `sum` that does this for you.

@@ -149,7 +149,7 @@ so that messages are only printed when something is wrong,
 freeing us from having to manually examine every plot for features we've seen before,
 or doing all manner of other things to respond to changing conditions in our data.
 
-> ## FIXME {.challenge}
+> ## What is truth? {.challenge}
 >
 > `True` and `False` aren't the only values in Python that are true and false.
 > In fact, *any* value can be used in an `if` or `elif`.
@@ -166,7 +166,7 @@ or doing all manner of other things to respond to changing conditions in our dat
 > if 1: print 'one is true'
 > ~~~
 
-> ## FIXME {.challenge}
+> ## Close enough {.challenge}
 >
 > Write some conditions that print `True` if the variable `a` is within 10% of the variable `b`
 > and `False` otherwise.
@@ -174,7 +174,7 @@ or doing all manner of other things to respond to changing conditions in our dat
 > do you get the same answer for all possible pairs of numbers?
 
 
-> ## FIXME {.challenge}
+> ## In-place operators {.challenge}
 >
 > Python (and most other languages in the C family) provides **in-place operators**
 > that work like this:
@@ -193,7 +193,7 @@ or doing all manner of other things to respond to changing conditions in our dat
 > using in-place operators.
 > Do you think the result is more or less readable than writing the same without in-place operators?
 
-> ## FIXME {.challenge}
+> ## Tuples and exchanges {.challenge}
 >
 > Explain what the overall effect of this code is:
 >

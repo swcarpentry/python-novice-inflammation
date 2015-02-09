@@ -43,11 +43,11 @@ We want to:
 
 To do all that, we'll have to learn a little bit about programming.
 
-> ## Prerequisites {.prereq}
->
-> FIXME
-> A short paragraph describing what learners need to know
-> before tackling this lesson.
+## Prerequisites {.prereq}
+
+Learners need to understand the concepts of files and directories
+(including the working directory) and how to start a Python
+interpreter before tackling this lesson.
 
 ## Topics
 
@@ -58,7 +58,7 @@ To do all that, we'll have to learn a little bit about programming.
 5.  [Defensive Programming](05-defensive.html)
 6.  [Command-Line Programs](06-cmdline.html)
 7.  [Errors and Exceptions](07-errors.html)
-8.  [Suppplementary Matieral](08-supplementary.html)
+8.  [Supplementary Material](08-supplementary.html)
 
 ## Other Resources
 

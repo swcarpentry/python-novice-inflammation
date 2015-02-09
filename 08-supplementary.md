@@ -138,7 +138,7 @@ if they do,
 we have to pay attention to the details once again,
 which quickly overloads our short-term memory.
 
-> ## FIXME {.challenge}
+> ## Following the call stack {.challenge}
 >
 > We previously wrote functions called `fence` and `outer`.
 > Draw a diagram showing how the call stack changes when we run the following:
@@ -171,7 +171,7 @@ grid = ImageGrid(5, 3)
 grid.show()
 ~~~
 
-FIXME: grid-01.txt
+![](img/grid-01.png)
 
 Just like a NumPy array,
 an `ImageGrid` has some properties that hold information about it:
@@ -270,7 +270,7 @@ row[7, 0] = (0, 255, 255) # green and blue
 row.show()
 ~~~
 
-FIXME: grid-02.txt
+![](img/grid-02.png)
 
 Simple color values like `(0,255,0)` are easy enough to decipher with a bit of practice,
 but what color is `(214,90,127)`?
@@ -298,9 +298,9 @@ c[2, 1] = colors['HotPink']
 c.show()
 ~~~
 
-FIXME: grid-03.txt
+![](img/grid-03.png)
 
-> ## FIXME {.challenge}
+> ## Making a colorbar {.challenge}
 >
 > Fill in the `____` in the code below to create a bar that changes color from dark blue to black.
 >
@@ -311,22 +311,22 @@ FIXME: grid-03.txt
 > bar.show()
 > ~~~
 
-> ## FIXME {.challenge}
+> ## Why RGB? {.challenge}
 >
 > Why do computers use red, green, and blue as their primary colors?
 
-> ## FIXME {.challenge}
+> ## Nested loops {.challenge}
 >
 > Will changing the nesting of the loops in the code above --- i.e.,
 > wrapping the Y-axis loop around the X-axis loop --- change the final image?
 > Why or why not?
 
-> ## FIXME {.challenge}
+> ## Where to change data {.challenge}
 >
 > Why did we transpose our data outside our heat map function?
 > Why not have the function perform the transpose?
 
-> ## FIXME {.challenge}
+> ## Design choice: return versus display {.challenge}
 >
 > Why does the heat map function return the grid rather than displaying it immediately?
 > Do you think this is a good or bad design choice?
