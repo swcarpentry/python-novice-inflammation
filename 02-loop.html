@@ -40,36 +40,8 @@
 <li>Use a for loop to process multiple files.</li>
 </ul>
 </div>
-<p>We have created a function called <code>analyze</code> that creates graphs of the minimum, average, and maximum daily inflammation rates for a single data set:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy <span class="ch">as</span> np
-<span class="ch">from</span> matplotlib <span class="ch">import</span> pyplot <span class="ch">as</span> plt
-
-<span class="kw">def</span> analyze(filename):
-    data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
-    
-    plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
-    
-    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
-    plt.ylabel(<span class="st">&#39;average&#39;</span>)
-    plt.plot(data.mean(<span class="dv">0</span>))
-    
-    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
-    plt.ylabel(<span class="st">&#39;max&#39;</span>)
-    plt.plot(data.<span class="dt">max</span>(<span class="dv">0</span>))
-    
-    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
-    plt.ylabel(<span class="st">&#39;min&#39;</span>)
-    plt.plot(data.<span class="dt">min</span>(<span class="dv">0</span>))
-    
-    plt.tight_layout()
-    plt.show()
-
-analyze(<span class="st">&#39;inflammation-01.csv&#39;</span>)</code></pre>
-<p><img src="fig/03-loop_2_0.png" alt="Analysis of inflammation-01.csv" /> </p>
-<p>We can use it to analyze other data sets one by one:</p>
-<pre class="sourceCode python"><code class="sourceCode python">analyze(<span class="st">&#39;inflammation-02.csv&#39;</span>)</code></pre>
-<p><img src="fig/03-loop_4_0.png" alt="Analysis of inflammation-02.csv" /> </p>
-<p>but we have a dozen data sets right now and more on the way. We want to create plots for all our data sets with a single statement. To do that, we'll have to teach the computer how to repeat things.</p>
+<p>In the last lesson, we wrote some code that plots some values of interest from our first inflammation dataset, and reveals some suspicious features in it, such as from <code>inflammation-01.csv</code></p>
+<p><img src="fig/03-loop_2_0.png" alt="Analysis of inflammation-01.csv" /><br /> but we have a dozen data sets right now and more on the way. We want to create plots for all our data sets with a single statement. To do that, we'll have to teach the computer how to repeat things.</p>
 <h2 id="for-loops">For Loops</h2>
 <p>Suppose we want to print each character in the word &quot;lead&quot; on a line of its own. One way is to use four <code>print</code> statements:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> print_characters(element):
@@ -161,49 +133,58 @@ name[<span class="dv">0</span>] = <span class="st">&#39;b&#39;</span></code></pr
 <p>or to get the names of all our CSV data files:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> glob.glob(<span class="st">&#39;*.csv&#39;</span>)</code></pre>
 <pre class="output"><code>[&#39;inflammation-01.csv&#39;, &#39;inflammation-02.csv&#39;, &#39;inflammation-03.csv&#39;, &#39;inflammation-04.csv&#39;, &#39;inflammation-05.csv&#39;, &#39;inflammation-06.csv&#39;, &#39;inflammation-07.csv&#39;, &#39;inflammation-08.csv&#39;, &#39;inflammation-09.csv&#39;, &#39;inflammation-10.csv&#39;, &#39;inflammation-11.csv&#39;, &#39;inflammation-12.csv&#39;, &#39;small-01.csv&#39;, &#39;small-02.csv&#39;, &#39;small-03.csv&#39;]</code></pre>
-<p>As these examples show, <code>glob.glob</code>'s result is a list of strings, which means we can loop over it to do something with each filename in turn. In our case, the &quot;something&quot; we want is our <code>analyze</code> function. Let's test it by analyzing the first three files in the list:</p>
+<p>As these examples show, <code>glob.glob</code>'s result is a list of strings, which means we can loop over it to do something with each filename in turn. In our case, the &quot;something&quot; we want is the code that generates those plots of our inflammation data. Let's test it by analyzing the first three files in the list:</p>
 <pre class="sourceCode python"><code class="sourceCode python">filenames = glob.glob(<span class="st">&#39;*.csv&#39;</span>)
 filenames = filenames[<span class="dv">0</span>:<span class="dv">3</span>]
 <span class="kw">for</span> f in filenames:
     <span class="dt">print</span> f
-    analyze(f)</code></pre>
+
+    data = np.loadtxt(fname=f, delimiter=<span class="st">&#39;,&#39;</span>)
+
+    plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+
+    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+    plt.ylabel(<span class="st">&#39;average&#39;</span>)
+    plt.plot(data.mean(axis=<span class="dv">0</span>))
+
+    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+    plt.ylabel(<span class="st">&#39;max&#39;</span>)
+    plt.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+
+    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
+    plt.ylabel(<span class="st">&#39;min&#39;</span>)
+    plt.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+
+    plt.tight_layout()
+    plt.show()</code></pre>
 <pre class="output"><code>inflammation-01.csv</code></pre>
-<p><img src="fig/03-loop_49_1.png" alt="Analysis of inflammation-01.csv" /> </p>
+<p><img src="fig/03-loop_49_1.png" alt="Analysis of inflammation-01.csv" /><br /></p>
 <pre class="output"><code>inflammation-02.csv</code></pre>
-<p><img src="fig/03-loop_49_3.png" alt="Analysis of inflammation-02.csv" /> </p>
+<p><img src="fig/03-loop_49_3.png" alt="Analysis of inflammation-02.csv" /><br /></p>
 <pre class="output"><code>inflammation-03.csv</code></pre>
-<p><img src="fig/03-loop_49_5.png" alt="Analysis of inflammation-02.csv" /> </p>
-<p>Sure enough, the maxima of these data sets show exactly the same ramp as the first, and their minima show the same staircase structure.</p>
-<blockquote>
-<p>FIXME {.challenge}</p>
-<p>Python has a built-in function called <code>range</code> that creates a list of numbers: <code>range(3)</code> produces <code>[0, 1, 2]</code>, <code>range(2, 5)</code> produces <code>[2, 3, 4]</code>. Using <code>range</code>, write a function that prints the <span class="math"><em>N</em></span> natural numbers:</p>
-<pre class="sourceCode python"><code class="sourceCode python">print_N(<span class="dv">3</span>)
-<span class="dv">1</span>
+<p><img src="fig/03-loop_49_5.png" alt="Analysis of inflammation-03.csv" /><br /> Sure enough, the maxima of the first two data sets show exactly the same ramp as the first, and their minima show the same staircase structure; a different situation has been revealed in the third dataset, where the maxima are a bit less regular, but the minima are consistently zero.</p>
+<div id="fixme" class="challenge">
+<h2>FIXME</h2>
+<p>Python has a built-in function called <code>range</code> that creates a list of numbers: <code>range(3)</code> produces <code>[0, 1, 2]</code>, <code>range(2, 5)</code> produces <code>[2, 3, 4]</code>. Using <code>range</code>, write a loop that uses <code>range</code> to print the first 3 natural numbers:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dv">1</span>
 <span class="dv">2</span>
 <span class="dv">3</span></code></pre>
-</blockquote>
-<blockquote>
-<p>FIXME {.challenge}</p>
+</div>
+<div id="fixme-1" class="challenge">
+<h2>FIXME</h2>
 <p>Exponentiation is built into Python:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="dv">5</span>**<span class="dv">3</span>
 <span class="dv">125</span></code></pre>
-<p>It also has a function called <code>pow</code> that calculates the same value. Write a function called <code>expo</code> that uses a loop to calculate the same result.</p>
-</blockquote>
-<blockquote>
-<p>FIXME {.challenge}</p>
-<p>Write a function called <code>rev</code> that takes a string as input, and produces a new string with the characters in reverse order:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> rev(<span class="st">&#39;Newton&#39;</span>)
-notweN</code></pre>
-<p>As always, be sure to include a docstring.</p>
-</blockquote>
-<blockquote>
-<p>FIXME {.challenge}</p>
-<p>Write a function called <code>total</code> that calculates the sum of the values in a list. (Python has a built-in function called <code>sum</code> that does this for you. Please don't use it for this exercise.)</p>
-</blockquote>
-<blockquote>
-<p>FIXME {.challenge}</p>
-<p>Write a function called <code>analyze_all</code> that takes a filename pattern as its sole argument and runs <code>analyze</code> for each file whose name matches the pattern.</p>
-</blockquote>
+<p>It also has a function called <code>pow</code> that calculates the same value. Write a loop to calculate the same result.</p>
+</div>
+<div id="fixme-2" class="challenge">
+<h2>FIXME</h2>
+<p>Write a loop that takes a string, and produces a new string with the characters in reverse order, so <code>'Newton'</code> becomes <code>'notweN'</code>.</p>
+</div>
+<div id="fixme-3" class="challenge">
+<h2>FIXME</h2>
+<p>Write a loop that calculates the sum of the values in a list. (Python has a built-in function called <code>sum</code> that does this for you. Please don't use it for this exercise.)</p>
+</div>
         </div>
       </div>
       <div class="footer">
