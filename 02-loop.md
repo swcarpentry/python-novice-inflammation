@@ -63,7 +63,7 @@ but that's a bad approach for two reasons:
 print_characters('tin')
 ~~~
 ~~~ {.error}
----------------------------------------------------------------------------
+--------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-13-5bc7311e0bf3> in <module>()
 ----> 1 print_characters('tin')
@@ -76,6 +76,7 @@ IndexError                                Traceback (most recent call last)
       7 print_characters('lead')
 
 IndexError: string index out of range
+~~~
 ~~~ {.output}
 t
 i

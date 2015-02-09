@@ -61,10 +61,22 @@ d</code></pre>
 <li><p>It's fragile: if we give it a longer string, it only prints part of the data, and if we give it a shorter one, it produces an error because we're asking for characters that don't exist.</p></li>
 </ol>
 <pre class="sourceCode python"><code class="sourceCode python">print_characters(<span class="st">&#39;tin&#39;</span>)</code></pre>
-<h2 id="section" class="error"><sub>~</sub></h2>
-<p>IndexError Traceback (most recent call last) <ipython-input-13-5bc7311e0bf3> in <module>() ----&gt; 1 print_characters('tin')</p>
-<p><ipython-input-12-11460561ea56> in print_characters(element) 3 print element[1] 4 print element[2] ----&gt; 5 print element[3] 6 7 print_characters('lead')</p>
-<p>IndexError: string index out of range <sub>~</sub> {.output} t i n <sub>~</sub></p>
+<pre class="error"><code>--------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+&lt;ipython-input-13-5bc7311e0bf3&gt; in &lt;module&gt;()
+----&gt; 1 print_characters(&#39;tin&#39;)
+
+&lt;ipython-input-12-11460561ea56&gt; in print_characters(element)
+      3     print element[1]
+      4     print element[2]
+----&gt; 5     print element[3]
+      6
+      7 print_characters(&#39;lead&#39;)
+
+IndexError: string index out of range</code></pre>
+<pre class="output"><code>t
+i
+n</code></pre>
 <p>Here's a better approach:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> print_characters(element):
     <span class="kw">for</span> char in element:
