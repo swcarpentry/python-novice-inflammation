@@ -43,21 +43,22 @@ We want to:
 
 To do all that, we'll have to learn a little bit about programming.
 
-> ## Prerequisites {.prereq}
->
-> FIXME
-> A short paragraph describing what learners need to know
-> before tackling this lesson.
+## Prerequisites {.prereq}
+
+Learners need to understand the concepts of files and directories
+(including the working directory) and how to start a Python
+interpreter before tackling this lesson.
 
 ## Topics
 
 1.  [Analyzing Patient Data](01-numpy.html)
-2.  [Creating Functions](02-func.html)
-3.  [Analyzing Multiple Data Sets](03-loop.html)
-4.  [Making Choices](04-cond.html)
+2.  [Analyzing Multiple Data Sets](02-loop.html)
+3.  [Making Choices](03-cond.html)
+4.  [Creating Functions](04-func.html)
 5.  [Defensive Programming](05-defensive.html)
 6.  [Command-Line Programs](06-cmdline.html)
 7.  [Errors and Exceptions](07-errors.html)
+8.  [Supplementary Material](08-supplementary.html)
 
 ## Other Resources
 

@@ -33,12 +33,11 @@
 <li>Define a function that takes parameters.</li>
 <li>Return a value from a function.</li>
 <li>Test and debug a function.</li>
-<li>Explain what a call stack is, and trace changes to the call stack as functions are called.</li>
 <li>Set default values for function parameters.</li>
 <li>Explain why we should divide programs into small, single-purpose functions.</li>
 </ul>
 </div>
-<p>If we only had one data set to analyze, it would probably be faster to load the file into a spreadsheet and use that to plot some simple statistics. But we have twelve files to check, and may have more in future. In this lesson, we'll learn how to write a function so that we can repeat several operations with a single command.</p>
+<p>At this point, we've written code to draw some interesting features in our inflammation data, loop over all our data files to quickly draw these plots for each of them, and have Python make decisions based on what it sees in our data. But, our code is getting pretty long and complicated; what if we had thousands of datasets, and didn't want to generate a figure for every single one? Commenting out the figure-drawing code is a nuisance. Also, what if we want to use that code again, on a different dataset or at a different point in our program? Cutting and pasting it is going to make our code get very long and very repetative, very quickly. We'd like a way to package our code so that it is easier to reuse, and Python provides for this by letting us define things called 'functions' - a shorthand way of re-executing longer pieces of code.</p>
 <p>Let's start by defining a function <code>fahr_to_kelvin</code> that converts temperatures from Fahrenheit to Kelvin:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_kelvin(temp):
     <span class="kw">return</span> ((temp - <span class="dv">32</span>) * (<span class="dv">5</span>/<span class="dv">9</span>)) + <span class="fl">273.15</span></code></pre>
@@ -86,7 +85,7 @@ float(a)/b is: 3.33333333333</code></pre>
 <span class="dt">print</span> <span class="st">&#39;boiling point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">212</span>)</code></pre>
 <pre class="output"><code>freezing point of water: 273.15
 boiling point of water: 373.15</code></pre>
-<h2 id="composing-functions">Composing Functions</h2>
+<h3 id="composing-functions">Composing Functions</h3>
 <p>Now that we've seen how to turn Fahrenheit into Kelvin, it's easy to turn Kelvin into Celsius:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> kelvin_to_celsius(temp):
     <span class="kw">return</span> temp - <span class="fl">273.15</span>
@@ -102,50 +101,45 @@ boiling point of water: 373.15</code></pre>
 <span class="dt">print</span> <span class="st">&#39;freezing point of water in Celsius:&#39;</span>, fahr_to_celsius(<span class="fl">32.0</span>)</code></pre>
 <pre class="output"><code>freezing point of water in Celsius: 0.0</code></pre>
 <p>This is our first taste of how larger programs are built: we define basic operations, then combine them in ever-large chunks to get the effect we want. Real-life functions will usually be larger than the ones shown here --- typically half a dozen to a few dozen lines --- but they shouldn't ever be much longer than that, or the next person who reads it won't be able to understand what's going on.</p>
-<h2 id="the-call-stack">The Call Stack</h2>
-<p>Let's take a closer look at what happens when we call <code>fahr_to_celsius(32.0)</code>. To make things clearer, we'll start by putting the initial value 32.0 in a variable and store the final result in one as well:</p>
-<pre class="sourceCode python"><code class="sourceCode python">original = <span class="fl">32.0</span>
-final = fahr_to_celsius(original)</code></pre>
-<p>The diagram below shows what memory looks like after the first line has been executed:</p>
-<p><img src="fig/python-call-stack-01.svg" alt="Call Stack (Initial State)" /> </p>
-<p>When we call <code>fahr_to_celsius</code>, Python <em>doesn't</em> create the variable <code>temp</code> right away. Instead, it creates something called a <strong>stack frame</strong> to keep track of the variables defined by <code>fahr_to_kelvin</code>. Initially, this stack frame only holds the value of <code>temp</code>:</p>
-<p><img src="fig/python-call-stack-02.svg" alt="Call Stack Immediately After First Function Call" /> </p>
-<p>When we call <code>fahr_to_kelvin</code> inside <code>fahr_to_celsius</code>, Python creates another stack frame to hold <code>fahr_to_kelvin</code>'s variables:</p>
-<p><img src="fig/python-call-stack-03.svg" alt="Call Stack During First Nested Function Call" /> </p>
-<p>It does this because there are now two variables in play called <code>temp</code>: the parameter to <code>fahr_to_celsius</code>, and the parameter to <code>fahr_to_kelvin</code>. Having two variables with the same name in the same part of the program would be ambiguous, so Python (and every other modern programming language) creates a new stack frame for each function call to keep that function's variables separate from those defined by other functions.</p>
-<p>When the call to <code>fahr_to_kelvin</code> returns a value, Python throws away <code>fahr_to_kelvin</code>'s stack frame and creates a new variable in the stack frame for <code>fahr_to_celsius</code> to hold the temperature in Kelvin:</p>
-<p><img src="fig/python-call-stack-04.svg" alt="Call Stack After Return From First Nested Function Call" /> </p>
-<p>It then calls <code>kelvin_to_celsius</code>, which means it creates a stack frame to hold that function's variables:</p>
-<p><img src="fig/python-call-stack-05.svg" alt="Call Stack During Call to Second Nested Function" /> </p>
-<p>Once again, Python throws away that stack frame when <code>kelvin_to_celsius</code> is done and creates the variable <code>result</code> in the stack frame for <code>fahr_to_celsius</code>:</p>
-<p><img src="fig/python-call-stack-06.svg" alt="Call Stack After Second Nested Function Returns" /> </p>
-<p>Finally, when <code>fahr_to_celsius</code> is done, Python throws away <em>its</em> stack frame and puts its result in a new variable called <code>final</code> that lives in the stack frame we started with:</p>
-<p><img src="fig/python-call-stack-07.svg" alt="Call Stack After All Functions Have Finished" /> </p>
-<p>This final stack frame is always there; it holds the variables we defined outside the functions in our code. What it <em>doesn't</em> hold is the variables that were in the various stack frames. If we try to get the value of <code>temp</code> after our functions have finished running, Python tells us that there's no such thing:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;final value of temp after all function calls:&#39;</span>, temp</code></pre>
-<pre class="error"><code>---------------------------------------------------------------------------
-NameError                                 Traceback (most recent call last)
-&lt;ipython-input-12-ffd9b4dbd5f1&gt; in &lt;module&gt;()
-----&gt; 1 print &#39;final value of temp after all function calls:&#39;, temp
+<h3 id="tidying-up">Tidying up</h3>
+<p>Now that we know how to wrap bits of code up in functions, we can make our inflammation analyasis easier to read and easier to reuse. First, let's make an <code>analyze</code> function that generates our plots:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> analyze(filename):
 
-NameError: name &#39;temp&#39; is not defined</code></pre>
-<pre class="output"><code>final value of temp after all function calls:</code></pre>
-<p>Why go to all this trouble? Well, here's a function called <code>span</code> that calculates the difference between the mininum and maximum values in an array:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy
+    data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
 
-<span class="kw">def</span> span(a):
-    diff = a.<span class="dt">max</span>() - a.<span class="dt">min</span>()
-    <span class="kw">return</span> diff
+    plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
 
-data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
-<span class="dt">print</span> <span class="st">&#39;span of data&#39;</span>, span(data)</code></pre>
-<pre class="output"><code> span of data 20.0</code></pre>
-<p>Notice that <code>span</code> assigns a value to a variable called <code>diff</code>. We might very well use a variable with the same name to hold data:</p>
-<pre class="sourceCode python"><code class="sourceCode python">diff = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
-<span class="dt">print</span> <span class="st">&#39;span of data:&#39;</span>, span(diff)</code></pre>
-<pre class="output"><code>span of data: 20.0</code></pre>
-<p>We don't expect <code>diff</code> to have the value 20.0 after this function call, so the name <code>diff</code> cannot refer to the same thing inside <code>span</code> as it does in the main body of our program. And yes, we could probably choose a different name than <code>diff</code> in our main program in this case, but we don't want to have to read every line of NumPy to see what variable names its functions use before calling any of those functions, just in case they change the values of our variables.</p>
-<p>The big idea here is <strong>encapsulation</strong>, and it's the key to writing correct, comprehensible programs. A function's job is to turn several operations into one so that we can think about a single function call instead of a dozen or a hundred statements each time we want to do something. That only works if functions don't interfere with each other; if they do, we have to pay attention to the details once again, which quickly overloads our short-term memory.</p>
+    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+    plt.ylabel(<span class="st">&#39;average&#39;</span>)
+    plt.plot(data.mean(axis=<span class="dv">0</span>))
+
+    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+    plt.ylabel(<span class="st">&#39;max&#39;</span>)
+    plt.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+
+    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
+    plt.ylabel(<span class="st">&#39;min&#39;</span>)
+    plt.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+
+    plt.tight_layout()
+    plt.show()</code></pre>
+<p>and another function called <code>detectProblems</code> that checks for those systematics we noticed:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> detectProblems(filename):
+
+    data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
+
+    <span class="kw">if</span> data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">0</span>] == <span class="dv">0</span> and data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">20</span>] == <span class="dv">20</span>:
+        <span class="dt">print</span> <span class="st">&#39;Suspicious looking maxima!&#39;</span>
+    <span class="kw">elif</span> data.<span class="dt">min</span>(axis=<span class="dv">0</span>).<span class="dt">sum</span>() == <span class="dv">0</span>:
+        <span class="dt">print</span> <span class="st">&#39;Minima add up to zero!&#39;</span>
+    <span class="kw">else</span>:
+        <span class="dt">print</span> <span class="st">&#39;Seems OK!&#39;</span></code></pre>
+<p>Notice that rather than jumbling this code together in one giant <code>for</code> loop, we can now read and reuse both ideas separately. We can reproduce the previous analysis with a much simpler <code>for</code> loop:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> f in filenames:
+    <span class="dt">print</span> f
+    analyze(f)
+    detectProblems(f)</code></pre>
+<p>By giving our functions human-readable names, we can more easily read and understand what is happening in the <code>for</code> loop. Even better, if at some later date we want to use either of those pieces of code again, we can do so in a single line.</p>
 <h2 id="testing-and-documenting">Testing and Documenting</h2>
 <p>Once we start putting things in functions so that we can re-use them, we need to start testing that those functions are working correctly. To see how to do this, let's write a function to center a dataset around a particular value:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
@@ -161,7 +155,7 @@ data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>
 <pre class="output"><code>[[-6.14875 -6.14875 -5.14875 ..., -3.14875 -6.14875 -6.14875]
  [-6.14875 -5.14875 -4.14875 ..., -5.14875 -6.14875 -5.14875]
  [-6.14875 -5.14875 -5.14875 ..., -4.14875 -5.14875 -5.14875]
- ..., 
+ ...,
  [-6.14875 -5.14875 -5.14875 ..., -5.14875 -5.14875 -5.14875]
  [-6.14875 -6.14875 -6.14875 ..., -6.14875 -4.14875 -6.14875]
  [-6.14875 -6.14875 -5.14875 ..., -5.14875 -5.14875 -6.14875]]</code></pre>
@@ -222,7 +216,7 @@ TypeError                                 Traceback (most recent call last)
     776         # Make sure we&#39;re dealing with a proper dtype
 --&gt; 777         dtype = np.dtype(dtype)
     778         defconv = _getconv(dtype)
-    779 
+    779
 
 TypeError: data type &quot;,&quot; not understood</code></pre>
 <p>To understand what's going on, and make our own functions easier to use, let's re-define our <code>center</code> function like this:</p>
@@ -270,9 +264,9 @@ a: 1 b: 2 c: 77</code></pre>
 
 loadtxt(fname, dtype=&lt;type &#39;float&#39;&gt;, comments=&#39;#&#39;, delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
     Load data from a text file.
-    
+
     Each row in the text file must have the same number of values.
-    
+
     Parameters
     ----------
     fname : file or str
@@ -312,24 +306,24 @@ loadtxt(fname, dtype=&lt;type &#39;float&#39;&gt;, comments=&#39;#&#39;, delimit
         Otherwise mono-dimensional axes will be squeezed.
         Legal values: 0 (default), 1 or 2.
         .. versionadded:: 1.6.0
-    
+
     Returns
     -------
     out : ndarray
         Data read from the text file.
-    
+
     See Also
     --------
     load, fromstring, fromregex
     genfromtxt : Load data with missing values handled as specified.
     scipy.io.loadmat : reads MATLAB data files
-    
+
     Notes
     -----
     This function aims to be a fast reader for simply formatted files.  The
     `genfromtxt` function provides more sophisticated handling of, e.g.,
     lines with missing values.
-    
+
     Examples
     --------
     &gt;&gt;&gt; from StringIO import StringIO   # StringIO behaves like a file object
@@ -337,13 +331,13 @@ loadtxt(fname, dtype=&lt;type &#39;float&#39;&gt;, comments=&#39;#&#39;, delimit
     &gt;&gt;&gt; np.loadtxt(c)
     array([[ 0.,  1.],
            [ 2.,  3.]])
-    
+
     &gt;&gt;&gt; d = StringIO(&quot;M 21 72\nF 35 58&quot;)
     &gt;&gt;&gt; np.loadtxt(d, dtype={&#39;names&#39;: (&#39;gender&#39;, &#39;age&#39;, &#39;weight&#39;),
     ...                      &#39;formats&#39;: (&#39;S1&#39;, &#39;i4&#39;, &#39;f4&#39;)})
     array([(&#39;M&#39;, 21, 72.0), (&#39;F&#39;, 35, 58.0)],
           dtype=[(&#39;gender&#39;, &#39;|S1&#39;), (&#39;age&#39;, &#39;&lt;i4&#39;), (&#39;weight&#39;, &#39;&lt;f4&#39;)])
-    
+
     &gt;&gt;&gt; c = StringIO(&quot;1,0,2\n3,0,4&quot;)
     &gt;&gt;&gt; x, y = np.loadtxt(c, delimiter=&#39;,&#39;, usecols=(0, 2), unpack=True)
     &gt;&gt;&gt; x
@@ -357,38 +351,49 @@ loadtxt(fname, dtype=&lt;type &#39;float&#39;&gt;, comments=&#39;#&#39;, delimit
 <p>This tells us that <code>loadtxt</code> has one parameter called <code>fname</code> that doesn't have a default value, and eight others that do. If we call the function like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;,&#39;</span>)</code></pre>
 <p>then the filename is assigned to <code>fname</code> (which is what we want), but the delimiter string <code>','</code> is assigned to <code>dtype</code> rather than <code>delimiter</code>, because <code>dtype</code> is the second parameter in the list. That's why we don't have to provide <code>fname=</code> for the filename, but <em>do</em> have to provide <code>delimiter=</code> for the second parameter.</p>
-<div id="fixme" class="challenge">
-<h2>FIXME</h2>
+<div id="combining-strings" class="challenge">
+<h2>Combining strings</h2>
 <p>&quot;Adding&quot; two strings produces their concatention: <code>'a' + 'b'</code> is <code>'ab'</code>. Write a function called <code>fence</code> that takes two parameters called <code>original</code> and <code>wrapper</code> and returns a new string that has the wrapper character at the beginning and end of the original:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> fence(<span class="st">&#39;name&#39;</span>, <span class="st">&#39;*&#39;</span>)
 *name*</code></pre>
 </div>
-<div id="fixme-1" class="challenge">
-<h2>FIXME</h2>
+<div id="selecting-characters-from-strings" class="challenge">
+<h2>Selecting characters from strings</h2>
 <p>If the variable <code>s</code> refers to a string, then <code>s[0]</code> is the string's first character and <code>s[-1]</code> is its last. Write a function called <code>outer</code> that returns a string made up of just the first and last characters of its input:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> outer(<span class="st">&#39;helium&#39;</span>)
 hm</code></pre>
 </div>
-<div id="fixme-2" class="challenge">
-<h2>FIXME</h2>
-<p>We previously wrote functions called <code>fence</code> and <code>outer</code>. Draw a diagram showing how the call stack changes when we run the following:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> outer(fence(<span class="st">&#39;carbon&#39;</span>, <span class="st">&#39;+&#39;</span>))</code></pre>
-</div>
-<div id="fixme-3" class="challenge">
-<h2>FIXME</h2>
+<div id="rescaling-with-parameters" class="challenge">
+<h2>Rescaling, with parameters</h2>
 <p>Rewrite the <code>rescale</code> function so that it scales data to lie between 0.0 and 1.0 by default, but will allow the caller to specify lower and upper bounds if they want. Compare your implementation to your neighbor's: do the two functions always behave the same way?</p>
 </div>
-<div id="fixme-4" class="challenge">
-<h2>FIXME</h2>
+<div id="automatic-plots" class="challenge">
+<h2>Automatic plots</h2>
 <p>Write a function called <code>analyze</code> that takes a filename as a parameter and displays the three graphs produced in the <a href="01-numpy.ipynb">previous lesson</a>, i.e., <code>analyze('inflammation-01.csv')</code> should produce the graphs already shown, while <code>analyze('inflammation-02.csv')</code> should produce corresponding graphs for the second data set. Be sure to give your function a docstring.</p>
 </div>
-<div id="fixme-5" class="challenge">
-<h2>FIXME</h2>
+<div id="rescaling-an-array" class="challenge">
+<h2>Rescaling an array</h2>
 <p>Write a function <code>rescale</code> that takes an array as input and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0. (If <span class="math"><em>L</em></span> and <span class="math"><em>H</em></span> are the lowest and highest values in the original array, then the replacement for a value <span class="math"><em>v</em></span> should be <span class="math">(<em>v</em> − <em>L</em>)/(<em>H</em> − <em>L</em>)</span>.) Be sure to give the function a docstring.</p>
 </div>
-<div id="fixme-6" class="challenge">
-<h2>FIXME</h2>
+<div id="testing-your-function" class="challenge">
+<h2>Testing your function</h2>
 <p>Run the commands <code>help(numpy.arange)</code> and <code>help(numpy.linspace)</code> to see how to use these functions to generate regularly-spaced values, then use those values to test your <code>rescale</code> function.</p>
+</div>
+<div id="variables-inside-and-outside-functions" class="challenge">
+<h2>Variables inside and outside functions</h2>
+<p>What does the following piece of code display when run - and why?</p>
+<pre class="sourceCode python"><code class="sourceCode python">f = <span class="dv">0</span>
+k = <span class="dv">0</span>
+
+<span class="kw">def</span> f2k(f):
+  k = ((f<span class="dv">-32</span>)*(<span class="fl">5.0</span>/<span class="fl">9.0</span>)) + <span class="fl">273.15</span>
+  <span class="kw">return</span> k
+
+f2k(<span class="dv">8</span>)
+f2k(<span class="dv">41</span>)
+f2k(<span class="dv">32</span>)
+
+<span class="dt">print</span> k</code></pre>
 </div>
         </div>
       </div>

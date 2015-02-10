@@ -61,11 +61,11 @@
 <span class="dt">print</span> <span class="st">&#39;version is&#39;</span>, sys.version</code></pre>
 <p>The first line imports a library called <code>sys</code>, which is short for &quot;system&quot;. It defines values such as <code>sys.version</code>, which describes which version of Python we are running. We can run this script from within the IPython Notebook like this:</p>
 <pre class="in"><code>%run sys-version.py</code></pre>
-<pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20) 
+<pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
 [GCC 4.0.1 (Apple Inc. build 5493)]</code></pre>
 <p>or like this:</p>
 <pre class="in"><code>!ipython sys-version.py</code></pre>
-<pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20) 
+<pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
 [GCC 4.0.1 (Apple Inc. build 5493)]</code></pre>
 <p>The first method, <code>%run</code>, uses a special command in the IPython Notebook to run a program in a <code>.py</code> file. The second method is more general: the exclamation mark <code>!</code> tells the Notebook to run a shell command, and it just so happens that the command we run is <code>ipython</code> with the name of the script.</p>
 <p>Here's another script called <code>argv-list.py</code> that does something more interesting:</p>
@@ -297,40 +297,41 @@ count = <span class="dv">0</span>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="fl">0.333333333333</span>
 <span class="fl">1.0</span></code></pre>
 <p>That's better. In fact, that's done: the program now does everything we set out to do.</p>
-<div id="fixme" class="challenge">
-<h2>FIXME</h2>
+<div id="arithmetic-on-the-command-line" class="challenge">
+<h2>Arithmetic on the command line</h2>
 <p>Write a command-line program that does addition and subtraction:</p>
 <pre class="sourceCode python"><code class="sourceCode python">$ python arith.py <span class="dv">1</span> + <span class="dv">2</span></code></pre>
 <pre class="output"><code>3</code></pre>
-<p>$ python arith.py 3 - 4 <sub><sub><sub> </sub></sub></sub> {.output} -1 <sub>~</sub></p>
+<pre class="sourceCode python"><code class="sourceCode python">$ python arith.py <span class="dv">3</span> - <span class="dv">4</span></code></pre>
+<pre class="output"><code>-1</code></pre>
 <p>What goes wrong if you try to add multiplication using '*' to the program?</p>
 </div>
-<div id="fixme-1" class="challenge">
-<h2>FIXME</h2>
+<div id="finding-particular-files" class="challenge">
+<h2>Finding particular files</h2>
 <p>Using the <code>glob</code> module introduced <a href="earlier">03-loop.ipynb</a>, write a simple version of <code>ls</code> that shows files in the current directory with a particular suffix:</p>
 <pre class="sourceCode python"><code class="sourceCode python">$ python my_ls.py py</code></pre>
 <pre class="output"><code>left.py
 right.py
 zero.py</code></pre>
 </div>
-<div id="fixme-2" class="challenge">
-<h2>FIXME</h2>
-<p>Rewrite this program so that it uses <code>-n</code>, <code>-m</code>, and <code>-x</code> instead of <code>--min</code>, <code>--mean</code>, and <code>--max</code> respectively. Is the code easier to read? Is the program easier to understand?</p>
+<div id="changing-flags" class="challenge">
+<h2>Changing flags</h2>
+<p>Rewrite <code>count-stdin.py</code> so that it uses <code>-n</code>, <code>-m</code>, and <code>-x</code> instead of <code>--min</code>, <code>--mean</code>, and <code>--max</code> respectively. Is the code easier to read? Is the program easier to understand?</p>
 </div>
-<div id="fixme-3" class="challenge">
-<h2>FIXME</h2>
+<div id="adding-a-help-message" class="challenge">
+<h2>Adding a help message</h2>
 <p>Separately, modify the program so that if no parameters are given (i.e., no action is specified and no filenames are given), it prints a message explaining how it should be used.</p>
 </div>
-<div id="fixme-4" class="challenge">
-<h2>FIXME</h2>
+<div id="adding-a-default-action" class="challenge">
+<h2>Adding a default action</h2>
 <p>Separately, modify the program so that if no action is given it displays the means of the data.</p>
 </div>
-<div id="fixme-5" class="challenge">
-<h2>FIXME</h2>
+<div id="a-file-checker" class="challenge">
+<h2>A file-checker</h2>
 <p>Write a program called <code>check.py</code> that takes the names of one or more inflammation data files as arguments and checks that all the files have the same number of rows and columns. What is the best way to test your program?</p>
 </div>
-<div id="fixme-6" class="challenge">
-<h2>FIXME</h2>
+<div id="counting-lines" class="challenge">
+<h2>Counting lines</h2>
 <p>Write a program called <code>line-count.py</code> that works like the Unix <code>wc</code> command:</p>
 <ul>
 <li>If no filenames are given, it reports the number of lines in standard input.</li>
