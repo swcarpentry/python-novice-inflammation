@@ -496,8 +496,8 @@ and use two of its functions to create and display a heat map of our data:
 
 ~~~ {.python}
 from matplotlib import pyplot
-pyplot.imshow(data)
-pyplot.show()
+image  = pyplot.imshow(data)
+pyplot.show(image)
 ~~~
 
 ![Heatmap of the Data](fig/01-numpy_71_0.png)\
@@ -509,8 +509,8 @@ Let's take a look at the average inflammation over time:
 
 ~~~ {.python}
 ave_inflammation = data.mean(axis=0)
-pyplot.plot(ave_inflammation)
-pyplot.show()
+ave_plot = pyplot.plot(ave_inflammation)
+pyplot.show(ave_plot)
 ~~~
 
 ![Average Inflammation Over Time](fig/01-numpy_73_0.png)\
@@ -525,15 +525,15 @@ we expect a sharper rise and slower fall.
 Let's have a look at two other statistics:
 
 ~~~ {.python}
-pyplot.plot(data.max(axis=0))
-pyplot.show()
+max_plot = pyplot.plot(data.max(axis=0))
+pyplot.show(max_plot)
 ~~~
 
 ![Maximum Value Along The First Axis](fig/01-numpy_75_1.png)\
 
 ~~~ {.python}
-pyplot.plot(data.min(axis=0))
-pyplot.show()
+min_plot = pyplot.plot(data.min(axis=0))
+pyplot.show(min_plot)
 ~~~
 
 ![Minimum Value Along The First Axis](fig/01-numpy_75_3.png)\
