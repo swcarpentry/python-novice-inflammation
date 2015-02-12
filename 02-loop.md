@@ -386,3 +386,13 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > Write a loop that calculates the sum of the values in a list.
 > (Python has a built-in function called `sum` that does this for you.
 > Please don't use it for this exercise.)
+
+> ## What does it do? {.challenge}
+>
+> What will the following code print to screen?
+>
+> ~~~ {.python}
+> names = ["Harriet", "Ted", "Allan", "Sally", "Johno"]
+> for index in range(5):
+>    print names[index][index],
+> ~~~
