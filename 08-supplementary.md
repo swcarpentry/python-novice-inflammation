@@ -300,6 +300,8 @@ c.show()
 
 ![](img/grid-03.png)
 
+RGB codes for a wide variety colours can be easily found by surfing the web (e.g. here http://xkcd.com/color/rgb/). If a very specific one is required, there are graphical applications that are able to extract the RGB code of a colour in a given image.
+
 > ## Making a colorbar {.challenge}
 >
 > Fill in the `____` in the code below to create a bar that changes color from dark blue to black.
