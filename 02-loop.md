@@ -111,7 +111,8 @@ for variable in collection:
 
 We can call the **loop variable** anything we like,
 but there must be a colon at the end of the line starting the loop,
-and we must indent the body of the loop.
+and we must indent the body of the loop. Unlike many other codes, there is no
+command to end a loop (e.g. end for); what is indented after the for line belongs to the loop.
 
 Here's another loop that repeatedly updates a variable:
 
