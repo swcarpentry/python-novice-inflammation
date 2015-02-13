@@ -720,7 +720,6 @@ but *do* have to provide `delimiter=` for the second parameter.
 > Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
 > to see how to use these functions to generate regularly-spaced values,
 > then use those values to test your `rescale` function.
-
 > ## Variables inside and outside functions {.challenge}
 >
 > What does the following piece of code display when run - and why?
@@ -739,3 +738,30 @@ but *do* have to provide `delimiter=` for the second parameter.
 >
 > print k
 > ~~~
+
+> ## Combining functions to use both loops, conditionals {.challenge}
+>
+> Motivation:
+> Imagine you have just returned from a week long holiday where you also totally blew your petrol budget. You realise it would be useful to know the
+> number of days where you went over your daily petrol usage allowance of $100. However, as you only recorded the miles travelled per day, and you know the
+> efficiency of your vehicle in litres/km, a few calculations are going to be needed. These new fangled python skills are going to come in handy.   
+>
+> Overall Goal:
+> Given a Python list of miles travelled per day, a measurement of litres per kilometre, and the price of fuel, calculate the number of days where you exceeded $100
+> 
+> ~~~ {.python}
+> trips = [80,50,170,180,80,50,200]
+> ~~~
+> Tasks:
+> 
+> 1. Use the above list of miles travelled per day in iPython and create a function that converts miles
+> to kilometres. 
+>
+> kilometres = miles / 1.61
+>
+> 2. Use a loop to display the results of calling the miles to kilometres function on each item in the trips list.
+> 
+> 3. Create another function that converts kilometres to the cost of that trip, given that the fuel efficiency of the car is 0.5 litres per kliometres, and fuel
+>     costs $2 a litre.  
+>
+> 4. Using a loop, a conditional, and the two functions created above, calculate the total number of days in which your total petrol bill exceeded $100. 
