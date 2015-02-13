@@ -570,7 +570,8 @@ axes3.set_ylabel('min')
 axes3.plot(data.min(axis=0))
 
 fig.tight_layout()
-fig.show()
+
+plt.show(fig)
 ~~~
 
 ![The Previous Plots as Subplots](fig/01-numpy_80_0.png)\

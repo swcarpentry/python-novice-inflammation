@@ -322,7 +322,7 @@ for f in filenames:
     axes3.plot(data.min(axis=0))
 
     fig.tight_layout()
-    fig.show()
+    plt.show(fig)
 ~~~
 
 ~~~ {.output}
