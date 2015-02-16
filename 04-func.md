@@ -739,7 +739,7 @@ but *do* have to provide `delimiter=` for the second parameter.
 > print k
 > ~~~
 
-> ## Combining functions to use both loops and conditionals {.challenge}
+> ## Combining functions that use both loops and conditionals to create a workflow {.challenge}
 >
 > Overall Goal:
 > Given a list of miles travelled per day, a measurement of litres per kilometre, and the price of fuel, calculate the number of days where you exceeded your daily petrol budget of $100.
