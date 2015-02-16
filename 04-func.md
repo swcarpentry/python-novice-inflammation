@@ -38,7 +38,7 @@ def fahr_to_kelvin(temp):
 The definition opens with the word `def`,
 which is followed by the name of the function
 and a parenthesized list of parameter names.
-The **body** of the function --- the
+The [body](reference.html#function-body) of the function --- the
 statements that are executed when it runs --- is indented below the definition line,
 typically by four spaces.
 
@@ -46,7 +46,7 @@ When we call the function,
 the values we pass to it are assigned to those variables
 so that we can use them inside the function.
 Inside the function,
-we use a **return statement** to send a result back to whoever asked for it.
+we use a [return statement](reference.html#return-statement) to send a result back to whoever asked for it.
 
 Let's try running our function.
 Calling our own function is no different from calling any other function:
@@ -106,8 +106,8 @@ This is because `5/9` is actually 0.
 ~~~
 
 Computers store numbers in one of two ways:
-as **integers**
-or as **floating-point numbers** (or floats).
+as [integers](reference.html#integer)
+or as [floating-point numbers](reference.html#floating-point-number) (or floats).
 The first are the numbers we usually count with;
 the second have fractional parts.
 Addition, subtraction and multiplication work on both as we'd expect,
@@ -146,7 +146,7 @@ we have to write it as `5.0/9`, `5/9.0`, or some other variation.
 
 Another way to create a floating-point answer
 is to explicitly tell the computer that you desire one.
-This is achieved by **casting** one of the numbers:
+This is achieved by [casting](reference.html#typecast) one of the numbers:
 
 ~~~ {.python}
 print 'float(10)/3 is:', float(10)/3
@@ -202,7 +202,7 @@ What about converting Fahrenheit to Celsius?
 We could write out the formula,
 but we don't need to.
 Instead,
-we can **compose** the two functions we have already created:
+we can [compose](reference.html#function-composition) the two functions we have already created:
 
 ~~~ {.python}
 def fahr_to_celsius(temp):
@@ -373,10 +373,10 @@ the difference is very small.
 It's still possible that our function is wrong,
 but it seems unlikely enough that we should probably get back to doing our analysis.
 We have one more task first, though:
-we should write some **documentation** for our function
+we should write some [documentation](reference.html#documentation) for our function
 to remind ourselves later what it's for and how to use it.
 
-The usual way to put documentation in software is to add **comments** like this:
+The usual way to put documentation in software is to add [comments](reference.html#comments) like this:
 
 ~~~ {.python}
 # center(data, desired): return a new array containing the original data centered around the desired value.
@@ -407,7 +407,7 @@ center(data, desired)
 
 ~~~
 
-A string like this is called a **docstring**.
+A string like this is called a [docstring](reference.html#docstring).
 We don't need to use triple quotes when we write one,
 but if we do,
 we can break the string across multiple lines:
@@ -495,7 +495,7 @@ print center(test_data, 3)
 ~~~
 
 But we can also now call it with just one parameter,
-in which case `desired` is automatically assigned the **default value** of 0.0:
+in which case `desired` is automatically assigned the [default value](reference.html#default-value) of 0.0:
 
 ~~~ {.python}
 more_data = 5 + numpy.zeros((2, 2))
