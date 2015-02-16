@@ -739,15 +739,10 @@ but *do* have to provide `delimiter=` for the second parameter.
 > print k
 > ~~~
 
-> ## Combining functions to use both loops, conditionals {.challenge}
->
-> Motivation:
-> Imagine you have just returned from a week long holiday where you also totally blew your petrol budget. You realise it would be useful to know the
-> number of days where you went over your daily petrol usage allowance of $100. However, as you only recorded the miles travelled per day, and you know the
-> efficiency of your vehicle in litres/km, a few calculations are going to be needed. These new fangled python skills are going to come in handy.   
+> ## Combining functions to use both loops and conditionals {.challenge}
 >
 > Overall Goal:
-> Given a list of miles travelled per day, a measurement of litres per kilometre, and the price of fuel, calculate the number of days where you exceeded $100
+> Given a list of miles travelled per day, a measurement of litres per kilometre, and the price of fuel, calculate the number of days where you exceeded your daily petrol budget of $100.
 > 
 > ~~~ {.python}
 > trips = [80,50,170,180,80,50,200]
@@ -762,7 +757,8 @@ but *do* have to provide `delimiter=` for the second parameter.
 >
 > 2. Create another function that calculates the cost of the trip for each day. 
 > This function will recieve the following as arguments: the list of kilometres traveled per day, 
-> the fuel effieciency of the car in litres per kilometer, and the fuel cost per litre.
+> the fuel effieciency of the car in litres per kilometer, and the fuel cost per litre. The function should return a list that contains values
+> which represent the cost of the trip per day.
 >
 > Test you function using a fuel efficiency value of 0.5, and $2 for the cost of a litre of fuel.
 >
