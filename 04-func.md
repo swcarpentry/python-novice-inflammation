@@ -747,21 +747,29 @@ but *do* have to provide `delimiter=` for the second parameter.
 > efficiency of your vehicle in litres/km, a few calculations are going to be needed. These new fangled python skills are going to come in handy.   
 >
 > Overall Goal:
-> Given a Python list of miles travelled per day, a measurement of litres per kilometre, and the price of fuel, calculate the number of days where you exceeded $100
+> Given a list of miles travelled per day, a measurement of litres per kilometre, and the price of fuel, calculate the number of days where you exceeded $100
 > 
 > ~~~ {.python}
 > trips = [80,50,170,180,80,50,200]
 > ~~~
 > Tasks:
 > 
-> 1. Use the above list of miles travelled per day in iPython and create a function that converts miles
-> to kilometres. 
+> 1. Create a function that recieves one argument, the above list
+>    of miles, and returns a new list with the values
+>    converted to kilometers. 
 >
-> kilometres = miles / 1.61
+>    Tip: kilometres = miles / 1.61.
 >
-> 2. Use a loop to display the results of calling the miles to kilometres function on each item in the trips list.
-> 
-> 3. Create another function that converts kilometres to the cost of that trip, given that the fuel efficiency of the car is 0.5 litres per kliometres, and fuel
->     costs $2 a litre.  
+> 2. Create another function that calculates the cost of the trip for each day. 
+> This function will recieve the following as arguments: the list of kilometres traveled per day, 
+> the fuel effieciency of the car in litres per kilometer, and the fuel cost per litre.
 >
-> 4. Using a loop, a conditional, and the two functions created above, calculate the total number of days in which your total petrol bill exceeded $100. 
+> Test you function using a fuel efficiency value of 0.5, and $2 for the cost of a litre of fuel.
+>
+> 3. Create another function that returns the total number of days in which 
+>    your petrol bill exceeded your daily budget. The function will recieve
+>    as arguments, a list with values representing the cost of your trip per day.
+> , and your budget.
+>
+> Test your function using $100 as your budget.
+
