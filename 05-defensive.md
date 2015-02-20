@@ -418,6 +418,167 @@ This violates another important rule of programming:
 "[always initialize from data](../../rules.html#always-initialize-from-data)".
 We'll leave it as an exercise to fix `range_overlap`.
 
+### Using a testing framework
+
+#### nose
+
+In the previous section we had a single test function that does different
+assertions on input data. This makes it easier to run many tests but there are
+better ways, and Python provides them for free. The recommended practise for
+test functions is to test one and one thing only. Let us split up the function
+and give each function a descriptive name. Good function names give a better
+overview of what is being tested, and it is easier to spot the corner cases we may
+have forgot about,  that should have been tested.
+
+~~~{.python}
+def test_nonoverlapping_returns_None():
+    assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
+
+def test_adjacent_intervals_returns_None():
+    assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
+
+def test_single_interval_returns_self():
+    assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
+
+def test_two_partially_overlapping_returns_intersection():
+    assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
+
+def test_three_partially_overlapping_returns_intersection():
+    assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
+~~~
+
+The third-party testing package nose (to be installed separately) detects modules and functions beginning with ``test``. If the function and tests are collected in a single file we execute the program ``nosetests`` from the shell
+
+~~~{.bash}
+$ nosetests
+~~~
+~~~{.error}
+FF.F.
+======================================================================
+FAIL: test_range_overlap.test_nonoverlapping_returns_None
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/nose/case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "/home/olav/courses/python-novice-inflammation/test_range_overlap.py", line 11, in test_nonoverlapping_returns_None
+    assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
+AssertionError
+
+======================================================================
+FAIL: test_range_overlap.test_adjacent_intervals_returns_None
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/nose/case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "/home/olav/courses/python-novice-inflammation/test_range_overlap.py", line 13, in test_adjacent_intervals_returns_None
+    assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
+AssertionError
+
+======================================================================
+FAIL: test_range_overlap.test_two_partially_overlapping_returns_intersection
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/nose/case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "/home/olav/courses/python-novice-inflammation/test_range_overlap.py", line 17, in test_two_partially_overlapping_returns_intersection
+    assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
+AssertionError
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+FAILED (failures=3)
+~~~
+
+Now all tests are run even if one fails, and we get a better picture of what
+is working and what is not. The first line of output contains a character for
+each test, a dot for pass and an ``R`` for fail. For the tests that fail further output is given. The goal is to have an output with a single line of dots!
+
+
+#### The unittest module
+
+Another option to testing is the ``unittest`` library. This leads to slightly
+more complex test code but it is part of the standard library and is available
+wherever Python is installed - there is not need to install additional
+programs.  To use the unittest module  requires a little familiarity with
+Python classes. There are special methods associated with different
+types of tests. A file based on the unittest module for the test examples above
+can look like this:
+
+~~~{.python}
+import unittest
+
+class TestRangeOverlap(unittest.TestCase):
+
+    def test_nonoverlapping_returns_None(self):
+        self.assertIsNone(range_overlap([ (0.0, 1.0), (5.0, 6.0) ]))
+
+    def test_adjacent_intervals_returns_None(self):
+        self.assertIsNone(range_overlap([ (0.0, 1.0), (1.0, 2.0) ]))
+
+    def test_single_interval_returns_self(self):
+        self.assertTupleEqual(range_overlap([ (0.0, 1.0) ]), (0.0, 1.0))
+
+    def test_two_partially_overlapping_returns_intersection(self):
+        self.assertTupleEqual(range_overlap([ (2.0, 3.0), (2.0, 4.0) ]),  (2.0, 3.0))
+
+    def test_three_partially_overlapping_returns_intersection(self):
+        self.assertTupleEqual(range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]),  (0.0, 1.0))
+
+if __name__ == "__main__":
+    unittest.main()
+~~~
+
+This file can now be executed like any Python program
+
+~~~{.bash}
+$ python unittest_range_overlap.py
+~~~
+~~~{.error}
+FF..F
+======================================================================
+FAIL: test_adjacent_intervals_returns_None (__main__.TestRangeOverlap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "unittest_range_overlap.py", line 19, in test_adjacent_intervals_returns_None
+    self.assertIsNone(range_overlap([ (0.0, 1.0), (1.0, 2.0) ]))
+AssertionError: (1.0, 1.0) is not None
+
+======================================================================
+FAIL: test_nonoverlapping_returns_None (__main__.TestRangeOverlap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "unittest_range_overlap.py", line 16, in test_nonoverlapping_returns_None
+    self.assertIsNone(range_overlap([ (0.0, 1.0), (5.0, 6.0) ]))
+AssertionError: (5.0, 1.0) is not None
+
+======================================================================
+FAIL: test_two_partially_overlapping_returns_intersection (__main__.TestRangeOverlap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "unittest_range_overlap.py", line 25, in test_two_partially_overlapping_returns_intersection
+    self.assertTupleEqual(range_overlap([ (2.0, 3.0), (2.0, 4.0) ]),  (2.0, 3.0))
+AssertionError: Tuples differ: (2.0, 1.0) != (2.0, 3.0)
+
+First differing element 1:
+1.0
+3.0
+
+- (2.0, 1.0)
+?       ^
+
++ (2.0, 3.0)
+?       ^
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=3)
+~~~
+
+We get similar information here, the special test functions give you additional information on what went wrong.
+
 ## Debugging
 
 Once testing has uncovered problems,
