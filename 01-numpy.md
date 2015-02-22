@@ -593,10 +593,11 @@ the graphs will actually be squeezed together more closely.)
 > Draw diagrams showing what variables refer to what values after each statement in the following program:
 >
 > ~~~ {.python}
-> mass = 47.5
-> age = 122
-> mass = mass * 2.0
-> age = age - 20
+> weight = 70.5
+> age = 35
+> # Take a trip to the planet Neptune
+> weight = weight * 1.14
+> age = age + 20
 > ~~~
 
 > ## Sorting out references {.challenge}
