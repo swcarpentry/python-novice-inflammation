@@ -7,7 +7,7 @@ minutes: 30
 > ## Learning Objectives {.objectives}
 >
 > *   Explain what an assertion is.
-> *   Add assertions to programs that correctly check the program's state.
+> *   Add assertions that check the program's state is correct.
 > *   Correctly add precondition and postcondition assertions to functions.
 > *   Explain what test-driven development is, and use it when creating new functions.
 > *   Explain why variables should be initialized using actual data values rather than arbitrary constants.
