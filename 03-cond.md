@@ -149,6 +149,24 @@ so that messages are only printed when something is wrong,
 freeing us from having to manually examine every plot for features we've seen before,
 or doing all manner of other things to respond to changing conditions in our data.
 
+> ## How many paths? {.challenge}
+> 
+> Which of the following would be printed if you were to run this code? Why did you pick this answer?
+>
+> A
+> B
+> C
+> B and C
+> 
+> ~~~ {.python}
+> if 4 > 5:
+>     print 'A'
+> elif 4 =< 5:
+>     print 'B'
+> elif 4 < 5:
+>     print 'C'
+> ~~~
+
 > ## What is truth? {.challenge}
 >
 > `True` and `False` aren't the only values in Python that are true and false.

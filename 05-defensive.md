@@ -7,7 +7,7 @@ minutes: 30
 > ## Learning Objectives {.objectives}
 >
 > *   Explain what an assertion is.
-> *   Add assertions to programs that correctly check the program's state.
+> *   Add assertions that check the program's state is correct.
 > *   Correctly add precondition and postcondition assertions to functions.
 > *   Explain what test-driven development is, and use it when creating new functions.
 > *   Explain why variables should be initialized using actual data values rather than arbitrary constants.
@@ -61,7 +61,7 @@ this piece of code halts as soon as the loop encounters a value that isn't posit
 numbers = [1.5, 2.3, 0.7, -0.001, 4.4]
 total = 0.0
 for n in numbers:
-    assert n >= 0.0, 'Data should only contain positive values'
+    assert n > 0.0, 'Data should only contain positive values'
     total += n
 print 'total is:', total
 ~~~
@@ -71,7 +71,7 @@ AssertionError                            Traceback (most recent call last)
 <ipython-input-19-33d87ea29ae4> in <module>()
       2 total = 0.0
       3 for n in numbers:
-----> 4     assert n >= 0.0, 'Data should only contain positive values'
+----> 4     assert n > 0.0, 'Data should only contain positive values'
       5     total += n
       6 print 'total is:', total
 

@@ -5,10 +5,12 @@
     <meta name="generator" content="pandoc">
     <title>Software Carpentry: Programming with Python</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
+    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -16,8 +18,8 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class="container">
+  <body class="lesson">
+    <div class="container container-full-width card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
@@ -31,7 +33,7 @@
 <h2>Learning Objectives</h2>
 <ul>
 <li>Explain what an assertion is.</li>
-<li>Add assertions to programs that correctly check the program's state.</li>
+<li>Add assertions that check the program's state is correct.</li>
 <li>Correctly add precondition and postcondition assertions to functions.</li>
 <li>Explain what test-driven development is, and use it when creating new functions.</li>
 <li>Explain why variables should be initialized using actual data values rather than arbitrary constants.</li>
@@ -47,11 +49,11 @@
 </ul>
 <p>The good news is, doing these things will speed up our programming, not slow it down. As in real carpentry --- the kind done with lumber --- the time saved by measuring carefully before cutting a piece of wood is much greater than the time that measuring takes.</p>
 <h3 id="assertions">Assertions</h3>
-<p>The first step toward getting the right answers from our programs is to assume that mistakes <em>will</em> happen and to guard against them. This is called <strong>defensive programming</strong>, and the most common way to do it is to add <strong>assertions</strong> to our code so that it checks itself as it runs. An assertion is simply a statement that something must be true at a certain point in a program. When Python sees one, it checks that the assertion's condition. If it's true, Python does nothing, but if it's false, Python halts the program immediately and prints the error message provided. For example, this piece of code halts as soon as the loop encounters a value that isn't positive:</p>
+<p>The first step toward getting the right answers from our programs is to assume that mistakes <em>will</em> happen and to guard against them. This is called <a href="reference.html#defensive-programming">defensive programming</a>, and the most common way to do it is to add <a href="reference.html#assertion">assertions</a> to our code so that it checks itself as it runs. An assertion is simply a statement that something must be true at a certain point in a program. When Python sees one, it checks that the assertion's condition. If it's true, Python does nothing, but if it's false, Python halts the program immediately and prints the error message provided. For example, this piece of code halts as soon as the loop encounters a value that isn't positive:</p>
 <pre class="sourceCode python"><code class="sourceCode python">numbers = [<span class="fl">1.5</span>, <span class="fl">2.3</span>, <span class="fl">0.7</span>, -<span class="fl">0.001</span>, <span class="fl">4.4</span>]
 total = <span class="fl">0.0</span>
 <span class="kw">for</span> n in numbers:
-    <span class="kw">assert</span> n &gt;= <span class="fl">0.0</span>, <span class="st">&#39;Data should only contain positive values&#39;</span>
+    <span class="kw">assert</span> n &gt; <span class="fl">0.0</span>, <span class="st">&#39;Data should only contain positive values&#39;</span>
     total += n
 <span class="dt">print</span> <span class="st">&#39;total is:&#39;</span>, total</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
@@ -59,16 +61,16 @@ AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-19-33d87ea29ae4&gt; in &lt;module&gt;()
       2 total = 0.0
       3 for n in numbers:
-----&gt; 4     assert n &gt;= 0.0, &#39;Data should only contain positive values&#39;
+----&gt; 4     assert n &gt; 0.0, &#39;Data should only contain positive values&#39;
       5     total += n
       6 print &#39;total is:&#39;, total
 
 AssertionError: Data should only contain positive values</code></pre>
 <p>Programs like the Firefox browser are full of assertions: 10-20% of the code they contain are there to check that the other 80-90% are working correctly. Broadly speaking, assertions fall into three categories:</p>
 <ul>
-<li><p>A <strong>precondition</strong> is something that must be true at the start of a function in order for it to work correctly.</p></li>
-<li><p>A <strong>postcondition</strong> is something that the function guarantees is true when it finishes.</p></li>
-<li><p>An <strong>invariant</strong> is something that is always true at a particular point inside a piece of code.</p></li>
+<li><p>A <a href="reference.html#precondition">precondition</a> is something that must be true at the start of a function in order for it to work correctly.</p></li>
+<li><p>A <a href="reference.html#postcondition">postcondition</a> is something that the function guarantees is true when it finishes.</p></li>
+<li><p>An <a href="reference.html#invariant">invariant</a> is something that is always true at a particular point inside a piece of code.</p></li>
 </ul>
 <p>For example, suppose we are representing rectangles using a tuple of four coordinates <code>(x0, y0, x1, y1)</code>. In order to do some calculations, we need to normalize the rectangle so that it is at the origin and 1.0 units long on its longest axis. This function does that, but checks that its input is correctly formatted and that its result makes sense:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> normalize_rectangle(rect):
@@ -141,7 +143,7 @@ AssertionError: Calculated upper Y coordinate invalid</code></pre>
 <p>Re-reading our function, we realize that line 10 should divide <code>dy</code> by <code>dx</code> rather than <code>dx</code> by <code>dy</code>. (You can display line numbers by typing Ctrl-M, then L.) If we had left out the assertion at the end of the function, we would have created and returned something that had the right shape as a valid answer, but wasn't. Detecting and debugging that would almost certainly have taken more time in the long run than writing the assertion.</p>
 <p>But assertions aren't just about catching errors: they also help people understand programs. Each assertion gives the person reading the program a chance to check (consciously or otherwise) that their understanding matches what the code is doing.</p>
 <p>Most good programmers follow two rules when adding assertions to their code. The first is, &quot;<a href="../../rules.html#fail-early-fail-often">fail early, fail often</a>&quot;. The greater the distance between when and where an error occurs and when it's noticed, the harder the error will be to debug, so good code catches mistakes as early as possible.</p>
-<p>The second rule is, &quot;<a href="../../rules.html#turn-bugs-into-assertions-or-tests">turn bugs into assertions or tests</a>&quot;. If you made a mistake in a piece of code, the odds are good that you have made other mistakes nearby, or will make the same mistake (or a related one) the next time you change it. Writing assertions to check that you haven't <strong>regressed</strong> (i.e., haven't re-introduced an old problem) can save a lot of time in the long run, and helps to warn people who are reading the code (including your future self) that this bit is tricky.</p>
+<p>The second rule is, &quot;<a href="../../rules.html#turn-bugs-into-assertions-or-tests">turn bugs into assertions or tests</a>&quot;. If you made a mistake in a piece of code, the odds are good that you have made other mistakes nearby, or will make the same mistake (or a related one) the next time you change it. Writing assertions to check that you haven't <a href="reference.html#regression">regressed</a> (i.e., haven't re-introduced an old problem) can save a lot of time in the long run, and helps to warn people who are reading the code (including your future self) that this bit is tricky.</p>
 <h2 id="test-driven-development">Test-Driven Development</h2>
 <p>An assertion checks that something is true at a particular point in the program. The next step is to check the overall behavior of a piece of code, i.e., to make sure that it produces the right output when it's given a particular input. For example, suppose we need to find where two or more time series overlap. The range of each time series is represented as a pair of numbers, which are the time the interval started and ended. The output is the largest range that they all include:</p>
 <p><img src="fig/python-overlapping-ranges.svg" alt="Overlapping Ranges" /> </p>
@@ -157,7 +159,7 @@ AssertionError: Calculated upper Y coordinate invalid</code></pre>
 <li>Write a <code>range_overlap</code> function that should pass those tests.</li>
 <li>If <code>range_overlap</code> produces any wrong answers, fix it and re-run the test functions.</li>
 </ol>
-<p>Writing the tests <em>before</em> writing the function they exercise is called <strong>test-driven development</strong> (TDD). Its advocates believe it produces better code faster because:</p>
+<p>Writing the tests <em>before</em> writing the function they exercise is called <a href="reference.html#test-driven-development">test-driven development</a> (TDD). Its advocates believe it produces better code faster because:</p>
 <ol style="list-style-type: decimal">
 <li>If people write tests after writing the thing to be tested, they are subject to confirmation bias, i.e., they subconsciously write tests to show that their code is correct, rather than to find errors.</li>
 <li>Writing tests helps programmers figure out what the function is actually supposed to do.</li>
@@ -237,7 +239,7 @@ AssertionError: </code></pre>
 <ol style="list-style-type: decimal">
 <li><p><em>Test with simplified data.</em> Before doing statistics on a real data set, we should try calculating statistics for a single record, for two identical records, for two records whose values are one step apart, or for some other case where we can calculate the right answer by hand.</p></li>
 <li><p><em>Test a simplified case.</em> If our program is supposed to simulate magnetic eddies in rapidly-rotating blobs of supercooled helium, our first test should be a blob of helium that isn't rotating, and isn't being subjected to any external electromagnetic fields. Similarly, if we're looking at the effects of climate change on speciation, our first test should hold temperature, precipitation, and other factors constant.</p></li>
-<li><p><em>Compare to an oracle.</em> A <strong>test oracle</strong> is something --- experimental data, an older program whose results are trusted, or even a human expert --- against which we can compare the results of our new program. If we have a test oracle, we should store its output for particular cases so that we can compare it with our new results as often as we like without re-running that program.</p></li>
+<li><p><em>Compare to an oracle.</em> A <a href="reference.html#test-oracle">test oracle</a> is something --- experimental data, an older program whose results are trusted, or even a human expert --- against which we can compare the results of our new program. If we have a test oracle, we should store its output for particular cases so that we can compare it with our new results as often as we like without re-running that program.</p></li>
 <li><p><em>Check conservation laws.</em> Mass, energy, and other quantitites are conserved in physical systems, so they should be in programs as well. Similarly, if we are analyzing patient data, the number of records should either stay the same or decrease as we move from one analysis to the next (since we might throw away outliers or records with missing values). If &quot;new&quot; patients start appearing out of nowhere as we move through our pipeline, it's probably a sign that something is wrong.</p></li>
 <li><p><em>Visualize.</em> Data analysts frequently use simple visualizations to check both the science they're doing and the correctness of their code (just as we did in the <a href="01-numpy.html">opening lesson</a> of this tutorial). This should only be used for debugging as a last resort, though, since it's very hard to compare two visualizations automatically.</p></li>
 </ol>

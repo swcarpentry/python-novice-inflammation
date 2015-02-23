@@ -5,10 +5,12 @@
     <meta name="generator" content="pandoc">
     <title>Software Carpentry: Programming with Python</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
+    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -16,8 +18,8 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class="container">
+  <body class="lesson">
+    <div class="container container-full-width card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
@@ -50,7 +52,7 @@
 <pre><code>$ python readings.py --max inflammation-*.csv</code></pre>
 <p>Our overall requirements are:</p>
 <ol style="list-style-type: decimal">
-<li>If no filename is given on the command line, read data from <strong>standard input</strong>.</li>
+<li>If no filename is given on the command line, read data from <a href="reference.html#standard-input">standard input</a>.</li>
 <li>If one or more filenames are given, read data from them and report statistics for each file separately.</li>
 <li>Use the <code>--min</code>, <code>--mean</code>, or <code>--max</code> flag to determine what statistic to print.</li>
 </ol>
@@ -75,7 +77,7 @@
 <pre class="in"><code>!ipython argv-list.py</code></pre>
 <pre class="output"><code>sys.argv is [&#39;/Users/gwilson/s/bc/python/novice/argv-list.py&#39;]</code></pre>
 <p>the only thing in the list is the full path to our script, which is always <code>sys.argv[0]</code>. If we run it with a few arguments, however:</p>
-<pre class="input"><code>$ argv-list.py first second third</code></pre>
+<pre class="input"><code>$ python argv-list.py first second third</code></pre>
 <pre class="output"><code>sys.argv is [&#39;/Users/gwilson/s/bc/python/novice/argv-list.py&#39;, &#39;first&#39;, &#39;second&#39;, &#39;third&#39;]</code></pre>
 <p>then Python adds each of those arguments to that magic list.</p>
 <p>With this in hand, let's build a version of <code>readings.py</code> that always prints the per-patient mean of a single data file. The first step is to write a function that outlines our implementation, and a placeholder for the function that does the actual work. By convention this function is usually called <code>main</code>, though we can call it whatever we want:</p>
@@ -235,7 +237,7 @@ main()</code></pre>
 <p>but there are several things wrong with it:</p>
 <ol style="list-style-type: decimal">
 <li><p><code>main</code> is too large to read comfortably.</p></li>
-<li><p>If <code>action</code> isn't one of the three recognized flags, the program loads each file but does nothing with it (because none of the branches in the conditional match). <strong>Silent failures</strong> like this are always hard to debug.</p></li>
+<li><p>If <code>action</code> isn't one of the three recognized flags, the program loads each file but does nothing with it (because none of the branches in the conditional match). <a href="reference.html#silence-failure">Silent failures</a> like this are always hard to debug.</p></li>
 </ol>
 <p>This version pulls the processing of each file out of the loop into a function of its own. It also checks that <code>action</code> is one of the allowed flags before doing any processing, so that the program fails fast:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys

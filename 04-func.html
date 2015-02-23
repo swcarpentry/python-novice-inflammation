@@ -5,10 +5,12 @@
     <meta name="generator" content="pandoc">
     <title>Software Carpentry: Programming with Python</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
+    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -16,8 +18,8 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class="container">
+  <body class="lesson">
+    <div class="container container-full-width card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
@@ -41,8 +43,8 @@
 <p>Let's start by defining a function <code>fahr_to_kelvin</code> that converts temperatures from Fahrenheit to Kelvin:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_kelvin(temp):
     <span class="kw">return</span> ((temp - <span class="dv">32</span>) * (<span class="dv">5</span>/<span class="dv">9</span>)) + <span class="fl">273.15</span></code></pre>
-<p>The definition opens with the word <code>def</code>, which is followed by the name of the function and a parenthesized list of parameter names. The <strong>body</strong> of the function --- the statements that are executed when it runs --- is indented below the definition line, typically by four spaces.</p>
-<p>When we call the function, the values we pass to it are assigned to those variables so that we can use them inside the function. Inside the function, we use a <strong>return statement</strong> to send a result back to whoever asked for it.</p>
+<p>The definition opens with the word <code>def</code>, which is followed by the name of the function and a parenthesized list of parameter names. The <a href="reference.html#function-body">body</a> of the function --- the statements that are executed when it runs --- is indented below the definition line, typically by four spaces.</p>
+<p>When we call the function, the values we pass to it are assigned to those variables so that we can use them inside the function. Inside the function, we use a <a href="reference.html#return-statement">return statement</a> to send a result back to whoever asked for it.</p>
 <p>Let's try running our function. Calling our own function is no different from calling any other function:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;freezing point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">32</span>)
 <span class="dt">print</span> <span class="st">&#39;boiling point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">212</span>)</code></pre>
@@ -60,14 +62,14 @@ boiling point of water: 273.15</code></pre>
 <p>Aha! The problem comes when we multiply by <code>5/9</code>. This is because <code>5/9</code> is actually 0.</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dv">5</span>/<span class="dv">9</span></code></pre>
 <pre class="output"><code>0</code></pre>
-<p>Computers store numbers in one of two ways: as <strong>integers</strong> or as <strong>floating-point numbers</strong> (or floats). The first are the numbers we usually count with; the second have fractional parts. Addition, subtraction and multiplication work on both as we'd expect, but division works differently. If we divide one integer by another, we get the quotient without the remainder:</p>
+<p>Computers store numbers in one of two ways: as <a href="reference.html#integer">integers</a> or as <a href="reference.html#floating-point-number">floating-point numbers</a> (or floats). The first are the numbers we usually count with; the second have fractional parts. Addition, subtraction and multiplication work on both as we'd expect, but division works differently. If we divide one integer by another, we get the quotient without the remainder:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;10/3 is:&#39;</span>, <span class="dv">10</span>/<span class="dv">3</span></code></pre>
 <pre class="output"><code>10/3 is: 3</code></pre>
 <p>If either part of the division is a float, on the other hand, the computer creates a floating-point answer:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;10.0/3 is:&#39;</span>, <span class="fl">10.0</span>/<span class="dv">3</span></code></pre>
 <pre class="output"><code>10.0/3 is: 3.33333333333</code></pre>
 <p>The computer does this for historical reasons: integer operations were much faster on early machines, and this behavior is actually useful in a lot of situations. It's still confusing, though, so Python 3 produces a floating-point answer when dividing integers if it needs to. We're still using Python 2.7 in this class, though, so if we want <code>5/9</code> to give us the right answer, we have to write it as <code>5.0/9</code>, <code>5/9.0</code>, or some other variation.</p>
-<p>Another way to create a floating-point answer is to explicitly tell the computer that you desire one. This is achieved by <strong>casting</strong> one of the numbers:</p>
+<p>Another way to create a floating-point answer is to explicitly tell the computer that you desire one. This is achieved by <a href="reference.html#typecast">casting</a> one of the numbers:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;float(10)/3 is:&#39;</span>, <span class="dt">float</span>(<span class="dv">10</span>)/<span class="dv">3</span></code></pre>
 <pre class="output"><code>float(10)/3 is: 3.33333333333</code></pre>
 <p>The advantage to this method is it can be used with existing variables. Let's take a look:</p>
@@ -92,7 +94,7 @@ boiling point of water: 373.15</code></pre>
 
 <span class="dt">print</span> <span class="st">&#39;absolute zero in Celsius:&#39;</span>, kelvin_to_celsius(<span class="fl">0.0</span>)</code></pre>
 <pre class="output"><code>absolute zero in Celsius: -273.15</code></pre>
-<p>What about converting Fahrenheit to Celsius? We could write out the formula, but we don't need to. Instead, we can <strong>compose</strong> the two functions we have already created:</p>
+<p>What about converting Fahrenheit to Celsius? We could write out the formula, but we don't need to. Instead, we can <a href="reference.html#function-composition">compose</a> the two functions we have already created:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_celsius(temp):
     temp_k = fahr_to_kelvin(temp)
     result = kelvin_to_celsius(temp_k)
@@ -171,8 +173,8 @@ min, mean, and and max of centered data are: -6.14875 -3.49054118942e-15 13.8512
 <p>Those values look the same, but we probably wouldn't notice if they were different in the sixth decimal place. Let's do this instead:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;difference in standard deviations before and after:&#39;</span>, data.std() - centered.std()</code></pre>
 <pre class="output"><code>difference in standard deviations before and after: -3.5527136788e-15</code></pre>
-<p>Again, the difference is very small. It's still possible that our function is wrong, but it seems unlikely enough that we should probably get back to doing our analysis. We have one more task first, though: we should write some <strong>documentation</strong> for our function to remind ourselves later what it's for and how to use it.</p>
-<p>The usual way to put documentation in software is to add <strong>comments</strong> like this:</p>
+<p>Again, the difference is very small. It's still possible that our function is wrong, but it seems unlikely enough that we should probably get back to doing our analysis. We have one more task first, though: we should write some <a href="reference.html#documentation">documentation</a> for our function to remind ourselves later what it's for and how to use it.</p>
+<p>The usual way to put documentation in software is to add <a href="reference.html#comments">comments</a> like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="co"># center(data, desired): return a new array containing the original data centered around the desired value.</span>
 <span class="kw">def</span> center(data, desired):
     <span class="kw">return</span> (data - data.mean()) + desired</code></pre>
@@ -187,7 +189,7 @@ min, mean, and and max of centered data are: -6.14875 -3.49054118942e-15 13.8512
 center(data, desired)
     Return a new array containing the original data centered around the desired value.
 </code></pre>
-<p>A string like this is called a <strong>docstring</strong>. We don't need to use triple quotes when we write one, but if we do, we can break the string across multiple lines:</p>
+<p>A string like this is called a <a href="reference.html#docstring">docstring</a>. We don't need to use triple quotes when we write one, but if we do, we can break the string across multiple lines:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
     <span class="co">&#39;&#39;&#39;Return a new array containing the original data centered around the desired value.</span>
 <span class="co">    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]&#39;&#39;&#39;</span>
@@ -229,7 +231,7 @@ TypeError: data type &quot;,&quot; not understood</code></pre>
 <span class="dt">print</span> center(test_data, <span class="dv">3</span>)</code></pre>
 <pre class="output"><code>[[ 3.  3.]
  [ 3.  3.]]</code></pre>
-<p>But we can also now call it with just one parameter, in which case <code>desired</code> is automatically assigned the <strong>default value</strong> of 0.0:</p>
+<p>But we can also now call it with just one parameter, in which case <code>desired</code> is automatically assigned the <a href="reference.html#default-value">default value</a> of 0.0:</p>
 <pre class="sourceCode python"><code class="sourceCode python">more_data = <span class="dv">5</span> + numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))
 <span class="dt">print</span> <span class="st">&#39;data before centering:&#39;</span>, more_data
 <span class="dt">print</span> <span class="st">&#39;centered data:&#39;</span>, center(more_data)</code></pre>

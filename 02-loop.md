@@ -111,7 +111,8 @@ for variable in collection:
 
 We can call the [loop variable](reference.html#loop-variable) anything we like,
 but there must be a colon at the end of the line starting the loop,
-and we must indent the body of the loop.
+and we must indent the body of the loop. Unlike many other languages, there is no
+command to end a loop (e.g. end for); what is indented after the for statement belongs to the loop.
 
 Here's another loop that repeatedly updates a variable:
 
@@ -386,3 +387,13 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > Write a loop that calculates the sum of the values in a list.
 > (Python has a built-in function called `sum` that does this for you.
 > Please don't use it for this exercise.)
+
+> ## What does it do? {.challenge}
+>
+> What will the following code print to screen?
+>
+> ~~~ {.python}
+> names = ["Harriet", "Ted", "Allan", "Sally", "Johno"]
+> for index in range(5):
+>    print names[index][index],
+> ~~~
