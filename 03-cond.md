@@ -194,7 +194,7 @@ or doing all manner of other things to respond to changing conditions in our dat
 
 > ## In-place operators {.challenge}
 >
-> Python (and most other languages in the C family) provides **in-place operators**
+> Python (and most other languages in the C family) provides [in-place operators](reference.html#in-place-operator)
 > that work like this:
 >
 > ~~~ {.python}
