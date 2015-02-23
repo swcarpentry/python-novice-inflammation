@@ -371,6 +371,8 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 >~~~ {.python}
 > print 5**3
 > 125
+> print 2**4
+> 16
 > ~~~
 >
 > It also has a function called `pow` that calculates the same value.
