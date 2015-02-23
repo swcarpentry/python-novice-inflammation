@@ -551,8 +551,8 @@ and use two of its functions to create and display a heat map of our data:
 
 ~~~ {.python}
 from matplotlib import pyplot
-pyplot.imshow(data)
-pyplot.show()
+image  = pyplot.imshow(data)
+pyplot.show(image)
 ~~~
 
 ![Heatmap of the Data](fig/01-numpy_71_0.png)
@@ -564,8 +564,8 @@ Let's take a look at the average inflammation over time:
 
 ~~~ {.python}
 ave_inflammation = data.mean(axis=0)
-pyplot.plot(ave_inflammation)
-pyplot.show()
+ave_plot = pyplot.plot(ave_inflammation)
+pyplot.show(ave_plot)
 ~~~
 
 ![Average Inflammation Over Time](fig/01-numpy_73_0.png)
@@ -580,15 +580,15 @@ we expect a sharper rise and slower fall.
 Let's have a look at two other statistics:
 
 ~~~ {.python}
-pyplot.plot(data.max(axis=0))
-pyplot.show()
+max_plot = pyplot.plot(data.max(axis=0))
+pyplot.show(max_plot)
 ~~~
 
 ![Maximum Value Along The First Axis](fig/01-numpy_75_1.png)
 
 ~~~ {.python}
-pyplot.plot(data.min(axis=0))
-pyplot.show()
+min_plot = pyplot.plot(data.min(axis=0))
+pyplot.show(min_plot)
 ~~~
 
 ![Minimum Value Along The First Axis](fig/01-numpy_75_3.png)
@@ -609,22 +609,24 @@ from matplotlib import pyplot as plt
 
 data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
-plt.figure(figsize=(10.0, 3.0))
+fig = plt.figure(figsize=(10.0, 3.0))
 
-plt.subplot(1, 3, 1)
-plt.ylabel('average')
-plt.plot(data.mean(axis=0))
+axes1 = fig.add_subplot(1, 3, 1)
+axes2 = fig.add_subplot(1, 3, 2)
+axes3 = fig.add_subplot(1, 3, 3)
 
-plt.subplot(1, 3, 2)
-plt.ylabel('max')
-plt.plot(data.max(axis=0))
+axes1.set_ylabel('average')
+axes1.plot(data.mean(axis=0))
 
-plt.subplot(1, 3, 3)
-plt.ylabel('min')
-plt.plot(data.min(axis=0))
+axes2.set_ylabel('max')
+axes2.plot(data.max(axis=0))
 
-plt.tight_layout()
-plt.show()
+axes3.set_ylabel('min')
+axes3.plot(data.min(axis=0))
+
+fig.tight_layout()
+
+plt.show(fig)
 ~~~
 
 ![The Previous Plots as Subplots](fig/01-numpy_80_0.png)
@@ -636,7 +638,7 @@ that we're creating three sub-plots,
 what to draw for each one,
 and that we want a tight layout.
 (Perversely,
-if we leave out that call to `plt.tight_layout()`,
+if we leave out that call to `fig.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
 
 > ## Check your understanding {.challenge}
