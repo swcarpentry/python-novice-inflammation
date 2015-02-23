@@ -5,10 +5,12 @@
     <meta name="generator" content="pandoc">
     <title>Software Carpentry: Programming with Python</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
+    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -16,8 +18,8 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class="container">
+  <body class="lesson">
+    <div class="container container-full-width card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
@@ -90,6 +92,17 @@ done
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">else</span>:
     <span class="dt">print</span> <span class="st">&#39;Seems OK!&#39;</span></code></pre>
 <p>In this way, we can ask Python to do something different depending on the condition of our data. Here we printed messages in all cases, but we could also imagine not using the <code>else</code> catch-all so that messages are only printed when something is wrong, freeing us from having to manually examine every plot for features we've seen before, or doing all manner of other things to respond to changing conditions in our data.</p>
+<div id="how-many-paths" class="challenge">
+<h2>How many paths?</h2>
+<p>Which of the following would be printed if you were to run this code? Why did you pick this answer?</p>
+<p>A B C B and C</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> <span class="dv">4</span> &gt; <span class="dv">5</span>:
+    <span class="dt">print</span> <span class="st">&#39;A&#39;</span>
+<span class="kw">elif</span> <span class="dv">4</span> =&lt; <span class="dv">5</span>:
+    <span class="dt">print</span> <span class="st">&#39;B&#39;</span>
+<span class="kw">elif</span> <span class="dv">4</span> &lt; <span class="dv">5</span>:
+    <span class="dt">print</span> <span class="st">&#39;C&#39;</span></code></pre>
+</div>
 <div id="what-is-truth" class="challenge">
 <h2>What is truth?</h2>
 <p><code>True</code> and <code>False</code> aren't the only values in Python that are true and false. In fact, <em>any</em> value can be used in an <code>if</code> or <code>elif</code>. After reading and running the code below, explain what the rule is for which values are considered true and which are considered false. (Note that if the body of a conditional is a single statement, we can write it on the same line as the <code>if</code>.)</p>
@@ -106,7 +119,7 @@ done
 </div>
 <div id="in-place-operators" class="challenge">
 <h2>In-place operators</h2>
-<p>Python (and most other languages in the C family) provides <strong>in-place operators</strong> that work like this:</p>
+<p>Python (and most other languages in the C family) provides <a href="reference.html#in-place-operator">in-place operators</a> that work like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python">x = <span class="dv">1</span>  <span class="co"># original value</span>
 x += <span class="dv">1</span> <span class="co"># add one to x, assigning result back to x</span>
 x *= <span class="dv">3</span> <span class="co"># multiply x by 3</span>

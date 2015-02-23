@@ -5,10 +5,12 @@
     <meta name="generator" content="pandoc">
     <title>Software Carpentry: Programming with Python</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
+    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -16,8 +18,8 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class="container">
+  <body class="lesson">
+    <div class="container container-full-width card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
@@ -85,10 +87,10 @@ n</code></pre>
 print_characters(<span class="st">&#39;lead&#39;</span>)</code></pre>
 <p>This is shorter---certainly shorter than something that prints every character in a hundred-letter string---and more robust as well:</p>
 <pre class="sourceCode python"><code class="sourceCode python">print_characters(<span class="st">&#39;oxygen&#39;</span>)</code></pre>
-<p>The improved version of <code>print_characters</code> uses a <strong>for loop</strong> to repeat an operation---in this case, printing---once for each thing in a collection. The general form of a loop is:</p>
+<p>The improved version of <code>print_characters</code> uses a <a href="reference.html#for-loop">for loop</a> to repeat an operation---in this case, printing---once for each thing in a collection. The general form of a loop is:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> variable in collection:
     do things <span class="kw">with</span> variable</code></pre>
-<p>We can call the <strong>loop variable</strong> anything we like, but there must be a colon at the end of the line starting the loop, and we must indent the body of the loop.</p>
+<p>We can call the <a href="reference.html#loop-variable">loop variable</a> anything we like, but there must be a colon at the end of the line starting the loop, and we must indent the body of the loop. Unlike many other languages, there is no command to end a loop (e.g. end for); what is indented after the for statement belongs to the loop.</p>
 <p>Here's another loop that repeatedly updates a variable:</p>
 <pre class="sourceCode python"><code class="sourceCode python">length = <span class="dv">0</span>
 <span class="kw">for</span> vowel in <span class="st">&#39;aeiou&#39;</span>:
@@ -123,7 +125,7 @@ name[<span class="dv">0</span>] = <span class="st">&#39;b&#39;</span></code></pr
 <p>does not.</p>
 <div id="ch-ch-ch-changes" class="callout">
 <h2>Ch-Ch-Ch-Changes</h2>
-<p>Data that can be changed is called <strong>mutable</strong>, while data that cannot be is called <strong>immutable</strong>. Like strings, numbers are immutable: there's no way to make the number 0 have the value 1 or vice versa (at least, not in Python --- there actually <em>are</em> languages that will let people do this, with predictably confusing results). Lists and arrays, on the other hand, are mutable: both can be modified after they have been created.</p>
+<p>Data that can be changed is called <a href="reference.html#mutable">mutable</a>, while data that cannot be is called <a href="reference.html#immutable">immutable</a>. Like strings, numbers are immutable: there's no way to make the number 0 have the value 1 or vice versa (at least, not in Python --- there actually <em>are</em> languages that will let people do this, with predictably confusing results). Lists and arrays, on the other hand, are mutable: both can be modified after they have been created.</p>
 <p>Programs that modify data in place can be harder to understand than ones that don't because readers may have to mentally sum up many lines of code in order to figure out what the value of something actually is. On the other hand, programs that modify data in place instead of creating copies that are almost identical to the original every time they want to make a small change are much more efficient.</p>
 </div>
 <p>There are many ways to change the contents of in lists besides assigning to elements:</p>
@@ -196,6 +198,13 @@ filenames = filenames[<span class="dv">0</span>:<span class="dv">3</span>]
 <div id="sum-a-list" class="challenge">
 <h2>Sum a list</h2>
 <p>Write a loop that calculates the sum of the values in a list. (Python has a built-in function called <code>sum</code> that does this for you. Please don't use it for this exercise.)</p>
+</div>
+<div id="what-does-it-do" class="challenge">
+<h2>What does it do?</h2>
+<p>What will the following code print to screen?</p>
+<pre class="sourceCode python"><code class="sourceCode python">names = [<span class="st">&quot;Harriet&quot;</span>, <span class="st">&quot;Ted&quot;</span>, <span class="st">&quot;Allan&quot;</span>, <span class="st">&quot;Sally&quot;</span>, <span class="st">&quot;Johno&quot;</span>]
+<span class="kw">for</span> index in <span class="dt">range</span>(<span class="dv">5</span>):
+   <span class="dt">print</span> names[index][index],</code></pre>
 </div>
         </div>
       </div>

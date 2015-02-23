@@ -100,7 +100,7 @@ more robust as well:
 print_characters('oxygen')
 ~~~
 
-The improved version of `print_characters` uses a **for loop**
+The improved version of `print_characters` uses a [for loop](reference.html#for-loop)
 to repeat an operation---in this case, printing---once for each thing in a collection.
 The general form of a loop is:
 
@@ -109,7 +109,7 @@ for variable in collection:
     do things with variable
 ~~~
 
-We can call the **loop variable** anything we like,
+We can call the [loop variable](reference.html#loop-variable) anything we like,
 but there must be a colon at the end of the line starting the loop,
 and we must indent the body of the loop. Unlike many other languages, there is no
 command to end a loop (e.g. end for); what is indented after the for statement belongs to the loop.
@@ -214,8 +214,8 @@ does not.
 
 > ## Ch-Ch-Ch-Changes {.callout}
 >
-> Data that can be changed is called **mutable**,
-> while data that cannot be is called **immutable**.
+> Data that can be changed is called [mutable](reference.html#mutable),
+> while data that cannot be is called [immutable](reference.html#immutable).
 > Like strings,
 > numbers are immutable:
 > there's no way to make the number 0 have the value 1 or vice versa

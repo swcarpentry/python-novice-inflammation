@@ -5,10 +5,12 @@
     <meta name="generator" content="pandoc">
     <title>Software Carpentry: Programming with Python</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
+    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -16,8 +18,8 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class="container">
+  <body class="lesson">
+    <div class="container container-full-width card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
@@ -46,7 +48,7 @@
 </ul>
 </div>
 <p>Every programmer encounters errors, both those who are just beginning, and those who have been programming for years. Encountering errors and exceptions can be very frustrating at times, and can make coding feel like a hopeless endeavour. However, understanding what the different types of errors are and when you are likely to encounter them can help a lot. Once you know <em>why</em> you get certain types of errors, they become much easier to fix.</p>
-<p>Errors in Python have a very specific form, called a <strong>traceback</strong>. Let's examine one:</p>
+<p>Errors in Python have a very specific form, called a <a href="reference.html#traceback">traceback</a>. Let's examine one:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> errors_01 <span class="ch">import</span> favorite_ice_cream
 favorite_ice_cream()</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
@@ -66,16 +68,16 @@ IndexError: list index out of range</code></pre>
 <li><p>The first shows code from the cell above, with an arrow pointing to Line 2 (which is <code>favorite_ice_cream()</code>).</p></li>
 <li><p>The second shows some code in another function (<code>favorite_ice_cream</code>, located in the file <code>errors_01.py</code>), with an arrow pointing to Line 7 (which is <code>print ice_creams[3]</code>).</p></li>
 </ol>
-<p>The last level is the actual place where the error occurred. The other level(s) show what function the program executed to get to the next level down. So, in this case, the program first performed a <strong>function call</strong> to the function <code>favorite_ice_cream</code>. Inside this function, the program encountered an error on Line 7, when it tried to run the code <code>print ice_creams[3]</code>.</p>
+<p>The last level is the actual place where the error occurred. The other level(s) show what function the program executed to get to the next level down. So, in this case, the program first performed a <a href="reference.html#function-call">function call</a> to the function <code>favorite_ice_cream</code>. Inside this function, the program encountered an error on Line 7, when it tried to run the code <code>print ice_creams[3]</code>.</p>
 <div id="long-tracebacks" class="callout">
 <h2>Long Tracebacks</h2>
 <p>Sometimes, you might see a traceback that is very long -- sometimes they might even be 20 levels deep! This can make it seem like something horrible happened, but really it just means that your program called many functions before it ran into the error. Most of the time, you can just pay attention to the bottom-most level, which is the actual place where the error occurred.</p>
 </div>
-<p>So what error did the program actually encounter? In the last line of the traceback, Python helpfully tells us the category or <strong>type of error</strong> (in this case, it is an <code>IndexError</code>) and a more detailed <strong>error message</strong> (in this case, it says &quot;list index out of range&quot;).</p>
+<p>So what error did the program actually encounter? In the last line of the traceback, Python helpfully tells us the category or type of error (in this case, it is an <code>IndexError</code>) and a more detailed error message (in this case, it says &quot;list index out of range&quot;).</p>
 <p>If you encounter an error and don't know what it means, it is still important to read the traceback closely. That way, if you fix the error, but encounter a new one, you can tell that the error changed. Additionally, sometimes just knowing <em>where</em> the error occurred is enough to fix it, even if you don't entirely understand the message.</p>
 <p>If you do encounter an error you don't recognize, try looking at the <a href="http://docs.python.org/2/library/exceptions.html">official documentation on errors</a>. However, note that you may not always be able to find the error there, as it is possible to create custom errors. In that case, hopefully the custom error message is informative enough to help you figure out what went wrong.</p>
 <h2 id="syntax-errors">Syntax Errors</h2>
-<p>When you forget a colon at the end of a line, accidentally add one space too many when indenting under an <code>if</code> statement, or forget a parentheses, you will encounter a <strong>syntax error</strong>. This means that Python couldn't figure out how to read your program. This is similar to forgetting punctuation in English:</p>
+<p>When you forget a colon at the end of a line, accidentally add one space too many when indenting under an <code>if</code> statement, or forget a parentheses, you will encounter a <a href="reference.html#syntax-error">syntax error</a>. This means that Python couldn't figure out how to read your program. This is similar to forgetting punctuation in English:</p>
 <blockquote>
 <p>this text is difficult to read there is no punctuation there is also no capitalization why is this hard because you have to figure out where each sentence ends you also have to figure out where each sentence begins to some extent it might be ambiguous if there should be a sentence break or not</p>
 </blockquote>
@@ -101,7 +103,7 @@ IndentationError: unexpected indent</code></pre>
 <p>Both <code>SyntaxError</code> and <code>IndentationError</code> indicate a problem with the syntax of your program, but an <code>IndentationError</code> is more specific: it <em>always</em> means that there is a problem with how your code is indented.</p>
 <div id="tabs-and-spaces" class="callout">
 <h2>Tabs and Spaces</h2>
-<p>A quick note on indentation errors: they can sometimes be insidious, especially if you are mixing spaces and tabs. Because they are both <strong>whitespace</strong>, it is difficult to visually tell the difference. The IPython notebook actually gives us a bit of a hint, but not all Python editors will do that. In the following example, the first two lines are using a tab for indentation, while the third line uses four spaces:</p>
+<p>A quick note on indentation errors: they can sometimes be insidious, especially if you are mixing spaces and tabs. Because they are both <a href="reference.html#whitespace">whitespace</a>, it is difficult to visually tell the difference. The IPython notebook actually gives us a bit of a hint, but not all Python editors will do that. In the following example, the first two lines are using a tab for indentation, while the third line uses four spaces:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> some_function():
     msg = <span class="st">&quot;hello, world!&quot;</span>
     <span class="dt">print</span> msg
@@ -122,7 +124,7 @@ NameError                                 Traceback (most recent call last)
 
 NameError: name &#39;a&#39; is not defined</code></pre>
 <p>Variable name errors come with some of the most informative error messages, which are usually of the form &quot;name 'the_variable_name' is not defined&quot;.</p>
-<p>Why does this error message occur? That's harder question to answer, because it depends on what your code is supposed to do. However, there are a few very common reasons why you might have an undefined variable. The first is that you meant to use a <strong>string</strong>, but forgot to put quotes around it:</p>
+<p>Why does this error message occur? That's harder question to answer, because it depends on what your code is supposed to do. However, there are a few very common reasons why you might have an undefined variable. The first is that you meant to use a <a href="reference.html#string">string</a>, but forgot to put quotes around it:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> hello</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
@@ -142,7 +144,7 @@ NameError                                 Traceback (most recent call last)
       3 print &quot;The count is: &quot; + str(count)
 
 NameError: name &#39;count&#39; is not defined</code></pre>
-<p>Finally, the third possibility is that you made a typo when you were writing your code. Let's say we fixed the error above by adding the line <code>Count = 0</code> before the for loop. Frustratingly, this actually does not fix the error. Remember that variables are <strong>case-sensitive</strong>, so the variable <code>count</code> is different from <code>Count</code>. We still get the same error, because we still have not defined <code>count</code>:</p>
+<p>Finally, the third possibility is that you made a typo when you were writing your code. Let's say we fixed the error above by adding the line <code>Count = 0</code> before the for loop. Frustratingly, this actually does not fix the error. Remember that variables are <a href="reference.html#case-sensitive">case-sensitive</a>, so the variable <code>count</code> is different from <code>Count</code>. We still get the same error, because we still have not defined <code>count</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python">Count = <span class="dv">0</span>
 <span class="kw">for</span> number in <span class="dt">range</span>(<span class="dv">10</span>):
     count = count + number

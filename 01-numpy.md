@@ -18,10 +18,10 @@ Words are useful,
 but what's more useful are the sentences and stories we build with them.
 Similarly,
 while a lot of powerful tools are built into languages like Python,
-even more live in the **libraries** they are used to build.
+even more live in the [libraries](reference.html#software-library) they are used to build.
 
 In order to load our inflammation data,
-we need to **import** a library called NumPy.
+we need to [import](reference.html#import) a library called NumPy.
 In general you should use this library if you want to do fancy things with numbers,
 especially if you have matrices.
 We can load NumPy using:
@@ -48,15 +48,15 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
        [ 0.,  0.,  1., ...,  1.,  1.,  0.]])
 ~~~
 
-The expression `numpy.loadtxt(...)` is a **function call**
+The expression `numpy.loadtxt(...)` is a [function call](reference.html#function-call)
 that asks Python to run the function `loadtxt` that belongs to the `numpy` library.
-This **dotted notation** is used everywhere in Python
+This [dotted notation](reference.html#dotted-notation) is used everywhere in Python
 to refer to the parts of things as `thing.component`.
 
-`numpy.loadtxt` has two **parameters**:
+`numpy.loadtxt` has two [parameters](reference.html#parameter):
 the name of the file we want to read,
-and the **delimiter** that separates values on a line.
-These both need to be character strings (or **strings** for short),
+and the [delimiter](reference.html#delimiter) that separates values on a line.
+These both need to be character strings (or [strings](reference.html#string) for short),
 so we put them in quotes.
 
 When we are finished typing and press Shift+Enter,
@@ -75,7 +75,7 @@ when there's nothing interesting after the decimal point.
 Our call to `numpy.loadtxt` read our file,
 but didn't save the data in memory.
 To do that,
-we need to **assign** the array to a **variable**.
+we need to [assign](reference.html#assignment) the array to a [variable](reference.html#variable).
 A variable is just a name for a value,
 such as `x`, `current_temperature`, or `subject_id`.
 Python's variables must begin with a letter.
@@ -205,7 +205,7 @@ print data
 Now that our data is in memory,
 we can start doing things with it.
 First,
-let's ask what **type** of thing `data` refers to:
+let's ask what [type](reference.html#type) of thing `data` refers to:
 
 ~~~ {.python}
 print type(data)
@@ -215,7 +215,7 @@ print type(data)
 ~~~
 
 The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library.
-We can see what its **shape** is like this:
+We can see what its [shape](reference.html#shape) is like this:
 
 ~~~ {.python}
 print data.shape
@@ -225,7 +225,7 @@ print data.shape
 ~~~
 
 This tells us that `data` has 60 rows and 40 columns.
-`data.shape` is a **member** of `data`,
+`data.shape` is a [member](reference.html#member) of `data`,
 i.e.,
 a value that is stored as part of a larger value.
 We use the same dotted notation for the members of values
@@ -233,7 +233,7 @@ that we use for the functions in libraries
 because they have the same part-and-whole relationship.
 
 If we want to get a single value from the matrix,
-we must provide an **index** in square brackets,
+we must provide an [index](reference.html#index) in square brackets,
 just as we do in math:
 
 ~~~ {.python}
@@ -290,7 +290,7 @@ print data[0:4, 0:10]
  [ 0.  0.  2.  0.  4.  2.  2.  1.  6.  7.]]
 ~~~
 
-The **slice** `0:4` means,
+The [slice](reference.html#slice) `0:4` means,
 "Start at index 0 and go up to, but not including, index 4."
 Again,
 the up-to-but-not-including takes a bit of getting used to,
@@ -431,7 +431,7 @@ print data.mean()
 6.14875
 ~~~
 
-`mean` is a **method** of the array,
+`mean` is a [method](reference.html#method) of the array,
 i.e.,
 a function that belongs to it
 in the same way that the member `shape` does.
@@ -599,7 +599,7 @@ Neither result seems particularly likely,
 so either there's a mistake in our calculations
 or something is wrong with our data.
 
-It's very common to create an **alias** for a library when importing it
+It's very common to create an [alias](reference.html#alias) for a library when importing it
 in order to reduce the amount of typing we have to do.
 Here are our three plots side by side using aliases for `numpy` and `pyplot`:
 
@@ -643,7 +643,65 @@ the graphs will actually be squeezed together more closely.)
 >
 > Plot scaling: why do all of our plots stop just short of the upper end of our graph?
 >
-> Drawing straight lines: why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?
+> Draw diagrams showing what variables refer to what values after each statement in the following program:
+>
+> ~~~ {.python}
+> mass = 47.5
+> age = 122
+> mass = mass * 2.0
+> age = age - 20
+> ~~~
+
+> ## Sorting out references {.challenge}
+>
+> What does the following program print out?
+>
+> ~~~ {.python}
+> first, second = 'Grace', 'Hopper'
+> third, fourth = second, first
+> print third, fourth
+> ~~~
+
+> ## Slicing strings {.challenge}
+>
+> A section of an array is called a [slice](reference.html#slice).
+> We can take slices of character strings as well:
+>
+> ~~~ {.python}
+> element = 'oxygen'
+> print 'first three characters:', element[0:3]
+> print 'last three characters:', element[3:6]
+> ~~~
+>
+> ~~~ {.output}
+> first three characters: oxy
+> last three characters: gen
+> ~~~
+>
+> What is the value of `element[:4]`?
+> What about `element[4:]`?
+> Or `element[:]`?
+>
+> What is `element[-1]`?
+> What is `element[-2]`?
+> Given those answers,
+> explain what `element[1:-1]` does.
+
+> ## Thin slices {.challenge}
+>
+> The expression `element[3:3]` produces an [empty string](reference.html#empty-string),
+> i.e., a string that contains no characters.
+> If `data` holds our array of patient data,
+> what does `data[3:3, 4:4]` produce?
+> What about `data[3:3, :]`?
+
+> ## Check your understanding: plot scaling {.challenge}
+>
+> Why do all of our plots stop just short of the upper end of our graph?
+
+> ## Check your understanding: drawing straight lines {.challenge}
+>
+> Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?
 
 > ## Make your own plot {.challenge}
 >

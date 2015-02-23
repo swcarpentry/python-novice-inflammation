@@ -28,7 +28,7 @@ Once you know *why* you get certain types of errors,
 they become much easier to fix.
 
 Errors in Python have a very specific form,
-called a **traceback**.
+called a [traceback](reference.html#traceback).
 Let's examine one:
 
 ~~~ {.python}
@@ -62,7 +62,7 @@ In this case:
 
 The last level is the actual place where the error occurred.
 The other level(s) show what function the program executed to get to the next level down.
-So, in this case, the program first performed a **function call** to the function `favorite_ice_cream`.
+So, in this case, the program first performed a [function call](reference.html#function-call) to the function `favorite_ice_cream`.
 Inside this function,
 the program encountered an error on Line 7, when it tried to run the code `print ice_creams[3]`.
 
@@ -77,8 +77,8 @@ the program encountered an error on Line 7, when it tried to run the code `print
 
 So what error did the program actually encounter?
 In the last line of the traceback,
-Python helpfully tells us the category or **type of error** (in this case, it is an `IndexError`)
-and a more detailed **error message** (in this case, it says "list index out of range"). 
+Python helpfully tells us the category or type of error (in this case, it is an `IndexError`)
+and a more detailed error message (in this case, it says "list index out of range"). 
 
 If you encounter an error and don't know what it means,
 it is still important to read the traceback closely.
@@ -103,7 +103,7 @@ hopefully the custom error message is informative enough to help you figure out 
 When you forget a colon at the end of a line,
 accidentally add one space too many when indenting under an `if` statement,
 or forget a parentheses,
-you will encounter a **syntax error**.
+you will encounter a [syntax error](reference.html#syntax-error).
 This means that Python couldn't figure out how to read your program.
 This is similar to forgetting punctuation in English:
 
@@ -162,7 +162,7 @@ it *always* means that there is a problem with how your code is indented.
 > A quick note on indentation errors:
 > they can sometimes be insidious,
 > especially if you are mixing spaces and tabs.
-> Because they are both **whitespace**,
+> Because they are both [whitespace](reference.html#whitespace),
 > it is difficult to visually tell the difference.
 > The IPython notebook actually gives us a bit of a hint,
 > but not all Python editors will do that.
@@ -214,7 +214,7 @@ That's harder question to answer,
 because it depends on what your code is supposed to do.
 However,
 there are a few very common reasons why you might have an undefined variable.
-The first is that you meant to use a **string**, but forgot to put quotes around it:
+The first is that you meant to use a [string](reference.html#string), but forgot to put quotes around it:
 
 ~~~ {.python}
 print hello
@@ -251,7 +251,7 @@ NameError: name 'count' is not defined
 Finally, the third possibility is that you made a typo when you were writing your code.
 Let's say we fixed the error above by adding the line `Count = 0` before the for loop.
 Frustratingly, this actually does not fix the error.
-Remember that variables are **case-sensitive**,
+Remember that variables are [case-sensitive](reference.html#case-sensitive),
 so the variable `count` is different from `Count`. We still get the same error, because we still have not defined `count`:
 
 ~~~ {.python}
