@@ -116,7 +116,7 @@ which is always `sys.argv[0]`.
 If we run it with a few arguments, however:
 
 ~~~ {.input}
-$ argv-list.py first second third
+$ python argv-list.py first second third
 ~~~
 ~~~ {.output}
 sys.argv is ['/Users/gwilson/s/bc/python/novice/argv-list.py', 'first', 'second', 'third']

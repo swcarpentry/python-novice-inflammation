@@ -124,7 +124,7 @@ we can print several things at once by separating them with commas.
 If we imagine the variable as a sticky note with a name written on it,
 assignment is like putting the sticky note on a particular value:
 
-![Variables as Sticky Notes](fig/python-sticky-note-variables-01.svg)\
+![Variables as Sticky Notes](fig/python-sticky-note-variables-01.svg)
 
 This means that assigning a value to one variable does *not* change the values of other variables.
 For example,
@@ -138,7 +138,7 @@ print 'weight in kilograms:', weight_kg, 'and in pounds:', weight_lb
 weight in kilograms: 57.5 and in pounds: 126.5
 ~~~
 
-![Creating Another Variable](fig/python-sticky-note-variables-02.svg)\
+![Creating Another Variable](fig/python-sticky-note-variables-02.svg)
 
 and then change `weight_kg`:
 
@@ -150,11 +150,33 @@ print 'weight in kilograms is now:', weight_kg, 'and weight in pounds is still:'
 weight in kilograms is now: 100.0 and weight in pounds is still: 126.5
 ~~~
 
-![Updating a Variable](fig/python-sticky-note-variables-03.svg)\
+![Updating a Variable](fig/python-sticky-note-variables-03.svg)
 
 Since `weight_lb` doesn't "remember" where its value came from,
 it isn't automatically updated when `weight_kg` changes.
 This is different from the way spreadsheets work.
+
+> ## What's inside the box? {.challenge}
+>
+> Draw diagrams showing what variables refer to what values after each statement in the following program:
+>
+> ~~~ {.python}
+> weight = 70.5
+> age = 35
+> # Take a trip to the planet Neptune
+> weight = weight * 1.14
+> age = age + 20
+> ~~~
+
+> ## Sorting out references {.challenge}
+>
+> What does the following program print out?
+>
+> ~~~ {.python}
+> first, second = 'Grace', 'Hopper'
+> third, fourth = second, first
+> print third, fourth
+> ~~~
 
 Just as we can assign a single value to a variable, we can also assign an array of values
 to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its result:
@@ -308,6 +330,39 @@ small is:
  [ 2.  2.  1.  1.]]
 ~~~
 
+> ## Slicing strings {.challenge}
+>
+> A section of an array is called a **slice**.
+> We can take slices of character strings as well:
+>
+> ~~~ {.python}
+> element = 'oxygen'
+> print 'first three characters:', element[0:3]
+> print 'last three characters:', element[3:6]
+> ~~~
+>
+> ~~~ {.output}
+> first three characters: oxy
+> last three characters: gen
+> ~~~
+>
+> What is the value of `element[:4]`?
+> What about `element[4:]`?
+> Or `element[:]`?
+>
+> What is `element[-1]`?
+> What is `element[-2]`?
+> Given those answers,
+> explain what `element[1:-1]` does.
+
+> ## Thin slices {.challenge}
+>
+> The expression `element[3:3]` produces an **empty string**,
+> i.e., a string that contains no characters.
+> If `data` holds our array of patient data,
+> what does `data[3:3, 4:4]` produce?
+> What about `data[3:3, :]`?
+
 Arrays also know how to perform common mathematical operations on their values.
 The simplest operations with data are arithmetic:
 add, subtract, multiply, and divide.
@@ -434,7 +489,7 @@ or the average for each day?
 As the diagram below shows,
 we want to perform the operation across an axis:
 
-![Operations Across Axes](fig/python-operations-across-axes.svg)\
+![Operations Across Axes](fig/python-operations-across-axes.svg)
 
 To support this,
 most array methods allow us to specify the axis we want to work on.
@@ -500,7 +555,7 @@ pyplot.imshow(data)
 pyplot.show()
 ~~~
 
-![Heatmap of the Data](fig/01-numpy_71_0.png)\
+![Heatmap of the Data](fig/01-numpy_71_0.png)
 
 Blue regions in this heat map are low values, while red shows high values.
 As we can see,
@@ -513,7 +568,7 @@ pyplot.plot(ave_inflammation)
 pyplot.show()
 ~~~
 
-![Average Inflammation Over Time](fig/01-numpy_73_0.png)\
+![Average Inflammation Over Time](fig/01-numpy_73_0.png)
 
 Here,
 we have put the average per day across all patients in the variable `ave_inflammation`,
@@ -529,14 +584,14 @@ pyplot.plot(data.max(axis=0))
 pyplot.show()
 ~~~
 
-![Maximum Value Along The First Axis](fig/01-numpy_75_1.png)\
+![Maximum Value Along The First Axis](fig/01-numpy_75_1.png)
 
 ~~~ {.python}
 pyplot.plot(data.min(axis=0))
 pyplot.show()
 ~~~
 
-![Minimum Value Along The First Axis](fig/01-numpy_75_3.png)\
+![Minimum Value Along The First Axis](fig/01-numpy_75_3.png)
 
 The maximum value rises and falls perfectly smoothly,
 while the minimum seems to be a step function.
@@ -572,7 +627,7 @@ plt.tight_layout()
 plt.show()
 ~~~
 
-![The Previous Plots as Subplots](fig/01-numpy_80_0.png)\
+![The Previous Plots as Subplots](fig/01-numpy_80_0.png)
 
 The call to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
@@ -584,72 +639,16 @@ and that we want a tight layout.
 if we leave out that call to `plt.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
 
-> ## Moving plots around {.challenge}
+> ## Check your understanding {.challenge}
 >
-> Modify the program to display the three plots on top of one another instead of side by side.
-
-> ## What's inside the box? {.challenge}
+> Plot scaling: why do all of our plots stop just short of the upper end of our graph?
 >
-> Draw diagrams showing what variables refer to what values after each statement in the following program:
->
-> ~~~ {.python}
-> mass = 47.5
-> age = 122
-> mass = mass * 2.0
-> age = age - 20
-> ~~~
-
-> ## Sorting out references {.challenge}
->
-> What does the following program print out?
->
-> ~~~ {.python}
-> first, second = 'Grace', 'Hopper'
-> third, fourth = second, first
-> print third, fourth
-> ~~~
-
-> ## Slicing strings {.challenge}
->
-> A section of an array is called a **slice**.
-> We can take slices of character strings as well:
->
-> ~~~ {.python}
-> element = 'oxygen'
-> print 'first three characters:', element[0:3]
-> print 'last three characters:', element[3:6]
-> ~~~
->
-> ~~~ {.output}
-> first three characters: oxy
-> last three characters: gen
-> ~~~
->
-> What is the value of `element[:4]`?
-> What about `element[4:]`?
-> Or `element[:]`?
->
-> What is `element[-1]`?
-> What is `element[-2]`?
-> Given those answers,
-> explain what `element[1:-1]` does.
-
-> ## Thin slices {.challenge}
->
-> The expression `element[3:3]` produces an **empty string**,
-> i.e., a string that contains no characters.
-> If `data` holds our array of patient data,
-> what does `data[3:3, 4:4]` produce?
-> What about `data[3:3, :]`?
-
-> ## Check your understanding: plot scaling {.challenge}
->
-> Why do all of our plots stop just short of the upper end of our graph?
-
-> ## Check your understanding: drawing straight lines {.challenge}
->
-> Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?
+> Drawing straight lines: why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?
 
 > ## Make your own plot {.challenge}
 >
 > Create a plot showing the standard deviation of the inflammation data for each day across all patients.
+
+> ## Moving plots around {.challenge}
+>
+> Modify the program to display the three plots on top of one another instead of side by side.
