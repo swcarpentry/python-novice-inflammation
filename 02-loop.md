@@ -307,22 +307,23 @@ for f in filenames:
 
     data = np.loadtxt(fname=f, delimiter=',')
 
-    plt.figure(figsize=(10.0, 3.0))
+    fig = plt.figure(figsize=(10.0, 3.0))
 
-    plt.subplot(1, 3, 1)
-    plt.ylabel('average')
-    plt.plot(data.mean(axis=0))
+    axes1 = fig.add_subplot(1, 3, 1)
+    axes2 = fig.add_subplot(1, 3, 2)
+    axes3 = fig.add_subplot(1, 3, 3)
 
-    plt.subplot(1, 3, 2)
-    plt.ylabel('max')
-    plt.plot(data.max(axis=0))
+    axes1.set_ylabel('average')
+    axes1.plot(data.mean(axis=0))
 
-    plt.subplot(1, 3, 3)
-    plt.ylabel('min')
-    plt.plot(data.min(axis=0))
+    axes2.set_ylabel('max')
+    axes2.plot(data.max(axis=0))
 
-    plt.tight_layout()
-    plt.show()
+    axes3.set_ylabel('min')
+    axes3.plot(data.min(axis=0))
+
+    fig.tight_layout()
+    plt.show(fig)
 ~~~
 
 ~~~ {.output}
