@@ -239,26 +239,26 @@ standard deviation: 4.61383319712</code></pre>
 <p>which is the average inflammation per patient across all days.</p>
 <p>The mathematician Richard Hamming once said, &quot;The purpose of computing is insight, not numbers,&quot; and the best way to develop insight is often to visualize data. Visualization deserves an entire lecture (or course) of its own, but we can explore a few features of Python's <code>matplotlib</code> here. While there is no &quot;official&quot; plotting library, this package is the de facto standard. First, we will import the <code>pyplot</code> module from <code>matplotlib</code> and use two of its functions to create and display a heat map of our data:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> matplotlib <span class="ch">import</span> pyplot
-pyplot.imshow(data)
-pyplot.show()</code></pre>
+image  = pyplot.imshow(data)
+pyplot.show(image)</code></pre>
 <div class="figure">
 <img src="fig/01-numpy_71_0.png" alt="Heatmap of the Data" /><p class="caption">Heatmap of the Data</p>
 </div>
 <p>Blue regions in this heat map are low values, while red shows high values. As we can see, inflammation rises and falls over a 40-day period. Let's take a look at the average inflammation over time:</p>
 <pre class="sourceCode python"><code class="sourceCode python">ave_inflammation = data.mean(axis=<span class="dv">0</span>)
-pyplot.plot(ave_inflammation)
-pyplot.show()</code></pre>
+ave_plot = pyplot.plot(ave_inflammation)
+pyplot.show(ave_plot)</code></pre>
 <div class="figure">
 <img src="fig/01-numpy_73_0.png" alt="Average Inflammation Over Time" /><p class="caption">Average Inflammation Over Time</p>
 </div>
 <p>Here, we have put the average per day across all patients in the variable <code>ave_inflammation</code>, then asked <code>pyplot</code> to create and display a line graph of those values. The result is roughly a linear rise and fall, which is suspicious: based on other studies, we expect a sharper rise and slower fall. Let's have a look at two other statistics:</p>
-<pre class="sourceCode python"><code class="sourceCode python">pyplot.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
-pyplot.show()</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">max_plot = pyplot.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+pyplot.show(max_plot)</code></pre>
 <div class="figure">
 <img src="fig/01-numpy_75_1.png" alt="Maximum Value Along The First Axis" /><p class="caption">Maximum Value Along The First Axis</p>
 </div>
-<pre class="sourceCode python"><code class="sourceCode python">pyplot.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
-pyplot.show()</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">min_plot = pyplot.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+pyplot.show(min_plot)</code></pre>
 <div class="figure">
 <img src="fig/01-numpy_75_3.png" alt="Minimum Value Along The First Axis" /><p class="caption">Minimum Value Along The First Axis</p>
 </div>
@@ -269,26 +269,28 @@ pyplot.show()</code></pre>
 
 data = np.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
 
-plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+fig = plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
 
-plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
-plt.ylabel(<span class="st">&#39;average&#39;</span>)
-plt.plot(data.mean(axis=<span class="dv">0</span>))
+axes1 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+axes2 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+axes3 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
 
-plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
-plt.ylabel(<span class="st">&#39;max&#39;</span>)
-plt.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
+axes1.plot(data.mean(axis=<span class="dv">0</span>))
 
-plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
-plt.ylabel(<span class="st">&#39;min&#39;</span>)
-plt.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
+axes2.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
 
-plt.tight_layout()
-plt.show()</code></pre>
+axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
+axes3.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+
+fig.tight_layout()
+
+plt.show(fig)</code></pre>
 <div class="figure">
 <img src="fig/01-numpy_80_0.png" alt="The Previous Plots as Subplots" /><p class="caption">The Previous Plots as Subplots</p>
 </div>
-<p>The call to <code>loadtxt</code> reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we're creating three sub-plots, what to draw for each one, and that we want a tight layout. (Perversely, if we leave out that call to <code>plt.tight_layout()</code>, the graphs will actually be squeezed together more closely.)</p>
+<p>The call to <code>loadtxt</code> reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we're creating three sub-plots, what to draw for each one, and that we want a tight layout. (Perversely, if we leave out that call to <code>fig.tight_layout()</code>, the graphs will actually be squeezed together more closely.)</p>
 <div id="check-your-understanding" class="challenge">
 <h2>Check your understanding</h2>
 <p>Plot scaling: why do all of our plots stop just short of the upper end of our graph?</p>

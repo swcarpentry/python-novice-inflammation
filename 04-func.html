@@ -109,22 +109,23 @@ boiling point of water: 373.15</code></pre>
 
     data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
 
-    plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+    fig = plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
 
-    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
-    plt.ylabel(<span class="st">&#39;average&#39;</span>)
-    plt.plot(data.mean(axis=<span class="dv">0</span>))
+    axes1 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+    axes2 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+    axes3 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
 
-    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
-    plt.ylabel(<span class="st">&#39;max&#39;</span>)
-    plt.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+    axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
+    axes1.plot(data.mean(axis=<span class="dv">0</span>))
 
-    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
-    plt.ylabel(<span class="st">&#39;min&#39;</span>)
-    plt.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+    axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
+    axes2.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
 
-    plt.tight_layout()
-    plt.show()</code></pre>
+    axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
+    axes3.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+
+    fig.tight_layout()
+    plt.show(fig)</code></pre>
 <p>and another function called <code>detectProblems</code> that checks for those systematics we noticed:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> detectProblems(filename):
 
@@ -174,7 +175,7 @@ min, mean, and and max of centered data are: -6.14875 -3.49054118942e-15 13.8512
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;difference in standard deviations before and after:&#39;</span>, data.std() - centered.std()</code></pre>
 <pre class="output"><code>difference in standard deviations before and after: -3.5527136788e-15</code></pre>
 <p>Again, the difference is very small. It's still possible that our function is wrong, but it seems unlikely enough that we should probably get back to doing our analysis. We have one more task first, though: we should write some <a href="reference.html#documentation">documentation</a> for our function to remind ourselves later what it's for and how to use it.</p>
-<p>The usual way to put documentation in software is to add <a href="reference.html#comments">comments</a> like this:</p>
+<p>The usual way to put documentation in software is to add <a href="reference.html#comment">comments</a> like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="co"># center(data, desired): return a new array containing the original data centered around the desired value.</span>
 <span class="kw">def</span> center(data, desired):
     <span class="kw">return</span> (data - data.mean()) + desired</code></pre>
