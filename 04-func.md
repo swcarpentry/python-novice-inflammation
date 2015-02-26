@@ -721,7 +721,6 @@ but *do* have to provide `delimiter=` for the second parameter.
 > Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
 > to see how to use these functions to generate regularly-spaced values,
 > then use those values to test your `rescale` function.
-
 > ## Variables inside and outside functions {.challenge}
 >
 > What does the following piece of code display when run - and why?
@@ -740,3 +739,34 @@ but *do* have to provide `delimiter=` for the second parameter.
 >
 > print k
 > ~~~
+
+> ## Combining functions that use both loops and conditionals to create a workflow {.challenge}
+>
+> Overall Goal:
+> Given a list of miles travelled per day, a measurement of litres per kilometre, and the price of fuel, calculate the number of days where you exceeded your daily petrol budget of $100.
+> 
+> ~~~ {.python}
+> trips = [80,50,170,180,80,50,200]
+> ~~~
+> Tasks:
+> 
+> 1. Create a function that recieves one argument, the above list
+>    of miles, and returns a new list with the values
+>    converted to kilometers. 
+>
+>    Tip: kilometres = miles / 1.61.
+>
+> 2. Create another function that calculates the cost of the trip for each day. 
+> This function will recieve the following as arguments: the list of kilometres traveled per day, 
+> the fuel effieciency of the car in litres per kilometer, and the fuel cost per litre. The function should return a list that contains values
+> which represent the cost of the trip per day.
+>
+> Test you function using a fuel efficiency value of 0.5, and $2 for the cost of a litre of fuel.
+>
+> 3. Create another function that returns the total number of days in which 
+>    your petrol bill exceeded your daily budget. The function will recieve
+>    as arguments, a list with values representing the cost of your trip per day.
+> , and your budget.
+>
+> Test your function using $100 as your budget.
+
