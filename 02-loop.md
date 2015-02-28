@@ -32,13 +32,12 @@ Suppose we want to print each character in the word "lead" on a line of its own.
 One way is to use four `print` statements:
 
 ~~~ {.python}
-def print_characters(element):
-    print element[0]
-    print element[1]
-    print element[2]
-    print element[3]
+word = 'lead'
+print word[0]
+print word[1]
+print word[2]
+print word[3]
 
-print_characters('lead')
 ~~~
 ~~~ {.output}
 l
@@ -60,7 +59,12 @@ but that's a bad approach for two reasons:
     it produces an error because we're asking for characters that don't exist.
 
 ~~~ {.python}
-print_characters('tin')
+word = 'tin'
+print word[0]
+print word[1]
+print word[2]
+print word[3]
+
 ~~~
 ~~~ {.error}
 --------------------------------------------------------------------------
@@ -86,18 +90,19 @@ n
 Here's a better approach:
 
 ~~~ {.python}
-def print_characters(element):
-    for char in element:
-        print char
+word = 'lead'
+for char in word:
+    print char
 
-print_characters('lead')
 ~~~
 
 This is shorter---certainly shorter than something that prints every character in a hundred-letter string---and
 more robust as well:
 
 ~~~ {.python}
-print_characters('oxygen')
+word = 'oxygen'
+for char in word:
+    print char
 ~~~
 
 The improved version of `print_characters` uses a [for loop](reference.html#for-loop)
