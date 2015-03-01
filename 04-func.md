@@ -377,7 +377,7 @@ We have one more task first, though:
 we should write some [documentation](reference.html#documentation) for our function
 to remind ourselves later what it's for and how to use it.
 
-The usual way to put documentation in software is to add [comments](reference.html#comments) like this:
+The usual way to put documentation in software is to add [comments](reference.html#comment) like this:
 
 ~~~ {.python}
 # center(data, desired): return a new array containing the original data centered around the desired value.
