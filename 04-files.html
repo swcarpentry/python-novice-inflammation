@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Programming with Python</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
+    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container container-full-width card">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+      </div>
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          <h1 class="title">Programming with Python</h1>
+          <h2 class="subtitle">Analyzing Data from Multiple Files</h2>
+<div id="learning-objectives" class="objectives">
+<h2>Learning Objectives</h2>
+<ul>
+<li>Use a library function to get a list of filenames that match a simple wildcard pattern.</li>
+<li>Use a for loop to process multiple files.</li>
+</ul>
+</div>
+<p>We now have almost everything we need to process all our data files. The only thing that's missing is a library with a rather unpleasant name:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> glob</code></pre>
+<p>The <code>glob</code> library contains a single function, also called <code>glob</code>, that finds files whose names match a pattern. We provide those patterns as strings: the character <code>*</code> matches zero or more characters, while <code>?</code> matches any one character. We can use this to get the names of all the IPython Notebooks we have created so far:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> glob.glob(<span class="st">&#39;*.ipynb&#39;</span>)</code></pre>
+<pre class="output"><code>[&#39;01-numpy.ipynb&#39;, &#39;02-func.ipynb&#39;, &#39;03-loop.ipynb&#39;, &#39;04-cond.ipynb&#39;, &#39;05-defensive.ipynb&#39;, &#39;06-cmdline.ipynb&#39;, &#39;spatial-intro.ipynb&#39;]</code></pre>
+<p>or to get the names of all our CSV data files:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> glob.glob(<span class="st">&#39;*.csv&#39;</span>)</code></pre>
+<pre class="output"><code>[&#39;inflammation-01.csv&#39;, &#39;inflammation-02.csv&#39;, &#39;inflammation-03.csv&#39;, &#39;inflammation-04.csv&#39;, &#39;inflammation-05.csv&#39;, &#39;inflammation-06.csv&#39;, &#39;inflammation-07.csv&#39;, &#39;inflammation-08.csv&#39;, &#39;inflammation-09.csv&#39;, &#39;inflammation-10.csv&#39;, &#39;inflammation-11.csv&#39;, &#39;inflammation-12.csv&#39;, &#39;small-01.csv&#39;, &#39;small-02.csv&#39;, &#39;small-03.csv&#39;]</code></pre>
+<p>As these examples show, <code>glob.glob</code>'s result is a list of strings, which means we can loop over it to do something with each filename in turn. In our case, the &quot;something&quot; we want is the code that generates those plots of our inflammation data. Let's test it by analyzing the first three files in the list:</p>
+<pre class="sourceCode python"><code class="sourceCode python">filenames = glob.glob(<span class="st">&#39;*.csv&#39;</span>)
+filenames = filenames[<span class="dv">0</span>:<span class="dv">3</span>]
+<span class="kw">for</span> f in filenames:
+    <span class="dt">print</span> f
+
+    data = np.loadtxt(fname=f, delimiter=<span class="st">&#39;,&#39;</span>)
+
+    fig = plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+
+    axes1 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+    axes2 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+    axes3 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
+
+    axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
+    axes1.plot(data.mean(axis=<span class="dv">0</span>))
+
+    axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
+    axes2.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+
+    axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
+    axes3.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+
+    fig.tight_layout()
+    plt.show(fig)</code></pre>
+<pre class="output"><code>inflammation-01.csv</code></pre>
+<p><img src="fig/03-loop_49_1.png" alt="Analysis of inflammation-01.csv" /><br /></p>
+<pre class="output"><code>inflammation-02.csv</code></pre>
+<p><img src="fig/03-loop_49_3.png" alt="Analysis of inflammation-02.csv" /><br /></p>
+<pre class="output"><code>inflammation-03.csv</code></pre>
+<p><img src="fig/03-loop_49_5.png" alt="Analysis of inflammation-03.csv" /><br /> Sure enough, the maxima of the first two data sets show exactly the same ramp as the first, and their minima show the same staircase structure; a different situation has been revealed in the third dataset, where the maxima are a bit less regular, but the minima are consistently zero.</p>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/python-novice-inflammation">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>
