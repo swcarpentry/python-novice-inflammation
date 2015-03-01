@@ -155,22 +155,23 @@ filenames = filenames[<span class="dv">0</span>:<span class="dv">3</span>]
 
     data = np.loadtxt(fname=f, delimiter=<span class="st">&#39;,&#39;</span>)
 
-    plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+    fig = plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
 
-    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
-    plt.ylabel(<span class="st">&#39;average&#39;</span>)
-    plt.plot(data.mean(axis=<span class="dv">0</span>))
+    axes1 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+    axes2 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+    axes3 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
 
-    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
-    plt.ylabel(<span class="st">&#39;max&#39;</span>)
-    plt.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+    axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
+    axes1.plot(data.mean(axis=<span class="dv">0</span>))
 
-    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
-    plt.ylabel(<span class="st">&#39;min&#39;</span>)
-    plt.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+    axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
+    axes2.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
 
-    plt.tight_layout()
-    plt.show()</code></pre>
+    axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
+    axes3.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+
+    fig.tight_layout()
+    plt.show(fig)</code></pre>
 <pre class="output"><code>inflammation-01.csv</code></pre>
 <p><img src="fig/03-loop_49_1.png" alt="Analysis of inflammation-01.csv" /><br /></p>
 <pre class="output"><code>inflammation-02.csv</code></pre>
