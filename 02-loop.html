@@ -46,13 +46,11 @@
 <p><img src="fig/03-loop_2_0.png" alt="Analysis of inflammation-01.csv" /><br /> but we have a dozen data sets right now and more on the way. We want to create plots for all our data sets with a single statement. To do that, we'll have to teach the computer how to repeat things.</p>
 <h2 id="for-loops">For Loops</h2>
 <p>Suppose we want to print each character in the word &quot;lead&quot; on a line of its own. One way is to use four <code>print</code> statements:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> print_characters(element):
-    <span class="dt">print</span> element[<span class="dv">0</span>]
-    <span class="dt">print</span> element[<span class="dv">1</span>]
-    <span class="dt">print</span> element[<span class="dv">2</span>]
-    <span class="dt">print</span> element[<span class="dv">3</span>]
-
-print_characters(<span class="st">&#39;lead&#39;</span>)</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">word = <span class="st">&#39;lead&#39;</span>
+<span class="dt">print</span> word[<span class="dv">0</span>]
+<span class="dt">print</span> word[<span class="dv">1</span>]
+<span class="dt">print</span> word[<span class="dv">2</span>]
+<span class="dt">print</span> word[<span class="dv">3</span>]</code></pre>
 <pre class="output"><code>l
 e
 a
@@ -62,7 +60,11 @@ d</code></pre>
 <li><p>It doesn't scale: if we want to print the characters in a string that's hundreds of letters long, we'd be better off just typing them in.</p></li>
 <li><p>It's fragile: if we give it a longer string, it only prints part of the data, and if we give it a shorter one, it produces an error because we're asking for characters that don't exist.</p></li>
 </ol>
-<pre class="sourceCode python"><code class="sourceCode python">print_characters(<span class="st">&#39;tin&#39;</span>)</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">word = <span class="st">&#39;tin&#39;</span>
+<span class="dt">print</span> word[<span class="dv">0</span>]
+<span class="dt">print</span> word[<span class="dv">1</span>]
+<span class="dt">print</span> word[<span class="dv">2</span>]
+<span class="dt">print</span> word[<span class="dv">3</span>]</code></pre>
 <pre class="error"><code>--------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 &lt;ipython-input-13-5bc7311e0bf3&gt; in &lt;module&gt;()
@@ -80,13 +82,13 @@ IndexError: string index out of range</code></pre>
 i
 n</code></pre>
 <p>Here's a better approach:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> print_characters(element):
-    <span class="kw">for</span> char in element:
-        <span class="dt">print</span> char
-
-print_characters(<span class="st">&#39;lead&#39;</span>)</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">word = <span class="st">&#39;lead&#39;</span>
+<span class="kw">for</span> char in word:
+    <span class="dt">print</span> char</code></pre>
 <p>This is shorter---certainly shorter than something that prints every character in a hundred-letter string---and more robust as well:</p>
-<pre class="sourceCode python"><code class="sourceCode python">print_characters(<span class="st">&#39;oxygen&#39;</span>)</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">word = <span class="st">&#39;oxygen&#39;</span>
+<span class="kw">for</span> char in word:
+    <span class="dt">print</span> char</code></pre>
 <p>The improved version of <code>print_characters</code> uses a <a href="reference.html#for-loop">for loop</a> to repeat an operation---in this case, printing---once for each thing in a collection. The general form of a loop is:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> variable in collection:
     do things <span class="kw">with</span> variable</code></pre>
