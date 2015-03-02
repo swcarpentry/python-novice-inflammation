@@ -67,16 +67,20 @@ which are covered in the lesson on the shell.
 
 ## [Analyzing Patient Data](01-numpy.html)
 
-## [Analyzing Multiple Data Sets](02-loop.html)
+## [Repeating Actions with Loops](02-loop.html)
 
-## [Making Choices](03-cond.html)
+## [Storing Multiple Values in Lists](03-lists.html)
 
-## [Creating Functions](04-func.html)
+## [Analyzing Data from Multiple Files](04-files.html)
 
-## [Defensive Programming](05-defensive.html)
+## [Making Choices](05-cond.html)
 
-## [Command-Line Programs](06-cmdline.html)
+## [Creating Functions](06-func.html)
 
-## [Errors and Exceptions](07-errors.html)
+## [Defensive Programming](07-defensive.html)
 
-## [Supplementary Material](08-supplementary.html)
+## [Command-Line Programs](08-cmdline.html)
+
+## [Errors and Exceptions](09-errors.html)
+
+## [Supplementary Material](10-supplementary.html)

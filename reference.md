@@ -20,7 +20,7 @@ subtitle: Reference
 *   Use `array.mean(axis=0)` or `array.mean(axis=1)` to calculate statistics across the specified axis.
 *   Use the `pyplot` library from `matplotlib` for creating simple visualizations.
 
-## [Creating Functions](02-func.html)
+## [Creating Functions](06-func.html)
 
 *   Define a function using `def name(...params...)`.
 *   The body of a function must be indented.
@@ -34,19 +34,25 @@ subtitle: Reference
 *   Specify default values for parameters when defining a function using `name=value` in the parameter list.
 *   Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).
 
-## [Analyzing Multiple Data Sets](03-loop.html)
+## [Repeating Actions with Loops](02-loop.html)
 
 *   Use `for variable in collection` to process the elements of a collection one at a time.
 *   The body of a for loop must be indented.
 *   Use `len(thing)` to determine the length of something that contains other values.
+
+## [Storing Multiple Values in Lists](03-lists.html)
+
 *   `[value1, value2, value3, ...]` creates a list.
 *   Lists are indexed and sliced in the same way as strings and arrays.
 *   Lists are mutable (i.e., their values can be changed in place).
 *   Strings are immutable (i.e., the characters in them cannot be changed).
+
+## [Analyzing Data in Multiple Files](04-files.html)
+
 *   Use `glob.glob(pattern)` to create a list of files whose names match a pattern.
 *   Use `*` in a pattern to match zero or more characters, and `?` to match any single character.
 
-## [Making Choices](04-cond.html)
+## [Making Choices](05-cond.html)
 
 *   Use the `ImageGrid` class from the `ipythonblocks` library to create simple "images" made of colored blocks.
 *   Specify colors use (red, green, blue) triples, each component of which is an integer in the range 0..255.
@@ -59,7 +65,7 @@ subtitle: Reference
 *   Nest loops to operate on multi-dimensional data.
 *   Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior.
 
-## [Defensive Programming](05-defensive.html)
+## [Defensive Programming](07-defensive.html)
 
 *   Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do.
 *   Put assertions in programs to check their state as they run, and to help readers understand how those programs are supposed to work.

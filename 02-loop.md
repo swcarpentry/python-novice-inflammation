@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Programming with Python
-subtitle: Analyzing Multiple Data Sets
+subtitle: Repeating Actions with Loops
 minutes: 30
 ---
 > ## Learning Objectives {.objectives}
@@ -10,10 +10,6 @@ minutes: 30
 > *   Correctly write for loops to repeat simple calculations.
 > *   Trace changes to a loop variable as the loop runs.
 > *   Trace changes to other variables as they are updated by a for loop.
-> *   Explain what a list is.
-> *   Create and index lists of simple values.
-> *   Use a library function to get a list of filenames that match a simple wildcard pattern.
-> *   Use a for loop to process multiple files.
 
 In the last lesson,
 we wrote some code that plots some values of interest from our first inflammation dataset,
@@ -23,10 +19,8 @@ and reveals some suspicious features in it, such as from `inflammation-01.csv`
 
 but we have a dozen data sets right now and more on the way.
 We want to create plots for all our data sets with a single statement.
-To do that,
-we'll have to teach the computer how to repeat things.
+To do that, we'll have to teach the computer how to repeat things.
 
-## For Loops
 
 Suppose we want to print each character in the word "lead" on a line of its own.
 One way is to use four `print` statements:
@@ -169,193 +163,6 @@ and much easier to read than a two-line loop;
 it will also give us the length of many other things that we haven't met yet,
 so we should always use it when we can.
 
-## Lists
-
-Just as a `for` loop is a way to do operations many times,
-a list is a way to store many values.
-Unlike NumPy arrays,
-there are built into the language.
-We create a list by putting values inside square brackets:
-
-~~~ {.python}
-odds = [1, 3, 5, 7]
-print 'odds are:', odds
-~~~
-
-We select individual elements from lists by indexing them:
-
-~~~ {.python}
-print 'first and last:', odds[0], odds[-1]
-~~~
-
-and if we loop over a list,
-the loop variable is assigned elements one at a time:
-
-~~~ {.python}
-for number in odds:
-    print number
-~~~
-
-There is one important difference between lists and strings:
-we can change the values in a list,
-but we cannot change the characters in a string.
-For example:
-
-~~~ {.python}
-names = ['Newton', 'Darwing', 'Turing'] # typo in Darwin's name
-print 'names is originally:', names
-names[1] = 'Darwin' # correct the name
-print 'final value of names:', names
-~~~
-
-works, but:
-
-~~~ {.python}
-name = 'Bell'
-name[0] = 'b'
-~~~
-
-does not.
-
-> ## Ch-Ch-Ch-Changes {.callout}
->
-> Data that can be changed is called [mutable](reference.html#mutable),
-> while data that cannot be is called [immutable](reference.html#immutable).
-> Like strings,
-> numbers are immutable:
-> there's no way to make the number 0 have the value 1 or vice versa
-> (at least, not in Python --- there actually *are* languages that will let people do this,
-> with predictably confusing results).
-> Lists and arrays,
-> on the other hand,
-> are mutable:
-> both can be modified after they have been created.
->
-> Programs that modify data in place can be harder to understand than ones that don't
-> because readers may have to mentally sum up many lines of code
-> in order to figure out what the value of something actually is.
-> On the other hand,
-> programs that modify data in place instead of creating copies that are almost identical to the original
-> every time they want to make a small change
-> are much more efficient.
-
-There are many ways to change the contents of in lists besides assigning to elements:
-
-~~~ {.python}
-odds.append(11)
-print 'odds after adding a value:', odds
-~~~
-
-FIXME: output
-
-~~~ {.python}
-del odds[0]
-print 'odds after removing the first element:', odds
-~~~
-
-FIXME: output
-
-~~~ {.python}
-odds.reverse()
-print 'odds after reversing:', odds
-~~~
-
-FIXME: output
-
-## Processing Multiple Files
-
-We now have almost everything we need to process all our data files.
-The only thing that's missing is a library with a rather unpleasant name:
-
-~~~ {.python}
-import glob
-~~~
-
-The `glob` library contains a single function, also called `glob`,
-that finds files whose names match a pattern.
-We provide those patterns as strings:
-the character `*` matches zero or more characters,
-while `?` matches any one character.
-We can use this to get the names of all the IPython Notebooks we have created so far:
-
-~~~ {.python}
-print glob.glob('*.ipynb')
-~~~
-
-~~~ {.output}
-['01-numpy.ipynb', '02-func.ipynb', '03-loop.ipynb', '04-cond.ipynb', '05-defensive.ipynb', '06-cmdline.ipynb', 'spatial-intro.ipynb']
-~~~
-
-or to get the names of all our CSV data files:
-
-~~~ {.python}
-print glob.glob('*.csv')
-~~~
-
-~~~ {.output}
-['inflammation-01.csv', 'inflammation-02.csv', 'inflammation-03.csv', 'inflammation-04.csv', 'inflammation-05.csv', 'inflammation-06.csv', 'inflammation-07.csv', 'inflammation-08.csv', 'inflammation-09.csv', 'inflammation-10.csv', 'inflammation-11.csv', 'inflammation-12.csv', 'small-01.csv', 'small-02.csv', 'small-03.csv']
-~~~
-
-As these examples show,
-`glob.glob`'s result is a list of strings,
-which means we can loop over it
-to do something with each filename in turn.
-In our case,
-the "something" we want is the code that generates those plots of our inflammation data.
-Let's test it by analyzing the first three files in the list:
-
-~~~ {.python}
-filenames = glob.glob('*.csv')
-filenames = filenames[0:3]
-for f in filenames:
-    print f
-
-    data = np.loadtxt(fname=f, delimiter=',')
-
-    fig = plt.figure(figsize=(10.0, 3.0))
-
-    axes1 = fig.add_subplot(1, 3, 1)
-    axes2 = fig.add_subplot(1, 3, 2)
-    axes3 = fig.add_subplot(1, 3, 3)
-
-    axes1.set_ylabel('average')
-    axes1.plot(data.mean(axis=0))
-
-    axes2.set_ylabel('max')
-    axes2.plot(data.max(axis=0))
-
-    axes3.set_ylabel('min')
-    axes3.plot(data.min(axis=0))
-
-    fig.tight_layout()
-    plt.show(fig)
-~~~
-
-~~~ {.output}
-inflammation-01.csv
-~~~
-
-![Analysis of inflammation-01.csv](fig/03-loop_49_1.png)\
-
-
-~~~ {.output}
-inflammation-02.csv
-~~~
-
-![Analysis of inflammation-02.csv](fig/03-loop_49_3.png)\
-
-
-~~~ {.output}
-inflammation-03.csv
-~~~
-
-![Analysis of inflammation-03.csv](fig/03-loop_49_5.png)\
-
-Sure enough,
-the maxima of the first two data sets show exactly the same ramp as the first,
-and their minima show the same staircase structure;
-a different situation has been revealed in the third dataset,
-where the maxima are a bit less regular, but the minima are consistently zero.
 
 > ## From 1 to N {.challenge}
 >
@@ -387,19 +194,3 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > Write a loop that takes a string,
 > and produces a new string with the characters in reverse order,
 > so `'Newton'` becomes `'notweN'`.
-
-> ## Sum a list {.challenge}
->
-> Write a loop that calculates the sum of the values in a list.
-> (Python has a built-in function called `sum` that does this for you.
-> Please don't use it for this exercise.)
-
-> ## What does it do? {.challenge}
->
-> What will the following code print to screen?
->
-> ~~~ {.python}
-> names = ["Harriet", "Ted", "Allan", "Sally", "Johno"]
-> for index in range(5):
->    print names[index][index],
-> ~~~
