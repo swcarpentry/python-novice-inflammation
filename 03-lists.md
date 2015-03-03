@@ -83,19 +83,22 @@ There are many ways to change the contents of in lists besides assigning to elem
 odds.append(11)
 print 'odds after adding a value:', odds
 ~~~
-
-FIXME: output
+~~~ {.output}
+[1, 3, 5, 7, 11]
+~~~
 
 ~~~ {.python}
 del odds[0]
 print 'odds after removing the first element:', odds
 ~~~
-
-FIXME: output
+~~~ {.output}
+[3, 5, 7, 11]
+~~~
 
 ~~~ {.python}
 odds.reverse()
 print 'odds after reversing:', odds
 ~~~
-
-FIXME: output
+~~~ {.output}
+[11, 7, 5, 3]
+~~~
