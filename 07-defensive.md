@@ -657,7 +657,7 @@ not more.
 > ~~~
 > 
 > ~~~{.python}
-> running('abc'
+> running('abc')
 > ~~~
 >
 > ~~~{.output}
