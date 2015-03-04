@@ -644,22 +644,32 @@ not more.
 > can you think of a function that will pass your tests but not hers or vice versa?
 
 > ## Testing assertions {.challenge}
+>
+> Given a sequence of values, the function `running` returns
+> a list containing the running totals at each index.
+>
+> ~~~{.python}
+> running([1, 2, 3, 4])
+> ~~~
+>
+> ~~~{.output}
+> [1, 3, 6, 10]
+> ~~~
 > 
-> Explain in words what the assertions in this code check,
+> ~~~{.python}
+> running('abc'
+> ~~~
+>
+> ~~~{.output}
+> ['a', 'ab', 'abc']
+> ~~~
+>
+> Explain in words what the assertions in this function check,
 > and for each one,
 > give an example of input that will make that assertion fail.
 > 
 > ~~~ {.python}
 > def running(values):
->     '''Given a sequence of values, return a list containing
->        the running totals at each index.
->
->        >>> running([1, 2, 3, 4])
->        [1, 3, 6, 10]
->
->        >>> running('abc')
->        ['a', 'ab', 'abc']
->     '''
 >     assert len(values) > 0
 >     result = [values[0]]
 >     for v in values[1:]:
