@@ -648,9 +648,18 @@ not more.
 > Explain in words what the assertions in this code check,
 > and for each one,
 > give an example of input that will make that assertion fail.
->  
+> 
 > ~~~ {.python}
 > def running(values):
+>     '''Given a sequence of values, return a list containing
+>        the running totals at each index.
+>
+>        >>> running([1, 2, 3, 4])
+>        [1, 3, 6, 10]
+>
+>        >>> running(['abc'])
+>        ['a', 'ab', 'abc']
+>     '''
 >     assert len(values) > 0
 >     result = [values[0]]
 >     for v in values[1:]:
