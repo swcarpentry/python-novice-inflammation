@@ -657,7 +657,7 @@ not more.
 >        >>> running([1, 2, 3, 4])
 >        [1, 3, 6, 10]
 >
->        >>> running(['abc'])
+>        >>> running('abc')
 >        ['a', 'ab', 'abc']
 >     '''
 >     assert len(values) > 0
