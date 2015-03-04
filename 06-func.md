@@ -713,7 +713,7 @@ but *do* have to provide `delimiter=` for the second parameter.
 > Write a function `rescale` that takes an array as input
 > and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
 > (If $L$ and $H$ are the lowest and highest values in the original array,
-> then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
+> then the replacement for a value $v$ should be $(v-L)/(H-L)$.)
 > Be sure to give the function a docstring.
 
 > ## Testing your function {.challenge}
