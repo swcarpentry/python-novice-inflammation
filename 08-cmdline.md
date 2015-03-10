@@ -284,7 +284,7 @@ for example,
 we can see that our program is calculating the mean correctly for each line,
 whereas we were really taking it on faith before.
 This is yet another rule of programming:
-"[test the simple things first](../../rules.html#test-simple-first)".
+*test the simple things first*.
 
 We want our program to process each file separately,
 so we need a loop that executes once for each filename.
