@@ -77,7 +77,7 @@ does not.
 > every time they want to make a small change
 > are much more efficient.
 
-There are many ways to change the contents of in lists besides assigning to elements:
+There are many ways to change the contents of lists besides assigning to elements:
 
 ~~~ {.python}
 odds.append(11)
