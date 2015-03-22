@@ -7,10 +7,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
-    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
-    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -19,14 +17,14 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container container-full-width card">
+    <div class="container card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
-      <div class="row-fluid">
-        <div class="span10 offset1">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Reference</h2>
 <h2 id="analyzing-patient-data"><a href="01-numpy.html">Analyzing Patient Data</a></h2>
@@ -124,184 +122,184 @@
 <h2 id="glossary">Glossary</h2>
 <dl>
 <dt><span id="additive-color-model">additive color model</span></dt>
-<dd><p>A way to represent colors as the sum of contributions from primary colors such as <a href="#rgb">red, green, and blue</a>.</p>
+<dd>A way to represent colors as the sum of contributions from primary colors such as <a href="#rgb">red, green, and blue</a>.
 </dd>
 <dt><span id="alias">alias</span></dt>
-<dd><p>(a library): To give a <a href="#library">library</a> a nickname while importing it.</p>
+<dd>(a library): To give a <a href="#library">library</a> a nickname while importing it.
 </dd>
 <dt><span id="argument">argument</span></dt>
-<dd><p>A value given to a function or program when it runs. The term is often used interchangeably (and inconsistently) with <a href="#parameter">parameter</a>.</p>
+<dd>A value given to a function or program when it runs. The term is often used interchangeably (and inconsistently) with <a href="#parameter">parameter</a>.
 </dd>
 <dt><span id="assertion">assertion</span></dt>
-<dd><p>An expression which is supposed to be true at a particular point in a program. Programmers typically put assertions in their code to check for errors; if the assertion fails (i.e., if the expression evaluates as false), the program halts and produces an error message. See also: <a href="#invariant">invariant</a>, <a href="#precondition">precondition</a>, <a href="#postcondition">postcondition</a>.</p>
+<dd>An expression which is supposed to be true at a particular point in a program. Programmers typically put assertions in their code to check for errors; if the assertion fails (i.e., if the expression evaluates as false), the program halts and produces an error message. See also: <a href="#invariant">invariant</a>, <a href="#precondition">precondition</a>, <a href="#postcondition">postcondition</a>.
 </dd>
 <dt><span id="assign">assign</span></dt>
-<dd><p>To give a value a name by associating a variable with it.</p>
+<dd>To give a value a name by associating a variable with it.
 </dd>
 <dt><span id="body">body</span></dt>
-<dd><p>(of a function): the statements that are executed when a function runs.</p>
+<dd>(of a function): the statements that are executed when a function runs.
 </dd>
 <dt><span id="call-stack">call stack</span></dt>
-<dd><p>A data structure inside a running program that keeps track of active function calls.</p>
+<dd>A data structure inside a running program that keeps track of active function calls.
 </dd>
 <dt><span id="case-insensitive">case-insensitive</span></dt>
-<dd><p>Treating text as if upper and lower case characters of the same letter were the same. See also: <a href="#case-sensitive">case-sensitive</a>.</p>
+<dd>Treating text as if upper and lower case characters of the same letter were the same. See also: <a href="#case-sensitive">case-sensitive</a>.
 </dd>
 <dt><span id="case-sensitive">case-sensitive</span></dt>
-<dd><p>Treating text as if upper and lower case characters of the same letter are different. See also: <a href="#case-insensitive">case-insensitive</a>.</p>
+<dd>Treating text as if upper and lower case characters of the same letter are different. See also: <a href="#case-insensitive">case-insensitive</a>.
 </dd>
 <dt><span id="comment">comment</span></dt>
-<dd><p>A remark in a program that is intended to help human readers understand what is going on, but is ignored by the computer. Comments in Python, R, and the Unix shell start with a <code>#</code> character and run to the end of the line; comments in SQL start with <code>--</code>, and other languages have other conventions.</p>
+<dd>A remark in a program that is intended to help human readers understand what is going on, but is ignored by the computer. Comments in Python, R, and the Unix shell start with a <code>#</code> character and run to the end of the line; comments in SQL start with <code>--</code>, and other languages have other conventions.
 </dd>
 <dt><span id="compose">compose</span></dt>
-<dd><p>To apply one function to the result of another, such as <code>f(g(x))</code>.</p>
+<dd>To apply one function to the result of another, such as <code>f(g(x))</code>.
 </dd>
 <dt><span id="conditional-statement">conditional statement</span></dt>
-<dd><p>A statement in a program that might or might not be executed depending on whether a test is true or false.</p>
+<dd>A statement in a program that might or might not be executed depending on whether a test is true or false.
 </dd>
 <dt><span id="comma-separated-values">comma-separated values</span></dt>
-<dd><p>(CSV) A common textual representation for tables in which the values in each row are separated by commas.</p>
+<dd>(CSV) A common textual representation for tables in which the values in each row are separated by commas.
 </dd>
 <dt><span id="default-value">default value</span></dt>
-<dd><p>A value to use for a <a href="#parameter">parameter</a> if nothing is specified explicitly.</p>
+<dd>A value to use for a <a href="#parameter">parameter</a> if nothing is specified explicitly.
 </dd>
 <dt><span id="defensive-programming">defensive programming</span></dt>
-<dd><p>The practice of writing programs that check their own operation to catch errors as early as possible.</p>
+<dd>The practice of writing programs that check their own operation to catch errors as early as possible.
 </dd>
 <dt><span id="delimiter">delimiter</span></dt>
-<dd><p>A character or characters used to separate individual values, such as the commas between columns in a <a href="#comma-separated-values">CSV</a> file.</p>
+<dd>A character or characters used to separate individual values, such as the commas between columns in a <a href="#comma-separated-values">CSV</a> file.
 </dd>
 <dt><span id="docstring">docstring</span></dt>
-<dd><p>Short for &quot;documentation string&quot;, this refers to textual documentation embedded in Python programs. Unlike comments, docstrings are preserved in the running program and can be examined in interactive sessions.</p>
+<dd>Short for &quot;documentation string&quot;, this refers to textual documentation embedded in Python programs. Unlike comments, docstrings are preserved in the running program and can be examined in interactive sessions.
 </dd>
 <dt><span id="documentation">documentation</span></dt>
-<dd><p>Human-language text written to explain what software does, how it works, or how to use it.</p>
+<dd>Human-language text written to explain what software does, how it works, or how to use it.
 </dd>
 <dt><span id="dotted-notation">dotted notation</span></dt>
-<dd><p>A two-part notation used in many programming languages in which <code>thing.component</code> refers to the <code>component</code> belonging to <code>thing</code>.</p>
+<dd>A two-part notation used in many programming languages in which <code>thing.component</code> refers to the <code>component</code> belonging to <code>thing</code>.
 </dd>
 <dt><span id="empty-string">empty string</span></dt>
-<dd><p>A character string containing no characters, often thought of as the &quot;zero&quot; of text.</p>
+<dd>A character string containing no characters, often thought of as the &quot;zero&quot; of text.
 </dd>
 <dt><span id="encapsulation">encapsulation</span></dt>
-<dd><p>The practice of hiding something's implementation details so that the rest of a program can worry about <em>what</em> it does rather than <em>how</em> it does it.</p>
+<dd>The practice of hiding something's implementation details so that the rest of a program can worry about <em>what</em> it does rather than <em>how</em> it does it.
 </dd>
 <dt><span id="floating-point-number">floating-point number</span></dt>
-<dd><p>A number containing a fractional part and an exponent. See also: <a href="#integer">integer</a>.</p>
+<dd>A number containing a fractional part and an exponent. See also: <a href="#integer">integer</a>.
 </dd>
 <dt><span id="for-loop">for loop</span></dt>
-<dd><p>A loop that is executed once for each value in some kind of set, list, or range. See also: <a href="#while-loop">while loop</a>.</p>
+<dd>A loop that is executed once for each value in some kind of set, list, or range. See also: <a href="#while-loop">while loop</a>.
 </dd>
 <dt><span id="function-call">function call</span></dt>
-<dd><p>A use of a function in another piece of software.</p>
+<dd>A use of a function in another piece of software.
 </dd>
 <dt><span id="immutable">immutable</span></dt>
-<dd><p>Unchangeable. The value of immutable data cannot be altered after it has been created. See also: <a href="#mutable">mutable</a>.</p>
+<dd>Unchangeable. The value of immutable data cannot be altered after it has been created. See also: <a href="#mutable">mutable</a>.
 </dd>
 <dt><span id="import">import</span></dt>
-<dd><p>To load a <a href="#library">library</a> into a program.</p>
+<dd>To load a <a href="#library">library</a> into a program.
 </dd>
 <dt><span id="in-place-operators">in-place operators</span></dt>
-<dd><p>An operator such as <code>+=</code> that provides a shorthand notation for the common case in which the variable being assigned to is also an operand on the right hand side of the assignment. For example, the statement <code>x += 3</code> means the same thing as <code>x = x + 3</code>.</p>
+<dd>An operator such as <code>+=</code> that provides a shorthand notation for the common case in which the variable being assigned to is also an operand on the right hand side of the assignment. For example, the statement <code>x += 3</code> means the same thing as <code>x = x + 3</code>.
 </dd>
 <dt><span id="index">index</span></dt>
-<dd><p>A subscript that specifies the location of a single value in a collection, such as a single pixel in an image.</p>
+<dd>A subscript that specifies the location of a single value in a collection, such as a single pixel in an image.
 </dd>
 <dt><span id="inner-loop">inner loop</span></dt>
-<dd><p>A loop that is inside another loop. See also: <a href="#outer-loop">outer loop</a>.</p>
+<dd>A loop that is inside another loop. See also: <a href="#outer-loop">outer loop</a>.
 </dd>
 <dt><span id="integer">integer</span></dt>
-<dd><p>A whole number, such as -12343. See also: <a href="#floating-point-number">floating-point number</a>.</p>
+<dd>A whole number, such as -12343. See also: <a href="#floating-point-number">floating-point number</a>.
 </dd>
 <dt><span id="invariant">invariant</span></dt>
-<dd><p>An expression whose value doesn't change during the execution of a program, typically used in an <a href="#assertion">assertion</a>. See also: <a href="#precondition">precondition</a>, <a href="#postcondition">postcondition</a>.</p>
+<dd>An expression whose value doesn't change during the execution of a program, typically used in an <a href="#assertion">assertion</a>. See also: <a href="#precondition">precondition</a>, <a href="#postcondition">postcondition</a>.
 </dd>
 <dt><span id="library">library</span></dt>
-<dd><p>A family of code units (functions, classes, variables) that implement a set of related tasks.</p>
+<dd>A family of code units (functions, classes, variables) that implement a set of related tasks.
 </dd>
 <dt><span id="loop-variable">loop variable</span></dt>
-<dd><p>The variable that keeps track of the progress of the loop.</p>
+<dd>The variable that keeps track of the progress of the loop.
 </dd>
 <dt><span id="member">member</span></dt>
-<dd><p>A variable contained within an <a href="#object">object</a>.</p>
+<dd>A variable contained within an <a href="#object">object</a>.
 </dd>
 <dt><span id="method">method</span></dt>
-<dd><p>A function which is tied to a particular <a href="#object">object</a>. Each of an object's methods typically implements one of the things it can do, or one of the questions it can answer.</p>
+<dd>A function which is tied to a particular <a href="#object">object</a>. Each of an object's methods typically implements one of the things it can do, or one of the questions it can answer.
 </dd>
 <dt><span id="object">object</span></dt>
-<dd><p>FIXME</p>
+<dd>FIXME
 </dd>
 <dt><span id="outer-loop">outer loop</span></dt>
-<dd><p>A loop that contains another loop. See also: <a href="#inner-loop">inner loop</a>.</p>
+<dd>A loop that contains another loop. See also: <a href="#inner-loop">inner loop</a>.
 </dd>
 <dt><span id="parameter">parameter</span></dt>
-<dd><p>A variable named in the function's declaration that is used to hold a value passed into the call. The term is often used interchangeably (and inconsistently) with <a href="#argument">argument</a>.</p>
+<dd>A variable named in the function's declaration that is used to hold a value passed into the call. The term is often used interchangeably (and inconsistently) with <a href="#argument">argument</a>.
 </dd>
 <dt><span id="pipe">pipe</span></dt>
-<dd><p>A connection from the output of one program to the input of another. When two or more programs are connected in this way, they are called a &quot;pipeline&quot;.</p>
+<dd>A connection from the output of one program to the input of another. When two or more programs are connected in this way, they are called a &quot;pipeline&quot;.
 </dd>
 <dt><span id="postcondition">postcondition</span></dt>
-<dd><p>A condition that a function (or other block of code) guarantees is true once it has finished running. Postconditions are often represented using <a href="#assertion">assertions</a>.</p>
+<dd>A condition that a function (or other block of code) guarantees is true once it has finished running. Postconditions are often represented using <a href="#assertion">assertions</a>.
 </dd>
 <dt><span id="precondition">precondition</span></dt>
-<dd><p>A condition that must be true in order for a function (or other block of code) to run correctly.</p>
+<dd>A condition that must be true in order for a function (or other block of code) to run correctly.
 </dd>
 <dt><span id="regression">regression</span></dt>
-<dd><p>To re-introduce a bug that was once fixed.</p>
+<dd>To re-introduce a bug that was once fixed.
 </dd>
 <dt><span id="return-statement">return statement</span></dt>
-<dd><p>A statement that causes a function to stop executing and return a value to its caller immediately.</p>
+<dd>A statement that causes a function to stop executing and return a value to its caller immediately.
 </dd>
 <dt><span id="rgb">RGB</span></dt>
-<dd><p>An <a href="#additive-color-model">additive model</a> that represents colors as combinations of red, green, and blue. Each color's value is typically in the range 0..255 (i.e., a one-byte integer).</p>
+<dd>An <a href="#additive-color-model">additive model</a> that represents colors as combinations of red, green, and blue. Each color's value is typically in the range 0..255 (i.e., a one-byte integer).
 </dd>
 <dt><span id="sequence">sequence</span></dt>
-<dd><p>FIXME</p>
+<dd>FIXME
 </dd>
 <dt><span id="shape">shape</span></dt>
-<dd><p>An array's dimensions, represented as a vector. For example, a 5×3 array's shape is <code>(5,3)</code>.</p>
+<dd>An array's dimensions, represented as a vector. For example, a 5×3 array's shape is <code>(5,3)</code>.
 </dd>
 <dt><span id="silent-failure">silent failure</span></dt>
-<dd><p>Failing without producing any warning messages. Silent failures are hard to detect and debug.</p>
+<dd>Failing without producing any warning messages. Silent failures are hard to detect and debug.
 </dd>
 <dt><span id="slice">slice</span></dt>
-<dd><p>A regular subsequence of a larger sequence, such as the first five elements or every second element.</p>
+<dd>A regular subsequence of a larger sequence, such as the first five elements or every second element.
 </dd>
 <dt><span id="stack-frame">stack frame</span></dt>
-<dd><p>A data structure that provides storage for a function's local variables. Each time a function is called, a new stack frame is created and put on the top of the <a href="#call-stack">call stack</a>. When the function returns, the stack frame is discarded.</p>
+<dd>A data structure that provides storage for a function's local variables. Each time a function is called, a new stack frame is created and put on the top of the <a href="#call-stack">call stack</a>. When the function returns, the stack frame is discarded.
 </dd>
 <dt><span id="standard-input">standard input</span></dt>
-<dd><p>A process's default input stream. In interactive command-line applications, it is typically connected to the keyboard; in a <a href="#pipe">pipe</a>, it receives data from the <a href="#standard-output">standard output</a> of the preceding process.</p>
+<dd>A process's default input stream. In interactive command-line applications, it is typically connected to the keyboard; in a <a href="#pipe">pipe</a>, it receives data from the <a href="#standard-output">standard output</a> of the preceding process.
 </dd>
 <dt><span id="standard-output">standard output</span></dt>
-<dd><p>A process's default output stream. In interactive command-line applications, data sent to standard output is displayed on the screen; in a <a href="#pipe">pipe</a>, it is passed to the <a href="#standard-input">standard input</a> of the next process.</p>
+<dd>A process's default output stream. In interactive command-line applications, data sent to standard output is displayed on the screen; in a <a href="#pipe">pipe</a>, it is passed to the <a href="#standard-input">standard input</a> of the next process.
 </dd>
 <dt><span id="string">string</span></dt>
-<dd><p>Short for &quot;character string&quot;, a <a href="#sequence">sequence</a> of zero or more characters.</p>
+<dd>Short for &quot;character string&quot;, a <a href="#sequence">sequence</a> of zero or more characters.
 </dd>
 <dt><span id="syntax-error">syntax error</span></dt>
-<dd><p>CHECKME: a programming error that occurs when statements are in an order or contain characters not expected by the programming language</p>
+<dd>CHECKME: a programming error that occurs when statements are in an order or contain characters not expected by the programming language
 </dd>
 <dt><span id="test-oracle">test oracle</span></dt>
-<dd><p>A program, device, data set, or human being against which the results of a test can be compared.</p>
+<dd>A program, device, data set, or human being against which the results of a test can be compared.
 </dd>
 <dt><span id="test-driven-development">test-driven development</span></dt>
-<dd><p>The practice of writing unit tests <em>before</em> writing the code they test.</p>
+<dd>The practice of writing unit tests <em>before</em> writing the code they test.
 </dd>
 <dt><span id="traceback">traceback</span></dt>
-<dd><p>CHECKME In Python, a list of the sequence of function calls that led to an error.</p>
+<dd>CHECKME In Python, a list of the sequence of function calls that led to an error.
 </dd>
 <dt><span id="tuple">tuple</span></dt>
-<dd><p>An <a href="#immutable">immutable</a> <a href="#sequence">sequence</a> of values.</p>
+<dd>An <a href="#immutable">immutable</a> <a href="#sequence">sequence</a> of values.
 </dd>
 <dt><span id="type">type</span></dt>
-<dd><p>CHECKME The classification of something in a program (for example, the contents of a variable) as a kind of number (e.g. <a href="#float">floating-point</a>, <a href="#integer">integer</a>), <a href="#string">string</a>, or something else.</p>
+<dd>CHECKME The classification of something in a program (for example, the contents of a variable) as a kind of number (e.g. <a href="#float">floating-point</a>, <a href="#integer">integer</a>), <a href="#string">string</a>, or something else.
 </dd>
 <dt><span id="type-of-error">type of error</span></dt>
-<dd><p>CHECKME Indicates the nature of an error in a program, for example, <code>IOError</code> in Python refers to problems in input/output. See also <a href="#syntax-error">syntax error</a>.</p>
+<dd>CHECKME Indicates the nature of an error in a program, for example, <code>IOError</code> in Python refers to problems in input/output. See also <a href="#syntax-error">syntax error</a>.
 </dd>
 <dt><span id="while-loop">while loop</span></dt>
-<dd><p>A loop that keeps executing as long as some condition is true. See also: <a href="#for-loop">for loop</a>.</p>
+<dd>A loop that keeps executing as long as some condition is true. See also: <a href="#for-loop">for loop</a>.
 </dd>
 </dl>
         </div>
@@ -315,6 +313,6 @@
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
-    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
   </body>
 </html>

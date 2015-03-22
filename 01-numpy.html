@@ -7,10 +7,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
-    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
-    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -19,18 +17,21 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container container-full-width card">
+    <div class="container card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
-      <div class="row-fluid">
-        <div class="span10 offset1">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Analyzing Patient Data</h2>
-<div id="learning-objectives" class="objectives">
-<h2>Learning Objectives</h2>
+<div id="learning-objectives" class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
 <ul>
 <li>Explain what a library is, and what libraries are used for.</li>
 <li>Load a Python library and use the things it contains.</li>
@@ -40,6 +41,7 @@
 <li>Perform operations on arrays of data.</li>
 <li>Display simple graphs.</li>
 </ul>
+</div>
 </div>
 <p>Words are useful, but what's more useful are the sentences and stories we build with them. Similarly, while a lot of powerful tools are built into languages like Python, even more live in the <a href="reference.html#software-library">libraries</a> they are used to build.</p>
 <p>In order to load our inflammation data, we need to <a href="reference.html#import">import</a> a library called NumPy. In general you should use this library if you want to do fancy things with numbers, especially if you have matrices. We can load NumPy using:</p>
@@ -88,8 +90,11 @@
 <img src="fig/python-sticky-note-variables-03.svg" alt="Updating a Variable" /><p class="caption">Updating a Variable</p>
 </div>
 <p>Since <code>weight_lb</code> doesn't &quot;remember&quot; where its value came from, it isn't automatically updated when <code>weight_kg</code> changes. This is different from the way spreadsheets work.</p>
-<div id="whats-inside-the-box" class="challenge">
-<h2>What's inside the box?</h2>
+<div id="whats-inside-the-box" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>What's inside the box?</h2>
+</div>
+<div class="panel-body">
 <p>Draw diagrams showing what variables refer to what values after each statement in the following program:</p>
 <pre class="sourceCode python"><code class="sourceCode python">weight = <span class="fl">70.5</span>
 age = <span class="dv">35</span>
@@ -97,12 +102,17 @@ age = <span class="dv">35</span>
 weight = weight * <span class="fl">1.14</span>
 age = age + <span class="dv">20</span></code></pre>
 </div>
-<div id="sorting-out-references" class="challenge">
-<h2>Sorting out references</h2>
+</div>
+<div id="sorting-out-references" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
+</div>
+<div class="panel-body">
 <p>What does the following program print out?</p>
 <pre class="sourceCode python"><code class="sourceCode python">first, second = <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hopper&#39;</span>
 third, fourth = second, first
 <span class="dt">print</span> third, fourth</code></pre>
+</div>
 </div>
 <p>Just as we can assign a single value to a variable, we can also assign an array of values to a variable using the same syntax. Let's re-run <code>numpy.loadtxt</code> and save its result:</p>
 <pre class="sourceCode python"><code class="sourceCode python">data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)</code></pre>
@@ -128,9 +138,13 @@ third, fourth = second, first
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;middle value in data:&#39;</span>, data[<span class="dv">30</span>, <span class="dv">20</span>]</code></pre>
 <pre class="output"><code>middle value in data: 13.0</code></pre>
 <p>The expression <code>data[30, 20]</code> may not surprise you, but <code>data[0, 0]</code> might. Programming languages like Fortran and MATLAB start counting at 1, because that's what human beings have done for thousands of years. Languages in the C family (including C++, Java, Perl, and Python) count from 0 because that's simpler for computers to do. As a result, if we have an M×N array in Python, its indices go from 0 to M-1 on the first axis and 0 to N-1 on the second. It takes a bit of getting used to, but one way to remember the rule is that the index is how many steps we have to take from the start to get the item we want.</p>
-<div id="in-the-corner" class="callout">
-<h2>In the Corner</h2>
+<div id="in-the-corner" class="callout panel panel-info">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pushpin"></span>In the Corner</h2>
+</div>
+<div class="panel-body">
 <p>What may also surprise you is that when Python displays an array, it shows the element with index <code>[0, 0]</code> in the upper left corner rather than the lower left. This is consistent with the way mathematicians draw matrices, but different from the Cartesian coordinates. The indices are (row, column) instead of (column, row) for the same reason, which can be confusing when plotting data.</p>
+</div>
 </div>
 <p>An index like <code>[30, 20]</code> selects a single element of an array, but we can select whole sections as well. For example, we can select the first ten days (columns) of values for the first four (rows) patients like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> data[<span class="dv">0</span>:<span class="dv">4</span>, <span class="dv">0</span>:<span class="dv">10</span>]</code></pre>
@@ -154,8 +168,11 @@ third, fourth = second, first
 [[ 2.  3.  0.  0.]
  [ 1.  1.  0.  1.]
  [ 2.  2.  1.  1.]]</code></pre>
-<div id="slicing-strings" class="challenge">
-<h2>Slicing strings</h2>
+<div id="slicing-strings" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
+</div>
+<div class="panel-body">
 <p>A section of an array is called a <strong>slice</strong>. We can take slices of character strings as well:</p>
 <pre class="sourceCode python"><code class="sourceCode python">element = <span class="st">&#39;oxygen&#39;</span>
 <span class="dt">print</span> <span class="st">&#39;first three characters:&#39;</span>, element[<span class="dv">0</span>:<span class="dv">3</span>]
@@ -165,9 +182,14 @@ last three characters: gen</code></pre>
 <p>What is the value of <code>element[:4]</code>? What about <code>element[4:]</code>? Or <code>element[:]</code>?</p>
 <p>What is <code>element[-1]</code>? What is <code>element[-2]</code>? Given those answers, explain what <code>element[1:-1]</code> does.</p>
 </div>
-<div id="thin-slices" class="challenge">
-<h2>Thin slices</h2>
+</div>
+<div id="thin-slices" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
+</div>
+<div class="panel-body">
 <p>The expression <code>element[3:3]</code> produces an <strong>empty string</strong>, i.e., a string that contains no characters. If <code>data</code> holds our array of patient data, what does <code>data[3:3, 4:4]</code> produce? What about <code>data[3:3, :]</code>?</p>
+</div>
 </div>
 <p>Arrays also know how to perform common mathematical operations on their values. The simplest operations with data are arithmetic: add, subtract, multiply, and divide. When you do such operations on arrays, the operation is done on each individual element of the array. Thus:</p>
 <pre class="sourceCode python"><code class="sourceCode python">doubledata = data * <span class="fl">2.0</span></code></pre>
@@ -291,8 +313,11 @@ plt.show(fig)</code></pre>
 <img src="fig/01-numpy_80_0.png" alt="The Previous Plots as Subplots" /><p class="caption">The Previous Plots as Subplots</p>
 </div>
 <p>The call to <code>loadtxt</code> reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we're creating three sub-plots, what to draw for each one, and that we want a tight layout. (Perversely, if we leave out that call to <code>fig.tight_layout()</code>, the graphs will actually be squeezed together more closely.)</p>
-<div id="check-your-understanding" class="challenge">
-<h2>Check your understanding</h2>
+<div id="check-your-understanding" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Check your understanding</h2>
+</div>
+<div class="panel-body">
 <p>Plot scaling: why do all of our plots stop just short of the upper end of our graph?</p>
 <p>Draw diagrams showing what variables refer to what values after each statement in the following program:</p>
 <pre class="sourceCode python"><code class="sourceCode python">mass = <span class="fl">47.5</span>
@@ -300,15 +325,23 @@ age = <span class="dv">122</span>
 mass = mass * <span class="fl">2.0</span>
 age = age - <span class="dv">20</span></code></pre>
 </div>
-<div id="sorting-out-references-1" class="challenge">
-<h2>Sorting out references</h2>
+</div>
+<div id="sorting-out-references-1" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
+</div>
+<div class="panel-body">
 <p>What does the following program print out?</p>
 <pre class="sourceCode python"><code class="sourceCode python">first, second = <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hopper&#39;</span>
 third, fourth = second, first
 <span class="dt">print</span> third, fourth</code></pre>
 </div>
-<div id="slicing-strings-1" class="challenge">
-<h2>Slicing strings</h2>
+</div>
+<div id="slicing-strings-1" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
+</div>
+<div class="panel-body">
 <p>A section of an array is called a <a href="reference.html#slice">slice</a>. We can take slices of character strings as well:</p>
 <pre class="sourceCode python"><code class="sourceCode python">element = <span class="st">&#39;oxygen&#39;</span>
 <span class="dt">print</span> <span class="st">&#39;first three characters:&#39;</span>, element[<span class="dv">0</span>:<span class="dv">3</span>]
@@ -318,25 +351,46 @@ last three characters: gen</code></pre>
 <p>What is the value of <code>element[:4]</code>? What about <code>element[4:]</code>? Or <code>element[:]</code>?</p>
 <p>What is <code>element[-1]</code>? What is <code>element[-2]</code>? Given those answers, explain what <code>element[1:-1]</code> does.</p>
 </div>
-<div id="thin-slices-1" class="challenge">
-<h2>Thin slices</h2>
+</div>
+<div id="thin-slices-1" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
+</div>
+<div class="panel-body">
 <p>The expression <code>element[3:3]</code> produces an <a href="reference.html#empty-string">empty string</a>, i.e., a string that contains no characters. If <code>data</code> holds our array of patient data, what does <code>data[3:3, 4:4]</code> produce? What about <code>data[3:3, :]</code>?</p>
 </div>
-<div id="check-your-understanding-plot-scaling" class="challenge">
-<h2>Check your understanding: plot scaling</h2>
+</div>
+<div id="check-your-understanding-plot-scaling" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Check your understanding: plot scaling</h2>
+</div>
+<div class="panel-body">
 <p>Why do all of our plots stop just short of the upper end of our graph?</p>
 </div>
-<div id="check-your-understanding-drawing-straight-lines" class="challenge">
-<h2>Check your understanding: drawing straight lines</h2>
+</div>
+<div id="check-your-understanding-drawing-straight-lines" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Check your understanding: drawing straight lines</h2>
+</div>
+<div class="panel-body">
 <p>Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?</p>
 </div>
-<div id="make-your-own-plot" class="challenge">
-<h2>Make your own plot</h2>
+</div>
+<div id="make-your-own-plot" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Make your own plot</h2>
+</div>
+<div class="panel-body">
 <p>Create a plot showing the standard deviation of the inflammation data for each day across all patients.</p>
 </div>
-<div id="moving-plots-around" class="challenge">
-<h2>Moving plots around</h2>
+</div>
+<div id="moving-plots-around" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Moving plots around</h2>
+</div>
+<div class="panel-body">
 <p>Modify the program to display the three plots on top of one another instead of side by side.</p>
+</div>
 </div>
         </div>
       </div>
@@ -349,6 +403,6 @@ last three characters: gen</code></pre>
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
-    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
   </body>
 </html>

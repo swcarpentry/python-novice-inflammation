@@ -7,10 +7,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
-    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
-    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -19,18 +17,21 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container container-full-width card">
+    <div class="container card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
-      <div class="row-fluid">
-        <div class="span10 offset1">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Defensive Programming</h2>
-<div id="learning-objectives" class="objectives">
-<h2>Learning Objectives</h2>
+<div id="learning-objectives" class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
 <ul>
 <li>Explain what an assertion is.</li>
 <li>Add assertions that check the program's state is correct.</li>
@@ -39,6 +40,7 @@
 <li>Explain why variables should be initialized using actual data values rather than arbitrary constants.</li>
 <li>Debug code containing an error systematically.</li>
 </ul>
+</div>
 </div>
 <p>Our previous lessons have introduced the basic tools of programming: variables and lists, file I/O, loops, conditionals, and functions. What they <em>haven't</em> done is show us how to tell whether a program is getting the right answer, and how to tell if it's <em>still</em> getting the right answer as we make changes to it.</p>
 <p>To achieve that, we need to:</p>
@@ -259,21 +261,32 @@ AssertionError: </code></pre>
 <h3 id="keep-track-of-what-youve-done">Keep Track of What You've Done</h3>
 <p>Good scientists keep track of what they've done so that they can reproduce their work, and so that they don't waste time repeating the same experiments or running ones whose results won't be interesting. Similarly, debugging works best when we <em>keep track of what we've done</em> and how well it worked. If we find ourselves asking, &quot;Did left followed by right with an odd number of lines cause the crash? Or was it right followed by left? Or was I using an even number of lines?&quot; then it's time to step away from the computer, take a deep breath, and start working more systematically.</p>
 <p>Records are particularly useful when the time comes to ask for help. People are more likely to listen to us when we can explain clearly what we did, and we're better able to give them the information they need to be useful.</p>
-<div id="version-control-revisited" class="callout">
-<h2>Version Control Revisited</h2>
+<div id="version-control-revisited" class="callout panel panel-info">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pushpin"></span>Version Control Revisited</h2>
+</div>
+<div class="panel-body">
 <p>Version control is often used to reset software to a known state during debugging, and to explore recent changes to code that might be responsible for bugs. In particular, most version control systems have a <code>blame</code> command that will show who last changed particular lines of code...</p>
+</div>
 </div>
 <h3 id="be-humble">Be Humble</h3>
 <p>And speaking of help: if we can't find a bug in 10 minutes, we should <em>be humble</em> and ask for help. Just explaining the problem aloud is often useful, since hearing what we're thinking helps us spot inconsistencies and hidden assumptions.</p>
 <p>Asking for help also helps alleviate confirmation bias. If we have just spent an hour writing a complicated program, we want it to work, so we're likely to keep telling ourselves why it should, rather than searching for the reason it doesn't. People who aren't emotionally invested in the code can be more objective, which is why they're often able to spot the simple mistakes we have overlooked.</p>
 <p>Part of being humble is learning from our mistakes. Programmers tend to get the same things wrong over and over: either they don't understand the language and libraries they're working with, or their model of how things work is wrong. In either case, taking note of why the error occurred and checking for it next time quickly turns into not making the mistake at all.</p>
 <p>And that is what makes us most productive in the long run. As the saying goes, <em>A week of hard work can sometimes save you an hour of thought</em>. If we train ourselves to avoid making some kinds of mistakes, to break our code into modular, testable chunks, and to turn every assumption (or mistake) into an assertion, it will actually take us <em>less</em> time to produce working programs, not more.</p>
-<div id="pre--and-post-conditions" class="challenge">
-<h2>Pre- and post-conditions</h2>
+<div id="pre--and-post-conditions" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Pre- and post-conditions</h2>
+</div>
+<div class="panel-body">
 <p>Suppose you are writing a function called <code>average</code> that calculates the average of the numbers in a list. What pre-conditions and post-conditions would you write for it? Compare your answer to your neighbor's: can you think of a function that will pass your tests but not hers or vice versa?</p>
 </div>
-<div id="testing-assertions" class="challenge">
-<h2>Testing assertions</h2>
+</div>
+<div id="testing-assertions" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Testing assertions</h2>
+</div>
+<div class="panel-body">
 <p>Explain in words what the assertions in this code check, and for each one, give an example of input that will make that assertion fail.</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> running(values):
     <span class="kw">assert</span> <span class="dt">len</span>(values) &gt; <span class="dv">0</span>
@@ -284,9 +297,14 @@ AssertionError: </code></pre>
         <span class="kw">assert</span> result[-<span class="dv">1</span>] &gt;= result[<span class="dv">0</span>]
     <span class="kw">return</span> result</code></pre>
 </div>
-<div id="fixing-and-testing" class="challenge">
-<h2>Fixing and testing</h2>
+</div>
+<div id="fixing-and-testing" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Fixing and testing</h2>
+</div>
+<div class="panel-body">
 <p>Fix <code>range_overlap</code>. Re-run <code>test_range_overlap</code> after each change you make.</p>
+</div>
 </div>
         </div>
       </div>
@@ -299,6 +317,6 @@ AssertionError: </code></pre>
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
-    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
   </body>
 </html>
