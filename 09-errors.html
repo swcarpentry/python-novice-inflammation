@@ -7,10 +7,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
-    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
-    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -19,18 +17,21 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container container-full-width card">
+    <div class="container card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
-      <div class="row-fluid">
-        <div class="span10 offset1">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Errors and Exceptions</h2>
-<div id="learning-objectives" class="objectives">
-<h2>Learning Objectives</h2>
+<div id="learning-objectives" class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
 <ul>
 <li>To be able to read a traceback, and determine the following relevant pieces of information:
 <ul>
@@ -46,6 +47,7 @@
 <li><code>IOError</code></li>
 </ul></li>
 </ul>
+</div>
 </div>
 <p>Every programmer encounters errors, both those who are just beginning, and those who have been programming for years. Encountering errors and exceptions can be very frustrating at times, and can make coding feel like a hopeless endeavour. However, understanding what the different types of errors are and when you are likely to encounter them can help a lot. Once you know <em>why</em> you get certain types of errors, they become much easier to fix.</p>
 <p>Errors in Python have a very specific form, called a <a href="reference.html#traceback">traceback</a>. Let's examine one:</p>
@@ -69,9 +71,13 @@ IndexError: list index out of range</code></pre>
 <li><p>The second shows some code in another function (<code>favorite_ice_cream</code>, located in the file <code>errors_01.py</code>), with an arrow pointing to Line 7 (which is <code>print ice_creams[3]</code>).</p></li>
 </ol>
 <p>The last level is the actual place where the error occurred. The other level(s) show what function the program executed to get to the next level down. So, in this case, the program first performed a <a href="reference.html#function-call">function call</a> to the function <code>favorite_ice_cream</code>. Inside this function, the program encountered an error on Line 7, when it tried to run the code <code>print ice_creams[3]</code>.</p>
-<div id="long-tracebacks" class="callout">
-<h2>Long Tracebacks</h2>
+<div id="long-tracebacks" class="callout panel panel-info">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pushpin"></span>Long Tracebacks</h2>
+</div>
+<div class="panel-body">
 <p>Sometimes, you might see a traceback that is very long -- sometimes they might even be 20 levels deep! This can make it seem like something horrible happened, but really it just means that your program called many functions before it ran into the error. Most of the time, you can just pay attention to the bottom-most level, which is the actual place where the error occurred.</p>
+</div>
 </div>
 <p>So what error did the program actually encounter? In the last line of the traceback, Python helpfully tells us the category or type of error (in this case, it is an <code>IndexError</code>) and a more detailed error message (in this case, it says &quot;list index out of range&quot;).</p>
 <p>If you encounter an error and don't know what it means, it is still important to read the traceback closely. That way, if you fix the error, but encounter a new one, you can tell that the error changed. Additionally, sometimes just knowing <em>where</em> the error occurred is enough to fix it, even if you don't entirely understand the message.</p>
@@ -101,8 +107,11 @@ SyntaxError: invalid syntax</code></pre>
     ^
 IndentationError: unexpected indent</code></pre>
 <p>Both <code>SyntaxError</code> and <code>IndentationError</code> indicate a problem with the syntax of your program, but an <code>IndentationError</code> is more specific: it <em>always</em> means that there is a problem with how your code is indented.</p>
-<div id="tabs-and-spaces" class="callout">
-<h2>Tabs and Spaces</h2>
+<div id="tabs-and-spaces" class="callout panel panel-info">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pushpin"></span>Tabs and Spaces</h2>
+</div>
+<div class="panel-body">
 <p>A quick note on indentation errors: they can sometimes be insidious, especially if you are mixing spaces and tabs. Because they are both <a href="reference.html#whitespace">whitespace</a>, it is difficult to visually tell the difference. The IPython notebook actually gives us a bit of a hint, but not all Python editors will do that. In the following example, the first two lines are using a tab for indentation, while the third line uses four spaces:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> some_function():
     msg = <span class="st">&quot;hello, world!&quot;</span>
@@ -113,6 +122,7 @@ IndentationError: unexpected indent</code></pre>
               ^
 IndentationError: unindent does not match any outer indentation level</code></pre>
 <p>By default, one tab is equivalent to eight spaces, so the only way to mix tabs and spaces is to make it look like this. In general, is is better to just never use tabs and always use spaces, because it can make things very confusing.</p>
+</div>
 </div>
 <h2 id="variable-name-errors">Variable Name Errors</h2>
 <p>Another very common type of error is called a <code>NameError</code>, and occurs when you try to use a variable that does not exist. For example:</p>
@@ -230,8 +240,11 @@ IOError                                   Traceback (most recent call last)
 ----&gt; 2 file_handle.read()
 
 IOError: File not open for reading</code></pre>
-<div id="reading-error-messages" class="challenge">
-<h2>Reading Error Messages</h2>
+<div id="reading-error-messages" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Reading Error Messages</h2>
+</div>
+<div class="panel-body">
 <p>Read the traceback below, and identify the following pieces of information about it:</p>
 <ol style="list-style-type: decimal">
 <li>How many levels does the traceback have?</li>
@@ -263,8 +276,12 @@ KeyError                                  Traceback (most recent call last)
 
 KeyError: &#39;Friday&#39;</code></pre>
 </div>
-<div id="identifying-syntax-errors" class="challenge">
-<h2>Identifying Syntax Errors</h2>
+</div>
+<div id="identifying-syntax-errors" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Identifying Syntax Errors</h2>
+</div>
+<div class="panel-body">
 <ol style="list-style-type: decimal">
 <li>Read the code below, and (without running it) try to identify what the errors are.</li>
 <li>Run the cell, and read the error message. Is it a <code>SyntaxError</code> or an <code>IndentationError</code>?</li>
@@ -276,8 +293,12 @@ KeyError: &#39;Friday&#39;</code></pre>
    <span class="dt">print</span> <span class="st">&quot;But at least python tells us about them!&quot;</span>
   <span class="dt">print</span> <span class="st">&quot;So they are usually not too hard to fix.&quot;</span></code></pre>
 </div>
-<div id="identifying-variable-name-errors" class="challenge">
-<h2>Identifying Variable Name Errors</h2>
+</div>
+<div id="identifying-variable-name-errors" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Identifying Variable Name Errors</h2>
+</div>
+<div class="panel-body">
 <ol style="list-style-type: decimal">
 <li>Read the code below, and (without running it) try to identify what the errors are.</li>
 <li>Run the cell, and read the error message. What type of <code>NameError</code> do you think this is? In other words, is it a string with no quotes, a misspelled variable, or a variable that should have been defined but was not?</li>
@@ -292,8 +313,12 @@ KeyError: &#39;Friday&#39;</code></pre>
         message = message + <span class="st">&quot;b&quot;</span>
 <span class="dt">print</span> message</code></pre>
 </div>
-<div id="identifying-item-errors" class="challenge">
-<h2>Identifying Item Errors</h2>
+</div>
+<div id="identifying-item-errors" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Identifying Item Errors</h2>
+</div>
+<div class="panel-body">
 <ol style="list-style-type: decimal">
 <li>Read the code below, and (without running it) try to identify what the errors are.</li>
 <li>Run the cell, and read the error message. Is it an <code>IndexError</code> or a <code>KeyError</code>?</li>
@@ -311,6 +336,7 @@ print &quot;The third month in summer is: &quot; + seasons[&#39;summer&#39;][3]
 print &quot;The third month in fall is: &quot; + seasons[&#39;fal&#39;][3]
 print &quot;The second month in winter is: &quot; + seasons[&#39;Winter&#39;][1]</code></pre>
 </div>
+</div>
         </div>
       </div>
       <div class="footer">
@@ -322,6 +348,6 @@ print &quot;The second month in winter is: &quot; + seasons[&#39;Winter&#39;][1]
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
-    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
   </body>
 </html>

@@ -7,10 +7,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
-    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
-    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -19,24 +17,28 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container container-full-width card">
+    <div class="container card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
-      <div class="row-fluid">
-        <div class="span10 offset1">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Repeating Actions with Loops</h2>
-<div id="learning-objectives" class="objectives">
-<h2>Learning Objectives</h2>
+<div id="learning-objectives" class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
 <ul>
 <li>Explain what a for loop does.</li>
 <li>Correctly write for loops to repeat simple calculations.</li>
 <li>Trace changes to a loop variable as the loop runs.</li>
 <li>Trace changes to other variables as they are updated by a for loop.</li>
 </ul>
+</div>
 </div>
 <p>In the last lesson, we wrote some code that plots some values of interest from our first inflammation dataset, and reveals some suspicious features in it, such as from <code>inflammation-01.csv</code></p>
 <p><img src="fig/03-loop_2_0.png" alt="Analysis of inflammation-01.csv" /><br /> but we have a dozen data sets right now and more on the way. We want to create plots for all our data sets with a single statement. To do that, we'll have to teach the computer how to repeat things.</p>
@@ -102,23 +104,35 @@ n</code></pre>
 <p>Note also that finding the length of a string is such a common operation that Python actually has a built-in function to do it called <code>len</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="dt">len</span>(<span class="st">&#39;aeiou&#39;</span>)</code></pre>
 <p><code>len</code> is much faster than any function we could write ourselves, and much easier to read than a two-line loop; it will also give us the length of many other things that we haven't met yet, so we should always use it when we can.</p>
-<div id="from-1-to-n" class="challenge">
-<h2>From 1 to N</h2>
+<div id="from-1-to-n" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>From 1 to N</h2>
+</div>
+<div class="panel-body">
 <p>Python has a built-in function called <code>range</code> that creates a list of numbers: <code>range(3)</code> produces <code>[0, 1, 2]</code>, <code>range(2, 5)</code> produces <code>[2, 3, 4]</code>. Using <code>range</code>, write a loop that uses <code>range</code> to print the first 3 natural numbers:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dv">1</span>
 <span class="dv">2</span>
 <span class="dv">3</span></code></pre>
 </div>
-<div id="computing-powers-with-loops" class="challenge">
-<h2>Computing powers with loops</h2>
+</div>
+<div id="computing-powers-with-loops" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Computing powers with loops</h2>
+</div>
+<div class="panel-body">
 <p>Exponentiation is built into Python:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="dv">5</span>**<span class="dv">3</span>
 <span class="dv">125</span></code></pre>
 <p>It also has a function called <code>pow</code> that calculates the same value. Write a loop to calculate the same result.</p>
 </div>
-<div id="reverse-a-string" class="challenge">
-<h2>Reverse a string</h2>
+</div>
+<div id="reverse-a-string" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Reverse a string</h2>
+</div>
+<div class="panel-body">
 <p>Write a loop that takes a string, and produces a new string with the characters in reverse order, so <code>'Newton'</code> becomes <code>'notweN'</code>.</p>
+</div>
 </div>
         </div>
       </div>
@@ -131,6 +145,6 @@ n</code></pre>
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
-    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
   </body>
 </html>

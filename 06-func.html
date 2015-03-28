@@ -7,10 +7,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="css/swc.css" />
-    <link rel="stylesheet" type="text/css" href="css/swc-workshop-and-lesson.css" />
-    <link rel="stylesheet" type="text/css" href="css/lesson.css" />
     <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -19,18 +17,21 @@
     <![endif]-->
   </head>
   <body class="lesson">
-    <div class="container container-full-width card">
+    <div class="container card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
-      <div class="row-fluid">
-        <div class="span10 offset1">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Creating Functions</h2>
-<div id="learning-objectives" class="objectives">
-<h2>Learning Objectives</h2>
+<div id="learning-objectives" class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
 <ul>
 <li>Define a function that takes parameters.</li>
 <li>Return a value from a function.</li>
@@ -38,6 +39,7 @@
 <li>Set default values for function parameters.</li>
 <li>Explain why we should divide programs into small, single-purpose functions.</li>
 </ul>
+</div>
 </div>
 <p>At this point, we've written code to draw some interesting features in our inflammation data, loop over all our data files to quickly draw these plots for each of them, and have Python make decisions based on what it sees in our data. But, our code is getting pretty long and complicated; what if we had thousands of datasets, and didn't want to generate a figure for every single one? Commenting out the figure-drawing code is a nuisance. Also, what if we want to use that code again, on a different dataset or at a different point in our program? Cutting and pasting it is going to make our code get very long and very repetative, very quickly. We'd like a way to package our code so that it is easier to reuse, and Python provides for this by letting us define things called 'functions' - a shorthand way of re-executing longer pieces of code.</p>
 <p>Let's start by defining a function <code>fahr_to_kelvin</code> that converts temperatures from Fahrenheit to Kelvin:</p>
@@ -354,36 +356,63 @@ loadtxt(fname, dtype=&lt;type &#39;float&#39;&gt;, comments=&#39;#&#39;, delimit
 <p>This tells us that <code>loadtxt</code> has one parameter called <code>fname</code> that doesn't have a default value, and eight others that do. If we call the function like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;,&#39;</span>)</code></pre>
 <p>then the filename is assigned to <code>fname</code> (which is what we want), but the delimiter string <code>','</code> is assigned to <code>dtype</code> rather than <code>delimiter</code>, because <code>dtype</code> is the second parameter in the list. That's why we don't have to provide <code>fname=</code> for the filename, but <em>do</em> have to provide <code>delimiter=</code> for the second parameter.</p>
-<div id="combining-strings" class="challenge">
-<h2>Combining strings</h2>
+<div id="combining-strings" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Combining strings</h2>
+</div>
+<div class="panel-body">
 <p>&quot;Adding&quot; two strings produces their concatention: <code>'a' + 'b'</code> is <code>'ab'</code>. Write a function called <code>fence</code> that takes two parameters called <code>original</code> and <code>wrapper</code> and returns a new string that has the wrapper character at the beginning and end of the original:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> fence(<span class="st">&#39;name&#39;</span>, <span class="st">&#39;*&#39;</span>)
 *name*</code></pre>
 </div>
-<div id="selecting-characters-from-strings" class="challenge">
-<h2>Selecting characters from strings</h2>
+</div>
+<div id="selecting-characters-from-strings" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Selecting characters from strings</h2>
+</div>
+<div class="panel-body">
 <p>If the variable <code>s</code> refers to a string, then <code>s[0]</code> is the string's first character and <code>s[-1]</code> is its last. Write a function called <code>outer</code> that returns a string made up of just the first and last characters of its input:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> outer(<span class="st">&#39;helium&#39;</span>)
 hm</code></pre>
 </div>
-<div id="rescaling-with-parameters" class="challenge">
-<h2>Rescaling, with parameters</h2>
+</div>
+<div id="rescaling-with-parameters" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Rescaling, with parameters</h2>
+</div>
+<div class="panel-body">
 <p>Rewrite the <code>rescale</code> function so that it scales data to lie between 0.0 and 1.0 by default, but will allow the caller to specify lower and upper bounds if they want. Compare your implementation to your neighbor's: do the two functions always behave the same way?</p>
 </div>
-<div id="automatic-plots" class="challenge">
-<h2>Automatic plots</h2>
+</div>
+<div id="automatic-plots" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Automatic plots</h2>
+</div>
+<div class="panel-body">
 <p>Write a function called <code>analyze</code> that takes a filename as a parameter and displays the three graphs produced in the <a href="01-numpy.ipynb">previous lesson</a>, i.e., <code>analyze('inflammation-01.csv')</code> should produce the graphs already shown, while <code>analyze('inflammation-02.csv')</code> should produce corresponding graphs for the second data set. Be sure to give your function a docstring.</p>
 </div>
-<div id="rescaling-an-array" class="challenge">
-<h2>Rescaling an array</h2>
+</div>
+<div id="rescaling-an-array" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Rescaling an array</h2>
+</div>
+<div class="panel-body">
 <p>Write a function <code>rescale</code> that takes an array as input and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0. (If <span class="math"><em>L</em></span> and <span class="math"><em>H</em></span> are the lowest and highest values in the original array, then the replacement for a value <span class="math"><em>v</em></span> should be <span class="math">(<em>v</em> − <em>L</em>)/(<em>H</em> − <em>L</em>)</span>.) Be sure to give the function a docstring.</p>
 </div>
-<div id="testing-your-function" class="challenge">
-<h2>Testing your function</h2>
+</div>
+<div id="testing-your-function" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Testing your function</h2>
+</div>
+<div class="panel-body">
 <p>Run the commands <code>help(numpy.arange)</code> and <code>help(numpy.linspace)</code> to see how to use these functions to generate regularly-spaced values, then use those values to test your <code>rescale</code> function.</p>
 </div>
-<div id="variables-inside-and-outside-functions" class="challenge">
-<h2>Variables inside and outside functions</h2>
+</div>
+<div id="variables-inside-and-outside-functions" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Variables inside and outside functions</h2>
+</div>
+<div class="panel-body">
 <p>What does the following piece of code display when run - and why?</p>
 <pre class="sourceCode python"><code class="sourceCode python">f = <span class="dv">0</span>
 k = <span class="dv">0</span>
@@ -398,6 +427,7 @@ f2k(<span class="dv">32</span>)
 
 <span class="dt">print</span> k</code></pre>
 </div>
+</div>
         </div>
       </div>
       <div class="footer">
@@ -409,6 +439,6 @@ f2k(<span class="dv">32</span>)
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
-    <script src="http://software-carpentry.org/v5/js/bootstrap/bootstrap.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
   </body>
 </html>
