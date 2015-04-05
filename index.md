@@ -43,11 +43,11 @@ We want to:
 
 To do all that, we'll have to learn a little bit about programming.
 
-## Prerequisites {.prereq}
-
-Learners need to understand the concepts of files and directories
-(including the working directory) and how to start a Python
-interpreter before tackling this lesson.
+> ## Prerequisites {.prereq}
+>
+> Learners need to understand the concepts of files and directories
+> (including the working directory) and how to start a Python
+> interpreter before tackling this lesson.
 
 ## Topics
 
@@ -55,12 +55,11 @@ interpreter before tackling this lesson.
 2.  [Repeating Actions with Loops](02-loop.html)
 3.  [Storing Multiple Values in Lists](03-lists.html)
 4.  [Analyzing Data from Multiple Files](04-files.html)
-3.  [Making Choices](05-cond.html)
-4.  [Creating Functions](06-func.html)
-5.  [Defensive Programming](07-defensive.html)
-6.  [Command-Line Programs](08-cmdline.html)
-7.  [Errors and Exceptions](09-errors.html)
-8.  [Supplementary Material](10-supplementary.html)
+5.  [Making Choices](05-cond.html)
+6.  [Creating Functions](06-func.html)
+7.  [Defensive Programming](07-defensive.html)
+8.  [Command-Line Programs](08-cmdline.html)
+9.  [Errors and Exceptions](09-errors.html)
 
 ## Other Resources
 
