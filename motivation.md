@@ -3,7 +3,7 @@ layout: slides
 title: Why Python?
 subtitle: Motivation
 ---
-## Python is a...
+## Python is...
 
 - popular,
 - powerful,
@@ -45,28 +45,18 @@ including some for:
 
 ## Why Python and not ...
 
-Perl?
+**Perl?** →  Python is easier to read and learn.
 
-- It is easier to read and easier to learn.
+**Javascript or Ruby?** →  Python has more good numerical libraries.
 
-Javascript or Ruby?
+**MATLAB or SAS?** →  Python is free.
 
-- Python has more good numerical libraries.
-
-MATLAB or SAS?
-
-- It's free.
-
-R?
-
-- Depends on the task at hand. R has some advantages in statistics and
+**R?** →  Depends on the task at hand. R has some advantages in statistics and
   visualization, but Python is a more flexible option that can perform
   many different tasks well.
 
 
 ## IPython notebook
-
-An interactive shell for using Python.
 
 ![IPython notebook screenshot](img/ipython-notebook.png)
 
