@@ -135,12 +135,12 @@ though we can call it whatever we want:
 
 ~~~ {.python}
 import sys
-import numpy as np
+import numpy
 
 def main():
     script = sys.argv[0]
     filename = sys.argv[1]
-    data = np.loadtxt(filename, delimiter=',')
+    data = numpy.loadtxt(filename, delimiter=',')
     for m in data.mean(axis=1):
         print m
 ~~~
@@ -160,12 +160,12 @@ Let's add a call to `main`:
 
 ~~~ {.python}
 import sys
-import numpy as np
+import numpy
 
 def main():
     script = sys.argv[0]
     filename = sys.argv[1]
-    data = np.loadtxt(filename, delimiter=',')
+    data = numpy.loadtxt(filename, delimiter=',')
     for m in data.mean(axis=1):
         print m
 
@@ -307,12 +307,12 @@ Here's our changed program
 
 ~~~ {.python}
 import sys
-import numpy as np
+import numpy
 
 def main():
     script = sys.argv[0]
     for filename in sys.argv[1:]:
-        data = np.loadtxt(filename, delimiter=',')
+        data = numpy.loadtxt(filename, delimiter=',')
         for m in data.mean(axis=1):
             print m
 
@@ -352,7 +352,7 @@ so we could just do this:
 
 ~~~ {.python}
 import sys
-import numpy as np
+import numpy
 
 def main():
     script = sys.argv[0]
@@ -360,7 +360,7 @@ def main():
     filenames = sys.argv[2:]
 
     for f in filenames:
-        data = np.loadtxt(f, delimiter=',')
+        data = numpy.loadtxt(f, delimiter=',')
 
         if action == '--min':
             values = data.min(axis=1)
@@ -402,7 +402,7 @@ so that the program fails fast:
 
 ~~~ {.python}
 import sys
-import numpy as np
+import numpy
 
 def main():
     script = sys.argv[0]
@@ -414,7 +414,7 @@ def main():
         process(f, action)
 
 def process(filename, action):
-    data = np.loadtxt(filename, delimiter=',')
+    data = numpy.loadtxt(filename, delimiter=',')
 
     if action == '--min':
         values = data.min(axis=1)

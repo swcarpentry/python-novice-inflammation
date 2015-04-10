@@ -599,17 +599,16 @@ Neither result seems particularly likely,
 so either there's a mistake in our calculations
 or something is wrong with our data.
 
-It's very common to create an [alias](reference.html#alias) for a library when importing it
-in order to reduce the amount of typing we have to do.
-Here are our three plots side by side using aliases for `numpy` and `pyplot`:
+You can groups similar plots in a single figure using subplots.
+Here are our three plots side by side:
 
 ~~~ {.python}
-import numpy as np
-from matplotlib import pyplot as plt
+import numpy
+import matplotlib.pyplot
 
-data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
-fig = plt.figure(figsize=(10.0, 3.0))
+fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
 axes1 = fig.add_subplot(1, 3, 1)
 axes2 = fig.add_subplot(1, 3, 2)
@@ -626,7 +625,7 @@ axes3.plot(data.min(axis=0))
 
 fig.tight_layout()
 
-plt.show(fig)
+matplotlib.pyplot.show(fig)
 ~~~
 
 ![The Previous Plots as Subplots](fig/01-numpy_80_0.png)

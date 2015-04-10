@@ -103,9 +103,6 @@ additive color model
 :   A way to represent colors as the sum of contributions from primary colors
     such as [red, green, and blue](#rgb).
 
-alias
-:   (a library): To give a [library](#library) a nickname while importing it.
-
 argument
 :   A value given to a function or program when it runs. 
     The term is often used interchangeably (and inconsistently) with [parameter](#parameter).
