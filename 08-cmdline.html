@@ -63,27 +63,22 @@
 <p>Using the text editor of your choice, save the following in a text file called <code>sys-version.py</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="dt">print</span> <span class="st">&#39;version is&#39;</span>, sys.version</code></pre>
-<p>The first line imports a library called <code>sys</code>, which is short for &quot;system&quot;. It defines values such as <code>sys.version</code>, which describes which version of Python we are running. We can run this script from within the IPython Notebook like this:</p>
-<pre class="in"><code>%run sys-version.py</code></pre>
+<p>The first line imports a library called <code>sys</code>, which is short for &quot;system&quot;. It defines values such as <code>sys.version</code>, which describes which version of Python we are running. We can run this script from the command line like this:</p>
+<pre class="input"><code>$ python sys-version.py</code></pre>
 <pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
 [GCC 4.0.1 (Apple Inc. build 5493)]</code></pre>
-<p>or like this:</p>
-<pre class="in"><code>!ipython sys-version.py</code></pre>
-<pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
-[GCC 4.0.1 (Apple Inc. build 5493)]</code></pre>
-<p>The first method, <code>%run</code>, uses a special command in the IPython Notebook to run a program in a <code>.py</code> file. The second method is more general: the exclamation mark <code>!</code> tells the Notebook to run a shell command, and it just so happens that the command we run is <code>ipython</code> with the name of the script.</p>
 <p>Here's another script called <code>argv-list.py</code> that does something more interesting:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="dt">print</span> <span class="st">&#39;sys.argv is&#39;</span>, sys.argv</code></pre>
 <p>The strange name <code>argv</code> stands for &quot;argument values&quot;. Whenever Python runs a program, it takes all of the values given on the command line and puts them in the list <code>sys.argv</code> so that the program can determine what they were. If we run this program with no arguments:</p>
-<pre class="in"><code>!ipython argv-list.py</code></pre>
-<pre class="output"><code>sys.argv is [&#39;/Users/gwilson/s/bc/python/novice/argv-list.py&#39;]</code></pre>
+<pre class="input"><code>$ python argv-list.py</code></pre>
+<pre class="output"><code>sys.argv is [&#39;argv-list.py&#39;]</code></pre>
 <p>the only thing in the list is the full path to our script, which is always <code>sys.argv[0]</code>. If we run it with a few arguments, however:</p>
 <pre class="input"><code>$ python argv-list.py first second third</code></pre>
-<pre class="output"><code>sys.argv is [&#39;/Users/gwilson/s/bc/python/novice/argv-list.py&#39;, &#39;first&#39;, &#39;second&#39;, &#39;third&#39;]</code></pre>
+<pre class="output"><code>sys.argv is [&#39;argv-list.py&#39;, &#39;first&#39;, &#39;second&#39;, &#39;third&#39;]</code></pre>
 <p>then Python adds each of those arguments to that magic list.</p>
 <p>With this in hand, let's build a version of <code>readings.py</code> that always prints the per-patient mean of a single data file. The first step is to write a function that outlines our implementation, and a placeholder for the function that does the actual work. By convention this function is usually called <code>main</code>, though we can call it whatever we want:</p>
-<pre class="in"><code>!cat readings-01.py</code></pre>
+<pre class="input"><code>$ cat readings-01.py</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="ch">import</span> numpy <span class="ch">as</span> np
 
@@ -94,9 +89,9 @@
     <span class="kw">for</span> m in data.mean(axis=<span class="dv">1</span>):
         <span class="dt">print</span> m</code></pre>
 <p>This function gets the name of the script from <code>sys.argv[0]</code>, because that's where it's always put, and the name of the file to process from <code>sys.argv[1]</code>. Here's a simple test:</p>
-<pre class="in"><code>%run readings-01.py inflammation-01.csv</code></pre>
+<pre class="input"><code>$ python readings-01.py inflammation-01.csv</code></pre>
 <p>There is no output because we have defined a function, but haven't actually called it. Let's add a call to <code>main</code>:</p>
-<pre class="in"><code>!cat readings-02.py</code></pre>
+<pre class="input"><code>$ cat readings-02.py</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="ch">import</span> numpy <span class="ch">as</span> np
 
@@ -109,7 +104,7 @@
 
 main()</code></pre>
 <p>and run that:</p>
-<pre class="in"><code>%run readings-02.py inflammation-01.csv</code></pre>
+<pre class="input"><code>$ python readings-02.py inflammation-01.csv</code></pre>
 <pre class="output"><code>5.45
 5.425
 6.1
@@ -191,6 +186,7 @@ main()</code></pre>
 <p>Using small data files as input also allows us to check our results more easily: here, for example, we can see that our program is calculating the mean correctly for each line, whereas we were really taking it on faith before. This is yet another rule of programming: <em>test the simple things first</em>.</p>
 <p>We want our program to process each file separately, so we need a loop that executes once for each filename. If we specify the files on the command line, the filenames will be in <code>sys.argv</code>, but we need to be careful: <code>sys.argv[0]</code> will always be the name of our script, rather than the name of a file. We also need to handle an unknown number of filenames, since our program could be run for any number of files.</p>
 <p>The solution to both problems is to loop over the contents of <code>sys.argv[1:]</code>. The '1' tells Python to start the slice at location 1, so the program's name isn't included; since we've left off the upper bound, the slice runs to the end of the list, and includes all the filenames. Here's our changed program <code>readings-03.py</code>:</p>
+<pre class="input"><code>$ cat readings-03.py</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="ch">import</span> numpy <span class="ch">as</span> np
 
@@ -218,6 +214,7 @@ main()</code></pre>
 </div>
 <h2 id="handling-command-line-flags">Handling Command-Line Flags</h2>
 <p>The next step is to teach our program to pay attention to the <code>--min</code>, <code>--mean</code>, and <code>--max</code> flags. These always appear before the names of the files, so we could just do this:</p>
+<pre class="input"><code>$ cat readings-04.py</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="ch">import</span> numpy <span class="ch">as</span> np
 
@@ -250,6 +247,7 @@ main()</code></pre>
 <li><p>If <code>action</code> isn't one of the three recognized flags, the program loads each file but does nothing with it (because none of the branches in the conditional match). <a href="reference.html#silence-failure">Silent failures</a> like this are always hard to debug.</p></li>
 </ol>
 <p>This version pulls the processing of each file out of the loop into a function of its own. It also checks that <code>action</code> is one of the allowed flags before doing any processing, so that the program fails fast:</p>
+<pre class="input"><code>$ cat readings-05.py</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="ch">import</span> numpy <span class="ch">as</span> np
 
@@ -280,6 +278,7 @@ main()</code></pre>
 <p>Python has a module named <a href="http://docs.python.org/dev/library/argparse.html">argparse</a> that helps handle complex command-line flags. We will not cover this module in this lesson but you can go to Tshepang Lekhonkhobe's <a href="http://docs.python.org/dev/howto/argparse.html">Argparse tutorial</a> that is part of Python's Official Documentation.</p>
 <h2 id="handling-standard-input">Handling Standard Input</h2>
 <p>The next thing our program has to do is read data from standard input if no filenames are given so that we can put it in a pipeline, redirect input to it, and so on. Let's experiment in another script called <code>count-stdin.py</code>:</p>
+<pre class="input"><code>$ cat count-stdin.py</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 
 count = <span class="dv">0</span>
@@ -294,6 +293,7 @@ count = <span class="dv">0</span>
 <pre class="input"><code>$ count_stdin.py small-01.csv</code></pre>
 <p>i.e., to forget the <code>&lt;</code> character that redirect the file to standard input. In this case, there's nothing in standard input, so the program waits at the start of the loop for someone to type something on the keyboard. Since there's no way for us to do this, our program is stuck, and we have to halt it using the <code>Interrupt</code> option from the <code>Kernel</code> menu in the Notebook.</p>
 <p>We now need to rewrite the program so that it loads data from <code>sys.stdin</code> if no filenames are provided. Luckily, <code>numpy.loadtxt</code> can handle either a filename or an open file as its first parameter, so we don't actually need to change <code>process</code>. That leaves <code>main</code>:</p>
+<pre class="input"><code>$ cat readings-06.py</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> main():
     script = sys.argv[<span class="dv">0</span>]
     action = sys.argv[<span class="dv">1</span>]
@@ -306,8 +306,9 @@ count = <span class="dv">0</span>
         <span class="kw">for</span> f in filenames:
             process(f, action)</code></pre>
 <p>Let's try it out:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="fl">0.333333333333</span>
-<span class="fl">1.0</span></code></pre>
+<pre class="input"><code>$ python readings-06.py --mean small-01.csv</code></pre>
+<pre class="output"><code>0.333333333333
+1.0</code></pre>
 <p>That's better. In fact, that's done: the program now does everything we set out to do.</p>
 <div id="arithmetic-on-the-command-line" class="challenge panel panel-success">
 <div class="panel-heading">

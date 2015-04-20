@@ -67,29 +67,16 @@ The first line imports a library called `sys`,
 which is short for "system".
 It defines values such as `sys.version`,
 which describes which version of Python we are running.
-We can run this script from within the IPython Notebook like this:
+We can run this script from the command line like this:
 
-<pre class="in"><code>%run sys-version.py</code></pre>
+~~~ {.input}
+$ python sys-version.py
+~~~
 
 ~~~ {.output}
 version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
 [GCC 4.0.1 (Apple Inc. build 5493)]
 ~~~
-
-or like this:
-
-<pre class="in"><code>!ipython sys-version.py</code></pre>
-
-~~~ {.output}
-version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
-[GCC 4.0.1 (Apple Inc. build 5493)]
-~~~
-
-The first method, `%run`,
-uses a special command in the IPython Notebook to run a program in a `.py` file.
-The second method is more general:
-the exclamation mark `!` tells the Notebook to run a shell command,
-and it just so happens that the command we run is `ipython` with the name of the script.
 
 Here's another script called `argv-list.py` that does something more interesting:
 
@@ -105,10 +92,12 @@ and puts them in the list `sys.argv`
 so that the program can determine what they were.
 If we run this program with no arguments:
 
-<pre class="in"><code>!ipython argv-list.py</code></pre>
+~~~ {.input}
+$ python argv-list.py
+~~~
 
 ~~~ {.output}
-sys.argv is ['/Users/gwilson/s/bc/python/novice/argv-list.py']
+sys.argv is ['argv-list.py']
 ~~~
 
 the only thing in the list is the full path to our script,
@@ -119,7 +108,7 @@ If we run it with a few arguments, however:
 $ python argv-list.py first second third
 ~~~
 ~~~ {.output}
-sys.argv is ['/Users/gwilson/s/bc/python/novice/argv-list.py', 'first', 'second', 'third']
+sys.argv is ['argv-list.py', 'first', 'second', 'third']
 ~~~
 
 then Python adds each of those arguments to that magic list.
@@ -131,7 +120,9 @@ and a placeholder for the function that does the actual work.
 By convention this function is usually called `main`,
 though we can call it whatever we want:
 
-<pre class="in"><code>!cat readings-01.py</code></pre>
+~~~ {.input}
+$ cat readings-01.py
+~~~
 
 ~~~ {.python}
 import sys
@@ -150,13 +141,17 @@ because that's where it's always put,
 and the name of the file to process from `sys.argv[1]`.
 Here's a simple test:
 
-<pre class="in"><code>%run readings-01.py inflammation-01.csv</code></pre>
+~~~ {.input}
+$ python readings-01.py inflammation-01.csv
+~~~
 
 There is no output because we have defined a function,
 but haven't actually called it.
 Let's add a call to `main`:
 
-<pre class="in"><code>!cat readings-02.py</code></pre>
+~~~ {.input}
+$ cat readings-02.py
+~~~
 
 ~~~ {.python}
 import sys
@@ -174,7 +169,9 @@ main()
 
 and run that:
 
-<pre class="in"><code>%run readings-02.py inflammation-01.csv</code></pre>
+~~~ {.input}
+$ python readings-02.py inflammation-01.csv
+~~~
 
 ~~~ {.output}
 5.45
@@ -305,6 +302,10 @@ and includes all the filenames.
 Here's our changed program
 `readings-03.py`:
 
+~~~ {.input}
+$ cat readings-03.py
+~~~
+
 ~~~ {.python}
 import sys
 import numpy as np
@@ -324,6 +325,7 @@ and here it is in action:
 ~~~ {.input}
 $ python readings-03.py small-01.csv small-02.csv
 ~~~
+
 ~~~ {.output}
 0.333333333333
 1.0
@@ -349,6 +351,10 @@ $ python readings-03.py small-01.csv small-02.csv
 The next step is to teach our program to pay attention to the `--min`, `--mean`, and `--max` flags.
 These always appear before the names of the files,
 so we could just do this:
+
+~~~ {.input}
+$ cat readings-04.py
+~~~
 
 ~~~ {.python}
 import sys
@@ -400,6 +406,10 @@ It also checks that `action` is one of the allowed flags
 before doing any processing,
 so that the program fails fast:
 
+~~~ {.input}
+$ cat readings-05.py
+~~~
+
 ~~~ {.python}
 import sys
 import numpy as np
@@ -445,6 +455,10 @@ redirect input to it,
 and so on.
 Let's experiment in another script called `count-stdin.py`:
 
+~~~ {.input}
+$ cat count-stdin.py
+~~~
+
 ~~~ {.python}
 import sys
 
@@ -465,6 +479,7 @@ Let's try running it as if it were a regular command-line program:
 ~~~ {.input}
 $ python count-stdin.py < small-01.csv
 ~~~
+
 ~~~ {.output}
 2 lines in standard input
 ~~~
@@ -489,6 +504,10 @@ Luckily,
 so we don't actually need to change `process`.
 That leaves `main`:
 
+~~~ {.input}
+$ cat readings-06.py
+~~~
+
 ~~~ {.python}
 def main():
     script = sys.argv[0]
@@ -505,7 +524,11 @@ def main():
 
 Let's try it out:
 
-~~~ {.python}
+~~~ {.input}
+$ python readings-06.py --mean small-01.csv
+~~~
+
+~~~ {.output}
 0.333333333333
 1.0
 ~~~
