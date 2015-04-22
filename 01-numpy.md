@@ -18,7 +18,7 @@ Words are useful,
 but what's more useful are the sentences and stories we build with them.
 Similarly,
 while a lot of powerful tools are built into languages like Python,
-even more live in the [libraries](reference.html#software-library) they are used to build.
+even more live in the [libraries](reference.html#library) they are used to build.
 
 In order to load our inflammation data,
 we need to [import](reference.html#import) a library called NumPy.
