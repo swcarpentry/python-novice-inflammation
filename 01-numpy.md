@@ -79,7 +79,7 @@ we need to [assign](reference.html#assignment) the array to a [variable](referen
 A variable is just a name for a value,
 such as `x`, `current_temperature`, or `subject_id`.
 Python's variables must begin with a letter.
-We can create a new variable simply by assigning a value to it using `=`.
+We can create a new variable by assigning a value to it using `=`.
 As an illustration,
 let's step back and instead of considering a table of data,
 consider the simplest "collection" of data,
