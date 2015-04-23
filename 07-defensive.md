@@ -48,7 +48,7 @@ and the most common way to do it is to add [assertions](reference.html#assertion
 so that it checks itself as it runs.
 An assertion is simply a statement that something must be true at a certain point in a program.
 When Python sees one,
-it checks that the assertion's condition.
+it evaluates the assertion's condition.
 If it's true,
 Python does nothing,
 but if it's false,
