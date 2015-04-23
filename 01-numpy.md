@@ -18,7 +18,7 @@ Words are useful,
 but what's more useful are the sentences and stories we build with them.
 Similarly,
 while a lot of powerful tools are built into languages like Python,
-even more live in the [libraries](reference.html#software-library) they are used to build.
+even more live in the [libraries](reference.html#library) they are used to build.
 
 In order to load our inflammation data,
 we need to [import](reference.html#import) a library called NumPy.
@@ -79,7 +79,7 @@ we need to [assign](reference.html#assignment) the array to a [variable](referen
 A variable is just a name for a value,
 such as `x`, `current_temperature`, or `subject_id`.
 Python's variables must begin with a letter.
-We can create a new variable simply by assigning a value to it using `=`.
+We can create a new variable by assigning a value to it using `=`.
 As an illustration,
 let's step back and instead of considering a table of data,
 consider the simplest "collection" of data,
