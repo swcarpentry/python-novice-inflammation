@@ -60,26 +60,22 @@ print word[2]
 print word[3]
 
 ~~~
-~~~ {.error}
---------------------------------------------------------------------------
-IndexError                                Traceback (most recent call last)
-<ipython-input-13-5bc7311e0bf3> in <module>()
-----> 1 print_characters('tin')
-
-<ipython-input-12-11460561ea56> in print_characters(element)
-      3     print element[1]
-      4     print element[2]
-----> 5     print element[3]
-      6
-      7 print_characters('lead')
-
-IndexError: string index out of range
-~~~
 ~~~ {.output}
 t
 i
 n
 ~~~
+~~~ {.error}
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-3-7974b6cdaf14> in <module>()
+      3 print word[1]
+      4 print word[2]
+----> 5 print word[3]
+
+IndexError: string index out of range
+~~~
+
 
 Here's a better approach:
 
