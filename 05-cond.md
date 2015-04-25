@@ -161,7 +161,7 @@ or doing all manner of other things to respond to changing conditions in our dat
 > ~~~ {.python}
 > if 4 > 5:
 >     print 'A'
-> elif 4 =< 5:
+> elif 4 == 5:
 >     print 'B'
 > elif 4 < 5:
 >     print 'C'
