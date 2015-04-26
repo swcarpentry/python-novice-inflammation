@@ -95,7 +95,7 @@ for char in word:
     print char
 ~~~
 
-The improved version of `print_characters` uses a [for loop](reference.html#for-loop)
+This strategy relies on the use of a [for loop](reference.html#for-loop)
 to repeat an operation---in this case, printing---once for each thing in a collection.
 The general form of a loop is:
 
