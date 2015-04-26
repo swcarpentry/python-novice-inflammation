@@ -216,6 +216,8 @@ or doing all manner of other things to respond to changing conditions in our dat
 > Explain what the overall effect of this code is:
 >
 > ~~~ {.python}
+> left = 'L'
+> right = 'R'
 > temp = left
 > left = right
 > right = temp
