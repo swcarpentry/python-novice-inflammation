@@ -32,15 +32,15 @@ called a [traceback](reference.html#traceback).
 Let's examine one:
 
 ~~~ {.python}
-from errors_01 import favorite_ice_cream
-favorite_ice_cream()
+import errors_01
+errors_01.favorite_ice_cream()
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-1-9d0462a5b07c> in <module>()
-      1 from errors_01 import favorite_ice_cream
-----> 2 favorite_ice_cream()
+      1 import errors_01
+----> 2 errors_01.favorite_ice_cream()
 
 /Users/jhamrick/project/swc/novice/python/errors_01.pyc in favorite_ice_cream()
       5         "strawberry"
@@ -78,7 +78,7 @@ the program encountered an error on Line 7, when it tried to run the code `print
 So what error did the program actually encounter?
 In the last line of the traceback,
 Python helpfully tells us the category or type of error (in this case, it is an `IndexError`)
-and a more detailed error message (in this case, it says "list index out of range"). 
+and a more detailed error message (in this case, it says "list index out of range").
 
 If you encounter an error and don't know what it means,
 it is still important to read the traceback closely.
@@ -169,7 +169,7 @@ it *always* means that there is a problem with how your code is indented.
 > In the following example,
 > the first two lines are using a tab for indentation,
 > while the third line uses four spaces:
-> 
+>
 > ~~~ {.python}
 > def some_function():
 >     msg = "hello, world!"
@@ -325,7 +325,7 @@ print "The capital of Oregon is: " + us_state_capitals['oregon']
 KeyError                                  Traceback (most recent call last)
 <ipython-input-12-27fa113dd73c> in <module>()
       6 }
-      7 
+      7
 ----> 8 print "The capital of Oregon is: " + us_state_capitals['oregon']
 
 KeyError: 'oregon'
@@ -354,7 +354,7 @@ print "The capital of Massachusetts is: " + us_state_capitals['massachussetts']
 KeyError                                  Traceback (most recent call last)
 <ipython-input-13-ae1dac4c6a45> in <module>()
       6 }
-      7 
+      7
 ----> 8 print "The capital of Massachusetts is: " + us_state_capitals['massachussetts']
 
 KeyError: 'massachussetts'
@@ -415,50 +415,50 @@ IOError: File not open for reading
 ~~~
 
 > ## Reading Error Messages {.challenge}
-> 
+>
 > Read the traceback below, and identify the following pieces of information about it:
-> 
+>
 > 1.  How many levels does the traceback have?
 > 2.  What is the file name where the error occurred?
 > 3.  What is the function name where the error occurred?
 > 4.  On which line number in this function did the error occurr?
 > 5.  What is the type of error?
 > 6.  What is the error message?
-> 
+>
 > ~~~ {.python}
-> from errors_02 import print_friday_message
-> print_friday_message()
+> import errors_02
+> errors_02.print_friday_message()
 > ~~~
 > ~~~ {.error}
 > ---------------------------------------------------------------------------
 > KeyError                                  Traceback (most recent call last)
 > <ipython-input-2-e4c4cbafeeb5> in <module>()
->       1 from errors_02 import print_friday_message
-> ----> 2 print_friday_message()
-> 
+>       1 import errors_02
+> ----> 2 errors_02.print_friday_message()
+>
 > /Users/jhamrick/project/swc/novice/python/errors_02.py in print_friday_message()
->      13 
+>      13
 >      14 def print_friday_message():
 > ---> 15     print_message("Friday")
-> 
+>
 > /Users/jhamrick/project/swc/novice/python/errors_02.py in print_message(day)
 >       9         "sunday": "Aw, the weekend is almost over."
 >      10     }
 > ---> 11     print messages[day]
->      12 
->      13 
-> 
+>      12
+>      13
+>
 > KeyError: 'Friday'
 > ~~~
 
 > ## Identifying Syntax Errors {.challenge}
-> 
+>
 > 1. Read the code below, and (without running it) try to identify what the errors are.
 > 2. Run the cell, and read the error message. Is it a `SyntaxError` or an `IndentationError`?
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
-> 
-> 
+>
+>
 > ~~~ {.python}
 > def another_function
 >   print "Syntax errors are annoying."
@@ -467,13 +467,13 @@ IOError: File not open for reading
 > ~~~
 
 > ## Identifying Variable Name Errors {.challenge}
-> 
+>
 > 1. Read the code below, and (without running it) try to identify what the errors are.
 > 2. Run the cell, and read the error message. What type of `NameError` do you think this is? In other words, is it a string with no quotes, a misspelled variable, or a variable that should have been defined but was not?
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
-> 
-> 
+>
+>
 > ~~~ {.python}
 > for number in range(10):
 >     # use a if the number is a multiple of 3, otherwise use b
@@ -485,12 +485,12 @@ IOError: File not open for reading
 > ~~~
 
 > ## Identifying Item Errors {.challenge}
-> 
+>
 > 1. Read the code below, and (without running it) try to identify what the errors are.
 > 2. Run the cell, and read the error message. Is it an `IndexError` or a `KeyError`?
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
-> 
+>
 > ~~~ {.python}
 > seasons = {
 >     'spring': ['march', 'april', 'may'],
