@@ -294,13 +294,13 @@ pyplot.show(min_plot)</code></pre></div>
 <p class="caption">Minimum Value Along The First Axis</p>
 </div>
 <p>The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there’s a mistake in our calculations or something is wrong with our data.</p>
-<p>It’s very common to create an <a href="reference.html#alias">alias</a> for a library when importing it in order to reduce the amount of typing we have to do. Here are our three plots side by side using aliases for <code>numpy</code> and <code>pyplot</code>:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy <span class="ch">as</span> np
-<span class="ch">from</span> matplotlib <span class="ch">import</span> pyplot <span class="ch">as</span> plt
+<p>You can groups similar plots in a single figure using subplots. Here are our three plots side by side:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy
+<span class="ch">import</span> matplotlib.pyplot
 
-data = np.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
+data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
 
-fig = plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+fig = matplotlib.pyplot.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
 
 axes1 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
 axes2 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
@@ -317,7 +317,7 @@ axes3.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
 
 fig.tight_layout()
 
-plt.show(fig)</code></pre></div>
+matplotlib.pyplot.show(fig)</code></pre></div>
 <div class="figure">
 <img src="fig/01-numpy_80_0.png" alt="The Previous Plots as Subplots" />
 <p class="caption">The Previous Plots as Subplots</p>

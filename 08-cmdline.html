@@ -81,12 +81,12 @@
 <p>With this in hand, let’s build a version of <code>readings.py</code> that always prints the per-patient mean of a single data file. The first step is to write a function that outlines our implementation, and a placeholder for the function that does the actual work. By convention this function is usually called <code>main</code>, though we can call it whatever we want:</p>
 <pre class="input"><code>$ cat readings-01.py</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="ch">import</span> numpy <span class="ch">as</span> np
+<span class="ch">import</span> numpy
 
 <span class="kw">def</span> main():
     script = sys.argv[<span class="dv">0</span>]
     filename = sys.argv[<span class="dv">1</span>]
-    data = np.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
+    data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
     <span class="kw">for</span> m in data.mean(axis=<span class="dv">1</span>):
         <span class="dt">print</span> m</code></pre></div>
 <p>This function gets the name of the script from <code>sys.argv[0]</code>, because that’s where it’s always put, and the name of the file to process from <code>sys.argv[1]</code>. Here’s a simple test:</p>
@@ -94,12 +94,12 @@
 <p>There is no output because we have defined a function, but haven’t actually called it. Let’s add a call to <code>main</code>:</p>
 <pre class="input"><code>$ cat readings-02.py</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="ch">import</span> numpy <span class="ch">as</span> np
+<span class="ch">import</span> numpy
 
 <span class="kw">def</span> main():
     script = sys.argv[<span class="dv">0</span>]
     filename = sys.argv[<span class="dv">1</span>]
-    data = np.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
+    data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
     <span class="kw">for</span> m in data.mean(axis=<span class="dv">1</span>):
         <span class="dt">print</span> m
 
@@ -189,12 +189,12 @@ main()</code></pre></div>
 <p>The solution to both problems is to loop over the contents of <code>sys.argv[1:]</code>. The ‘1’ tells Python to start the slice at location 1, so the program’s name isn’t included; since we’ve left off the upper bound, the slice runs to the end of the list, and includes all the filenames. Here’s our changed program <code>readings-03.py</code>:</p>
 <pre class="input"><code>$ cat readings-03.py</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="ch">import</span> numpy <span class="ch">as</span> np
+<span class="ch">import</span> numpy
 
 <span class="kw">def</span> main():
     script = sys.argv[<span class="dv">0</span>]
     <span class="kw">for</span> filename in sys.argv[<span class="dv">1</span>:]:
-        data = np.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
+        data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
         <span class="kw">for</span> m in data.mean(axis=<span class="dv">1</span>):
             <span class="dt">print</span> m
 
@@ -217,7 +217,7 @@ main()</code></pre></div>
 <p>The next step is to teach our program to pay attention to the <code>--min</code>, <code>--mean</code>, and <code>--max</code> flags. These always appear before the names of the files, so we could just do this:</p>
 <pre class="input"><code>$ cat readings-04.py</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="ch">import</span> numpy <span class="ch">as</span> np
+<span class="ch">import</span> numpy
 
 <span class="kw">def</span> main():
     script = sys.argv[<span class="dv">0</span>]
@@ -225,7 +225,7 @@ main()</code></pre></div>
     filenames = sys.argv[<span class="dv">2</span>:]
 
     <span class="kw">for</span> f in filenames:
-        data = np.loadtxt(f, delimiter=<span class="st">&#39;,&#39;</span>)
+        data = numpy.loadtxt(f, delimiter=<span class="st">&#39;,&#39;</span>)
 
         <span class="kw">if</span> action == <span class="st">&#39;--min&#39;</span>:
             values = data.<span class="dt">min</span>(axis=<span class="dv">1</span>)
@@ -250,7 +250,7 @@ main()</code></pre></div>
 <p>This version pulls the processing of each file out of the loop into a function of its own. It also checks that <code>action</code> is one of the allowed flags before doing any processing, so that the program fails fast:</p>
 <pre class="input"><code>$ cat readings-05.py</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="ch">import</span> numpy <span class="ch">as</span> np
+<span class="ch">import</span> numpy
 
 <span class="kw">def</span> main():
     script = sys.argv[<span class="dv">0</span>]
@@ -262,7 +262,7 @@ main()</code></pre></div>
         process(f, action)
 
 <span class="kw">def</span> process(filename, action):
-    data = np.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
+    data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
 
     <span class="kw">if</span> action == <span class="st">&#39;--min&#39;</span>:
         values = data.<span class="dt">min</span>(axis=<span class="dv">1</span>)
