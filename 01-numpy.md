@@ -643,8 +643,6 @@ the graphs will actually be squeezed together more closely.)
 
 > ## Check your understanding {.challenge}
 >
-> Plot scaling: why do all of our plots stop just short of the upper end of our graph?
->
 > Draw diagrams showing what variables refer to what values after each statement in the following program:
 >
 > ~~~ {.python}
