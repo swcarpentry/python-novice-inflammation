@@ -47,7 +47,7 @@ subtitle: Reference
 *   Lists are mutable (i.e., their values can be changed in place).
 *   Strings are immutable (i.e., the characters in them cannot be changed).
 
-## [Analyzing Data in Multiple Files](04-files.html)
+## [Analyzing Data from Multiple Files](04-files.html)
 
 *   Use `glob.glob(pattern)` to create a list of files whose names match a pattern.
 *   Use `*` in a pattern to match zero or more characters, and `?` to match any single character.
@@ -79,7 +79,7 @@ subtitle: Reference
 *   Keep track of what you've done.
 *   Be humble.
 
-## [Command-Line Programs](06-cmdline.html)
+## [Command-Line Programs](08-cmdline.html)
 
 *   The `sys` library connects a Python program to the system it is running on.
 *   The list `sys.argv` contains the command-line arguments that a program was run with.
@@ -87,7 +87,7 @@ subtitle: Reference
 *   The "file" `sys.stdin` connects to a program's standard input.
 *   The "file" `sys.stdout` connects to a program's standard output.
 
-## [Errors and Exceptions](07-errors.html)
+## [Errors and Exceptions](09-errors.html)
 
 *   Tracebacks can look intimidating, but they give us a lot of useful information about what went wrong in our program, including where the error occurred and what type of error it was.
 *   An error having to do with the "grammar" or syntax of the program is called a `SyntaxError`. If the issue has to do with how the code is indented, then it will be called an `IndentationError`.
@@ -96,8 +96,6 @@ subtitle: Reference
 *   Trying to read a file that does not exist will give you an `IOError`. Trying to read a file that is open for writing, or writing to a file that is open for reading, will also give you an `IOError`.
 
 ## Glossary
-
-
 
 additive color model
 :   A way to represent colors as the sum of contributions from primary colors
@@ -201,7 +199,6 @@ immutable
 import
 :   To load a [library](#library) into a program.
 
-
 in-place operators
 :   An operator such as `+=` that provides a shorthand notation for
     the common case in which the variable being assigned to
@@ -261,13 +258,11 @@ postcondition
 precondition
 :   A condition that must be true in order for a function (or other block of code) to run correctly.
 
-
 regression
 :   To re-introduce a bug that was once fixed.
 
 return statement
 :   A statement that causes a function to stop executing and return a value to its caller immediately.
-
 
 RGB
 :   An [additive model](#additive-color-model)
