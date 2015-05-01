@@ -82,5 +82,3 @@ which are covered in the lesson on the shell.
 ## [Command-Line Programs](08-cmdline.html)
 
 ## [Errors and Exceptions](09-errors.html)
-
-## [Supplementary Material](10-supplementary.html)
