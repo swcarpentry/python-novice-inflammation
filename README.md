@@ -1,5 +1,6 @@
-python-novice-inflammation
+#python-novice-inflammation fake_data
 ==========================
+Dominic Barraclough's fork of Software Carpentry python lesson with text about debugging with fake data
 
 Introduction to Python for non-programmers using inflammation data.
 

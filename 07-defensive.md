@@ -452,20 +452,38 @@ we'd be writing up our results and moving on to the next program.
 In practice,
 scientists tend to do the following:
 
-1.  *Test with simplified data.*
-    Before doing statistics on a real data set,
-    we should try calculating statistics for a single record,
-    for two identical records,
+1.  *Test with artificial data*
+	While we write our program, we can create artifical data that mimics 
+	our expected real data but exaggerates the features we wish to detect. By doing
+	this, we have a way of validating that our program is actually performing the 
+	processing we want as the exaggerated features should show a strong response
+	in the programs output. We need to create a range of artifical data so that we can 
+	confirm that our program correctly responds to a range of different inputs. 
+	Additionally we should create "null data" that consist of only noise so
+	we can check that that the program does not produce false postives. 
+	Artifical data can be made by a range of methods ranging from injecting artifical 
+	signals into your experimental setup to data generated entirely in software.  
+	If, when tested with artifical data, our program, fails to perform as expected 
+	we need first to confirm the validity of the artificial data before investigating 
+	why our program is not behaving as expected. After being well tested, a set of
+	artifical data becomes a valuable asset as it can be used to repeatedly validate a
+	program as it evolves over time. 
+
+
+2.  *Test with simplified data or conditions*
+    Before doing statistics on a complete real data set,
+    we may do analysis with reduced data sets calculating for examples 
+   	statistics for a single record, for two identical records,
     for two records whose values are one step apart,
     or for some other case where we can calculate the right answer by hand.
-
-2.  *Test a simplified case.*
-    If our program is supposed to simulate
-    magnetic eddies in rapidly-rotating blobs of supercooled helium,
-    our first test should be a blob of helium that isn't rotating,
-    and isn't being subjected to any external electromagnetic fields.
-    Similarly,
-    if we're looking at the effects of climate change on speciation,
+    If our program is designed to to perform simulations, during program
+    validation we should start by simulating simple systems so it is easier to
+    confirm valid simulation output. As confidence grows in the program, 
+    the complexity of the simulations may be increased.
+    So if our program is supposed to simulate magnetic eddies in rapidly-rotating 
+    blobs of supercooled helium, our first test should be a blob of helium 
+    that isn't rotating, and isn't being subjected to any external electromagnetic fields.
+    Similarly, if we're looking at the effects of climate change on speciation,
     our first test should hold temperature, precipitation, and other factors constant.
 
 3.  *Compare to an oracle.*
