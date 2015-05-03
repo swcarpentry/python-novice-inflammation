@@ -65,18 +65,17 @@ which is short for "else if".
 This makes it simple to write a function that returns the sign of a number:
 
 ~~~ {.python}
-def sign(num):
-    if num > 0:
-        return 1
-    elif num == 0:
-        return 0
-    else:
-        return -1
+num = -3
 
-print 'sign of -3:', sign(-3)
+if num > 0:
+    print num,"is +ve"
+elif num == 0:
+    print num,"is 0"
+else:
+    print num,"is -ve"
 ~~~
 ~~~ {.output}
-sign of -3: -1
+"-3 is -ve"
 ~~~
 
 One important thing to notice in the code above is that we use a double equals sign `==` to test for equality
