@@ -60,8 +60,9 @@ To do all that, we'll have to learn a little bit about programming.
 5.  [Making Choices](05-cond.html)
 6.  [Creating Functions](06-func.html)
 7.  [Defensive Programming](07-defensive.html)
-8.  [Command-Line Programs](08-cmdline.html)
-9.  [Errors and Exceptions](09-errors.html)
+8.  [Debugging](08-debugging.html)
+9.  [Command-Line Programs](09-cmdline.html)
+10.  [Errors and Exceptions](10-errors.html)
 
 ## Other Resources
 

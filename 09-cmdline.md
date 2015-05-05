@@ -53,7 +53,7 @@ we need to know how to handle command-line arguments in a program,
 and how to get at standard input.
 We'll tackle these questions in turn below.
 
-### Command-Line Arguments
+## Command-Line Arguments
 
 Using the text editor of your choice,
 save the following in a text file called `sys-version.py`:
@@ -559,7 +559,7 @@ the program now does everything we set out to do.
 
 > ## Finding particular files {.challenge}
 >
-> Using the `glob` module introduced [03-loop.ipynb](earlier),
+> Using the `glob` module introduced [earlier](04-files.html),
 > write a simple version of `ls` that shows files in the current directory with a particular suffix:
 >
 > ~~~ {.python}
