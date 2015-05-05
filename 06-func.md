@@ -65,7 +65,7 @@ and we have access to the value that we returned.
 Unfortunately, the value returned doesn't look right.
 What went wrong?
 
-### Debugging a Function
+## Debugging a Function
 
 *Debugging* is when we fix a piece of code
 that we know is working incorrectly.
@@ -183,7 +183,7 @@ freezing point of water: 273.15
 boiling point of water: 373.15
 ~~~
 
-### Composing Functions
+## Composing Functions
 
 Now that we've seen how to turn Fahrenheit into Kelvin,
 it's easy to turn Kelvin into Celsius:
@@ -223,7 +223,7 @@ Real-life functions will usually be larger than the ones shown here --- typicall
 they shouldn't ever be much longer than that,
 or the next person who reads it won't be able to understand what's going on.
 
-### Tidying up
+## Tidying up
 
 Now that we know how to wrap bits of code up in functions,
 we can make our inflammation analyasis easier to read and easier to reuse.
@@ -284,8 +284,6 @@ By giving our functions human-readable names,
 we can more easily read and understand what is happening in the `for` loop.
 Even better, if at some later date we want to use either of those pieces of code again,
 we can do so in a single line.
-
-
 
 ## Testing and Documenting
 
@@ -702,7 +700,7 @@ but *do* have to provide `delimiter=` for the second parameter.
 > ## Automatic plots {.challenge}
 >
 > Write a function called `analyze` that takes a filename as a parameter
-> and displays the three graphs produced in the [previous lesson](01-numpy.ipynb),
+> and displays the three graphs produced in the [previous lesson](01-numpy.html),
 > i.e.,
 > `analyze('inflammation-01.csv')` should produce the graphs already shown,
 > while `analyze('inflammation-02.csv')` should produce corresponding graphs for the second data set.
