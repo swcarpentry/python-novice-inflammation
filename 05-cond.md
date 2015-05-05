@@ -62,20 +62,20 @@ before conditional...
 
 We can also chain several tests together using `elif`,
 which is short for "else if".
-This makes it simple to write a function that returns the sign of a number:
+The following Python code uses `elif` to print the sign of a number.
 
 ~~~ {.python}
 num = -3
 
 if num > 0:
-    print num,"is +ve"
+    print num, "is positive"
 elif num == 0:
-    print num,"is 0"
+    print num, "is zero"
 else:
-    print num,"is -ve"
+    print num, "is negative"
 ~~~
 ~~~ {.output}
-"-3 is -ve"
+"-3 is negative"
 ~~~
 
 One important thing to notice in the code above is that we use a double equals sign `==` to test for equality
@@ -149,14 +149,14 @@ freeing us from having to manually examine every plot for features we've seen be
 or doing all manner of other things to respond to changing conditions in our data.
 
 > ## How many paths? {.challenge}
-> 
+>
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
 >
 > A
 > B
 > C
 > B and C
-> 
+>
 > ~~~ {.python}
 > if 4 > 5:
 >     print 'A'
