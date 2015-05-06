@@ -224,15 +224,17 @@ print data.shape
 (60, 40)
 ~~~
 
-This tells us that `data` has 60 rows and 40 columns.
-`data.shape` is a [member](reference.html#member) of `data`,
-i.e.,
-a value that is stored as part of a larger value.
-We use the same dotted notation for the members of values
+This tells us that `data` has 60 rows and 40 columns. When we created the
+variable `data` to store our arthritis data, we didn't just create the array, we also
+created information about the array, called members [member](reference.html#member) or
+attributes. This extra information describes `data` in
+the same way an adjective describes a noun.
+`data.shape` is an attribute  of `data` which described the dimensions of `data`.
+We use the same dotted notation for the attributes of variables
 that we use for the functions in libraries
 because they have the same part-and-whole relationship.
 
-If we want to get a single value from the matrix,
+If we want to get a single number from the array,
 we must provide an [index](reference.html#index) in square brackets,
 just as we do in math:
 
