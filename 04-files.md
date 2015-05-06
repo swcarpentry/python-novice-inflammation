@@ -21,24 +21,14 @@ that finds files whose names match a pattern.
 We provide those patterns as strings:
 the character `*` matches zero or more characters,
 while `?` matches any one character.
-We can use this to get the names of all the IPython Notebooks we have created so far:
+We can use this to get the names of all the html files:
 
 ~~~ {.python}
-print glob.glob('*.ipynb')
+print glob.glob('*.html')
 ~~~
 
 ~~~ {.output}
-['01-numpy.ipynb', '02-func.ipynb', '03-loop.ipynb', '04-cond.ipynb', '05-defensive.ipynb', '06-cmdline.ipynb', 'spatial-intro.ipynb']
-~~~
-
-or to get the names of all our CSV data files:
-
-~~~ {.python}
-print glob.glob('*.csv')
-~~~
-
-~~~ {.output}
-['inflammation-01.csv', 'inflammation-02.csv', 'inflammation-03.csv', 'inflammation-04.csv', 'inflammation-05.csv', 'inflammation-06.csv', 'inflammation-07.csv', 'inflammation-08.csv', 'inflammation-09.csv', 'inflammation-10.csv', 'inflammation-11.csv', 'inflammation-12.csv', 'small-01.csv', 'small-02.csv', 'small-03.csv']
+['01-numpy.html', '02-loop.html', '03-lists.html', '04-files.html', '05-cond.html', '06-func.html', '07-defensive.html', '08-cmdline.html', '09-errors.html', 'index.html', 'LICENSE.html', 'instructors.html', 'README.html', 'discussion.html', 'motivation.html', 'reference.html']
 ~~~
 
 As these examples show,
