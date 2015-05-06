@@ -23,7 +23,7 @@ even more live in the [libraries](reference.html#library) they are used to build
 In order to load our inflammation data,
 we need to [import](reference.html#import) a library called NumPy.
 In general you should use this library if you want to do fancy things with numbers,
-especially if you have matrices.
+especially if you have matrices or arrays.
 We can load NumPy using:
 
 ~~~ {.python}
@@ -32,7 +32,7 @@ import numpy
 
 Importing a library is like getting a piece of lab equipment out of a storage locker
 and setting it up on the bench.
-Once it's done,
+Once you've loaded the library,
 we can ask the library to read our data file for us:
 
 ~~~ {.python}
@@ -78,19 +78,19 @@ To do that,
 we need to [assign](reference.html#assignment) the array to a [variable](reference.html#variable).
 A variable is just a name for a value,
 such as `x`, `current_temperature`, or `subject_id`.
-Python's variables must begin with a letter.
+Python's variables must begin with a letter and are case sensitive.
 We can create a new variable by assigning a value to it using `=`.
 As an illustration,
 let's step back and instead of considering a table of data,
 consider the simplest "collection" of data,
 a single value.
-The line below assigns a value to a variable:
+The line below assigns the value `55` to a variable `weight_kg`:
 
 ~~~ {.python}
 weight_kg = 55
 ~~~
 
-Once a variable has a value, we can print it:
+Once a variable has a value, we can print it to the screen:
 
 ~~~ {.python}
 print weight_kg
@@ -396,7 +396,7 @@ doubledata:
 
 If,
 instead of taking an array and doing arithmetic with a single value (as above)
-you did the arithmetic operation with another array of the same size and shape,
+you did the arithmetic operation with another array of the same shape,
 the operation will be done on corresponding elements of the two arrays.
 Thus:
 
@@ -437,13 +437,11 @@ a function that belongs to it
 in the same way that the member `shape` does.
 If variables are nouns, methods are verbs:
 they are what the thing in question knows how to do.
-This is why `data.shape` doesn't need to be called
-(it's just a thing)
-but `data.mean()` does
-(it's an action).
-It is also why we need empty parentheses for `data.mean()`:
+We need empty parentheses for `data.mean()`,
 even when we're not passing in any parameters,
-parentheses are how we tell Python to go and do something for us.
+to tell Python to go and do something for us. `data.shape` doesn't
+need `()` because it is just a description but `data.mean()` requires the `()`
+because it is an action.
 
 NumPy arrays have lots of useful methods:
 
@@ -463,7 +461,7 @@ though,
 we often want to look at partial statistics,
 such as the maximum value per patient
 or the average value per day.
-One way to do this is to select the data we want to create a new temporary array,
+One way to do this is to create a new temporary array of the data we want,
 then ask it to do the calculation:
 
 ~~~ {.python}
@@ -493,7 +491,7 @@ we want to perform the operation across an axis:
 
 To support this,
 most array methods allow us to specify the axis we want to work on.
-If we ask for the average across axis 0,
+If we ask for the average across axis 0 (rows),
 we get:
 
 ~~~ {.python}
@@ -522,7 +520,7 @@ print data.mean(axis=0).shape
 
 The expression `(40,)` tells us we have an N&times;1 vector,
 so this is the average inflammation per day for all patients.
-If we average across axis 1, we get:
+If we average across axis 1 (columns), we get:
 
 ~~~ {.python}
 print data.mean(axis=1)
@@ -542,7 +540,7 @@ The mathematician Richard Hamming once said,
 "The purpose of computing is insight, not numbers,"
 and the best way to develop insight is often to visualize data.
 Visualization deserves an entire lecture (or course) of its own,
-but we can explore a few features of Python's `matplotlib` here.
+but we can explore a few features of Python's `matplotlib` library here.
 While there is no "official" plotting library,
 this package is the de facto standard.
 First,
@@ -550,9 +548,9 @@ we will import the `pyplot` module from `matplotlib`
 and use two of its functions to create and display a heat map of our data:
 
 ~~~ {.python}
-from matplotlib import pyplot
-image  = pyplot.imshow(data)
-pyplot.show(image)
+import matplotlib.pyplot
+image  = matplotlib.pyplot.imshow(data)
+matplotlib.pyplot.show(image)
 ~~~
 
 ![Heatmap of the Data](fig/01-numpy_71_0.png)
@@ -713,7 +711,7 @@ the graphs will actually be squeezed together more closely.)
 
 > ## Make your own plot {.challenge}
 >
-> Create a plot showing the standard deviation of the inflammation data for each day across all patients.
+> Create a plot showing the standard deviation (`numpy.std`) of the inflammation data for each day across all patients.
 
 > ## Moving plots around {.challenge}
 >
