@@ -226,7 +226,7 @@ print data.shape
 
 This tells us that `data` has 60 rows and 40 columns. When we created the
 variable `data` to store our arthritis data, we didn't just create the array, we also
-created information about the array, called members [member](reference.html#member) or
+created information about the array, called [member](reference.html#member) or
 attributes. This extra information describes `data` in
 the same way an adjective describes a noun.
 `data.shape` is an attribute  of `data` which described the dimensions of `data`.
@@ -599,9 +599,9 @@ Neither result seems particularly likely,
 so either there's a mistake in our calculations
 or something is wrong with our data.
 
-You can groups similar plots in a single figure using subplots.
+You can group similar plots in a single figure using subplots.
 This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
-creates the a space into which we will place all of our plots. The parameter `figsize`
+creates a space into which we will place all of our plots. The parameter `figsize`
 tells Python how big to make this space. Each subplot is placed into the figure using
 the `subplot` command. The `subplot` command takes 3 parameters. The first denotes
 how many total rows of subplots there are, the second parameter refers to the
