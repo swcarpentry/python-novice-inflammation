@@ -16,8 +16,14 @@ or run it in a shell script to process thousands of data files.
 In order to do that,
 we need to make our programs work like other Unix command-line tools.
 For example,
-we may want a program that reads a data set
-and prints the average inflammation per patient:
+we may want a program that reads a dataset
+and prints the average inflammation per patient.
+We can execute a shell command in a Python interpreter by starting the line with a `$`.
+This tells the interpreter execute the line in the shell. The following line is called
+from a Python interpreter such as the Juypter Notebook and executes
+the Python program readings.py in the shell (with some additional command line arguments).
+This program does exactly what we want - it prints the average inflammation per patient
+for a given file.
 
 ~~~
 $ python readings.py --mean inflammation-01.csv
@@ -30,7 +36,7 @@ $ python readings.py --mean inflammation-01.csv
 5.9
 ~~~
 
-but we might also want to look at the minimum of the first four lines
+We might also want to look at the minimum of the first four lines
 
 ~~~
 $ head -4 inflammation-01.csv | python readings.py --min
@@ -42,7 +48,7 @@ or the maximum inflammations in several files one after another:
 $ python readings.py --max inflammation-*.csv
 ~~~
 
-Our overall requirements are:
+Our scripts should do the following:
 
 1. If no filename is given on the command line, read data from [standard input](reference.html#standard-input).
 2. If one or more filenames are given, read data from them and report statistics for each file separately.
@@ -78,7 +84,7 @@ version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
 [GCC 4.0.1 (Apple Inc. build 5493)]
 ~~~
 
-Here's another script called `argv-list.py` that does something more interesting:
+Create another file called `argv-list.py` and save the following text to it.
 
 ~~~ {.python}
 import sys
@@ -249,7 +255,7 @@ $ python readings-02.py inflammation-01.csv
 
 The next step is to teach our program how to handle multiple files.
 Since 60 lines of output per file is a lot to page through,
-we'll start by creating three smaller files,
+we'll start by using three smaller files,
 each of which has three days of data for two patients:
 
 ~~~ {.input}
@@ -560,7 +566,8 @@ the program now does everything we set out to do.
 > ## Finding particular files {.challenge}
 >
 > Using the `glob` module introduced [earlier](04-files.html),
-> write a simple version of `ls` that shows files in the current directory with a particular suffix:
+> write a simple version of `ls` that shows files in the current directory with a particular suffix.
+> A call to this script should look like this:
 >
 > ~~~ {.python}
 > $ python my_ls.py py
