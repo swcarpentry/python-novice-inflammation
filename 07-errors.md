@@ -382,8 +382,8 @@ IOError: File not open for reading
 > ---------------------------------------------------------------------------
 > KeyError                                  Traceback (most recent call last)
 > <ipython-input-2-e4c4cbafeeb5> in <module>()
->       1 from errors_02 import print_friday_message
-> ----> 2 print_friday_message()
+>       1 import errors_02
+> ----> 2 errors_02.print_friday_message()
 >
 > /Users/jhamrick/project/swc/novice/python/errors_02.py in print_friday_message()
 >      13
