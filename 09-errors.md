@@ -308,57 +308,6 @@ IndexError: list index out of range
 
 Here,
 Python is telling us that there is an `IndexError` in our code, meaning we tried to access a list index that did not exist.
-We get a similar error in the case of dictionaries:
-
-~~~ {.python}
-us_state_capitals = {
-    'california': 'sacramento',
-    'virginia': 'richmond',
-    'new york': 'albany',
-    'massachusetts': 'boston'
-}
-
-print "The capital of Oregon is: " + us_state_capitals['oregon']
-~~~
-~~~ {.error}
----------------------------------------------------------------------------
-KeyError                                  Traceback (most recent call last)
-<ipython-input-12-27fa113dd73c> in <module>()
-      6 }
-      7
-----> 8 print "The capital of Oregon is: " + us_state_capitals['oregon']
-
-KeyError: 'oregon'
-~~~
-
-In this case, we get a `KeyError`,
-which means that the key we requested (`'oregon'`, as the error message tells us) is not present in the dictionary.
-This might be because it genuinely does not exist in the dictionary,
-but it could *also* be due to a typo.
-This is similar to the case we discussed above,
-where you can sometimes receive a `NameError` due to a typo.
-For example:
-
-~~~ {.python}
-us_state_capitals = {
-    'california': 'sacramento',
-    'virginia': 'richmond',
-    'new york': 'albany',
-    'massachusetts': 'boston'
-}
-
-print "The capital of Massachusetts is: " + us_state_capitals['massachussetts']
-~~~
-~~~ {.error}
----------------------------------------------------------------------------
-KeyError                                  Traceback (most recent call last)
-<ipython-input-13-ae1dac4c6a45> in <module>()
-      6 }
-      7
-----> 8 print "The capital of Massachusetts is: " + us_state_capitals['massachussetts']
-
-KeyError: 'massachussetts'
-~~~
 
 ## File Errors
 
@@ -492,12 +441,8 @@ IOError: File not open for reading
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
 >
 > ~~~ {.python}
-> seasons = {
->     'spring': ['march', 'april', 'may'],
->     'summer': ['june', 'july', 'august'],
->     'fall': ['september', 'october', 'november'],
->     'winter': ['december', 'january', 'february']
-> }
+> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+> print 'My favorite season is ', seasons[4]
 > ~~~
 > ~~~ {.output}
 > print "The first month in spring is: " + seasons['spring'][0]
