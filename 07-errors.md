@@ -39,7 +39,7 @@ errors_01.favorite_ice_cream()
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-1-9d0462a5b07c> in <module>()
-      1 import errors_01
+      1 from errors_01
 ----> 2 errors_01.favorite_ice_cream()
 
 /Users/jhamrick/project/swc/novice/python/errors_01.pyc in favorite_ice_cream()
@@ -382,8 +382,8 @@ IOError: File not open for reading
 > ---------------------------------------------------------------------------
 > KeyError                                  Traceback (most recent call last)
 > <ipython-input-2-e4c4cbafeeb5> in <module>()
->       1 from errors_02 import print_friday_message
-> ----> 2 print_friday_message()
+>       1 import errors_02
+> ----> 2 errors_02.print_friday_message()
 >
 > /Users/jhamrick/project/swc/novice/python/errors_02.py in print_friday_message()
 >      13
