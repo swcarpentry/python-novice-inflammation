@@ -364,7 +364,7 @@ KeyError: 'massachussetts'
 
 The last type of error we'll cover today are those associated with reading and writing files: `IOError`.
 The "IO" in `IOError` stands for "input/output",
-which is just a fancy way of saying "writing/reading".
+which is just a fancy way of saying "reading/writing".
 If you try to read a file that does not exist,
 you will recieve an `IOError` telling you so.
 This is the most common reason why you would receive `IOError`,
