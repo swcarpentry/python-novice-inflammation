@@ -90,7 +90,7 @@ assertions fall into three categories:
 *   An [invariant](reference.html#invariant) is something that is always true at a particular point inside a piece of code.
 
 For example,
-suppose we are representing rectangles using a tuple of four coordinates `(x0, y0, x1, y1)`,
+suppose we are representing rectangles using a [tuple] (reference.html#tuple) of four coordinates `(x0, y0, x1, y1)`,
 representing the lower left and upper right corners of the rectangle.
 In order to do some calculations,
 we need to normalize the rectangle so that the lower left corner is at the origin
