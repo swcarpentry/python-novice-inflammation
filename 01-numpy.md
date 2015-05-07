@@ -640,6 +640,15 @@ and that we want a tight layout.
 if we leave out that call to `fig.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
 
+> ## Scientists dislike typing {.callout}
+>
+> We will always use the syntax `import numpy` to import NumPy.
+> However, in order to save typing, it is
+> [often suggested](http://www.scipy.org/getting-started.html#an-example-script)
+> to make a shortcut like so: `import numpy as np`.
+> If you ever see Python code online using a NumPy function with `np`
+> (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
+
 > ## Check your understanding {.challenge}
 >
 > Draw diagrams showing what variables refer to what values after each statement in the following program:
