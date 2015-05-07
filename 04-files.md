@@ -54,24 +54,22 @@ filenames = glob.glob('*.csv')
 filenames = filenames[0:3]
 for f in filenames:
     print f
-
     data = np.loadtxt(fname=f, delimiter=',')
-
+    # create a figure with three subplots
     fig = plt.figure(figsize=(10.0, 3.0))
-
     axes1 = fig.add_subplot(1, 3, 1)
     axes2 = fig.add_subplot(1, 3, 2)
     axes3 = fig.add_subplot(1, 3, 3)
-
+    # add a plot of the mean
     axes1.set_ylabel('average')
     axes1.plot(data.mean(axis=0))
-
+    # add a plot of the maximum values        
     axes2.set_ylabel('max')
     axes2.plot(data.max(axis=0))
-
+    # add a plot of the minimum values
     axes3.set_ylabel('min')
     axes3.plot(data.min(axis=0))
-
+    # show the figure
     fig.tight_layout()
     plt.show(fig)
 ~~~
