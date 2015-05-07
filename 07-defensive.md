@@ -27,9 +27,9 @@ as we make changes to it.
 To achieve that,
 we need to:
 
-*   write programs that check their own operation,
-*   write and run tests for widely-used functions, and
-*   make sure we know what "correct" actually means.
+*   Write programs that check their own operation.
+*   Write and run tests for widely-used functions.
+*   Make sure we know what "correct" actually means.
 
 The good news is,
 doing these things will speed up our programming,
@@ -53,7 +53,7 @@ If it's true,
 Python does nothing,
 but if it's false,
 Python halts the program immediately
-and prints the error message provided.
+and prints the error message if one is provided.
 For example,
 this piece of code halts as soon as the loop encounters a value that isn't positive:
 
@@ -91,10 +91,11 @@ assertions fall into three categories:
 *   An [invariant](reference.html#invariant) is something that is always true at a particular point inside a piece of code.
 
 For example,
-suppose we are representing rectangles using a tuple of four coordinates `(x0, y0, x1, y1)`.
+suppose we are representing rectangles using a tuple of four coordinates `(x0, y0, x1, y1)`,
+representing the lower left and upper right corners of the rectangle.
 In order to do some calculations,
-we need to normalize the rectangle so that it is at the origin
-and 1.0 units long on its longest axis.
+we need to normalize the rectangle so that the lower left corner is at the origin
+and the longest side is 1.0 unit long.
 This function does that,
 but checks that its input is correctly formatted and that its result makes sense:
 
@@ -105,7 +106,7 @@ def normalize_rectangle(rect):
     x0, y0, x1, y1 = rect
     assert x0 < x1, 'Invalid X coordinates'
     assert y0 < y1, 'Invalid Y coordinates'
-    
+
     dx = x1 - x0
     dy = y1 - y0
     if dx > dy:
@@ -156,7 +157,7 @@ AssertionError                            Traceback (most recent call last)
       4     x0, y0, x1, y1 = rect
 ----> 5     assert x0 < x1, 'Invalid X coordinates'
       6     assert y0 < y1, 'Invalid Y coordinates'
-      7 
+      7
 
 AssertionError: Invalid X coordinates
 ~~~
@@ -185,10 +186,10 @@ AssertionError                            Traceback (most recent call last)
 ----> 1 print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )
 
 <ipython-input-20-408dc39f3915> in normalize_rectangle(rect)
-     16 
+     16
      17     assert 0 < upper_x <= 1.0, 'Calculated upper X coordinate invalid'
 ---> 18     assert 0 < upper_y <= 1.0, 'Calculated upper Y coordinate invalid'
-     19 
+     19
      20     return (0, 0, upper_x, upper_y)
 
 AssertionError: Calculated upper Y coordinate invalid
@@ -216,6 +217,8 @@ the harder the error will be to debug,
 so good code catches mistakes as early as possible.
 
 The second rule is, *turn bugs into assertions or tests*.
+Whenever you fix a bug, write an assertion that catches the mistake
+should you make it again.
 If you made a mistake in a piece of code,
 the odds are good that you have made other mistakes nearby,
 or will make the same mistake (or a related one)
@@ -239,7 +242,7 @@ The range of each time series is represented as a pair of numbers,
 which are the time the interval started and ended.
 The output is the largest range that they all include:
 
-![Overlapping Ranges](fig/python-overlapping-ranges.svg)\ 
+![Overlapping Ranges](fig/python-overlapping-ranges.svg)\
 
 Most novice programmers would solve this problem like this:
 
@@ -276,11 +279,11 @@ assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-25-d8be150fbef6> in <module>()
-      1 assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
-----> 2 assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
+----> 1 assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
+      2 assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
       3 assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
 
-AssertionError: 
+AssertionError:
 ~~~
 
 The error is actually reassuring:
@@ -348,7 +351,7 @@ AssertionError                            Traceback (most recent call last)
 ----> 1 assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
       2 assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
 
-AssertionError: 
+AssertionError:
 ~~~
 
 Again,
@@ -367,7 +370,7 @@ def range_overlap(ranges):
 ~~~
 
 (Take a moment to think about why we use `max` to raise `lowest`
-and `min` to lower `highest`.)
+and `min` to lower `highest`).
 We'd now like to re-run our tests,
 but they're scattered across three different cells.
 To make running them easier,
@@ -400,7 +403,7 @@ AssertionError                            Traceback (most recent call last)
       4     assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
       5     assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
 
-AssertionError: 
+AssertionError:
 ~~~
 
 The first of the tests that was supposed to produce `None` fails,
@@ -439,7 +442,7 @@ in order to diagnose and fix problems,
 we need to be able to tell correct output from incorrect.
 If we can write a test case for the failing case --- i.e.,
 if we can assert that with *these* inputs,
-the function should produce *that* result --- 
+the function should produce *that* result ---
 then we're ready to start debugging.
 If we can't,
 then we need to figure out how we're going to know when we've fixed things.
@@ -469,8 +472,8 @@ scientists tend to do the following:
     our first test should hold temperature, precipitation, and other factors constant.
 
 3.  *Compare to an oracle.*
-    A [test oracle](reference.html#test-oracle) is something --- experimental data,
-    an older program whose results are trusted,
+    A [test oracle](reference.html#test-oracle) is something/someone whose results are
+    trusted --- experimental data, an older program,
     or even a human expert --- against which we can compare the results of our new program.
     If we have a test oracle,
     we should store its output for particular cases
@@ -525,7 +528,7 @@ are almost never worthwhile.
 
 If it takes 20 minutes for the bug to surface,
 we can only do three experiments an hour.
-That doesn't must mean we'll get less data in more time:
+That doesn't just mean we'll get less data:
 we're also more likely to be distracted by other things as we wait for our program to fail,
 which means the time we *are* spending on the problem is less focused.
 It's therefore critical to *make it fail fast*.
@@ -544,7 +547,7 @@ we want to localize the failure to the smallest possible region of code:
     then concentrate on either the first or second half,
     and so on.
 
-2.  N things can interact in N<sup>2/2</sup> different ways,
+2.  N things can interact in N<sup>2</sup> different ways,
     so every line of code that *isn't* run as part of a test
     means more than one thing we don't need to worry about.
 
@@ -560,7 +563,7 @@ They are either trying to gather more information
 ("is the bug still there if we change the order of the loops?")
 or test a fix
 ("can we make the bug go away by sorting our data before processing it?").
- 
+
 Every time we make a change,
 however small,
 we should re-run our tests immediately,
@@ -588,7 +591,7 @@ Or was I using an even number of lines?"
 then it's time to step away from the computer,
 take a deep breath,
 and start working more systematically.
- 
+
 Records are particularly useful when the time comes to ask for help.
 People are more likely to listen to us
 when we can explain clearly what we did,
@@ -637,7 +640,7 @@ it will actually take us *less* time to produce working programs,
 not more.
 
 > ## Pre- and post-conditions {.challenge}
-> 
+>
 > Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
 > What pre-conditions and post-conditions would you write for it?
 > Compare your answer to your neighbor's:
@@ -655,7 +658,7 @@ not more.
 > ~~~{.output}
 > [1, 3, 6, 10]
 > ~~~
-> 
+>
 > ~~~{.python}
 > running('abc')
 > ~~~
@@ -667,7 +670,7 @@ not more.
 > Explain in words what the assertions in this function check,
 > and for each one,
 > give an example of input that will make that assertion fail.
-> 
+>
 > ~~~ {.python}
 > def running(values):
 >     assert len(values) > 0
@@ -680,5 +683,5 @@ not more.
 > ~~~
 
 > ## Fixing and testing {.challenge}
-> 
+>
 > Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
