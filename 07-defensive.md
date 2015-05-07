@@ -26,9 +26,9 @@ as we make changes to it.
 To achieve that,
 we need to:
 
-*   write programs that check their own operation,
-*   write and run tests for widely-used functions, and
-*   make sure we know what "correct" actually means.
+*   Write programs that check their own operation.
+*   Write and run tests for widely-used functions.
+*   Make sure we know what "correct" actually means.
 
 The good news is,
 doing these things will speed up our programming,
@@ -52,7 +52,7 @@ If it's true,
 Python does nothing,
 but if it's false,
 Python halts the program immediately
-and prints the error message provided.
+and prints the error message if one is provided.
 For example,
 this piece of code halts as soon as the loop encounters a value that isn't positive:
 
@@ -90,10 +90,11 @@ assertions fall into three categories:
 *   An [invariant](reference.html#invariant) is something that is always true at a particular point inside a piece of code.
 
 For example,
-suppose we are representing rectangles using a tuple of four coordinates `(x0, y0, x1, y1)`.
+suppose we are representing rectangles using a tuple of four coordinates `(x0, y0, x1, y1)`,
+representing the lower left and upper right corners of the rectangle.
 In order to do some calculations,
-we need to normalize the rectangle so that it is at the origin
-and 1.0 units long on its longest axis.
+we need to normalize the rectangle so that the lower left corner is at the origin
+and the longest side is 1.0 unit long.
 This function does that,
 but checks that its input is correctly formatted and that its result makes sense:
 
@@ -215,6 +216,8 @@ the harder the error will be to debug,
 so good code catches mistakes as early as possible.
 
 The second rule is, *turn bugs into assertions or tests*.
+Whenever you fix a bug, write an assertion that catches the mistake
+should you make it again.
 If you made a mistake in a piece of code,
 the odds are good that you have made other mistakes nearby,
 or will make the same mistake (or a related one)
@@ -275,8 +278,8 @@ assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-25-d8be150fbef6> in <module>()
-      1 assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
-----> 2 assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
+----> 1 assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
+      2 assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
       3 assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
 
 AssertionError:
@@ -366,7 +369,7 @@ def range_overlap(ranges):
 ~~~
 
 (Take a moment to think about why we use `max` to raise `lowest`
-and `min` to lower `highest`.)
+and `min` to lower `highest`).
 We'd now like to re-run our tests,
 but they're scattered across three different cells.
 To make running them easier,
