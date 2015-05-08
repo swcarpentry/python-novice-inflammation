@@ -28,9 +28,9 @@
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Storing Multiple Values in Lists</h2>
-<div id="learning-objectives" class="objectives panel panel-warning">
+<section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives" class="objectives panel panel-warning"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -38,7 +38,7 @@
 <li>Create and index lists of simple values.</li>
 </ul>
 </div>
-</div>
+</section>
 <p>Just as a <code>for</code> loop is a way to do operations many times, a list is a way to store many values. Unlike NumPy arrays, lists are built into the language. We create a list by putting values inside square brackets:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">odds = [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>]
 <span class="dt">print</span> <span class="st">&#39;odds are:&#39;</span>, odds</code></pre></div>
@@ -56,15 +56,15 @@ names[<span class="dv">1</span>] = <span class="st">&#39;Darwin&#39;</span> <spa
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">name = <span class="st">&#39;Bell&#39;</span>
 name[<span class="dv">0</span>] = <span class="st">&#39;b&#39;</span></code></pre></div>
 <p>does not.</p>
-<div id="ch-ch-ch-changes" class="callout panel panel-info">
+<aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="ch-ch-ch-changes" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>Ch-Ch-Ch-Changes</h2>
+<h2 id="ch-ch-ch-changes"><span class="glyphicon glyphicon-pushpin"></span>Ch-Ch-Ch-Changes</h2>
 </div>
 <div class="panel-body">
 <p>Data that can be changed is called <a href="reference.html#mutable">mutable</a>, while data that cannot be is called <a href="reference.html#immutable">immutable</a>. Like strings, numbers are immutable: there’s no way to make the number 0 have the value 1 or vice versa (at least, not in Python — there actually <em>are</em> languages that will let people do this, with predictably confusing results). Lists and arrays, on the other hand, are mutable: both can be modified after they have been created.</p>
 <p>Programs that modify data in place can be harder to understand than ones that don’t because readers may have to mentally sum up many lines of code in order to figure out what the value of something actually is. On the other hand, programs that modify data in place instead of creating copies that are almost identical to the original every time they want to make a small change are much more efficient.</p>
 </div>
-</div>
+</aside>
 <p>There are many ways to change the contents of lists besides assigning to elements:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">odds.append(<span class="dv">11</span>)
 <span class="dt">print</span> <span class="st">&#39;odds after adding a value:&#39;</span>, odds</code></pre></div>
