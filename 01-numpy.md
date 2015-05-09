@@ -226,7 +226,7 @@ print data.shape
 
 This tells us that `data` has 60 rows and 40 columns. When we created the
 variable `data` to store our arthritis data, we didn't just create the array, we also
-created information about the array, called [member](reference.html#member) or
+created information about the array, called [members](reference.html#member) or
 attributes. This extra information describes `data` in
 the same way an adjective describes a noun.
 `data.shape` is an attribute  of `data` which described the dimensions of `data`.
