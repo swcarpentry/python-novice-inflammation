@@ -209,8 +209,8 @@ and false statements. However, they aren't the only values in Python that are tr
 > Explain what the overall effect of this code is:
 >
 > ~~~ {.python}
-> left = 5.0
-> right = 10.0
+> left = 'L'
+> right = 'R'
 >
 > temp = left
 > left = right
