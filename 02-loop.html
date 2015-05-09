@@ -85,7 +85,7 @@ IndexError: string index out of range</code></pre>
 <p>This strategy relies on the use of a <a href="reference.html#for-loop">for loop</a> to repeat an operation—in this case, printing—once for each thing in a collection. The general form of a loop is:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> variable in collection:
     do things <span class="kw">with</span> variable</code></pre></div>
-<p>We can call the <a href="reference.html#loop-variable">loop variable</a> anything we like, but there must be a colon at the end of the line starting the loop, and we must indent the body of the loop. Unlike many other languages, there is no command to end a loop (e.g. end for); what is indented after the for statement belongs to the loop.</p>
+<p>We can call the <a href="reference.html#loop-variable">loop variable</a> anything we like, but there must be a colon at the end of the line starting the loop, and we must indent anything we want to run inside the loop. Unlike many other languages, there is no command to end a loop (e.g. end for); what is indented after the for statement belongs to the loop.</p>
 <p>Here’s another loop that repeatedly updates a variable:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">length = <span class="dv">0</span>
 <span class="kw">for</span> vowel in <span class="st">&#39;aeiou&#39;</span>:
@@ -105,7 +105,7 @@ IndexError: string index out of range</code></pre>
 <h2 id="from-1-to-n"><span class="glyphicon glyphicon-pencil"></span>From 1 to N</h2>
 </div>
 <div class="panel-body">
-<p>Python has a built-in function called <code>range</code> that creates a list of numbers: <code>range(3)</code> produces <code>[0, 1, 2]</code>, <code>range(2, 5)</code> produces <code>[2, 3, 4]</code>. Using <code>range</code>, write a loop that uses <code>range</code> to print the first 3 natural numbers:</p>
+<p>Python has a built-in function called <code>range</code> that creates a list of numbers. Range can accept 1-3 parameters. If one parameter is input, range creates an array of that length, starting at zero and incrementing by 1. If 2 parameters are input, range starts at the first and ends at the second, incrementing by one. If range is passed 3 parameters, it stars at the first one, ends at the second one, and increments by the third one. For example: <code>range(3)</code> produces <code>[0, 1, 2]</code>, <code>range(2, 5)</code> produces <code>[2, 3, 4]</code>. Using <code>range</code>, write a loop that uses <code>range</code> to print the first 3 natural numbers:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dv">1</span>
 <span class="dv">2</span>
 <span class="dv">3</span></code></pre></div>

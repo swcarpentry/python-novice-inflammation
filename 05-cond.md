@@ -35,7 +35,7 @@ done
 ~~~
 
 The second line of this code uses the keyword `if` to tell Python that we want to make a choice.
-If the test that follows it is true,
+If the test that follows the `if` statement is true,
 the body of the `if`
 (i.e., the lines indented underneath it) are executed.
 If the test is false,
@@ -81,9 +81,6 @@ else:
 One important thing to notice in the code above is that we use a double equals sign `==` to test for equality
 rather than a single equals sign
 because the latter is used to mean assignment.
-This convention was inherited from C,
-and while many other programming languages work the same way,
-it does take a bit of getting used to...
 
 We can also combine tests using `and` and `or`.
 `and` is only true if both parts are true:
@@ -98,18 +95,15 @@ else:
 one part is not true
 ~~~
 
-while `or` is true if either part is true:
+while `or` is true if at least one part is true:
 
 ~~~ {.python}
-if (1 < 0) or ('left' < 'right'):
+if (1 < 0) or (-1 < 0):
     print 'at least one test is true'
 ~~~
 ~~~ {.output}
 at least one test is true
 ~~~
-
-In this case,
-"either" means "either or both", not "either one or the other but not both".
 
 ## Checking our Data
 
@@ -120,7 +114,7 @@ seemed to rise like a straight line, one unit per day.
 We can check for this inside the `for` loop we wrote with the following conditional:
 
 ~~~ {.python}
-if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
+if data.min(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
     print 'Suspicious looking maxima!'
 ~~~
 
@@ -145,8 +139,7 @@ we can ask Python to do something different depending on the condition of our da
 Here we printed messages in all cases,
 but we could also imagine not using the `else` catch-all
 so that messages are only printed when something is wrong,
-freeing us from having to manually examine every plot for features we've seen before,
-or doing all manner of other things to respond to changing conditions in our data.
+freeing us from having to manually examine every plot for features we've seen before.
 
 > ## How many paths? {.challenge}
 >
@@ -168,7 +161,8 @@ or doing all manner of other things to respond to changing conditions in our dat
 
 > ## What is truth? {.challenge}
 >
-> `True` and `False` aren't the only values in Python that are true and false.
+> `True` and `False` are special words in Python called `booleans` which represent true
+and false statements. However, they aren't the only values in Python that are true and false.
 > In fact, *any* value can be used in an `if` or `elif`.
 > After reading and running the code below,
 > explain what the rule is for which values are considered true and which are considered false.
@@ -215,6 +209,9 @@ or doing all manner of other things to respond to changing conditions in our dat
 > Explain what the overall effect of this code is:
 >
 > ~~~ {.python}
+> left = 'L'
+> right = 'R'
+>
 > temp = left
 > left = right
 > right = temp

@@ -45,9 +45,9 @@
 </div>
 </section>
 <p>Words are useful, but what’s more useful are the sentences and stories we build with them. Similarly, while a lot of powerful tools are built into languages like Python, even more live in the <a href="reference.html#library">libraries</a> they are used to build.</p>
-<p>In order to load our inflammation data, we need to <a href="reference.html#import">import</a> a library called NumPy. In general you should use this library if you want to do fancy things with numbers, especially if you have matrices. We can load NumPy using:</p>
+<p>In order to load our inflammation data, we need to <a href="reference.html#import">import</a> a library called NumPy. In general you should use this library if you want to do fancy things with numbers, especially if you have matrices or arrays. We can load NumPy using:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy</code></pre></div>
-<p>Importing a library is like getting a piece of lab equipment out of a storage locker and setting it up on the bench. Once it’s done, we can ask the library to read our data file for us:</p>
+<p>Importing a library is like getting a piece of lab equipment out of a storage locker and setting it up on the bench. Once you’ve loaded the library, we can ask the library to read our data file for us:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)</code></pre></div>
 <pre class="output"><code>array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
        [ 0.,  1.,  2., ...,  1.,  0.,  1.],
@@ -59,9 +59,9 @@
 <p>The expression <code>numpy.loadtxt(...)</code> is a <a href="reference.html#function-call">function call</a> that asks Python to run the function <code>loadtxt</code> that belongs to the <code>numpy</code> library. This <a href="reference.html#dotted-notation">dotted notation</a> is used everywhere in Python to refer to the parts of things as <code>thing.component</code>.</p>
 <p><code>numpy.loadtxt</code> has two <a href="reference.html#parameter">parameters</a>: the name of the file we want to read, and the <a href="reference.html#delimiter">delimiter</a> that separates values on a line. These both need to be character strings (or <a href="reference.html#string">strings</a> for short), so we put them in quotes.</p>
 <p>When we are finished typing and press Shift+Enter, the notebook runs our command. Since we haven’t told it to do anything else with the function’s output, the notebook displays it. In this case, that output is the data we just loaded. By default, only a few rows and columns are shown (with <code>...</code> to omit elements when displaying big arrays). To save space, Python displays numbers as <code>1.</code> instead of <code>1.0</code> when there’s nothing interesting after the decimal point.</p>
-<p>Our call to <code>numpy.loadtxt</code> read our file, but didn’t save the data in memory. To do that, we need to <a href="reference.html#assignment">assign</a> the array to a <a href="reference.html#variable">variable</a>. A variable is just a name for a value, such as <code>x</code>, <code>current_temperature</code>, or <code>subject_id</code>. Python’s variables must begin with a letter. We can create a new variable by assigning a value to it using <code>=</code>. As an illustration, let’s step back and instead of considering a table of data, consider the simplest “collection” of data, a single value. The line below assigns a value to a variable:</p>
+<p>Our call to <code>numpy.loadtxt</code> read our file, but didn’t save the data in memory. To do that, we need to <a href="reference.html#assignment">assign</a> the array to a <a href="reference.html#variable">variable</a>. A variable is just a name for a value, such as <code>x</code>, <code>current_temperature</code>, or <code>subject_id</code>. Python’s variables must begin with a letter and are case sensitive. We can create a new variable by assigning a value to it using <code>=</code>. As an illustration, let’s step back and instead of considering a table of data, consider the simplest “collection” of data, a single value. The line below assigns the value <code>55</code> to a variable <code>weight_kg</code>:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">weight_kg = <span class="dv">55</span></code></pre></div>
-<p>Once a variable has a value, we can print it:</p>
+<p>Once a variable has a value, we can print it to the screen:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> weight_kg</code></pre></div>
 <pre class="output"><code>55</code></pre>
 <p>and do arithmetic with it:</p>
@@ -135,8 +135,8 @@ third, fourth = second, first
 <p>The output tells us that <code>data</code> currently refers to an N-dimensional array created by the NumPy library. We can see what its <a href="reference.html#shape">shape</a> is like this:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> data.shape</code></pre></div>
 <pre class="output"><code>(60, 40)</code></pre>
-<p>This tells us that <code>data</code> has 60 rows and 40 columns. <code>data.shape</code> is a <a href="reference.html#member">member</a> of <code>data</code>, i.e., a value that is stored as part of a larger value. We use the same dotted notation for the members of values that we use for the functions in libraries because they have the same part-and-whole relationship.</p>
-<p>If we want to get a single value from the matrix, we must provide an <a href="reference.html#index">index</a> in square brackets, just as we do in math:</p>
+<p>This tells us that <code>data</code> has 60 rows and 40 columns. When we created the variable <code>data</code> to store our arthritis data, we didn’t just create the array, we also created information about the array, called <a href="reference.html#member">members</a> or attributes. This extra information describes <code>data</code> in the same way an adjective describes a noun. <code>data.shape</code> is an attribute of <code>data</code> which described the dimensions of <code>data</code>. We use the same dotted notation for the attributes of variables that we use for the functions in libraries because they have the same part-and-whole relationship.</p>
+<p>If we want to get a single number from the array, we must provide an <a href="reference.html#index">index</a> in square brackets, just as we do in math:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;first value in data:&#39;</span>, data[<span class="dv">0</span>, <span class="dv">0</span>]</code></pre></div>
 <pre class="output"><code>first value in data: 0.0</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;middle value in data:&#39;</span>, data[<span class="dv">30</span>, <span class="dv">20</span>]</code></pre></div>
@@ -210,7 +210,7 @@ doubledata:
 [[ 4.  6.  0.  0.]
  [ 2.  2.  0.  2.]
  [ 4.  4.  2.  2.]]</code></pre>
-<p>If, instead of taking an array and doing arithmetic with a single value (as above) you did the arithmetic operation with another array of the same size and shape, the operation will be done on corresponding elements of the two arrays. Thus:</p>
+<p>If, instead of taking an array and doing arithmetic with a single value (as above) you did the arithmetic operation with another array of the same shape, the operation will be done on corresponding elements of the two arrays. Thus:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">tripledata = doubledata + data</code></pre></div>
 <p>will give you an array where <code>tripledata[0,0]</code> will equal <code>doubledata[0,0]</code> plus <code>data[0,0]</code>, and so on for all other elements of the arrays.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;tripledata:&#39;</span>
@@ -222,7 +222,7 @@ doubledata:
 <p>Often, we want to do more than add, subtract, multiply, and divide values of data. Arrays also know how to do more complex operations on their values. If we want to find the average inflammation for all patients on all days, for example, we can just ask the array for its mean value</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> data.mean()</code></pre></div>
 <pre class="output"><code>6.14875</code></pre>
-<p><code>mean</code> is a <a href="reference.html#method">method</a> of the array, i.e., a function that belongs to it in the same way that the member <code>shape</code> does. If variables are nouns, methods are verbs: they are what the thing in question knows how to do. This is why <code>data.shape</code> doesn’t need to be called (it’s just a thing) but <code>data.mean()</code> does (it’s an action). It is also why we need empty parentheses for <code>data.mean()</code>: even when we’re not passing in any parameters, parentheses are how we tell Python to go and do something for us.</p>
+<p><code>mean</code> is a <a href="reference.html#method">method</a> of the array, i.e., a function that belongs to it in the same way that the member <code>shape</code> does. If variables are nouns, methods are verbs: they are what the thing in question knows how to do. We need empty parentheses for <code>data.mean()</code>, even when we’re not passing in any parameters, to tell Python to go and do something for us. <code>data.shape</code> doesn’t need <code>()</code> because it is just a description but <code>data.mean()</code> requires the <code>()</code> because it is an action.</p>
 <p>NumPy arrays have lots of useful methods:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;maximum inflammation:&#39;</span>, data.<span class="dt">max</span>()
 <span class="dt">print</span> <span class="st">&#39;minimum inflammation:&#39;</span>, data.<span class="dt">min</span>()
@@ -230,7 +230,7 @@ doubledata:
 <pre class="output"><code>maximum inflammation: 20.0
 minimum inflammation: 0.0
 standard deviation: 4.61383319712</code></pre>
-<p>When analyzing data, though, we often want to look at partial statistics, such as the maximum value per patient or the average value per day. One way to do this is to select the data we want to create a new temporary array, then ask it to do the calculation:</p>
+<p>When analyzing data, though, we often want to look at partial statistics, such as the maximum value per patient or the average value per day. One way to do this is to create a new temporary array of the data we want, then ask it to do the calculation:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">patient_0 = data[<span class="dv">0</span>, :] <span class="co"># 0 on the first axis, everything on the second</span>
 <span class="dt">print</span> <span class="st">&#39;maximum inflammation for patient 0:&#39;</span>, patient_0.<span class="dt">max</span>()</code></pre></div>
 <pre class="output"><code>maximum inflammation for patient 0: 18.0</code></pre>
@@ -242,7 +242,7 @@ standard deviation: 4.61383319712</code></pre>
 <img src="fig/python-operations-across-axes.svg" alt="Operations Across Axes" />
 <p class="caption">Operations Across Axes</p>
 </div>
-<p>To support this, most array methods allow us to specify the axis we want to work on. If we ask for the average across axis 0, we get:</p>
+<p>To support this, most array methods allow us to specify the axis we want to work on. If we ask for the average across axis 0 (rows in our 2D example), we get:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> data.mean(axis=<span class="dv">0</span>)</code></pre></div>
 <pre class="output"><code>[  0.           0.45         1.11666667   1.75         2.43333333   3.15
    3.8          3.88333333   5.23333333   5.51666667   5.95         5.9
@@ -255,7 +255,7 @@ standard deviation: 4.61383319712</code></pre>
 <p>As a quick check, we can ask this array what its shape is:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> data.mean(axis=<span class="dv">0</span>).shape</code></pre></div>
 <pre class="output"><code>(40,)</code></pre>
-<p>The expression <code>(40,)</code> tells us we have an N×1 vector, so this is the average inflammation per day for all patients. If we average across axis 1, we get:</p>
+<p>The expression <code>(40,)</code> tells us we have an N×1 vector, so this is the average inflammation per day for all patients. If we average across axis 1 (columns in our 2D example), we get:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> data.mean(axis=<span class="dv">1</span>)</code></pre></div>
 <pre class="output"><code>[ 5.45   5.425  6.1    5.9    5.55   6.225  5.975  6.65   6.625  6.525
   6.775  5.8    6.225  5.75   5.225  6.3    6.55   5.7    5.85   6.55
@@ -264,10 +264,10 @@ standard deviation: 4.61383319712</code></pre>
   5.975  5.725  6.3    5.9    6.75   5.925  7.225  6.15   5.95   6.275  5.7
   6.1    6.825  5.975  6.725  5.7    6.25   6.4    7.05   5.9  ]</code></pre>
 <p>which is the average inflammation per patient across all days.</p>
-<p>The mathematician Richard Hamming once said, “The purpose of computing is insight, not numbers,” and the best way to develop insight is often to visualize data. Visualization deserves an entire lecture (or course) of its own, but we can explore a few features of Python’s <code>matplotlib</code> here. While there is no “official” plotting library, this package is the de facto standard. First, we will import the <code>pyplot</code> module from <code>matplotlib</code> and use two of its functions to create and display a heat map of our data:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> matplotlib <span class="ch">import</span> pyplot
-image  = pyplot.imshow(data)
-pyplot.show(image)</code></pre></div>
+<p>The mathematician Richard Hamming once said, “The purpose of computing is insight, not numbers,” and the best way to develop insight is often to visualize data. Visualization deserves an entire lecture (or course) of its own, but we can explore a few features of Python’s <code>matplotlib</code> library here. While there is no “official” plotting library, this package is the de facto standard. First, we will import the <code>pyplot</code> module from <code>matplotlib</code> and use two of its functions to create and display a heat map of our data:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> matplotlib.pyplot
+image  = matplotlib.pyplot.imshow(data)
+matplotlib.pyplot.show(image)</code></pre></div>
 <div class="figure">
 <img src="fig/01-numpy_71_0.png" alt="Heatmap of the Data" />
 <p class="caption">Heatmap of the Data</p>
@@ -294,7 +294,7 @@ pyplot.show(min_plot)</code></pre></div>
 <p class="caption">Minimum Value Along The First Axis</p>
 </div>
 <p>The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there’s a mistake in our calculations or something is wrong with our data.</p>
-<p>You can groups similar plots in a single figure using subplots. Here are our three plots side by side:</p>
+<p>You can group similar plots in a single figure using subplots. This script below uses a number of new commands. The function <code>matplotlib.pyplot.figure()</code> creates a space into which we will place all of our plots. The parameter <code>figsize</code> tells Python how big to make this space. Each subplot is placed into the figure using the <code>subplot</code> command. The <code>subplot</code> command takes 3 parameters. The first denotes how many total rows of subplots there are, the second parameter refers to the total number of subplot columns, and the final parameters denotes which subplot your variable is referencing. Each subplot is stored in a different variable (axes1, axes2, axes3). Once a subplot is created, the axes are can be titled using the <code>set_xlabel()</code> command (or <code>set_ylabel()</code>). Here are our three plots side by side:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy
 <span class="ch">import</span> matplotlib.pyplot
 
@@ -398,7 +398,7 @@ last three characters: gen</code></pre>
 <h2 id="make-your-own-plot"><span class="glyphicon glyphicon-pencil"></span>Make your own plot</h2>
 </div>
 <div class="panel-body">
-<p>Create a plot showing the standard deviation of the inflammation data for each day across all patients.</p>
+<p>Create a plot showing the standard deviation (<code>numpy.std</code>) of the inflammation data for each day across all patients.</p>
 </div>
 </section>
 <section class="challenge panel panel-success">

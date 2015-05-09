@@ -21,7 +21,7 @@ so that you can share your work with them easily,
 and to use that language *well*.
 
 We are studying inflammation in patients who have been given a new treatment for arthritis,
-and need to analyze the first dozen data sets.
+and need to analyze the first dozen data sets of their daily inflammation.
 The data sets are stored in [comma-separated values](reference.html#comma-separated-values) (CSV) format:
 each row holds information for a single patient,
 and the columns represent successive days.
@@ -47,7 +47,9 @@ To do all that, we'll have to learn a little bit about programming.
 >
 > Learners need to understand the concepts of files and directories
 > (including the working directory) and how to start a Python
-> interpreter before tackling this lesson.
+> interpreter before tackling this lesson. This lesson references the Juypter (IPython)
+> Notebook although it can be taught through any Python interpreter. The commands in this
+> this lesson pertain to Python 2.7.
 
 ## Topics
 
