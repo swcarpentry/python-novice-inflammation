@@ -28,9 +28,9 @@
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Programming with Python</h1>
           <h2 class="subtitle">Analyzing Patient Data</h2>
-<div id="learning-objectives" class="objectives panel panel-warning">
+<section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives" class="objectives panel panel-warning"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -43,7 +43,7 @@
 <li>Display simple graphs.</li>
 </ul>
 </div>
-</div>
+</section>
 <p>Words are useful, but what’s more useful are the sentences and stories we build with them. Similarly, while a lot of powerful tools are built into languages like Python, even more live in the <a href="reference.html#library">libraries</a> they are used to build.</p>
 <p>In order to load our inflammation data, we need to <a href="reference.html#import">import</a> a library called NumPy. In general you should use this library if you want to do fancy things with numbers, especially if you have matrices. We can load NumPy using:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy</code></pre></div>
@@ -94,9 +94,9 @@
 <p class="caption">Updating a Variable</p>
 </div>
 <p>Since <code>weight_lb</code> doesn’t “remember” where its value came from, it isn’t automatically updated when <code>weight_kg</code> changes. This is different from the way spreadsheets work.</p>
-<div id="whats-inside-the-box" class="challenge panel panel-success">
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="whats-inside-the-box" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>What’s inside the box?</h2>
+<h2 id="whats-inside-the-box"><span class="glyphicon glyphicon-pencil"></span>What’s inside the box?</h2>
 </div>
 <div class="panel-body">
 <p>Draw diagrams showing what variables refer to what values after each statement in the following program:</p>
@@ -106,10 +106,10 @@ age = <span class="dv">35</span>
 weight = weight * <span class="fl">1.14</span>
 age = age + <span class="dv">20</span></code></pre></div>
 </div>
-</div>
-<div id="sorting-out-references" class="challenge panel panel-success">
+</section>
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="sorting-out-references" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
+<h2 id="sorting-out-references"><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
 </div>
 <div class="panel-body">
 <p>What does the following program print out?</p>
@@ -117,7 +117,7 @@ age = age + <span class="dv">20</span></code></pre></div>
 third, fourth = second, first
 <span class="dt">print</span> third, fourth</code></pre></div>
 </div>
-</div>
+</section>
 <p>Just as we can assign a single value to a variable, we can also assign an array of values to a variable using the same syntax. Let’s re-run <code>numpy.loadtxt</code> and save its result:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)</code></pre></div>
 <p>This statement doesn’t produce any output because assignment doesn’t display anything. If we want to check that our data has been loaded, we can print the variable’s value:</p>
@@ -142,14 +142,14 @@ third, fourth = second, first
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;middle value in data:&#39;</span>, data[<span class="dv">30</span>, <span class="dv">20</span>]</code></pre></div>
 <pre class="output"><code>middle value in data: 13.0</code></pre>
 <p>The expression <code>data[30, 20]</code> may not surprise you, but <code>data[0, 0]</code> might. Programming languages like Fortran and MATLAB start counting at 1, because that’s what human beings have done for thousands of years. Languages in the C family (including C++, Java, Perl, and Python) count from 0 because that’s simpler for computers to do. As a result, if we have an M×N array in Python, its indices go from 0 to M-1 on the first axis and 0 to N-1 on the second. It takes a bit of getting used to, but one way to remember the rule is that the index is how many steps we have to take from the start to get the item we want.</p>
-<div id="in-the-corner" class="callout panel panel-info">
+<aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="in-the-corner" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>In the Corner</h2>
+<h2 id="in-the-corner"><span class="glyphicon glyphicon-pushpin"></span>In the Corner</h2>
 </div>
 <div class="panel-body">
 <p>What may also surprise you is that when Python displays an array, it shows the element with index <code>[0, 0]</code> in the upper left corner rather than the lower left. This is consistent with the way mathematicians draw matrices, but different from the Cartesian coordinates. The indices are (row, column) instead of (column, row) for the same reason, which can be confusing when plotting data.</p>
 </div>
-</div>
+</aside>
 <p>An index like <code>[30, 20]</code> selects a single element of an array, but we can select whole sections as well. For example, we can select the first ten days (columns) of values for the first four (rows) patients like this:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> data[<span class="dv">0</span>:<span class="dv">4</span>, <span class="dv">0</span>:<span class="dv">10</span>]</code></pre></div>
 <pre class="output"><code>[[ 0.  0.  1.  3.  1.  2.  4.  7.  8.  3.]
@@ -172,9 +172,9 @@ third, fourth = second, first
 [[ 2.  3.  0.  0.]
  [ 1.  1.  0.  1.]
  [ 2.  2.  1.  1.]]</code></pre>
-<div id="slicing-strings" class="challenge panel panel-success">
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="slicing-strings" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
+<h2 id="slicing-strings"><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
 </div>
 <div class="panel-body">
 <p>A section of an array is called a <strong>slice</strong>. We can take slices of character strings as well:</p>
@@ -186,15 +186,15 @@ last three characters: gen</code></pre>
 <p>What is the value of <code>element[:4]</code>? What about <code>element[4:]</code>? Or <code>element[:]</code>?</p>
 <p>What is <code>element[-1]</code>? What is <code>element[-2]</code>? Given those answers, explain what <code>element[1:-1]</code> does.</p>
 </div>
-</div>
-<div id="thin-slices" class="challenge panel panel-success">
+</section>
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="thin-slices" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
+<h2 id="thin-slices"><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
 </div>
 <div class="panel-body">
 <p>The expression <code>element[3:3]</code> produces an <strong>empty string</strong>, i.e., a string that contains no characters. If <code>data</code> holds our array of patient data, what does <code>data[3:3, 4:4]</code> produce? What about <code>data[3:3, :]</code>?</p>
 </div>
-</div>
+</section>
 <p>Arrays also know how to perform common mathematical operations on their values. The simplest operations with data are arithmetic: add, subtract, multiply, and divide. When you do such operations on arrays, the operation is done on each individual element of the array. Thus:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">doubledata = data * <span class="fl">2.0</span></code></pre></div>
 <p>will create a new array <code>doubledata</code> whose elements have the value of two times the value of the corresponding elements in <code>data</code>:</p>
@@ -323,9 +323,17 @@ matplotlib.pyplot.show(fig)</code></pre></div>
 <p class="caption">The Previous Plots as Subplots</p>
 </div>
 <p>The call to <code>loadtxt</code> reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we’re creating three sub-plots, what to draw for each one, and that we want a tight layout. (Perversely, if we leave out that call to <code>fig.tight_layout()</code>, the graphs will actually be squeezed together more closely.)</p>
-<div id="check-your-understanding" class="challenge panel panel-success">
+<aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="check-your-understanding" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Check your understanding</h2>
+<h2 id="scientists-dislike-typing"><span class="glyphicon glyphicon-pushpin"></span>Scientists dislike typing</h2>
+</div>
+<div class="panel-body">
+<p>We will always use the syntax <code>import numpy</code> to import NumPy. However, in order to save typing, it is <a href="http://www.scipy.org/getting-started.html#an-example-script">often suggested</a> to make a shortcut like so: <code>import numpy as np</code>. If you ever see Python code online using a NumPy function with <code>np</code> (for example, <code>np.loadtxt(...)</code>), it’s because they’ve used this shortcut.</p>
+</div>
+</aside>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="check-your-understanding"><span class="glyphicon glyphicon-pencil"></span>Check your understanding</h2>
 </div>
 <div class="panel-body">
 <p>Draw diagrams showing what variables refer to what values after each statement in the following program:</p>
@@ -334,10 +342,10 @@ age = <span class="dv">122</span>
 mass = mass * <span class="fl">2.0</span>
 age = age - <span class="dv">20</span></code></pre></div>
 </div>
-</div>
-<div id="sorting-out-references-1" class="challenge panel panel-success">
+</section>
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="sorting-out-references-1" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
+<h2 id="sorting-out-references-1"><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
 </div>
 <div class="panel-body">
 <p>What does the following program print out?</p>
@@ -345,10 +353,10 @@ age = age - <span class="dv">20</span></code></pre></div>
 third, fourth = second, first
 <span class="dt">print</span> third, fourth</code></pre></div>
 </div>
-</div>
-<div id="slicing-strings-1" class="challenge panel panel-success">
+</section>
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="slicing-strings-1" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
+<h2 id="slicing-strings-1"><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
 </div>
 <div class="panel-body">
 <p>A section of an array is called a <a href="reference.html#slice">slice</a>. We can take slices of character strings as well:</p>
@@ -360,47 +368,47 @@ last three characters: gen</code></pre>
 <p>What is the value of <code>element[:4]</code>? What about <code>element[4:]</code>? Or <code>element[:]</code>?</p>
 <p>What is <code>element[-1]</code>? What is <code>element[-2]</code>? Given those answers, explain what <code>element[1:-1]</code> does.</p>
 </div>
-</div>
-<div id="thin-slices-1" class="challenge panel panel-success">
+</section>
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="thin-slices-1" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
+<h2 id="thin-slices-1"><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
 </div>
 <div class="panel-body">
 <p>The expression <code>element[3:3]</code> produces an <a href="reference.html#empty-string">empty string</a>, i.e., a string that contains no characters. If <code>data</code> holds our array of patient data, what does <code>data[3:3, 4:4]</code> produce? What about <code>data[3:3, :]</code>?</p>
 </div>
-</div>
-<div id="check-your-understanding-plot-scaling" class="challenge panel panel-success">
+</section>
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="check-your-understanding-plot-scaling" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Check your understanding: plot scaling</h2>
+<h2 id="check-your-understanding-plot-scaling"><span class="glyphicon glyphicon-pencil"></span>Check your understanding: plot scaling</h2>
 </div>
 <div class="panel-body">
 <p>Why do all of our plots stop just short of the upper end of our graph?</p>
 </div>
-</div>
-<div id="check-your-understanding-drawing-straight-lines" class="challenge panel panel-success">
+</section>
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="check-your-understanding-drawing-straight-lines" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Check your understanding: drawing straight lines</h2>
+<h2 id="check-your-understanding-drawing-straight-lines"><span class="glyphicon glyphicon-pencil"></span>Check your understanding: drawing straight lines</h2>
 </div>
 <div class="panel-body">
 <p>Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?</p>
 </div>
-</div>
-<div id="make-your-own-plot" class="challenge panel panel-success">
+</section>
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="make-your-own-plot" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Make your own plot</h2>
+<h2 id="make-your-own-plot"><span class="glyphicon glyphicon-pencil"></span>Make your own plot</h2>
 </div>
 <div class="panel-body">
 <p>Create a plot showing the standard deviation of the inflammation data for each day across all patients.</p>
 </div>
-</div>
-<div id="moving-plots-around" class="challenge panel panel-success">
+</section>
+<section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="moving-plots-around" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Moving plots around</h2>
+<h2 id="moving-plots-around"><span class="glyphicon glyphicon-pencil"></span>Moving plots around</h2>
 </div>
 <div class="panel-body">
 <p>Modify the program to display the three plots on top of one another instead of side by side.</p>
 </div>
-</div>
+</section>
         </div>
       </div>
       </article>

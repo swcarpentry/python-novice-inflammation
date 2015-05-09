@@ -43,6 +43,12 @@
 <p>We do <em>not</em> include instructions on running the IPython Notebook in the tutorial because we want to focus on the language rather than the tools. Instructors should, however, walk learners through some basic operations: * Launch from the command line with <code>ipython notebook</code>. * Create a new notebook. * Enter code or data in a cell and execute it. * Explain the difference between <code>In[#]</code> and <code>Out[#]</code>.</p>
 <p>Watching the instructor grow programs step by step is as helpful to learners as anything to do with Python. Resist the urge to update a single cell repeatedly (which is what you’d probably do in real life). Instead, clone the previous cell and write the update in the new copy so that learners have a complete record of how the program grew. Once you’ve done this, you can say, “Now why don’t we just breaks things into small functions right from the start?”</p>
 <p>The discussion of command-line scripts assumes that students understand standard I/O and building filters, which are covered in the lesson on the shell.</p>
+<h2 id="frequently-argued-issues-fai">Frequently Argued Issues (FAI)</h2>
+<ul>
+<li><p><code>import ... as ...</code> syntax.</p>
+<p>This syntax is commonly used in the scientific Python community; it is explicitly recommended in documentation to <code>import numpy as np</code> and <code>import matplotlib.pyplot as plt</code>. Despite that, we have decided not to introduce aliasing imports in this novice lesson due to the additional cognitive load it puts on students, despite the typing that it saves. A good summary of arguments for and against can be found in <a href="https://github.com/swcarpentry/python-novice-inflammation/pull/61">PR #61</a>.</p>
+<p>It is up to you as an individual instructor whether you want to introduce these aliases when you teach this lesson, but we encourage you to please read those arguments thoroughly before deciding one way or the other.</p></li>
+</ul>
 <h2 id="analyzing-patient-data"><a href="01-numpy.html">Analyzing Patient Data</a></h2>
 <h2 id="repeating-actions-with-loops"><a href="02-loop.html">Repeating Actions with Loops</a></h2>
 <h2 id="storing-multiple-values-in-lists"><a href="03-lists.html">Storing Multiple Values in Lists</a></h2>
