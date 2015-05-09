@@ -599,7 +599,7 @@ Neither result seems particularly likely,
 so either there's a mistake in our calculations
 or something is wrong with our data.
 
-You can groups similar plots in a single figure using subplots.
+You can group similar plots in a single figure using subplots.
 Here are our three plots side by side:
 
 ~~~ {.python}
