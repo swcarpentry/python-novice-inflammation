@@ -17,7 +17,7 @@ We use Python in our lessons because:
 
 But the two most important things are
 to use whatever language your colleagues are using,
-so that you can share you work with them easily,
+so that you can share your work with them easily,
 and to use that language *well*.
 
 We are studying inflammation in patients who have been given a new treatment for arthritis,
