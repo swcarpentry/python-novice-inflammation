@@ -95,6 +95,8 @@ which are covered in the lesson on the shell.
 
 ## [Defensive Programming](07-defensive.html)
 
-## [Command-Line Programs](08-cmdline.html)
+## [Debugging](08-debugging.html)
 
-## [Errors and Exceptions](09-errors.html)
+## [Command-Line Programs](09-cmdline.html)
+
+## [Errors and Exceptions](10-errors.html)
