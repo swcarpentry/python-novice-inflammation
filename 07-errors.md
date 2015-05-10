@@ -13,7 +13,7 @@ minutes: 30
 > *   To be able to describe the types of situations in which the following errors occur:
 >     * `SyntaxError` and `IndentationError`
 >     * `NameError`
->     * `KeyError` and `IndexError`
+>     * `IndexError`
 >     * `IOError`
 
 Every programmer encounters errors,
@@ -339,7 +339,7 @@ and I have a file in `myproject/writing/myfile.txt`,
 but I try to just open `myfile.txt`,
 this will fail.
 The correct path would be `writing/myfile.
-xt`. It is also possible (like with `NameError` and `KeyError`) that you just made a typo.
+xt`. It is also possible (like with `NameError`) that you just made a typo.
 
 Another issue could be that you used the "read" flag instead of the "write" flag.
 Python will not give you an error if you try to open a file for writing when the file does not exist.
@@ -403,10 +403,9 @@ IOError: File not open for reading
 > ## Identifying Syntax Errors {.challenge}
 >
 > 1. Read the code below, and (without running it) try to identify what the errors are.
-> 2. Run the cell, and read the error message. Is it a `SyntaxError` or an `IndentationError`?
+> 2. Run the code, and read the error message. Is it a `SyntaxError` or an `IndentationError`?
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
->
 >
 > ~~~ {.python}
 > def another_function
@@ -418,10 +417,9 @@ IOError: File not open for reading
 > ## Identifying Variable Name Errors {.challenge}
 >
 > 1. Read the code below, and (without running it) try to identify what the errors are.
-> 2. Run the cell, and read the error message. What type of `NameError` do you think this is? In other words, is it a string with no quotes, a misspelled variable, or a variable that should have been defined but was not?
+> 2. Run the code, and read the error message. What type of `NameError` do you think this is? In other words, is it a string with no quotes, a misspelled variable, or a variable that should have been defined but was not?
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
->
 >
 > ~~~ {.python}
 > for number in range(10):
@@ -436,17 +434,10 @@ IOError: File not open for reading
 > ## Identifying Item Errors {.challenge}
 >
 > 1. Read the code below, and (without running it) try to identify what the errors are.
-> 2. Run the cell, and read the error message. Is it an `IndexError` or a `KeyError`?
+> 2. Run the code, and read the error message. What type of error is it?
 > 3. Fix the error.
-> 4. Repeat steps 2 and 3, until you have fixed all the errors.
 >
 > ~~~ {.python}
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > print 'My favorite season is ', seasons[4]
-> ~~~
-> ~~~ {.output}
-> print "The first month in spring is: " + seasons['spring'][0]
-> print "The third month in summer is: " + seasons['summer'][3]
-> print "The third month in fall is: " + seasons['fal'][3]
-> print "The second month in winter is: " + seasons['Winter'][1]
 > ~~~
