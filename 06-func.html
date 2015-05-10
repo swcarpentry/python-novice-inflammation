@@ -46,7 +46,7 @@
 <p>Let’s start by defining a function <code>fahr_to_kelvin</code> that converts temperatures from Fahrenheit to Kelvin:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_kelvin(temp):
     <span class="kw">return</span> ((temp - <span class="dv">32</span>) * (<span class="dv">5</span>/<span class="dv">9</span>)) + <span class="fl">273.15</span></code></pre></div>
-<p>The definition opens with the word <code>def</code>, which is followed by the name of the function and a parenthesized list of parameter names. The <a href="reference.html#function-body">body</a> of the function — the statements that are executed when it runs — is indented below the definition line, typically by four spaces.</p>
+<p>The function definition opens with the word <code>def</code>, which is followed by the name of the function and a parenthesized list of parameter names. The <a href="reference.html#function-body">body</a> of the function — the statements that are executed when it runs — is indented below the definition line, typically by four spaces.</p>
 <p>When we call the function, the values we pass to it are assigned to those variables so that we can use them inside the function. Inside the function, we use a <a href="reference.html#return-statement">return statement</a> to send a result back to whoever asked for it.</p>
 <p>Let’s try running our function. Calling our own function is no different from calling any other function:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;freezing point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">32</span>)
@@ -54,7 +54,7 @@
 <pre class="output"><code>freezing point of water: 273.15
 boiling point of water: 273.15</code></pre>
 <p>We’ve successfully called the function that we defined, and we have access to the value that we returned. Unfortunately, the value returned doesn’t look right. What went wrong?</p>
-<h3 id="debugging-a-function">Debugging a Function</h3>
+<h2 id="debugging-a-function">Debugging a Function</h2>
 <p><em>Debugging</em> is when we fix a piece of code that we know is working incorrectly. In this case, we know that <code>fahr_to_kelvin</code> is giving us the wrong answer, so let’s find out why.</p>
 <p>For big pieces of code, there are tools called <em>debuggers</em> that aid in this process. Since we just have a short function, we’ll debug by choosing some parameter value, breaking our function into small parts, and printing out the value of each part.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># We&#39;ll use temp = 212, the boiling point of water, which was incorrect</span>
@@ -90,7 +90,7 @@ float(a)/b is: 3.33333333333</code></pre>
 <span class="dt">print</span> <span class="st">&#39;boiling point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">212</span>)</code></pre></div>
 <pre class="output"><code>freezing point of water: 273.15
 boiling point of water: 373.15</code></pre>
-<h3 id="composing-functions">Composing Functions</h3>
+<h2 id="composing-functions">Composing Functions</h2>
 <p>Now that we’ve seen how to turn Fahrenheit into Kelvin, it’s easy to turn Kelvin into Celsius:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> kelvin_to_celsius(temp):
     <span class="kw">return</span> temp - <span class="fl">273.15</span>
@@ -106,7 +106,7 @@ boiling point of water: 373.15</code></pre>
 <span class="dt">print</span> <span class="st">&#39;freezing point of water in Celsius:&#39;</span>, fahr_to_celsius(<span class="fl">32.0</span>)</code></pre></div>
 <pre class="output"><code>freezing point of water in Celsius: 0.0</code></pre>
 <p>This is our first taste of how larger programs are built: we define basic operations, then combine them in ever-large chunks to get the effect we want. Real-life functions will usually be larger than the ones shown here — typically half a dozen to a few dozen lines — but they shouldn’t ever be much longer than that, or the next person who reads it won’t be able to understand what’s going on.</p>
-<h3 id="tidying-up">Tidying up</h3>
+<h2 id="tidying-up">Tidying up</h2>
 <p>Now that we know how to wrap bits of code up in functions, we can make our inflammation analyasis easier to read and easier to reuse. First, let’s make an <code>analyze</code> function that generates our plots:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> analyze(filename):
 
@@ -129,8 +129,8 @@ boiling point of water: 373.15</code></pre>
 
     fig.tight_layout()
     plt.show(fig)</code></pre></div>
-<p>and another function called <code>detectProblems</code> that checks for those systematics we noticed:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> detectProblems(filename):
+<p>and another function called <code>detect_problems</code> that checks for those systematics we noticed:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> detect_problems(filename):
 
     data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
 
@@ -141,7 +141,7 @@ boiling point of water: 373.15</code></pre>
     <span class="kw">else</span>:
         <span class="dt">print</span> <span class="st">&#39;Seems OK!&#39;</span></code></pre></div>
 <p>Notice that rather than jumbling this code together in one giant <code>for</code> loop, we can now read and reuse both ideas separately. We can reproduce the previous analysis with a much simpler <code>for</code> loop:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> f in filenames:
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> f in filenames[:<span class="dv">3</span>]:
     <span class="dt">print</span> f
     analyze(f)
     detectProblems(f)</code></pre></div>
@@ -207,7 +207,7 @@ center(data, desired)
     Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]
 </code></pre>
 <h2 id="defining-defaults">Defining Defaults</h2>
-<p>We have passed parameters to functions in two ways: directly, as in <code>span(data)</code>, and by name, as in <code>numpy.loadtxt(fname='something.csv', delimiter=',')</code>. In fact, we can pass the filename to <code>loadtxt</code> without the <code>fname=</code>:</p>
+<p>We have passed parameters to functions in two ways: directly, as in <code>type(data)</code>, and by name, as in <code>numpy.loadtxt(fname='something.csv', delimiter=',')</code>. In fact, we can pass the filename to <code>loadtxt</code> without the <code>fname=</code>:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)</code></pre></div>
 <p><sub>~</sub> {.output} array([[ 0., 0., 1., …, 3., 0., 0.], [ 0., 1., 2., …, 1., 0., 1.], [ 0., 1., 1., …, 2., 1., 1.], …, [ 0., 1., 1., …, 1., 1., 1.], [ 0., 0., 0., …, 0., 2., 0.], [ 0., 0., 1., …, 1., 1., 0.]])<sub>~</sub></p>
 <p>but we still need to say <code>delimiter=</code>:</p>
@@ -237,11 +237,15 @@ TypeError: data type &quot;,&quot; not understood</code></pre>
  [ 3.  3.]]</code></pre>
 <p>But we can also now call it with just one parameter, in which case <code>desired</code> is automatically assigned the <a href="reference.html#default-value">default value</a> of 0.0:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">more_data = <span class="dv">5</span> + numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))
-<span class="dt">print</span> <span class="st">&#39;data before centering:&#39;</span>, more_data
-<span class="dt">print</span> <span class="st">&#39;centered data:&#39;</span>, center(more_data)</code></pre></div>
-<pre class="output"><code>data before centering: [[ 5.  5.]
+<span class="dt">print</span> <span class="st">&#39;data before centering:&#39;</span>
+<span class="dt">print</span> more_data
+<span class="dt">print</span> <span class="st">&#39;centered data:&#39;</span>
+<span class="dt">print</span> center(more_data)</code></pre></div>
+<pre class="output"><code>data before centering:
+[[ 5.  5.]
  [ 5.  5.]]
-centered data: [[ 0.  0.]
+centered data:
+[[ 0.  0.]
  [ 0.  0.]]</code></pre>
 <p>This is handy: if we usually want a function to work one way, but occasionally need it to do something else, we can allow people to pass a parameter when they need to but provide a default to make the normal case easier. The example below shows how Python matches values to parameters:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> display(a=<span class="dv">1</span>, b=<span class="dv">2</span>, c=<span class="dv">3</span>):
@@ -356,13 +360,13 @@ loadtxt(fname, dtype=&lt;type &#39;float&#39;&gt;, comments=&#39;#&#39;, delimit
         unpack=<span class="ot">False</span>, ndmin=<span class="dv">0</span>)</code></pre></div>
 <p>This tells us that <code>loadtxt</code> has one parameter called <code>fname</code> that doesn’t have a default value, and eight others that do. If we call the function like this:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;,&#39;</span>)</code></pre></div>
-<p>then the filename is assigned to <code>fname</code> (which is what we want), but the delimiter string <code>','</code> is assigned to <code>dtype</code> rather than <code>delimiter</code>, because <code>dtype</code> is the second parameter in the list. That’s why we don’t have to provide <code>fname=</code> for the filename, but <em>do</em> have to provide <code>delimiter=</code> for the second parameter.</p>
+<p>then the filename is assigned to <code>fname</code> (which is what we want), but the delimiter string <code>','</code> is assigned to <code>dtype</code> rather than <code>delimiter</code>, because <code>dtype</code> is the second parameter in the list. However ‘,’ isn’t a known <code>dtype</code> so our code produced an error message when we tried to run it. When we call <code>loadtxt</code> we don’t have to provide <code>fname=</code> for the filename because it’s the first item in the list, but if we want the ‘,’ to be assigned to the variable <code>delimiter</code>, we <em>do</em> have to provide <code>delimiter=</code> for the second parameter since <code>delimiter</code> is not the second parameter in the list.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2 id="combining-strings"><span class="glyphicon glyphicon-pencil"></span>Combining strings</h2>
 </div>
 <div class="panel-body">
-<p>“Adding” two strings produces their concatention: <code>'a' + 'b'</code> is <code>'ab'</code>. Write a function called <code>fence</code> that takes two parameters called <code>original</code> and <code>wrapper</code> and returns a new string that has the wrapper character at the beginning and end of the original:</p>
+<p>“Adding” two strings produces their concatention: <code>'a' + 'b'</code> is <code>'ab'</code>. Write a function called <code>fence</code> that takes two parameters called <code>original</code> and <code>wrapper</code> and returns a new string that has the wrapper character at the beginning and end of the original. A call to your function should look like this:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> fence(<span class="st">&#39;name&#39;</span>, <span class="st">&#39;*&#39;</span>)
 *name*</code></pre></div>
 </div>
@@ -372,7 +376,7 @@ loadtxt(fname, dtype=&lt;type &#39;float&#39;&gt;, comments=&#39;#&#39;, delimit
 <h2 id="selecting-characters-from-strings"><span class="glyphicon glyphicon-pencil"></span>Selecting characters from strings</h2>
 </div>
 <div class="panel-body">
-<p>If the variable <code>s</code> refers to a string, then <code>s[0]</code> is the string’s first character and <code>s[-1]</code> is its last. Write a function called <code>outer</code> that returns a string made up of just the first and last characters of its input:</p>
+<p>If the variable <code>s</code> refers to a string, then <code>s[0]</code> is the string’s first character and <code>s[-1]</code> is its last. Write a function called <code>outer</code> that returns a string made up of just the first and last characters of its input. A call to your function should look like this:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> outer(<span class="st">&#39;helium&#39;</span>)
 hm</code></pre></div>
 </div>
@@ -383,22 +387,6 @@ hm</code></pre></div>
 </div>
 <div class="panel-body">
 <p>Rewrite the <code>rescale</code> function so that it scales data to lie between 0.0 and 1.0 by default, but will allow the caller to specify lower and upper bounds if they want. Compare your implementation to your neighbor’s: do the two functions always behave the same way?</p>
-</div>
-</section>
-<section class="challenge panel panel-success">
-<div class="panel-heading">
-<h2 id="automatic-plots"><span class="glyphicon glyphicon-pencil"></span>Automatic plots</h2>
-</div>
-<div class="panel-body">
-<p>Write a function called <code>analyze</code> that takes a filename as a parameter and displays the three graphs produced in the <a href="01-numpy.ipynb">previous lesson</a>, i.e., <code>analyze('inflammation-01.csv')</code> should produce the graphs already shown, while <code>analyze('inflammation-02.csv')</code> should produce corresponding graphs for the second data set. Be sure to give your function a docstring.</p>
-</div>
-</section>
-<section class="challenge panel panel-success">
-<div class="panel-heading">
-<h2 id="rescaling-an-array"><span class="glyphicon glyphicon-pencil"></span>Rescaling an array</h2>
-</div>
-<div class="panel-body">
-<p>Write a function <code>rescale</code> that takes an array as input and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0. (If <span class="math"><em>L</em></span> and <span class="math"><em>H</em></span> are the lowest and highest values in the original array, then the replacement for a value <span class="math"><em>v</em></span> should be <span class="math">(<em>v</em> − <em>L</em>)/(<em>H</em> − <em>L</em>)</span>.) Be sure to give the function a docstring.</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
