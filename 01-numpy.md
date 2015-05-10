@@ -78,7 +78,7 @@ To do that,
 we need to [assign](reference.html#assignment) the array to a [variable](reference.html#variable).
 A variable is just a name for a value,
 such as `x`, `current_temperature`, or `subject_id`.
-Python's variables must begin with a letter and are case sensitive.
+Python's variables must begin with a letter and are [case sensitive](reference.html#case-sensitive).
 We can create a new variable by assigning a value to it using `=`.
 As an illustration,
 let's step back and instead of considering a table of data,
@@ -639,7 +639,7 @@ matplotlib.pyplot.show(fig)
 
 ![The Previous Plots as Subplots](fig/01-numpy_80_0.png)
 
-The call to `loadtxt` reads our data,
+The [call](reference.html#function-call) to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
 how large we want the figure to be,
 that we're creating three sub-plots,

@@ -28,7 +28,7 @@ print glob.glob('*.html')
 ~~~
 
 ~~~ {.output}
-['01-numpy.html', '02-loop.html', '03-lists.html', '04-files.html', '05-cond.html', '06-func.html', '07-defensive.html', '08-cmdline.html', '09-errors.html', 'index.html', 'LICENSE.html', 'instructors.html', 'README.html', 'discussion.html', 'motivation.html', 'reference.html']
+['01-numpy.html', '02-loop.html', '03-lists.html', '04-files.html', '05-cond.html', '06-func.html', '07-errors.html', '08-defensive.html', '09-debugging.html', '10-cmdline.html', 'index.html', 'LICENSE.html', 'instructors.html', 'README.html', 'discussion.html', 'motivation.html', 'reference.html']
 ~~~
 
 As these examples show,

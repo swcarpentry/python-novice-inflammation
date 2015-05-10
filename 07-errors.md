@@ -308,63 +308,12 @@ IndexError: list index out of range
 
 Here,
 Python is telling us that there is an `IndexError` in our code, meaning we tried to access a list index that did not exist.
-We get a similar error in the case of dictionaries:
-
-~~~ {.python}
-us_state_capitals = {
-    'california': 'sacramento',
-    'virginia': 'richmond',
-    'new york': 'albany',
-    'massachusetts': 'boston'
-}
-
-print "The capital of Oregon is: " + us_state_capitals['oregon']
-~~~
-~~~ {.error}
----------------------------------------------------------------------------
-KeyError                                  Traceback (most recent call last)
-<ipython-input-12-27fa113dd73c> in <module>()
-      6 }
-      7
-----> 8 print "The capital of Oregon is: " + us_state_capitals['oregon']
-
-KeyError: 'oregon'
-~~~
-
-In this case, we get a `KeyError`,
-which means that the key we requested (`'oregon'`, as the error message tells us) is not present in the dictionary.
-This might be because it genuinely does not exist in the dictionary,
-but it could *also* be due to a typo.
-This is similar to the case we discussed above,
-where you can sometimes receive a `NameError` due to a typo.
-For example:
-
-~~~ {.python}
-us_state_capitals = {
-    'california': 'sacramento',
-    'virginia': 'richmond',
-    'new york': 'albany',
-    'massachusetts': 'boston'
-}
-
-print "The capital of Massachusetts is: " + us_state_capitals['massachussetts']
-~~~
-~~~ {.error}
----------------------------------------------------------------------------
-KeyError                                  Traceback (most recent call last)
-<ipython-input-13-ae1dac4c6a45> in <module>()
-      6 }
-      7
-----> 8 print "The capital of Massachusetts is: " + us_state_capitals['massachussetts']
-
-KeyError: 'massachussetts'
-~~~
 
 ## File Errors
 
 The last type of error we'll cover today are those associated with reading and writing files: `IOError`.
 The "IO" in `IOError` stands for "input/output",
-which is just a fancy way of saying "writing/reading".
+which is just a fancy way of saying "reading/writing".
 If you try to read a file that does not exist,
 you will recieve an `IOError` telling you so.
 This is the most common reason why you would receive `IOError`,
@@ -433,8 +382,8 @@ IOError: File not open for reading
 > ---------------------------------------------------------------------------
 > KeyError                                  Traceback (most recent call last)
 > <ipython-input-2-e4c4cbafeeb5> in <module>()
->       1 from errors_02 import print_friday_message
-> ----> 2 print_friday_message()
+>       1 import errors_02
+> ----> 2 errors_02.print_friday_message()
 >
 > /Users/jhamrick/project/swc/novice/python/errors_02.py in print_friday_message()
 >      13
@@ -492,12 +441,8 @@ IOError: File not open for reading
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
 >
 > ~~~ {.python}
-> seasons = {
->     'spring': ['march', 'april', 'may'],
->     'summer': ['june', 'july', 'august'],
->     'fall': ['september', 'october', 'november'],
->     'winter': ['december', 'january', 'february']
-> }
+> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+> print 'My favorite season is ', seasons[4]
 > ~~~
 > ~~~ {.output}
 > print "The first month in spring is: " + seasons['spring'][0]
