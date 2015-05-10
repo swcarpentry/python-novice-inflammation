@@ -57,9 +57,9 @@ scientists tend to do the following:
     our first test should hold temperature, precipitation, and other factors constant.
 
 3.  *Compare to an oracle.*
-    A [test oracle](reference.html#test-oracle) is something --- experimental data,
-    an older program whose results are trusted,
-    or even a human expert --- against which we can compare the results of our new program.
+    A [test oracle](reference.html#test-oracle) is something whose results are trusted,
+    such as experimental data, an older program, or a human expert.
+    We use to test oracles to determine if our new program produces the correct results.
     If we have a test oracle,
     we should store its output for particular cases
     so that we can compare it with our new results as often as we like

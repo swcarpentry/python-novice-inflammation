@@ -94,7 +94,7 @@ suppose we are representing rectangles using a [tuple] (reference.html#tuple) of
 representing the lower left and upper right corners of the rectangle.
 In order to do some calculations,
 we need to normalize the rectangle so that the lower left corner is at the origin
-and the longest side is 1.0 unit long.
+and the longest side is 1.0 units long.
 This function does that,
 but checks that its input is correctly formatted and that its result makes sense:
 
