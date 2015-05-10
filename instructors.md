@@ -98,10 +98,11 @@ which are covered in the lesson on the shell.
 
 ## [Creating Functions](06-func.html)
 
-## [Defensive Programming](07-defensive.html)
+## [Errors and Exceptions](07-errors.html)
 
 ## [Debugging](08-debugging.html)
 
-## [Command-Line Programs](09-cmdline.html)
+## [Defensive Programming](09-defensive.html)
 
-## [Errors and Exceptions](10-errors.html)
+## [Command-Line Programs](10-cmdline.html)
+

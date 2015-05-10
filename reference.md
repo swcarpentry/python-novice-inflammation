@@ -65,13 +65,13 @@ subtitle: Reference
 *   Specify default values for parameters when defining a function using `name=value` in the parameter list.
 *   Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).
 
-## [Defensive Programming](07-defensive.html)
+## [Errors and Exceptions](07-errors.html)
 
-*   Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do.
-*   Put assertions in programs to check their state as they run, and to help readers understand how those programs are supposed to work.
-*   Use preconditions to check that the inputs to a function are safe to use.
-*   Use postconditions to check that the output from a function is safe to use.
-*   Write tests before writing code in order to help determine exactly what that code is supposed to do.
+*   Tracebacks can look intimidating, but they give us a lot of useful information about what went wrong in our program, including where the error occurred and what type of error it was.
+*   An error having to do with the "grammar" or syntax of the program is called a `SyntaxError`. If the issue has to do with how the code is indented, then it will be called an `IndentationError`.
+*   A `NameError` will occur if you use a variable that has not been defined (either because you meant to use quotes around a string, you forgot to define the variable, or you just made a typo).
+*   Containers like lists and dictionaries will generate errors if you try to access items in them that do not exist. For lists, this type of error is called an `IndexError`; for dictionaries, it is called a `KeyError`.
+*   Trying to read a file that does not exist will give you an `IOError`. Trying to read a file that is open for writing, or writing to a file that is open for reading, will also give you an `IOError`.
 
 ## [Debugging](08-debugging.html)
 
@@ -82,7 +82,16 @@ subtitle: Reference
 *   Keep track of what you've done.
 *   Be humble.
 
-## [Command-Line Programs](09-cmdline.html)
+## [Defensive Programming](09-defensive.html)
+
+*   Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do.
+*   Put assertions in programs to check their state as they run, and to help readers understand how those programs are supposed to work.
+*   Use preconditions to check that the inputs to a function are safe to use.
+*   Use postconditions to check that the output from a function is safe to use.
+*   Write tests before writing code in order to help determine exactly what that code is supposed to do.
+
+
+## [Command-Line Programs](10-cmdline.html)
 
 *   The `sys` library connects a Python program to the system it is running on.
 *   The list `sys.argv` contains the command-line arguments that a program was run with.
@@ -90,13 +99,6 @@ subtitle: Reference
 *   The "file" `sys.stdin` connects to a program's standard input.
 *   The "file" `sys.stdout` connects to a program's standard output.
 
-## [Errors and Exceptions](10-errors.html)
-
-*   Tracebacks can look intimidating, but they give us a lot of useful information about what went wrong in our program, including where the error occurred and what type of error it was.
-*   An error having to do with the "grammar" or syntax of the program is called a `SyntaxError`. If the issue has to do with how the code is indented, then it will be called an `IndentationError`.
-*   A `NameError` will occur if you use a variable that has not been defined (either because you meant to use quotes around a string, you forgot to define the variable, or you just made a typo).
-*   Containers like lists and dictionaries will generate errors if you try to access items in them that do not exist. For lists, this type of error is called an `IndexError`; for dictionaries, it is called a `KeyError`.
-*   Trying to read a file that does not exist will give you an `IOError`. Trying to read a file that is open for writing, or writing to a file that is open for reading, will also give you an `IOError`.
 
 ## Glossary
 
