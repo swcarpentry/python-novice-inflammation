@@ -20,20 +20,6 @@ subtitle: Reference
 *   Use `array.mean(axis=0)` or `array.mean(axis=1)` to calculate statistics across the specified axis.
 *   Use the `pyplot` library from `matplotlib` for creating simple visualizations.
 
-## [Creating Functions](06-func.html)
-
-*   Define a function using `def name(...params...)`.
-*   The body of a function must be indented.
-*   Call a function using `name(...values...)`.
-*   Numbers are stored as integers or floating-point numbers.
-*   Integer division produces the whole part of the answer (not the fractional part).
-*   Each time a function is called, a new stack frame is created on the **call stack** to hold its parameters and local variables.
-*   Python looks for variables in the current stack frame before looking for them at the top level.
-*   Use `help(thing)` to view help for something.
-*   Put docstrings in functions to provide help for that function.
-*   Specify default values for parameters when defining a function using `name=value` in the parameter list.
-*   Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).
-
 ## [Repeating Actions with Loops](02-loop.html)
 
 *   Use `for variable in collection` to process the elements of a collection one at a time.
@@ -65,6 +51,20 @@ subtitle: Reference
 *   Nest loops to operate on multi-dimensional data.
 *   Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior.
 
+## [Creating Functions](06-func.html)
+
+*   Define a function using `def name(...params...)`.
+*   The body of a function must be indented.
+*   Call a function using `name(...values...)`.
+*   Numbers are stored as integers or floating-point numbers.
+*   Integer division produces the whole part of the answer (not the fractional part).
+*   Each time a function is called, a new stack frame is created on the **call stack** to hold its parameters and local variables.
+*   Python looks for variables in the current stack frame before looking for them at the top level.
+*   Use `help(thing)` to view help for something.
+*   Put docstrings in functions to provide help for that function.
+*   Specify default values for parameters when defining a function using `name=value` in the parameter list.
+*   Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).
+
 ## [Defensive Programming](07-defensive.html)
 
 *   Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do.
@@ -72,6 +72,9 @@ subtitle: Reference
 *   Use preconditions to check that the inputs to a function are safe to use.
 *   Use postconditions to check that the output from a function is safe to use.
 *   Write tests before writing code in order to help determine exactly what that code is supposed to do.
+
+## [Debugging](08-debugging.html)
+
 *   Know what code is supposed to do *before* trying to debug it.
 *   Make it fail every time.
 *   Make it fail fast.
@@ -79,7 +82,7 @@ subtitle: Reference
 *   Keep track of what you've done.
 *   Be humble.
 
-## [Command-Line Programs](08-cmdline.html)
+## [Command-Line Programs](09-cmdline.html)
 
 *   The `sys` library connects a Python program to the system it is running on.
 *   The list `sys.argv` contains the command-line arguments that a program was run with.
@@ -87,7 +90,7 @@ subtitle: Reference
 *   The "file" `sys.stdin` connects to a program's standard input.
 *   The "file" `sys.stdout` connects to a program's standard output.
 
-## [Errors and Exceptions](09-errors.html)
+## [Errors and Exceptions](10-errors.html)
 
 *   Tracebacks can look intimidating, but they give us a lot of useful information about what went wrong in our program, including where the error occurred and what type of error it was.
 *   An error having to do with the "grammar" or syntax of the program is called a `SyntaxError`. If the issue has to do with how the code is indented, then it will be called an `IndentationError`.
@@ -102,7 +105,7 @@ additive color model
     such as [red, green, and blue](#rgb).
 
 argument
-:   A value given to a function or program when it runs. 
+:   A value given to a function or program when it runs.
     The term is often used interchangeably (and inconsistently) with [parameter](#parameter).
 
 assertion
@@ -143,7 +146,7 @@ conditional statement
 :   A statement in a program that might or might not be executed
     depending on whether a test is true or false.
 
-comma-separated values 
+comma-separated values
 :   (CSV) A common textual representation for tables
     in which the values in each row are separated by commas.
 
@@ -236,7 +239,8 @@ method
     or one of the questions it can answer.
 
 object
-:   FIXME
+:   A collection of conceptually related variables ([members](#member)) and
+    functions using those variables ([methods](#method)).
 
 outer loop
 :   A loop that contains another loop.
@@ -271,7 +275,9 @@ RGB
     (i.e., a one-byte integer).
 
 sequence
-:   FIXME
+:   A collection of information that is presented in a specific order.
+    For example, in Python, a [string](#string) is a sequence of characters,
+    while a list is a sequence of any variable.
 
 shape
 :   An array's dimensions, represented as a vector.
@@ -309,8 +315,8 @@ string
     a [sequence](#sequence) of zero or more characters.
 
 syntax error
-:   CHECKME: a programming error that occurs when statements are in an order or contain characters
-    not expected by the programming language
+:   A programming error that occurs when statements are in an order or contain characters
+    not expected by the programming language.
 
 test oracle
 :   A program, device, data set, or human being
@@ -320,18 +326,19 @@ test-driven development
 :   The practice of writing unit tests *before* writing the code they test.
 
 traceback
-:   CHECKME In Python, a list of the sequence of function calls that led to an error.
+:   The sequence of function calls that led to an error.
 
 tuple
 :   An [immutable](#immutable) [sequence](#sequence) of values.
 
 type
-:   CHECKME The classification of something in a program (for example, the contents of a variable)
+:   The classification of something in a program (for example, the contents of a variable)
     as a kind of number (e.g. [floating-point](#float), [integer](#integer)), [string](#string), or something else.
 
 type of error
-:   CHECKME Indicates the nature of an error in a program, for example, `IOError` in Python refers to problems in input/output. 
-    See also [syntax error](#syntax-error).
+:   Indicates the nature of an error in a program. For example, in Python,
+    an `IOError` to problems with file input/output.
+    See also: [syntax error](#syntax-error).
 
 while loop
 :   A loop that keeps executing as long as some condition is true.
