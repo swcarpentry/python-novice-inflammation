@@ -712,6 +712,7 @@ the second parameter in the list.
 > to see how to use these functions to generate regularly-spaced values,
 > then use those values to test your `rescale` function.
 
+
 > ## Variables inside and outside functions {.challenge}
 >
 > What does the following piece of code display when run - and why?
