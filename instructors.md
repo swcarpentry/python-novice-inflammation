@@ -5,7 +5,12 @@ subtitle: Instructor's Guide
 ---
 ## Legend
 
-FIXME: story behind running example.
+We are using a dataset with records on inflammation from patients following an
+arthritis treatment.
+
+We make reference in the lesson that this data is somehow strange. It is strange
+because it is fabricated! The script used to generate the inflammation data
+is included as [`tools/gen_inflammation.py`](tools/gen_inflammation.py).
 
 ## Overall
 
