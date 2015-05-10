@@ -18,10 +18,12 @@ we need to make our programs work like other Unix command-line tools.
 For example,
 we may want a program that reads a dataset
 and prints the average inflammation per patient.
-We can execute a shell command in a Python interpreter by starting the line with a `$`.
-This tells the interpreter execute the line in the shell. The following line is called
-from a Python interpreter such as the Juypter Notebook and executes
-the Python program readings.py in the shell (with some additional command line arguments).
+
+> ## Switching to Shell Commands {.callout}
+> In this lesson we are switching from typing commands in a python interpreter to typing
+> commands in a shell terminal window (such as bash). When you see a `$` in front of a
+> command that tells you to run that command in the shell rather than the python interpreter.
+
 This program does exactly what we want - it prints the average inflammation per patient
 for a given file.
 
