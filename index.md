@@ -51,6 +51,19 @@ To do all that, we'll have to learn a little bit about programming.
 > Notebook although it can be taught through any Python interpreter. The commands in this
 > this lesson pertain to Python 2.7.
 
+> ## Getting ready {.getready}
+>
+> You need to download some files to follow this lesson:
+>
+> 1. Make a new folder in your Desktop called `python-novice-inflammation`.
+> 2. Download [python-novice-inflammation-data.zip](./python-novice-inflammation-data.zip) and move the file to this folder.
+> 3. If it's not unzipped yet, double-click on it to unzip it. You should end up with a new folder called `data`.
+> 4. You can access this folder from the Unix shell with:
+>
+> ~~~ {.input}
+> $ cd && cd Desktop/python-novice-inflammation/data
+> ~~~
+
 ## Topics
 
 1.  [Analyzing Patient Data](01-numpy.html)
