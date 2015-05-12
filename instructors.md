@@ -124,7 +124,7 @@ Solutions to exercises:
 > for c in range(len(oldstring)-1,-1,-1):
 >    newstring = newstring + oldstring[c]
 > print result
-> `'notweN'`
+> "notweN"
 > ~~~
 
 
@@ -133,6 +133,96 @@ Solutions to exercises:
 ## [Analyzing Data from Multiple Files](04-files.html)
 
 ## [Making Choices](05-cond.html)
+> ## How many paths? {.challenge}
+>
+> Which of the following would be printed if you were to run this code? Why did you pick this answer?
+>
+> ~~~ {.python}
+> if 4 > 5:
+>     print 'A'
+> elif 4 == 5:
+>     print 'B'
+> elif 4 < 5:
+>     print 'C'
+> C
+> ~~~
+
+> ## What is truth? {.challenge}
+>
+> After reading and running the code below,
+> explain what the rule is for which values are considered true and which are considered false.
+> (Note that if the body of a conditional is a single statement, we can write it on the same line as the `if`.)
+>
+> ~~~ {.python}
+> if '': print 'empty string is true'
+> 
+> if 'word': print 'word is true'
+> word is true
+> if []: print 'empty list is true'
+> 
+> if [1, 2, 3]: print 'non-empty list is true'
+> non-empty list is true
+> if 0: print 'zero is true'
+>
+> if 1: print 'one is true'
+>
+> ~~~
+> False values: 0, empty string, empty list. True values: 1, non-empty lists or strings.
+
+> ## Close enough {.challenge}
+>
+> Write some conditions that print `True` if the variable `a` is within 10% of the variable `b`
+> and `False` otherwise.
+> ~~~ {.python}
+> a = 5
+> b = 5.1
+>
+> if abs(a-b) < 0.1*abs(b):
+>     print 'True'
+> else:
+>     print 'False'
+> ~~~
+
+> ## In-place operators {.challenge}
+>
+> Write some code that sums the positive and negative numbers in a list separately,
+> using in-place operators.
+> ~~~ {.python}
+> positive_sum = 0
+> negative_sum = 0
+> test_list = [3,4,6,1,-1,-5,0,7,-8]
+> for num in test_list:
+>     if num > 0:
+>         positive_sum += num
+>     else:
+>         negative_sum += num
+> print positive_sum, negative_sum
+> 21 -14
+> ~~~ 
+
+
+> ## Tuples and exchanges {.challenge}
+>
+> Explain what the overall effect of this code is:
+>
+> ~~~ {.python}
+> left = 'L'
+> right = 'R'
+>
+> temp = left
+> left = right
+> right = temp
+> ~~~
+> Answer: swaps contents of variables right and left.
+> Compare it to:
+>
+> ~~~ {.python}
+> left, right = right, left
+> ~~~
+>
+> Do they always do the same thing?
+> Answer: FIXME I bet it's possible to create a case where they don't. But are our learners going to figure one out? FIXME
+> Which do you find easier to read?
 
 ## [Creating Functions](06-func.html)
 
