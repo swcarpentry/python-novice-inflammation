@@ -226,6 +226,62 @@ Solutions to exercises:
 
 ## [Creating Functions](06-func.html)
 
+> ## Combining strings {.challenge}
+>
+> Write a function called `fence` that takes two parameters called `original` and `wrapper`
+> and returns a new string that has the wrapper character at the beginning and end of the original.
+>
+> ~~~ {.python}
+> def fence(original, wrapper):
+>     return wrapper + original + wrapper
+> ~~~
+
+> ## Selecting characters from strings {.challenge}
+>
+> Write a function called `outer`
+> that returns a string made up of just the first and last characters of its input.
+>
+> ~~~ {.python}
+> def outer(input_string):
+>     return input_string[0] + input_string[-1]
+> ~~~
+
+> ## Rescaling, with parameters {.challenge}
+>
+> Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
+> but will allow the caller to specify lower and upper bounds if they want.
+> FIXME: looks like the rescale function is no longer in the lesson? FIXME
+
+> ## Testing your function {.challenge}
+>
+> Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
+> to see how to use these functions to generate regularly-spaced values,
+> then use those values to test your `rescale` function.
+> FIXME: looks like the rescale function is no longer in the lesson? FIXME
+
+> ## Variables inside and outside functions {.challenge}
+>
+> What does the following piece of code display when run - and why?
+>
+> ~~~ {.python}
+> f = 0
+> k = 0
+>
+> def f2k(f):
+>   k = ((f-32)*(5.0/9.0)) + 273.15
+>   return k
+>
+> f2k(8)
+> f2k(41)
+> f2k(32)
+>
+> print k
+> 0
+> ~~~
+> 
+> Answer: displays 0 because the `k` inside the function `f2k` doesn't know about the `k` defined outside the function.
+
+
 ## [Errors and Exceptions](07-errors.html)
 
 ## [Defensive Programming](08-defensive.html)
