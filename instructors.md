@@ -64,7 +64,7 @@ clone the previous cell and write the update in the new copy
 so that learners have a complete record of how the program grew.
 Once you've done this,
 you can say,
-"Now why don't we just breaks things into small functions right from the start?"
+"Now why don't we just break things into small functions right from the start?"
 
 The discussion of command-line scripts
 assumes that students understand standard I/O and building filters,
@@ -89,6 +89,44 @@ which are covered in the lesson on the shell.
 ## [Analyzing Patient Data](01-numpy.html)
 
 ## [Repeating Actions with Loops](02-loop.html)
+
+Solutions to exercises:
+
+> ## From 1 to N {.challenge}
+> Using `range`,
+> write a loop that uses `range` to print the first 3 natural numbers:
+>
+> ~~~ {.python}
+> for i in range(1,4):
+>    print i
+> 1
+> 2
+> 3
+> ~~~
+
+> ## Computing powers with loops {.challenge}
+> Write a loop to calculate 5**3.
+> ~~~ {.python}
+> result = 1
+> for i in range(0,3):
+>    result = result*5
+> print result
+> 125
+> ~~~
+
+> ## Reverse a string {.challenge}
+>
+> Write a loop that takes a string,
+> and produces a new string with the characters in reverse order.
+> ~~~ {.python}
+> newstring = ""
+> oldstring = "Newton"
+> for c in range(len(oldstring)-1,-1,-1):
+>    newstring = newstring + oldstring[c]
+> print result
+> `'notweN'`
+> ~~~
+
 
 ## [Storing Multiple Values in Lists](03-lists.html)
 
