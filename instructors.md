@@ -321,6 +321,7 @@ Solutions to exercises:
 > KeyError: 'Friday'
 > ~~~
 > Answer:
+>
 > 1. 3 levels
 > 2. `errors_02.py`
 > 3. `print_message`
@@ -389,7 +390,7 @@ Solutions to exercises:
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > print 'My favorite season is ', seasons[4]
 > ~~~
-> Answer: IndexError; the last entry is seasons[3], so seasons[4] doesn't make sense.
+> Answer: IndexError; the last entry is `seasons[3]`, so `seasons[4]` doesn't make sense.
 > ~~~ {.python}
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > print 'My favorite season is ', seasons[3]
