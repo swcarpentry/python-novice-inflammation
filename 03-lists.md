@@ -12,7 +12,7 @@ minutes: 30
 Just as a `for` loop is a way to do operations many times,
 a list is a way to store many values.
 Unlike NumPy arrays,
-lists are built into the language (so we don't have to lead a library
+lists are built into the language (so we don't have to load a library
 to use them).
 We create a list by putting values inside square brackets:
 
