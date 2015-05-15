@@ -156,28 +156,6 @@ Since `weight_lb` doesn't "remember" where its value came from,
 it isn't automatically updated when `weight_kg` changes.
 This is different from the way spreadsheets work.
 
-> ## What's inside the box? {.challenge}
->
-> Draw diagrams showing what variables refer to what values after each statement in the following program:
->
-> ~~~ {.python}
-> weight = 70.5
-> age = 35
-> # Take a trip to the planet Neptune
-> weight = weight * 1.14
-> age = age + 20
-> ~~~
-
-> ## Sorting out references {.challenge}
->
-> What does the following program print out?
->
-> ~~~ {.python}
-> first, second = 'Grace', 'Hopper'
-> third, fourth = second, first
-> print third, fourth
-> ~~~
-
 Just as we can assign a single value to a variable, we can also assign an array of values
 to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its result:
 
@@ -331,39 +309,6 @@ small is:
  [ 1.  1.  0.  1.]
  [ 2.  2.  1.  1.]]
 ~~~
-
-> ## Slicing strings {.challenge}
->
-> A section of an array is called a **slice**.
-> We can take slices of character strings as well:
->
-> ~~~ {.python}
-> element = 'oxygen'
-> print 'first three characters:', element[0:3]
-> print 'last three characters:', element[3:6]
-> ~~~
->
-> ~~~ {.output}
-> first three characters: oxy
-> last three characters: gen
-> ~~~
->
-> What is the value of `element[:4]`?
-> What about `element[4:]`?
-> Or `element[:]`?
->
-> What is `element[-1]`?
-> What is `element[-2]`?
-> Given those answers,
-> explain what `element[1:-1]` does.
-
-> ## Thin slices {.challenge}
->
-> The expression `element[3:3]` produces an **empty string**,
-> i.e., a string that contains no characters.
-> If `data` holds our array of patient data,
-> what does `data[3:3, 4:4]` produce?
-> What about `data[3:3, :]`?
 
 Arrays also know how to perform common mathematical operations on their values.
 The simplest operations with data are arithmetic:
@@ -658,6 +603,59 @@ the graphs will actually be squeezed together more closely.)
 > If you ever see Python code online using a NumPy function with `np`
 > (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
 
+> ## Check your understanding {.challenge}
+>
+> Draw diagrams showing what variables refer to what values after each statement in the following program:
+>
+> ~~~ {.python}
+> mass = 47.5
+> age = 122
+> mass = mass * 2.0
+> age = age - 20
+> ~~~
+
+> ## Sorting out references {.challenge}
+>
+> What does the following program print out?
+>
+> ~~~ {.python}
+> first, second = 'Grace', 'Hopper'
+> third, fourth = second, first
+> print third, fourth
+> ~~~
+
+> ## Slicing strings {.challenge}
+>
+> A section of an array is called a [slice](reference.html#slice).
+> We can take slices of character strings as well:
+>
+> ~~~ {.python}
+> element = 'oxygen'
+> print 'first three characters:', element[0:3]
+> print 'last three characters:', element[3:6]
+> ~~~
+>
+> ~~~ {.output}
+> first three characters: oxy
+> last three characters: gen
+> ~~~
+>
+> What is the value of `element[:4]`?
+> What about `element[4:]`?
+> Or `element[:]`?
+>
+> What is `element[-1]`?
+> What is `element[-2]`?
+> Given those answers,
+> explain what `element[1:-1]` does.
+
+> ## Thin slices {.challenge}
+>
+> The expression `element[3:3]` produces an [empty string](reference.html#empty-string),
+> i.e., a string that contains no characters.
+> If `data` holds our array of patient data,
+> what does `data[3:3, 4:4]` produce?
+> What about `data[3:3, :]`?
 
 > ## Check your understanding: plot scaling {.challenge}
 >
