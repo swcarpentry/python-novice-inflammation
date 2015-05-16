@@ -169,6 +169,16 @@ a/b is: 3
 float(a)/b is: 3.33333333333
 ~~~
 
+It is also possible to make Python use integer division that produces a floating point answer, by importing a feature that was added in later versions.  
+
+~~~ {.python}
+from __future__ import division
+print '10/3 is:', 10/3
+~~~
+~~~ {.output}
+10/3 is: 3.33333333333
+~~~
+
 Let's fix our `fahr_to_kelvin` function with this new knowledge:
 
 ~~~ {.python}
