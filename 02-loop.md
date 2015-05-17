@@ -22,8 +22,14 @@ We want to create plots for all our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
 
-Suppose we want to print each character in the word "lead" on a line of its own.
-One way is to use four `print` statements:
+Suppose we want to print each character in the word "lead" on a line of its own. 
+~~~ {.python}
+word = 'lead'
+
+~~~
+We can access a character in a string using its index. For example, we can get the first 
+character of the word 'lead', by using word[0]. One way to print each character is to use 
+four `print` statements:
 
 ~~~ {.python}
 word = 'lead'
