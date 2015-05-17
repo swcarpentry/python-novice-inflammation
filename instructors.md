@@ -134,6 +134,8 @@ After discussing these challenges could be a good time to introduce the `b*=2` s
 ## [Analyzing Data from Multiple Files](04-files.html)
 
 ## [Making Choices](05-cond.html)
+
+Solutions to exercises:
 > ## How many paths? {.challenge}
 >
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
@@ -237,6 +239,7 @@ After discussing these challenges could be a good time to introduce the `b*=2` s
 
 ## [Creating Functions](06-func.html)
 
+Solutions to exercises:
 > ## Combining strings {.challenge}
 >
 > Write a function called `fence` that takes two parameters called `original` and `wrapper`
@@ -295,6 +298,7 @@ After discussing these challenges could be a good time to introduce the `b*=2` s
 
 ## [Errors and Exceptions](07-errors.html)
 
+Solutions to exercises:
 > ## Reading Error Messages {.challenge}
 >
 > Read the traceback below, and identify the following pieces of information about it:
@@ -408,6 +412,72 @@ After discussing these challenges could be a good time to introduce the `b*=2` s
 > ~~~
 
 ## [Defensive Programming](08-defensive.html)
+
+Solutions to exercises:
+> ## Pre- and post-conditions {.challenge}
+>
+> Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
+> What pre-conditions and post-conditions would you write for it?
+> Compare your answer to your neighbor's:
+> can you think of a function that will pass your tests but not hers or vice versa?
+> Answer: 
+> possible pre-conditions: 
+> ~~~ {.python}
+> assert len(input)>0, 'List length must be non-zero'
+> import numbers, numpy
+> for n in input_list:
+>     assert isinstance(n, numbers.Number) and not numpy.isnan(n),  'list entries must be numbers'
+> ~~~
+> possible post-conditions: 
+> ~~~ {.python}
+> assert not numpy.isnan(average), 'Average computation failed'
+> ~~~
+
+> ## Testing assertions {.challenge}
+>
+> Given a sequence of values, the function `running` returns
+> a list containing the running totals at each index.
+> Explain in words what the assertions in this function check,
+> and for each one,
+> give an example of input that will make that assertion fail.
+>
+> ~~~ {.python}
+> def running(values):
+>     assert len(values) > 0
+>     result = [values[0]]
+>     for v in values[1:]:
+>         assert result[-1] >= 0
+>         result.append(result[-1] + v)
+>         assert result[-1] >= result[0]
+>     return result
+> ~~~
+> Answer:
+> The first assertion checks that the input sequence `values` is not empty; an empty sequence such as `[]` will make it fail.
+> The second assertion checks that the last item in `result` exists (FIXME: not obvious to me how to make this fail)  
+> The third assertion checks that the last item in `result` exists (FIXME: not obvious to me how to make this fail)  
+
+> ## Fixing and testing {.challenge}
+>
+> Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
+>
+> One possible solution:
+>~~~ {.python}
+>import numpy
+>def range_overlap(ranges):
+>    '''Return common overlap among a set of [low, high] ranges.'''
+>    if len(ranges) == 1: # only one entry, so return it
+>        return ranges[0]
+>    lowest = -numpy.inf # lowest possible number
+>    highest = numpy.inf # highest possible number
+>    for (low, high) in ranges:
+>        lowest = max(lowest, low)
+>        highest = min(highest, high)
+>    if lowest >= highest: # no overlap
+>        return None
+>    else:
+>        return (lowest, highest)
+>~~~
+
 
 ## [Debugging](09-debugging.html)
 
