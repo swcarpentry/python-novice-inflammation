@@ -674,7 +674,7 @@ the second parameter in the list.
 
 > ## Combining strings {.challenge}
 >
-> "Adding" two strings produces their concatention:
+> "Adding" two strings produces their concatenation:
 > `'a' + 'b'` is `'ab'`.
 > Write a function called `fence` that takes two parameters called `original` and `wrapper`
 > and returns a new string that has the wrapper character at the beginning and end of the original.

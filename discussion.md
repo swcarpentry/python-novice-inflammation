@@ -295,7 +295,7 @@ from ipythonblocks import show_color
 show_color(214, 90, 127)
 ~~~
 
-FIXME: color image
+![](fig/ipythonblocks_show_color_example.png)
 
 It also provides a table of standard colors:
 

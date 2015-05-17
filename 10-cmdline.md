@@ -20,9 +20,9 @@ we may want a program that reads a dataset
 and prints the average inflammation per patient.
 
 > ## Switching to Shell Commands {.callout}
-> In this lesson we are switching from typing commands in a python interpreter to typing
+> In this lesson we are switching from typing commands in a Python interpreter to typing
 > commands in a shell terminal window (such as bash). When you see a `$` in front of a
-> command that tells you to run that command in the shell rather than the python interpreter.
+> command that tells you to run that command in the shell rather than the Python interpreter.
 
 This program does exactly what we want - it prints the average inflammation per patient
 for a given file.

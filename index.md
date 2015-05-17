@@ -47,7 +47,7 @@ To do all that, we'll have to learn a little bit about programming.
 >
 > Learners need to understand the concepts of files and directories
 > (including the working directory) and how to start a Python
-> interpreter before tackling this lesson. This lesson references the Juypter (IPython)
+> interpreter before tackling this lesson. This lesson references the Jupyter (IPython)
 > Notebook although it can be taught through any Python interpreter. The commands in this
 > this lesson pertain to Python 2.7.
 
