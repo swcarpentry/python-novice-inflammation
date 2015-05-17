@@ -127,6 +127,7 @@ Solutions to exercises:
 > "notweN"
 > ~~~
 
+After discussing these challenges could be a good time to introduce the `b*=2` syntax.
 
 ## [Storing Multiple Values in Lists](03-lists.html)
 
@@ -150,7 +151,7 @@ Solutions to exercises:
 > ## What is truth? {.challenge}
 >
 > After reading and running the code below,
-> explain what the rule is for which values are considered true and which are considered false.
+> explain the rules for which values are considered true and which are considered false.
 > (Note that if the body of a conditional is a single statement, we can write it on the same line as the `if`.)
 >
 > ~~~ {.python}
@@ -182,6 +183,12 @@ Solutions to exercises:
 > else:
 >     print 'False'
 > ~~~
+> Another possible solution:
+> ~~~ {.python}
+> print abs(a-b) < 0.1*abs(b)
+> ~~~
+> This works because the Boolean objects `True` and `False` have string representations which can be `print`ed.
+
 
 > ## In-place operators {.challenge}
 >
@@ -194,12 +201,15 @@ Solutions to exercises:
 > for num in test_list:
 >     if num > 0:
 >         positive_sum += num
+>     elif num == 0:
+>         pass
 >     else:
 >         negative_sum += num
 > print positive_sum, negative_sum
 > 21 -14
 > ~~~ 
-
+> Here `pass` means "don't do anything". In this particular case, it's not actually needed, since if `num==0` neither 
+> sum needs to change, but it illustrates the use of `elif`.
 
 > ## Tuples and exchanges {.challenge}
 >
@@ -221,8 +231,9 @@ Solutions to exercises:
 > ~~~
 >
 > Do they always do the same thing?
-> Answer: FIXME I bet it's possible to create a case where they don't. But are our learners going to figure one out? FIXME
+> Answer: Yes, although it's possible the internal implementation is different.
 > Which do you find easier to read?
+> Answers may vary..
 
 ## [Creating Functions](06-func.html)
 
@@ -368,7 +379,7 @@ Solutions to exercises:
 >         message = message + "b"
 > print message
 > ~~~
-> Answer: 3 `NameError`s for `Number` being misspelled, for `message` not defined, and for `a` not being in quotes.  
+> Answer: 3 `NameError`s for `number` being misspelled, for `message` not defined, and for `a` not being in quotes.  
 > ~~~ {.python}
 > message = ""
 > for number in range(10):
@@ -393,7 +404,7 @@ Solutions to exercises:
 > Answer: IndexError; the last entry is `seasons[3]`, so `seasons[4]` doesn't make sense.
 > ~~~ {.python}
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-> print 'My favorite season is ', seasons[3]
+> print 'My favorite season is ', seasons[-1]
 > ~~~
 
 ## [Defensive Programming](08-defensive.html)
