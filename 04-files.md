@@ -21,14 +21,14 @@ that finds files whose names match a pattern.
 We provide those patterns as strings:
 the character `*` matches zero or more characters,
 while `?` matches any one character.
-We can use this to get the names of all the html files:
+We can use this to get the names of all the csv files in the data directory:
 
 ~~~ {.python}
-print glob.glob('*.html')
+print glob.glob('*.csv')
 ~~~
 
 ~~~ {.output}
-['01-numpy.html', '02-loop.html', '03-lists.html', '04-files.html', '05-cond.html', '06-func.html', '07-errors.html', '08-defensive.html', '09-debugging.html', '10-cmdline.html', 'index.html', 'LICENSE.html', 'instructors.html', 'README.html', 'discussion.html', 'motivation.html', 'reference.html']
+['inflammation-01.csv', 'inflammation-02.csv', 'inflammation-03.csv', 'inflammation-04.csv', 'inflammation-05.csv', 'inflammation-06.csv', 'inflammation-07.csv', 'inflammation-08.csv', 'inflammation-09.csv', 'inflammation-10.csv', 'inflammation-11.csv', 'inflammation-12.csv', 'small-01.csv', 'small-02.csv', 'small-03.csv']
 ~~~
 
 As these examples show,
