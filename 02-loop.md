@@ -32,7 +32,6 @@ character of the word 'lead', by using word[0]. One way to print each character 
 four `print` statements:
 
 ~~~ {.python}
-word = 'lead'
 print word[0]
 print word[1]
 print word[2]

@@ -37,7 +37,7 @@ which means we can loop over it
 to do something with each filename in turn.
 In our case,
 the "something" we want to do is generate a set of plots for each file in our inflammation dataset.
-Let's test it by analyzing the first three files in the list:
+Let's test it by analyzing the first three files in the list, instead of all the csv files:
 
 ~~~ {.python}
 filenames = glob.glob('*.csv')
