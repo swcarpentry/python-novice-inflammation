@@ -21,9 +21,8 @@ but we have a dozen data sets right now and more on the way.
 We want to create plots for all our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
-
-Suppose we want to print each character in the word "lead" on a line of its own.
-One way is to use four `print` statements:
+An example task that we might want to repeat is printing each character in a 
+word on a line of its own. One way to do this would be to use a series of `print` statements:
 
 ~~~ {.python}
 word = 'lead'
@@ -90,6 +89,13 @@ for char in word:
 
 ~~~
 
+~~~ {.output}
+l
+e
+a
+d
+~~~
+
 This is shorter---certainly shorter than something that prints every character in a hundred-letter string---and
 more robust as well:
 
@@ -97,6 +103,15 @@ more robust as well:
 word = 'oxygen'
 for char in word:
     print char
+~~~
+
+~~~ {.output}
+o
+x
+y
+g
+e
+n
 ~~~
 
 The improved version of `print_characters` uses a [for loop](reference.html#for-loop)
@@ -120,6 +135,10 @@ length = 0
 for vowel in 'aeiou':
     length = length + 1
 print 'There are', length, 'vowels'
+~~~
+
+~~~ {.output}
+There are 5 vowels
 ~~~
 
 It's worth tracing the execution of this little program step by step.
@@ -151,11 +170,22 @@ for letter in 'abc':
 print 'after the loop, letter is', letter
 ~~~
 
+~~~ {.output}
+a
+b
+c
+after the loop, letter is c
+~~~
+
 Note also that finding the length of a string is such a common operation
 that Python actually has a built-in function to do it called `len`:
 
 ~~~ {.python}
 print len('aeiou')
+~~~
+
+~~~ {.output}
+5
 ~~~
 
 `len` is much faster than any function we could write ourselves,
@@ -181,7 +211,7 @@ so we should always use it when we can.
 >
 > Exponentiation is built into Python:
 >
->~~~ {.python}
+> ~~~ {.python}
 > print 5**3
 > 125
 > ~~~
