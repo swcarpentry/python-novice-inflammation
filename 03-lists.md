@@ -73,7 +73,7 @@ name = 'Bell'
 name[0] = 'b'
 ~~~
 
-~~~ {.output}
+~~~ {.error}
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-8-220df48aeb2e> in <module>()
