@@ -520,19 +520,18 @@ the program now does everything we set out to do.
 > Write a command-line program that does addition and subtraction:
 >
 > ~~~ {.python}
-> $ python arith.py 1 + 2
+> $ python arith.py 1 2 addition
 > ~~~
 > ~~~ {.output}
 > 3
 > ~~~
 > ~~~ {.python}
-> $ python arith.py 3 - 4
+> $ python arith.py 3 4 subtraction
 > ~~~
 > ~~~ {.output}
 > -1
 > ~~~
 >
-> What goes wrong if you try to add multiplication using '*' to the program?
 
 > ## Finding particular files {.challenge}
 >
@@ -550,21 +549,21 @@ the program now does everything we set out to do.
 
 > ## Changing flags {.challenge}
 >
-> Rewrite `count-stdin.py` so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
+> Rewrite `readings.py` so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
 > Is the code easier to read?
 > Is the program easier to understand?
 
 > ## Adding a help message {.challenge}
 >
 > Separately,
-> modify the program so that if no parameters are given
+> modify `readings.py` so that if no parameters are given
 > (i.e., no action is specified and no filenames are given),
 > it prints a message explaining how it should be used.
 
 > ## Adding a default action {.challenge}
 >
 > Separately,
-> modify the program so that if no action is given
+> modify `readings.py` so that if no action is given
 > it displays the means of the data.
 
 > ## A file-checker {.challenge}
