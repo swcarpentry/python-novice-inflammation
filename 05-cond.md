@@ -141,8 +141,38 @@ else:
     print 'Seems OK!'
 ~~~
 
+Let's test that out:
+
+~~~ {.python}
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
+    print 'Suspicious looking maxima!'
+elif data.min(axis=0).sum() == 0:
+    print 'Minima add up to zero!'
+else:
+    print 'Seems OK!'
+~~~
+
+~~~ {.output}
+Suspicious looking maxima!
+~~~
+
+~~~ {.python}
+data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
+if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
+    print 'Suspicious looking maxima!'
+elif data.min(axis=0).sum() == 0:
+    print 'Minima add up to zero!'
+else:
+    print 'Seems OK!'
+~~~
+
+~~~ {.output}
+Minima add up to zero!
+~~~
+
 In this way,
-we can ask Python to do something different depending on the condition of our data.
+we have asked Python to do something different depending on the condition of our data.
 Here we printed messages in all cases,
 but we could also imagine not using the `else` catch-all
 so that messages are only printed when something is wrong,
