@@ -21,10 +21,18 @@ odds = [1, 3, 5, 7]
 print 'odds are:', odds
 ~~~
 
+~~~ {.output}
+odds are: [1, 3, 5, 7]
+~~~
+
 We select individual elements from lists by indexing them:
 
 ~~~ {.python}
 print 'first and last:', odds[0], odds[-1]
+~~~
+
+~~~ {.output}
+first and last: 1 7
 ~~~
 
 and if we loop over a list,
@@ -33,6 +41,13 @@ the loop variable is assigned elements one at a time:
 ~~~ {.python}
 for number in odds:
     print number
+~~~
+
+~~~ {.output}
+1
+3
+5
+7
 ~~~
 
 There is one important difference between lists and strings:
@@ -47,11 +62,26 @@ names[1] = 'Darwin' # correct the name
 print 'final value of names:', names
 ~~~
 
+~~~ {.output}
+names is originally: ['Newton', 'Darwing', 'Turing']
+final value of names: ['Newton', 'Darwin', 'Turing']
+~~~
+
 works, but:
 
 ~~~ {.python}
 name = 'Bell'
 name[0] = 'b'
+~~~
+
+~~~ {.error}
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-8-220df48aeb2e> in <module>()
+      1 name = 'Bell'
+----> 2 name[0] = 'b'
+
+TypeError: 'str' object does not support item assignment
 ~~~
 
 does not.
