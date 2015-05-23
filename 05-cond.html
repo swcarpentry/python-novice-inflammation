@@ -92,7 +92,24 @@ done
 <p>And if neither of these conditions are true, we can use <code>else</code> to give the all-clear:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">else</span>:
     <span class="dt">print</span> <span class="st">&#39;Seems OK!&#39;</span></code></pre></div>
-<p>In this way, we can ask Python to do something different depending on the condition of our data. Here we printed messages in all cases, but we could also imagine not using the <code>else</code> catch-all so that messages are only printed when something is wrong, freeing us from having to manually examine every plot for features we’ve seen before.</p>
+<p>Let’s test that out:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
+<span class="kw">if</span> data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">0</span>] == <span class="dv">0</span> and data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">20</span>] == <span class="dv">20</span>:
+    <span class="dt">print</span> <span class="st">&#39;Suspicious looking maxima!&#39;</span>
+<span class="kw">elif</span> data.<span class="dt">min</span>(axis=<span class="dv">0</span>).<span class="dt">sum</span>() == <span class="dv">0</span>:
+    <span class="dt">print</span> <span class="st">&#39;Minima add up to zero!&#39;</span>
+<span class="kw">else</span>:
+    <span class="dt">print</span> <span class="st">&#39;Seems OK!&#39;</span></code></pre></div>
+<pre class="output"><code>Suspicious looking maxima!</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-03.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
+<span class="kw">if</span> data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">0</span>] == <span class="dv">0</span> and data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">20</span>] == <span class="dv">20</span>:
+    <span class="dt">print</span> <span class="st">&#39;Suspicious looking maxima!&#39;</span>
+<span class="kw">elif</span> data.<span class="dt">min</span>(axis=<span class="dv">0</span>).<span class="dt">sum</span>() == <span class="dv">0</span>:
+    <span class="dt">print</span> <span class="st">&#39;Minima add up to zero!&#39;</span>
+<span class="kw">else</span>:
+    <span class="dt">print</span> <span class="st">&#39;Seems OK!&#39;</span></code></pre></div>
+<pre class="output"><code>Minima add up to zero!</code></pre>
+<p>In this way, we have asked Python to do something different depending on the condition of our data. Here we printed messages in all cases, but we could also imagine not using the <code>else</code> catch-all so that messages are only printed when something is wrong, freeing us from having to manually examine every plot for features we’ve seen before.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2 id="how-many-paths"><span class="glyphicon glyphicon-pencil"></span>How many paths?</h2>
