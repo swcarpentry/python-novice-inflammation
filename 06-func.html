@@ -389,18 +389,26 @@ hm</code></pre></div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="rescaling-with-parameters"><span class="glyphicon glyphicon-pencil"></span>Rescaling, with parameters</h2>
+<h2 id="rescaling-an-array"><span class="glyphicon glyphicon-pencil"></span>Rescaling an array</h2>
 </div>
 <div class="panel-body">
-<p>Rewrite the <code>rescale</code> function so that it scales data to lie between 0.0 and 1.0 by default, but will allow the caller to specify lower and upper bounds if they want. Compare your implementation to your neighbor’s: do the two functions always behave the same way?</p>
+<p>Write a function <code>rescale</code> that takes an array as input and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0. (Hint: If <span class="math"><em>L</em></span> and <span class="math"><em>H</em></span> are the lowest and highest values in the original array, then the replacement for a value <span class="math"><em>v</em></span> should be <span class="math">(<em>v</em> − <em>L</em>)/(<em>H</em> − <em>L</em>)</span>.)</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="testing-your-function"><span class="glyphicon glyphicon-pencil"></span>Testing your function</h2>
+<h2 id="testing-and-documenting-your-function"><span class="glyphicon glyphicon-pencil"></span>Testing and documenting your function</h2>
 </div>
 <div class="panel-body">
-<p>Run the commands <code>help(numpy.arange)</code> and <code>help(numpy.linspace)</code> to see how to use these functions to generate regularly-spaced values, then use those values to test your <code>rescale</code> function.</p>
+<p>Run the commands <code>help(numpy.arange)</code> and <code>help(numpy.linspace)</code> to see how to use these functions to generate regularly-spaced values, then use those values to test your <code>rescale</code> function. Once you’ve successfully tested your function, add a docstring that explains what it does.</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="defining-defaults-1"><span class="glyphicon glyphicon-pencil"></span>Defining defaults</h2>
+</div>
+<div class="panel-body">
+<p>Rewrite the <code>rescale</code> function so that it scales data to lie between 0.0 and 1.0 by default, but will allow the caller to specify lower and upper bounds if they want. Compare your implementation to your neighbor’s: do the two functions always behave the same way?</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
@@ -421,6 +429,14 @@ f2k(<span class="dv">41</span>)
 f2k(<span class="dv">32</span>)
 
 <span class="dt">print</span> k</code></pre></div>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="automatic-plots"><span class="glyphicon glyphicon-pencil"></span>Automatic plots</h2>
+</div>
+<div class="panel-body">
+<p>Write a function called <code>analyze</code> that takes a filename as a parameter and displays the three graphs produced in the previous lessons, i.e., <code>analyze('inflammation-01.csv')</code> should produce the graphs already shown, while <code>analyze('inflammation-02.csv')</code> should produce corresponding graphs for the second data set. Be sure to give your function a docstring.</p>
 </div>
 </section>
         </div>
