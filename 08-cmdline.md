@@ -520,13 +520,13 @@ the program now does everything we set out to do.
 > Write a command-line program that does addition and subtraction:
 >
 > ~~~ {.python}
-> $ python arith.py 1 2 addition
+> $ python arith.py add 1 2
 > ~~~
 > ~~~ {.output}
 > 3
 > ~~~
 > ~~~ {.python}
-> $ python arith.py 3 4 subtraction
+> $ python arith.py subtract 3 4
 > ~~~
 > ~~~ {.output}
 > -1
