@@ -326,11 +326,10 @@ count = <span class="dv">0</span>
 </div>
 <div class="panel-body">
 <p>Write a command-line program that does addition and subtraction:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python arith.py <span class="dv">1</span> + <span class="dv">2</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python arith.py add <span class="dv">1</span> <span class="dv">2</span></code></pre></div>
 <pre class="output"><code>3</code></pre>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python arith.py <span class="dv">3</span> - <span class="dv">4</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python arith.py subtract <span class="dv">3</span> <span class="dv">4</span></code></pre></div>
 <pre class="output"><code>-1</code></pre>
-<p>What goes wrong if you try to add multiplication using ’*’ to the program?</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
@@ -350,7 +349,7 @@ zero.py</code></pre>
 <h2 id="changing-flags"><span class="glyphicon glyphicon-pencil"></span>Changing flags</h2>
 </div>
 <div class="panel-body">
-<p>Rewrite <code>count-stdin.py</code> so that it uses <code>-n</code>, <code>-m</code>, and <code>-x</code> instead of <code>--min</code>, <code>--mean</code>, and <code>--max</code> respectively. Is the code easier to read? Is the program easier to understand?</p>
+<p>Rewrite <code>readings.py</code> so that it uses <code>-n</code>, <code>-m</code>, and <code>-x</code> instead of <code>--min</code>, <code>--mean</code>, and <code>--max</code> respectively. Is the code easier to read? Is the program easier to understand?</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
@@ -358,7 +357,7 @@ zero.py</code></pre>
 <h2 id="adding-a-help-message"><span class="glyphicon glyphicon-pencil"></span>Adding a help message</h2>
 </div>
 <div class="panel-body">
-<p>Separately, modify the program so that if no parameters are given (i.e., no action is specified and no filenames are given), it prints a message explaining how it should be used.</p>
+<p>Separately, modify <code>readings.py</code> so that if no parameters are given (i.e., no action is specified and no filenames are given), it prints a message explaining how it should be used.</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
@@ -366,7 +365,7 @@ zero.py</code></pre>
 <h2 id="adding-a-default-action"><span class="glyphicon glyphicon-pencil"></span>Adding a default action</h2>
 </div>
 <div class="panel-body">
-<p>Separately, modify the program so that if no action is given it displays the means of the data.</p>
+<p>Separately, modify <code>readings.py</code> so that if no action is given it displays the means of the data.</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
