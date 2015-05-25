@@ -490,8 +490,16 @@ Visualization deserves an entire lecture (or course) of its own,
 but we can explore a few features of Python's `matplotlib` library here.
 While there is no "official" plotting library,
 this package is the de facto standard.
+
 First,
-we will import the `pyplot` module from `matplotlib`
+we need to to run a special IPython notebook command
+to ensure that our figures display within the notebook itself.
+
+~~~ {.python}
+% matplotlib inline
+~~~
+
+We can then go ahead and import the `pyplot` module from `matplotlib`
 and use two of its functions to create and display a heat map of our data:
 
 ~~~ {.python}
