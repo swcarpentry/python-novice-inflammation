@@ -509,8 +509,8 @@ Let's take a look at the average inflammation over time:
 
 ~~~ {.python}
 ave_inflammation = data.mean(axis=0)
-ave_plot = pyplot.plot(ave_inflammation)
-pyplot.show(ave_plot)
+ave_plot = matplotlib.pyplot.plot(ave_inflammation)
+matplotlib.pyplot.show(ave_plot)
 ~~~
 
 ![Average Inflammation Over Time](fig/01-numpy_73_0.png)
@@ -525,15 +525,15 @@ we expect a sharper rise and slower fall.
 Let's have a look at two other statistics:
 
 ~~~ {.python}
-max_plot = pyplot.plot(data.max(axis=0))
-pyplot.show(max_plot)
+max_plot = matplotlib.pyplot.plot(data.max(axis=0))
+matplotlib.pyplot.show(max_plot)
 ~~~
 
 ![Maximum Value Along The First Axis](fig/01-numpy_75_1.png)
 
 ~~~ {.python}
-min_plot = pyplot.plot(data.min(axis=0))
-pyplot.show(min_plot)
+min_plot = matplotlib.pyplot.plot(data.min(axis=0))
+matplotlib.pyplot.show(min_plot)
 ~~~
 
 ![Minimum Value Along The First Axis](fig/01-numpy_75_3.png)
@@ -545,7 +545,10 @@ so either there's a mistake in our calculations
 or something is wrong with our data.
 
 You can group similar plots in a single figure using subplots.
-This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
+This script below uses a number of new commands. 
+To save typing, `numpy` and `matplotlib.pyplot` have been imported as `np` and `plt` respectively
+(this is a common shortcut that you'll see in many online tutorials).
+The function `plt.figure()`
 creates a space into which we will place all of our plots. The parameter `figsize`
 tells Python how big to make this space. Each subplot is placed into the figure using
 the `subplot` command. The `subplot` command takes 3 parameters. The first denotes
@@ -557,12 +560,12 @@ axes3). Once a subplot is created, the axes are can be titled using the
 Here are our three plots side by side:
 
 ~~~ {.python}
-import numpy
-import matplotlib.pyplot
+import numpy as np
+import matplotlib.pyplot as plt
 
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
-fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+fig = plt.figure(figsize=(10.0, 3.0))
 
 axes1 = fig.add_subplot(1, 3, 1)
 axes2 = fig.add_subplot(1, 3, 2)
@@ -579,7 +582,7 @@ axes3.plot(data.min(axis=0))
 
 fig.tight_layout()
 
-matplotlib.pyplot.show(fig)
+plt.show(fig)
 ~~~
 
 ![The Previous Plots as Subplots](fig/01-numpy_80_0.png)
@@ -593,15 +596,6 @@ and that we want a tight layout.
 (Perversely,
 if we leave out that call to `fig.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
-
-> ## Scientists dislike typing {.callout}
->
-> We will always use the syntax `import numpy` to import NumPy.
-> However, in order to save typing, it is
-> [often suggested](http://www.scipy.org/getting-started.html#an-example-script)
-> to make a shortcut like so: `import numpy as np`.
-> If you ever see Python code online using a NumPy function with `np`
-> (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
 
 > ## Check your understanding {.challenge}
 >
