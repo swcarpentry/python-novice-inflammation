@@ -505,19 +505,31 @@ matplotlib.pyplot.show(image)
 Blue regions in this heat map are low values, while red shows high values.
 As we can see,
 inflammation rises and falls over a 40-day period.
+
+> ## Some IPython magic {.callout}
+>
+> If you're using an IPython / Jupyter notebook,
+> you'll need to execute the following command
+> in order for your matplotlib images to appear
+> when `show()` is called:
+> `% matplotlib inline`. 
+> The `%` indicates an IPython magic function - 
+> a function that is only valid within the notebook environment. 
+> Note that you only have to execute this function once per notebook.
+
 Let's take a look at the average inflammation over time:
 
 ~~~ {.python}
 ave_inflammation = data.mean(axis=0)
-ave_plot = pyplot.plot(ave_inflammation)
-pyplot.show(ave_plot)
+ave_plot = matplotlib.pyplot.plot(ave_inflammation)
+matplotlib.pyplot.show(ave_plot)
 ~~~
 
 ![Average Inflammation Over Time](fig/01-numpy_73_0.png)
 
 Here,
 we have put the average per day across all patients in the variable `ave_inflammation`,
-then asked `pyplot` to create and display a line graph of those values.
+then asked `matplotlib.pyplot` to create and display a line graph of those values.
 The result is roughly a linear rise and fall,
 which is suspicious:
 based on other studies,
@@ -525,15 +537,15 @@ we expect a sharper rise and slower fall.
 Let's have a look at two other statistics:
 
 ~~~ {.python}
-max_plot = pyplot.plot(data.max(axis=0))
-pyplot.show(max_plot)
+max_plot = matplotlib.pyplot.plot(data.max(axis=0))
+matplotlib.pyplot.show(max_plot)
 ~~~
 
 ![Maximum Value Along The First Axis](fig/01-numpy_75_1.png)
 
 ~~~ {.python}
-min_plot = pyplot.plot(data.min(axis=0))
-pyplot.show(min_plot)
+min_plot = matplotlib.pyplot.plot(data.min(axis=0))
+matplotlib.pyplot.show(min_plot)
 ~~~
 
 ![Minimum Value Along The First Axis](fig/01-numpy_75_3.png)
