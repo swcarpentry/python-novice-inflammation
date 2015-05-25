@@ -741,11 +741,3 @@ the second parameter in the list.
 > print k
 > ~~~
 
-> ## Automatic plots {.challenge}
->
-> Write a function called `analyze` that takes a filename as a parameter
-> and displays the three graphs produced in the previous lessons,
-> i.e.,
-> `analyze('inflammation-01.csv')` should produce the graphs already shown,
-> while `analyze('inflammation-02.csv')` should produce corresponding graphs for the second data set.
-> Be sure to give your function a docstring.
