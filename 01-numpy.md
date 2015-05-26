@@ -511,7 +511,7 @@ inflammation rises and falls over a 40-day period.
 > If you're using an IPython / Jupyter notebook,
 > you'll need to execute the following command
 > in order for your matplotlib images to appear
-> when `show()` is called:
+> in the notebook when `show()` is called:
 >
 > ~~~ {.python}
 > % matplotlib inline
