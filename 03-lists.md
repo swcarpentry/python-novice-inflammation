@@ -119,8 +119,9 @@ primes [1, 3, 5, 7, 2]
 odds [1, 3, 5, 7, 2]
 ~~~
 
-This is because python stores a list in memory, and then can use multiple pointers to the same list.
-We should almost always explicitly use a list() command, so we do not modify a list we did not mean to:
+This is because python stores a list in memory, and then can use multiple names to refer to the same list.
+If all we want to do is copy a (simple) list, we can use the list() command, so we do not modify a list we did not mean to:
+
 ~~~ {.python}
 odds = [1, 3, 5, 7]
 primes = list(odds)
@@ -133,4 +134,4 @@ primes [1, 3, 5, 7, 2]
 odds [1, 3, 5, 7]
 ~~~
 
-This is different from how variables worked in lesson 1, and more similar to a spreadsheet.
+This is different from how variables worked in lesson 1, and more similar to how a spreadsheet works.
