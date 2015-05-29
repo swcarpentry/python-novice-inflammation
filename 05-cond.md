@@ -175,10 +175,10 @@ freeing us from having to manually examine every plot for features we've seen be
 >
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
 >
-> A
-> B
-> C
-> B and C
+> 1.  A
+> 2.  B
+> 3.  C
+> 4.  B and C
 >
 > ~~~ {.python}
 > if 4 > 5:
