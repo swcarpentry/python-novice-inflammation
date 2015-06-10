@@ -3,14 +3,37 @@ layout: page
 title: Programming with Python
 subtitle: Instructor's Guide
 ---
-## Legend
-
-We are using a dataset with records on inflammation from patients following an
-arthritis treatment.
-
-We make reference in the lesson that this data is somehow strange. It is strange
-because it is fabricated! The script used to generate the inflammation data
-is included as [`tools/gen_inflammation.py`](tools/gen_inflammation.py).
+*   Python is:
+    *   popular,
+    *   powerful,
+    *   easy to learn
+    *   programming language
+    *   that is human readable,
+    *   free,
+    *   and open source.
+*   It has excellent libraries for:
+    *   mathematics
+    *   plotting,
+    *   and domain sciences.
+*   Python can help you:
+    *   transform your data files from one arbitrary format to another
+    *   analyze image files
+    *   loop through all the files in a directory, perform an analysis on them, and plot the results,
+    *   and almost anything else.
+*   Why Python?
+    *   Perl: Python is easier to read and learn
+    *   Javascript or Ruby: Python has more good numerical libraries
+    *   MATLAB or SAS: Python is free
+    *   R: it depends on the task at hand.
+        R has some advantages in statistics and visualization,
+        but Python is a more flexible option that can perform many different tasks well.
+*   The Jupyter Notebook
+    *   Browser based notebooks to organize and display code
+    *   Simplifies data visualization
+    *   Makes it easy to share whole analysis pipelines
+*   To learn more:
+    *   [python.org](https://www.python.org/)
+    *   [ipython.org](http://ipython.org/)
 
 ## Overall
 
