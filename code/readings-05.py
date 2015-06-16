@@ -1,5 +1,8 @@
+from __future__ import print_function
+
 import sys
 import numpy
+
 
 def main():
     script = sys.argv[0]
@@ -9,6 +12,7 @@ def main():
            'Action is not one of --min, --mean, or --max: ' + action
     for f in filenames:
         process(f, action)
+
 
 def process(filename, action):
     data = numpy.loadtxt(filename, delimiter=',')
@@ -21,6 +25,6 @@ def process(filename, action):
         values = data.max(axis=1)
 
     for m in values:
-        print m
+        print(m)
 
 main()

@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 def print_message(day):
     messages = {
         "monday": "Hello, world!",
@@ -8,7 +10,7 @@ def print_message(day):
         "saturday": "Hooray for the weekend!",
         "sunday": "Aw, the weekend is almost over."
     }
-    print messages[day]
+    print(messages[day])
 
 
 def print_friday_message():

@@ -1,5 +1,8 @@
+from __future__ import print_function
+
 import sys
 import numpy
+
 
 def main():
     script = sys.argv[0]
@@ -17,6 +20,6 @@ def main():
             values = data.max(axis=1)
 
         for m in values:
-            print m
+            print(m)
 
 main()
