@@ -39,15 +39,26 @@ In our case,
 the "something" we want to do is generate a set of plots for each file in our inflammation dataset.
 Let's test it by analyzing the first three files in the list:
 
+> ## Inline display {.callout}
+>
+> When using the Jupyter (IPython) notebook, don'te forget to execute:
+> 
+> ~~~ {.python}
+> %matplotlib inline
+> ~~~~
+
 ~~~ {.python}
+import numpy
+from matplotlib import pyplot
+
 filenames = glob.glob('*.csv')
 filenames = filenames[0:3]
 for f in filenames:
     print f
 
-    data = np.loadtxt(fname=f, delimiter=',')
+    data = numpy.loadtxt(fname=f, delimiter=',')
 
-    fig = plt.figure(figsize=(10.0, 3.0))
+    fig = pyplot.figure(figsize=(10.0, 3.0))
 
     axes1 = fig.add_subplot(1, 3, 1)
     axes2 = fig.add_subplot(1, 3, 2)
@@ -63,7 +74,7 @@ for f in filenames:
     axes3.plot(data.min(axis=0))
 
     fig.tight_layout()
-    plt.show(fig)
+    pyplot.show(fig)
 ~~~
 
 ~~~ {.output}

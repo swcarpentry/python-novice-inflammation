@@ -490,6 +490,17 @@ Visualization deserves an entire lecture (or course) of its own,
 but we can explore a few features of Python's `matplotlib` library here.
 While there is no "official" plotting library,
 this package is the de facto standard.
+
+> ## Inline display {.callout}
+>
+> When using the Jupyter (IPython) notebook, we can keep graphical output 
+> associated with the code that created it together in the notebook by 
+> executing before actually importing anything from matplotlib:
+> 
+> ~~~ {.python}
+> %matplotlib inline
+> ~~~~
+
 First,
 we will import the `pyplot` module from `matplotlib`
 and use two of its functions to create and display a heat map of our data:
@@ -505,6 +516,14 @@ matplotlib.pyplot.show(image)
 Blue regions in this heat map are low values, while red shows high values.
 As we can see,
 inflammation rises and falls over a 40-day period.
+
+It is tedious to repeatedly type `matplotlib.pyplot`, so let us import the 
+module we are actually using:
+
+~~~ {.python}
+from matplotlib import pyplot
+~~~~
+
 Let's take a look at the average inflammation over time:
 
 ~~~ {.python}
