@@ -105,7 +105,7 @@
 <p>Now that our data is in memory, we can start doing things with it. First, let’s ask what <a href="reference.html#type">type</a> of thing <code>data</code> refers to:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="dt">type</span>(data)</code></pre>
 <pre class="output"><code>&lt;type &#39;numpy.ndarray&#39;&gt;</code></pre>
-<p>The output tells us that <code>data</code> currently refers to an N-dimensional array created by the NumPy library. This data corresponds to arthritis patients inflamation. The rows are the individual patients and the columns are there daily inflammation measurements. We can see what its <a href="reference.html#shape">shape</a> is like this:</p>
+<p>The output tells us that <code>data</code> currently refers to an N-dimensional array created by the NumPy library. We can see what its <a href="reference.html#shape">shape</a> is like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> data.shape</code></pre>
 <pre class="output"><code>(60, 40)</code></pre>
 <p>This tells us that <code>data</code> has 60 rows and 40 columns. When we created the variable <code>data</code> to store our arthritis data, we didn’t just create the array, we also created information about the array, called <a href="reference.html#member">members</a> or attributes. This extra information describes <code>data</code> in the same way an adjective describes a noun. <code>data.shape</code> is an attribute of <code>data</code> which described the dimensions of <code>data</code>. We use the same dotted notation for the attributes of variables that we use for the functions in libraries because they have the same part-and-whole relationship.</p>
@@ -123,7 +123,7 @@
 <p>What may also surprise you is that when Python displays an array, it shows the element with index <code>[0, 0]</code> in the upper left corner rather than the lower left. This is consistent with the way mathematicians draw matrices, but different from the Cartesian coordinates. The indices are (row, column) instead of (column, row) for the same reason, which can be confusing when plotting data.</p>
 </div>
 </aside>
-<p>An index like <code>[30, 20]</code> selects a single element of an array, but we can select whole sections as well. For example, we can select the first ten days (columns) of values for the first four patients (rows) like this:</p>
+<p>An index like <code>[30, 20]</code> selects a single element of an array, but we can select whole sections as well. For example, we can select the first ten days (columns) of values for the first four (rows) patients like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> data[<span class="dv">0</span>:<span class="dv">4</span>, <span class="dv">0</span>:<span class="dv">10</span>]</code></pre>
 <pre class="output"><code>[[ 0.  0.  1.  3.  1.  2.  4.  7.  8.  3.]
  [ 0.  1.  2.  1.  2.  1.  3.  2.  2.  6.]
