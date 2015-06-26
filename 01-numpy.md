@@ -192,7 +192,7 @@ print type(data)
 <type 'numpy.ndarray'>
 ~~~
 
-The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library. This data corresponds to arthritis patients inflammation. The rows are the individual patients and the columns are there daily inflammation measurements.
+The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library. These data corresponds to arthritis patient's inflammation. The rows are the individual patients and the columns are there daily inflammation measurements.
 We can see what its [shape](reference.html#shape) is like this:
 
 ~~~ {.python}
