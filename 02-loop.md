@@ -213,12 +213,12 @@ so we should always use it when we can.
 > Exponentiation is built into Python:
 >
 > ~~~ {.python}
-> print 5**3
+> print 5 ** 3
 > 125
 > ~~~
 >
-> It also has a function called `pow` that calculates the same value.
-> Write a loop to calculate the same result.
+> Write a loop that calculates the same result as `5 ** 3` using
+> multiplication (and without exponentiation).
 
 > ## Reverse a string {.challenge}
 >
