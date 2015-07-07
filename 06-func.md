@@ -277,7 +277,7 @@ We can reproduce the previous analysis with a much simpler `for` loop:
 for f in filenames[:3]:
     print f
     analyze(f)
-    detectProblems(f)
+    detect_problems(f)
 ~~~
 
 By giving our functions human-readable names,
@@ -740,4 +740,3 @@ the second parameter in the list.
 >
 > print k
 > ~~~
-
