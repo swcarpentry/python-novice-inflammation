@@ -87,24 +87,25 @@ TypeError: 'str' object does not support item assignment
 does not.
 
 > ## Ch-Ch-Ch-Changes {.callout}
+> 
+> Data which can be modified in place is called [mutable](reference.html#mutable),
+> while data which cannot be modified is called [immutable](reference.html#immutable).
+> Strings and numbers are immutable. This does not mean that variables with string or number values are constants,
+> but when we want to change the value of a string or number variable, we can only replace the old value 
+> with a completely new value.
 >
-> Data that can be changed is called [mutable](reference.html#mutable),
-> while data that cannot be changed is called [immutable](reference.html#immutable).
-> Like strings,
-> numbers are immutable:
-> there's no way to make the number 0 have the value 1 or vice versa.
-> Lists and arrays,
-> on the other hand,
-> are mutable:
-> both can be modified after they have been created.
+> Lists and arrays, on the other hand, are mutable: we can modify them after they have been created. We can 
+> change individual elements, append new elements, or reorder the whole list.  For some operations, like 
+> sorting, we can choose whether to use a function that modifies the data in place or a function that returns a 
+> modified copy and leaves the original unchanged.
 >
-> Programs that modify data in place can be harder to understand than ones that don't
-> because readers may have to mentally sum up many lines of code
-> in order to figure out what the value of something actually is.
-> On the other hand,
-> programs that modify data in place instead of creating copies that are almost identical to the original
-> every time they want to make a small change
-> are much more efficient. You should consider both aspects when writing code.
+> Be careful when modifying data in place.  If two variables refer to the same list, and you modify the list 
+> value, it will change for both variables! If you want variables with mutable values to be independent, you 
+> must make a copy of the value when you assign it.
+>
+> Because of pitfalls like this, code which modifies data in place can be more difficult to understand. However, 
+> it is often far more efficient to modify a large data structure in place than to create a modified copy for 
+> every small change. You should consider both of these aspects when writing your code.
 
 There are many ways to change the contents of lists besides assigning new values to
 individual elements:
