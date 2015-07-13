@@ -14,7 +14,7 @@ In our last lesson, we discovered something suspicious was going on
 in our inflammation data by drawing some plots.
 How can we use Python to automatically recognize the different features we saw,
 and take a different action for each? In this lesson, we'll learn how to write code that
-runs only when certain conditons are true.
+runs only when certain conditions are true.
 
 ## Conditionals
 
@@ -134,8 +134,38 @@ else:
     print 'Seems OK!'
 ~~~
 
+Let's test that out:
+
+~~~ {.python}
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
+    print 'Suspicious looking maxima!'
+elif data.min(axis=0).sum() == 0:
+    print 'Minima add up to zero!'
+else:
+    print 'Seems OK!'
+~~~
+
+~~~ {.output}
+Suspicious looking maxima!
+~~~
+
+~~~ {.python}
+data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
+if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
+    print 'Suspicious looking maxima!'
+elif data.min(axis=0).sum() == 0:
+    print 'Minima add up to zero!'
+else:
+    print 'Seems OK!'
+~~~
+
+~~~ {.output}
+Minima add up to zero!
+~~~
+
 In this way,
-we can ask Python to do something different depending on the condition of our data.
+we have asked Python to do something different depending on the condition of our data.
 Here we printed messages in all cases,
 but we could also imagine not using the `else` catch-all
 so that messages are only printed when something is wrong,
@@ -145,10 +175,10 @@ freeing us from having to manually examine every plot for features we've seen be
 >
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
 >
-> A
-> B
-> C
-> B and C
+> 1.  A
+> 2.  B
+> 3.  C
+> 4.  B and C
 >
 > ~~~ {.python}
 > if 4 > 5:

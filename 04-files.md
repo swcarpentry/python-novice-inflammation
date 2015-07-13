@@ -28,7 +28,7 @@ print glob.glob('*.html')
 ~~~
 
 ~~~ {.output}
-['01-numpy.html', '02-loop.html', '03-lists.html', '04-files.html', '05-cond.html', '06-func.html', '07-errors.html', '08-defensive.html', '09-debugging.html', '10-cmdline.html', 'index.html', 'LICENSE.html', 'instructors.html', 'README.html', 'discussion.html', 'motivation.html', 'reference.html']
+['01-numpy.html', '02-loop.html', '03-lists.html', '04-files.html', '05-cond.html', '06-func.html', '07-errors.html', '08-defensive.html', '09-debugging.html', '10-cmdline.html', 'index.html', 'LICENSE.html', 'instructors.html', 'README.html', 'discussion.html', 'reference.html']
 ~~~
 
 As these examples show,
@@ -40,14 +40,17 @@ the "something" we want to do is generate a set of plots for each file in our in
 Let's test it by analyzing the first three files in the list:
 
 ~~~ {.python}
+import numpy
+import matplotlib.pyplot
+
 filenames = glob.glob('*.csv')
 filenames = filenames[0:3]
 for f in filenames:
     print f
 
-    data = np.loadtxt(fname=f, delimiter=',')
+    data = numpy.loadtxt(fname=f, delimiter=',')
 
-    fig = plt.figure(figsize=(10.0, 3.0))
+    fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
     axes1 = fig.add_subplot(1, 3, 1)
     axes2 = fig.add_subplot(1, 3, 2)

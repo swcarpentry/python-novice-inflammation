@@ -446,7 +446,8 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
        ...,
        [ 0.,  1.,  1., ...,  1.,  1.,  1.],
        [ 0.,  0.,  0., ...,  0.,  2.,  0.],
-       [ 0.,  0.,  1., ...,  1.,  1.,  0.]])~~~
+       [ 0.,  0.,  1., ...,  1.,  1.,  0.]])
+~~~
 
 but we still need to say `delimiter=`:
 
@@ -699,18 +700,27 @@ the second parameter in the list.
 > hm
 > ~~~
 
-> ## Rescaling, with parameters {.challenge}
+> ## Rescaling an array {.challenge}
+>
+> Write a function `rescale` that takes an array as input
+> and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
+> (Hint: If $L$ and $H$ are the lowest and highest values in the original array,
+> then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
+
+> ## Testing and documenting your function {.challenge}
+>
+> Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
+> to see how to use these functions to generate regularly-spaced values,
+> then use those values to test your `rescale` function.
+> Once you've successfully tested your function,
+> add a docstring that explains what it does.
+
+> ## Defining defaults {.challenge}
 >
 > Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
 > but will allow the caller to specify lower and upper bounds if they want.
 > Compare your implementation to your neighbor's:
 > do the two functions always behave the same way?
-
-> ## Testing your function {.challenge}
->
-> Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
-> to see how to use these functions to generate regularly-spaced values,
-> then use those values to test your `rescale` function.
 
 > ## Variables inside and outside functions {.challenge}
 >
@@ -730,3 +740,4 @@ the second parameter in the list.
 >
 > print k
 > ~~~
+

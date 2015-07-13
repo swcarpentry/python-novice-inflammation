@@ -26,9 +26,9 @@
       <article>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <h1 class="title">Programming with Python</h1>
+                    <a href="index.html"><h1 class="title">Programming with Python</h1></a>
           <h2 class="subtitle">Creating Functions</h2>
-<section class="objectives panel panel-warning">
+          <section class="objectives panel panel-warning">
 <div class="panel-heading">
 <h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
@@ -209,7 +209,13 @@ center(data, desired)
 <h2 id="defining-defaults">Defining Defaults</h2>
 <p>We have passed parameters to functions in two ways: directly, as in <code>type(data)</code>, and by name, as in <code>numpy.loadtxt(fname='something.csv', delimiter=',')</code>. In fact, we can pass the filename to <code>loadtxt</code> without the <code>fname=</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)</code></pre>
-<p><sub>~</sub> {.output} array([[ 0., 0., 1., …, 3., 0., 0.], [ 0., 1., 2., …, 1., 0., 1.], [ 0., 1., 1., …, 2., 1., 1.], …, [ 0., 1., 1., …, 1., 1., 1.], [ 0., 0., 0., …, 0., 2., 0.], [ 0., 0., 1., …, 1., 1., 0.]])<sub>~</sub></p>
+<pre class="output"><code>array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
+       [ 0.,  1.,  2., ...,  1.,  0.,  1.],
+       [ 0.,  1.,  1., ...,  2.,  1.,  1.],
+       ...,
+       [ 0.,  1.,  1., ...,  1.,  1.,  1.],
+       [ 0.,  0.,  0., ...,  0.,  2.,  0.],
+       [ 0.,  0.,  1., ...,  1.,  1.,  0.]])</code></pre>
 <p>but we still need to say <code>delimiter=</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;,&#39;</span>)</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
@@ -383,18 +389,26 @@ hm</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Rescaling, with parameters</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Rescaling an array</h2>
 </div>
 <div class="panel-body">
-<p>Rewrite the <code>rescale</code> function so that it scales data to lie between 0.0 and 1.0 by default, but will allow the caller to specify lower and upper bounds if they want. Compare your implementation to your neighbor’s: do the two functions always behave the same way?</p>
+<p>Write a function <code>rescale</code> that takes an array as input and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0. (Hint: If <span class="math"><em>L</em></span> and <span class="math"><em>H</em></span> are the lowest and highest values in the original array, then the replacement for a value <span class="math"><em>v</em></span> should be <span class="math">(<em>v</em> − <em>L</em>)/(<em>H</em> − <em>L</em>)</span>.)</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Testing your function</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Testing and documenting your function</h2>
 </div>
 <div class="panel-body">
-<p>Run the commands <code>help(numpy.arange)</code> and <code>help(numpy.linspace)</code> to see how to use these functions to generate regularly-spaced values, then use those values to test your <code>rescale</code> function.</p>
+<p>Run the commands <code>help(numpy.arange)</code> and <code>help(numpy.linspace)</code> to see how to use these functions to generate regularly-spaced values, then use those values to test your <code>rescale</code> function. Once you’ve successfully tested your function, add a docstring that explains what it does.</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Defining defaults</h2>
+</div>
+<div class="panel-body">
+<p>Rewrite the <code>rescale</code> function so that it scales data to lie between 0.0 and 1.0 by default, but will allow the caller to specify lower and upper bounds if they want. Compare your implementation to your neighbor’s: do the two functions always behave the same way?</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
@@ -415,6 +429,14 @@ f2k(<span class="dv">41</span>)
 f2k(<span class="dv">32</span>)
 
 <span class="dt">print</span> k</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Automatic plots</h2>
+</div>
+<div class="panel-body">
+<p>Write a function called <code>analyze</code> that takes a filename as a parameter and displays the three graphs produced in the previous lessons, i.e., <code>analyze('inflammation-01.csv')</code> should produce the graphs already shown, while <code>analyze('inflammation-02.csv')</code> should produce corresponding graphs for the second data set. Be sure to give your function a docstring.</p>
 </div>
 </section>
         </div>
