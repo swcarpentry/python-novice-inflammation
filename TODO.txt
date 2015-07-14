@@ -1,0 +1,73 @@
+TODO
+
+Old word counts:
+
+   337 04-files.md
+   612 03-lists.md
+  1001 02-loop.md
+  1201 05-cond.md
+  1631 09-debugging.md
+  2364 10-cmdline.md
+  2467 07-errors.md
+  2552 08-defensive.md
+  3418 01-numpy.md
+  3497 06-func.md
+
+Index:
+
+* incorporate custom intro
+
+01 (Numpy):
+
+* as soon as indices are discussed, add diagram of indices
+* mention that you can refer to a function without calling it if you omit brackets
+* at the multiple plots example, tell people to save the code as a file, because they'll need it later
+
+02 (Loops):
+
+* replace power and string reversing exercises with something that is more practically applicable.
+* mention while loops, break and continue
+
+03 (Lists):
+
+* move tuple and in-place operator stuff in here
+* mention stealth tuples (no brackets)
+* mention dictionaries
+* exercise to show pitfalls of list mutability
+* explain that in-place assignment operators aren't actually in-place
+* example of in-place vs copy, like sort/sorted and reverse/reversed
+
+04 (Files):
+
+* mention that glob uses the same wildcards as the unix shell
+* move file writing stuff in here from wherever it is now
+* mention string formatting?
+* mention csv module?
+
+05 (Choices):
+
+* move tuple and in-place operator stuff out of here
+* at least one part is not true
+
+06 (Functions):
+
+* "repetative"
+
+07 (Errors):
+
+* errors_01.py is in the code directory -- are students asked to download it?
+
+08 (Tests):
+
+* mention test frameworks
+
+09 (Debugging):
+
+* Mention logging libraries as a cleaner, more permanent alternative to print statements everywhere
+
+10 (Parameters):
+
+* More stuff from the code directory -- make sure people have it
+
+Uncategorised:
+
