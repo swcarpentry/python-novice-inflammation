@@ -114,7 +114,7 @@ The improved version of `print_characters` uses a [for loop](reference.html#for-
 to repeat an operation---in this case, printing---once for each thing in a collection.
 The general form of a loop is:
 
-~~~ {.python}
+~~~
 for variable in collection:
     do things with variable
 ~~~
