@@ -23,7 +23,7 @@ even more live in the [libraries](reference.html#library) they are used to build
 In order to load our inflammation data,
 we need to [import](reference.html#import) a library called NumPy.
 In general you should use this library if you want to do fancy things with numbers,
-especially if you have matrices.
+especially if you have matrices or arrays.
 We can load NumPy using:
 
 ~~~ {.python}
@@ -32,7 +32,7 @@ import numpy
 
 Importing a library is like getting a piece of lab equipment out of a storage locker
 and setting it up on the bench.
-Once it's done,
+Once you've loaded the library,
 we can ask the library to read our data file for us:
 
 ~~~ {.python}
@@ -78,19 +78,19 @@ To do that,
 we need to [assign](reference.html#assignment) the array to a [variable](reference.html#variable).
 A variable is just a name for a value,
 such as `x`, `current_temperature`, or `subject_id`.
-Python's variables must begin with a letter.
+Python's variables must begin with a letter and are [case sensitive](reference.html#case-sensitive).
 We can create a new variable by assigning a value to it using `=`.
 As an illustration,
 let's step back and instead of considering a table of data,
 consider the simplest "collection" of data,
 a single value.
-The line below assigns a value to a variable:
+The line below assigns the value `55` to a variable `weight_kg`:
 
 ~~~ {.python}
 weight_kg = 55
 ~~~
 
-Once a variable has a value, we can print it:
+Once a variable has a value, we can print it to the screen:
 
 ~~~ {.python}
 print weight_kg
@@ -156,28 +156,6 @@ Since `weight_lb` doesn't "remember" where its value came from,
 it isn't automatically updated when `weight_kg` changes.
 This is different from the way spreadsheets work.
 
-> ## What's inside the box? {.challenge}
->
-> Draw diagrams showing what variables refer to what values after each statement in the following program:
->
-> ~~~ {.python}
-> weight = 70.5
-> age = 35
-> # Take a trip to the planet Neptune
-> weight = weight * 1.14
-> age = age + 20
-> ~~~
-
-> ## Sorting out references {.challenge}
->
-> What does the following program print out?
->
-> ~~~ {.python}
-> first, second = 'Grace', 'Hopper'
-> third, fourth = second, first
-> print third, fourth
-> ~~~
-
 Just as we can assign a single value to a variable, we can also assign an array of values
 to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its result:
 
@@ -224,15 +202,17 @@ print data.shape
 (60, 40)
 ~~~
 
-This tells us that `data` has 60 rows and 40 columns.
-`data.shape` is a [member](reference.html#member) of `data`,
-i.e.,
-a value that is stored as part of a larger value.
-We use the same dotted notation for the members of values
+This tells us that `data` has 60 rows and 40 columns. When we created the
+variable `data` to store our arthritis data, we didn't just create the array, we also
+created information about the array, called [members](reference.html#member) or
+attributes. This extra information describes `data` in
+the same way an adjective describes a noun.
+`data.shape` is an attribute  of `data` which described the dimensions of `data`.
+We use the same dotted notation for the attributes of variables
 that we use for the functions in libraries
 because they have the same part-and-whole relationship.
 
-If we want to get a single value from the matrix,
+If we want to get a single number from the array,
 we must provide an [index](reference.html#index) in square brackets,
 just as we do in math:
 
@@ -330,39 +310,6 @@ small is:
  [ 2.  2.  1.  1.]]
 ~~~
 
-> ## Slicing strings {.challenge}
->
-> A section of an array is called a **slice**.
-> We can take slices of character strings as well:
->
-> ~~~ {.python}
-> element = 'oxygen'
-> print 'first three characters:', element[0:3]
-> print 'last three characters:', element[3:6]
-> ~~~
->
-> ~~~ {.output}
-> first three characters: oxy
-> last three characters: gen
-> ~~~
->
-> What is the value of `element[:4]`?
-> What about `element[4:]`?
-> Or `element[:]`?
->
-> What is `element[-1]`?
-> What is `element[-2]`?
-> Given those answers,
-> explain what `element[1:-1]` does.
-
-> ## Thin slices {.challenge}
->
-> The expression `element[3:3]` produces an **empty string**,
-> i.e., a string that contains no characters.
-> If `data` holds our array of patient data,
-> what does `data[3:3, 4:4]` produce?
-> What about `data[3:3, :]`?
-
 Arrays also know how to perform common mathematical operations on their values.
 The simplest operations with data are arithmetic:
 add, subtract, multiply, and divide.
@@ -396,7 +343,7 @@ doubledata:
 
 If,
 instead of taking an array and doing arithmetic with a single value (as above)
-you did the arithmetic operation with another array of the same size and shape,
+you did the arithmetic operation with another array of the same shape,
 the operation will be done on corresponding elements of the two arrays.
 Thus:
 
@@ -437,13 +384,11 @@ a function that belongs to it
 in the same way that the member `shape` does.
 If variables are nouns, methods are verbs:
 they are what the thing in question knows how to do.
-This is why `data.shape` doesn't need to be called
-(it's just a thing)
-but `data.mean()` does
-(it's an action).
-It is also why we need empty parentheses for `data.mean()`:
+We need empty parentheses for `data.mean()`,
 even when we're not passing in any parameters,
-parentheses are how we tell Python to go and do something for us.
+to tell Python to go and do something for us. `data.shape` doesn't
+need `()` because it is just a description but `data.mean()` requires the `()`
+because it is an action.
 
 NumPy arrays have lots of useful methods:
 
@@ -463,7 +408,7 @@ though,
 we often want to look at partial statistics,
 such as the maximum value per patient
 or the average value per day.
-One way to do this is to select the data we want to create a new temporary array,
+One way to do this is to create a new temporary array of the data we want,
 then ask it to do the calculation:
 
 ~~~ {.python}
@@ -484,16 +429,16 @@ print 'maximum inflammation for patient 2:', data[2, :].max()
 maximum inflammation for patient 2: 19.0
 ~~~
 
-What if we need the maximum inflammation for *all* patients,
-or the average for each day?
-As the diagram below shows,
-we want to perform the operation across an axis:
+What if we need the maximum inflammation for *all* patients (as in the
+next diagram on the left), or the average for each day (as in the
+diagram on the right)? As the diagram below shows, we want to perform the
+operation across an axis:
 
 ![Operations Across Axes](fig/python-operations-across-axes.svg)
 
 To support this,
 most array methods allow us to specify the axis we want to work on.
-If we ask for the average across axis 0,
+If we ask for the average across axis 0 (rows in our 2D example),
 we get:
 
 ~~~ {.python}
@@ -522,7 +467,7 @@ print data.mean(axis=0).shape
 
 The expression `(40,)` tells us we have an N&times;1 vector,
 so this is the average inflammation per day for all patients.
-If we average across axis 1, we get:
+If we average across axis 1 (columns in our 2D example), we get:
 
 ~~~ {.python}
 print data.mean(axis=1)
@@ -542,7 +487,7 @@ The mathematician Richard Hamming once said,
 "The purpose of computing is insight, not numbers,"
 and the best way to develop insight is often to visualize data.
 Visualization deserves an entire lecture (or course) of its own,
-but we can explore a few features of Python's `matplotlib` here.
+but we can explore a few features of Python's `matplotlib` library here.
 While there is no "official" plotting library,
 this package is the de facto standard.
 First,
@@ -550,9 +495,9 @@ we will import the `pyplot` module from `matplotlib`
 and use two of its functions to create and display a heat map of our data:
 
 ~~~ {.python}
-from matplotlib import pyplot
-image  = pyplot.imshow(data)
-pyplot.show(image)
+import matplotlib.pyplot
+image  = matplotlib.pyplot.imshow(data)
+matplotlib.pyplot.show(image)
 ~~~
 
 ![Heatmap of the Data](fig/01-numpy_71_0.png)
@@ -560,19 +505,35 @@ pyplot.show(image)
 Blue regions in this heat map are low values, while red shows high values.
 As we can see,
 inflammation rises and falls over a 40-day period.
+
+> ## Some IPython magic {.callout}
+>
+> If you're using an IPython / Jupyter notebook,
+> you'll need to execute the following command
+> in order for your matplotlib images to appear
+> in the notebook when `show()` is called:
+>
+> ~~~ {.python}
+> % matplotlib inline
+> ~~~
+>  
+> The `%` indicates an IPython magic function - 
+> a function that is only valid within the notebook environment. 
+> Note that you only have to execute this function once per notebook.
+
 Let's take a look at the average inflammation over time:
 
 ~~~ {.python}
 ave_inflammation = data.mean(axis=0)
-ave_plot = pyplot.plot(ave_inflammation)
-pyplot.show(ave_plot)
+ave_plot = matplotlib.pyplot.plot(ave_inflammation)
+matplotlib.pyplot.show(ave_plot)
 ~~~
 
 ![Average Inflammation Over Time](fig/01-numpy_73_0.png)
 
 Here,
 we have put the average per day across all patients in the variable `ave_inflammation`,
-then asked `pyplot` to create and display a line graph of those values.
+then asked `matplotlib.pyplot` to create and display a line graph of those values.
 The result is roughly a linear rise and fall,
 which is suspicious:
 based on other studies,
@@ -580,15 +541,15 @@ we expect a sharper rise and slower fall.
 Let's have a look at two other statistics:
 
 ~~~ {.python}
-max_plot = pyplot.plot(data.max(axis=0))
-pyplot.show(max_plot)
+max_plot = matplotlib.pyplot.plot(data.max(axis=0))
+matplotlib.pyplot.show(max_plot)
 ~~~
 
 ![Maximum Value Along The First Axis](fig/01-numpy_75_1.png)
 
 ~~~ {.python}
-min_plot = pyplot.plot(data.min(axis=0))
-pyplot.show(min_plot)
+min_plot = matplotlib.pyplot.plot(data.min(axis=0))
+matplotlib.pyplot.show(min_plot)
 ~~~
 
 ![Minimum Value Along The First Axis](fig/01-numpy_75_3.png)
@@ -599,17 +560,25 @@ Neither result seems particularly likely,
 so either there's a mistake in our calculations
 or something is wrong with our data.
 
-It's very common to create an [alias](reference.html#alias) for a library when importing it
-in order to reduce the amount of typing we have to do.
-Here are our three plots side by side using aliases for `numpy` and `pyplot`:
+You can group similar plots in a single figure using subplots.
+This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
+creates a space into which we will place all of our plots. The parameter `figsize`
+tells Python how big to make this space. Each subplot is placed into the figure using
+the `subplot` command. The `subplot` command takes 3 parameters. The first denotes
+how many total rows of subplots there are, the second parameter refers to the
+total number of subplot columns, and the final parameters denotes which subplot
+your variable is referencing. Each subplot is stored in a different variable (axes1, axes2,
+axes3). Once a subplot is created, the axes are can be titled using the
+`set_xlabel()` command (or `set_ylabel()`).
+Here are our three plots side by side:
 
 ~~~ {.python}
-import numpy as np
-from matplotlib import pyplot as plt
+import numpy
+import matplotlib.pyplot
 
-data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
-fig = plt.figure(figsize=(10.0, 3.0))
+fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
 axes1 = fig.add_subplot(1, 3, 1)
 axes2 = fig.add_subplot(1, 3, 2)
@@ -626,12 +595,12 @@ axes3.plot(data.min(axis=0))
 
 fig.tight_layout()
 
-plt.show(fig)
+matplotlib.pyplot.show(fig)
 ~~~
 
 ![The Previous Plots as Subplots](fig/01-numpy_80_0.png)
 
-The call to `loadtxt` reads our data,
+The [call](reference.html#function-call) to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
 how large we want the figure to be,
 that we're creating three sub-plots,
@@ -641,9 +610,16 @@ and that we want a tight layout.
 if we leave out that call to `fig.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
 
-> ## Check your understanding {.challenge}
+> ## Scientists dislike typing {.callout}
 >
-> Plot scaling: why do all of our plots stop just short of the upper end of our graph?
+> We will always use the syntax `import numpy` to import NumPy.
+> However, in order to save typing, it is
+> [often suggested](http://www.scipy.org/getting-started.html#an-example-script)
+> to make a shortcut like so: `import numpy as np`.
+> If you ever see Python code online using a NumPy function with `np`
+> (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
+
+> ## Check your understanding {.challenge}
 >
 > Draw diagrams showing what variables refer to what values after each statement in the following program:
 >
@@ -707,7 +683,7 @@ the graphs will actually be squeezed together more closely.)
 
 > ## Make your own plot {.challenge}
 >
-> Create a plot showing the standard deviation of the inflammation data for each day across all patients.
+> Create a plot showing the standard deviation (`numpy.std`) of the inflammation data for each day across all patients.
 
 > ## Moving plots around {.challenge}
 >

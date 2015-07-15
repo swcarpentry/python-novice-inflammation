@@ -23,20 +23,20 @@
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
+      <article>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <h1 class="title">Programming with Python</h1>
-          
-<p>The best way to learn how to program is to do something useful, so this introduction to Python is built around a common scientific task: data analysis.</p>
-<p>Our real goal isn't to teach you Python, but to teach you the basic concepts that all programming depends on. We use Python in our lessons because:</p>
+                    <h1 class="title">Programming with Python</h1>
+          <p>The best way to learn how to program is to do something useful, so this introduction to Python is built around a common scientific task: data analysis.</p>
+<p>Our real goal isn’t to teach you Python, but to teach you the basic concepts that all programming depends on. We use Python in our lessons because:</p>
 <ol style="list-style-type: decimal">
 <li>we have to use <em>something</em> for examples;</li>
-<li>it's free, well-documented, and runs almost everywhere;</li>
+<li>it’s free, well-documented, and runs almost everywhere;</li>
 <li>it has a large (and growing) user base among scientists; and</li>
-<li>experience shows that it's easier for novices to pick up than most other languages.</li>
+<li>experience shows that it’s easier for novices to pick up than most other languages.</li>
 </ol>
-<p>But the two most important things are to use whatever language your colleagues are using, so that you can share you work with them easily, and to use that language <em>well</em>.</p>
-<p>We are studying inflammation in patients who have been given a new treatment for arthritis, and need to analyze the first dozen data sets. The data sets are stored in <a href="reference.html#comma-separated-values">comma-separated values</a> (CSV) format: each row holds information for a single patient, and the columns represent successive days. The first few rows of our first file look like this:</p>
+<p>But the two most important things are to use whatever language your colleagues are using, so that you can share your work with them easily, and to use that language <em>well</em>.</p>
+<p>We are studying inflammation in patients who have been given a new treatment for arthritis, and need to analyze the first dozen data sets of their daily inflammation. The data sets are stored in <a href="reference.html#comma-separated-values">comma-separated values</a> (CSV) format: each row holds information for a single patient, and the columns represent successive days. The first few rows of our first file look like this:</p>
 <pre><code>0,0,1,3,1,2,4,7,8,3,3,3,10,5,7,4,7,7,12,18,6,13,11,11,7,7,4,6,8,8,4,4,5,7,3,4,2,3,0,0
 0,1,2,1,2,1,3,2,2,6,10,11,5,9,4,4,7,16,8,6,18,4,12,5,12,7,11,5,11,3,3,5,4,4,5,5,1,1,0,1
 0,1,1,3,3,2,6,2,5,9,5,7,4,5,4,15,5,11,9,10,19,14,12,17,7,12,11,7,4,2,10,5,4,2,2,3,2,2,1,1
@@ -48,15 +48,30 @@
 <li>calculate the average inflammation per day across all patients, and</li>
 <li>plot the result.</li>
 </ul>
-<p>To do all that, we'll have to learn a little bit about programming.</p>
-<div id="prerequisites" class="prereq panel panel-warning">
+<p>To do all that, we’ll have to learn a little bit about programming.</p>
+<section class="prereq panel panel-warning">
 <div class="panel-heading">
 <h2><span class="glyphicon glyphicon-education"></span>Prerequisites</h2>
 </div>
 <div class="panel-body">
-<p>Learners need to understand the concepts of files and directories (including the working directory) and how to start a Python interpreter before tackling this lesson.</p>
+<p>Learners need to understand the concepts of files and directories (including the working directory) and how to start a Python interpreter before tackling this lesson. This lesson references the Jupyter (IPython) Notebook although it can be taught through any Python interpreter. The commands in this this lesson pertain to Python 2.7.</p>
 </div>
+</section>
+<section class="getready panel panel-warning">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-check"></span>Getting ready</h2>
 </div>
+<div class="panel-body">
+<p>You need to download some files to follow this lesson:</p>
+<ol style="list-style-type: decimal">
+<li>Make a new folder in your Desktop called <code>python-novice-inflammation</code>.</li>
+<li>Download <a href="./python-novice-inflammation-data.zip">python-novice-inflammation-data.zip</a> and move the file to this folder.</li>
+<li>If it’s not unzipped yet, double-click on it to unzip it. You should end up with a new folder called <code>data</code>.</li>
+<li>You can access this folder from the Unix shell with:</li>
+</ol>
+<pre class="input"><code>$ cd &amp;&amp; cd Desktop/python-novice-inflammation/data</code></pre>
+</div>
+</section>
 <h2 id="topics">Topics</h2>
 <ol style="list-style-type: decimal">
 <li><a href="01-numpy.html">Analyzing Patient Data</a></li>
@@ -65,20 +80,20 @@
 <li><a href="04-files.html">Analyzing Data from Multiple Files</a></li>
 <li><a href="05-cond.html">Making Choices</a></li>
 <li><a href="06-func.html">Creating Functions</a></li>
-<li><a href="07-defensive.html">Defensive Programming</a></li>
-<li><a href="08-cmdline.html">Command-Line Programs</a></li>
-<li><a href="09-errors.html">Errors and Exceptions</a></li>
-<li><a href="10-supplementary.html">Supplementary Material</a></li>
+<li><a href="07-errors.html">Errors and Exceptions</a></li>
+<li><a href="08-defensive.html">Defensive Programming</a></li>
+<li><a href="09-debugging.html">Debugging</a></li>
+<li><a href="10-cmdline.html">Command-Line Programs</a></li>
 </ol>
 <h2 id="other-resources">Other Resources</h2>
 <ul>
-<li><a href="motivation.html">Motivation</a></li>
 <li><a href="reference.html">Reference</a></li>
 <li><a href="discussion.html">Discussion</a></li>
-<li><a href="instructors.html">Instructor's Guide</a></li>
+<li><a href="instructors.html">Instructor’s Guide</a></li>
 </ul>
         </div>
       </div>
+      </article>
       <div class="footer">
         <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
         <a class="label swc-blue-bg" href="https://github.com/swcarpentry/python-novice-inflammation">Source</a>

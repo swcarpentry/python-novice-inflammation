@@ -5,7 +5,12 @@ subtitle: Instructor's Guide
 ---
 ## Legend
 
-FIXME: story behind running example.
+We are using a dataset with records on inflammation from patients following an
+arthritis treatment.
+
+We make reference in the lesson that this data is somehow strange. It is strange
+because it is fabricated! The script used to generate the inflammation data
+is included as [`tools/gen_inflammation.py`](tools/gen_inflammation.py).
 
 ## Overall
 
@@ -65,6 +70,22 @@ The discussion of command-line scripts
 assumes that students understand standard I/O and building filters,
 which are covered in the lesson on the shell.
 
+## Frequently Argued Issues (FAI)
+
+*   `import ... as ...` syntax.
+
+    This syntax is commonly used in the scientific Python community;
+    it is explicitly recommended in documentation to `import numpy as np`
+    and `import matplotlib.pyplot as plt`. Despite that, we have decided
+    not to introduce aliasing imports in this novice lesson due to the
+    additional cognitive load it puts on students, despite the typing that
+    it saves. A good summary of arguments for and against can be found in
+    [PR #61](https://github.com/swcarpentry/python-novice-inflammation/pull/61).
+
+    It is up to you as an individual instructor whether you want to introduce
+    these aliases when you teach this lesson, but we encourage you to please
+    read those arguments thoroughly before deciding one way or the other.
+
 ## [Analyzing Patient Data](01-numpy.html)
 
 ## [Repeating Actions with Loops](02-loop.html)
@@ -77,10 +98,10 @@ which are covered in the lesson on the shell.
 
 ## [Creating Functions](06-func.html)
 
-## [Defensive Programming](07-defensive.html)
+## [Errors and Exceptions](07-errors.html)
 
-## [Command-Line Programs](08-cmdline.html)
+## [Defensive Programming](08-defensive.html)
 
-## [Errors and Exceptions](09-errors.html)
+## [Debugging](09-debugging.html)
 
-## [Supplementary Material](10-supplementary.html)
+## [Command-Line Programs](10-cmdline.html)

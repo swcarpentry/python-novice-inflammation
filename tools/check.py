@@ -13,6 +13,7 @@ Call at command line with flag -h to see options and usage instructions.
 
 import argparse
 import collections
+import functools
 import glob
 import hashlib
 import logging
@@ -24,6 +25,19 @@ import CommonMark
 import yaml
 
 import validation_helpers as vh
+
+NUMBER_OF_ERRORS = 0
+
+def incr_error(func):
+    """Wrapper to count the number of errors"""
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        global NUMBER_OF_ERRORS
+        NUMBER_OF_ERRORS += 1
+        return func(*args, **kwargs)
+    return wrapper
+
+logging.error = incr_error(logging.error)
 
 
 class MarkdownValidator(object):
@@ -37,7 +51,7 @@ class MarkdownValidator(object):
     # Dict of tuples for each callout type: {style: (title, min, max)}
     CALLOUTS = {}
 
-    WARN_ON_EXTRA_HEADINGS = True  # Warn when other headings are present?
+    WARN_ON_EXTRA_HEADINGS = False  # Warn when other headings are present?
 
     # Validate YAML doc headers: dict of {header text: validation_func}
     DOC_HEADERS = {}
@@ -456,12 +470,23 @@ class IndexPageValidator(MarkdownValidator):
     DOC_HEADERS = {'layout': vh.is_str,
                    'title': vh.is_str}
 
-    CALLOUTS = {'prereq': ("Prerequisites", 1, 1)}
+    CALLOUTS = {'prereq': ("Prerequisites", 1, 1),
+                'getready': ("Getting ready", 1, 1)}
 
     def _partition_links(self):
         """Check the text of every link in index.md"""
-        check_text = self.ast.find_external_links()
-        return check_text, []
+        external_links = self.ast.find_external_links()
+
+        check_text = []
+        no_check_text = []
+
+        for link in external_links:
+            if '#' in link.destination:
+                no_check_text.append(link)
+            else:
+                check_text.append(link)
+
+        return check_text, no_check_text
 
     def _validate_intro_section(self):
         """Validate the intro section
@@ -500,32 +525,21 @@ class TopicPageValidator(MarkdownValidator):
         The top-level document has no headings indicating subtopics.
         The only valid subheadings are nested in blockquote elements"""
         heading_nodes = self.ast.get_section_headings()
-        if len(heading_nodes) == 0:
-            return True
+        if len(heading_nodes) != 0:
+            # Individual heading msgs are logged by validate_section_heading_order
+            logging.warning(
+                "In {0}: "
+                "Sub-headings are often a sign "
+                "a lesson needs to be split into multiple topics. "
+                "Please make sure this subsection doesn't belong "
+                "in a separate lesson.".format(self.filename))
 
-        # Individual heading msgs are logged by validate_section_heading_order
-        logging.error(
-            "In {0}: "
-            "The topic page should not have sub-headings "
-            "outside of special blocks. "
-            "If a topic needs sub-headings, "
-            "it should be broken into multiple topics.".format(self.filename))
-        return False
+        return True
 
     def _run_tests(self):
         parent_tests = super(TopicPageValidator, self)._run_tests()
         tests = [self._validate_has_no_headings()]
         return all(tests) and parent_tests
-
-
-class MotivationPageValidator(MarkdownValidator):
-    """Validate motivation.md"""
-    WARN_ON_EXTRA_HEADINGS = False
-
-    DOC_HEADERS = {"layout": vh.is_str,
-                   "title": vh.is_str,
-                   "subtitle": vh.is_str}
-    # TODO: How to validate? May be a mix of reveal.js (HTML) + markdown.
 
 
 class ReferencePageValidator(MarkdownValidator):
@@ -565,24 +579,14 @@ class ReferencePageValidator(MarkdownValidator):
 
         entry_is_valid = True
         for line_index, line in enumerate(glossary_entry):
-            if line_index == 1:
-                if not re.match("^:   ", line):
-                    logging.error(
-                        "In {0}: "
-                        "At glossary entry '{1}' "
-                        "First line of definition must "
-                        "start with ':    '.".format(
-                            self.filename, glossary_keyword))
-                    entry_is_valid = False
-            elif line_index > 1:
-                if not re.match("^    ", line):
-                    logging.error(
-                        "In {0}: "
-                        "At glossary entry '{1}' "
-                        "Subsequent lines of definition must "
-                        "start with '     '.".format(
-                            self.filename,  glossary_keyword, ))
-                    entry_is_valid = False
+            if line_index == 1 and not re.match("^:   ", line):
+                logging.error(
+                    "In {0}: "
+                    "At glossary entry '{1}' "
+                    "First line of definition must "
+                    "start with ':    '.".format(
+                        self.filename, glossary_keyword))
+                entry_is_valid = False
         return entry_is_valid
 
     def _validate_glossary(self):
@@ -612,7 +616,7 @@ class ReferencePageValidator(MarkdownValidator):
 
 class InstructorPageValidator(MarkdownValidator):
     """Simple validator for Instructor's Guide- instructors.md"""
-    HEADINGS = ["Legend", "Overall"]
+    HEADINGS = ["Overall"]
     WARN_ON_EXTRA_HEADINGS = False
 
     DOC_HEADERS = {"layout": vh.is_str,
@@ -664,14 +668,14 @@ class DiscussionPageValidator(MarkdownValidator):
 #   Dict of {name: (Validator, filename_pattern)}
 LESSON_TEMPLATES = {"index": (IndexPageValidator, "^index"),
                     "topic": (TopicPageValidator, "^[0-9]{2}-.*"),
-                    "motivation": (MotivationPageValidator, "^motivation"),
                     "reference": (ReferencePageValidator, "^reference"),
                     "instructor": (InstructorPageValidator, "^instructors"),
                     "license": (LicensePageValidator, "^LICENSE"),
                     "discussion": (DiscussionPageValidator, "^discussion")}
 
 # List of files in the lesson directory that should not be validated at all
-SKIP_FILES = ("DESIGN.md", "FAQ.md", "LAYOUT.md", "README.md")
+SKIP_FILES = ("CONDUCT.md", "CONTRIBUTING.md",
+              "DESIGN.md", "FAQ.md", "LAYOUT.md", "README.md")
 
 
 def identify_template(filepath):
@@ -737,7 +741,9 @@ def validate_folder(path, template=None):
 
 def start_logging(level=logging.INFO):
     """Initialize logging and print messages to console."""
-    logging.basicConfig(stream=sys.stdout, level=level)
+    logging.basicConfig(stream=sys.stdout,
+                        level=level,
+                        format="%(levelname)s: %(message)s")
 
 
 def command_line():
@@ -763,11 +769,12 @@ def command_line():
 def check_required_files(dir_to_validate):
     """Check if required files exists."""
     REQUIRED_FILES = ["01-*.md",
+                      "CONDUCT.md",
+                      "CONTRIBUTING.md",
                       "discussion.md",
                       "index.md",
                       "instructors.md",
                       "LICENSE.md",
-                      "motivation.md",
                       "README.md",
                       "reference.md"]
     valid = True
@@ -827,12 +834,11 @@ def main(parsed_args_obj):
 
     if all_valid is True:
         logging.debug("All Markdown files successfully passed validation.")
-        sys.exit(0)
     else:
         logging.warning(
-            "Some errors were encountered during validation. "
-            "See log for details.")
-        sys.exit(1)
+            "{0} errors were encountered during validation. "
+            "See log for details.".format(NUMBER_OF_ERRORS))
+    sys.exit(NUMBER_OF_ERRORS)
 
 
 if __name__ == "__main__":

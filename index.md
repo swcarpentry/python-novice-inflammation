@@ -17,11 +17,11 @@ We use Python in our lessons because:
 
 But the two most important things are
 to use whatever language your colleagues are using,
-so that you can share you work with them easily,
+so that you can share your work with them easily,
 and to use that language *well*.
 
 We are studying inflammation in patients who have been given a new treatment for arthritis,
-and need to analyze the first dozen data sets.
+and need to analyze the first dozen data sets of their daily inflammation.
 The data sets are stored in [comma-separated values](reference.html#comma-separated-values) (CSV) format:
 each row holds information for a single patient,
 and the columns represent successive days.
@@ -47,7 +47,22 @@ To do all that, we'll have to learn a little bit about programming.
 >
 > Learners need to understand the concepts of files and directories
 > (including the working directory) and how to start a Python
-> interpreter before tackling this lesson.
+> interpreter before tackling this lesson. This lesson references the Jupyter (IPython)
+> Notebook although it can be taught through any Python interpreter. The commands in this
+> this lesson pertain to Python 2.7.
+
+> ## Getting ready {.getready}
+>
+> You need to download some files to follow this lesson:
+>
+> 1. Make a new folder in your Desktop called `python-novice-inflammation`.
+> 2. Download [python-novice-inflammation-data.zip](./python-novice-inflammation-data.zip) and move the file to this folder.
+> 3. If it's not unzipped yet, double-click on it to unzip it. You should end up with a new folder called `data`.
+> 4. You can access this folder from the Unix shell with:
+>
+> ~~~ {.input}
+> $ cd && cd Desktop/python-novice-inflammation/data
+> ~~~
 
 ## Topics
 
@@ -55,16 +70,16 @@ To do all that, we'll have to learn a little bit about programming.
 2.  [Repeating Actions with Loops](02-loop.html)
 3.  [Storing Multiple Values in Lists](03-lists.html)
 4.  [Analyzing Data from Multiple Files](04-files.html)
-3.  [Making Choices](05-cond.html)
-4.  [Creating Functions](06-func.html)
-5.  [Defensive Programming](07-defensive.html)
-6.  [Command-Line Programs](08-cmdline.html)
-7.  [Errors and Exceptions](09-errors.html)
-8.  [Supplementary Material](10-supplementary.html)
+5.  [Making Choices](05-cond.html)
+6.  [Creating Functions](06-func.html)
+7.  [Errors and Exceptions](07-errors.html)
+8.  [Defensive Programming](08-defensive.html)
+9.  [Debugging](09-debugging.html)
+10.  [Command-Line Programs](10-cmdline.html)
+
 
 ## Other Resources
 
-*   [Motivation](motivation.html)
 *   [Reference](reference.html)
 *   [Discussion](discussion.html)
 *   [Instructor's Guide](instructors.html)

@@ -12,12 +12,17 @@ minutes: 30
 Just as a `for` loop is a way to do operations many times,
 a list is a way to store many values.
 Unlike NumPy arrays,
-lists are built into the language.
+lists are built into the language (so we don't have to load a library
+to use them).
 We create a list by putting values inside square brackets:
 
 ~~~ {.python}
 odds = [1, 3, 5, 7]
 print 'odds are:', odds
+~~~
+
+~~~ {.output}
+odds are: [1, 3, 5, 7]
 ~~~
 
 We select individual elements from lists by indexing them:
@@ -26,12 +31,23 @@ We select individual elements from lists by indexing them:
 print 'first and last:', odds[0], odds[-1]
 ~~~
 
+~~~ {.output}
+first and last: 1 7
+~~~
+
 and if we loop over a list,
 the loop variable is assigned elements one at a time:
 
 ~~~ {.python}
 for number in odds:
     print number
+~~~
+
+~~~ {.output}
+1
+3
+5
+7
 ~~~
 
 There is one important difference between lists and strings:
@@ -46,6 +62,11 @@ names[1] = 'Darwin' # correct the name
 print 'final value of names:', names
 ~~~
 
+~~~ {.output}
+names is originally: ['Newton', 'Darwing', 'Turing']
+final value of names: ['Newton', 'Darwin', 'Turing']
+~~~
+
 works, but:
 
 ~~~ {.python}
@@ -53,17 +74,25 @@ name = 'Bell'
 name[0] = 'b'
 ~~~
 
+~~~ {.error}
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-8-220df48aeb2e> in <module>()
+      1 name = 'Bell'
+----> 2 name[0] = 'b'
+
+TypeError: 'str' object does not support item assignment
+~~~
+
 does not.
 
 > ## Ch-Ch-Ch-Changes {.callout}
 >
 > Data that can be changed is called [mutable](reference.html#mutable),
-> while data that cannot be is called [immutable](reference.html#immutable).
+> while data that cannot be changed is called [immutable](reference.html#immutable).
 > Like strings,
 > numbers are immutable:
-> there's no way to make the number 0 have the value 1 or vice versa
-> (at least, not in Python --- there actually *are* languages that will let people do this,
-> with predictably confusing results).
+> there's no way to make the number 0 have the value 1 or vice versa.
 > Lists and arrays,
 > on the other hand,
 > are mutable:
@@ -75,9 +104,10 @@ does not.
 > On the other hand,
 > programs that modify data in place instead of creating copies that are almost identical to the original
 > every time they want to make a small change
-> are much more efficient.
+> are much more efficient. You should consider both aspects when writing code.
 
-There are many ways to change the contents of lists besides assigning to elements:
+There are many ways to change the contents of lists besides assigning new values to
+individual elements:
 
 ~~~ {.python}
 odds.append(11)

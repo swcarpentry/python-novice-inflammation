@@ -23,37 +23,46 @@
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
+      <article>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <h1 class="title">Programming with Python</h1>
-          <h2 class="subtitle">Instructor's Guide</h2>
-<h2 id="legend">Legend</h2>
-<p>FIXME: story behind running example.</p>
+                    <a href="index.html"><h1 class="title">Programming with Python</h1></a>
+          <h2 class="subtitle">Instructor’s Guide</h2>
+          <h2 id="legend">Legend</h2>
+<p>We are using a dataset with records on inflammation from patients following an arthritis treatment.</p>
+<p>We make reference in the lesson that this data is somehow strange. It is strange because it is fabricated! The script used to generate the inflammation data is included as <a href="tools/gen_inflammation.py"><code>tools/gen_inflammation.py</code></a>.</p>
 <h2 id="overall">Overall</h2>
-<p>This lesson is written as an introduction to Python, but its real purpose is to introduce the single most important idea in programming: how to solve problems by building functions, each of which can fit in a programmer's working memory. In order to teach that, we must teach people a little about the mechanics of manipulating data with lists and file I/O so that their functions can do things they actually care about. Our teaching order tries to show practical uses of every idea as soon as it is introduced; instructors should resist the temptation to explain the &quot;other 90%&quot; of the language as well.</p>
-<p>The final example asks them to build a command-line tool that works with the Unix pipe-and-filter model. We do this because it is a useful skill and because it helps learners see that the software they use isn't magical. Tools like <code>grep</code> might be more sophisticated than the programs our learners can write at this point in their careers, but it's crucial they realize this is a difference of scale rather than kind.</p>
+<p>This lesson is written as an introduction to Python, but its real purpose is to introduce the single most important idea in programming: how to solve problems by building functions, each of which can fit in a programmer’s working memory. In order to teach that, we must teach people a little about the mechanics of manipulating data with lists and file I/O so that their functions can do things they actually care about. Our teaching order tries to show practical uses of every idea as soon as it is introduced; instructors should resist the temptation to explain the “other 90%” of the language as well.</p>
+<p>The final example asks them to build a command-line tool that works with the Unix pipe-and-filter model. We do this because it is a useful skill and because it helps learners see that the software they use isn’t magical. Tools like <code>grep</code> might be more sophisticated than the programs our learners can write at this point in their careers, but it’s crucial they realize this is a difference of scale rather than kind.</p>
 <p>Explain that we use Python because:</p>
 <ul>
-<li>It's free.</li>
+<li>It’s free.</li>
 <li>It has a lot of scientific libraries, and more are constantly being added.</li>
 <li>It has a large scientific user community.</li>
-<li>It's easier for novices to learn than most of the mature alternatives. (Software Carpentry originally used Perl; when we switched, we found that we could cover as much material in two days in Python as we'd covered in three days in Perl, and that retention was higher.)</li>
+<li>It’s easier for novices to learn than most of the mature alternatives. (Software Carpentry originally used Perl; when we switched, we found that we could cover as much material in two days in Python as we’d covered in three days in Perl, and that retention was higher.)</li>
 </ul>
 <p>We do <em>not</em> include instructions on running the IPython Notebook in the tutorial because we want to focus on the language rather than the tools. Instructors should, however, walk learners through some basic operations: * Launch from the command line with <code>ipython notebook</code>. * Create a new notebook. * Enter code or data in a cell and execute it. * Explain the difference between <code>In[#]</code> and <code>Out[#]</code>.</p>
-<p>Watching the instructor grow programs step by step is as helpful to learners as anything to do with Python. Resist the urge to update a single cell repeatedly (which is what you'd probably do in real life). Instead, clone the previous cell and write the update in the new copy so that learners have a complete record of how the program grew. Once you've done this, you can say, &quot;Now why don't we just breaks things into small functions right from the start?&quot;</p>
+<p>Watching the instructor grow programs step by step is as helpful to learners as anything to do with Python. Resist the urge to update a single cell repeatedly (which is what you’d probably do in real life). Instead, clone the previous cell and write the update in the new copy so that learners have a complete record of how the program grew. Once you’ve done this, you can say, “Now why don’t we just breaks things into small functions right from the start?”</p>
 <p>The discussion of command-line scripts assumes that students understand standard I/O and building filters, which are covered in the lesson on the shell.</p>
+<h2 id="frequently-argued-issues-fai">Frequently Argued Issues (FAI)</h2>
+<ul>
+<li><p><code>import ... as ...</code> syntax.</p>
+<p>This syntax is commonly used in the scientific Python community; it is explicitly recommended in documentation to <code>import numpy as np</code> and <code>import matplotlib.pyplot as plt</code>. Despite that, we have decided not to introduce aliasing imports in this novice lesson due to the additional cognitive load it puts on students, despite the typing that it saves. A good summary of arguments for and against can be found in <a href="https://github.com/swcarpentry/python-novice-inflammation/pull/61">PR #61</a>.</p>
+<p>It is up to you as an individual instructor whether you want to introduce these aliases when you teach this lesson, but we encourage you to please read those arguments thoroughly before deciding one way or the other.</p></li>
+</ul>
 <h2 id="analyzing-patient-data"><a href="01-numpy.html">Analyzing Patient Data</a></h2>
 <h2 id="repeating-actions-with-loops"><a href="02-loop.html">Repeating Actions with Loops</a></h2>
 <h2 id="storing-multiple-values-in-lists"><a href="03-lists.html">Storing Multiple Values in Lists</a></h2>
 <h2 id="analyzing-data-from-multiple-files"><a href="04-files.html">Analyzing Data from Multiple Files</a></h2>
 <h2 id="making-choices"><a href="05-cond.html">Making Choices</a></h2>
 <h2 id="creating-functions"><a href="06-func.html">Creating Functions</a></h2>
-<h2 id="defensive-programming"><a href="07-defensive.html">Defensive Programming</a></h2>
-<h2 id="command-line-programs"><a href="08-cmdline.html">Command-Line Programs</a></h2>
-<h2 id="errors-and-exceptions"><a href="09-errors.html">Errors and Exceptions</a></h2>
-<h2 id="supplementary-material"><a href="10-supplementary.html">Supplementary Material</a></h2>
+<h2 id="errors-and-exceptions"><a href="07-errors.html">Errors and Exceptions</a></h2>
+<h2 id="defensive-programming"><a href="08-defensive.html">Defensive Programming</a></h2>
+<h2 id="debugging"><a href="09-debugging.html">Debugging</a></h2>
+<h2 id="command-line-programs"><a href="10-cmdline.html">Command-Line Programs</a></h2>
         </div>
       </div>
+      </article>
       <div class="footer">
         <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
         <a class="label swc-blue-bg" href="https://github.com/swcarpentry/python-novice-inflammation">Source</a>

@@ -35,7 +35,7 @@ def fahr_to_kelvin(temp):
     return ((temp - 32) * (5/9)) + 273.15
 ~~~
 
-The definition opens with the word `def`,
+The function definition opens with the word `def`,
 which is followed by the name of the function
 and a parenthesized list of parameter names.
 The [body](reference.html#function-body) of the function --- the
@@ -65,7 +65,7 @@ and we have access to the value that we returned.
 Unfortunately, the value returned doesn't look right.
 What went wrong?
 
-### Debugging a Function
+## Debugging a Function
 
 *Debugging* is when we fix a piece of code
 that we know is working incorrectly.
@@ -183,7 +183,7 @@ freezing point of water: 273.15
 boiling point of water: 373.15
 ~~~
 
-### Composing Functions
+## Composing Functions
 
 Now that we've seen how to turn Fahrenheit into Kelvin,
 it's easy to turn Kelvin into Celsius:
@@ -223,7 +223,7 @@ Real-life functions will usually be larger than the ones shown here --- typicall
 they shouldn't ever be much longer than that,
 or the next person who reads it won't be able to understand what's going on.
 
-### Tidying up
+## Tidying up
 
 Now that we know how to wrap bits of code up in functions,
 we can make our inflammation analyasis easier to read and easier to reuse.
@@ -253,11 +253,11 @@ def analyze(filename):
     plt.show(fig)
 ~~~
 
-and another function called `detectProblems` that checks for those systematics
+and another function called `detect_problems` that checks for those systematics
 we noticed:
 
 ~~~ {.python}
-def detectProblems(filename):
+def detect_problems(filename):
 
     data = np.loadtxt(fname=filename, delimiter=',')
 
@@ -274,7 +274,7 @@ we can now read and reuse both ideas separately.
 We can reproduce the previous analysis with a much simpler `for` loop:
 
 ~~~ {.python}
-for f in filenames:
+for f in filenames[:3]:
     print f
     analyze(f)
     detectProblems(f)
@@ -284,8 +284,6 @@ By giving our functions human-readable names,
 we can more easily read and understand what is happening in the `for` loop.
 Even better, if at some later date we want to use either of those pieces of code again,
 we can do so in a single line.
-
-
 
 ## Testing and Documenting
 
@@ -433,7 +431,7 @@ center(data, desired)
 ## Defining Defaults
 
 We have passed parameters to functions in two ways:
-directly, as in `span(data)`,
+directly, as in `type(data)`,
 and by name, as in `numpy.loadtxt(fname='something.csv', delimiter=',')`.
 In fact,
 we can pass the filename to `loadtxt` without the `fname=`:
@@ -448,7 +446,8 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
        ...,
        [ 0.,  1.,  1., ...,  1.,  1.,  1.],
        [ 0.,  0.,  0., ...,  0.,  2.,  0.],
-       [ 0.,  0.,  1., ...,  1.,  1.,  0.]])~~~
+       [ 0.,  0.,  1., ...,  1.,  1.,  0.]])
+~~~
 
 but we still need to say `delimiter=`:
 
@@ -500,13 +499,17 @@ in which case `desired` is automatically assigned the [default value](reference.
 
 ~~~ {.python}
 more_data = 5 + numpy.zeros((2, 2))
-print 'data before centering:', more_data
-print 'centered data:', center(more_data)
+print 'data before centering:'
+print more_data
+print 'centered data:'
+print center(more_data)
 ~~~
 ~~~ {.output}
-data before centering: [[ 5.  5.]
+data before centering:
+[[ 5.  5.]
  [ 5.  5.]]
-centered data: [[ 0.  0.]
+centered data:
+[[ 0.  0.]
  [ 0.  0.]]
 ~~~
 
@@ -663,16 +666,20 @@ numpy.loadtxt('inflammation-01.csv', ',')
 
 then the filename is assigned to `fname` (which is what we want),
 but the delimiter string `','` is assigned to `dtype` rather than `delimiter`,
-because `dtype` is the second parameter in the list.
-That's why we don't have to provide `fname=` for the filename,
-but *do* have to provide `delimiter=` for the second parameter.
+because `dtype` is the second parameter in the list. However ',' isn't a known `dtype` so
+our code produced an error message when we tried to run it.
+When we call `loadtxt` we don't have to provide `fname=` for the filename because it's the
+first item in the list, but if we want the ',' to be assigned to the variable `delimiter`,
+we *do* have to provide `delimiter=` for the second parameter since `delimiter` is not
+the second parameter in the list.
 
 > ## Combining strings {.challenge}
 >
-> "Adding" two strings produces their concatention:
+> "Adding" two strings produces their concatenation:
 > `'a' + 'b'` is `'ab'`.
 > Write a function called `fence` that takes two parameters called `original` and `wrapper`
-> and returns a new string that has the wrapper character at the beginning and end of the original:
+> and returns a new string that has the wrapper character at the beginning and end of the original.
+> A call to your function should look like this:
 >
 > ~~~ {.python}
 > print fence('name', '*')
@@ -685,42 +692,35 @@ but *do* have to provide `delimiter=` for the second parameter.
 > then `s[0]` is the string's first character
 > and `s[-1]` is its last.
 > Write a function called `outer`
-> that returns a string made up of just the first and last characters of its input:
+> that returns a string made up of just the first and last characters of its input.
+> A call to your function should look like this:
 >
 > ~~~ {.python}
 > print outer('helium')
 > hm
 > ~~~
 
-> ## Rescaling, with parameters {.challenge}
+> ## Rescaling an array {.challenge}
+>
+> Write a function `rescale` that takes an array as input
+> and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
+> (Hint: If $L$ and $H$ are the lowest and highest values in the original array,
+> then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
+
+> ## Testing and documenting your function {.challenge}
+>
+> Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
+> to see how to use these functions to generate regularly-spaced values,
+> then use those values to test your `rescale` function.
+> Once you've successfully tested your function,
+> add a docstring that explains what it does.
+
+> ## Defining defaults {.challenge}
 >
 > Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
 > but will allow the caller to specify lower and upper bounds if they want.
 > Compare your implementation to your neighbor's:
 > do the two functions always behave the same way?
-
-> ## Automatic plots {.challenge}
->
-> Write a function called `analyze` that takes a filename as a parameter
-> and displays the three graphs produced in the [previous lesson](01-numpy.ipynb),
-> i.e.,
-> `analyze('inflammation-01.csv')` should produce the graphs already shown,
-> while `analyze('inflammation-02.csv')` should produce corresponding graphs for the second data set.
-> Be sure to give your function a docstring.
-
-> ## Rescaling an array {.challenge}
->
-> Write a function `rescale` that takes an array as input
-> and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
-> (If $L$ and $H$ are the lowest and highest values in the original array,
-> then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
-> Be sure to give the function a docstring.
-
-> ## Testing your function {.challenge}
->
-> Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
-> to see how to use these functions to generate regularly-spaced values,
-> then use those values to test your `rescale` function.
 
 > ## Variables inside and outside functions {.challenge}
 >
@@ -740,3 +740,4 @@ but *do* have to provide `delimiter=` for the second parameter.
 >
 > print k
 > ~~~
+

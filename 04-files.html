@@ -23,11 +23,12 @@
           <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
         </a>
       </div>
+      <article>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <h1 class="title">Programming with Python</h1>
+                    <a href="index.html"><h1 class="title">Programming with Python</h1></a>
           <h2 class="subtitle">Analyzing Data from Multiple Files</h2>
-<div id="learning-objectives" class="objectives panel panel-warning">
+          <section class="objectives panel panel-warning">
 <div class="panel-heading">
 <h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
@@ -37,16 +38,13 @@
 <li>Use a for loop to process multiple files.</li>
 </ul>
 </div>
-</div>
-<p>We now have almost everything we need to process all our data files. The only thing that's missing is a library with a rather unpleasant name:</p>
+</section>
+<p>We now have almost everything we need to process all our data files. The only thing that’s missing is a library with a rather unpleasant name:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> glob</code></pre>
-<p>The <code>glob</code> library contains a single function, also called <code>glob</code>, that finds files whose names match a pattern. We provide those patterns as strings: the character <code>*</code> matches zero or more characters, while <code>?</code> matches any one character. We can use this to get the names of all the IPython Notebooks we have created so far:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> glob.glob(<span class="st">&#39;*.ipynb&#39;</span>)</code></pre>
-<pre class="output"><code>[&#39;01-numpy.ipynb&#39;, &#39;02-func.ipynb&#39;, &#39;03-loop.ipynb&#39;, &#39;04-cond.ipynb&#39;, &#39;05-defensive.ipynb&#39;, &#39;06-cmdline.ipynb&#39;, &#39;spatial-intro.ipynb&#39;]</code></pre>
-<p>or to get the names of all our CSV data files:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> glob.glob(<span class="st">&#39;*.csv&#39;</span>)</code></pre>
-<pre class="output"><code>[&#39;inflammation-01.csv&#39;, &#39;inflammation-02.csv&#39;, &#39;inflammation-03.csv&#39;, &#39;inflammation-04.csv&#39;, &#39;inflammation-05.csv&#39;, &#39;inflammation-06.csv&#39;, &#39;inflammation-07.csv&#39;, &#39;inflammation-08.csv&#39;, &#39;inflammation-09.csv&#39;, &#39;inflammation-10.csv&#39;, &#39;inflammation-11.csv&#39;, &#39;inflammation-12.csv&#39;, &#39;small-01.csv&#39;, &#39;small-02.csv&#39;, &#39;small-03.csv&#39;]</code></pre>
-<p>As these examples show, <code>glob.glob</code>'s result is a list of strings, which means we can loop over it to do something with each filename in turn. In our case, the &quot;something&quot; we want is the code that generates those plots of our inflammation data. Let's test it by analyzing the first three files in the list:</p>
+<p>The <code>glob</code> library contains a single function, also called <code>glob</code>, that finds files whose names match a pattern. We provide those patterns as strings: the character <code>*</code> matches zero or more characters, while <code>?</code> matches any one character. We can use this to get the names of all the html files:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> glob.glob(<span class="st">&#39;*.html&#39;</span>)</code></pre>
+<pre class="output"><code>[&#39;01-numpy.html&#39;, &#39;02-loop.html&#39;, &#39;03-lists.html&#39;, &#39;04-files.html&#39;, &#39;05-cond.html&#39;, &#39;06-func.html&#39;, &#39;07-errors.html&#39;, &#39;08-defensive.html&#39;, &#39;09-debugging.html&#39;, &#39;10-cmdline.html&#39;, &#39;index.html&#39;, &#39;LICENSE.html&#39;, &#39;instructors.html&#39;, &#39;README.html&#39;, &#39;discussion.html&#39;, &#39;reference.html&#39;]</code></pre>
+<p>As these examples show, <code>glob.glob</code>’s result is a list of strings, which means we can loop over it to do something with each filename in turn. In our case, the “something” we want to do is generate a set of plots for each file in our inflammation dataset. Let’s test it by analyzing the first three files in the list:</p>
 <pre class="sourceCode python"><code class="sourceCode python">filenames = glob.glob(<span class="st">&#39;*.csv&#39;</span>)
 filenames = filenames[<span class="dv">0</span>:<span class="dv">3</span>]
 <span class="kw">for</span> f in filenames:
@@ -79,6 +77,7 @@ filenames = filenames[<span class="dv">0</span>:<span class="dv">3</span>]
 <p><img src="fig/03-loop_49_5.png" alt="Analysis of inflammation-03.csv" /><br /> Sure enough, the maxima of the first two data sets show exactly the same ramp as the first, and their minima show the same staircase structure; a different situation has been revealed in the third dataset, where the maxima are a bit less regular, but the minima are consistently zero.</p>
         </div>
       </div>
+      </article>
       <div class="footer">
         <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
         <a class="label swc-blue-bg" href="https://github.com/swcarpentry/python-novice-inflammation">Source</a>

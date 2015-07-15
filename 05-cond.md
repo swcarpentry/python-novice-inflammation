@@ -14,7 +14,7 @@ In our last lesson, we discovered something suspicious was going on
 in our inflammation data by drawing some plots.
 How can we use Python to automatically recognize the different features we saw,
 and take a different action for each? In this lesson, we'll learn how to write code that
-runs only when certain conditons are true.
+runs only when certain conditions are true.
 
 ## Conditionals
 
@@ -35,7 +35,7 @@ done
 ~~~
 
 The second line of this code uses the keyword `if` to tell Python that we want to make a choice.
-If the test that follows it is true,
+If the test that follows the `if` statement is true,
 the body of the `if`
 (i.e., the lines indented underneath it) are executed.
 If the test is false,
@@ -62,29 +62,25 @@ before conditional...
 
 We can also chain several tests together using `elif`,
 which is short for "else if".
-This makes it simple to write a function that returns the sign of a number:
+The following Python code uses `elif` to print the sign of a number.
 
 ~~~ {.python}
-def sign(num):
-    if num > 0:
-        return 1
-    elif num == 0:
-        return 0
-    else:
-        return -1
+num = -3
 
-print 'sign of -3:', sign(-3)
+if num > 0:
+    print num, "is positive"
+elif num == 0:
+    print num, "is zero"
+else:
+    print num, "is negative"
 ~~~
 ~~~ {.output}
-sign of -3: -1
+"-3 is negative"
 ~~~
 
 One important thing to notice in the code above is that we use a double equals sign `==` to test for equality
 rather than a single equals sign
 because the latter is used to mean assignment.
-This convention was inherited from C,
-and while many other programming languages work the same way,
-it does take a bit of getting used to...
 
 We can also combine tests using `and` and `or`.
 `and` is only true if both parts are true:
@@ -99,18 +95,15 @@ else:
 one part is not true
 ~~~
 
-while `or` is true if either part is true:
+while `or` is true if at least one part is true:
 
 ~~~ {.python}
-if (1 < 0) or ('left' < 'right'):
+if (1 < 0) or (-1 < 0):
     print 'at least one test is true'
 ~~~
 ~~~ {.output}
 at least one test is true
 ~~~
-
-In this case,
-"either" means "either or both", not "either one or the other but not both".
 
 ## Checking our Data
 
@@ -121,7 +114,7 @@ seemed to rise like a straight line, one unit per day.
 We can check for this inside the `for` loop we wrote with the following conditional:
 
 ~~~ {.python}
-if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
+if data.min(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
     print 'Suspicious looking maxima!'
 ~~~
 
@@ -141,27 +134,56 @@ else:
     print 'Seems OK!'
 ~~~
 
+Let's test that out:
+
+~~~ {.python}
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
+    print 'Suspicious looking maxima!'
+elif data.min(axis=0).sum() == 0:
+    print 'Minima add up to zero!'
+else:
+    print 'Seems OK!'
+~~~
+
+~~~ {.output}
+Suspicious looking maxima!
+~~~
+
+~~~ {.python}
+data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
+if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
+    print 'Suspicious looking maxima!'
+elif data.min(axis=0).sum() == 0:
+    print 'Minima add up to zero!'
+else:
+    print 'Seems OK!'
+~~~
+
+~~~ {.output}
+Minima add up to zero!
+~~~
+
 In this way,
-we can ask Python to do something different depending on the condition of our data.
+we have asked Python to do something different depending on the condition of our data.
 Here we printed messages in all cases,
 but we could also imagine not using the `else` catch-all
 so that messages are only printed when something is wrong,
-freeing us from having to manually examine every plot for features we've seen before,
-or doing all manner of other things to respond to changing conditions in our data.
+freeing us from having to manually examine every plot for features we've seen before.
 
 > ## How many paths? {.challenge}
-> 
+>
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
 >
-> A
-> B
-> C
-> B and C
-> 
+> 1.  A
+> 2.  B
+> 3.  C
+> 4.  B and C
+>
 > ~~~ {.python}
 > if 4 > 5:
 >     print 'A'
-> elif 4 =< 5:
+> elif 4 == 5:
 >     print 'B'
 > elif 4 < 5:
 >     print 'C'
@@ -169,7 +191,8 @@ or doing all manner of other things to respond to changing conditions in our dat
 
 > ## What is truth? {.challenge}
 >
-> `True` and `False` aren't the only values in Python that are true and false.
+> `True` and `False` are special words in Python called `booleans` which represent true
+and false statements. However, they aren't the only values in Python that are true and false.
 > In fact, *any* value can be used in an `if` or `elif`.
 > After reading and running the code below,
 > explain what the rule is for which values are considered true and which are considered false.
@@ -216,6 +239,9 @@ or doing all manner of other things to respond to changing conditions in our dat
 > Explain what the overall effect of this code is:
 >
 > ~~~ {.python}
+> left = 'L'
+> right = 'R'
+>
 > temp = left
 > left = right
 > right = temp

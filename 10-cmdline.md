@@ -16,8 +16,16 @@ or run it in a shell script to process thousands of data files.
 In order to do that,
 we need to make our programs work like other Unix command-line tools.
 For example,
-we may want a program that reads a data set
-and prints the average inflammation per patient:
+we may want a program that reads a dataset
+and prints the average inflammation per patient.
+
+> ## Switching to Shell Commands {.callout}
+> In this lesson we are switching from typing commands in a Python interpreter to typing
+> commands in a shell terminal window (such as bash). When you see a `$` in front of a
+> command that tells you to run that command in the shell rather than the Python interpreter.
+
+This program does exactly what we want - it prints the average inflammation per patient
+for a given file.
 
 ~~~
 $ python readings.py --mean inflammation-01.csv
@@ -30,7 +38,7 @@ $ python readings.py --mean inflammation-01.csv
 5.9
 ~~~
 
-but we might also want to look at the minimum of the first four lines
+We might also want to look at the minimum of the first four lines
 
 ~~~
 $ head -4 inflammation-01.csv | python readings.py --min
@@ -42,7 +50,7 @@ or the maximum inflammations in several files one after another:
 $ python readings.py --max inflammation-*.csv
 ~~~
 
-Our overall requirements are:
+Our scripts should do the following:
 
 1. If no filename is given on the command line, read data from [standard input](reference.html#standard-input).
 2. If one or more filenames are given, read data from them and report statistics for each file separately.
@@ -53,7 +61,7 @@ we need to know how to handle command-line arguments in a program,
 and how to get at standard input.
 We'll tackle these questions in turn below.
 
-### Command-Line Arguments
+## Command-Line Arguments
 
 Using the text editor of your choice,
 save the following in a text file called `sys-version.py`:
@@ -78,7 +86,7 @@ version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
 [GCC 4.0.1 (Apple Inc. build 5493)]
 ~~~
 
-Here's another script called `argv-list.py` that does something more interesting:
+Create another file called `argv-list.py` and save the following text to it.
 
 ~~~ {.python}
 import sys
@@ -126,12 +134,12 @@ $ cat readings-01.py
 
 ~~~ {.python}
 import sys
-import numpy as np
+import numpy
 
 def main():
     script = sys.argv[0]
     filename = sys.argv[1]
-    data = np.loadtxt(filename, delimiter=',')
+    data = numpy.loadtxt(filename, delimiter=',')
     for m in data.mean(axis=1):
         print m
 ~~~
@@ -155,12 +163,12 @@ $ cat readings-02.py
 
 ~~~ {.python}
 import sys
-import numpy as np
+import numpy
 
 def main():
     script = sys.argv[0]
     filename = sys.argv[1]
-    data = np.loadtxt(filename, delimiter=',')
+    data = numpy.loadtxt(filename, delimiter=',')
     for m in data.mean(axis=1):
         print m
 
@@ -249,7 +257,7 @@ $ python readings-02.py inflammation-01.csv
 
 The next step is to teach our program how to handle multiple files.
 Since 60 lines of output per file is a lot to page through,
-we'll start by creating three smaller files,
+we'll start by using three smaller files,
 each of which has three days of data for two patients:
 
 ~~~ {.input}
@@ -308,12 +316,12 @@ $ cat readings-03.py
 
 ~~~ {.python}
 import sys
-import numpy as np
+import numpy
 
 def main():
     script = sys.argv[0]
     for filename in sys.argv[1:]:
-        data = np.loadtxt(filename, delimiter=',')
+        data = numpy.loadtxt(filename, delimiter=',')
         for m in data.mean(axis=1):
             print m
 
@@ -358,7 +366,7 @@ $ cat readings-04.py
 
 ~~~ {.python}
 import sys
-import numpy as np
+import numpy
 
 def main():
     script = sys.argv[0]
@@ -366,7 +374,7 @@ def main():
     filenames = sys.argv[2:]
 
     for f in filenames:
-        data = np.loadtxt(f, delimiter=',')
+        data = numpy.loadtxt(f, delimiter=',')
 
         if action == '--min':
             values = data.min(axis=1)
@@ -412,7 +420,7 @@ $ cat readings-05.py
 
 ~~~ {.python}
 import sys
-import numpy as np
+import numpy
 
 def main():
     script = sys.argv[0]
@@ -424,7 +432,7 @@ def main():
         process(f, action)
 
 def process(filename, action):
-    data = np.loadtxt(filename, delimiter=',')
+    data = numpy.loadtxt(filename, delimiter=',')
 
     if action == '--min':
         values = data.min(axis=1)
@@ -543,24 +551,24 @@ the program now does everything we set out to do.
 > Write a command-line program that does addition and subtraction:
 >
 > ~~~ {.python}
-> $ python arith.py 1 + 2
+> $ python arith.py add 1 2
 > ~~~
 > ~~~ {.output}
 > 3
 > ~~~
 > ~~~ {.python}
-> $ python arith.py 3 - 4
+> $ python arith.py subtract 3 4
 > ~~~
 > ~~~ {.output}
 > -1
 > ~~~
 >
-> What goes wrong if you try to add multiplication using '*' to the program?
 
 > ## Finding particular files {.challenge}
 >
-> Using the `glob` module introduced [03-loop.ipynb](earlier),
-> write a simple version of `ls` that shows files in the current directory with a particular suffix:
+> Using the `glob` module introduced [earlier](04-files.html),
+> write a simple version of `ls` that shows files in the current directory with a particular suffix.
+> A call to this script should look like this:
 >
 > ~~~ {.python}
 > $ python my_ls.py py
@@ -573,21 +581,21 @@ the program now does everything we set out to do.
 
 > ## Changing flags {.challenge}
 >
-> Rewrite `count-stdin.py` so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
+> Rewrite `readings.py` so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
 > Is the code easier to read?
 > Is the program easier to understand?
 
 > ## Adding a help message {.challenge}
 >
 > Separately,
-> modify the program so that if no parameters are given
+> modify `readings.py` so that if no parameters are given
 > (i.e., no action is specified and no filenames are given),
 > it prints a message explaining how it should be used.
 
 > ## Adding a default action {.challenge}
 >
 > Separately,
-> modify the program so that if no action is given
+> modify `readings.py` so that if no action is given
 > it displays the means of the data.
 
 > ## A file-checker {.challenge}

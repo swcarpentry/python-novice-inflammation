@@ -21,9 +21,8 @@ but we have a dozen data sets right now and more on the way.
 We want to create plots for all our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
-
-Suppose we want to print each character in the word "lead" on a line of its own.
-One way is to use four `print` statements:
+An example task that we might want to repeat is printing each character in a
+word on a line of its own. One way to do this would be to use a series of `print` statements:
 
 ~~~ {.python}
 word = 'lead'
@@ -60,26 +59,22 @@ print word[2]
 print word[3]
 
 ~~~
-~~~ {.error}
---------------------------------------------------------------------------
-IndexError                                Traceback (most recent call last)
-<ipython-input-13-5bc7311e0bf3> in <module>()
-----> 1 print_characters('tin')
-
-<ipython-input-12-11460561ea56> in print_characters(element)
-      3     print element[1]
-      4     print element[2]
-----> 5     print element[3]
-      6
-      7 print_characters('lead')
-
-IndexError: string index out of range
-~~~
 ~~~ {.output}
 t
 i
 n
 ~~~
+~~~ {.error}
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-3-7974b6cdaf14> in <module>()
+      3 print word[1]
+      4 print word[2]
+----> 5 print word[3]
+
+IndexError: string index out of range
+~~~
+
 
 Here's a better approach:
 
@@ -90,6 +85,13 @@ for char in word:
 
 ~~~
 
+~~~ {.output}
+l
+e
+a
+d
+~~~
+
 This is shorter---certainly shorter than something that prints every character in a hundred-letter string---and
 more robust as well:
 
@@ -97,6 +99,15 @@ more robust as well:
 word = 'oxygen'
 for char in word:
     print char
+~~~
+
+~~~ {.output}
+o
+x
+y
+g
+e
+n
 ~~~
 
 The improved version of `print_characters` uses a [for loop](reference.html#for-loop)
@@ -110,7 +121,7 @@ for variable in collection:
 
 We can call the [loop variable](reference.html#loop-variable) anything we like,
 but there must be a colon at the end of the line starting the loop,
-and we must indent the body of the loop. Unlike many other languages, there is no
+and we must indent anything we want to run inside the loop. Unlike many other languages, there is no
 command to end a loop (e.g. end for); what is indented after the for statement belongs to the loop.
 
 Here's another loop that repeatedly updates a variable:
@@ -120,6 +131,10 @@ length = 0
 for vowel in 'aeiou':
     length = length + 1
 print 'There are', length, 'vowels'
+~~~
+
+~~~ {.output}
+There are 5 vowels
 ~~~
 
 It's worth tracing the execution of this little program step by step.
@@ -151,11 +166,22 @@ for letter in 'abc':
 print 'after the loop, letter is', letter
 ~~~
 
+~~~ {.output}
+a
+b
+c
+after the loop, letter is c
+~~~
+
 Note also that finding the length of a string is such a common operation
 that Python actually has a built-in function to do it called `len`:
 
 ~~~ {.python}
 print len('aeiou')
+~~~
+
+~~~ {.output}
+5
 ~~~
 
 `len` is much faster than any function we could write ourselves,
@@ -166,7 +192,12 @@ so we should always use it when we can.
 
 > ## From 1 to N {.challenge}
 >
-> Python has a built-in function called `range` that creates a list of numbers:
+> Python has a built-in function called `range` that creates a list of numbers. Range can
+> accept 1-3 parameters. If one parameter is input, range creates an array of that length,
+> starting at zero and incrementing by 1. If 2 parameters are input, range starts at
+> the first and ends at the second, incrementing by one. If range is passed 3 parameters,
+> it stars at the first one, ends at the second one, and increments by the third one. For
+> example:
 > `range(3)` produces `[0, 1, 2]`, `range(2, 5)` produces `[2, 3, 4]`.
 > Using `range`,
 > write a loop that uses `range` to print the first 3 natural numbers:
@@ -181,7 +212,7 @@ so we should always use it when we can.
 >
 > Exponentiation is built into Python:
 >
->~~~ {.python}
+> ~~~ {.python}
 > print 5**3
 > 125
 > ~~~

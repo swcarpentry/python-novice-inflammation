@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Programming with Python</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container card">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+      </div>
+      <article>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+                    <a href="index.html"><h1 class="title">Programming with Python</h1></a>
+          <h2 class="subtitle">Defensive Programming</h2>
+          <section class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
+<ul>
+<li>Explain what an assertion is.</li>
+<li>Add assertions that check the program’s state is correct.</li>
+<li>Correctly add precondition and postcondition assertions to functions.</li>
+<li>Explain what test-driven development is, and use it when creating new functions.</li>
+<li>Explain why variables should be initialized using actual data values rather than arbitrary constants.</li>
+</ul>
+</div>
+</section>
+<p>Our previous lessons have introduced the basic tools of programming: variables and lists, file I/O, loops, conditionals, and functions. What they <em>haven’t</em> done is show us how to tell whether a program is getting the right answer, and how to tell if it’s <em>still</em> getting the right answer as we make changes to it.</p>
+<p>To achieve that, we need to:</p>
+<ul>
+<li>Write programs that check their own operation.</li>
+<li>Write and run tests for widely-used functions.</li>
+<li>Make sure we know what “correct” actually means.</li>
+</ul>
+<p>The good news is, doing these things will speed up our programming, not slow it down. As in real carpentry — the kind done with lumber — the time saved by measuring carefully before cutting a piece of wood is much greater than the time that measuring takes.</p>
+<h2 id="assertions">Assertions</h2>
+<p>The first step toward getting the right answers from our programs is to assume that mistakes <em>will</em> happen and to guard against them. This is called <a href="reference.html#defensive-programming">defensive programming</a>, and the most common way to do it is to add <a href="reference.html#assertion">assertions</a> to our code so that it checks itself as it runs. An assertion is simply a statement that something must be true at a certain point in a program. When Python sees one, it evaluates the assertion’s condition. If it’s true, Python does nothing, but if it’s false, Python halts the program immediately and prints the error message if one is provided. For example, this piece of code halts as soon as the loop encounters a value that isn’t positive:</p>
+<pre class="sourceCode python"><code class="sourceCode python">numbers = [<span class="fl">1.5</span>, <span class="fl">2.3</span>, <span class="fl">0.7</span>, -<span class="fl">0.001</span>, <span class="fl">4.4</span>]
+total = <span class="fl">0.0</span>
+<span class="kw">for</span> n in numbers:
+    <span class="kw">assert</span> n &gt; <span class="fl">0.0</span>, <span class="st">&#39;Data should only contain positive values&#39;</span>
+    total += n
+<span class="dt">print</span> <span class="st">&#39;total is:&#39;</span>, total</code></pre>
+<pre class="error"><code>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-19-33d87ea29ae4&gt; in &lt;module&gt;()
+      2 total = 0.0
+      3 for n in numbers:
+----&gt; 4     assert n &gt; 0.0, &#39;Data should only contain positive values&#39;
+      5     total += n
+      6 print &#39;total is:&#39;, total
+
+AssertionError: Data should only contain positive values</code></pre>
+<p>Programs like the Firefox browser are full of assertions: 10-20% of the code they contain are there to check that the other 80-90% are working correctly. Broadly speaking, assertions fall into three categories:</p>
+<ul>
+<li><p>A <a href="reference.html#precondition">precondition</a> is something that must be true at the start of a function in order for it to work correctly.</p></li>
+<li><p>A <a href="reference.html#postcondition">postcondition</a> is something that the function guarantees is true when it finishes.</p></li>
+<li><p>An <a href="reference.html#invariant">invariant</a> is something that is always true at a particular point inside a piece of code.</p></li>
+</ul>
+<p>For example, suppose we are representing rectangles using a <a href="reference.html#tuple">tuple</a> of four coordinates <code>(x0, y0, x1, y1)</code>, representing the lower left and upper right corners of the rectangle. In order to do some calculations, we need to normalize the rectangle so that the lower left corner is at the origin and the longest side is 1.0 units long. This function does that, but checks that its input is correctly formatted and that its result makes sense:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> normalize_rectangle(rect):
+    <span class="co">&#39;&#39;&#39;Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.&#39;&#39;&#39;</span>
+    <span class="kw">assert</span> <span class="dt">len</span>(rect) == <span class="dv">4</span>, <span class="st">&#39;Rectangles must contain 4 coordinates&#39;</span>
+    x0, y0, x1, y1 = rect
+    <span class="kw">assert</span> x0 &lt; x1, <span class="st">&#39;Invalid X coordinates&#39;</span>
+    <span class="kw">assert</span> y0 &lt; y1, <span class="st">&#39;Invalid Y coordinates&#39;</span>
+
+    dx = x1 - x0
+    dy = y1 - y0
+    <span class="kw">if</span> dx &gt; dy:
+        scaled = <span class="dt">float</span>(dx) / dy
+        upper_x, upper_y = <span class="fl">1.0</span>, scaled
+    <span class="kw">else</span>:
+        scaled = <span class="dt">float</span>(dx) / dy
+        upper_x, upper_y = scaled, <span class="fl">1.0</span>
+
+    <span class="kw">assert</span> <span class="dv">0</span> &lt; upper_x &lt;= <span class="fl">1.0</span>, <span class="st">&#39;Calculated upper X coordinate invalid&#39;</span>
+    <span class="kw">assert</span> <span class="dv">0</span> &lt; upper_y &lt;= <span class="fl">1.0</span>, <span class="st">&#39;Calculated upper Y coordinate invalid&#39;</span>
+
+    <span class="kw">return</span> (<span class="dv">0</span>, <span class="dv">0</span>, upper_x, upper_y)</code></pre>
+<p>The preconditions on lines 2, 4, and 5 catch invalid inputs:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">2.0</span>) ) <span class="co"># missing the fourth coordinate</span></code></pre>
+<pre class="error"><code>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-21-3a97b1dcab70&gt; in &lt;module&gt;()
+----&gt; 1 print normalize_rectangle( (0.0, 1.0, 2.0) ) # missing the fourth coordinate
+
+&lt;ipython-input-20-408dc39f3915&gt; in normalize_rectangle(rect)
+      1 def normalize_rectangle(rect):
+      2     &#39;&#39;&#39;Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.&#39;&#39;&#39;
+----&gt; 3     assert len(rect) == 4, &#39;Rectangles must contain 4 coordinates&#39;
+      4     x0, y0, x1, y1 = rect
+      5     assert x0 &lt; x1, &#39;Invalid X coordinates&#39;
+
+AssertionError: Rectangles must contain 4 coordinates</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">4.0</span>, <span class="fl">2.0</span>, <span class="fl">1.0</span>, <span class="fl">5.0</span>) ) <span class="co"># X axis inverted</span></code></pre>
+<pre class="error"><code>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-22-f05ae7878a45&gt; in &lt;module&gt;()
+----&gt; 1 print normalize_rectangle( (4.0, 2.0, 1.0, 5.0) ) # X axis inverted
+
+&lt;ipython-input-20-408dc39f3915&gt; in normalize_rectangle(rect)
+      3     assert len(rect) == 4, &#39;Rectangles must contain 4 coordinates&#39;
+      4     x0, y0, x1, y1 = rect
+----&gt; 5     assert x0 &lt; x1, &#39;Invalid X coordinates&#39;
+      6     assert y0 &lt; y1, &#39;Invalid Y coordinates&#39;
+      7
+
+AssertionError: Invalid X coordinates</code></pre>
+<p>The post-conditions help us catch bugs by telling us when our calculations cannot have been correct. For example, if we normalize a rectangle that is taller than it is wide everything seems OK:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">5.0</span>) )</code></pre>
+<pre class="output"><code>(0, 0, 0.2, 1.0)</code></pre>
+<p>but if we normalize one that’s wider than it is tall, the assertion is triggered:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">5.0</span>, <span class="fl">1.0</span>) )</code></pre>
+<pre class="error"><code>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-24-5f0ef7954aeb&gt; in &lt;module&gt;()
+----&gt; 1 print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )
+
+&lt;ipython-input-20-408dc39f3915&gt; in normalize_rectangle(rect)
+     16
+     17     assert 0 &lt; upper_x &lt;= 1.0, &#39;Calculated upper X coordinate invalid&#39;
+---&gt; 18     assert 0 &lt; upper_y &lt;= 1.0, &#39;Calculated upper Y coordinate invalid&#39;
+     19
+     20     return (0, 0, upper_x, upper_y)
+
+AssertionError: Calculated upper Y coordinate invalid</code></pre>
+<p>Re-reading our function, we realize that line 10 should divide <code>dy</code> by <code>dx</code> rather than <code>dx</code> by <code>dy</code>. (You can display line numbers by typing Ctrl-M, then L.) If we had left out the assertion at the end of the function, we would have created and returned something that had the right shape as a valid answer, but wasn’t. Detecting and debugging that would almost certainly have taken more time in the long run than writing the assertion.</p>
+<p>But assertions aren’t just about catching errors: they also help people understand programs. Each assertion gives the person reading the program a chance to check (consciously or otherwise) that their understanding matches what the code is doing.</p>
+<p>Most good programmers follow two rules when adding assertions to their code. The first is, <em>fail early, fail often</em>. The greater the distance between when and where an error occurs and when it’s noticed, the harder the error will be to debug, so good code catches mistakes as early as possible.</p>
+<p>The second rule is, <em>turn bugs into assertions or tests</em>. Whenever you fix a bug, write an assertion that catches the mistake should you make it again. If you made a mistake in a piece of code, the odds are good that you have made other mistakes nearby, or will make the same mistake (or a related one) the next time you change it. Writing assertions to check that you haven’t <a href="reference.html#regression">regressed</a> (i.e., haven’t re-introduced an old problem) can save a lot of time in the long run, and helps to warn people who are reading the code (including your future self) that this bit is tricky.</p>
+<h2 id="test-driven-development">Test-Driven Development</h2>
+<p>An assertion checks that something is true at a particular point in the program. The next step is to check the overall behavior of a piece of code, i.e., to make sure that it produces the right output when it’s given a particular input. For example, suppose we need to find where two or more time series overlap. The range of each time series is represented as a pair of numbers, which are the time the interval started and ended. The output is the largest range that they all include:</p>
+<p><img src="fig/python-overlapping-ranges.svg" alt="Overlapping Ranges" /><br /> Most novice programmers would solve this problem like this:</p>
+<ol style="list-style-type: decimal">
+<li>Write a function <code>range_overlap</code>.</li>
+<li>Call it interactively on two or three different inputs.</li>
+<li>If it produces the wrong answer, fix the function and re-run that test.</li>
+</ol>
+<p>This clearly works — after all, thousands of scientists are doing it right now — but there’s a better way:</p>
+<ol style="list-style-type: decimal">
+<li>Write a short function for each test.</li>
+<li>Write a <code>range_overlap</code> function that should pass those tests.</li>
+<li>If <code>range_overlap</code> produces any wrong answers, fix it and re-run the test functions.</li>
+</ol>
+<p>Writing the tests <em>before</em> writing the function they exercise is called <a href="reference.html#test-driven-development">test-driven development</a> (TDD). Its advocates believe it produces better code faster because:</p>
+<ol style="list-style-type: decimal">
+<li>If people write tests after writing the thing to be tested, they are subject to confirmation bias, i.e., they subconsciously write tests to show that their code is correct, rather than to find errors.</li>
+<li>Writing tests helps programmers figure out what the function is actually supposed to do.</li>
+</ol>
+<p>Here are three test functions for <code>range_overlap</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>) ]) == (<span class="fl">0.0</span>, <span class="fl">1.0</span>)
+<span class="kw">assert</span> range_overlap([ (<span class="fl">2.0</span>, <span class="fl">3.0</span>), (<span class="fl">2.0</span>, <span class="fl">4.0</span>) ]) == (<span class="fl">2.0</span>, <span class="fl">3.0</span>)
+<span class="kw">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">0.0</span>, <span class="fl">2.0</span>), (-<span class="fl">1.0</span>, <span class="fl">1.0</span>) ]) == (<span class="fl">0.0</span>, <span class="fl">1.0</span>)</code></pre>
+<pre class="error"><code>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-25-d8be150fbef6&gt; in &lt;module&gt;()
+----&gt; 1 assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
+      2 assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
+      3 assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
+
+AssertionError:</code></pre>
+<p>The error is actually reassuring: we haven’t written <code>range_overlap</code> yet, so if the tests passed, it would be a sign that someone else had and that we were accidentally using their function.</p>
+<p>And as a bonus of writing these tests, we’ve implicitly defined what our input and output look like: we expect a list of pairs as input, and produce a single pair as output.</p>
+<p>Something important is missing, though. We don’t have any tests for the case where the ranges don’t overlap at all:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">5.0</span>, <span class="fl">6.0</span>) ]) == ???</code></pre>
+<p>What should <code>range_overlap</code> do in this case: fail with an error message, produce a special value like <code>(0.0, 0.0)</code> to signal that there’s no overlap, or something else? Any actual implementation of the function will do one of these things; writing the tests first helps us figure out which is best <em>before</em> we’re emotionally invested in whatever we happened to write before we realized there was an issue.</p>
+<p>And what about this case?</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">1.0</span>, <span class="fl">2.0</span>) ]) == ???</code></pre>
+<p>Do two segments that touch at their endpoints overlap or not? Mathematicians usually say “yes”, but engineers usually say “no”. The best answer is “whatever is most useful in the rest of our program”, but again, any actual implementation of <code>range_overlap</code> is going to do <em>something</em>, and whatever it is ought to be consistent with what it does when there’s no overlap at all.</p>
+<p>Since we’re planning to use the range this function returns as the X axis in a time series chart, we decide that:</p>
+<ol style="list-style-type: decimal">
+<li>every overlap has to have non-zero width, and</li>
+<li>we will return the special value <code>None</code> when there’s no overlap.</li>
+</ol>
+<p><code>None</code> is built into Python, and means “nothing here”. (Other languages often call the equivalent value <code>null</code> or <code>nil</code>). With that decision made, we can finish writing our last two tests:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">5.0</span>, <span class="fl">6.0</span>) ]) == <span class="ot">None</span>
+<span class="kw">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">1.0</span>, <span class="fl">2.0</span>) ]) == <span class="ot">None</span></code></pre>
+<pre class="error"><code>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-26-d877ef460ba2&gt; in &lt;module&gt;()
+----&gt; 1 assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
+      2 assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
+
+AssertionError:</code></pre>
+<p>Again, we get an error because we haven’t written our function, but we’re now ready to do so:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> range_overlap(ranges):
+    <span class="co">&#39;&#39;&#39;Return common overlap among a set of [low, high] ranges.&#39;&#39;&#39;</span>
+    lowest = <span class="fl">0.0</span>
+    highest = <span class="fl">1.0</span>
+    <span class="kw">for</span> (low, high) in ranges:
+        lowest = <span class="dt">max</span>(lowest, low)
+        highest = <span class="dt">min</span>(highest, high)
+    <span class="kw">return</span> (lowest, highest)</code></pre>
+<p>(Take a moment to think about why we use <code>max</code> to raise <code>lowest</code> and <code>min</code> to lower <code>highest</code>). We’d now like to re-run our tests, but they’re scattered across three different cells. To make running them easier, let’s put them all in a function:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> test_range_overlap():
+    <span class="kw">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">5.0</span>, <span class="fl">6.0</span>) ]) == <span class="ot">None</span>
+    <span class="kw">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">1.0</span>, <span class="fl">2.0</span>) ]) == <span class="ot">None</span>
+    <span class="kw">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>) ]) == (<span class="fl">0.0</span>, <span class="fl">1.0</span>)
+    <span class="kw">assert</span> range_overlap([ (<span class="fl">2.0</span>, <span class="fl">3.0</span>), (<span class="fl">2.0</span>, <span class="fl">4.0</span>) ]) == (<span class="fl">2.0</span>, <span class="fl">3.0</span>)
+    <span class="kw">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">0.0</span>, <span class="fl">2.0</span>), (-<span class="fl">1.0</span>, <span class="fl">1.0</span>) ]) == (<span class="fl">0.0</span>, <span class="fl">1.0</span>)</code></pre>
+<p>We can now test <code>range_overlap</code> with a single function call:</p>
+<pre class="sourceCode python"><code class="sourceCode python">test_range_overlap()</code></pre>
+<pre class="error"><code>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-29-cf9215c96457&gt; in &lt;module&gt;()
+----&gt; 1 test_range_overlap()
+
+&lt;ipython-input-28-5d4cd6fd41d9&gt; in test_range_overlap()
+      1 def test_range_overlap():
+----&gt; 2     assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
+      3     assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
+      4     assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
+      5     assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
+
+AssertionError:</code></pre>
+<p>The first of the tests that was supposed to produce <code>None</code> fails, so we know there’s something wrong with our function. What we <em>don’t</em> know, though, is whether the other four tests passed or failed, because Python halted the program as soon as it spotted the first error. Still, some information is better than none, and if we trace the behavior of the function with that input, we realize that we’re initializing <code>lowest</code> and <code>highest</code> to 0.0 and 1.0 respectively, regardless of the input values. This violates another important rule of programming: <em>always initialize from data</em>.</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Pre- and post-conditions</h2>
+</div>
+<div class="panel-body">
+<p>Suppose you are writing a function called <code>average</code> that calculates the average of the numbers in a list. What pre-conditions and post-conditions would you write for it? Compare your answer to your neighbor’s: can you think of a function that will pass your tests but not hers or vice versa?</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Testing assertions</h2>
+</div>
+<div class="panel-body">
+<p>Given a sequence of values, the function <code>running</code> returns a list containing the running totals at each index.</p>
+<pre class="sourceCode python"><code class="sourceCode python">running([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</code></pre>
+<pre class="output"><code>[1, 3, 6, 10]</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">running(<span class="st">&#39;abc&#39;</span>)</code></pre>
+<pre class="output"><code>[&#39;a&#39;, &#39;ab&#39;, &#39;abc&#39;]</code></pre>
+<p>Explain in words what the assertions in this function check, and for each one, give an example of input that will make that assertion fail.</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> running(values):
+    <span class="kw">assert</span> <span class="dt">len</span>(values) &gt; <span class="dv">0</span>
+    result = [values[<span class="dv">0</span>]]
+    <span class="kw">for</span> v in values[<span class="dv">1</span>:]:
+        <span class="kw">assert</span> result[-<span class="dv">1</span>] &gt;= <span class="dv">0</span>
+        result.append(result[-<span class="dv">1</span>] + v)
+        <span class="kw">assert</span> result[-<span class="dv">1</span>] &gt;= result[<span class="dv">0</span>]
+    <span class="kw">return</span> result</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Fixing and testing</h2>
+</div>
+<div class="panel-body">
+<p>Fix <code>range_overlap</code>. Re-run <code>test_range_overlap</code> after each change you make.</p>
+</div>
+</section>
+        </div>
+      </div>
+      </article>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/python-novice-inflammation">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+  </body>
+</html>
