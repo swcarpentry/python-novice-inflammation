@@ -133,14 +133,48 @@ print 'odds after reversing:', odds
 [11, 7, 5, 3]
 ~~~
 
+While modifying in place, it is useful to remember that python treats lists in a slightly counterintuitive way.
 
-> ## Turn a string into a list {.challenge}
->
-> Use a for-loop to convert the string "hello" into a list of letters:
-> ~~~ {.python}
-> ["h", "e", "l", "l", "o"]
-> ~~~
-> Hint: You can create an empty list like this:
-> ~~~ {.python}
-> my_list = []
-> ~~~
+If we make a list and (attempt to) copy it then modify in place, we can cause all sorts of trouble:
+
+~~~ {.python}
+odds = [1, 3, 5, 7]
+primes = odds
+primes += [2]
+print 'primes:', primes
+print 'odds:', odds
+~~~
+~~~ {.output}
+primes [1, 3, 5, 7, 2]
+odds [1, 3, 5, 7, 2]
+~~~
+
+This is because python stores a list in memory, and then can use multiple names to refer to the same list.
+If all we want to do is copy a (simple) list, we can use the list() command, so we do not modify a list we did not mean to:
+
+~~~ {.python}
+odds = [1, 3, 5, 7]
+primes = list(odds)
+primes += [2]
+print 'primes:', primes
+print 'odds:', odds
+~~~
+~~~ {.output}
+primes [1, 3, 5, 7, 2]
+odds [1, 3, 5, 7]
+~~~
+
+This is different from how variables worked in lesson 1, and more similar to how a spreadsheet works.
+
+## Turn a string into a list {.challenge}
+
+Use a for-loop to convert the string "hello" into a list of letters:
+
+~~~ {.python}
+["h", "e", "l", "l", "o"]
+~~~
+Hint: You can create an empty list like this:
+
+~~~ {.python}
+my_list = []
+~~~
