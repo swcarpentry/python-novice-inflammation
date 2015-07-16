@@ -132,3 +132,15 @@ print 'odds after reversing:', odds
 ~~~ {.output}
 [11, 7, 5, 3]
 ~~~
+
+
+> ## Turn a string into a list {.challenge}
+>
+> Use a for-loop to convert the string "hello" into a list of letters:
+> ~~~ {.python}
+> ["h", "e", "l", "l", "o"]
+> ~~~
+> Hint: You can create an empty list like this:
+> ~~~ {.python}
+> my_list = []
+> ~~~
