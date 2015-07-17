@@ -68,7 +68,7 @@ save the following in a text file called `sys-version.py`:
 
 ~~~ {.python}
 import sys
-print 'version is', sys.version
+print('version is', sys.version)
 ~~~
 
 The first line imports a library called `sys`,
@@ -90,7 +90,7 @@ Create another file called `argv-list.py` and save the following text to it.
 
 ~~~ {.python}
 import sys
-print 'sys.argv is', sys.argv
+print('sys.argv is', sys.argv)
 ~~~
 
 The strange name `argv` stands for "argument values".
@@ -136,12 +136,13 @@ $ cat readings-01.py
 import sys
 import numpy
 
+
 def main():
     script = sys.argv[0]
     filename = sys.argv[1]
     data = numpy.loadtxt(filename, delimiter=',')
     for m in data.mean(axis=1):
-        print m
+        print(m)
 ~~~
 
 This function gets the name of the script from `sys.argv[0]`,
@@ -165,12 +166,13 @@ $ cat readings-02.py
 import sys
 import numpy
 
+
 def main():
     script = sys.argv[0]
     filename = sys.argv[1]
     data = numpy.loadtxt(filename, delimiter=',')
     for m in data.mean(axis=1):
-        print m
+        print(m)
 
 main()
 ~~~
@@ -318,12 +320,13 @@ $ cat readings-03.py
 import sys
 import numpy
 
+
 def main():
     script = sys.argv[0]
     for filename in sys.argv[1:]:
         data = numpy.loadtxt(filename, delimiter=',')
         for m in data.mean(axis=1):
-            print m
+            print(m)
 
 main()
 ~~~
@@ -368,6 +371,7 @@ $ cat readings-04.py
 import sys
 import numpy
 
+
 def main():
     script = sys.argv[0]
     action = sys.argv[1]
@@ -384,7 +388,7 @@ def main():
             values = data.max(axis=1)
 
         for m in values:
-            print m
+            print(m)
 
 main()
 ~~~
@@ -422,6 +426,7 @@ $ cat readings-05.py
 import sys
 import numpy
 
+
 def main():
     script = sys.argv[0]
     action = sys.argv[1]
@@ -430,6 +435,7 @@ def main():
            'Action is not one of --min, --mean, or --max: ' + action
     for f in filenames:
         process(f, action)
+
 
 def process(filename, action):
     data = numpy.loadtxt(filename, delimiter=',')
@@ -442,7 +448,7 @@ def process(filename, action):
         values = data.max(axis=1)
 
     for m in values:
-        print m
+        print(m)
 
 main()
 ~~~
@@ -474,7 +480,7 @@ count = 0
 for line in sys.stdin:
     count += 1
 
-print count, 'lines in standard input'
+print(count, 'lines in standard input')
 ~~~
 
 This little program reads lines from a special "file" called `sys.stdin`,

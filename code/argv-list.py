@@ -1,2 +1,4 @@
+from __future__ import print_function
+
 import sys
-print 'sys.argv is', sys.argv
+print('sys.argv is', sys.argv)
