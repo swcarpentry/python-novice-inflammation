@@ -45,7 +45,7 @@ IndexError                                Traceback (most recent call last)
 /Users/jhamrick/project/swc/novice/python/errors_01.pyc in favorite_ice_cream()
       5         "strawberry"
       6     ]
-----> 7     print ice_creams[3]
+----> 7     print(ice_creams[3])
 
 IndexError: list index out of range
 ~~~
@@ -58,13 +58,13 @@ In this case:
     with an arrow pointing to Line 2 (which is `favorite_ice_cream()`).
 
 2.  The second shows some code in another function (`favorite_ice_cream`, located in the file `errors_01.py`),
-    with an arrow pointing to Line 7 (which is `print ice_creams[3]`).
+    with an arrow pointing to Line 7 (which is `print(ice_creams[3])`).
 
 The last level is the actual place where the error occurred.
 The other level(s) show what function the program executed to get to the next level down.
 So, in this case, the program first performed a [function call](reference.html#function-call) to the function `favorite_ice_cream`.
 Inside this function,
-the program encountered an error on Line 7, when it tried to run the code `print ice_creams[3]`.
+the program encountered an error on Line 7, when it tried to run the code `print(ice_creams[3])`.
 
 > ## Long Tracebacks {.callout}
 >
@@ -121,7 +121,7 @@ For example:
 ~~~ {.python}
 def some_function()
     msg = "hello, world!"
-    print msg
+    print(msg)
      return msg
 ~~~
 ~~~ {.error}
@@ -143,7 +143,7 @@ which means that the lines in the function definition do not all have the same i
 ~~~ {.python}
 def some_function():
     msg = "hello, world!"
-    print msg
+    print(msg)
      return msg
 ~~~
 ~~~ {.error}
@@ -173,7 +173,7 @@ it *always* means that there is a problem with how your code is indented.
 > ~~~ {.python}
 > def some_function():
 >     msg = "hello, world!"
->     print msg
+>     print(msg)
 >     return msg
 > ~~~
 > ~~~ {.error}
@@ -195,13 +195,13 @@ and occurs when you try to use a variable that does not exist.
 For example:
 
 ~~~ {.python}
-print a
+print(a)
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 <ipython-input-7-9d7b17ad5387> in <module>()
-----> 1 print a
+----> 1 print(a)
 
 NameError: name 'a' is not defined
 ~~~
@@ -217,13 +217,13 @@ there are a few very common reasons why you might have an undefined variable.
 The first is that you meant to use a [string](reference.html#string), but forgot to put quotes around it:
 
 ~~~ {.python}
-print hello
+print(hello)
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 <ipython-input-8-9553ee03b645> in <module>()
-----> 1 print hello
+----> 1 print(hello)
 
 NameError: name 'hello' is not defined
 ~~~
@@ -235,7 +235,7 @@ In the following example,
 ~~~ {.python}
 for number in range(10):
     count = count + number
-print "The count is: " + str(count)
+print("The count is: " + str(count))
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
@@ -243,7 +243,7 @@ NameError                                 Traceback (most recent call last)
 <ipython-input-9-dd6a12d7ca5c> in <module>()
       1 for number in range(10):
 ----> 2     count = count + number
-      3 print "The count is: " + str(count)
+      3 print("The count is: " + str(count))
 
 NameError: name 'count' is not defined
 ~~~
@@ -258,7 +258,7 @@ so the variable `count` is different from `Count`. We still get the same error, 
 Count = 0
 for number in range(10):
     count = count + number
-print "The count is: " + str(count)
+print("The count is: " + str(count))
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
@@ -267,7 +267,7 @@ NameError                                 Traceback (most recent call last)
       1 Count = 0
       2 for number in range(10):
 ----> 3     count = count + number
-      4 print "The count is: " + str(count)
+      4 print("The count is: " + str(count))
 
 NameError: name 'count' is not defined
 ~~~
@@ -285,10 +285,10 @@ Python gets similarly annoyed if you try to ask it for an item that doesn't exis
 
 ~~~ {.python}
 letters = ['a', 'b', 'c']
-print "Letter #1 is " + letters[0]
-print "Letter #2 is " + letters[1]
-print "Letter #3 is " + letters[2]
-print "Letter #4 is " + letters[3]
+print("Letter #1 is " + letters[0])
+print("Letter #2 is " + letters[1])
+print("Letter #3 is " + letters[2])
+print("Letter #4 is " + letters[3])
 ~~~
 ~~~ {.output}
 Letter #1 is a
@@ -299,9 +299,9 @@ Letter #3 is c
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-11-d817f55b7d6c> in <module>()
-      3 print "Letter #2 is " + letters[1]
-      4 print "Letter #3 is " + letters[2]
-----> 5 print "Letter #4 is " + letters[3]
+      3 print("Letter #2 is " + letters[1])
+      4 print("Letter #3 is " + letters[2])
+----> 5 print("Letter #4 is " + letters[3])
 
 IndexError: list index out of range
 ~~~
@@ -393,7 +393,7 @@ IOError: File not open for reading
 > /Users/jhamrick/project/swc/novice/python/errors_02.py in print_message(day)
 >       9         "sunday": "Aw, the weekend is almost over."
 >      10     }
-> ---> 11     print messages[day]
+> ---> 11     print(messages[day])
 >      12
 >      13
 >
@@ -409,9 +409,9 @@ IOError: File not open for reading
 >
 > ~~~ {.python}
 > def another_function
->   print "Syntax errors are annoying."
->    print "But at least python tells us about them!"
->   print "So they are usually not too hard to fix."
+>   print("Syntax errors are annoying.")
+>    print("But at least python tells us about them!")
+>   print("So they are usually not too hard to fix.")
 > ~~~
 
 > ## Identifying Variable Name Errors {.challenge}
@@ -428,7 +428,7 @@ IOError: File not open for reading
 >         message = message + a
 >     else:
 >         message = message + "b"
-> print message
+> print(message)
 > ~~~
 
 > ## Identifying Item Errors {.challenge}
@@ -439,5 +439,5 @@ IOError: File not open for reading
 >
 > ~~~ {.python}
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-> print 'My favorite season is ', seasons[4]
+> print('My favorite season is ', seasons[4])
 > ~~~

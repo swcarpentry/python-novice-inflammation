@@ -88,13 +88,13 @@ If we try to get the value of `temp` after our functions have finished running,
 Python tells us that there's no such thing:
 
 ~~~ {.python}
-print 'final value of temp after all function calls:', temp
+print('final value of temp after all function calls:', temp)
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 <ipython-input-12-ffd9b4dbd5f1> in <module>()
-----> 1 print 'final value of temp after all function calls:', temp
+----> 1 print('final value of temp after all function calls:', temp)
 
 NameError: name 'temp' is not defined
 ~~~
@@ -115,7 +115,7 @@ diff = a.max() - a.min()
 return diff
 
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-print 'span of data', span(data)
+print('span of data', span(data))
 ~~~
 ~~~ {.output}
 span of data 20.0
@@ -126,7 +126,7 @@ We might very well use a variable with the same name to hold data:
 
 ~~~ {.python}
 diff = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-print 'span of data:', span(diff)
+print('span of data:', span(diff))
 ~~~
 ~~~ {.output}
 span of data: 20.0
@@ -157,7 +157,7 @@ which quickly overloads our short-term memory.
 > Draw a diagram showing how the call stack changes when we run the following:
 >
 > ~~~ {.python}
-> print outer(fence('carbon', '+'))
+> print(outer(fence('carbon', '+')))
 > ~~~
 
 ## Image Grids
@@ -190,9 +190,9 @@ Just like a NumPy array,
 an `ImageGrid` has some properties that hold information about it:
 
 ~~~ {.python}
-print 'grid width:', grid.width
-print 'grid height:', grid.height
-print 'grid lines on:', grid.lines_on
+print('grid width:', grid.width)
+print('grid height:', grid.height)
+print('grid lines on:', grid.lines_on)
 ~~~
 ~~~ {.output}
 grid width: 5
@@ -219,9 +219,9 @@ which we write using parentheses instead of the square brackets used for a list:
 
 ~~~ {.python}
 position = (12.3, 45.6)
-print 'position is:', position
+print('position is:', position)
 color = (10, 20, 30)
-print 'color is:', color
+print('color is:', color)
 ~~~
 
 ~~~ {.output}
@@ -233,7 +233,7 @@ We can select elements from tuples using indexing,
 just as we do with lists and arrays:
 
 ~~~ {.python}
-print 'first element of color is:', color[0]
+print('first element of color is:', color[0])
 ~~~
 
 ~~~ {.output}
@@ -247,14 +247,14 @@ they are [immutable](reference.html#immutable):
 
 ~~~ {.python}
 color[0] = 40
-print 'first element of color after change:', color[0]
+print('first element of color after change:', color[0])
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-11-9c3dd30a4e52> in <module>()
 ----> 1 color[0] = 40
-2 print 'first element of color after change:', color[0]
+2 print('first element of color after change:', color[0])
 
 TypeError: 'tuple' object does not support item assignment
 ~~~
