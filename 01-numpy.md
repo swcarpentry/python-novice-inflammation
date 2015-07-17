@@ -192,7 +192,7 @@ print type(data)
 <type 'numpy.ndarray'>
 ~~~
 
-The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library.
+The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library. These data corresponds to arthritis patient's inflammation. The rows are the individual patients and the columns are there daily inflammation measurements.
 We can see what its [shape](reference.html#shape) is like this:
 
 ~~~ {.python}
@@ -258,7 +258,7 @@ An index like `[30, 20]` selects a single element of an array,
 but we can select whole sections as well.
 For example,
 we can select the first ten days (columns) of values
-for the first four (rows) patients like this:
+for the first four patients (rows) like this:
 
 ~~~ {.python}
 print data[0:4, 0:10]
@@ -517,8 +517,8 @@ inflammation rises and falls over a 40-day period.
 > % matplotlib inline
 > ~~~
 >  
-> The `%` indicates an IPython magic function - 
-> a function that is only valid within the notebook environment. 
+> The `%` indicates an IPython magic function -
+> a function that is only valid within the notebook environment.
 > Note that you only have to execute this function once per notebook.
 
 Let's take a look at the average inflammation over time:
