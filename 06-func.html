@@ -144,7 +144,7 @@ boiling point of water: 373.15</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> f in filenames[:<span class="dv">3</span>]:
     <span class="dt">print</span> f
     analyze(f)
-    detectProblems(f)</code></pre>
+    detect_problems(f)</code></pre>
 <p>By giving our functions human-readable names, we can more easily read and understand what is happening in the <code>for</code> loop. Even better, if at some later date we want to use either of those pieces of code again, we can do so in a single line.</p>
 <h2 id="testing-and-documenting">Testing and Documenting</h2>
 <p>Once we start putting things in functions so that we can re-use them, we need to start testing that those functions are working correctly. To see how to do this, let’s write a function to center a dataset around a particular value:</p>
@@ -429,14 +429,6 @@ f2k(<span class="dv">41</span>)
 f2k(<span class="dv">32</span>)
 
 <span class="dt">print</span> k</code></pre>
-</div>
-</section>
-<section class="challenge panel panel-success">
-<div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Automatic plots</h2>
-</div>
-<div class="panel-body">
-<p>Write a function called <code>analyze</code> that takes a filename as a parameter and displays the three graphs produced in the previous lessons, i.e., <code>analyze('inflammation-01.csv')</code> should produce the graphs already shown, while <code>analyze('inflammation-02.csv')</code> should produce corresponding graphs for the second data set. Be sure to give your function a docstring.</p>
 </div>
 </section>
         </div>
