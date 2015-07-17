@@ -24,7 +24,7 @@ while `?` matches any one character.
 We can use this to get the names of all the html files:
 
 ~~~ {.python}
-print glob.glob('*.html')
+print(glob.glob('*.html'))
 ~~~
 
 ~~~ {.output}
@@ -46,7 +46,7 @@ import matplotlib.pyplot
 filenames = glob.glob('*.csv')
 filenames = filenames[0:3]
 for f in filenames:
-    print f
+    print(f)
 
     data = numpy.loadtxt(fname=f, delimiter=',')
 

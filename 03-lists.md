@@ -18,7 +18,7 @@ We create a list by putting values inside square brackets:
 
 ~~~ {.python}
 odds = [1, 3, 5, 7]
-print 'odds are:', odds
+print('odds are:', odds)
 ~~~
 
 ~~~ {.output}
@@ -28,7 +28,7 @@ odds are: [1, 3, 5, 7]
 We select individual elements from lists by indexing them:
 
 ~~~ {.python}
-print 'first and last:', odds[0], odds[-1]
+print('first and last:', odds[0], odds[-1])
 ~~~
 
 ~~~ {.output}
@@ -40,7 +40,7 @@ the loop variable is assigned elements one at a time:
 
 ~~~ {.python}
 for number in odds:
-    print number
+    print(number)
 ~~~
 
 ~~~ {.output}
@@ -57,9 +57,9 @@ For example:
 
 ~~~ {.python}
 names = ['Newton', 'Darwing', 'Turing'] # typo in Darwin's name
-print 'names is originally:', names
+print('names is originally:', names)
 names[1] = 'Darwin' # correct the name
-print 'final value of names:', names
+print('final value of names:', names)
 ~~~
 
 ~~~ {.output}
@@ -112,7 +112,7 @@ individual elements:
 
 ~~~ {.python}
 odds.append(11)
-print 'odds after adding a value:', odds
+print('odds after adding a value:', odds)
 ~~~
 ~~~ {.output}
 odds after adding a value: [1, 3, 5, 7, 11]
@@ -120,7 +120,7 @@ odds after adding a value: [1, 3, 5, 7, 11]
 
 ~~~ {.python}
 del odds[0]
-print 'odds after removing the first element:', odds
+print('odds after removing the first element:', odds)
 ~~~
 ~~~ {.output}
 odds after removing the first element: [3, 5, 7, 11]
@@ -128,7 +128,7 @@ odds after removing the first element: [3, 5, 7, 11]
 
 ~~~ {.python}
 odds.reverse()
-print 'odds after reversing:', odds
+print('odds after reversing:', odds)
 ~~~
 ~~~ {.output}
 odds after reversing: [11, 7, 5, 3]
