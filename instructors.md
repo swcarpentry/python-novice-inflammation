@@ -115,8 +115,6 @@ Solutions to exercises:
 > 125
 > ~~~
 
-AB: Do we really want to recommend students be introduced to this syntax (below)?
-
 > ## Reverse a string {.challenge}
 >
 > Write a loop that takes a string,
@@ -135,7 +133,19 @@ After discussing these challenges could be a good time to introduce the `b*=2` s
 
 ## [Storing Multiple Values in Lists](03-lists.html)
 
-AB: check for new list exercise
+Solutions to exercises:
+>## Turn a string into a list {.challenge}
+>
+> Use a for-loop to convert the string "hello" into a list of letters:
+>
+> ~~~ {.output}
+> my_list = []
+> for char in "hello":
+>     my_list.append(char)
+> print my_list
+> ["h", "e", "l", "l", "o"]
+> ~~~
+
 
 ## [Analyzing Data from Multiple Files](04-files.html)
 
