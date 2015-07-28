@@ -104,10 +104,9 @@ Solutions to exercises:
 > 3
 > ~~~
 
-AB: check for change to exercise below
-
 > ## Computing powers with loops {.challenge}
-> Write a loop to calculate 5**3.
+> Write a loop that calculates the same result as `5 ** 3` using
+> multiplication (and without exponentiation).
 > ~~~ {.output}
 > result = 1
 > for i in range(0,3):
@@ -123,12 +122,13 @@ AB: Do we really want to recommend students be introduced to this syntax (below)
 > Write a loop that takes a string,
 > and produces a new string with the characters in reverse order.
 > ~~~ {.output}
-> newstring = ""
-> oldstring = "Newton"
-> for c in range(len(oldstring)-1,-1,-1):
->    newstring = newstring + oldstring[c]
-> print result
-> "notweN"
+> newstring = ''
+> oldstring = 'Newton'
+> length_old = len(oldstring)
+> for c in range(length_old):
+>    newstring = newstring + oldstring[length_old-c-1]
+> print newstring
+> 'notweN'
 > ~~~
 
 After discussing these challenges could be a good time to introduce the `b*=2` syntax.
