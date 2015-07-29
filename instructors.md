@@ -479,25 +479,19 @@ Solutions to exercises:
 ## [Defensive Programming](08-defensive.html)
 
 Solutions to exercises:
-AB: We haven't seen isinstance or isnan so I don't think we can expect students to come up with it in the exercises
 
-> ## Pre- and post-conditions {.challenge}
+> ## Pre- and post-conditions {.challenge} FIXME
 >
 > Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
 > What pre-conditions and post-conditions would you write for it?
 > Compare your answer to your neighbor's:
 > can you think of a function that will pass your tests but not hers or vice versa?
+> ~~~ {.output}
 > Answer: 
-> possible pre-conditions: 
-> ~~~ {.output}
+> a possible pre-condition: 
 > assert len(input)>0, 'List length must be non-zero'
-> import numbers, numpy
-> for n in input_list:
->     assert isinstance(n, numbers.Number) and not numpy.isnan(n),  'list entries must be numbers'
-> ~~~
-> possible post-conditions: 
-> ~~~ {.output}
-> assert not numpy.isnan(average), 'Average computation failed'
+> a possible post-condition: 
+> assert input.min() < average < input.max(), 'Average should be between min and max of input values'
 > ~~~
 
 > ## Testing assertions {.challenge}
@@ -508,7 +502,7 @@ AB: We haven't seen isinstance or isnan so I don't think we can expect students 
 > and for each one,
 > give an example of input that will make that assertion fail.
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > def running(values):
 >     assert len(values) > 0
 >     result = [values[0]]
@@ -518,19 +512,12 @@ AB: We haven't seen isinstance or isnan so I don't think we can expect students 
 >         assert result[-1] >= result[0]
 >     return result
 > ~~~
+> ~~~ {.output}
 > Answer:
 > The first assertion checks that the input sequence `values` is not empty; an empty sequence such as `[]` will make it fail.
-> The second assertion checks that the last item in `result` exists (FIXME: not obvious to me how to make this fail)  
-> The third assertion checks that the last item in `result` exists (FIXME: not obvious to me how to make this fail)  
-
-AB: This is checking that you don't have negative numbers in your input list. For example this fails: 
-values = range(-10, 1)
-print running(values)
-
-This tests that your sum is always greater than the first value. For instance this fails:
-values = range(5, 10)
-values.append(-34)
-print running(values)
+> The second assertion checks that the first value in the list is positive; input such as `[-1,0,2,3]` will make it fail.
+> The third assertion checks that the running total always increases; input such as `[0,1,3,-5,4]` will make it fail.
+> ~~~ 
 
 > ## Fixing and testing {.challenge}
 >
