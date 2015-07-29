@@ -156,15 +156,18 @@ Solutions to exercises:
 >
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > if 4 > 5:
 >     print 'A'
 > elif 4 == 5:
 >     print 'B'
 > elif 4 < 5:
 >     print 'C'
-> C
 > ~~~
+> ~~~ {.output}
+> Answer: C gets printed, because the first two conditions, `4<5` and `4==5` are not true, but `4<5` is true.
+> ~~~
+
 
 > ## What is truth? {.challenge}
 >
@@ -172,21 +175,22 @@ Solutions to exercises:
 > explain the rules for which values are considered true and which are considered false.
 > (Note that if the body of a conditional is a single statement, we can write it on the same line as the `if`.)
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > if '': print 'empty string is true'
-> 
 > if 'word': print 'word is true'
-> word is true
 > if []: print 'empty list is true'
-> 
 > if [1, 2, 3]: print 'non-empty list is true'
-> non-empty list is true
 > if 0: print 'zero is true'
->
 > if 1: print 'one is true'
->
 > ~~~
-> False values: 0, empty string, empty list. True values: 1, non-empty lists or strings.
+> ~~~ {.output}
+> First line prints nothing: an empty string is false
+> Second line prints 'word is true': a non-empty string is true
+> Third line prints nothing: an empty list is false
+> Fourth line prints 'non-empty list is true': a non-empty list is true
+> Fifth line prints nothing: 0 is false
+> Sixth line prints 'one is true': 1 is true
+> ~~~
 
 > ## Close enough {.challenge}
 >
@@ -233,7 +237,7 @@ Solutions to exercises:
 >
 > Explain what the overall effect of this code is:
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > left = 'L'
 > right = 'R'
 >
@@ -241,10 +245,10 @@ Solutions to exercises:
 > left = right
 > right = temp
 > ~~~
+> ~~~ {.output}
 > Answer: swaps contents of variables right and left.
 > Compare it to:
 >
-> ~~~ {.output}
 > left, right = right, left
 > ~~~
 >
@@ -297,21 +301,14 @@ Solutions to exercises:
 > to see how to use these functions to generate regularly-spaced values,
 > then use those values to test your `rescale` function.
 > Once you've successfully tested your function,
-> add a docstring that explains what it does.
-> ~~~ {.python}
-> rescale(np.arange(0,10.0))
-> ~~~
+> add a docstring that explains what it does. 
 > ~~~ {.output}
+> Examples:
+> rescale(np.arange(0,10.0))
 > array([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,
 >        0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])
-> ~~~
-> ~~~ {.python}
 > rescale(np.linspace(0,100,5))
-> ~~~
-> ~~~ {.output}
 > array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
-> ~~~
-> ~~~ {.output}
 > '''sample docstring:
 >    takes an array as input, and returns a corresponding array scaled so
 >    that 0 corresponds to the minimum and 1 to the maximum value of the input array'''
@@ -375,7 +372,7 @@ Solutions to exercises:
 > 5.  What is the type of error?
 > 6.  What is the error message?
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > import errors_02
 > errors_02.print_friday_message()
 > ~~~
@@ -400,6 +397,8 @@ Solutions to exercises:
 >
 > KeyError: 'Friday'
 > ~~~
+>
+> ~~~ {.output}
 > Answer:
 >
 > 1. 3 levels
@@ -407,8 +406,8 @@ Solutions to exercises:
 > 3. `print_message`
 > 4. 11
 > 5. `KeyError`
-> 6. There isn't much of a message; you're supposed to infer that `Friday` is not a key in `messages`.
-
+> 6. There isn't really a message; you're supposed to infer that `Friday` is not a key in `messages`.
+> ~~~
 
 
 > ## Identifying Syntax Errors {.challenge}
@@ -418,14 +417,14 @@ Solutions to exercises:
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > def another_function
 >   print "Syntax errors are annoying."
 >    print "But at least python tells us about them!"
 >   print "So they are usually not too hard to fix."
 > ~~~
-> Answer: `SyntaxError` for missing `:()` at end of first line, `IndentationError` for mismatch between second and third lines.
 > ~~~ {.output}
+> Answer: `SyntaxError` for missing `:()` at end of first line, `IndentationError` for mismatch between second and third lines.
 > def another_function():
 >   print "Syntax errors are annoying."
 >   print "But at least python tells us about them!"
@@ -439,7 +438,7 @@ Solutions to exercises:
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > for number in range(10):
 >     # use a if the number is a multiple of 3, otherwise use b
 >     if (Number % 3) == 0:
@@ -448,8 +447,8 @@ Solutions to exercises:
 >         message = message + "b"
 > print message
 > ~~~
-> Answer: 3 `NameError`s for `number` being misspelled, for `message` not defined, and for `a` not being in quotes.  
 > ~~~ {.output}
+> Answer: 3 `NameError`s for `number` being misspelled, for `message` not defined, and for `a` not being in quotes.  
 > message = ""
 > for number in range(10):
 >     # use a if the number is a multiple of 3, otherwise use b
@@ -459,6 +458,7 @@ Solutions to exercises:
 >         message = message + "b"
 > print message
 > abbabbabba
+> ~~~
 
 > ## Identifying Item Errors {.challenge}
 >
