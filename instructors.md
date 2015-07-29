@@ -276,26 +276,69 @@ Solutions to exercises:
 >     return input_string[0] + input_string[-1]
 > ~~~
 
-> ## Rescaling, with parameters {.challenge}
+> ## Rescaling an array {.challenge}
 >
-> Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
-> but will allow the caller to specify lower and upper bounds if they want.
-> FIXME: looks like the rescale function is no longer in the lesson? FIXME
+> Write a function `rescale` that takes an array as input
+> and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
+> (Hint: If $L$ and $H$ are the lowest and highest values in the original array,
+> then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
+>
+> ~~~ {.output}
+> def rescale(input_array):
+>     L = input_array.min()
+>     H = input_array.max()
+>     output_array = (input_array - L)/float(H-L)
+>     return output_array
+> ~~~
 
-AB: Writing the rescale function is the 3rd exercise
-
-> ## Testing your function {.challenge}
+> ## Testing and documenting your function {.challenge}
 >
 > Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
 > to see how to use these functions to generate regularly-spaced values,
 > then use those values to test your `rescale` function.
-> FIXME: looks like the rescale function is no longer in the lesson? FIXME
+> Once you've successfully tested your function,
+> add a docstring that explains what it does.
+> ~~~ {.python}
+> rescale(np.arange(0,10.0))
+> ~~~
+> ~~~ {.output}
+> array([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,
+>        0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])
+> ~~~
+> ~~~ {.python}
+> rescale(np.linspace(0,100,5))
+> ~~~
+> ~~~ {.output}
+> array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
+> ~~~
+> ~~~ {.output}
+> '''sample docstring:
+>    takes an array as input, and returns a corresponding array scaled so
+>    that 0 corresponds to the minimum and 1 to the maximum value of the input array'''
+> ~~~
+
+
+> ## Defining defaults {.challenge}
+>
+> Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
+> but will allow the caller to specify lower and upper bounds if they want.
+> Compare your implementation to your neighbor's:
+> do the two functions always behave the same way?
+> ~~~ {.output}
+> def rescale(input_array, low_val = 0.0, high_val = 1.0):
+>     '''rescales input array values to lie between low_val and high_val'''
+>     L = input_array.min()
+>     H = input_array.max()
+>     intermed_array = (input_array - L)/float(H-L) 
+>     output_array = intermed_array*(high_val-low_val) + low_val
+>     return output_array
+> ~~~
 
 > ## Variables inside and outside functions {.challenge}
 >
 > What does the following piece of code display when run - and why?
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > f = 0
 > k = 0
 >
@@ -308,11 +351,15 @@ AB: Writing the rescale function is the 3rd exercise
 > f2k(32)
 >
 > print k
-> 0
 > ~~~
 > 
-> Answer: displays 0 because the `k` inside the function `f2k` doesn't know about the `k` defined outside the function.
-
+> ~~~ {.output}
+> 259.81666666666666
+> 287.15
+> 273.15
+> 0
+> k is 0 because the `k` inside the function `f2k` doesn't know about the `k` defined outside the function.
+> ~~~
 
 ## [Errors and Exceptions](07-errors.html)
 
