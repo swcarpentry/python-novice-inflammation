@@ -92,17 +92,17 @@ which are covered in the lesson on the shell.
 
 Solutions to exercises:
 
- ## From 1 to N {.challenge}
- Using `range`,
- write a loop that uses `range` to print the first 3 natural numbers:
-
- ~~~ {.output}
- for i in range(1,4):
-    print i
- 1
- 2
- 3
- ~~~
+> ## From 1 to N {.challenge}
+> Using `range`,
+> write a loop that uses `range` to print the first 3 natural numbers:
+>
+> ~~~ {.output}
+> for i in range(1,4):
+>    print i
+> 1
+> 2
+> 3
+> ~~~
 
 > ## Computing powers with loops {.challenge}
 > Write a loop that calculates the same result as `5 ** 3` using
