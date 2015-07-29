@@ -165,7 +165,7 @@ Solutions to exercises:
 >     print 'C'
 > ~~~
 > ~~~ {.output}
-> Answer: C gets printed, because the first two conditions, `4<5` and `4==5` are not true, but `4<5` is true.
+> C gets printed, because the first two conditions, `4<5` and `4==5` are not true, but `4<5` is true.
 > ~~~
 
 
@@ -246,16 +246,18 @@ Solutions to exercises:
 > right = temp
 > ~~~
 > ~~~ {.output}
-> Answer: swaps contents of variables right and left.
+> The code swaps the contents of the variables right and left.
+> ~~~
 > Compare it to:
->
+> ~~~ {.python}
 > left, right = right, left
 > ~~~
 >
-> Do they always do the same thing?
-> Answer: Yes, although it's possible the internal implementation is different.
-> Which do you find easier to read?
-> Answers may vary..
+> Do they always do the same thing? Which do you find easier to read?
+> ~~~ {.output}
+> Yes, although it's possible the internal implementation is different. Answers will vary on which is easier to read.
+> ~~~
+
 
 ## [Creating Functions](06-func.html)
 
@@ -399,8 +401,6 @@ Solutions to exercises:
 > ~~~
 >
 > ~~~ {.output}
-> Answer:
->
 > 1. 3 levels
 > 2. `errors_02.py`
 > 3. `print_message`
@@ -424,7 +424,7 @@ Solutions to exercises:
 >   print "So they are usually not too hard to fix."
 > ~~~
 > ~~~ {.output}
-> Answer: `SyntaxError` for missing `:()` at end of first line, `IndentationError` for mismatch between second and third lines.
+> `SyntaxError` for missing `:()` at end of first line, `IndentationError` for mismatch between second and third lines.
 > def another_function():
 >   print "Syntax errors are annoying."
 >   print "But at least python tells us about them!"
@@ -448,7 +448,7 @@ Solutions to exercises:
 > print message
 > ~~~
 > ~~~ {.output}
-> Answer: 3 `NameError`s for `number` being misspelled, for `message` not defined, and for `a` not being in quotes.  
+> 3 `NameError`s for `number` being misspelled, for `message` not defined, and for `a` not being in quotes.  
 > message = ""
 > for number in range(10):
 >     # use a if the number is a multiple of 3, otherwise use b
@@ -466,12 +466,12 @@ Solutions to exercises:
 > 2. Run the code, and read the error message. What type of error is it?
 > 3. Fix the error.
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > print 'My favorite season is ', seasons[4]
 > ~~~
-> Answer: IndexError; the last entry is `seasons[3]`, so `seasons[4]` doesn't make sense.
 > ~~~ {.output}
+> IndexError; the last entry is `seasons[3]`, so `seasons[4]` doesn't make sense.
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > print 'My favorite season is ', seasons[-1]
 > ~~~
@@ -480,7 +480,7 @@ Solutions to exercises:
 
 Solutions to exercises:
 
-> ## Pre- and post-conditions {.challenge} FIXME
+> ## Pre- and post-conditions {.challenge} 
 >
 > Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
 > What pre-conditions and post-conditions would you write for it?
@@ -513,17 +513,18 @@ Solutions to exercises:
 >     return result
 > ~~~
 > ~~~ {.output}
-> Answer:
-> The first assertion checks that the input sequence `values` is not empty; an empty sequence such as `[]` will make it fail.
-> The second assertion checks that the first value in the list is positive; input such as `[-1,0,2,3]` will make it fail.
-> The third assertion checks that the running total always increases; input such as `[0,1,3,-5,4]` will make it fail.
+> The first assertion checks that the input sequence `values` is not empty. 
+>   An empty sequence such as `[]` will make it fail.
+> The second assertion checks that the first value in the list is positive. 
+>   Input such as `[-1,0,2,3]` will make it fail.
+> The third assertion checks that the running total always increases. 
+>   Input such as `[0,1,3,-5,4]` will make it fail.
 > ~~~ 
 
 > ## Fixing and testing {.challenge}
 >
 > Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
 >
-> One possible solution:
 >~~~ {.output}
 >import numpy
 >def range_overlap(ranges):
@@ -545,6 +546,8 @@ Solutions to exercises:
 ## [Debugging](09-debugging.html)
 
 ## [Command-Line Programs](10-cmdline.html)
+
+Solutions to exercises:
 
 > ## Arithmetic on the command line {.challenge}
 >
