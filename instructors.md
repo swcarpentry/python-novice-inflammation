@@ -567,6 +567,9 @@ Solutions to exercises:
 > ~~~
 >
 
+> ~~~ {.output}
+> ~~~
+
 > ## Finding particular files {.challenge}
 >
 > Using the `glob` module introduced [earlier](04-files.html),
@@ -582,11 +585,19 @@ Solutions to exercises:
 > zero.py
 > ~~~
 
+> ~~~ {.output}
+> ~~~
+
+
 > ## Changing flags {.challenge}
 >
 > Rewrite `readings.py` so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
 > Is the code easier to read?
 > Is the program easier to understand?
+
+> ~~~ {.output}
+> ~~~
+
 
 > ## Adding a help message {.challenge}
 >
@@ -595,11 +606,17 @@ Solutions to exercises:
 > (i.e., no action is specified and no filenames are given),
 > it prints a message explaining how it should be used.
 
+> ~~~ {.output}
+> ~~~
+
 > ## Adding a default action {.challenge}
 >
 > Separately,
 > modify `readings.py` so that if no action is given
 > it displays the means of the data.
+
+> ~~~ {.output}
+> ~~~
 
 > ## A file-checker {.challenge}
 >
@@ -607,9 +624,14 @@ Solutions to exercises:
 > and checks that all the files have the same number of rows and columns.
 > What is the best way to test your program?
 
+> ~~~ {.output}
+> ~~~
+
 > ## Counting lines {.challenge}
 >
 > Write a program called `line-count.py` that works like the Unix `wc` command:
 >
 > *   If no filenames are given, it reports the number of lines in standard input.
 > *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
+> ~~~ {.output}
+> ~~~
