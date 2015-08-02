@@ -1,5 +1,4 @@
 import sys
-import numpy
 
 def main():
     assert len(sys.argv) == 4, 'Need exactly 3 arguments'
