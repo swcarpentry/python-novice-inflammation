@@ -105,3 +105,92 @@ which are covered in the lesson on the shell.
 ## [Debugging](09-debugging.html)
 
 ## [Command-Line Programs](10-cmdline.html)
+
+Solutions to exercises:
+
+> ## Arithmetic on the command line {.challenge}
+>
+> Write a command-line program that does addition and subtraction:
+>
+> ~~~ {.python}
+> $ python arith.py add 1 2
+> ~~~
+> ~~~ {.output}
+> 3
+> ~~~
+> ~~~ {.python}
+> $ python arith.py subtract 3 4
+> ~~~
+> ~~~ {.output}
+> -1
+> ~~~
+>
+
+> ~~~ {.output}
+> ~~~
+
+> ## Finding particular files {.challenge}
+>
+> Using the `glob` module introduced [earlier](04-files.html),
+> write a simple version of `ls` that shows files in the current directory with a particular suffix.
+> A call to this script should look like this:
+>
+> ~~~ {.python}
+> $ python my_ls.py py
+> ~~~
+> ~~~ {.output}
+> left.py
+> right.py
+> zero.py
+> ~~~
+
+> ~~~ {.output}
+> ~~~
+
+
+> ## Changing flags {.challenge}
+>
+> Rewrite `readings.py` so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
+> Is the code easier to read?
+> Is the program easier to understand?
+
+> ~~~ {.output}
+> ~~~
+
+
+> ## Adding a help message {.challenge}
+>
+> Separately,
+> modify `readings.py` so that if no parameters are given
+> (i.e., no action is specified and no filenames are given),
+> it prints a message explaining how it should be used.
+
+> ~~~ {.output}
+> ~~~
+
+> ## Adding a default action {.challenge}
+>
+> Separately,
+> modify `readings.py` so that if no action is given
+> it displays the means of the data.
+
+> ~~~ {.output}
+> ~~~
+
+> ## A file-checker {.challenge}
+>
+> Write a program called `check.py` that takes the names of one or more inflammation data files as arguments
+> and checks that all the files have the same number of rows and columns.
+> What is the best way to test your program?
+
+> ~~~ {.output}
+> ~~~
+
+> ## Counting lines {.challenge}
+>
+> Write a program called `line-count.py` that works like the Unix `wc` command:
+>
+> *   If no filenames are given, it reports the number of lines in standard input.
+> *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
+> ~~~ {.output}
+> ~~~
