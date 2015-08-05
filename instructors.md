@@ -127,6 +127,35 @@ Solutions to exercises:
 >
 
 > ~~~ {.output}
+>import sys
+>
+>def main():
+>    assert len(sys.argv) == 4, 'Need exactly 3 arguments'
+>
+>    operator = sys.argv[1]
+>    assert operator in ['add', 'subtract', 'multiply', 'divide'], \
+>           'Operator is not one of add, subtract, multiply, or divide: bailing out' 
+>    try:
+>        operand1, operand2 = float(sys.argv[2]), float(sys.argv[3])
+>    except ValueError:
+>        print 'cannot convert input to a number: bailing out'
+>        return
+>        
+>    do_arithmetic(operand1, operator, operand2)
+>
+>def do_arithmetic(operand1, operator, operand2):
+>
+>    if operator == 'add':
+>        value = operand1 + operand2
+>    elif operator == 'subtract':
+>        value = operand1 - operand2
+>    elif operator == 'multiply':
+>        value = operand1 * operand2
+>    elif operator == 'divide':
+>        value = operand1 / operand2
+>    print value
+>
+>main()
 > ~~~
 
 > ## Finding particular files {.challenge}
@@ -145,6 +174,20 @@ Solutions to exercises:
 > ~~~
 
 > ~~~ {.output}
+>import sys
+>import glob
+>
+>def main():
+>    '''prints names of all files with sys.argv as suffix'''
+>    assert len(sys.argv) >= 2, 'Argument list cannot be empty'
+>    suffix = sys.argv[1] # NB: behaviour is not as you'd expect if sys.argv[1] is *
+>    glob_input = '*.' + suffix # construct the input
+>    glob_output = glob.glob(glob_input) # call the glob function
+>    for item in glob_output: # print the output
+>        print item
+>    return
+>
+>main()
 > ~~~
 
 
@@ -155,6 +198,35 @@ Solutions to exercises:
 > Is the program easier to understand?
 
 > ~~~ {.output}
+>import sys
+>import numpy
+>
+>def main():
+>    script = sys.argv[0]
+>    action = sys.argv[1]
+>    filenames = sys.argv[2:]
+>    assert action in ['-n', '-m', '-x'], \
+>           'Action is not one of -n, -m, or -x: ' + action
+>    if len(filenames) == 0:
+>        process(sys.stdin, action)
+>    else:
+>        for f in filenames:
+>            process(f, action)
+>
+>def process(filename, action):
+>    data = numpy.loadtxt(filename, delimiter=',')
+>
+>    if action == '-n':
+>        values = data.min(axis=1)
+>    elif action == '-m':
+>        values = data.mean(axis=1)
+>    elif action == '-x':
+>        values = data.max(axis=1)
+>
+>    for m in values:
+>        print m
+>
+>main()
 > ~~~
 
 
@@ -166,6 +238,42 @@ Solutions to exercises:
 > it prints a message explaining how it should be used.
 
 > ~~~ {.output}
+>import sys
+>import numpy
+>
+>def main():
+>    script = sys.argv[0]
+>    if len(sys.argv) == 1: # no arguments, so print help message
+>        print 'Usage: python readings-08.py action filenames\n \
+>               action must be one of --min --mean --max\n \
+>               if filenames is blank, input is taken from stdin;\n \
+>               otherwise, each filename in the list of arguments is processed in turn'
+>        return
+>
+>    action = sys.argv[1]
+>    filenames = sys.argv[2:]
+>    assert action in ['--min', '--mean', '--max'], \
+>           'Action is not one of --min, --mean, or --max: ' + action
+>    if len(filenames) == 0:
+>        process(sys.stdin, action)
+>    else:
+>        for f in filenames:
+>            process(f, action)
+>
+>def process(filename, action):
+>    data = numpy.loadtxt(filename, delimiter=',')
+>
+>    if action == '--min':
+>        values = data.min(axis=1)
+>    elif action == '--mean':
+>        values = data.mean(axis=1)
+>    elif action == '--max':
+>        values = data.max(axis=1)
+>
+>    for m in values:
+>        print m
+>
+>main()
 > ~~~
 
 > ## Adding a default action {.challenge}
@@ -175,6 +283,38 @@ Solutions to exercises:
 > it displays the means of the data.
 
 > ~~~ {.output}
+>import sys
+>import numpy
+>
+>def main():
+>    script = sys.argv[0]
+>    action = sys.argv[1]
+>    if action not in ['--min', '--mean', '--max']: # if no action given
+>        action = '--mean'    # set a default action, that being mean
+>        filenames = sys.argv[1:] # start the filenames one place earlier in the argv list
+>    else:
+>        filenames = sys.argv[2:]
+>
+>    if len(filenames) == 0:
+>        process(sys.stdin, action)
+>    else:
+>        for f in filenames:
+>            process(f, action)
+>
+>def process(filename, action):
+>    data = numpy.loadtxt(filename, delimiter=',')
+>
+>    if action == '--min':
+>        values = data.min(axis=1)
+>    elif action == '--mean':
+>        values = data.mean(axis=1)
+>    elif action == '--max':
+>        values = data.max(axis=1)
+>
+>    for m in values:
+>        print m
+>
+>main()
 > ~~~
 
 > ## A file-checker {.challenge}
@@ -184,6 +324,33 @@ Solutions to exercises:
 > What is the best way to test your program?
 
 > ~~~ {.output}
+>import sys
+>import numpy 
+>
+>def main():
+>    script = sys.argv[0]
+>    filenames = sys.argv[1:]
+>    if len(filenames) <=1: #nothing to check
+>        print 'Only 1 file specified on input'
+>    else:
+>        nrow0, ncol0 = row_col_count(filenames[0])
+>        print 'First file %s: %d rows and %d columns' % (filenames[0], nrow0, ncol0)
+>        for f in filenames[1:]:
+>            nrow, ncol = row_col_count(f)
+>            if nrow != nrow0 or ncol != ncol0:
+>                print 'File %s does not check: %d rows and %d columns' % (f, nrow, ncol)
+>            else:
+>                print 'File %s checks' % f
+>        return
+>
+>def row_col_count(filename):
+>    try:
+>        nrow, ncol = numpy.loadtxt(filename, delimiter=',').shape
+>    except ValueError: #get this if file doesn't have same number of rows and columns, or if it has non-numeric content
+>        nrow, ncol = (0, 0)
+>    return nrow, ncol
+>
+>main()
 > ~~~
 
 > ## Counting lines {.challenge}
@@ -193,4 +360,38 @@ Solutions to exercises:
 > *   If no filenames are given, it reports the number of lines in standard input.
 > *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
 > ~~~ {.output}
+>import sys
+>
+>def main():
+>    '''print each input filename and the number of lines in it, 
+>       and print the sum of the number of lines'''
+>    filenames = sys.argv[1:]
+>    sum_nlines = 0 #initialize counting variable
+>
+>    if len(filenames) == 0: # no filenames, just stdin
+>        sum_nlines = count_file_like(sys.stdin)
+>        print 'stdin: %d' % sum_nlines
+>    else:
+>        for f in filenames:
+>            n = count_file(f)
+>            print '%s %d' % (f, n)
+>            sum_nlines += n
+>        print 'total: %d' % sum_nlines
+>
+>def count_file(filename):
+>    '''count the number of lines in a file'''
+>    f = open(filename,'r')
+>    nlines = len(f.readlines())
+>    f.close()
+>    return(nlines)
+>
+>def count_file_like(file_like):
+>    '''count the number of lines in a file-like object (eg stdin)'''
+>    n = 0
+>    for line in file_like:
+>        n = n+1
+>    return n
+>
+>main()
+>
 > ~~~
