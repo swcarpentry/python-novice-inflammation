@@ -31,7 +31,7 @@ import numpy
 ~~~
 
 Importing a library is like getting a piece of lab equipment out of a storage locker
-and setting it up on the bench.
+and setting it up on the bench. Libraries provide additional functionality to the basic Python package, much like a new piece of equipment adds functionality to a lab space.
 Once you've loaded the library,
 we can ask the library to read our data file for us:
 
