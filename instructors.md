@@ -127,6 +127,7 @@ Solutions to exercises:
 >
 
 > ~~~ {.output}
+> # this is code/arith.py
 >import sys
 >
 >def main():
@@ -174,6 +175,7 @@ Solutions to exercises:
 > ~~~
 
 > ~~~ {.output}
+> # this is code/my_ls.py
 >import sys
 >import glob
 >
@@ -198,6 +200,7 @@ Solutions to exercises:
 > Is the program easier to understand?
 
 > ~~~ {.output}
+> # this is code/readings-07.py
 >import sys
 >import numpy
 >
@@ -238,6 +241,7 @@ Solutions to exercises:
 > it prints a message explaining how it should be used.
 
 > ~~~ {.output}
+> # this is code/readings-08.py
 >import sys
 >import numpy
 >
@@ -283,6 +287,7 @@ Solutions to exercises:
 > it displays the means of the data.
 
 > ~~~ {.output}
+># this is code/readings-09.py
 >import sys
 >import numpy
 >
@@ -324,6 +329,7 @@ Solutions to exercises:
 > What is the best way to test your program?
 
 > ~~~ {.output}
+> # this is code/check.py
 >import sys
 >import numpy 
 >
@@ -360,6 +366,7 @@ Solutions to exercises:
 > *   If no filenames are given, it reports the number of lines in standard input.
 > *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
 > ~~~ {.output}
+> # this is code/line-count.py
 >import sys
 >
 >def main():
