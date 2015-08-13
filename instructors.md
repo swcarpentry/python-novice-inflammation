@@ -123,8 +123,8 @@ Solutions to exercises:
 > newstring = ''
 > oldstring = 'Newton'
 > length_old = len(oldstring)
-> for c in range(length_old):
->    newstring = newstring + oldstring[length_old-c-1]
+> for char_index in range(length_old):
+>    newstring = newstring + oldstring[length_old-char_index-1]
 > print newstring
 > 'notweN'
 > ~~~
@@ -345,9 +345,9 @@ Solutions to exercises:
 >   k = ((f-32)*(5.0/9.0)) + 273.15
 >   return k
 >
-> f2k(8)
-> f2k(41)
-> f2k(32)
+> print f2k(8)
+> print f2k(41)
+> print f2k(32)
 >
 > print k
 > ~~~
