@@ -4,4 +4,4 @@ def favorite_ice_cream():
         "vanilla",
         "strawberry"
     ]
-    print ice_creams[3]
+    print(ice_creams[3])

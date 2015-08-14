@@ -72,14 +72,14 @@
 <h2 id="command-line-arguments">Command-Line Arguments</h2>
 <p>Using the text editor of your choice, save the following in a text file called <code>sys-version.py</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="dt">print</span> <span class="st">&#39;version is&#39;</span>, sys.version</code></pre>
+<span class="dt">print</span>(<span class="st">&#39;version is&#39;</span>, sys.version)</code></pre>
 <p>The first line imports a library called <code>sys</code>, which is short for “system”. It defines values such as <code>sys.version</code>, which describes which version of Python we are running. We can run this script from the command line like this:</p>
 <pre class="input"><code>$ python sys-version.py</code></pre>
 <pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
 [GCC 4.0.1 (Apple Inc. build 5493)]</code></pre>
 <p>Create another file called <code>argv-list.py</code> and save the following text to it.</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="dt">print</span> <span class="st">&#39;sys.argv is&#39;</span>, sys.argv</code></pre>
+<span class="dt">print</span>(<span class="st">&#39;sys.argv is&#39;</span>, sys.argv)</code></pre>
 <p>The strange name <code>argv</code> stands for “argument values”. Whenever Python runs a program, it takes all of the values given on the command line and puts them in the list <code>sys.argv</code> so that the program can determine what they were. If we run this program with no arguments:</p>
 <pre class="input"><code>$ python argv-list.py</code></pre>
 <pre class="output"><code>sys.argv is [&#39;argv-list.py&#39;]</code></pre>
@@ -97,7 +97,7 @@
     filename = sys.argv[<span class="dv">1</span>]
     data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
     <span class="kw">for</span> m in data.mean(axis=<span class="dv">1</span>):
-        <span class="dt">print</span> m</code></pre>
+        <span class="dt">print</span>(m)</code></pre>
 <p>This function gets the name of the script from <code>sys.argv[0]</code>, because that’s where it’s always put, and the name of the file to process from <code>sys.argv[1]</code>. Here’s a simple test:</p>
 <pre class="input"><code>$ python readings-01.py inflammation-01.csv</code></pre>
 <p>There is no output because we have defined a function, but haven’t actually called it. Let’s add a call to <code>main</code>:</p>
@@ -110,7 +110,7 @@
     filename = sys.argv[<span class="dv">1</span>]
     data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
     <span class="kw">for</span> m in data.mean(axis=<span class="dv">1</span>):
-        <span class="dt">print</span> m
+        <span class="dt">print</span>(m)
 
 main()</code></pre>
 <p>and run that:</p>
@@ -205,7 +205,7 @@ main()</code></pre>
     <span class="kw">for</span> filename in sys.argv[<span class="dv">1</span>:]:
         data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
         <span class="kw">for</span> m in data.mean(axis=<span class="dv">1</span>):
-            <span class="dt">print</span> m
+            <span class="dt">print</span>(m)
 
 main()</code></pre>
 <p>and here it is in action:</p>
@@ -244,7 +244,7 @@ main()</code></pre>
             values = data.<span class="dt">max</span>(axis=<span class="dv">1</span>)
 
         <span class="kw">for</span> m in values:
-            <span class="dt">print</span> m
+            <span class="dt">print</span>(m)
 
 main()</code></pre>
 <p>This works:</p>
@@ -281,7 +281,7 @@ main()</code></pre>
         values = data.<span class="dt">max</span>(axis=<span class="dv">1</span>)
 
     <span class="kw">for</span> m in values:
-        <span class="dt">print</span> m
+        <span class="dt">print</span>(m)
 
 main()</code></pre>
 <p>This is four lines longer than its predecessor, but broken into more digestible chunks of 8 and 12 lines.</p>
@@ -295,7 +295,7 @@ count = <span class="dv">0</span>
 <span class="kw">for</span> line in sys.stdin:
     count += <span class="dv">1</span>
 
-<span class="dt">print</span> count, <span class="st">&#39;lines in standard input&#39;</span></code></pre>
+<span class="dt">print</span>(count, <span class="st">&#39;lines in standard input&#39;</span>)</code></pre>
 <p>This little program reads lines from a special “file” called <code>sys.stdin</code>, which is automatically connected to the program’s standard input. We don’t have to open it — Python and the operating system take care of that when the program starts up — but we can do almost anything with it that we could do to a regular file. Let’s try running it as if it were a regular command-line program:</p>
 <pre class="input"><code>$ python count-stdin.py &lt; small-01.csv</code></pre>
 <pre class="output"><code>2 lines in standard input</code></pre>

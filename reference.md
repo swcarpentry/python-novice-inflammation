@@ -9,7 +9,7 @@ subtitle: Reference
 *   Use the `numpy` library to work with arrays in Python.
 *   Use `variable = value` to assign a value to a variable in order to record it in memory.
 *   Variables are created on demand whenever a value is assigned to them.
-*   Use `print something` to display the value of `something`.
+*   Use `print(something)` to display the value of `something`.
 *   The expression `array.shape` gives the shape of an array.
 *   Use `array[x, y]` to select a single element from an array.
 *   Array indices start at 0, not 1.
