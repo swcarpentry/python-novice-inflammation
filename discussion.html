@@ -54,11 +54,11 @@ final = fahr_to_celsius(original)</code></pre>
 <p><img src="fig/python-call-stack-05.svg" alt="Call Stack During Call to Second Nested Function" /><br /> Once again, Python throws away that stack frame when <code>kelvin_to_celsius</code> is done and creates the variable <code>result</code> in the stack frame for <code>fahr_to_celsius</code>:</p>
 <p><img src="fig/python-call-stack-06.svg" alt="Call Stack After Second Nested Function Returns" /><br /> Finally, when <code>fahr_to_celsius</code> is done, Python throws away <em>its</em> stack frame and puts its result in a new variable called <code>final</code> that lives in the stack frame we started with:</p>
 <p><img src="fig/python-call-stack-07.svg" alt="Call Stack After All Functions Have Finished" /><br /> This final stack frame is always there; it holds the variables we defined outside the functions in our code. What it <em>doesn’t</em> hold is the variables that were in the various stack frames. If we try to get the value of <code>temp</code> after our functions have finished running, Python tells us that there’s no such thing:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;final value of temp after all function calls:&#39;</span>, temp</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&#39;final value of temp after all function calls:&#39;</span>, temp)</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 &lt;ipython-input-12-ffd9b4dbd5f1&gt; in &lt;module&gt;()
-----&gt; 1 print &#39;final value of temp after all function calls:&#39;, temp
+----&gt; 1 print(&#39;final value of temp after all function calls:&#39;, temp)
 
 NameError: name &#39;temp&#39; is not defined</code></pre>
 <pre class="output"><code>final value of temp after all function calls:</code></pre>
@@ -70,11 +70,11 @@ diff = a.<span class="dt">max</span>() - a.<span class="dt">min</span>()
 <span class="kw">return</span> diff
 
 data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
-<span class="dt">print</span> <span class="st">&#39;span of data&#39;</span>, span(data)</code></pre>
+<span class="dt">print</span>(<span class="st">&#39;span of data&#39;</span>, span(data))</code></pre>
 <pre class="output"><code>span of data 20.0</code></pre>
 <p>Notice that <code>span</code> assigns a value to a variable called <code>diff</code>. We might very well use a variable with the same name to hold data:</p>
 <pre class="sourceCode python"><code class="sourceCode python">diff = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
-<span class="dt">print</span> <span class="st">&#39;span of data:&#39;</span>, span(diff)</code></pre>
+<span class="dt">print</span>(<span class="st">&#39;span of data:&#39;</span>, span(diff))</code></pre>
 <pre class="output"><code>span of data: 20.0</code></pre>
 <p>We don’t expect <code>diff</code> to have the value 20.0 after this function call, so the name <code>diff</code> cannot refer to the same thing inside <code>span</code> as it does in the main body of our program. And yes, we could probably choose a different name than <code>diff</code> in our main program in this case, but we don’t want to have to read every line of NumPy to see what variable names its functions use before calling any of those functions, just in case they change the values of our variables.</p>
 <p>The big idea here is <a href="reference.html#encapsulation">encapsulation</a>, and it’s the key to writing correct, comprehensible programs. A function’s job is to turn several operations into one so that we can think about a single function call instead of a dozen or a hundred statements each time we want to do something. That only works if functions don’t interfere with each other; if they do, we have to pay attention to the details once again, which quickly overloads our short-term memory.</p>
@@ -84,7 +84,7 @@ data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>
 </div>
 <div class="panel-body">
 <p>We previously wrote functions called <code>fence</code> and <code>outer</code>. Draw a diagram showing how the call stack changes when we run the following:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> outer(fence(<span class="st">&#39;carbon&#39;</span>, <span class="st">&#39;+&#39;</span>))</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(outer(fence(<span class="st">&#39;carbon&#39;</span>, <span class="st">&#39;+&#39;</span>)))</code></pre>
 </div>
 </section>
 <h2 id="image-grids">Image Grids</h2>
@@ -98,9 +98,9 @@ grid.show()</code></pre>
 <img src="img/grid-01.png" />
 </div>
 <p>Just like a NumPy array, an <code>ImageGrid</code> has some properties that hold information about it:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;grid width:&#39;</span>, grid.width
-<span class="dt">print</span> <span class="st">&#39;grid height:&#39;</span>, grid.height
-<span class="dt">print</span> <span class="st">&#39;grid lines on:&#39;</span>, grid.lines_on</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&#39;grid width:&#39;</span>, grid.width)
+<span class="dt">print</span>(<span class="st">&#39;grid height:&#39;</span>, grid.height)
+<span class="dt">print</span>(<span class="st">&#39;grid lines on:&#39;</span>, grid.lines_on)</code></pre>
 <pre class="output"><code>grid width: 5
 grid height: 3
 grid lines on: True</code></pre>
@@ -110,22 +110,22 @@ grid lines on: True</code></pre>
 </div>
 <p>An RGB color is an example of a multi-part value: like a Cartesian coordinate, it is one thing with several parts. We can represent such a value in Python using a <a href="reference.html#tuple">tuple</a>, which we write using parentheses instead of the square brackets used for a list:</p>
 <pre class="sourceCode python"><code class="sourceCode python">position = (<span class="fl">12.3</span>, <span class="fl">45.6</span>)
-<span class="dt">print</span> <span class="st">&#39;position is:&#39;</span>, position
+<span class="dt">print</span>(<span class="st">&#39;position is:&#39;</span>, position)
 color = (<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)
-<span class="dt">print</span> <span class="st">&#39;color is:&#39;</span>, color</code></pre>
+<span class="dt">print</span>(<span class="st">&#39;color is:&#39;</span>, color)</code></pre>
 <pre class="output"><code>position is: (12.3, 45.6)
 color is: (10, 20, 30)</code></pre>
 <p>We can select elements from tuples using indexing, just as we do with lists and arrays:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;first element of color is:&#39;</span>, color[<span class="dv">0</span>]</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&#39;first element of color is:&#39;</span>, color[<span class="dv">0</span>])</code></pre>
 <pre class="output"><code>first element of color is: 10</code></pre>
 <p>Unlike lists and arrays, though, tuples cannot be changed after they are created — in technical terms, they are <a href="reference.html#immutable">immutable</a>:</p>
 <pre class="sourceCode python"><code class="sourceCode python">color[<span class="dv">0</span>] = <span class="dv">40</span>
-<span class="dt">print</span> <span class="st">&#39;first element of color after change:&#39;</span>, color[<span class="dv">0</span>]</code></pre>
+<span class="dt">print</span>(<span class="st">&#39;first element of color after change:&#39;</span>, color[<span class="dv">0</span>])</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 &lt;ipython-input-11-9c3dd30a4e52&gt; in &lt;module&gt;()
 ----&gt; 1 color[0] = 40
-2 print &#39;first element of color after change:&#39;, color[0]
+2 print(&#39;first element of color after change:&#39;, color[0])
 
 TypeError: &#39;tuple&#39; object does not support item assignment</code></pre>
 <p>If a tuple represents an RGB color, its red, green, and blue components can take on values between 0 and 255. The upper bound may seem odd, but it’s the largest number that can be represented in an 8-bit byte (i.e., 2<sup>8</sup>-1). This makes it easy for computers to manipulate colors, while providing fine enough gradations to fool most human eyes, most of the time.</p>

@@ -22,14 +22,14 @@ We want to create plots for all our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
 An example task that we might want to repeat is printing each character in a
-word on a line of its own. One way to do this would be to use a series of `print` statements:
+word on a line of its own. One way to do this would be to use a series of `print` functions:
 
 ~~~ {.python}
 word = 'lead'
-print word[0]
-print word[1]
-print word[2]
-print word[3]
+print(word[0])
+print(word[1])
+print(word[2])
+print(word[3])
 
 ~~~
 ~~~ {.output}
@@ -53,10 +53,10 @@ but that's a bad approach for two reasons:
 
 ~~~ {.python}
 word = 'tin'
-print word[0]
-print word[1]
-print word[2]
-print word[3]
+print(word[0])
+print(word[1])
+print(word[2])
+print(word[3])
 
 ~~~
 ~~~ {.output}
@@ -68,9 +68,9 @@ n
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-3-7974b6cdaf14> in <module>()
-      3 print word[1]
-      4 print word[2]
-----> 5 print word[3]
+      3 print(word[1])
+      4 print(word[2])
+----> 5 print(word[3])
 
 IndexError: string index out of range
 ~~~
@@ -81,7 +81,7 @@ Here's a better approach:
 ~~~ {.python}
 word = 'lead'
 for char in word:
-    print char
+    print(char)
 
 ~~~
 
@@ -98,7 +98,7 @@ more robust as well:
 ~~~ {.python}
 word = 'oxygen'
 for char in word:
-    print char
+    print(char)
 ~~~
 
 ~~~ {.output}
@@ -130,7 +130,7 @@ Here's another loop that repeatedly updates a variable:
 length = 0
 for vowel in 'aeiou':
     length = length + 1
-print 'There are', length, 'vowels'
+print('There are', length, 'vowels')
 ~~~
 
 ~~~ {.output}
@@ -153,7 +153,7 @@ After three more updates,
 `length` is 5;
 since there is nothing left in `'aeiou'` for Python to process,
 the loop finishes
-and the `print` statement on line 4 tells us our final answer.
+and the `print` function on line 4 tells us our final answer.
 
 Note that a loop variable is just a variable that's being used to record progress in a loop.
 It still exists after the loop is over,
@@ -162,8 +162,8 @@ and we can re-use variables previously defined as loop variables as well:
 ~~~ {.python}
 letter = 'z'
 for letter in 'abc':
-    print letter
-print 'after the loop, letter is', letter
+    print(letter)
+print('after the loop, letter is', letter)
 ~~~
 
 ~~~ {.output}
@@ -177,7 +177,7 @@ Note also that finding the length of a string is such a common operation
 that Python actually has a built-in function to do it called `len`:
 
 ~~~ {.python}
-print len('aeiou')
+print(len('aeiou'))
 ~~~
 
 ~~~ {.output}
@@ -213,7 +213,7 @@ so we should always use it when we can.
 > Exponentiation is built into Python:
 >
 > ~~~ {.python}
-> print 5**3
+> print(5**3)
 > 125
 > ~~~
 >

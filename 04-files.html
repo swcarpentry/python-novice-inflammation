@@ -42,17 +42,20 @@
 <p>We now have almost everything we need to process all our data files. The only thing that’s missing is a library with a rather unpleasant name:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> glob</code></pre>
 <p>The <code>glob</code> library contains a single function, also called <code>glob</code>, that finds files whose names match a pattern. We provide those patterns as strings: the character <code>*</code> matches zero or more characters, while <code>?</code> matches any one character. We can use this to get the names of all the html files:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> glob.glob(<span class="st">&#39;*.html&#39;</span>)</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(glob.glob(<span class="st">&#39;*.html&#39;</span>))</code></pre>
 <pre class="output"><code>[&#39;01-numpy.html&#39;, &#39;02-loop.html&#39;, &#39;03-lists.html&#39;, &#39;04-files.html&#39;, &#39;05-cond.html&#39;, &#39;06-func.html&#39;, &#39;07-errors.html&#39;, &#39;08-defensive.html&#39;, &#39;09-debugging.html&#39;, &#39;10-cmdline.html&#39;, &#39;index.html&#39;, &#39;LICENSE.html&#39;, &#39;instructors.html&#39;, &#39;README.html&#39;, &#39;discussion.html&#39;, &#39;reference.html&#39;]</code></pre>
 <p>As these examples show, <code>glob.glob</code>’s result is a list of strings, which means we can loop over it to do something with each filename in turn. In our case, the “something” we want to do is generate a set of plots for each file in our inflammation dataset. Let’s test it by analyzing the first three files in the list:</p>
-<pre class="sourceCode python"><code class="sourceCode python">filenames = glob.glob(<span class="st">&#39;*.csv&#39;</span>)
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy
+<span class="ch">import</span> matplotlib.pyplot
+
+filenames = glob.glob(<span class="st">&#39;*.csv&#39;</span>)
 filenames = filenames[<span class="dv">0</span>:<span class="dv">3</span>]
 <span class="kw">for</span> f in filenames:
-    <span class="dt">print</span> f
+    <span class="dt">print</span>(f)
 
-    data = np.loadtxt(fname=f, delimiter=<span class="st">&#39;,&#39;</span>)
+    data = numpy.loadtxt(fname=f, delimiter=<span class="st">&#39;,&#39;</span>)
 
-    fig = plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+    fig = matplotlib.pyplot.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
 
     axes1 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
     axes2 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
