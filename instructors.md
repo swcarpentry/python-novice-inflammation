@@ -64,7 +64,7 @@ clone the previous cell and write the update in the new copy
 so that learners have a complete record of how the program grew.
 Once you've done this,
 you can say,
-"Now why don't we just breaks things into small functions right from the start?"
+"Now why don't we just break things into small functions right from the start?"
 
 The discussion of command-line scripts
 assumes that students understand standard I/O and building filters,
@@ -90,17 +90,458 @@ which are covered in the lesson on the shell.
 
 ## [Repeating Actions with Loops](02-loop.html)
 
+Solutions to exercises:
+
+> ## From 1 to N {.challenge}
+> Using `range`,
+> write a loop that uses `range` to print the first 3 natural numbers:
+>
+> ~~~ {.output}
+> for i in range(1,4):
+>    print i
+> 1
+> 2
+> 3
+> ~~~
+
+> ## Computing powers with loops {.challenge}
+> Write a loop that calculates the same result as `5 ** 3` using
+> multiplication (and without exponentiation).
+> ~~~ {.output}
+> result = 1
+> for i in range(0,3):
+>    result = result*5
+> print result
+> 125
+> ~~~
+
+> ## Reverse a string {.challenge}
+>
+> Write a loop that takes a string,
+> and produces a new string with the characters in reverse order.
+> ~~~ {.output}
+> newstring = ''
+> oldstring = 'Newton'
+> length_old = len(oldstring)
+> for char_index in range(length_old):
+>    newstring = newstring + oldstring[length_old-char_index-1]
+> print newstring
+> 'notweN'
+> ~~~
+
+After discussing these challenges could be a good time to introduce the `b*=2` syntax.
+
 ## [Storing Multiple Values in Lists](03-lists.html)
+
+Solutions to exercises:
+>## Turn a string into a list {.challenge}
+>
+> Use a for-loop to convert the string "hello" into a list of letters:
+>
+> ~~~ {.output}
+> my_list = []
+> for char in "hello":
+>     my_list.append(char)
+> print my_list
+> ["h", "e", "l", "l", "o"]
+> ~~~
+
 
 ## [Analyzing Data from Multiple Files](04-files.html)
 
 ## [Making Choices](05-cond.html)
 
+Solutions to exercises:
+> ## How many paths? {.challenge}
+>
+> Which of the following would be printed if you were to run this code? Why did you pick this answer?
+>
+> ~~~ {.python}
+> if 4 > 5:
+>     print 'A'
+> elif 4 == 5:
+>     print 'B'
+> elif 4 < 5:
+>     print 'C'
+> ~~~
+> ~~~ {.output}
+> C gets printed, because the first two conditions, `4<5` and `4==5` are not true, but `4<5` is true.
+> ~~~
+
+
+> ## What is truth? {.challenge}
+>
+> After reading and running the code below,
+> explain the rules for which values are considered true and which are considered false.
+> (Note that if the body of a conditional is a single statement, we can write it on the same line as the `if`.)
+>
+> ~~~ {.python}
+> if '': print 'empty string is true'
+> if 'word': print 'word is true'
+> if []: print 'empty list is true'
+> if [1, 2, 3]: print 'non-empty list is true'
+> if 0: print 'zero is true'
+> if 1: print 'one is true'
+> ~~~
+> ~~~ {.output}
+> First line prints nothing: an empty string is false
+> Second line prints 'word is true': a non-empty string is true
+> Third line prints nothing: an empty list is false
+> Fourth line prints 'non-empty list is true': a non-empty list is true
+> Fifth line prints nothing: 0 is false
+> Sixth line prints 'one is true': 1 is true
+> ~~~
+
+> ## Close enough {.challenge}
+>
+> Write some conditions that print `True` if the variable `a` is within 10% of the variable `b`
+> and `False` otherwise.
+> ~~~ {.output}
+> a = 5
+> b = 5.1
+>
+> if abs(a-b) < 0.1*abs(b):
+>     print 'True'
+> else:
+>     print 'False'
+> ~~~
+> Another possible solution:
+> ~~~ {.output}
+> print abs(a-b) < 0.1*abs(b)
+> ~~~
+> This works because the Boolean objects `True` and `False` have string representations which can be `print`ed.
+
+
+> ## In-place operators {.challenge}
+>
+> Write some code that sums the positive and negative numbers in a list separately,
+> using in-place operators.
+> ~~~ {.output}
+> positive_sum = 0
+> negative_sum = 0
+> test_list = [3,4,6,1,-1,-5,0,7,-8]
+> for num in test_list:
+>     if num > 0:
+>         positive_sum += num
+>     elif num == 0:
+>         pass
+>     else:
+>         negative_sum += num
+> print positive_sum, negative_sum
+> 21 -14
+> ~~~
+> Here `pass` means "don't do anything". In this particular case, it's not actually needed, since if `num==0` neither
+> sum needs to change, but it illustrates the use of `elif`.
+
+> ## Tuples and exchanges {.challenge}
+>
+> Explain what the overall effect of this code is:
+>
+> ~~~ {.python}
+> left = 'L'
+> right = 'R'
+>
+> temp = left
+> left = right
+> right = temp
+> ~~~
+> ~~~ {.output}
+> The code swaps the contents of the variables right and left.
+> ~~~
+> Compare it to:
+> ~~~ {.python}
+> left, right = right, left
+> ~~~
+>
+> Do they always do the same thing? Which do you find easier to read?
+> ~~~ {.output}
+> Yes, although it's possible the internal implementation is different. Answers will vary on which is easier to read.
+> ~~~
+
+
 ## [Creating Functions](06-func.html)
+
+Solutions to exercises:
+> ## Combining strings {.challenge}
+>
+> Write a function called `fence` that takes two parameters called `original` and `wrapper`
+> and returns a new string that has the wrapper character at the beginning and end of the original.
+>
+> ~~~ {.output}
+> def fence(original, wrapper):
+>     return wrapper + original + wrapper
+> ~~~
+
+> ## Selecting characters from strings {.challenge}
+>
+> Write a function called `outer`
+> that returns a string made up of just the first and last characters of its input.
+>
+> ~~~ {.output}
+> def outer(input_string):
+>     return input_string[0] + input_string[-1]
+> ~~~
+
+> ## Rescaling an array {.challenge}
+>
+> Write a function `rescale` that takes an array as input
+> and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
+> (Hint: If $L$ and $H$ are the lowest and highest values in the original array,
+> then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
+>
+> ~~~ {.output}
+> def rescale(input_array):
+>     L = input_array.min()
+>     H = input_array.max()
+>     output_array = (input_array - L)/float(H-L)
+>     return output_array
+> ~~~
+
+> ## Testing and documenting your function {.challenge}
+>
+> Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
+> to see how to use these functions to generate regularly-spaced values,
+> then use those values to test your `rescale` function.
+> Once you've successfully tested your function,
+> add a docstring that explains what it does.
+> ~~~ {.output}
+> Examples:
+> rescale(np.arange(0,10.0))
+> array([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,
+>        0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])
+> rescale(np.linspace(0,100,5))
+> array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
+> '''sample docstring:
+>    takes an array as input, and returns a corresponding array scaled so
+>    that 0 corresponds to the minimum and 1 to the maximum value of the input array'''
+> ~~~
+
+
+> ## Defining defaults {.challenge}
+>
+> Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
+> but will allow the caller to specify lower and upper bounds if they want.
+> Compare your implementation to your neighbor's:
+> do the two functions always behave the same way?
+> ~~~ {.output}
+> def rescale(input_array, low_val = 0.0, high_val = 1.0):
+>     '''rescales input array values to lie between low_val and high_val'''
+>     L = input_array.min()
+>     H = input_array.max()
+>     intermed_array = (input_array - L)/float(H-L)
+>     output_array = intermed_array*(high_val-low_val) + low_val
+>     return output_array
+> ~~~
+
+> ## Variables inside and outside functions {.challenge}
+>
+> What does the following piece of code display when run - and why?
+>
+> ~~~ {.python}
+> f = 0
+> k = 0
+>
+> def f2k(f):
+>   k = ((f-32)*(5.0/9.0)) + 273.15
+>   return k
+>
+> print f2k(8)
+> print f2k(41)
+> print f2k(32)
+>
+> print k
+> ~~~
+>
+> ~~~ {.output}
+> 259.81666666666666
+> 287.15
+> 273.15
+> 0
+> k is 0 because the `k` inside the function `f2k` doesn't know about the `k` defined outside the function.
+> ~~~
 
 ## [Errors and Exceptions](07-errors.html)
 
+Solutions to exercises:
+> ## Reading Error Messages {.challenge}
+>
+> Read the traceback below, and identify the following pieces of information about it:
+>
+> 1.  How many levels does the traceback have?
+> 2.  What is the file name where the error occurred?
+> 3.  What is the function name where the error occurred?
+> 4.  On which line number in this function did the error occurr?
+> 5.  What is the type of error?
+> 6.  What is the error message?
+>
+> ~~~ {.python}
+> import errors_02
+> errors_02.print_friday_message()
+> ~~~
+> ~~~ {.error}
+> ---------------------------------------------------------------------------
+> KeyError                                  Traceback (most recent call last)
+> <ipython-input-2-e4c4cbafeeb5> in <module>()
+>       1 import errors_02
+> ----> 2 errors_02.print_friday_message()
+>
+> /Users/jhamrick/project/swc/novice/python/errors_02.py in print_friday_message()
+>      13
+>      14 def print_friday_message():
+> ---> 15     print_message("Friday")
+>
+> /Users/jhamrick/project/swc/novice/python/errors_02.py in print_message(day)
+>       9         "sunday": "Aw, the weekend is almost over."
+>      10     }
+> ---> 11     print messages[day]
+>      12
+>      13
+>
+> KeyError: 'Friday'
+> ~~~
+>
+> ~~~ {.output}
+> 1. 3 levels
+> 2. `errors_02.py`
+> 3. `print_message`
+> 4. 11
+> 5. `KeyError`
+> 6. There isn't really a message; you're supposed to infer that `Friday` is not a key in `messages`.
+> ~~~
+
+
+> ## Identifying Syntax Errors {.challenge}
+>
+> 1. Read the code below, and (without running it) try to identify what the errors are.
+> 2. Run the code, and read the error message. Is it a `SyntaxError` or an `IndentationError`?
+> 3. Fix the error.
+> 4. Repeat steps 2 and 3, until you have fixed all the errors.
+>
+> ~~~ {.python}
+> def another_function
+>   print "Syntax errors are annoying."
+>    print "But at least python tells us about them!"
+>   print "So they are usually not too hard to fix."
+> ~~~
+> ~~~ {.output}
+> `SyntaxError` for missing `:()` at end of first line, `IndentationError` for mismatch between second and third lines.
+> def another_function():
+>   print "Syntax errors are annoying."
+>   print "But at least python tells us about them!"
+>   print "So they are usually not too hard to fix."
+> ~~~
+
+> ## Identifying Variable Name Errors {.challenge}
+>
+> 1. Read the code below, and (without running it) try to identify what the errors are.
+> 2. Run the code, and read the error message. What type of `NameError` do you think this is? In other words, is it a string with no quotes, a misspelled variable, or a variable that should have been defined but was not?
+> 3. Fix the error.
+> 4. Repeat steps 2 and 3, until you have fixed all the errors.
+>
+> ~~~ {.python}
+> for number in range(10):
+>     # use a if the number is a multiple of 3, otherwise use b
+>     if (Number % 3) == 0:
+>         message = message + a
+>     else:
+>         message = message + "b"
+> print message
+> ~~~
+> ~~~ {.output}
+> 3 `NameError`s for `number` being misspelled, for `message` not defined, and for `a` not being in quotes.
+> message = ""
+> for number in range(10):
+>     # use a if the number is a multiple of 3, otherwise use b
+>     if (Number % 3) == 0:
+>         message = message + "a"
+>     else:
+>         message = message + "b"
+> print message
+> abbabbabba
+> ~~~
+
+> ## Identifying Item Errors {.challenge}
+>
+> 1. Read the code below, and (without running it) try to identify what the errors are.
+> 2. Run the code, and read the error message. What type of error is it?
+> 3. Fix the error.
+>
+> ~~~ {.python}
+> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+> print 'My favorite season is ', seasons[4]
+> ~~~
+> ~~~ {.output}
+> IndexError; the last entry is `seasons[3]`, so `seasons[4]` doesn't make sense.
+> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+> print 'My favorite season is ', seasons[-1]
+> ~~~
+
 ## [Defensive Programming](08-defensive.html)
+
+Solutions to exercises:
+
+> ## Pre- and post-conditions {.challenge}
+>
+> Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
+> What pre-conditions and post-conditions would you write for it?
+> Compare your answer to your neighbor's:
+> can you think of a function that will pass your tests but not hers or vice versa?
+> ~~~ {.output}
+> Answer:
+> a possible pre-condition:
+> assert len(input)>0, 'List length must be non-zero'
+> a possible post-condition:
+> assert input.min() < average < input.max(), 'Average should be between min and max of input values'
+> ~~~
+
+> ## Testing assertions {.challenge}
+>
+> Given a sequence of values, the function `running` returns
+> a list containing the running totals at each index.
+> Explain in words what the assertions in this function check,
+> and for each one,
+> give an example of input that will make that assertion fail.
+>
+> ~~~ {.python}
+> def running(values):
+>     assert len(values) > 0
+>     result = [values[0]]
+>     for v in values[1:]:
+>         assert result[-1] >= 0
+>         result.append(result[-1] + v)
+>         assert result[-1] >= result[0]
+>     return result
+> ~~~
+> ~~~ {.output}
+> The first assertion checks that the input sequence `values` is not empty.
+>   An empty sequence such as `[]` will make it fail.
+> The second assertion checks that the first value in the list is positive.
+>   Input such as `[-1,0,2,3]` will make it fail.
+> The third assertion checks that the running total always increases.
+>   Input such as `[0,1,3,-5,4]` will make it fail.
+> ~~~
+
+> ## Fixing and testing {.challenge}
+>
+> Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
+>
+>~~~ {.output}
+>import numpy
+>def range_overlap(ranges):
+>    '''Return common overlap among a set of [low, high] ranges.'''
+>    if len(ranges) == 1: # only one entry, so return it
+>        return ranges[0]
+>    lowest = -numpy.inf # lowest possible number
+>    highest = numpy.inf # highest possible number
+>    for (low, high) in ranges:
+>        lowest = max(lowest, low)
+>        highest = min(highest, high)
+>    if lowest >= highest: # no overlap
+>        return None
+>    else:
+>        return (lowest, highest)
+>~~~
+
 
 ## [Debugging](09-debugging.html)
 
@@ -135,13 +576,13 @@ Solutions to exercises:
 >
 >    operator = sys.argv[1]
 >    assert operator in ['add', 'subtract', 'multiply', 'divide'], \
->           'Operator is not one of add, subtract, multiply, or divide: bailing out' 
+>           'Operator is not one of add, subtract, multiply, or divide: bailing out'
 >    try:
 >        operand1, operand2 = float(sys.argv[2]), float(sys.argv[3])
 >    except ValueError:
 >        print 'cannot convert input to a number: bailing out'
 >        return
->        
+>
 >    do_arithmetic(operand1, operator, operand2)
 >
 >def do_arithmetic(operand1, operator, operand2):
@@ -175,7 +616,7 @@ Solutions to exercises:
 > ~~~
 
 > ~~~ {.output}
-> # this is code/my_ls.py
+># this is code/my_ls.py
 >import sys
 >import glob
 >
@@ -193,14 +634,14 @@ Solutions to exercises:
 > ~~~
 
 
-> ## Changing flags {.challenge}
+>## Changing flags {.challenge}
 >
 > Rewrite `readings.py` so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
 > Is the code easier to read?
 > Is the program easier to understand?
 
 > ~~~ {.output}
-> # this is code/readings-07.py
+># this is code/readings-07.py
 >import sys
 >import numpy
 >
@@ -232,7 +673,6 @@ Solutions to exercises:
 >main()
 > ~~~
 
-
 > ## Adding a help message {.challenge}
 >
 > Separately,
@@ -241,7 +681,7 @@ Solutions to exercises:
 > it prints a message explaining how it should be used.
 
 > ~~~ {.output}
-> # this is code/readings-08.py
+># this is code/readings-08.py
 >import sys
 >import numpy
 >
@@ -331,7 +771,7 @@ Solutions to exercises:
 > ~~~ {.output}
 > # this is code/check.py
 >import sys
->import numpy 
+>import numpy
 >
 >def main():
 >    script = sys.argv[0]
@@ -365,12 +805,13 @@ Solutions to exercises:
 >
 > *   If no filenames are given, it reports the number of lines in standard input.
 > *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
+
 > ~~~ {.output}
 > # this is code/line-count.py
 >import sys
 >
 >def main():
->    '''print each input filename and the number of lines in it, 
+>    '''print each input filename and the number of lines in it,
 >       and print the sum of the number of lines'''
 >    filenames = sys.argv[1:]
 >    sum_nlines = 0 #initialize counting variable
