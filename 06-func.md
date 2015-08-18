@@ -22,10 +22,9 @@ and didn't want to generate a figure for every single one?
 Commenting out the figure-drawing code is a nuisance.
 Also, what if we want to use that code again,
 on a different dataset or at a different point in our program?
-Cutting and pasting it is going to make our code get very long and very repetative,
-very quickly.
-We'd like a way to package our code so that it is easier to reuse,
-and Python provides for this by letting us define things called 'functions' -
+Cutting and pasting it will make our code very long and very repetitive,
+very quickly whereas we would like a way to package our code that makes it easy to reuse.
+Python provides a solution for this by letting us define 'functions' -
 a shorthand way of re-executing longer pieces of code.
 
 Let's start by defining a function `fahr_to_kelvin` that converts temperatures from Fahrenheit to Kelvin:
@@ -62,13 +61,13 @@ boiling point of water: 273.15
 
 We've successfully called the function that we defined,
 and we have access to the value that we returned.
-Unfortunately, the value returned doesn't look right.
+Unfortunately, the returned value doesn't look right.
 What went wrong?
 
 ## Debugging a Function
 
 *Debugging* is when we fix a piece of code
-that we know is working incorrectly.
+that we know is not working correctly.
 In this case, we know that `fahr_to_kelvin`
 is giving us the wrong answer,
 so let's find out why.
@@ -137,11 +136,9 @@ The computer does this for historical reasons:
 integer operations were much faster on early machines,
 and this behavior is actually useful in a lot of situations.
 It's still confusing,
-though,
-so Python 3 produces a floating-point answer when dividing integers if it needs to.
+therefore, Python 3 produces a floating-point answer when dividing integers if it needs to.
 We're still using Python 2.7 in this class,
-though,
-so if we want `5/9` to give us the right answer,
+therefore, if we want `5/9` to give us the right answer,
 we have to write it as `5.0/9`, `5/9.0`, or some other variation.
 
 Another way to create a floating-point answer
@@ -226,7 +223,7 @@ or the next person who reads it won't be able to understand what's going on.
 ## Tidying up
 
 Now that we know how to wrap bits of code up in functions,
-we can make our inflammation analyasis easier to read and easier to reuse.
+we can make our inflammation analyasis easy to read and reuse.
 First, let's make an `analyze` function that generates our plots:
 
 ~~~ {.python}
@@ -281,8 +278,8 @@ for f in filenames[:3]:
 ~~~
 
 By giving our functions human-readable names,
-we can more easily read and understand what is happening in the `for` loop.
-Even better, if at some later date we want to use either of those pieces of code again,
+we can easily read and understand what is happening in the `for` loop.
+Even better, if in future we want to use either of those pieces of code again,
 we can do so in a single line.
 
 ## Testing and Documenting
@@ -345,8 +342,8 @@ min, mean, and and max of centered data are: -6.14875 -3.49054118942e-15 13.8512
 
 That seems almost right:
 the original mean was about 6.1,
-so the lower bound from zero is how about -6.1.
-The mean of the centered data isn't quite zero --- we'll explore why not in the challenges --- but it's pretty close.
+so the lower bound from zero is about -6.1.
+The mean of the centered data isn't quite zero --- we'll explore that in the challenges --- but it's pretty close.
 We can even go further and check that the standard deviation hasn't changed:
 
 ~~~ {.python}
@@ -370,9 +367,8 @@ difference in standard deviations before and after: -3.5527136788e-15
 Again,
 the difference is very small.
 It's still possible that our function is wrong,
-but it seems unlikely enough that we should probably get back to doing our analysis.
-We have one more task first, though:
-we should write some [documentation](reference.html#documentation) for our function
+but it seems unlikely therefore we should probably get back to doing our analysis.
+Before that, we should write some [documentation](reference.html#documentation) for our function
 to remind ourselves later what it's for and how to use it.
 
 The usual way to put documentation in software is to add [comments](reference.html#comment) like this:
