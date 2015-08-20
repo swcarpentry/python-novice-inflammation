@@ -196,7 +196,6 @@ and false statements. However, they aren't the only values in Python that are tr
 > In fact, *any* value can be used in an `if` or `elif`.
 > After reading and running the code below,
 > explain what the rule is for which values are considered true and which are considered false.
-> (Note that if the body of a conditional is a single statement, we can write it on the same line as the `if`.)
 >
 > ~~~ {.python}
 > if '':
