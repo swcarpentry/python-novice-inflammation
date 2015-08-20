@@ -63,6 +63,54 @@ boiling point of water: 373.15
 We've successfully called the function that we defined,
 and we have access to the value that we returned.
 
+> ## Integer division {.callout}
+>
+> We are using Python3 and integer division always return floating point.
+>
+> ~~~ {.python}
+> $ python -c "print(5/9)"
+> ~~~
+> ~~~ {.output}
+> 0.5555555555555556
+> ~~~
+>
+> **Unfortunately**, in Python2 this isn't the case.
+>
+> ~~~ {.bash}
+> $ python -c "print(5/9)"
+> ~~~
+> ~~~ {.output}
+> 0
+> ~~~
+>
+> If you are using Python2 and want a floating point as return of division
+> you need to use one of the following forms
+>
+> ~~~ {.bash}
+> $ python -c "print(float(5)/9)"
+> ~~~
+> ~~~ {.output}
+> 0.555555555556
+> ~~~
+> ~~~ {.bash}
+> $ python -c "print(5/float(9))"
+> ~~~
+> ~~~ {.output}
+> 0.555555555556
+> ~~~
+> ~~~ {.bash}
+> $ python -c "print(5.0/9)"
+> ~~~
+> ~~~ {.output}
+> 0.555555555556
+> ~~~
+> ~~~ {.bash}
+> $ python -c "print(5/9.0)"
+> ~~~
+> ~~~ {.output}
+> 0.555555555556
+> ~~~
+
 ## Composing Functions
 
 Now that we've seen how to turn Fahrenheit into Kelvin,
