@@ -23,10 +23,10 @@ We can ask Python to take different actions, depending on a condition, with an i
 ~~~ {.python}
 num = 37
 if num > 100:
-    print 'greater'
+    print('greater')
 else:
-    print 'not greater'
-print 'done'
+    print('not greater')
+print('done')
 ~~~
 ~~~ {.output}
 not greater
@@ -50,10 +50,10 @@ Python simply does nothing if the test is false:
 
 ~~~ {.python}
 num = 53
-print 'before conditional...'
+print('before conditional...')
 if num > 100:
-    print '53 is greater than 100'
-print '...after conditional'
+    print('53 is greater than 100')
+print('...after conditional')
 ~~~
 ~~~ {.output}
 before conditional...
@@ -68,11 +68,11 @@ The following Python code uses `elif` to print the sign of a number.
 num = -3
 
 if num > 0:
-    print num, "is positive"
+    print(num, "is positive")
 elif num == 0:
-    print num, "is zero"
+    print(num, "is zero")
 else:
-    print num, "is negative"
+    print(num, "is negative")
 ~~~
 ~~~ {.output}
 "-3 is negative"
@@ -87,9 +87,9 @@ We can also combine tests using `and` and `or`.
 
 ~~~ {.python}
 if (1 > 0) and (-1 > 0):
-    print 'both parts are true'
+    print('both parts are true')
 else:
-    print 'one part is not true'
+    print('one part is not true')
 ~~~
 ~~~ {.output}
 one part is not true
@@ -99,7 +99,7 @@ while `or` is true if at least one part is true:
 
 ~~~ {.python}
 if (1 < 0) or (-1 < 0):
-    print 'at least one test is true'
+    print('at least one test is true')
 ~~~
 ~~~ {.output}
 at least one test is true
@@ -115,7 +115,7 @@ We can check for this inside the `for` loop we wrote with the following conditio
 
 ~~~ {.python}
 if data.min(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
-    print 'Suspicious looking maxima!'
+    print('Suspicious looking maxima!')
 ~~~
 
 We also saw a different problem in the third dataset;
@@ -124,14 +124,14 @@ We can also check for this with an `elif` condition:
 
 ~~~{.python}
 elif data.min(axis=0).sum() == 0:
-    print 'Minima add up to zero!'
+    print('Minima add up to zero!')
 ~~~
 
 And if neither of these conditions are true, we can use `else` to give the all-clear:
 
 ~~~ {.python}
 else:
-    print 'Seems OK!'
+    print('Seems OK!')
 ~~~
 
 Let's test that out:
@@ -139,11 +139,11 @@ Let's test that out:
 ~~~ {.python}
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
-    print 'Suspicious looking maxima!'
+    print('Suspicious looking maxima!')
 elif data.min(axis=0).sum() == 0:
-    print 'Minima add up to zero!'
+    print('Minima add up to zero!')
 else:
-    print 'Seems OK!'
+    print('Seems OK!')
 ~~~
 
 ~~~ {.output}
@@ -153,11 +153,11 @@ Suspicious looking maxima!
 ~~~ {.python}
 data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
 if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
-    print 'Suspicious looking maxima!'
+    print('Suspicious looking maxima!')
 elif data.min(axis=0).sum() == 0:
-    print 'Minima add up to zero!'
+    print('Minima add up to zero!')
 else:
-    print 'Seems OK!'
+    print('Seems OK!')
 ~~~
 
 ~~~ {.output}
@@ -182,11 +182,11 @@ freeing us from having to manually examine every plot for features we've seen be
 >
 > ~~~ {.python}
 > if 4 > 5:
->     print 'A'
+>     print('A')
 > elif 4 == 5:
->     print 'B'
+>     print('B')
 > elif 4 < 5:
->     print 'C'
+>     print('C')
 > ~~~
 
 > ## What is truth? {.challenge}
@@ -196,15 +196,20 @@ and false statements. However, they aren't the only values in Python that are tr
 > In fact, *any* value can be used in an `if` or `elif`.
 > After reading and running the code below,
 > explain what the rule is for which values are considered true and which are considered false.
-> (Note that if the body of a conditional is a single statement, we can write it on the same line as the `if`.)
 >
 > ~~~ {.python}
-> if '': print 'empty string is true'
-> if 'word': print 'word is true'
-> if []: print 'empty list is true'
-> if [1, 2, 3]: print 'non-empty list is true'
-> if 0: print 'zero is true'
-> if 1: print 'one is true'
+> if '':
+>     print('empty string is true')
+> if 'word':
+>     print('word is true')
+> if []:
+>     print('empty list is true')
+> if [1, 2, 3]:
+>     print('non-empty list is true')
+> if 0:
+>     print('zero is true')
+> if 1:
+>     print('one is true')
 > ~~~
 
 > ## Close enough {.challenge}
@@ -224,7 +229,7 @@ and false statements. However, they aren't the only values in Python that are tr
 > x = 1  # original value
 > x += 1 # add one to x, assigning result back to x
 > x *= 3 # multiply x by 3
-> print x
+> print(x)
 > ~~~
 > ~~~ {.output}
 > 6
