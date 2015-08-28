@@ -1,2 +1,2 @@
 import sys
-print 'version is', sys.version
+print('version is', sys.version)
