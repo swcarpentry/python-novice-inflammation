@@ -189,7 +189,7 @@ let's ask what [type](reference.html#type) of thing `data` refers to:
 print(type(data))
 ~~~
 ~~~ {.output}
-<type 'numpy.ndarray'>
+<class 'numpy.ndarray'>
 ~~~
 
 The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library. These data corresponds to arthritis patient's inflammation. The rows are the individual patients and the columns are there daily inflammation measurements.
