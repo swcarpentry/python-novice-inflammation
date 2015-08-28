@@ -65,47 +65,47 @@ and we have access to the value that we returned.
 
 > ## Integer division {.callout}
 >
-> We are using Python3 and integer division always return floating point.
+> We are using Python 3 and integer division always return floating point.
 >
 > ~~~ {.python}
-> $ python -c "print(5/9)"
+> $ python3 -c "print(5/9)"
 > ~~~
 > ~~~ {.output}
 > 0.5555555555555556
 > ~~~
 >
-> **Unfortunately**, in Python2 this isn't the case.
+> **Unfortunately**, in Python 2 this isn't the case.
 >
 > ~~~ {.bash}
-> $ python -c "print(5/9)"
+> $ python2 -c "print(5/9)"
 > ~~~
 > ~~~ {.output}
 > 0
 > ~~~
 >
-> If you are using Python2 and want a floating point as return of division
-> you need to use one of the following forms
+> If you are using Python 2 and want a floating point as return of division
+> you need to use one of the following forms:
 >
 > ~~~ {.bash}
-> $ python -c "print(float(5)/9)"
+> $ python2 -c "print(float(5)/9)"
 > ~~~
 > ~~~ {.output}
 > 0.555555555556
 > ~~~
 > ~~~ {.bash}
-> $ python -c "print(5/float(9))"
+> $ python2 -c "print(5/float(9))"
 > ~~~
 > ~~~ {.output}
 > 0.555555555556
 > ~~~
 > ~~~ {.bash}
-> $ python -c "print(5.0/9)"
+> $ python2 -c "print(5.0/9)"
 > ~~~
 > ~~~ {.output}
 > 0.555555555556
 > ~~~
 > ~~~ {.bash}
-> $ python -c "print(5/9.0)"
+> $ python2 -c "print(5/9.0)"
 > ~~~
 > ~~~ {.output}
 > 0.555555555556
@@ -268,7 +268,7 @@ print('min, mean, and and max of centered data are:', centered.min(), centered.m
 ~~~
 ~~~ {.output}
 original min, mean, and max are: 0.0 6.14875 20.0
-min, mean, and and max of centered data are: -6.14875 -3.49054118942e-15 13.85125
+min, mean, and and max of centered data are: -6.14875 2.84217094304e-16 13.85125
 ~~~
 
 That seems almost right:
@@ -491,7 +491,7 @@ help(numpy.loadtxt)
 ~~~ {.output}
 Help on function loadtxt in module numpy.lib.npyio:
 
-loadtxt(fname, dtype=<type 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
+loadtxt(fname, dtype=<class 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
     Load data from a text file.
 
     Each row in the text file must have the same number of values.
