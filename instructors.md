@@ -138,7 +138,7 @@ Solutions to exercises:
 > 'notweN'
 > ~~~
 
-After discussing these challenges could be a good time to introduce the `b*=2` syntax.
+After discussing these challenges could be a good time to introduce the `b *= 2` syntax.
 
 ## [Storing Multiple Values in Lists](03-lists.html)
 
@@ -240,7 +240,7 @@ Solutions to exercises:
 > ~~~ {.python}
 > positive_sum = 0
 > negative_sum = 0
-> test_list = [3,4,6,1,-1,-5,0,7,-8]
+> test_list = [3, 4, 6, 1, -1, -5, 0, 7, -8]
 > for num in test_list:
 >     if num > 0:
 >         positive_sum += num
@@ -253,7 +253,8 @@ Solutions to exercises:
 > ~~~ {.output}
 > 21 -14
 > ~~~
-> Here `pass` means "don't do anything". In this particular case, it's not actually needed, since if `num==0` neither
+>
+> Here `pass` means "don't do anything". In this particular case, it's not actually needed, since if `num == 0` neither
 > sum needs to change, but it illustrates the use of `elif`.
 
 > ## Tuples and exchanges {.challenge}
@@ -349,7 +350,7 @@ Solutions to exercises:
 > do the two functions always behave the same way?
 >
 > ~~~ {.python}
-> def rescale(input_array, low_val = 0.0, high_val = 1.0):
+> def rescale(input_array, low_val=0.0, high_val=1.0):
 >     '''rescales input array values to lie between low_val and high_val'''
 >     L = input_array.min()
 >     H = input_array.max()
