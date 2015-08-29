@@ -95,11 +95,13 @@ Solutions to exercises:
 
 > ## From 1 to N {.challenge}
 > Using `range`,
-> write a loop that uses `range` to print the first 3 natural numbers:
+> write a loop that uses `range` to print the first 3 natural numbers.
 >
-> ~~~ {.output}
-> for i in range(1,4):
+> ~~~ {.python}
+> for i in range(1, 4):
 >    print(i)
+> ~~~
+> ~~~ {.output}
 > 1
 > 2
 > 3
@@ -123,7 +125,8 @@ Solutions to exercises:
 >
 > Write a loop that takes a string,
 > and produces a new string with the characters in reverse order.
-> ~~~ {.output}
+>
+> ~~~ {.python}
 > newstring = ''
 > oldstring = 'Newton'
 > length_old = len(oldstring)
@@ -140,11 +143,12 @@ After discussing these challenges could be a good time to introduce the `b*=2` s
 ## [Storing Multiple Values in Lists](03-lists.html)
 
 Solutions to exercises:
->## Turn a string into a list {.challenge}
+
+> ## Turn a string into a list {.challenge}
 >
-> Use a for-loop to convert the string "hello" into a list of letters:
+> Use a `for` loop to convert the string `"hello"` into a list of letters:
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > my_list = []
 > for char in "hello":
 >     my_list.append(char)
@@ -154,12 +158,12 @@ Solutions to exercises:
 > ["h", "e", "l", "l", "o"]
 > ~~~
 
-
 ## [Analyzing Data from Multiple Files](04-files.html)
 
 ## [Making Choices](05-cond.html)
 
 Solutions to exercises:
+
 > ## How many paths? {.challenge}
 >
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
@@ -209,7 +213,8 @@ Solutions to exercises:
 >
 > Write some conditions that print `True` if the variable `a` is within 10% of the variable `b`
 > and `False` otherwise.
-> ~~~ {.output}
+>
+> ~~~ {.python}
 > a = 5
 > b = 5.1
 >
@@ -218,19 +223,21 @@ Solutions to exercises:
 > else:
 >     print('False')
 > ~~~
+>
 > Another possible solution:
 >
 > ~~~ {.python}
 > print(abs(a - b) < 0.1 * abs(b))
 > ~~~
-> This works because the Boolean objects `True` and `False` have string representations which can be `print`ed.
+>
+> This works because the boolean objects `True` and `False` have string representations which can be `print`ed.
 
 
 > ## In-place operators {.challenge}
 >
 > Write some code that sums the positive and negative numbers in a list separately,
 > using in-place operators.
-> ~~~ {.output}
+> ~~~ {.python}
 > positive_sum = 0
 > negative_sum = 0
 > test_list = [3,4,6,1,-1,-5,0,7,-8]
@@ -261,29 +268,30 @@ Solutions to exercises:
 > left = right
 > right = temp
 > ~~~
-> ~~~ {.output}
+>
 > The code swaps the contents of the variables right and left.
-> ~~~
+>
 > Compare it to:
+>
 > ~~~ {.python}
 > left, right = right, left
 > ~~~
 >
 > Do they always do the same thing? Which do you find easier to read?
-> ~~~ {.output}
+>
+>
 > Yes, although it's possible the internal implementation is different. Answers will vary on which is easier to read.
-> ~~~
-
 
 ## [Creating Functions](06-func.html)
 
 Solutions to exercises:
+
 > ## Combining strings {.challenge}
 >
 > Write a function called `fence` that takes two parameters called `original` and `wrapper`
 > and returns a new string that has the wrapper character at the beginning and end of the original.
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > def fence(original, wrapper):
 >     return wrapper + original + wrapper
 > ~~~
@@ -293,7 +301,7 @@ Solutions to exercises:
 > Write a function called `outer`
 > that returns a string made up of just the first and last characters of its input.
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > def outer(input_string):
 >     return input_string[0] + input_string[-1]
 > ~~~
@@ -332,7 +340,6 @@ Solutions to exercises:
 >    takes an array as input, and returns a corresponding array scaled so
 >    that 0 corresponds to the minimum and 1 to the maximum value of the input array'''
 > ~~~
-
 
 > ## Defining defaults {.challenge}
 >
@@ -375,8 +382,8 @@ Solutions to exercises:
 > 287.15
 > 273.15
 > 0
-> k is 0 because the `k` inside the function `f2k` doesn't know about the `k` defined outside the function.
 > ~~~
+> k is 0 because the `k` inside the function `f2k` doesn't know about the `k` defined outside the function.
 
 ## [Errors and Exceptions](07-errors.html)
 
@@ -419,15 +426,12 @@ Solutions to exercises:
 > KeyError: 'Friday'
 > ~~~
 >
-> ~~~ {.output}
 > 1. 3 levels
 > 2. `errors_02.py`
 > 3. `print_message`
 > 4. 11
 > 5. `KeyError`
 > 6. There isn't really a message; you're supposed to infer that `Friday` is not a key in `messages`.
-> ~~~
-
 
 > ## Identifying Syntax Errors {.challenge}
 >
@@ -507,11 +511,11 @@ Solutions to exercises:
 > What pre-conditions and post-conditions would you write for it?
 > Compare your answer to your neighbor's:
 > can you think of a function that will pass your tests but not hers or vice versa?
-> ~~~ {.output}
-> Answer:
-> a possible pre-condition:
-> assert len(input)>0, 'List length must be non-zero'
-> a possible post-condition:
+>
+> ~~~ {.python}
+> # a possible pre-condition:
+> assert len(input) > 0, 'List length must be non-zero'
+> # a possible post-condition:
 > assert input.min() < average < input.max(), 'Average should be between min and max of input values'
 > ~~~
 
@@ -533,36 +537,35 @@ Solutions to exercises:
 >         assert result[-1] >= result[0]
 >     return result
 > ~~~
-> ~~~ {.output}
-> The first assertion checks that the input sequence `values` is not empty.
->   An empty sequence such as `[]` will make it fail.
-> The second assertion checks that the first value in the list is positive.
->   Input such as `[-1,0,2,3]` will make it fail.
-> The third assertion checks that the running total always increases.
->   Input such as `[0,1,3,-5,4]` will make it fail.
-> ~~~
+>
+> *   The first assertion checks that the input sequence `values` is not empty.
+>     An empty sequence such as `[]` will make it fail.
+> *   The second assertion checks that the first value in the list is positive.
+>     Input such as `[-1,0,2,3]` will make it fail.
+> *   The third assertion checks that the running total always increases.
+>     Input such as `[0,1,3,-5,4]` will make it fail.
 
 > ## Fixing and testing {.challenge}
 >
 > Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
 >
->~~~ {.output}
->import numpy
->def range_overlap(ranges):
->    '''Return common overlap among a set of [low, high] ranges.'''
->    if len(ranges) == 1: # only one entry, so return it
->        return ranges[0]
->    lowest = -numpy.inf # lowest possible number
->    highest = numpy.inf # highest possible number
->    for (low, high) in ranges:
->        lowest = max(lowest, low)
->        highest = min(highest, high)
->    if lowest >= highest: # no overlap
->        return None
->    else:
->        return (lowest, highest)
->~~~
-
+> ~~~ {.python}
+> import numpy
+>
+> def range_overlap(ranges):
+>     '''Return common overlap among a set of [low, high] ranges.'''
+>     if len(ranges) == 1: # only one entry, so return it
+>         return ranges[0]
+>     lowest = -numpy.inf # lowest possible number
+>     highest = numpy.inf # highest possible number
+>     for (low, high) in ranges:
+>         lowest = max(lowest, low)
+>         highest = min(highest, high)
+>     if lowest >= highest: # no overlap
+>         return None
+>     else:
+>         return (lowest, highest)
+> ~~~
 
 ## [Debugging](09-debugging.html)
 
@@ -574,51 +577,50 @@ Solutions to exercises:
 >
 > Write a command-line program that does addition and subtraction:
 >
-> ~~~ {.python}
+> ~~~ {.bash}
 > $ python arith.py add 1 2
 > ~~~
 > ~~~ {.output}
 > 3
 > ~~~
-> ~~~ {.python}
+> ~~~ {.bash}
 > $ python arith.py subtract 3 4
 > ~~~
 > ~~~ {.output}
 > -1
 > ~~~
 >
-
-> ~~~ {.output}
+> ~~~ {.python}
 > # this is code/arith.py
->import sys
+> import sys
 >
->def main():
->    assert len(sys.argv) == 4, 'Need exactly 3 arguments'
+> def main():
+>     assert len(sys.argv) == 4, 'Need exactly 3 arguments'
 >
->    operator = sys.argv[1]
->    assert operator in ['add', 'subtract', 'multiply', 'divide'], \
->           'Operator is not one of add, subtract, multiply, or divide: bailing out'
->    try:
->        operand1, operand2 = float(sys.argv[2]), float(sys.argv[3])
->    except ValueError:
->        print('cannot convert input to a number: bailing out')
->        return
+>     operator = sys.argv[1]
+>     assert operator in ['add', 'subtract', 'multiply', 'divide'], \
+>         'Operator is not one of add, subtract, multiply, or divide: bailing out'
+>     try:
+>         operand1, operand2 = float(sys.argv[2]), float(sys.argv[3])
+>     except ValueError:
+>         print('cannot convert input to a number: bailing out')
+>         return
 >
->    do_arithmetic(operand1, operator, operand2)
+>     do_arithmetic(operand1, operator, operand2)
 >
->def do_arithmetic(operand1, operator, operand2):
+> def do_arithmetic(operand1, operator, operand2):
 >
->    if operator == 'add':
->        value = operand1 + operand2
->    elif operator == 'subtract':
->        value = operand1 - operand2
->    elif operator == 'multiply':
->        value = operand1 * operand2
->    elif operator == 'divide':
->        value = operand1 / operand2
->    print(value)
+>     if operator == 'add':
+>         value = operand1 + operand2
+>     elif operator == 'subtract':
+>         value = operand1 - operand2
+>     elif operator == 'multiply':
+>         value = operand1 * operand2
+>     elif operator == 'divide':
+>         value = operand1 / operand2
+>     print(value)
 >
->main()
+> main()
 > ~~~
 
 > ## Finding particular files {.challenge}
@@ -627,7 +629,7 @@ Solutions to exercises:
 > write a simple version of `ls` that shows files in the current directory with a particular suffix.
 > A call to this script should look like this:
 >
-> ~~~ {.python}
+> ~~~ {.bash}
 > $ python my_ls.py py
 > ~~~
 > ~~~ {.output}
@@ -635,63 +637,62 @@ Solutions to exercises:
 > right.py
 > zero.py
 > ~~~
-
-> ~~~ {.output}
-># this is code/my_ls.py
->import sys
->import glob
 >
->def main():
->    '''prints names of all files with sys.argv as suffix'''
->    assert len(sys.argv) >= 2, 'Argument list cannot be empty'
->    suffix = sys.argv[1] # NB: behaviour is not as you'd expect if sys.argv[1] is *
->    glob_input = '*.' + suffix # construct the input
->    glob_output = glob.glob(glob_input) # call the glob function
->    for item in glob_output: # print the output
->        print(item)
->    return
+> ~~~ {.python}
+> # this is code/my_ls.py
+> import sys
+> import glob
 >
->main()
+> def main():
+>     '''prints names of all files with sys.argv as suffix'''
+>     assert len(sys.argv) >= 2, 'Argument list cannot be empty'
+>     suffix = sys.argv[1] # NB: behaviour is not as you'd expect if sys.argv[1] is *
+>     glob_input = '*.' + suffix # construct the input
+>     glob_output = sorted(glob.glob(glob_input)) # call the glob function
+>     for item in glob_output: # print the output
+>         print(item)
+>     return
+>
+> main()
 > ~~~
 
-
->## Changing flags {.challenge}
+> ## Changing flags {.challenge}
 >
 > Rewrite `readings.py` so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
 > Is the code easier to read?
 > Is the program easier to understand?
-
-> ~~~ {.output}
-># this is code/readings-07.py
->import sys
->import numpy
 >
->def main():
->    script = sys.argv[0]
->    action = sys.argv[1]
->    filenames = sys.argv[2:]
->    assert action in ['-n', '-m', '-x'], \
->           'Action is not one of -n, -m, or -x: ' + action
->    if len(filenames) == 0:
->        process(sys.stdin, action)
->    else:
->        for f in filenames:
->            process(f, action)
+> ~~~ {.python}
+> # this is code/readings-07.py
+> import sys
+> import numpy
 >
->def process(filename, action):
->    data = numpy.loadtxt(filename, delimiter=',')
+> def main():
+>     script = sys.argv[0]
+>     action = sys.argv[1]
+>     filenames = sys.argv[2:]
+>     assert action in ['-n', '-m', '-x'], \
+>            'Action is not one of -n, -m, or -x: ' + action
+>     if len(filenames) == 0:
+>         process(sys.stdin, action)
+>     else:
+>         for f in filenames:
+>             process(f, action)
 >
->    if action == '-n':
->        values = data.min(axis=1)
->    elif action == '-m':
->        values = data.mean(axis=1)
->    elif action == '-x':
->        values = data.max(axis=1)
+> def process(filename, action):
+>     data = numpy.loadtxt(filename, delimiter=',')
 >
->    for m in values:
->        print(m)
+>     if action == '-n':
+>         values = data.min(axis=1)
+>     elif action == '-m':
+>         values = data.mean(axis=1)
+>     elif action == '-x':
+>         values = data.max(axis=1)
 >
->main()
+>     for m in values:
+>         print(m)
+>
+> main()
 > ~~~
 
 > ## Adding a help message {.challenge}
@@ -700,45 +701,45 @@ Solutions to exercises:
 > modify `readings.py` so that if no parameters are given
 > (i.e., no action is specified and no filenames are given),
 > it prints a message explaining how it should be used.
-
-> ~~~ {.output}
-># this is code/readings-08.py
->import sys
->import numpy
 >
->def main():
->    script = sys.argv[0]
->    if len(sys.argv) == 1: # no arguments, so print help message
->        print('Usage: python readings-08.py action filenames\n \
->               action must be one of --min --mean --max\n \
->               if filenames is blank, input is taken from stdin;\n \
->               otherwise, each filename in the list of arguments is processed in turn')
->        return
+> ~~~ {.python}
+> # this is code/readings-08.py
+> import sys
+> import numpy
 >
->    action = sys.argv[1]
->    filenames = sys.argv[2:]
->    assert action in ['--min', '--mean', '--max'], \
->           'Action is not one of --min, --mean, or --max: ' + action
->    if len(filenames) == 0:
->        process(sys.stdin, action)
->    else:
->        for f in filenames:
->            process(f, action)
+> def main():
+>     script = sys.argv[0]
+>     if len(sys.argv) == 1: # no arguments, so print help message
+>         print("""Usage: python readings-08.py action filenames
+>               action must be one of --min --mean --max
+>               if filenames is blank, input is taken from stdin;
+>               otherwise, each filename in the list of arguments is processed in turn""")
+>         return
 >
->def process(filename, action):
->    data = numpy.loadtxt(filename, delimiter=',')
+>     action = sys.argv[1]
+>     filenames = sys.argv[2:]
+>     assert action in ['--min', '--mean', '--max'], \
+>            'Action is not one of --min, --mean, or --max: ' + action
+>     if len(filenames) == 0:
+>         process(sys.stdin, action)
+>     else:
+>         for f in filenames:
+>             process(f, action)
 >
->    if action == '--min':
->        values = data.min(axis=1)
->    elif action == '--mean':
->        values = data.mean(axis=1)
->    elif action == '--max':
->        values = data.max(axis=1)
+> def process(filename, action):
+>     data = numpy.loadtxt(filename, delimiter=',')
 >
->    for m in values:
->        print(m)
+>     if action == '--min':
+>         values = data.min(axis=1)
+>     elif action == '--mean':
+>         values = data.mean(axis=1)
+>     elif action == '--max':
+>         values = data.max(axis=1)
 >
->main()
+>     for m in values:
+>         print(m)
+>
+> main()
 > ~~~
 
 > ## Adding a default action {.challenge}
@@ -746,41 +747,41 @@ Solutions to exercises:
 > Separately,
 > modify `readings.py` so that if no action is given
 > it displays the means of the data.
-
-> ~~~ {.output}
-># this is code/readings-09.py
->import sys
->import numpy
 >
->def main():
->    script = sys.argv[0]
->    action = sys.argv[1]
->    if action not in ['--min', '--mean', '--max']: # if no action given
->        action = '--mean'    # set a default action, that being mean
->        filenames = sys.argv[1:] # start the filenames one place earlier in the argv list
->    else:
->        filenames = sys.argv[2:]
+> ~~~ {.python}
+> # this is code/readings-09.py
+> import sys
+> import numpy
 >
->    if len(filenames) == 0:
->        process(sys.stdin, action)
->    else:
->        for f in filenames:
->            process(f, action)
+> def main():
+>     script = sys.argv[0]
+>     action = sys.argv[1]
+>     if action not in ['--min', '--mean', '--max']: # if no action given
+>         action = '--mean'    # set a default action, that being mean
+>         filenames = sys.argv[1:] # start the filenames one place earlier in the argv list
+>     else:
+>         filenames = sys.argv[2:]
 >
->def process(filename, action):
->    data = numpy.loadtxt(filename, delimiter=',')
+>     if len(filenames) == 0:
+>         process(sys.stdin, action)
+>     else:
+>         for f in filenames:
+>             process(f, action)
 >
->    if action == '--min':
->        values = data.min(axis=1)
->    elif action == '--mean':
->        values = data.mean(axis=1)
->    elif action == '--max':
->        values = data.max(axis=1)
+> def process(filename, action):
+>     data = numpy.loadtxt(filename, delimiter=',')
 >
->    for m in values:
->        print(m)
+>     if action == '--min':
+>         values = data.min(axis=1)
+>     elif action == '--mean':
+>         values = data.mean(axis=1)
+>     elif action == '--max':
+>         values = data.max(axis=1)
 >
->main()
+>     for m in values:
+>         print(m)
+>
+> main()
 > ~~~
 
 > ## A file-checker {.challenge}
@@ -788,36 +789,36 @@ Solutions to exercises:
 > Write a program called `check.py` that takes the names of one or more inflammation data files as arguments
 > and checks that all the files have the same number of rows and columns.
 > What is the best way to test your program?
-
-> ~~~ {.output}
+>
+> ~~~ {.python}
 > # this is code/check.py
->import sys
->import numpy
+> import sys
+> import numpy
 >
->def main():
->    script = sys.argv[0]
->    filenames = sys.argv[1:]
->    if len(filenames) <=1: #nothing to check
->        print('Only 1 file specified on input')
->    else:
->        nrow0, ncol0 = row_col_count(filenames[0])
->        print('First file {0}: {1} rows and {2} columns'.format(filenames[0], nrow0, ncol0))
->        for f in filenames[1:]:
->            nrow, ncol = row_col_count(f)
->            if nrow != nrow0 or ncol != ncol0:
->                print('File {0} does not check: {1} rows and {2} columns'.format(f, nrow, ncol))
->            else:
->                print('File {0} checks'.format(f))
->        return
+> def main():
+>     script = sys.argv[0]
+>     filenames = sys.argv[1:]
+>     if len(filenames) <=1: #nothing to check
+>         print('Only 1 file specified on input')
+>     else:
+>         nrow0, ncol0 = row_col_count(filenames[0])
+>         print('First file %s: %d rows and %d columns' % (filenames[0], nrow0, ncol0))
+>         for f in filenames[1:]:
+>             nrow, ncol = row_col_count(f)
+>             if nrow != nrow0 or ncol != ncol0:
+>                 print('File %s does not check: %d rows and %d columns' % (f, nrow, ncol))
+>             else:
+>                 print('File %s checks' % f)
+>         return
 >
->def row_col_count(filename):
->    try:
->        nrow, ncol = numpy.loadtxt(filename, delimiter=',').shape
->    except ValueError: #get this if file doesn't have same number of rows and columns, or if it has non-numeric content
->        nrow, ncol = (0, 0)
->    return nrow, ncol
+> def row_col_count(filename):
+>     try:
+>         nrow, ncol = numpy.loadtxt(filename, delimiter=',').shape
+>     except ValueError: #get this if file doesn't have same number of rows and columns, or if it has non-numeric content
+>         nrow, ncol = (0, 0)
+>     return nrow, ncol
 >
->main()
+> main()
 > ~~~
 
 > ## Counting lines {.challenge}
@@ -826,41 +827,41 @@ Solutions to exercises:
 >
 > *   If no filenames are given, it reports the number of lines in standard input.
 > *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
-
-> ~~~ {.output}
+>
+> ~~~ {.python}
 > # this is code/line-count.py
->import sys
+> import sys
 >
->def main():
->    '''print each input filename and the number of lines in it,
->       and print the sum of the number of lines'''
->    filenames = sys.argv[1:]
->    sum_nlines = 0 #initialize counting variable
+> def main():
+>     '''print each input filename and the number of lines in it,
+>        and print the sum of the number of lines'''
+>     filenames = sys.argv[1:]
+>     sum_nlines = 0 #initialize counting variable
 >
->    if len(filenames) == 0: # no filenames, just stdin
->        sum_nlines = count_file_like(sys.stdin)
->        print('stdin: {0}'.format(sum_nlines))
->    else:
->        for f in filenames:
->            n = count_file(f)
->            print('{0} {1}'.format(f, n))
->            sum_nlines += n
->        print('total: {0}'.format(sum_nlines))
+>     if len(filenames) == 0: # no filenames, just stdin
+>         sum_nlines = count_file_like(sys.stdin)
+>         print('stdin: %d' % sum_nlines)
+>     else:
+>         for f in filenames:
+>             n = count_file(f)
+>             print('%s %d' % (f, n))
+>             sum_nlines += n
+>         print('total: %d' % sum_nlines)
 >
->def count_file(filename):
->    '''count the number of lines in a file'''
->    f = open(filename,'r')
->    nlines = len(f.readlines())
->    f.close()
->    return(nlines)
+> def count_file(filename):
+>     '''count the number of lines in a file'''
+>     f = open(filename,'r')
+>     nlines = len(f.readlines())
+>     f.close()
+>     return(nlines)
 >
->def count_file_like(file_like):
->    '''count the number of lines in a file-like object (eg stdin)'''
->    n = 0
->    for line in file_like:
->        n = n+1
->    return n
+> def count_file_like(file_like):
+>     '''count the number of lines in a file-like object (eg stdin)'''
+>     n = 0
+>     for line in file_like:
+>         n = n+1
+>     return n
 >
->main()
+> main()
 >
 > ~~~

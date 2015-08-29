@@ -214,7 +214,9 @@ so we should always use it when we can.
 > Exponentiation is built into Python:
 >
 > ~~~ {.python}
-> print(5**3)
+> print(5 ** 3)
+> ~~~
+> ~~~ {.output}
 > 125
 > ~~~
 >
