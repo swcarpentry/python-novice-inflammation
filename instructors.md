@@ -330,16 +330,18 @@ Solutions to exercises:
 > Once you've successfully tested your function,
 > add a docstring that explains what it does.
 >
-> ~~~ {.output}
+> ~~~ {.python}
+> '''Takes an array as input, and returns a corresponding array scaled so
+> that 0 corresponds to the minimum and 1 to the maximum value of the input array.
+>
 > Examples:
-> rescale(np.arange(0,10.0))
+> >>> rescale(np.arange(10.0))
 > array([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,
 >        0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])
-> rescale(np.linspace(0,100,5))
+> >>> rescale(np.linspace(0, 100, 5))
 > array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
-> '''sample docstring:
->    takes an array as input, and returns a corresponding array scaled so
->    that 0 corresponds to the minimum and 1 to the maximum value of the input array'''
+> '''
+>
 > ~~~
 
 > ## Defining defaults {.challenge}
@@ -447,8 +449,12 @@ Solutions to exercises:
 >      print("But at least python tells us about them!")
 >     print("So they are usually not too hard to fix.")
 > ~~~
-> ~~~ {.output}
-> `SyntaxError` for missing `:()` at end of first line, `IndentationError` for mismatch between second and third lines.
+>
+> `SyntaxError` for missing `():` at end of first line, `IndentationError` for mismatch between second and third lines.
+>
+> Fixed version:
+>
+> ~~~ {.python}
 > def another_function():
 >     print("Syntax errors are annoying.")
 >     print("But at least python tells us about them!")
@@ -471,12 +477,16 @@ Solutions to exercises:
 >         message = message + "b"
 > print(message)
 > ~~~
-> ~~~ {.output}
+>
 > 3 `NameError`s for `number` being misspelled, for `message` not defined, and for `a` not being in quotes.
+>
+> Fixed version:
+>
+> ~~~ {.python}
 > message = ""
 > for number in range(10):
 >     # use a if the number is a multiple of 3, otherwise use b
->     if (Number % 3) == 0:
+>     if (number % 3) == 0:
 >         message = message + "a"
 >     else:
 >         message = message + "b"
@@ -496,8 +506,12 @@ Solutions to exercises:
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > print('My favorite season is ', seasons[4])
 > ~~~
-> ~~~ {.output}
-> IndexError; the last entry is `seasons[3]`, so `seasons[4]` doesn't make sense.
+>
+> `IndexError`; the last entry is `seasons[3]`, so `seasons[4]` doesn't make sense.
+>
+> Fixed version:
+>
+> ~~~ {.python}
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > print('My favorite season is ', seasons[-1])
 > ~~~
