@@ -510,13 +510,16 @@ We now need to rewrite the program so that it loads data from `sys.stdin` if no 
 Luckily,
 `numpy.loadtxt` can handle either a filename or an open file as its first parameter,
 so we don't actually need to change `process`.
-That leaves `main`:
+Only `main` changes:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat readings-06.py
 ~~~
 
 ~~~ {.python}
+import sys
+import numpy
+
 def main():
     script = sys.argv[0]
     action = sys.argv[1]
@@ -528,6 +531,21 @@ def main():
     else:
         for f in filenames:
             process(f, action)
+
+def process(filename, action):
+    data = numpy.loadtxt(filename, delimiter=',')
+
+    if action == '--min':
+        values = data.min(axis=1)
+    elif action == '--mean':
+        values = data.mean(axis=1)
+    elif action == '--max':
+        values = data.max(axis=1)
+
+    for m in values:
+        print(m)
+
+main()
 ~~~
 
 Let's try it out:
