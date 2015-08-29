@@ -346,7 +346,6 @@ Help on function center in module __main__:
 
 center(data, desired)
     Return a new array containing the original data centered around the desired value.
-
 ~~~
 
 A string like this is called a [docstring](reference.html#docstring).
@@ -368,7 +367,6 @@ Help on function center in module __main__:
 center(data, desired)
     Return a new array containing the original data centered around the desired value.
     Example: center([1, 2, 3], 0) => [-1, 0, 1]
-
 ~~~
 
 ## Defining Defaults
@@ -588,13 +586,12 @@ loadtxt(fname, dtype=<class 'float'>, comments='#', delimiter=None, converters=N
     array([ 1.,  3.])
     >>> y
     array([ 2.,  4.])
-
 ~~~
 
 There's a lot of information here,
 but the most important part is the first couple of lines:
 
-~~~python
+~~~ {.output}
 loadtxt(fname, dtype=<type 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None,
         unpack=False, ndmin=0)
 ~~~
@@ -603,7 +600,7 @@ This tells us that `loadtxt` has one parameter called `fname` that doesn't have 
 and eight others that do.
 If we call the function like this:
 
-~~~python
+~~~ {.python}
 numpy.loadtxt('inflammation-01.csv', ',')
 ~~~
 

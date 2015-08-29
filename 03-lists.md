@@ -134,7 +134,7 @@ print('odds after reversing:', odds)
 odds after reversing: [11, 7, 5, 3]
 ~~~
 
-While modifying in place, it is useful to remember that python treats lists in a slightly counterintuitive way.
+While modifying in place, it is useful to remember that Python treats lists in a slightly counterintuitive way.
 
 If we make a list and (attempt to) copy it then modify in place, we can cause all sorts of trouble:
 
@@ -150,8 +150,8 @@ primes: [1, 3, 5, 7, 2]
 odds: [1, 3, 5, 7, 2]
 ~~~
 
-This is because python stores a list in memory, and then can use multiple names to refer to the same list.
-If all we want to do is copy a (simple) list, we can use the list() command, so we do not modify a list we did not mean to:
+This is because Python stores a list in memory, and then can use multiple names to refer to the same list.
+If all we want to do is copy a (simple) list, we can use the `list` function, so we do not modify a list we did not mean to:
 
 ~~~ {.python}
 odds = [1, 3, 5, 7]

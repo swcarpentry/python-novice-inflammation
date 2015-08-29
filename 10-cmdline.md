@@ -27,7 +27,7 @@ and prints the average inflammation per patient.
 This program does exactly what we want - it prints the average inflammation per patient
 for a given file.
 
-~~~
+~~~ {.bash}
 $ python readings.py --mean inflammation-01.csv
 5.45
 5.425
@@ -40,13 +40,13 @@ $ python readings.py --mean inflammation-01.csv
 
 We might also want to look at the minimum of the first four lines
 
-~~~
+~~~ {.bash}
 $ head -4 inflammation-01.csv | python readings.py --min
 ~~~
 
 or the maximum inflammations in several files one after another:
 
-~~~
+~~~ {.bash}
 $ python readings.py --max inflammation-*.csv
 ~~~
 
@@ -77,7 +77,7 @@ It defines values such as `sys.version`,
 which describes which version of Python we are running.
 We can run this script from the command line like this:
 
-~~~ {.input}
+~~~ {.bash}
 $ python sys-version.py
 ~~~
 
@@ -100,7 +100,7 @@ and puts them in the list `sys.argv`
 so that the program can determine what they were.
 If we run this program with no arguments:
 
-~~~ {.input}
+~~~ {.bash}
 $ python argv-list.py
 ~~~
 
@@ -112,7 +112,7 @@ the only thing in the list is the full path to our script,
 which is always `sys.argv[0]`.
 If we run it with a few arguments, however:
 
-~~~ {.input}
+~~~ {.bash}
 $ python argv-list.py first second third
 ~~~
 ~~~ {.output}
@@ -128,7 +128,7 @@ and a placeholder for the function that does the actual work.
 By convention this function is usually called `main`,
 though we can call it whatever we want:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat readings-01.py
 ~~~
 
@@ -149,7 +149,7 @@ because that's where it's always put,
 and the name of the file to process from `sys.argv[1]`.
 Here's a simple test:
 
-~~~ {.input}
+~~~ {.bash}
 $ python readings-01.py inflammation-01.csv
 ~~~
 
@@ -157,7 +157,7 @@ There is no output because we have defined a function,
 but haven't actually called it.
 Let's add a call to `main`:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat readings-02.py
 ~~~
 
@@ -177,7 +177,7 @@ main()
 
 and run that:
 
-~~~ {.input}
+~~~ {.bash}
 $ python readings-02.py inflammation-01.csv
 ~~~
 
@@ -260,14 +260,14 @@ Since 60 lines of output per file is a lot to page through,
 we'll start by using three smaller files,
 each of which has three days of data for two patients:
 
-~~~ {.input}
+~~~ {.bash}
 $ ls small-*.csv
 ~~~
 ~~~ {.output}
 small-01.csv small-02.csv small-03.csv
 ~~~
 
-~~~ {.input}
+~~~ {.bash}
 $ cat small-01.csv
 ~~~
 ~~~ {.output}
@@ -275,7 +275,7 @@ $ cat small-01.csv
 0,1,2
 ~~~
 
-~~~ {.input}
+~~~ {.bash}
 $ python readings-02.py small-01.csv
 ~~~
 ~~~ {.output}
@@ -310,7 +310,7 @@ and includes all the filenames.
 Here's our changed program
 `readings-03.py`:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat readings-03.py
 ~~~
 
@@ -330,7 +330,7 @@ main()
 
 and here it is in action:
 
-~~~ {.input}
+~~~ {.bash}
 $ python readings-03.py small-01.csv small-02.csv
 ~~~
 
@@ -360,7 +360,7 @@ The next step is to teach our program to pay attention to the `--min`, `--mean`,
 These always appear before the names of the files,
 so we could just do this:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat readings-04.py
 ~~~
 
@@ -391,7 +391,7 @@ main()
 
 This works:
 
-~~~ {.input}
+~~~ {.bash}
 $ python readings-04.py --max small-01.csv
 ~~~
 ~~~ {.output}
@@ -414,7 +414,7 @@ It also checks that `action` is one of the allowed flags
 before doing any processing,
 so that the program fails fast:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat readings-05.py
 ~~~
 
@@ -463,7 +463,7 @@ redirect input to it,
 and so on.
 Let's experiment in another script called `count-stdin.py`:
 
-~~~ {.input}
+~~~ {.bash}
 $ cat count-stdin.py
 ~~~
 
@@ -484,7 +484,7 @@ take care of that when the program starts up ---
 but we can do almost anything with it that we could do to a regular file.
 Let's try running it as if it were a regular command-line program:
 
-~~~ {.input}
+~~~ {.bash}
 $ python count-stdin.py < small-01.csv
 ~~~
 
@@ -494,7 +494,7 @@ $ python count-stdin.py < small-01.csv
 
 A common mistake is to try to run something that reads from standard input like this:
 
-~~~ {.input}
+~~~ {.bash}
 $ count_stdin.py small-01.csv
 ~~~
 
@@ -532,7 +532,7 @@ def main():
 
 Let's try it out:
 
-~~~ {.input}
+~~~ {.bash}
 $ python readings-06.py --mean small-01.csv
 ~~~
 
