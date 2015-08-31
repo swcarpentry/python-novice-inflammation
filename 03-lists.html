@@ -30,7 +30,7 @@
           <h2 class="subtitle">Storing Multiple Values in Lists</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -73,7 +73,7 @@ TypeError: &#39;str&#39; object does not support item assignment</code></pre>
 <p>does not.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="ch-ch-ch-changes"><span class="glyphicon glyphicon-pushpin"></span>Ch-Ch-Ch-Changes</h2>
+<h2><span class="glyphicon glyphicon-pushpin"></span>Ch-Ch-Ch-Changes</h2>
 </div>
 <div class="panel-body">
 <p>Data which can be modified in place is called <a href="reference.html#mutable">mutable</a>, while data which cannot be modified is called <a href="reference.html#immutable">immutable</a>. Strings and numbers are immutable. This does not mean that variables with string or number values are constants, but when we want to change the value of a string or number variable, we can only replace the old value with a completely new value.</p>
@@ -97,18 +97,18 @@ TypeError: &#39;str&#39; object does not support item assignment</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python">odds = [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>]
 primes = odds
 primes += [<span class="dv">2</span>]
-<span class="dt">print</span> <span class="st">&#39;primes:&#39;</span>, primes
-<span class="dt">print</span> <span class="st">&#39;odds:&#39;</span>, odds</code></pre>
-<pre class="output"><code>primes [1, 3, 5, 7, 2]
-odds [1, 3, 5, 7, 2]</code></pre>
+<span class="dt">print</span>(<span class="st">&#39;primes:&#39;</span>, primes)
+<span class="dt">print</span>(<span class="st">&#39;odds:&#39;</span>, odds)</code></pre>
+<pre class="output"><code>primes: [1, 3, 5, 7, 2]
+odds: [1, 3, 5, 7, 2]</code></pre>
 <p>This is because python stores a list in memory, and then can use multiple names to refer to the same list. If all we want to do is copy a (simple) list, we can use the list() command, so we do not modify a list we did not mean to:</p>
 <pre class="sourceCode python"><code class="sourceCode python">odds = [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>]
 primes = <span class="dt">list</span>(odds)
 primes += [<span class="dv">2</span>]
-<span class="dt">print</span> <span class="st">&#39;primes:&#39;</span>, primes
-<span class="dt">print</span> <span class="st">&#39;odds:&#39;</span>, odds</code></pre>
-<pre class="output"><code>primes [1, 3, 5, 7, 2]
-odds [1, 3, 5, 7]</code></pre>
+<span class="dt">print</span>(<span class="st">&#39;primes:&#39;</span>, primes)
+<span class="dt">print</span>(<span class="st">&#39;odds:&#39;</span>, odds)</code></pre>
+<pre class="output"><code>primes: [1, 3, 5, 7, 2]
+odds: [1, 3, 5, 7]</code></pre>
 <p>This is different from how variables worked in lesson 1, and more similar to how a spreadsheet works.</p>
 <h2 id="turn-a-string-into-a-list" class="challenge">Turn a string into a list</h2>
 <p>Use a for-loop to convert the string “hello” into a list of letters:</p>

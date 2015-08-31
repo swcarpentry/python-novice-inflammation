@@ -30,7 +30,7 @@
           <h2 class="subtitle">Defensive Programming</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -234,7 +234,7 @@ AssertionError:</code></pre>
 <p>The first of the tests that was supposed to produce <code>None</code> fails, so we know there’s something wrong with our function. What we <em>don’t</em> know, though, is whether the other four tests passed or failed, because Python halted the program as soon as it spotted the first error. Still, some information is better than none, and if we trace the behavior of the function with that input, we realize that we’re initializing <code>lowest</code> and <code>highest</code> to 0.0 and 1.0 respectively, regardless of the input values. This violates another important rule of programming: <em>always initialize from data</em>.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="pre--and-post-conditions"><span class="glyphicon glyphicon-pencil"></span>Pre- and post-conditions</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Pre- and post-conditions</h2>
 </div>
 <div class="panel-body">
 <p>Suppose you are writing a function called <code>average</code> that calculates the average of the numbers in a list. What pre-conditions and post-conditions would you write for it? Compare your answer to your neighbor’s: can you think of a function that will pass your tests but not hers or vice versa?</p>
@@ -242,7 +242,7 @@ AssertionError:</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="testing-assertions"><span class="glyphicon glyphicon-pencil"></span>Testing assertions</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Testing assertions</h2>
 </div>
 <div class="panel-body">
 <p>Given a sequence of values, the function <code>running</code> returns a list containing the running totals at each index.</p>
@@ -263,7 +263,7 @@ AssertionError:</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="fixing-and-testing"><span class="glyphicon glyphicon-pencil"></span>Fixing and testing</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Fixing and testing</h2>
 </div>
 <div class="panel-body">
 <p>Fix <code>range_overlap</code>. Re-run <code>test_range_overlap</code> after each change you make.</p>

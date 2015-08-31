@@ -30,7 +30,7 @@
           <h2 class="subtitle">Analyzing Patient Data</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -74,24 +74,21 @@
 <p>As the example above shows, we can print several things at once by separating them with commas.</p>
 <p>If we imagine the variable as a sticky note with a name written on it, assignment is like putting the sticky note on a particular value:</p>
 <div class="figure">
-<img src="fig/python-sticky-note-variables-01.svg" alt="Variables as Sticky Notes" />
-<p class="caption">Variables as Sticky Notes</p>
+<img src="fig/python-sticky-note-variables-01.svg" alt="Variables as Sticky Notes" /><p class="caption">Variables as Sticky Notes</p>
 </div>
 <p>This means that assigning a value to one variable does <em>not</em> change the values of other variables. For example, let’s store the subject’s weight in pounds in a variable:</p>
 <pre class="sourceCode python"><code class="sourceCode python">weight_lb = <span class="fl">2.2</span> * weight_kg
 <span class="dt">print</span>(<span class="st">&#39;weight in kilograms:&#39;</span>, weight_kg, <span class="st">&#39;and in pounds:&#39;</span>, weight_lb)</code></pre>
 <pre class="output"><code>weight in kilograms: 57.5 and in pounds: 126.5</code></pre>
 <div class="figure">
-<img src="fig/python-sticky-note-variables-02.svg" alt="Creating Another Variable" />
-<p class="caption">Creating Another Variable</p>
+<img src="fig/python-sticky-note-variables-02.svg" alt="Creating Another Variable" /><p class="caption">Creating Another Variable</p>
 </div>
 <p>and then change <code>weight_kg</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python">weight_kg = <span class="fl">100.0</span>
 <span class="dt">print</span>(<span class="st">&#39;weight in kilograms is now:&#39;</span>, weight_kg, <span class="st">&#39;and weight in pounds is still:&#39;</span>, weight_lb)</code></pre>
 <pre class="output"><code>weight in kilograms is now: 100.0 and weight in pounds is still: 126.5</code></pre>
 <div class="figure">
-<img src="fig/python-sticky-note-variables-03.svg" alt="Updating a Variable" />
-<p class="caption">Updating a Variable</p>
+<img src="fig/python-sticky-note-variables-03.svg" alt="Updating a Variable" /><p class="caption">Updating a Variable</p>
 </div>
 <p>Since <code>weight_lb</code> doesn’t “remember” where its value came from, it isn’t automatically updated when <code>weight_kg</code> changes. This is different from the way spreadsheets work.</p>
 <p>Just as we can assign a single value to a variable, we can also assign an array of values to a variable using the same syntax. Let’s re-run <code>numpy.loadtxt</code> and save its result:</p>
@@ -107,7 +104,7 @@
  [ 0.  0.  1. ...,  1.  1.  0.]]</code></pre>
 <p>Now that our data is in memory, we can start doing things with it. First, let’s ask what <a href="reference.html#type">type</a> of thing <code>data</code> refers to:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="dt">type</span>(data))</code></pre>
-<pre class="output"><code>&lt;type &#39;numpy.ndarray&#39;&gt;</code></pre>
+<pre class="output"><code>&lt;class &#39;numpy.ndarray&#39;&gt;</code></pre>
 <p>The output tells us that <code>data</code> currently refers to an N-dimensional array created by the NumPy library. These data corresponds to arthritis patient’s inflammation. The rows are the individual patients and the columns are there daily inflammation measurements. We can see what its <a href="reference.html#shape">shape</a> is like this:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(data.shape)</code></pre>
 <pre class="output"><code>(60, 40)</code></pre>
@@ -120,7 +117,7 @@
 <p>The expression <code>data[30, 20]</code> may not surprise you, but <code>data[0, 0]</code> might. Programming languages like Fortran and MATLAB start counting at 1, because that’s what human beings have done for thousands of years. Languages in the C family (including C++, Java, Perl, and Python) count from 0 because that’s simpler for computers to do. As a result, if we have an M×N array in Python, its indices go from 0 to M-1 on the first axis and 0 to N-1 on the second. It takes a bit of getting used to, but one way to remember the rule is that the index is how many steps we have to take from the start to get the item we want.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="in-the-corner"><span class="glyphicon glyphicon-pushpin"></span>In the Corner</h2>
+<h2><span class="glyphicon glyphicon-pushpin"></span>In the Corner</h2>
 </div>
 <div class="panel-body">
 <p>What may also surprise you is that when Python displays an array, it shows the element with index <code>[0, 0]</code> in the upper left corner rather than the lower left. This is consistent with the way mathematicians draw matrices, but different from the Cartesian coordinates. The indices are (row, column) instead of (column, row) for the same reason, which can be confusing when plotting data.</p>
@@ -192,8 +189,7 @@ standard deviation: 4.61383319712</code></pre>
 <pre class="output"><code>maximum inflammation for patient 2: 19.0</code></pre>
 <p>What if we need the maximum inflammation for <em>all</em> patients (as in the next diagram on the left), or the average for each day (as in the diagram on the right)? As the diagram below shows, we want to perform the operation across an axis:</p>
 <div class="figure">
-<img src="fig/python-operations-across-axes.svg" alt="Operations Across Axes" />
-<p class="caption">Operations Across Axes</p>
+<img src="fig/python-operations-across-axes.svg" alt="Operations Across Axes" /><p class="caption">Operations Across Axes</p>
 </div>
 <p>To support this, most array methods allow us to specify the axis we want to work on. If we ask for the average across axis 0 (rows in our 2D example), we get:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(data.mean(axis=<span class="dv">0</span>))</code></pre>
@@ -222,13 +218,12 @@ standard deviation: 4.61383319712</code></pre>
 image  = matplotlib.pyplot.imshow(data)
 matplotlib.pyplot.show(image)</code></pre>
 <div class="figure">
-<img src="fig/01-numpy_71_0.png" alt="Heatmap of the Data" />
-<p class="caption">Heatmap of the Data</p>
+<img src="fig/01-numpy_71_0.png" alt="Heatmap of the Data" /><p class="caption">Heatmap of the Data</p>
 </div>
 <p>Blue regions in this heat map are low values, while red shows high values. As we can see, inflammation rises and falls over a 40-day period.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="some-ipython-magic"><span class="glyphicon glyphicon-pushpin"></span>Some IPython magic</h2>
+<h2><span class="glyphicon glyphicon-pushpin"></span>Some IPython magic</h2>
 </div>
 <div class="panel-body">
 <p>If you’re using an IPython / Jupyter notebook, you’ll need to execute the following command in order for your matplotlib images to appear in the notebook when <code>show()</code> is called:</p>
@@ -241,21 +236,18 @@ matplotlib.pyplot.show(image)</code></pre>
 ave_plot = matplotlib.pyplot.plot(ave_inflammation)
 matplotlib.pyplot.show(ave_plot)</code></pre>
 <div class="figure">
-<img src="fig/01-numpy_73_0.png" alt="Average Inflammation Over Time" />
-<p class="caption">Average Inflammation Over Time</p>
+<img src="fig/01-numpy_73_0.png" alt="Average Inflammation Over Time" /><p class="caption">Average Inflammation Over Time</p>
 </div>
 <p>Here, we have put the average per day across all patients in the variable <code>ave_inflammation</code>, then asked <code>matplotlib.pyplot</code> to create and display a line graph of those values. The result is roughly a linear rise and fall, which is suspicious: based on other studies, we expect a sharper rise and slower fall. Let’s have a look at two other statistics:</p>
 <pre class="sourceCode python"><code class="sourceCode python">max_plot = matplotlib.pyplot.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
 matplotlib.pyplot.show(max_plot)</code></pre>
 <div class="figure">
-<img src="fig/01-numpy_75_1.png" alt="Maximum Value Along The First Axis" />
-<p class="caption">Maximum Value Along The First Axis</p>
+<img src="fig/01-numpy_75_1.png" alt="Maximum Value Along The First Axis" /><p class="caption">Maximum Value Along The First Axis</p>
 </div>
 <pre class="sourceCode python"><code class="sourceCode python">min_plot = matplotlib.pyplot.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
 matplotlib.pyplot.show(min_plot)</code></pre>
 <div class="figure">
-<img src="fig/01-numpy_75_3.png" alt="Minimum Value Along The First Axis" />
-<p class="caption">Minimum Value Along The First Axis</p>
+<img src="fig/01-numpy_75_3.png" alt="Minimum Value Along The First Axis" /><p class="caption">Minimum Value Along The First Axis</p>
 </div>
 <p>The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there’s a mistake in our calculations or something is wrong with our data.</p>
 <p>You can group similar plots in a single figure using subplots. This script below uses a number of new commands. The function <code>matplotlib.pyplot.figure()</code> creates a space into which we will place all of our plots. The parameter <code>figsize</code> tells Python how big to make this space. Each subplot is placed into the figure using the <code>subplot</code> command. The <code>subplot</code> command takes 3 parameters. The first denotes how many total rows of subplots there are, the second parameter refers to the total number of subplot columns, and the final parameters denotes which subplot your variable is referencing. Each subplot is stored in a different variable (axes1, axes2, axes3). Once a subplot is created, the axes are can be titled using the <code>set_xlabel()</code> command (or <code>set_ylabel()</code>). Here are our three plots side by side:</p>
@@ -283,13 +275,12 @@ fig.tight_layout()
 
 matplotlib.pyplot.show(fig)</code></pre>
 <div class="figure">
-<img src="fig/01-numpy_80_0.png" alt="The Previous Plots as Subplots" />
-<p class="caption">The Previous Plots as Subplots</p>
+<img src="fig/01-numpy_80_0.png" alt="The Previous Plots as Subplots" /><p class="caption">The Previous Plots as Subplots</p>
 </div>
 <p>The <a href="reference.html#function-call">call</a> to <code>loadtxt</code> reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we’re creating three sub-plots, what to draw for each one, and that we want a tight layout. (Perversely, if we leave out that call to <code>fig.tight_layout()</code>, the graphs will actually be squeezed together more closely.)</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="scientists-dislike-typing"><span class="glyphicon glyphicon-pushpin"></span>Scientists dislike typing</h2>
+<h2><span class="glyphicon glyphicon-pushpin"></span>Scientists dislike typing</h2>
 </div>
 <div class="panel-body">
 <p>We will always use the syntax <code>import numpy</code> to import NumPy. However, in order to save typing, it is <a href="http://www.scipy.org/getting-started.html#an-example-script">often suggested</a> to make a shortcut like so: <code>import numpy as np</code>. If you ever see Python code online using a NumPy function with <code>np</code> (for example, <code>np.loadtxt(...)</code>), it’s because they’ve used this shortcut.</p>
@@ -297,7 +288,7 @@ matplotlib.pyplot.show(fig)</code></pre>
 </aside>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="check-your-understanding"><span class="glyphicon glyphicon-pencil"></span>Check your understanding</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Check your understanding</h2>
 </div>
 <div class="panel-body">
 <p>Draw diagrams showing what variables refer to what values after each statement in the following program:</p>
@@ -309,7 +300,7 @@ age = age - <span class="dv">20</span></code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="sorting-out-references"><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
 </div>
 <div class="panel-body">
 <p>What does the following program print out?</p>
@@ -320,7 +311,7 @@ third, fourth = second, first
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="slicing-strings"><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
 </div>
 <div class="panel-body">
 <p>A section of an array is called a <a href="reference.html#slice">slice</a>. We can take slices of character strings as well:</p>
@@ -335,7 +326,7 @@ last three characters: gen</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="thin-slices"><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
 </div>
 <div class="panel-body">
 <p>The expression <code>element[3:3]</code> produces an <a href="reference.html#empty-string">empty string</a>, i.e., a string that contains no characters. If <code>data</code> holds our array of patient data, what does <code>data[3:3, 4:4]</code> produce? What about <code>data[3:3, :]</code>?</p>
@@ -343,7 +334,7 @@ last three characters: gen</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="check-your-understanding-plot-scaling"><span class="glyphicon glyphicon-pencil"></span>Check your understanding: plot scaling</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Check your understanding: plot scaling</h2>
 </div>
 <div class="panel-body">
 <p>Why do all of our plots stop just short of the upper end of our graph?</p>
@@ -351,7 +342,7 @@ last three characters: gen</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="check-your-understanding-drawing-straight-lines"><span class="glyphicon glyphicon-pencil"></span>Check your understanding: drawing straight lines</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Check your understanding: drawing straight lines</h2>
 </div>
 <div class="panel-body">
 <p>Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?</p>
@@ -359,7 +350,7 @@ last three characters: gen</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="make-your-own-plot"><span class="glyphicon glyphicon-pencil"></span>Make your own plot</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Make your own plot</h2>
 </div>
 <div class="panel-body">
 <p>Create a plot showing the standard deviation (<code>numpy.std</code>) of the inflammation data for each day across all patients.</p>
@@ -367,7 +358,7 @@ last three characters: gen</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="moving-plots-around"><span class="glyphicon glyphicon-pencil"></span>Moving plots around</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Moving plots around</h2>
 </div>
 <div class="panel-body">
 <p>Modify the program to display the three plots on top of one another instead of side by side.</p>
