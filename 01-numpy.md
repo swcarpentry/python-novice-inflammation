@@ -93,7 +93,7 @@ weight_kg = 55
 Once a variable has a value, we can print it to the screen:
 
 ~~~ {.python}
-print weight_kg
+print(weight_kg)
 ~~~
 ~~~ {.output}
 55
@@ -102,7 +102,7 @@ print weight_kg
 and do arithmetic with it:
 
 ~~~ {.python}
-print 'weight in pounds:', 2.2 * weight_kg
+print('weight in pounds:', 2.2 * weight_kg)
 ~~~
 ~~~ {.output}
 weight in pounds: 121.0
@@ -112,7 +112,7 @@ We can also change a variable's value by assigning it a new one:
 
 ~~~ {.python}
 weight_kg = 57.5
-print 'weight in kilograms is now:', weight_kg
+print('weight in kilograms is now:', weight_kg)
 ~~~
 ~~~ {.output}
 weight in kilograms is now: 57.5
@@ -132,7 +132,7 @@ let's store the subject's weight in pounds in a variable:
 
 ~~~ {.python}
 weight_lb = 2.2 * weight_kg
-print 'weight in kilograms:', weight_kg, 'and in pounds:', weight_lb
+print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
 ~~~
 ~~~ {.output}
 weight in kilograms: 57.5 and in pounds: 126.5
@@ -144,7 +144,7 @@ and then change `weight_kg`:
 
 ~~~ {.python}
 weight_kg = 100.0
-print 'weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb
+print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
 ~~~
 ~~~ {.output}
 weight in kilograms is now: 100.0 and weight in pounds is still: 126.5
@@ -168,7 +168,7 @@ If we want to check that our data has been loaded,
 we can print the variable's value:
 
 ~~~ {.python}
-print data
+print(data)
 ~~~
 ~~~ {.output}
 [[ 0.  0.  1. ...,  3.  0.  0.]
@@ -186,17 +186,17 @@ First,
 let's ask what [type](reference.html#type) of thing `data` refers to:
 
 ~~~ {.python}
-print type(data)
+print(type(data))
 ~~~
 ~~~ {.output}
-<type 'numpy.ndarray'>
+<class 'numpy.ndarray'>
 ~~~
 
 The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library. These data corresponds to arthritis patient's inflammation. The rows are the individual patients and the columns are there daily inflammation measurements.
 We can see what its [shape](reference.html#shape) is like this:
 
 ~~~ {.python}
-print data.shape
+print(data.shape)
 ~~~
 ~~~ {.output}
 (60, 40)
@@ -217,14 +217,14 @@ we must provide an [index](reference.html#index) in square brackets,
 just as we do in math:
 
 ~~~ {.python}
-print 'first value in data:', data[0, 0]
+print('first value in data:', data[0, 0])
 ~~~
 ~~~ {.output}
 first value in data: 0.0
 ~~~
 
 ~~~ {.python}
-print 'middle value in data:', data[30, 20]
+print('middle value in data:', data[30, 20])
 ~~~
 ~~~ {.output}
 middle value in data: 13.0
@@ -261,7 +261,7 @@ we can select the first ten days (columns) of values
 for the first four patients (rows) like this:
 
 ~~~ {.python}
-print data[0:4, 0:10]
+print(data[0:4, 0:10])
 ~~~
 ~~~ {.output}
 [[ 0.  0.  1.  3.  1.  2.  4.  7.  8.  3.]
@@ -279,7 +279,7 @@ but the rule is that the difference between the upper and lower bounds is the nu
 We don't have to start slices at 0:
 
 ~~~ {.python}
-print data[5:10, 0:10]
+print(data[5:10, 0:10])
 ~~~
 ~~~ {.output}
 [[ 0.  0.  1.  2.  2.  4.  2.  1.  6.  4.]
@@ -300,8 +300,8 @@ the slice includes everything:
 
 ~~~ {.python}
 small = data[:3, 36:]
-print 'small is:'
-print small
+print('small is:')
+print(small)
 ~~~
 ~~~ {.output}
 small is:
@@ -325,10 +325,10 @@ will create a new array `doubledata`
 whose elements have the value of two times the value of the corresponding elements in `data`:
 
 ~~~ {.python}
-print 'original:'
-print data[:3, 36:]
-print 'doubledata:'
-print doubledata[:3, 36:]
+print('original:')
+print(data[:3, 36:])
+print('doubledata:')
+print(doubledata[:3, 36:])
 ~~~
 ~~~ {.output}
 original:
@@ -355,8 +355,8 @@ will give you an array where `tripledata[0,0]` will equal `doubledata[0,0]` plus
 and so on for all other elements of the arrays.
 
 ~~~ {.python}
-print 'tripledata:'
-print tripledata[:3, 36:]
+print('tripledata:')
+print(tripledata[:3, 36:])
 ~~~
 ~~~ {.output}
 tripledata:
@@ -372,7 +372,7 @@ for example,
 we can just ask the array for its mean value
 
 ~~~ {.python}
-print data.mean()
+print(data.mean())
 ~~~
 ~~~ {.output}
 6.14875
@@ -393,9 +393,9 @@ because it is an action.
 NumPy arrays have lots of useful methods:
 
 ~~~ {.python}
-print 'maximum inflammation:', data.max()
-print 'minimum inflammation:', data.min()
-print 'standard deviation:', data.std()
+print('maximum inflammation:', data.max())
+print('minimum inflammation:', data.min())
+print('standard deviation:', data.std())
 ~~~
 ~~~ {.output}
 maximum inflammation: 20.0
@@ -413,7 +413,7 @@ then ask it to do the calculation:
 
 ~~~ {.python}
 patient_0 = data[0, :] # 0 on the first axis, everything on the second
-print 'maximum inflammation for patient 0:', patient_0.max()
+print('maximum inflammation for patient 0:', patient_0.max())
 ~~~
 ~~~ {.output}
 maximum inflammation for patient 0: 18.0
@@ -423,7 +423,7 @@ We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the method call:
 
 ~~~ {.python}
-print 'maximum inflammation for patient 2:', data[2, :].max()
+print('maximum inflammation for patient 2:', data[2, :].max())
 ~~~
 ~~~ {.output}
 maximum inflammation for patient 2: 19.0
@@ -442,7 +442,7 @@ If we ask for the average across axis 0 (rows in our 2D example),
 we get:
 
 ~~~ {.python}
-print data.mean(axis=0)
+print(data.mean(axis=0))
 ~~~
 ~~~ {.output}
 [  0.           0.45         1.11666667   1.75         2.43333333   3.15
@@ -459,7 +459,7 @@ As a quick check,
 we can ask this array what its shape is:
 
 ~~~ {.python}
-print data.mean(axis=0).shape
+print(data.mean(axis=0).shape)
 ~~~
 ~~~ {.output}
 (40,)
@@ -470,7 +470,7 @@ so this is the average inflammation per day for all patients.
 If we average across axis 1 (columns in our 2D example), we get:
 
 ~~~ {.python}
-print data.mean(axis=1)
+print(data.mean(axis=1))
 ~~~
 ~~~ {.output}
 [ 5.45   5.425  6.1    5.9    5.55   6.225  5.975  6.65   6.625  6.525
@@ -637,7 +637,7 @@ the graphs will actually be squeezed together more closely.)
 > ~~~ {.python}
 > first, second = 'Grace', 'Hopper'
 > third, fourth = second, first
-> print third, fourth
+> print(third, fourth)
 > ~~~
 
 > ## Slicing strings {.challenge}
@@ -647,8 +647,8 @@ the graphs will actually be squeezed together more closely.)
 >
 > ~~~ {.python}
 > element = 'oxygen'
-> print 'first three characters:', element[0:3]
-> print 'last three characters:', element[3:6]
+> print('first three characters:', element[0:3])
+> print('last three characters:', element[3:6])
 > ~~~
 >
 > ~~~ {.output}

@@ -57,7 +57,7 @@ total = <span class="fl">0.0</span>
 <span class="kw">for</span> n in numbers:
     <span class="kw">assert</span> n &gt; <span class="fl">0.0</span>, <span class="st">&#39;Data should only contain positive values&#39;</span>
     total += n
-<span class="dt">print</span> <span class="st">&#39;total is:&#39;</span>, total</code></pre>
+<span class="dt">print</span>(<span class="st">&#39;total is:&#39;</span>, total)</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-19-33d87ea29ae4&gt; in &lt;module&gt;()
@@ -65,7 +65,7 @@ AssertionError                            Traceback (most recent call last)
       3 for n in numbers:
 ----&gt; 4     assert n &gt; 0.0, &#39;Data should only contain positive values&#39;
       5     total += n
-      6 print &#39;total is:&#39;, total
+      6 print(&#39;total is:&#39;, total)
 
 AssertionError: Data should only contain positive values</code></pre>
 <p>Programs like the Firefox browser are full of assertions: 10-20% of the code they contain are there to check that the other 80-90% are working correctly. Broadly speaking, assertions fall into three categories:</p>
@@ -96,11 +96,11 @@ AssertionError: Data should only contain positive values</code></pre>
 
     <span class="kw">return</span> (<span class="dv">0</span>, <span class="dv">0</span>, upper_x, upper_y)</code></pre>
 <p>The preconditions on lines 2, 4, and 5 catch invalid inputs:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">2.0</span>) ) <span class="co"># missing the fourth coordinate</span></code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">2.0</span>) )) <span class="co"># missing the fourth coordinate</span></code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-21-3a97b1dcab70&gt; in &lt;module&gt;()
-----&gt; 1 print normalize_rectangle( (0.0, 1.0, 2.0) ) # missing the fourth coordinate
+----&gt; 1 print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
 
 &lt;ipython-input-20-408dc39f3915&gt; in normalize_rectangle(rect)
       1 def normalize_rectangle(rect):
@@ -110,11 +110,11 @@ AssertionError                            Traceback (most recent call last)
       5     assert x0 &lt; x1, &#39;Invalid X coordinates&#39;
 
 AssertionError: Rectangles must contain 4 coordinates</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">4.0</span>, <span class="fl">2.0</span>, <span class="fl">1.0</span>, <span class="fl">5.0</span>) ) <span class="co"># X axis inverted</span></code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(normalize_rectangle( (<span class="fl">4.0</span>, <span class="fl">2.0</span>, <span class="fl">1.0</span>, <span class="fl">5.0</span>) )) <span class="co"># X axis inverted</span></code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-22-f05ae7878a45&gt; in &lt;module&gt;()
-----&gt; 1 print normalize_rectangle( (4.0, 2.0, 1.0, 5.0) ) # X axis inverted
+----&gt; 1 print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted
 
 &lt;ipython-input-20-408dc39f3915&gt; in normalize_rectangle(rect)
       3     assert len(rect) == 4, &#39;Rectangles must contain 4 coordinates&#39;
@@ -125,14 +125,14 @@ AssertionError                            Traceback (most recent call last)
 
 AssertionError: Invalid X coordinates</code></pre>
 <p>The post-conditions help us catch bugs by telling us when our calculations cannot have been correct. For example, if we normalize a rectangle that is taller than it is wide everything seems OK:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">5.0</span>) )</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">5.0</span>) ))</code></pre>
 <pre class="output"><code>(0, 0, 0.2, 1.0)</code></pre>
 <p>but if we normalize one that’s wider than it is tall, the assertion is triggered:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">5.0</span>, <span class="fl">1.0</span>) )</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">5.0</span>, <span class="fl">1.0</span>) ))</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 &lt;ipython-input-24-5f0ef7954aeb&gt; in &lt;module&gt;()
-----&gt; 1 print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )
+----&gt; 1 print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))
 
 &lt;ipython-input-20-408dc39f3915&gt; in normalize_rectangle(rect)
      16

@@ -62,7 +62,7 @@ total = 0.0
 for n in numbers:
     assert n > 0.0, 'Data should only contain positive values'
     total += n
-print 'total is:', total
+print('total is:', total)
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
@@ -72,7 +72,7 @@ AssertionError                            Traceback (most recent call last)
       3 for n in numbers:
 ----> 4     assert n > 0.0, 'Data should only contain positive values'
       5     total += n
-      6 print 'total is:', total
+      6 print('total is:', total)
 
 AssertionError: Data should only contain positive values
 ~~~
@@ -124,13 +124,13 @@ def normalize_rectangle(rect):
 The preconditions on lines 2, 4, and 5 catch invalid inputs:
 
 ~~~ {.python}
-print normalize_rectangle( (0.0, 1.0, 2.0) ) # missing the fourth coordinate
+print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-21-3a97b1dcab70> in <module>()
-----> 1 print normalize_rectangle( (0.0, 1.0, 2.0) ) # missing the fourth coordinate
+----> 1 print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
 
 <ipython-input-20-408dc39f3915> in normalize_rectangle(rect)
       1 def normalize_rectangle(rect):
@@ -143,13 +143,13 @@ AssertionError: Rectangles must contain 4 coordinates
 ~~~
 
 ~~~ {.python}
-print normalize_rectangle( (4.0, 2.0, 1.0, 5.0) ) # X axis inverted
+print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-22-f05ae7878a45> in <module>()
-----> 1 print normalize_rectangle( (4.0, 2.0, 1.0, 5.0) ) # X axis inverted
+----> 1 print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted
 
 <ipython-input-20-408dc39f3915> in normalize_rectangle(rect)
       3     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
@@ -166,7 +166,7 @@ For example,
 if we normalize a rectangle that is taller than it is wide everything seems OK:
 
 ~~~ {.python}
-print normalize_rectangle( (0.0, 0.0, 1.0, 5.0) )
+print(normalize_rectangle( (0.0, 0.0, 1.0, 5.0) ))
 ~~~
 ~~~ {.output}
 (0, 0, 0.2, 1.0)
@@ -176,13 +176,13 @@ but if we normalize one that's wider than it is tall,
 the assertion is triggered:
 
 ~~~ {.python}
-print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )
+print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-24-5f0ef7954aeb> in <module>()
-----> 1 print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )
+----> 1 print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))
 
 <ipython-input-20-408dc39f3915> in normalize_rectangle(rect)
      16

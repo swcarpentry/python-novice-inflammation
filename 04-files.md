@@ -21,10 +21,10 @@ that finds files whose names match a pattern.
 We provide those patterns as strings:
 the character `*` matches zero or more characters,
 while `?` matches any one character.
-We can use this to get the names of all the html files:
+We can use this to get the names of all the HTML files in the current directory:
 
 ~~~ {.python}
-print glob.glob('*.html')
+print(glob.glob('*.html'))
 ~~~
 
 ~~~ {.output}
@@ -46,7 +46,7 @@ import matplotlib.pyplot
 filenames = glob.glob('*.csv')
 filenames = filenames[0:3]
 for f in filenames:
-    print f
+    print(f)
 
     data = numpy.loadtxt(fname=f, delimiter=',')
 

@@ -16,4 +16,4 @@ for p in range(n_patients):
     for d in range(n_days):
         upper = max(n_range - abs(d - middle), 0)
         vals.append(random.randint(upper/4, upper))
-    print ','.join([str(v) for v in vals])
+    print(','.join([str(v) for v in vals]))
