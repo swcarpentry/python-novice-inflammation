@@ -98,7 +98,7 @@ Solutions to exercises:
 >
 > ~~~ {.output}
 > for i in range(1,4):
->    print i
+>    print(i)
 > 1
 > 2
 > 3
@@ -597,7 +597,7 @@ Solutions to exercises:
 >    try:
 >        operand1, operand2 = float(sys.argv[2]), float(sys.argv[3])
 >    except ValueError:
->        print 'cannot convert input to a number: bailing out'
+>        print('cannot convert input to a number: bailing out')
 >        return
 >
 >    do_arithmetic(operand1, operator, operand2)
@@ -612,7 +612,7 @@ Solutions to exercises:
 >        value = operand1 * operand2
 >    elif operator == 'divide':
 >        value = operand1 / operand2
->    print value
+>    print(value)
 >
 >main()
 > ~~~
@@ -644,7 +644,7 @@ Solutions to exercises:
 >    glob_input = '*.' + suffix # construct the input
 >    glob_output = glob.glob(glob_input) # call the glob function
 >    for item in glob_output: # print the output
->        print item
+>        print(item)
 >    return
 >
 >main()
@@ -685,7 +685,7 @@ Solutions to exercises:
 >        values = data.max(axis=1)
 >
 >    for m in values:
->        print m
+>        print(m)
 >
 >main()
 > ~~~
@@ -705,10 +705,10 @@ Solutions to exercises:
 >def main():
 >    script = sys.argv[0]
 >    if len(sys.argv) == 1: # no arguments, so print help message
->        print 'Usage: python readings-08.py action filenames\n \
+>        print('Usage: python readings-08.py action filenames\n \
 >               action must be one of --min --mean --max\n \
 >               if filenames is blank, input is taken from stdin;\n \
->               otherwise, each filename in the list of arguments is processed in turn'
+>               otherwise, each filename in the list of arguments is processed in turn')
 >        return
 >
 >    action = sys.argv[1]
@@ -732,7 +732,7 @@ Solutions to exercises:
 >        values = data.max(axis=1)
 >
 >    for m in values:
->        print m
+>        print(m)
 >
 >main()
 > ~~~
@@ -774,7 +774,7 @@ Solutions to exercises:
 >        values = data.max(axis=1)
 >
 >    for m in values:
->        print m
+>        print(m)
 >
 >main()
 > ~~~
@@ -794,16 +794,16 @@ Solutions to exercises:
 >    script = sys.argv[0]
 >    filenames = sys.argv[1:]
 >    if len(filenames) <=1: #nothing to check
->        print 'Only 1 file specified on input'
+>        print('Only 1 file specified on input')
 >    else:
 >        nrow0, ncol0 = row_col_count(filenames[0])
->        print 'First file %s: %d rows and %d columns' % (filenames[0], nrow0, ncol0)
+>        print('First file {0}: {1} rows and {2} columns'.format(filenames[0], nrow0, ncol0))
 >        for f in filenames[1:]:
 >            nrow, ncol = row_col_count(f)
 >            if nrow != nrow0 or ncol != ncol0:
->                print 'File %s does not check: %d rows and %d columns' % (f, nrow, ncol)
+>                print('File {0} does not check: {1} rows and {2} columns'.format(f, nrow, ncol))
 >            else:
->                print 'File %s checks' % f
+>                print('File {0} checks'.format(f))
 >        return
 >
 >def row_col_count(filename):
@@ -835,13 +835,13 @@ Solutions to exercises:
 >
 >    if len(filenames) == 0: # no filenames, just stdin
 >        sum_nlines = count_file_like(sys.stdin)
->        print 'stdin: %d' % sum_nlines
+>        print('stdin: {0}'.format(sum_nlines))
 >    else:
 >        for f in filenames:
 >            n = count_file(f)
->            print '%s %d' % (f, n)
+>            print('{0} {1}'.format(f, n))
 >            sum_nlines += n
->        print 'total: %d' % sum_nlines
+>        print('total: {0}'.format(sum_nlines))
 >
 >def count_file(filename):
 >    '''count the number of lines in a file'''
