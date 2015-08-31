@@ -82,8 +82,8 @@ $ python sys-version.py
 ~~~
 
 ~~~ {.output}
-version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
-[GCC 4.0.1 (Apple Inc. build 5493)]
+version is 3.4.3+ (default, Jul 28 2015, 13:17:50)
+[GCC 4.9.3]
 ~~~
 
 Create another file called `argv-list.py` and save the following text to it.
