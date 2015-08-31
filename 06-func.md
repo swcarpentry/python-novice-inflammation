@@ -65,7 +65,7 @@ and we have access to the value that we returned.
 
 > ## Integer division {.callout}
 >
-> We are using Python 3 and integer division always return floating point.
+> We are using Python 3, where division always returns a floating point number:
 >
 > ~~~ {.python}
 > $ python3 -c "print(5/9)"
@@ -74,41 +74,56 @@ and we have access to the value that we returned.
 > 0.5555555555555556
 > ~~~
 >
-> **Unfortunately**, in Python 2 this isn't the case.
+> Unfortunately, this wasn't the case in Python 2:
 >
-> ~~~ {.bash}
-> $ python2 -c "print(5/9)"
+> ~~~ {.python}
+> 5/9
 > ~~~
 > ~~~ {.output}
 > 0
 > ~~~
 >
-> If you are using Python 2 and want a floating point as return of division
-> you need to use one of the following forms:
+> If you are using Python 2 and want to keep the fractional part of division
+> you need to convert one or the other number to floating point:
 >
-> ~~~ {.bash}
-> $ python2 -c "print(float(5)/9)"
+> ~~~ {.python}
+> float(5)/9
 > ~~~
 > ~~~ {.output}
 > 0.555555555556
 > ~~~
-> ~~~ {.bash}
-> $ python2 -c "print(5/float(9))"
+> ~~~ {.python}
+> 5/float(9)
 > ~~~
 > ~~~ {.output}
 > 0.555555555556
 > ~~~
-> ~~~ {.bash}
-> $ python2 -c "print(5.0/9)"
+> ~~~ {.python}
+> 5.0/9
 > ~~~
 > ~~~ {.output}
 > 0.555555555556
 > ~~~
-> ~~~ {.bash}
-> $ python2 -c "print(5/9.0)"
+> ~~~ {.python}
+> 5/9.0
 > ~~~
 > ~~~ {.output}
 > 0.555555555556
+> ~~~
+>
+> And if you want an integer result from division in Python 3,
+> use a double-slash:
+> ~~~ {.python}
+> 4//2
+> ~~~
+> ~~~ {.output}
+> 2
+> ~~~
+> ~~~ {.python}
+> 3//2
+> ~~~
+> ~~~ {.output}
+> 1
 > ~~~
 
 ## Composing Functions
