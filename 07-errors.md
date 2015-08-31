@@ -14,7 +14,7 @@ minutes: 30
 >     * `SyntaxError` and `IndentationError`
 >     * `NameError`
 >     * `IndexError`
->     * `IOError`
+>     * `FileNotFoundError`
 
 Every programmer encounters errors,
 both those who are just beginning,
@@ -311,25 +311,20 @@ Python is telling us that there is an `IndexError` in our code, meaning we tried
 
 ## File Errors
 
-The last type of error we'll cover today are those associated with reading and writing files: `IOError`.
-The "IO" in `IOError` stands for "input/output",
-which is just a fancy way of saying "reading/writing".
+The last type of error we'll cover today are those associated with reading and writing files: `FileNotFoundError`.
 If you try to read a file that does not exist,
-you will recieve an `IOError` telling you so.
-This is the most common reason why you would receive `IOError`,
-and if the error messages says "no such file or directory",
-then you know you have just tried to access a file that does not exist:
+you will recieve an `FileNotFoundError` telling you so.
 
 ~~~ {.python}
 file_handle = open('myfile.txt', 'r')
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
-IOError                                   Traceback (most recent call last)
+FileNotFoundError                         Traceback (most recent call last)
 <ipython-input-14-f6e1ac4aee96> in <module>()
 ----> 1 file_handle = open('myfile.txt', 'r')
 
-IOError: [Errno 2] No such file or directory: 'myfile.txt'
+FileNotFoundError: [Errno 2] No such file or directory: 'myfile.txt'
 ~~~
 
 One reason for receiving this error is that you specified an incorrect path to the file.
@@ -347,7 +342,8 @@ However,
 if you meant to open a file for reading,
 but accidentally opened it for writing,
 and then try to read from it,
-you will get an error telling you that the file was not opened for reading:
+you will get an `UnsupportedOperation` error
+telling you that the file was not opened for reading:
 
 ~~~ {.python}
 file_handle = open('myfile.txt', 'w')
@@ -355,13 +351,19 @@ file_handle.read()
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
-IOError                                   Traceback (most recent call last)
+UnsupportedOperation                      Traceback (most recent call last)
 <ipython-input-15-b846479bc61f> in <module>()
       1 file_handle = open('myfile.txt', 'w')
 ----> 2 file_handle.read()
 
-IOError: File not open for reading
+UnsupportedOperation: not readable
 ~~~
+
+These are the most common errors with files,
+though many others exist.
+If you get an error that you've never seen before,
+searching the Internet for that error type
+often reveals common reasons why you might get that error.
 
 > ## Reading Error Messages {.challenge}
 >
