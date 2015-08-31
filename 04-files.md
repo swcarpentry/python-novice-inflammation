@@ -21,11 +21,10 @@ that finds files whose names match a pattern.
 We provide those patterns as strings:
 the character `*` matches zero or more characters,
 while `?` matches any one character.
-We can use this to get the names of all the html files.
-We use the `sorted` function to ensure this list is in alphabetical order:
+We can use this to get the names of all the HTML files in the current directory:
 
 ~~~ {.python}
-print(sorted(glob.glob('*.html')))
+print(glob.glob('*.html'))
 ~~~
 
 ~~~ {.output}
@@ -44,7 +43,7 @@ Let's test it by analyzing the first three files in the list:
 import numpy
 import matplotlib.pyplot
 
-filenames = sorted(glob.glob('*.csv'))
+filenames = glob.glob('*.csv')
 filenames = filenames[0:3]
 for f in filenames:
     print(f)
