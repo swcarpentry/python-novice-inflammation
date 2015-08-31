@@ -68,7 +68,7 @@ save the following in a text file called `sys-version.py`:
 
 ~~~ {.python}
 import sys
-print 'version is', sys.version
+print('version is', sys.version)
 ~~~
 
 The first line imports a library called `sys`,
@@ -82,15 +82,15 @@ $ python sys-version.py
 ~~~
 
 ~~~ {.output}
-version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
-[GCC 4.0.1 (Apple Inc. build 5493)]
+version is 3.4.3+ (default, Jul 28 2015, 13:17:50)
+[GCC 4.9.3]
 ~~~
 
 Create another file called `argv-list.py` and save the following text to it.
 
 ~~~ {.python}
 import sys
-print 'sys.argv is', sys.argv
+print('sys.argv is', sys.argv)
 ~~~
 
 The strange name `argv` stands for "argument values".
@@ -141,7 +141,7 @@ def main():
     filename = sys.argv[1]
     data = numpy.loadtxt(filename, delimiter=',')
     for m in data.mean(axis=1):
-        print m
+        print(m)
 ~~~
 
 This function gets the name of the script from `sys.argv[0]`,
@@ -170,7 +170,7 @@ def main():
     filename = sys.argv[1]
     data = numpy.loadtxt(filename, delimiter=',')
     for m in data.mean(axis=1):
-        print m
+        print(m)
 
 main()
 ~~~
@@ -323,7 +323,7 @@ def main():
     for filename in sys.argv[1:]:
         data = numpy.loadtxt(filename, delimiter=',')
         for m in data.mean(axis=1):
-            print m
+            print(m)
 
 main()
 ~~~
@@ -384,7 +384,7 @@ def main():
             values = data.max(axis=1)
 
         for m in values:
-            print m
+            print(m)
 
 main()
 ~~~
@@ -442,7 +442,7 @@ def process(filename, action):
         values = data.max(axis=1)
 
     for m in values:
-        print m
+        print(m)
 
 main()
 ~~~
@@ -474,7 +474,7 @@ count = 0
 for line in sys.stdin:
     count += 1
 
-print count, 'lines in standard input'
+print(count, 'lines in standard input')
 ~~~
 
 This little program reads lines from a special "file" called `sys.stdin`,

@@ -107,11 +107,14 @@ Solutions to exercises:
 > ## Computing powers with loops {.challenge}
 > Write a loop that calculates the same result as `5 ** 3` using
 > multiplication (and without exponentiation).
-> ~~~ {.output}
+>
+> ~~~ {.python}
 > result = 1
-> for i in range(0,3):
->    result = result*5
-> print result
+> for i in range(0, 3):
+>    result = result * 5
+> print(result)
+> ~~~
+> ~~~ {.output}
 > 125
 > ~~~
 
@@ -124,8 +127,10 @@ Solutions to exercises:
 > oldstring = 'Newton'
 > length_old = len(oldstring)
 > for char_index in range(length_old):
->    newstring = newstring + oldstring[length_old-char_index-1]
-> print newstring
+>    newstring = newstring + oldstring[length_old - char_index - 1]
+> print(newstring)
+> ~~~
+> ~~~ {.output}
 > 'notweN'
 > ~~~
 
@@ -142,7 +147,9 @@ Solutions to exercises:
 > my_list = []
 > for char in "hello":
 >     my_list.append(char)
-> print my_list
+> print(my_list)
+> ~~~
+> ~~~ {.output}
 > ["h", "e", "l", "l", "o"]
 > ~~~
 
@@ -158,30 +165,35 @@ Solutions to exercises:
 >
 > ~~~ {.python}
 > if 4 > 5:
->     print 'A'
+>     print('A')
 > elif 4 == 5:
->     print 'B'
+>     print('B')
 > elif 4 < 5:
->     print 'C'
+>     print('C')
 > ~~~
-> ~~~ {.output}
-> C gets printed, because the first two conditions, `4<5` and `4==5` are not true, but `4<5` is true.
-> ~~~
+>
+> C gets printed, because the first two conditions, `4 > 5` and `4 == 5` are not true, but `4 < 5` is true.
+>
 
 
 > ## What is truth? {.challenge}
 >
 > After reading and running the code below,
 > explain the rules for which values are considered true and which are considered false.
-> (Note that if the body of a conditional is a single statement, we can write it on the same line as the `if`.)
 >
 > ~~~ {.python}
-> if '': print 'empty string is true'
-> if 'word': print 'word is true'
-> if []: print 'empty list is true'
-> if [1, 2, 3]: print 'non-empty list is true'
-> if 0: print 'zero is true'
-> if 1: print 'one is true'
+> if '':
+>     print('empty string is true')
+> if 'word':
+>     print('word is true')
+> if []:
+>     print('empty list is true')
+> if [1, 2, 3]:
+>     print('non-empty list is true')
+> if 0:
+>     print('zero is true')
+> if 1:
+>     print('one is true')
 > ~~~
 > ~~~ {.output}
 > First line prints nothing: an empty string is false
@@ -200,14 +212,15 @@ Solutions to exercises:
 > a = 5
 > b = 5.1
 >
-> if abs(a-b) < 0.1*abs(b):
->     print 'True'
+> if abs(a - b) < 0.1 * abs(b):
+>     print('True')
 > else:
->     print 'False'
+>     print('False')
 > ~~~
 > Another possible solution:
-> ~~~ {.output}
-> print abs(a-b) < 0.1*abs(b)
+>
+> ~~~ {.python}
+> print(abs(a - b) < 0.1 * abs(b))
 > ~~~
 > This works because the Boolean objects `True` and `False` have string representations which can be `print`ed.
 
@@ -227,7 +240,9 @@ Solutions to exercises:
 >         pass
 >     else:
 >         negative_sum += num
-> print positive_sum, negative_sum
+> print(positive_sum, negative_sum)
+> ~~~
+> ~~~ {.output}
 > 21 -14
 > ~~~
 > Here `pass` means "don't do anything". In this particular case, it's not actually needed, since if `num==0` neither
@@ -289,11 +304,11 @@ Solutions to exercises:
 > (Hint: If $L$ and $H$ are the lowest and highest values in the original array,
 > then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > def rescale(input_array):
 >     L = input_array.min()
 >     H = input_array.max()
->     output_array = (input_array - L)/float(H-L)
+>     output_array = (input_array - L) / (H - L)
 >     return output_array
 > ~~~
 
@@ -328,8 +343,8 @@ Solutions to exercises:
 >     '''rescales input array values to lie between low_val and high_val'''
 >     L = input_array.min()
 >     H = input_array.max()
->     intermed_array = (input_array - L)/float(H-L)
->     output_array = intermed_array*(high_val-low_val) + low_val
+>     intermed_array = (input_array - L) / (H - L)
+>     output_array = intermed_array * (high_val - low_val) + low_val
 >     return output_array
 > ~~~
 
@@ -345,11 +360,11 @@ Solutions to exercises:
 >   k = ((f-32)*(5.0/9.0)) + 273.15
 >   return k
 >
-> print f2k(8)
-> print f2k(41)
-> print f2k(32)
+> print(f2k(8))
+> print(f2k(41))
+> print(f2k(32))
 >
-> print k
+> print(k)
 > ~~~
 >
 > ~~~ {.output}
@@ -393,7 +408,7 @@ Solutions to exercises:
 > /Users/jhamrick/project/swc/novice/python/errors_02.py in print_message(day)
 >       9         "sunday": "Aw, the weekend is almost over."
 >      10     }
-> ---> 11     print messages[day]
+> ---> 11     print(messages[day])
 >      12
 >      13
 >
@@ -419,16 +434,16 @@ Solutions to exercises:
 >
 > ~~~ {.python}
 > def another_function
->   print "Syntax errors are annoying."
->    print "But at least python tells us about them!"
->   print "So they are usually not too hard to fix."
+>     print("Syntax errors are annoying.")
+>      print("But at least python tells us about them!")
+>     print("So they are usually not too hard to fix.")
 > ~~~
 > ~~~ {.output}
 > `SyntaxError` for missing `:()` at end of first line, `IndentationError` for mismatch between second and third lines.
 > def another_function():
->   print "Syntax errors are annoying."
->   print "But at least python tells us about them!"
->   print "So they are usually not too hard to fix."
+>     print("Syntax errors are annoying.")
+>     print("But at least python tells us about them!")
+>     print("So they are usually not too hard to fix.")
 > ~~~
 
 > ## Identifying Variable Name Errors {.challenge}
@@ -445,7 +460,7 @@ Solutions to exercises:
 >         message = message + a
 >     else:
 >         message = message + "b"
-> print message
+> print(message)
 > ~~~
 > ~~~ {.output}
 > 3 `NameError`s for `number` being misspelled, for `message` not defined, and for `a` not being in quotes.
@@ -456,7 +471,9 @@ Solutions to exercises:
 >         message = message + "a"
 >     else:
 >         message = message + "b"
-> print message
+> print(message)
+> ~~~
+> ~~~ {.output}
 > abbabbabba
 > ~~~
 
@@ -468,12 +485,12 @@ Solutions to exercises:
 >
 > ~~~ {.python}
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-> print 'My favorite season is ', seasons[4]
+> print('My favorite season is ', seasons[4])
 > ~~~
 > ~~~ {.output}
 > IndexError; the last entry is `seasons[3]`, so `seasons[4]` doesn't make sense.
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-> print 'My favorite season is ', seasons[-1]
+> print('My favorite season is ', seasons[-1])
 > ~~~
 
 ## [Defensive Programming](08-defensive.html)
