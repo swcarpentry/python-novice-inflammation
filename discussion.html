@@ -80,7 +80,7 @@ data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>
 <p>The big idea here is <a href="reference.html#encapsulation">encapsulation</a>, and it’s the key to writing correct, comprehensible programs. A function’s job is to turn several operations into one so that we can think about a single function call instead of a dozen or a hundred statements each time we want to do something. That only works if functions don’t interfere with each other; if they do, we have to pay attention to the details once again, which quickly overloads our short-term memory.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Following the call stack</h2>
+<h2 id="following-the-call-stack"><span class="glyphicon glyphicon-pencil"></span>Following the call stack</h2>
 </div>
 <div class="panel-body">
 <p>We previously wrote functions called <code>fence</code> and <code>outer</code>. Draw a diagram showing how the call stack changes when we run the following:</p>
@@ -96,6 +96,7 @@ data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>
 grid.show()</code></pre>
 <div class="figure">
 <img src="img/grid-01.png" />
+
 </div>
 <p>Just like a NumPy array, an <code>ImageGrid</code> has some properties that hold information about it:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&#39;grid width:&#39;</span>, grid.width)
@@ -106,7 +107,8 @@ grid height: 3
 grid lines on: True</code></pre>
 <p>The obvious thing to do with a grid like this is color in its cells, but in order to do that, we need to know how computers represent color. The most common schemes are <a href="reference.html#rgb">RGB</a>, which is short for “red, green, blue”. RGB is an <a href="reference.html#additive-color-model">additive color model</a>: every shade is some combination of red, green, and blue intensities. We can think of these three values as being the axes in a cube:</p>
 <div class="figure">
-<img src="fig/color-cube.png" alt="RGB Color Cube" /><p class="caption">RGB Color Cube</p>
+<img src="fig/color-cube.png" alt="RGB Color Cube" />
+<p class="caption">RGB Color Cube</p>
 </div>
 <p>An RGB color is an example of a multi-part value: like a Cartesian coordinate, it is one thing with several parts. We can represent such a value in Python using a <a href="reference.html#tuple">tuple</a>, which we write using parentheses instead of the square brackets used for a list:</p>
 <pre class="sourceCode python"><code class="sourceCode python">position = (<span class="fl">12.3</span>, <span class="fl">45.6</span>)
@@ -142,12 +144,14 @@ row[<span class="dv">7</span>, <span class="dv">0</span>] = (<span class="dv">0<
 row.show()</code></pre>
 <div class="figure">
 <img src="img/grid-02.png" />
+
 </div>
 <p>Simple color values like <code>(0,255,0)</code> are easy enough to decipher with a bit of practice, but what color is <code>(214,90,127)</code>? To help us, <code>ipythonblocks</code> provides a function called <code>show_color</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> ipythonblocks <span class="ch">import</span> show_color
 show_color(<span class="dv">214</span>, <span class="dv">90</span>, <span class="dv">127</span>)</code></pre>
 <div class="figure">
 <img src="fig/ipythonblocks_show_color_example.png" />
+
 </div>
 <p>It also provides a table of standard colors:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> ipythonblocks <span class="ch">import</span> colors
@@ -161,10 +165,11 @@ c[<span class="dv">2</span>, <span class="dv">1</span>] = colors[<span class="st
 c.show()</code></pre>
 <div class="figure">
 <img src="img/grid-03.png" />
+
 </div>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Making a colorbar</h2>
+<h2 id="making-a-colorbar"><span class="glyphicon glyphicon-pencil"></span>Making a colorbar</h2>
 </div>
 <div class="panel-body">
 <p>Fill in the <code>____</code> in the code below to create a bar that changes color from dark blue to black.</p>
@@ -176,7 +181,7 @@ bar.show()</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Why RGB?</h2>
+<h2 id="why-rgb"><span class="glyphicon glyphicon-pencil"></span>Why RGB?</h2>
 </div>
 <div class="panel-body">
 <p>Why do computers use red, green, and blue as their primary colors?</p>
@@ -184,7 +189,7 @@ bar.show()</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Nested loops</h2>
+<h2 id="nested-loops"><span class="glyphicon glyphicon-pencil"></span>Nested loops</h2>
 </div>
 <div class="panel-body">
 <p>Will changing the nesting of the loops in the code above — i.e., wrapping the Y-axis loop around the X-axis loop — change the final image? Why or why not?</p>
@@ -192,7 +197,7 @@ bar.show()</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Where to change data</h2>
+<h2 id="where-to-change-data"><span class="glyphicon glyphicon-pencil"></span>Where to change data</h2>
 </div>
 <div class="panel-body">
 <p>Why did we transpose our data outside our heat map function? Why not have the function perform the transpose?</p>
@@ -200,7 +205,7 @@ bar.show()</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Design choice: return versus display</h2>
+<h2 id="design-choice-return-versus-display"><span class="glyphicon glyphicon-pencil"></span>Design choice: return versus display</h2>
 </div>
 <div class="panel-body">
 <p>Why does the heat map function return the grid rather than displaying it immediately? Do you think this is a good or bad design choice?</p>
