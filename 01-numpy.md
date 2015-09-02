@@ -15,7 +15,7 @@ minutes: 30
 > *   Display simple graphs.
 
 Words are useful,
-but what's more useful are the sentences and stories we build with them.
+but what are more useful are the sentences and stories we build with them.
 Similarly,
 while a lot of powerful tools are built into languages like Python,
 even more live in the [libraries](reference.html#library) they are used to build.
