@@ -6,8 +6,9 @@
 python tools/md2py.py
 
 # Run PEP8 check, ignoring long lines (E501), trailing whitespace (W291),
-# and module level imports not at top of file (E402)
-pep8 --ignore E501,W291,E402 temp
+# module level imports not at top of file (E402), and insufficient blank lines
+# before function definitions (E302)
+pep8 --ignore E501,W291,E402,E302 temp
 
 # Remove temporary files
 rm -rf temp
