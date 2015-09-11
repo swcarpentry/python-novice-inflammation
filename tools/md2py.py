@@ -5,10 +5,13 @@ to be run from the lesson root directory.
 """
 import os
 import shutil
+import subprocess
+
 
 def comment_line(line):
     """Comment a line."""
     return "# " + line
+
 
 def md2py(fpath_md, fname_out=None):
     """
@@ -37,6 +40,7 @@ def md2py(fpath_md, fname_out=None):
         with open(os.path.join("temp", fname_out), "w") as f:
             f.write(py_text)
 
+
 def test_md2py(rm_temp=True):
     """Test the md2py function on known input."""
     fpath_md = "tools/test/test_md_to_py.md"
@@ -51,5 +55,28 @@ def test_md2py(rm_temp=True):
         shutil.rmtree("./temp")
     assert py == py_ref
 
+
+def check_lesson(fname):
+    """
+    Convert a lesson and check it for PEP8 compliance. Does not work right now.
+    """
+    fname_py = fname.replace(".md", ".py")
+    fpath_py = os.path.join("temp", fname_py)
+    # Convert the lesson to Python
+    md2py(fname, fname_py)
+    # Run the pep8 script on the newly generated Python file
+    results = subprocess.check_output(["pep8", fpath_py], shell=True,
+                                      stderr=subprocess.STDOUT)
+    print(results)
+
+
 if __name__ == "__main__":
-    test_md2py(rm_temp=True)
+    # test_md2py(rm_temp=True)
+    # check_lesson("01-numpy.md")
+    pages = ["01-numpy.md", "02-loop.md", "03-lists.md", "04-files.md",
+             "05-cond.md", "06-func.md", "07-errors.md", "08-defensive.md",
+             "09-debugging.md", "10-cmdline.md"]
+    for page in pages:
+        fname_py = page.replace(".md", ".py")
+        print("Converting {} to {}".format(page, fname_py))
+        md2py(page, fname_py)
