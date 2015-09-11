@@ -2,3 +2,4 @@ CommonMark
 pandocfilters
 PyYAML
 update-copyright
+pep8
