@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 """
-Check lessons for PEP8 compatibility using the `pep8` script. This is designed
-to be run from the lesson root directory.
+Convert lesson pages to Python to check for PEP8 compatibility using the `pep8`
+script. This is designed to be run from the lesson root directory.
 """
 import os
 import shutil
