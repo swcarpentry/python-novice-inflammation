@@ -6,6 +6,7 @@ script. This is designed to be run from the lesson root directory.
 import os
 import subprocess
 
+
 def comment_line(line):
     """Comment a line."""
     return "# " + line
