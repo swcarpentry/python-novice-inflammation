@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/usr/bin/env python
 """
 Convert lesson pages to Python to check for PEP8 compatibility using the `pep8`
 script. This is designed to be run from the lesson root directory.
