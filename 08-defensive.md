@@ -405,11 +405,9 @@ AssertionError                            Traceback (most recent call last)
 AssertionError:
 ~~~
 
-The first of the tests that was supposed to produce `None` fails,
-so we know there's something wrong with our function.
-What we *don't* know,
-though,
-is whether the other four tests passed or failed,
+The first test that was supposed to produce `None` fails,
+so we know something is wrong with our function.
+We *don't* know whether the other tests passed or failed
 because Python halted the program as soon as it spotted the first error.
 Still,
 some information is better than none,
