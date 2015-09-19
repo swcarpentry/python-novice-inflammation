@@ -17,8 +17,8 @@ and reveals some suspicious features in it, such as from `inflammation-01.csv`
 
 ![Analysis of inflammation-01.csv](fig/03-loop_2_0.png)\
 
-We have dozens of data sets right now, though, and more on the way.
-We want to create plots for all our data sets with a single statement.
+We have a dozen data sets right now, though, and more on the way.
+We want to create plots for all of our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
 An example task that we might want to repeat is printing each character in a
