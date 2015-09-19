@@ -42,7 +42,7 @@
 </div>
 </section>
 <p>In the last lesson, we wrote some code that plots some values of interest from our first inflammation dataset, and reveals some suspicious features in it, such as from <code>inflammation-01.csv</code></p>
-<p><img src="fig/03-loop_2_0.png" alt="Analysis of inflammation-01.csv" /><br /> We have a dozen data sets right now, though, and more on the way. We want to create plots for all of our data sets with a single statement. To do that, we’ll have to teach the computer how to repeat things.</p>
+<p><img src="fig/03-loop_2_0.png" alt="Analysis of inflammation-01.csv" /><br /> but we have a dozen data sets right now and more on the way. We want to create plots for all. We want to create plots for all of our data sets with a single statement. To do that, we’ll have to teach the computer how to repeat things.</p>
 <p>An example task that we might want to repeat is printing each character in a word on a line of its own. One way to do this would be to use a series of <code>print</code> statements:</p>
 <pre class="sourceCode python"><code class="sourceCode python">word = <span class="st">&#39;lead&#39;</span>
 <span class="dt">print</span>(word[<span class="dv">0</span>])
@@ -53,7 +53,7 @@
 e
 a
 d</code></pre>
-<p>This is a bad approach for two reasons:</p>
+<p>but that's a bad approach for two reasons:</p>
 <ol style="list-style-type: decimal">
 <li><p>It doesn’t scale: if we want to print the characters in a string that’s hundreds of letters long, we’d be better off just typing them in.</p></li>
 <li><p>It’s fragile: if we give it a longer string, it only prints part of the data, and if we give it a shorter one, it produces an error because we’re asking for characters that don’t exist.</p></li>
