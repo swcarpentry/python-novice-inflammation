@@ -198,7 +198,7 @@ so we should always use it when we can.
 > the first and ends at the second, incrementing by one. If range is passed 3 parameters,
 > it stars at the first one, ends at the second one, and increments by the third one. For
 > example,
-> `range(3)` produces the numbers 1, 2, 3, while `range(2, 5)` produces 2, 3, 4,
+> `range(3)` produces the numbers 0, 1, 2, while `range(2, 5)` produces 2, 3, 4,
 > and `range(3, 10, 3)` produces 3, 6, 9.
 > Using `range`,
 > write a loop that uses `range` to print the first 3 natural numbers:
