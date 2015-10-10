@@ -17,8 +17,8 @@ and reveals some suspicious features in it, such as from `inflammation-01.csv`
 
 ![Analysis of inflammation-01.csv](fig/03-loop_2_0.png)\
 
-but we have a dozen data sets right now and more on the way.
-We want to create plots for all our data sets with a single statement.
+We have a dozen data sets right now, though, and more on the way.
+We want to create plots for all of our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
 An example task that we might want to repeat is printing each character in a
@@ -39,7 +39,7 @@ a
 d
 ~~~
 
-but that's a bad approach for two reasons:
+This is a bad approach for two reasons:
 
 1.  It doesn't scale:
     if we want to print the characters in a string that's hundreds of letters long,
