@@ -50,6 +50,7 @@ Explain that we use Python because:
 We do *not* include instructions on running the IPython Notebook in the tutorial
 because we want to focus on the language rather than the tools.
 Instructors should, however, walk learners through some basic operations:
+
 *   Launch from the command line with `ipython notebook`.
 *   Create a new notebook.
 *   Enter code or data in a cell and execute it.
