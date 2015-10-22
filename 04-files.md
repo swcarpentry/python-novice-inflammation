@@ -43,7 +43,7 @@ Let's test it by analyzing the first three files in the list:
 import numpy
 import matplotlib.pyplot
 
-filenames = glob.glob('*.csv')
+filenames = glob.glob('inflammation*.csv')
 filenames = filenames[0:3]
 for f in filenames:
     print(f)
