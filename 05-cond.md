@@ -114,7 +114,7 @@ seemed to rise like a straight line, one unit per day.
 We can check for this inside the `for` loop we wrote with the following conditional:
 
 ~~~ {.python}
-if data.min(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
+if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
     print('Suspicious looking maxima!')
 ~~~
 
