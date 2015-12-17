@@ -91,7 +91,7 @@ sometimes just knowing *where* the error occurred is enough to fix it,
 even if you don't entirely understand the message.
 
 If you do encounter an error you don't recognize,
-try looking at the [official documentation on errors](http://docs.python.org/2/library/exceptions.html).
+try looking at the [official documentation on errors](http://docs.python.org/3/library/exceptions.html).
 However,
 note that you may not always be able to find the error there,
 as it is possible to create custom errors.
