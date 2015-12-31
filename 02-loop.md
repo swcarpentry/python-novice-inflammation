@@ -110,7 +110,7 @@ e
 n
 ~~~
 
-The improved version of `print_characters` uses a [for loop](reference.html#for-loop)
+The improved version uses a [for loop](reference.html#for-loop)
 to repeat an operation---in this case, printing---once for each thing in a collection.
 The general form of a loop is:
 
