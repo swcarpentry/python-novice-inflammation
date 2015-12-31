@@ -320,6 +320,7 @@ Solutions to exercises:
 > then use those values to test your `rescale` function.
 > Once you've successfully tested your function,
 > add a docstring that explains what it does.
+>
 > ~~~ {.output}
 > Examples:
 > rescale(np.arange(0,10.0))
@@ -339,7 +340,8 @@ Solutions to exercises:
 > but will allow the caller to specify lower and upper bounds if they want.
 > Compare your implementation to your neighbor's:
 > do the two functions always behave the same way?
-> ~~~ {.output}
+>
+> ~~~ {.python}
 > def rescale(input_array, low_val = 0.0, high_val = 1.0):
 >     '''rescales input array values to lie between low_val and high_val'''
 >     L = input_array.min()
