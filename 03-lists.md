@@ -178,3 +178,25 @@ This is different from how variables worked in lesson 1, and more similar to how
 > ~~~ {.python}
 > my_list = []
 > ~~~
+
+> ## Tuples and exchanges {.challenge}
+>
+> Explain what the overall effect of this code is:
+>
+> ~~~ {.python}
+> left = 'L'
+> right = 'R'
+>
+> temp = left
+> left = right
+> right = temp
+> ~~~
+>
+> Compare it to:
+>
+> ~~~ {.python}
+> left, right = right, left
+> ~~~
+>
+> Do they always do the same thing?
+> Which do you find easier to read?
