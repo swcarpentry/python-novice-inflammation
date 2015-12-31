@@ -132,8 +132,8 @@ Now that we've seen how to turn Fahrenheit into Kelvin,
 it's easy to turn Kelvin into Celsius:
 
 ~~~ {.python}
-def kelvin_to_celsius(temp):
-    return temp - 273.15
+def kelvin_to_celsius(temp_k):
+    return temp_k - 273.15
 
 print('absolute zero in Celsius:', kelvin_to_celsius(0.0))
 ~~~
@@ -148,8 +148,8 @@ Instead,
 we can [compose](reference.html#function-composition) the two functions we have already created:
 
 ~~~ {.python}
-def fahr_to_celsius(temp):
-    temp_k = fahr_to_kelvin(temp)
+def fahr_to_celsius(temp_f):
+    temp_k = fahr_to_kelvin(temp_f)
     result = kelvin_to_celsius(temp_k)
     return result
 
