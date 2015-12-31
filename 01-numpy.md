@@ -156,6 +156,21 @@ Since `weight_lb` doesn't "remember" where its value came from,
 it isn't automatically updated when `weight_kg` changes.
 This is different from the way spreadsheets work.
 
+> ## Who's who in the memory {.callout}
+>
+>You can use the `whos` command at any time to see what variables you have created and what modules you have loaded into the computers memory. As this is an IPython command, it will only work if you are in an IPython terminal or the Jupyter Notebook. 
+>
+>~~~ {.python}
+>whos
+>~~~
+>~~~ {.output}
+>Variable    Type       Data/Info
+>--------------------------------
+>numpy       module     <module 'numpy' from '/Us<...>kages/numpy/__init__.py'>
+>weight_kg   float      100.0
+>weight_lb   float      126.5
+>~~~
+
 Just as we can assign a single value to a variable, we can also assign an array of values
 to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its result:
 
