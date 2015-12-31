@@ -89,7 +89,7 @@ We can also combine tests using `and` and `or`.
 if (1 > 0) and (-1 > 0):
     print('both parts are true')
 else:
-    print('one part is not true')
+    print('at least one part is false')
 ~~~
 ~~~ {.output}
 one part is not true
