@@ -167,15 +167,49 @@ odds: [1, 3, 5, 7]
 
 This is different from how variables worked in lesson 1, and more similar to how a spreadsheet works.
 
-## Turn a string into a list {.challenge}
+> ## Turn a string into a list {.challenge}
 
-Use a for-loop to convert the string "hello" into a list of letters:
+> Use a for-loop to convert the string "hello" into a list of letters:
+
+> ~~~ {.python}
+> ["h", "e", "l", "l", "o"]
+> ~~~
+> Hint: You can create an empty list like this:
+
+> ~~~ {.python}
+> my_list = []
+> ~~~
+
+Subsets of lists and strings can be accessed by specifying ranges of values in brackets, similar to how we accessed ranges of positions in a Numpy matrix. This is commonly referred to as "slicing" the list/string.
 
 ~~~ {.python}
-["h", "e", "l", "l", "o"]
+date = "Monday 4 January 2016"
+months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+day = date[0:6]
+year = date[17:21]
+summer = months[5:8]
+last = months[-1]
+print("day", day)
+print("year", year)
+print("summer", summer)
+print("last", last)
 ~~~
-Hint: You can create an empty list like this:
+~~~ {.output}
+day Monday
+year 2016
+summer ["jun", "jul", "aug"]
+last dec
+~~~
 
-~~~ {.python}
-my_list = []
-~~~
+>## Slicing from the end {.challenge}
+> Use slicing to access only the last five characters of a string or entries of a list.
+> 
+> ~~~ {.python}
+> string_for_slicing = "abcdefghijklmnopqrstuvwxyz"
+> list_for_slicing = [1, "two", "III", 4.0, 5, "six"]
+> ~~~
+> ~~~ {.output}
+> "vwxyz"
+> ["two", "III", 4.0, 5, "six"]
+> ~~~
+> Would your solution work for a string or list of any length greater than four? If not, try to change your approach to make it more robust.
