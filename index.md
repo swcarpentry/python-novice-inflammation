@@ -64,6 +64,17 @@ To do all that, we'll have to learn a little bit about programming.
 > $ cd && cd Desktop/python-novice-inflammation/data
 > ~~~
 
+> ## Starting iPython {.getready}
+>
+> We will be using iPython for the lessons.  iPython is an interactive interface for python that is very useful for learning and 
+> debugging python.  In the Setup, you should have already installed Anaconda which includes IPython.
+>
+> To start iPython, open a terminal or git bash and type the command:
+>
+> ~~~ {.input}
+> $ ipython notebook
+> ~~~
+
 ## Topics
 
 1.  [Analyzing Patient Data](01-numpy.html)
