@@ -89,7 +89,7 @@ We can also combine tests using `and` and `or`.
 if (1 > 0) and (-1 > 0):
     print('both parts are true')
 else:
-    print('one part is not true')
+    print('at least one part is false')
 ~~~
 ~~~ {.output}
 one part is not true
@@ -239,24 +239,3 @@ and false statements. However, they aren't the only values in Python that are tr
 > using in-place operators.
 > Do you think the result is more or less readable than writing the same without in-place operators?
 
-> ## Tuples and exchanges {.challenge}
->
-> Explain what the overall effect of this code is:
->
-> ~~~ {.python}
-> left = 'L'
-> right = 'R'
->
-> temp = left
-> left = right
-> right = temp
-> ~~~
->
-> Compare it to:
->
-> ~~~ {.python}
-> left, right = right, left
-> ~~~
->
-> Do they always do the same thing?
-> Which do you find easier to read?
