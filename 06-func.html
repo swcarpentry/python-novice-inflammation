@@ -44,13 +44,13 @@
 </section>
 <p>At this point, we’ve written code to draw some interesting features in our inflammation data, loop over all our data files to quickly draw these plots for each of them, and have Python make decisions based on what it sees in our data. But, our code is getting pretty long and complicated; what if we had thousands of datasets, and didn’t want to generate a figure for every single one? Commenting out the figure-drawing code is a nuisance. Also, what if we want to use that code again, on a different dataset or at a different point in our program? Cutting and pasting it is going to make our code get very long and very repetative, very quickly. We’d like a way to package our code so that it is easier to reuse, and Python provides for this by letting us define things called ‘functions’ - a shorthand way of re-executing longer pieces of code.</p>
 <p>Let’s start by defining a function <code>fahr_to_kelvin</code> that converts temperatures from Fahrenheit to Kelvin:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_kelvin(temp):
-    <span class="kw">return</span> ((temp - <span class="dv">32</span>) * (<span class="dv">5</span>/<span class="dv">9</span>)) + <span class="fl">273.15</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_kelvin(temp):
+    <span class="cf">return</span> ((temp <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>)) <span class="op">+</span> <span class="fl">273.15</span></code></pre></div>
 <p>The function definition opens with the word <code>def</code>, which is followed by the name of the function and a parenthesized list of parameter names. The <a href="reference.html#function-body">body</a> of the function — the statements that are executed when it runs — is indented below the definition line, typically by four spaces.</p>
 <p>When we call the function, the values we pass to it are assigned to those variables so that we can use them inside the function. Inside the function, we use a <a href="reference.html#return-statement">return statement</a> to send a result back to whoever asked for it.</p>
 <p>Let’s try running our function. Calling our own function is no different from calling any other function:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&#39;freezing point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">32</span>))
-<span class="dt">print</span>(<span class="st">&#39;boiling point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">212</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;freezing point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">32</span>))
+<span class="bu">print</span>(<span class="st">&#39;boiling point of water:&#39;</span>, fahr_to_kelvin(<span class="dv">212</span>))</code></pre></div>
 <pre class="output"><code>freezing point of water: 273.15
 boiling point of water: 373.15</code></pre>
 <p>We’ve successfully called the function that we defined, and we have access to the value that we returned.</p>
@@ -60,91 +60,91 @@ boiling point of water: 373.15</code></pre>
 </div>
 <div class="panel-body">
 <p>We are using Python 3, where division always returns a floating point number:</p>
-<pre class="sourceCode python"><code class="sourceCode python">$ python3 -c <span class="st">&quot;print(5/9)&quot;</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python3 <span class="op">-</span>c <span class="st">&quot;print(5/9)&quot;</span></code></pre></div>
 <pre class="output"><code>0.5555555555555556</code></pre>
 <p>Unfortunately, this wasn’t the case in Python 2:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dv">5</span>/<span class="dv">9</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dv">5</span><span class="op">/</span><span class="dv">9</span></code></pre></div>
 <pre class="output"><code>0</code></pre>
 <p>If you are using Python 2 and want to keep the fractional part of division you need to convert one or the other number to floating point:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">float</span>(<span class="dv">5</span>)/<span class="dv">9</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">float</span>(<span class="dv">5</span>)<span class="op">/</span><span class="dv">9</span></code></pre></div>
 <pre class="output"><code>0.555555555556</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dv">5</span>/<span class="dt">float</span>(<span class="dv">9</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dv">5</span><span class="op">/</span><span class="bu">float</span>(<span class="dv">9</span>)</code></pre></div>
 <pre class="output"><code>0.555555555556</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="fl">5.0</span>/<span class="dv">9</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="fl">5.0</span><span class="op">/</span><span class="dv">9</span></code></pre></div>
 <pre class="output"><code>0.555555555556</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dv">5</span>/<span class="fl">9.0</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dv">5</span><span class="op">/</span><span class="fl">9.0</span></code></pre></div>
 <pre class="output"><code>0.555555555556</code></pre>
 <p>And if you want an integer result from division in Python 3, use a double-slash: <sub>~</sub> {.python} 4//2 <sub><sub><sub> </sub></sub></sub> {.output} 2 <sub><sub><sub> </sub></sub></sub> {.python} 3//2 <sub><sub><sub> </sub></sub></sub> {.output} 1 <sub>~</sub></p>
 </div>
 </aside>
 <h2 id="composing-functions">Composing Functions</h2>
 <p>Now that we’ve seen how to turn Fahrenheit into Kelvin, it’s easy to turn Kelvin into Celsius:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> kelvin_to_celsius(temp):
-    <span class="kw">return</span> temp - <span class="fl">273.15</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> kelvin_to_celsius(temp_k):
+    <span class="cf">return</span> temp_k <span class="op">-</span> <span class="fl">273.15</span>
 
-<span class="dt">print</span>(<span class="st">&#39;absolute zero in Celsius:&#39;</span>, kelvin_to_celsius(<span class="fl">0.0</span>))</code></pre>
+<span class="bu">print</span>(<span class="st">&#39;absolute zero in Celsius:&#39;</span>, kelvin_to_celsius(<span class="fl">0.0</span>))</code></pre></div>
 <pre class="output"><code>absolute zero in Celsius: -273.15</code></pre>
 <p>What about converting Fahrenheit to Celsius? We could write out the formula, but we don’t need to. Instead, we can <a href="reference.html#function-composition">compose</a> the two functions we have already created:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_celsius(temp):
-    temp_k = fahr_to_kelvin(temp)
-    result = kelvin_to_celsius(temp_k)
-    <span class="kw">return</span> result
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_celsius(temp_f):
+    temp_k <span class="op">=</span> fahr_to_kelvin(temp_f)
+    result <span class="op">=</span> kelvin_to_celsius(temp_k)
+    <span class="cf">return</span> result
 
-<span class="dt">print</span>(<span class="st">&#39;freezing point of water in Celsius:&#39;</span>, fahr_to_celsius(<span class="fl">32.0</span>))</code></pre>
+<span class="bu">print</span>(<span class="st">&#39;freezing point of water in Celsius:&#39;</span>, fahr_to_celsius(<span class="fl">32.0</span>))</code></pre></div>
 <pre class="output"><code>freezing point of water in Celsius: 0.0</code></pre>
 <p>This is our first taste of how larger programs are built: we define basic operations, then combine them in ever-large chunks to get the effect we want. Real-life functions will usually be larger than the ones shown here — typically half a dozen to a few dozen lines — but they shouldn’t ever be much longer than that, or the next person who reads it won’t be able to understand what’s going on.</p>
 <h2 id="tidying-up">Tidying up</h2>
 <p>Now that we know how to wrap bits of code up in functions, we can make our inflammation analyasis easier to read and easier to reuse. First, let’s make an <code>analyze</code> function that generates our plots:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> analyze(filename):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> analyze(filename):
 
-    data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
+    data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
 
-    fig = plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+    fig <span class="op">=</span> matplotlib.pyplot.figure(figsize<span class="op">=</span>(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
 
-    axes1 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
-    axes2 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
-    axes3 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
+    axes1 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+    axes2 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+    axes3 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
 
     axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
-    axes1.plot(data.mean(axis=<span class="dv">0</span>))
+    axes1.plot(data.mean(axis<span class="op">=</span><span class="dv">0</span>))
 
     axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
-    axes2.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+    axes2.plot(data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>))
 
     axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
-    axes3.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+    axes3.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>))
 
     fig.tight_layout()
-    plt.show(fig)</code></pre>
+    matplotlib.pyplot.show(fig)</code></pre></div>
 <p>and another function called <code>detect_problems</code> that checks for those systematics we noticed:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> detect_problems(filename):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> detect_problems(filename):
 
-    data = np.loadtxt(fname=filename, delimiter=<span class="st">&#39;,&#39;</span>)
+    data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
 
-    <span class="kw">if</span> data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">0</span>] == <span class="dv">0</span> and data.<span class="dt">max</span>(axis=<span class="dv">0</span>)[<span class="dv">20</span>] == <span class="dv">20</span>:
-        <span class="dt">print</span>(<span class="st">&#39;Suspicious looking maxima!&#39;</span>)
-    <span class="kw">elif</span> data.<span class="dt">min</span>(axis=<span class="dv">0</span>).<span class="dt">sum</span>() == <span class="dv">0</span>:
-        <span class="dt">print</span>(<span class="st">&#39;Minima add up to zero!&#39;</span>)
-    <span class="kw">else</span>:
-        <span class="dt">print</span>(<span class="st">&#39;Seems OK!&#39;</span>)</code></pre>
+    <span class="cf">if</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:
+        <span class="bu">print</span>(<span class="st">&#39;Suspicious looking maxima!&#39;</span>)
+    <span class="cf">elif</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>).<span class="bu">sum</span>() <span class="op">==</span> <span class="dv">0</span>:
+        <span class="bu">print</span>(<span class="st">&#39;Minima add up to zero!&#39;</span>)
+    <span class="cf">else</span>:
+        <span class="bu">print</span>(<span class="st">&#39;Seems OK!&#39;</span>)</code></pre></div>
 <p>Notice that rather than jumbling this code together in one giant <code>for</code> loop, we can now read and reuse both ideas separately. We can reproduce the previous analysis with a much simpler <code>for</code> loop:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> f in filenames[:<span class="dv">3</span>]:
-    <span class="dt">print</span>(f)
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> f <span class="op">in</span> filenames[:<span class="dv">3</span>]:
+    <span class="bu">print</span>(f)
     analyze(f)
-    detect_problems(f)</code></pre>
+    detect_problems(f)</code></pre></div>
 <p>By giving our functions human-readable names, we can more easily read and understand what is happening in the <code>for</code> loop. Even better, if at some later date we want to use either of those pieces of code again, we can do so in a single line.</p>
 <h2 id="testing-and-documenting">Testing and Documenting</h2>
 <p>Once we start putting things in functions so that we can re-use them, we need to start testing that those functions are working correctly. To see how to do this, let’s write a function to center a dataset around a particular value:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
-    <span class="kw">return</span> (data - data.mean()) + desired</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
+    <span class="cf">return</span> (data <span class="op">-</span> data.mean()) <span class="op">+</span> desired</code></pre></div>
 <p>We could test this on our actual data, but since we don’t know what the values ought to be, it will be hard to tell if the result was correct. Instead, let’s use NumPy to create a matrix of 0’s and then center that around 3:</p>
-<pre class="sourceCode python"><code class="sourceCode python">z = numpy.zeros((<span class="dv">2</span>,<span class="dv">2</span>))
-<span class="dt">print</span>(center(z, <span class="dv">3</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">z <span class="op">=</span> numpy.zeros((<span class="dv">2</span>,<span class="dv">2</span>))
+<span class="bu">print</span>(center(z, <span class="dv">3</span>))</code></pre></div>
 <pre class="output"><code>[[ 3.  3.]
  [ 3.  3.]]</code></pre>
 <p>That looks right, so let’s try <code>center</code> on our real data:</p>
-<pre class="sourceCode python"><code class="sourceCode python">data = numpy.loadtxt(fname=<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
-<span class="dt">print</span>(center(data, <span class="dv">0</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
+<span class="bu">print</span>(center(data, <span class="dv">0</span>))</code></pre></div>
 <pre class="output"><code>[[-6.14875 -6.14875 -5.14875 ..., -3.14875 -6.14875 -6.14875]
  [-6.14875 -5.14875 -4.14875 ..., -5.14875 -6.14875 -5.14875]
  [-6.14875 -5.14875 -5.14875 ..., -4.14875 -5.14875 -5.14875]
@@ -153,40 +153,40 @@ boiling point of water: 373.15</code></pre>
  [-6.14875 -6.14875 -6.14875 ..., -6.14875 -4.14875 -6.14875]
  [-6.14875 -6.14875 -5.14875 ..., -5.14875 -5.14875 -6.14875]]</code></pre>
 <p>It’s hard to tell from the default output whether the result is correct, but there are a few simple tests that will reassure us:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&#39;original min, mean, and max are:&#39;</span>, data.<span class="dt">min</span>(), data.mean(), data.<span class="dt">max</span>())
-centered = center(data, <span class="dv">0</span>)
-<span class="dt">print</span>(<span class="st">&#39;min, mean, and and max of centered data are:&#39;</span>, centered.<span class="dt">min</span>(), centered.mean(), centered.<span class="dt">max</span>())</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;original min, mean, and max are:&#39;</span>, data.<span class="bu">min</span>(), data.mean(), data.<span class="bu">max</span>())
+centered <span class="op">=</span> center(data, <span class="dv">0</span>)
+<span class="bu">print</span>(<span class="st">&#39;min, mean, and and max of centered data are:&#39;</span>, centered.<span class="bu">min</span>(), centered.mean(), centered.<span class="bu">max</span>())</code></pre></div>
 <pre class="output"><code>original min, mean, and max are: 0.0 6.14875 20.0
 min, mean, and and max of centered data are: -6.14875 2.84217094304e-16 13.85125</code></pre>
 <p>That seems almost right: the original mean was about 6.1, so the lower bound from zero is how about -6.1. The mean of the centered data isn’t quite zero — we’ll explore why not in the challenges — but it’s pretty close. We can even go further and check that the standard deviation hasn’t changed:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&#39;std dev before and after:&#39;</span>, data.std(), centered.std())</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;std dev before and after:&#39;</span>, data.std(), centered.std())</code></pre></div>
 <pre class="output"><code>std dev before and after: 4.61383319712 4.61383319712</code></pre>
 <p>Those values look the same, but we probably wouldn’t notice if they were different in the sixth decimal place. Let’s do this instead:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&#39;difference in standard deviations before and after:&#39;</span>, data.std() - centered.std())</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;difference in standard deviations before and after:&#39;</span>, data.std() <span class="op">-</span> centered.std())</code></pre></div>
 <pre class="output"><code>difference in standard deviations before and after: -3.5527136788e-15</code></pre>
 <p>Again, the difference is very small. It’s still possible that our function is wrong, but it seems unlikely enough that we should probably get back to doing our analysis. We have one more task first, though: we should write some <a href="reference.html#documentation">documentation</a> for our function to remind ourselves later what it’s for and how to use it.</p>
 <p>The usual way to put documentation in software is to add <a href="reference.html#comment">comments</a> like this:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># center(data, desired): return a new array containing the original data centered around the desired value.</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># center(data, desired): return a new array containing the original data centered around the desired value.</span>
 <span class="kw">def</span> center(data, desired):
-    <span class="kw">return</span> (data - data.mean()) + desired</code></pre>
+    <span class="cf">return</span> (data <span class="op">-</span> data.mean()) <span class="op">+</span> desired</code></pre></div>
 <p>There’s a better way, though. If the first thing in a function is a string that isn’t assigned to a variable, that string is attached to the function as its documentation:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
     <span class="co">&#39;&#39;&#39;Return a new array containing the original data centered around the desired value.&#39;&#39;&#39;</span>
-    <span class="kw">return</span> (data - data.mean()) + desired</code></pre>
+    <span class="cf">return</span> (data <span class="op">-</span> data.mean()) <span class="op">+</span> desired</code></pre></div>
 <p>This is better because we can now ask Python’s built-in help system to show us the documentation for the function:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">help</span>(center)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">help</span>(center)</code></pre></div>
 <pre class="output"><code>Help on function center in module __main__:
 
 center(data, desired)
     Return a new array containing the original data centered around the desired value.
 </code></pre>
 <p>A string like this is called a <a href="reference.html#docstring">docstring</a>. We don’t need to use triple quotes when we write one, but if we do, we can break the string across multiple lines:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
     <span class="co">&#39;&#39;&#39;Return a new array containing the original data centered around the desired value.</span>
 <span class="co">    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]&#39;&#39;&#39;</span>
-    <span class="kw">return</span> (data - data.mean()) + desired
+    <span class="cf">return</span> (data <span class="op">-</span> data.mean()) <span class="op">+</span> desired
 
-<span class="dt">help</span>(center)</code></pre>
+<span class="bu">help</span>(center)</code></pre></div>
 <pre class="output"><code>Help on function center in module __main__:
 
 center(data, desired)
@@ -195,7 +195,7 @@ center(data, desired)
 </code></pre>
 <h2 id="defining-defaults">Defining Defaults</h2>
 <p>We have passed parameters to functions in two ways: directly, as in <code>type(data)</code>, and by name, as in <code>numpy.loadtxt(fname='something.csv', delimiter=',')</code>. In fact, we can pass the filename to <code>loadtxt</code> without the <code>fname=</code>:</p>
-<pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)</code></pre></div>
 <pre class="output"><code>array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
        [ 0.,  1.,  2., ...,  1.,  0.,  1.],
        [ 0.,  1.,  1., ...,  2.,  1.,  1.],
@@ -204,7 +204,7 @@ center(data, desired)
        [ 0.,  0.,  0., ...,  0.,  2.,  0.],
        [ 0.,  0.,  1., ...,  1.,  1.,  0.]])</code></pre>
 <p>but we still need to say <code>delimiter=</code>:</p>
-<pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;,&#39;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;,&#39;</span>)</code></pre></div>
 <pre class="error"><code>---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 &lt;ipython-input-26-e3bc6cf4fd6a&gt; in &lt;module&gt;()
@@ -219,21 +219,21 @@ TypeError                                 Traceback (most recent call last)
 
 TypeError: data type &quot;,&quot; not understood</code></pre>
 <p>To understand what’s going on, and make our own functions easier to use, let’s re-define our <code>center</code> function like this:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired=<span class="fl">0.0</span>):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired<span class="op">=</span><span class="fl">0.0</span>):
     <span class="co">&#39;&#39;&#39;Return a new array containing the original data centered around the desired value (0 by default).</span>
 <span class="co">    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]&#39;&#39;&#39;</span>
-    <span class="kw">return</span> (data - data.mean()) + desired</code></pre>
+    <span class="cf">return</span> (data <span class="op">-</span> data.mean()) <span class="op">+</span> desired</code></pre></div>
 <p>The key change is that the second parameter is now written <code>desired=0.0</code> instead of just <code>desired</code>. If we call the function with two arguments, it works as it did before:</p>
-<pre class="sourceCode python"><code class="sourceCode python">test_data = numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))
-<span class="dt">print</span>(center(test_data, <span class="dv">3</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">test_data <span class="op">=</span> numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))
+<span class="bu">print</span>(center(test_data, <span class="dv">3</span>))</code></pre></div>
 <pre class="output"><code>[[ 3.  3.]
  [ 3.  3.]]</code></pre>
 <p>But we can also now call it with just one parameter, in which case <code>desired</code> is automatically assigned the <a href="reference.html#default-value">default value</a> of 0.0:</p>
-<pre class="sourceCode python"><code class="sourceCode python">more_data = <span class="dv">5</span> + numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))
-<span class="dt">print</span>(<span class="st">&#39;data before centering:&#39;</span>)
-<span class="dt">print</span>(more_data)
-<span class="dt">print</span>(<span class="st">&#39;centered data:&#39;</span>)
-<span class="dt">print</span>(center(more_data))</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">more_data <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))
+<span class="bu">print</span>(<span class="st">&#39;data before centering:&#39;</span>)
+<span class="bu">print</span>(more_data)
+<span class="bu">print</span>(<span class="st">&#39;centered data:&#39;</span>)
+<span class="bu">print</span>(center(more_data))</code></pre></div>
 <pre class="output"><code>data before centering:
 [[ 5.  5.]
  [ 5.  5.]]
@@ -241,15 +241,15 @@ centered data:
 [[ 0.  0.]
  [ 0.  0.]]</code></pre>
 <p>This is handy: if we usually want a function to work one way, but occasionally need it to do something else, we can allow people to pass a parameter when they need to but provide a default to make the normal case easier. The example below shows how Python matches values to parameters:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> display(a=<span class="dv">1</span>, b=<span class="dv">2</span>, c=<span class="dv">3</span>):
-    <span class="dt">print</span>(<span class="st">&#39;a:&#39;</span>, a, <span class="st">&#39;b:&#39;</span>, b, <span class="st">&#39;c:&#39;</span>, c)
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> display(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">2</span>, c<span class="op">=</span><span class="dv">3</span>):
+    <span class="bu">print</span>(<span class="st">&#39;a:&#39;</span>, a, <span class="st">&#39;b:&#39;</span>, b, <span class="st">&#39;c:&#39;</span>, c)
 
-<span class="dt">print</span>(<span class="st">&#39;no parameters:&#39;</span>)
+<span class="bu">print</span>(<span class="st">&#39;no parameters:&#39;</span>)
 display()
-<span class="dt">print</span>(<span class="st">&#39;one parameter:&#39;</span>)
+<span class="bu">print</span>(<span class="st">&#39;one parameter:&#39;</span>)
 display(<span class="dv">55</span>)
-<span class="dt">print</span>(<span class="st">&#39;two parameters:&#39;</span>)
-display(<span class="dv">55</span>, <span class="dv">66</span>)</code></pre>
+<span class="bu">print</span>(<span class="st">&#39;two parameters:&#39;</span>)
+display(<span class="dv">55</span>, <span class="dv">66</span>)</code></pre></div>
 <pre class="output"><code>no parameters:
 a: 1 b: 2 c: 3
 one parameter:
@@ -257,12 +257,12 @@ a: 55 b: 2 c: 3
 two parameters:
 a: 55 b: 66 c: 3</code></pre>
 <p>As this example shows, parameters are matched up from left to right, and any that haven’t been given a value explicitly get their default value. We can override this behavior by naming the value as we pass it in:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&#39;only setting the value of c&#39;</span>)
-display(c=<span class="dv">77</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;only setting the value of c&#39;</span>)
+display(c<span class="op">=</span><span class="dv">77</span>)</code></pre></div>
 <pre class="output"><code>only setting the value of c
 a: 1 b: 2 c: 77</code></pre>
 <p>With that in hand, let’s look at the help for <code>numpy.loadtxt</code>:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">help</span>(numpy.loadtxt)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">help</span>(numpy.loadtxt)</code></pre></div>
 <pre class="output"><code>Help on function loadtxt in module numpy.lib.npyio:
 
 loadtxt(fname, dtype=&lt;class &#39;float&#39;&gt;, comments=&#39;#&#39;, delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
@@ -349,10 +349,10 @@ loadtxt(fname, dtype=&lt;class &#39;float&#39;&gt;, comments=&#39;#&#39;, delimi
     array([ 2.,  4.])
 </code></pre>
 <p>There’s a lot of information here, but the most important part is the first couple of lines:</p>
-<pre class="sourceCode python"><code class="sourceCode python">loadtxt(fname, dtype=&lt;<span class="dt">type</span> <span class="st">&#39;float&#39;</span>&gt;, comments=<span class="st">&#39;#&#39;</span>, delimiter=<span class="ot">None</span>, converters=<span class="ot">None</span>, skiprows=<span class="dv">0</span>, usecols=<span class="ot">None</span>,
-        unpack=<span class="ot">False</span>, ndmin=<span class="dv">0</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">loadtxt(fname, dtype<span class="op">=&lt;</span><span class="bu">type</span> <span class="st">&#39;float&#39;</span><span class="op">&gt;</span>, comments<span class="op">=</span><span class="st">&#39;#&#39;</span>, delimiter<span class="op">=</span><span class="va">None</span>, converters<span class="op">=</span><span class="va">None</span>, skiprows<span class="op">=</span><span class="dv">0</span>, usecols<span class="op">=</span><span class="va">None</span>,
+        unpack<span class="op">=</span><span class="va">False</span>, ndmin<span class="op">=</span><span class="dv">0</span>)</code></pre></div>
 <p>This tells us that <code>loadtxt</code> has one parameter called <code>fname</code> that doesn’t have a default value, and eight others that do. If we call the function like this:</p>
-<pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;,&#39;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;,&#39;</span>)</code></pre></div>
 <p>then the filename is assigned to <code>fname</code> (which is what we want), but the delimiter string <code>','</code> is assigned to <code>dtype</code> rather than <code>delimiter</code>, because <code>dtype</code> is the second parameter in the list. However ‘,’ isn’t a known <code>dtype</code> so our code produced an error message when we tried to run it. When we call <code>loadtxt</code> we don’t have to provide <code>fname=</code> for the filename because it’s the first item in the list, but if we want the ‘,’ to be assigned to the variable <code>delimiter</code>, we <em>do</em> have to provide <code>delimiter=</code> for the second parameter since <code>delimiter</code> is not the second parameter in the list.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
@@ -360,7 +360,7 @@ loadtxt(fname, dtype=&lt;class &#39;float&#39;&gt;, comments=&#39;#&#39;, delimi
 </div>
 <div class="panel-body">
 <p>“Adding” two strings produces their concatenation: <code>'a' + 'b'</code> is <code>'ab'</code>. Write a function called <code>fence</code> that takes two parameters called <code>original</code> and <code>wrapper</code> and returns a new string that has the wrapper character at the beginning and end of the original. A call to your function should look like this:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(fence(<span class="st">&#39;name&#39;</span>, <span class="st">&#39;*&#39;</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(fence(<span class="st">&#39;name&#39;</span>, <span class="st">&#39;*&#39;</span>))</code></pre></div>
 <pre class="output"><code>*name*</code></pre>
 </div>
 </section>
@@ -370,7 +370,7 @@ loadtxt(fname, dtype=&lt;class &#39;float&#39;&gt;, comments=&#39;#&#39;, delimi
 </div>
 <div class="panel-body">
 <p>If the variable <code>s</code> refers to a string, then <code>s[0]</code> is the string’s first character and <code>s[-1]</code> is its last. Write a function called <code>outer</code> that returns a string made up of just the first and last characters of its input. A call to your function should look like this:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(outer(<span class="st">&#39;helium&#39;</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(outer(<span class="st">&#39;helium&#39;</span>))</code></pre></div>
 <pre class="output"><code>hm</code></pre>
 </div>
 </section>
@@ -379,7 +379,7 @@ loadtxt(fname, dtype=&lt;class &#39;float&#39;&gt;, comments=&#39;#&#39;, delimi
 <h2 id="rescaling-an-array"><span class="glyphicon glyphicon-pencil"></span>Rescaling an array</h2>
 </div>
 <div class="panel-body">
-<p>Write a function <code>rescale</code> that takes an array as input and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0. (Hint: If <span class="math"><em>L</em></span> and <span class="math"><em>H</em></span> are the lowest and highest values in the original array, then the replacement for a value <span class="math"><em>v</em></span> should be <span class="math">(<em>v</em> − <em>L</em>)/(<em>H</em> − <em>L</em>)</span>.)</p>
+<p>Write a function <code>rescale</code> that takes an array as input and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0. (Hint: If <span class="math inline"><em>L</em></span> and <span class="math inline"><em>H</em></span> are the lowest and highest values in the original array, then the replacement for a value <span class="math inline"><em>v</em></span> should be <span class="math inline">(<em>v</em> − <em>L</em>)/(<em>H</em> − <em>L</em>)</span>.)</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
@@ -404,18 +404,18 @@ loadtxt(fname, dtype=&lt;class &#39;float&#39;&gt;, comments=&#39;#&#39;, delimi
 </div>
 <div class="panel-body">
 <p>What does the following piece of code display when run - and why?</p>
-<pre class="sourceCode python"><code class="sourceCode python">f = <span class="dv">0</span>
-k = <span class="dv">0</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">f <span class="op">=</span> <span class="dv">0</span>
+k <span class="op">=</span> <span class="dv">0</span>
 
 <span class="kw">def</span> f2k(f):
-  k = ((f<span class="dv">-32</span>)*(<span class="fl">5.0</span>/<span class="fl">9.0</span>)) + <span class="fl">273.15</span>
-  <span class="kw">return</span> k
+  k <span class="op">=</span> ((f<span class="dv">-32</span>)<span class="op">*</span>(<span class="fl">5.0</span><span class="op">/</span><span class="fl">9.0</span>)) <span class="op">+</span> <span class="fl">273.15</span>
+  <span class="cf">return</span> k
 
 f2k(<span class="dv">8</span>)
 f2k(<span class="dv">41</span>)
 f2k(<span class="dv">32</span>)
 
-<span class="dt">print</span>(k)</code></pre>
+<span class="bu">print</span>(k)</code></pre></div>
 </div>
 </section>
         </div>
