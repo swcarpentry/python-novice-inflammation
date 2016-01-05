@@ -132,8 +132,8 @@ Now that we've seen how to turn Fahrenheit into Kelvin,
 it's easy to turn Kelvin into Celsius:
 
 ~~~ {.python}
-def kelvin_to_celsius(temp):
-    return temp - 273.15
+def kelvin_to_celsius(temp_k):
+    return temp_k - 273.15
 
 print('absolute zero in Celsius:', kelvin_to_celsius(0.0))
 ~~~
@@ -148,8 +148,8 @@ Instead,
 we can [compose](reference.html#function-composition) the two functions we have already created:
 
 ~~~ {.python}
-def fahr_to_celsius(temp):
-    temp_k = fahr_to_kelvin(temp)
+def fahr_to_celsius(temp_f):
+    temp_k = fahr_to_kelvin(temp_f)
     result = kelvin_to_celsius(temp_k)
     return result
 
@@ -175,9 +175,9 @@ First, let's make an `analyze` function that generates our plots:
 ~~~ {.python}
 def analyze(filename):
 
-    data = np.loadtxt(fname=filename, delimiter=',')
+    data = numpy.loadtxt(fname=filename, delimiter=',')
 
-    fig = plt.figure(figsize=(10.0, 3.0))
+    fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
     axes1 = fig.add_subplot(1, 3, 1)
     axes2 = fig.add_subplot(1, 3, 2)
@@ -193,7 +193,7 @@ def analyze(filename):
     axes3.plot(data.min(axis=0))
 
     fig.tight_layout()
-    plt.show(fig)
+    matplotlib.pyplot.show(fig)
 ~~~
 
 and another function called `detect_problems` that checks for those systematics
@@ -202,7 +202,7 @@ we noticed:
 ~~~ {.python}
 def detect_problems(filename):
 
-    data = np.loadtxt(fname=filename, delimiter=',')
+    data = numpy.loadtxt(fname=filename, delimiter=',')
 
     if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
         print('Suspicious looking maxima!')
