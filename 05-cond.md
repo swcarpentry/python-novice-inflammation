@@ -260,3 +260,33 @@ and false statements. However, they aren't the only values in Python that are tr
 >
 > Do they always do the same thing?
 > Which do you find easier to read?
+
+> ## Sorting a list into buckets {.challenge}
+>
+> Our folder with the data files contains large data sets, starting with
+> "inflammation-", small data sets, starting with "small-", and maybe some other
+> files. Let us sort those files into lists `large_files`, `small_files`, and
+> `other_files` respectively. Add the required code to the template below. The
+> [function `startswith`](https://docs.python.org/3.5/library/stdtypes.html#str.startswith)
+> belonging to a string will be helpful. It will return
+> `True` if (and only if) the string it is called on starts with the string
+> passed as argument.
+>
+> ~~~ {.python}
+> files = ['inflammation-01.csv', 'myscript.py', 'inflammation-02.csv', 'small-01.csv', 'small-02.csv']
+> large_files = []
+> small_files = []
+> other_files = []
+>
+> # 1. loop over all files
+> # 2. figure out to which group each file belongs
+> # 3. append it to the appropriate list
+> ~~~
+>
+> In the end the three lists should look like this:
+>
+> ~~~ {.python}
+> large_files = ['inflammation-01.csv', 'inflammation-02.csv']
+> small_files = ['small-01.csv', 'small-02.csv']
+> other_files = ['myscript.py']
+> ~~~
