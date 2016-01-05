@@ -629,3 +629,10 @@ the program now does everything we set out to do.
 >
 > *   If no filenames are given, it reports the number of lines in standard input.
 > *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
+
+> ## Generate an Error message {.challenge}
+>
+> Write a program called `check_argument.py` that print usage then exit program if there are no arguments are submitted. (Hint) You can use `sys.exit()` for exit program.
+> ~~~ {.output}
+> usage: python check_argument.py filename.txt
+> ~~~
