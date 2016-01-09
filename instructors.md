@@ -381,6 +381,7 @@ Solutions to exercises:
 ## [Errors and Exceptions](07-errors.html)
 
 Solutions to exercises:
+
 > ## Reading Error Messages {.challenge}
 >
 > Read the traceback below, and identify the following pieces of information about it:
