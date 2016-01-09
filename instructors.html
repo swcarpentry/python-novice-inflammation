@@ -96,6 +96,22 @@
 <p>After discussing these challenges could be a good time to introduce the <code>b*=2</code> syntax.</p>
 <h2 id="storing-multiple-values-in-lists"><a href="03-lists.html">Storing Multiple Values in Lists</a></h2>
 <p>Solutions to exercises: &gt;## Turn a string into a list {.challenge} &gt; &gt; Use a for-loop to convert the string “hello” into a list of letters: &gt; &gt; <sub>~</sub> {.output} &gt; my_list = [] &gt; for char in “hello”: &gt; my_list.append(char) &gt; print(my_list) &gt; <sub>~</sub> &gt; <sub>~</sub> {.output} &gt; [“h”, “e”, “l”, “l”, “o”] &gt; <sub>~</sub></p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="generate-a-list-of-numbers"><span class="glyphicon glyphicon-pencil"></span>Generate a list of numbers</h2>
+</div>
+<div class="panel-body">
+<p>Generate and print a list where the values are square of numbers between 1 and 20 (both included).</p>
+<p>Solution1:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">li <span class="op">=</span> <span class="bu">list</span>()
+<span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">21</span>):
+    li.append(i<span class="op">**</span><span class="dv">2</span>)
+<span class="bu">print</span>(li)</code></pre></div>
+<p>Solution2:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">li <span class="op">=</span> [i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">21</span>)]
+<span class="bu">print</span>(li)</code></pre></div>
+</div>
+</section>
 <h2 id="analyzing-data-from-multiple-files"><a href="04-files.html">Analyzing Data from Multiple Files</a></h2>
 <h2 id="making-choices"><a href="05-cond.html">Making Choices</a></h2>
 <p>Solutions to exercises: &gt; ## How many paths? {.challenge} &gt; &gt; Which of the following would be printed if you were to run this code? Why did you pick this answer? &gt; &gt; <sub>~</sub> {.python} &gt; if 4 &gt; 5: &gt; print(‘A’) &gt; elif 4 == 5: &gt; print(‘B’) &gt; elif 4 &lt; 5: &gt; print(‘C’) &gt; <sub>~</sub> &gt; &gt; C gets printed, because the first two conditions, <code>4 &gt; 5</code> and <code>4 == 5</code> are not true, but <code>4 &lt; 5</code> is true. &gt;</p>

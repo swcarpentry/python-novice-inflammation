@@ -202,3 +202,11 @@ This is different from how variables worked in lesson 1, and more similar to how
 >
 > Do they always do the same thing?
 > Which do you find easier to read?
+
+
+> ## Generate a list of numbers {.challenge}
+>
+> Generate and print a list where the values are square of numbers between 1 and 20 (both included).
+>
+> Hint: Use ** operator to get power of a number.
+> Hint: Use range() for loops.
