@@ -98,6 +98,23 @@
 <p>Solutions to exercises: &gt;## Turn a string into a list {.challenge} &gt; &gt; Use a for-loop to convert the string “hello” into a list of letters: &gt; &gt; <sub>~</sub> {.output} &gt; my_list = [] &gt; for char in “hello”: &gt; my_list.append(char) &gt; print(my_list) &gt; <sub>~</sub> &gt; <sub>~</sub> {.output} &gt; [“h”, “e”, “l”, “l”, “o”] &gt; <sub>~</sub></p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
+<h2 id="tuples-and-exchanges"><span class="glyphicon glyphicon-pencil"></span>Tuples and exchanges</h2>
+</div>
+<div class="panel-body">
+<p>Explain what the overall effect of this code is:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">left <span class="op">=</span> <span class="st">&#39;L&#39;</span>
+right <span class="op">=</span> <span class="st">&#39;R&#39;</span>
+
+temp <span class="op">=</span> left
+left <span class="op">=</span> right
+right <span class="op">=</span> temp</code></pre></div>
+<pre class="output"><code>The code swaps the contents of the variables right and left.</code></pre>
+<p>Compare it to: <sub>~</sub> {.python} left, right = right, left <sub>~</sub></p>
+<p>Do they always do the same thing? Which do you find easier to read? <sub>~</sub> {.output} Yes, although it’s possible the internal implementation is different. Answers will vary on which is easier to read. <sub>~</sub></p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
 <h2 id="generate-a-list-of-numbers"><span class="glyphicon glyphicon-pencil"></span>Generate a list of numbers</h2>
 </div>
 <div class="panel-body">
@@ -158,23 +175,6 @@ Sixth line prints &#39;one is true&#39;: 1 is true</code></pre>
 </div>
 <div class="panel-body">
 <p>Write some code that sums the positive and negative numbers in a list separately, using in-place operators. <sub>~</sub> {.output} positive_sum = 0 negative_sum = 0 test_list = [3,4,6,1,-1,-5,0,7,-8] for num in test_list: if num &gt; 0: positive_sum += num elif num == 0: pass else: negative_sum += num print(positive_sum, negative_sum) <sub><sub><sub> </sub></sub></sub> {.output} 21 -14 <sub>~</sub> Here <code>pass</code> means “don’t do anything”. In this particular case, it’s not actually needed, since if <code>num==0</code> neither sum needs to change, but it illustrates the use of <code>elif</code>.</p>
-</div>
-</section>
-<section class="challenge panel panel-success">
-<div class="panel-heading">
-<h2 id="tuples-and-exchanges"><span class="glyphicon glyphicon-pencil"></span>Tuples and exchanges</h2>
-</div>
-<div class="panel-body">
-<p>Explain what the overall effect of this code is:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">left <span class="op">=</span> <span class="st">&#39;L&#39;</span>
-right <span class="op">=</span> <span class="st">&#39;R&#39;</span>
-
-temp <span class="op">=</span> left
-left <span class="op">=</span> right
-right <span class="op">=</span> temp</code></pre></div>
-<pre class="output"><code>The code swaps the contents of the variables right and left.</code></pre>
-<p>Compare it to: <sub>~</sub> {.python} left, right = right, left <sub>~</sub></p>
-<p>Do they always do the same thing? Which do you find easier to read? <sub>~</sub> {.output} Yes, although it’s possible the internal implementation is different. Answers will vary on which is easier to read. <sub>~</sub></p>
 </div>
 </section>
 <h2 id="creating-functions"><a href="06-func.html">Creating Functions</a></h2>

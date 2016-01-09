@@ -154,6 +154,31 @@ Solutions to exercises:
 > ["h", "e", "l", "l", "o"]
 > ~~~
 
+> ## Tuples and exchanges {.challenge}
+>
+> Explain what the overall effect of this code is:
+>
+> ~~~ {.python}
+> left = 'L'
+> right = 'R'
+>
+> temp = left
+> left = right
+> right = temp
+> ~~~
+> ~~~ {.output}
+> The code swaps the contents of the variables right and left.
+> ~~~
+> Compare it to:
+> ~~~ {.python}
+> left, right = right, left
+> ~~~
+>
+> Do they always do the same thing? Which do you find easier to read?
+> ~~~ {.output}
+> Yes, although it's possible the internal implementation is different. Answers will vary on which is easier to read.
+> ~~~
+
 > ## Generate a list of numbers {.challenge}
 >
 > Generate and print a list where the values are square of numbers between 1 and 20 (both included).
@@ -267,31 +292,6 @@ Solutions to exercises:
 > ~~~
 > Here `pass` means "don't do anything". In this particular case, it's not actually needed, since if `num==0` neither
 > sum needs to change, but it illustrates the use of `elif`.
-
-> ## Tuples and exchanges {.challenge}
->
-> Explain what the overall effect of this code is:
->
-> ~~~ {.python}
-> left = 'L'
-> right = 'R'
->
-> temp = left
-> left = right
-> right = temp
-> ~~~
-> ~~~ {.output}
-> The code swaps the contents of the variables right and left.
-> ~~~
-> Compare it to:
-> ~~~ {.python}
-> left, right = right, left
-> ~~~
->
-> Do they always do the same thing? Which do you find easier to read?
-> ~~~ {.output}
-> Yes, although it's possible the internal implementation is different. Answers will vary on which is easier to read.
-> ~~~
 
 
 ## [Creating Functions](06-func.html)
