@@ -167,15 +167,126 @@ odds: [1, 3, 5, 7]
 
 This is different from how variables worked in lesson 1, and more similar to how a spreadsheet works.
 
-## Turn a string into a list {.challenge}
+> ## Turn a string into a list {.challenge}
 
-Use a for-loop to convert the string "hello" into a list of letters:
+> Use a for-loop to convert the string "hello" into a list of letters:
+
+> ~~~ {.python}
+> ["h", "e", "l", "l", "o"]
+> ~~~
+> Hint: You can create an empty list like this:
+
+> ~~~ {.python}
+> my_list = []
+> ~~~
+
+Subsets of lists and strings can be accessed by specifying ranges of values in brackets, similar to how we accessed ranges of positions in a Numpy matrix. This is commonly referred to as "slicing" the list/string.
 
 ~~~ {.python}
-["h", "e", "l", "l", "o"]
+date = "Monday 4 January 2016"
+months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+day = date[0:6]
+year = date[17:21]
+summer = months[5:8]
+last = months[-1]
+print("day", day)
+print("year", year)
+print("summer", summer)
+print("last", last)
 ~~~
-Hint: You can create an empty list like this:
+~~~ {.output}
+day Monday
+year 2016
+summer ["jun", "jul", "aug"]
+last dec
+~~~
 
-~~~ {.python}
-my_list = []
+>## Slicing from the end {.challenge}
+> Use slicing to access only the last five characters of a string or entries of a list.
+> 
+> ~~~ {.python}
+> string_for_slicing = "abcdefghijklmnopqrstuvwxyz"
+> list_for_slicing = [1, "two", "III", 4.0, 5, "six"]
+> ~~~
+> ~~~ {.output}
+> "vwxyz"
+> ["two", "III", 4.0, 5, "six"]
+> ~~~
+> Would your solution work for a string or list of any length greater than four? If not, try to change your approach to make it more robust.
+
+If you want to take a slice from the beginning of a sequence, you can omit the first index in the range:
+
+~~~{.python}
+date = "Monday 4 January 2016"
+day = date[0:6]
+print("Using 0 to begin range:", day)
+day = date[:6]
+print("Omitting beginning index:", day)
 ~~~
+~~~{.output}
+Using 0 to begin range: Monday
+Omitting beginning index: Monday
+~~~
+
+And equally, you can omit the ending index in the range to take a slice to the very end of the sequence:
+
+~~~{.python}
+months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+sond = months[8:12]
+print("With known last position:", sond)
+sond = months[8:len(months)]
+print("Using len() to get last entry:", sond)
+sond = months[6:]
+("Omitting ending index:", sond)
+~~~
+~~~{.output}
+With known last position: ["sep", "oct", "nov", "dec"]
+Using len() to get last entry: ["sep", "oct", "nov", "dec"]
+Omitting ending index: ["sep", "oct", "nov", "dec"]
+~~~
+
+So far we've seen how to use slicing to take single blocks of successive entries from a sequence. But what if we want to take a subset of entries that aren't next to eachother in the sequence?
+
+You can achieve this by providing a third argument to the range within the brackets, called the _step size_. The example below shows how you can take every third entry in a list:
+
+~~~{.python}
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+subset = primes[0:12:3]
+print("subset", subset)
+~~~
+~~~{.output}
+subset [2, 7, 17, 29]
+~~~
+
+Notice that the slice taken begins with the first entry in the range, followed by entries taken at equally-spaced intervals (the steps) thereafter. If you wanted to begin the subset with the third entry, you would need to specify that as the starting point of the sliced range:
+
+~~~{.python}
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+subset = primes[2:12:3]
+print("subset", subset)
+~~~
+~~~{.output}
+subset [5, 13, 23, 37]
+~~~
+
+>## Non-continuous slices {.challenge}
+>Use the step size argument to create a new string that contains only every other character in the string "In an octopus's garden in the shade"  
+>
+> ~~~{.python}
+> beatles = "In an octopus's garden in the shade"
+> ~~~
+> ~~~{.output}
+> I notpssgre ntesae
+> ~~~
+
+>## Slicing correctly {.challenge}
+>Given the list below, which option underneath will return the subset of list entries `['nothing', 'drive', 'away,', 'can', 'them', 'for', 'day.']` ?
+>
+>~~~{.python}
+>bowie = ['Though', 'nothing', 'will', 'drive', 'them', 'away', 'we', 'can', 'beat', 'them', 'just', 'for', 'one', 'day']
+>~~~
+>
+>a) bowie[1,3,5,7,9,11,13]  
+>b) bowie[::2]  
+>c) bowie[1::2]  
+>d) bowie[:2]  
