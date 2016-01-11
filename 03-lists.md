@@ -50,6 +50,13 @@ for number in odds:
 7
 ~~~
 
+> ## A visual example {.callout}
+>
+> Here is a visual example of how indexing the first element of
+> list `x` works:
+>
+> ![The first element of a list.](img/indexing_lists_python.png)
+
 There is one important difference between lists and strings:
 we can change the values in a list,
 but we cannot change the characters in a string.
@@ -174,7 +181,9 @@ This is different from how variables worked in lesson 1, and more similar to how
 > ~~~ {.python}
 > ["h", "e", "l", "l", "o"]
 > ~~~
+>
 > Hint: You can create an empty list like this:
+>
 > ~~~ {.python}
 > my_list = []
 > ~~~
