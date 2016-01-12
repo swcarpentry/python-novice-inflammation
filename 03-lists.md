@@ -179,6 +179,71 @@ This is different from how variables worked in lesson 1, and more similar to how
 > my_list = []
 > ~~~
 
+Subsets of lists and strings can be accessed by specifying ranges of values in brackets, similar to how we accessed ranges of positions in a Numpy matrix. This is commonly referred to as "slicing" the list/string.
+
+~~~ {.python}
+date = "Monday 4 January 2016"
+months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+day = date[0:6]
+year = date[17:21]
+summer = months[5:8]
+last = months[-1]
+print("day", day)
+print("year", year)
+print("summer", summer)
+print("last", last)
+~~~
+~~~ {.output}
+day Monday
+year 2016
+summer ["jun", "jul", "aug"]
+last dec
+~~~
+
+>## Slicing from the end {.challenge}
+> Use slicing to access only the last five characters of a string or entries of a list.
+> 
+> ~~~ {.python}
+> string_for_slicing = "abcdefghijklmnopqrstuvwxyz"
+> list_for_slicing = [1, "two", "III", 4.0, 5, "six"]
+> ~~~
+> ~~~ {.output}
+> "vwxyz"
+> ["two", "III", 4.0, 5, "six"]
+> ~~~
+> Would your solution work for a string or list of any length greater than four? If not, try to change your approach to make it more robust.
+
+If you want to take a slice from the beginning of a sequence, you can omit the first index in the range:
+
+~~~{.python}
+date = "Monday 4 January 2016"
+day = date[0:6]
+print("Using 0 to begin range:", day)
+day = date[:6]
+print("Omitting beginning index:", day)
+~~~
+~~~{.output}
+Using 0 to begin range: Monday
+Omitting beginning index: Monday
+~~~
+
+And equally, you can omit the ending index in the range to take a slice to the very end of the sequence:
+
+~~~{.python}
+months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+sond = months[8:12]
+print("With known last position:", sond)
+sond = months[8:len(months)]
+print("Using len() to get last entry:", sond)
+sond = months[6:]
+("Omitting ending index:", sond)
+~~~
+~~~{.output}
+With known last position: ["sep", "oct", "nov", "dec"]
+Using len() to get last entry: ["sep", "oct", "nov", "dec"]
+Omitting ending index: ["sep", "oct", "nov", "dec"]
+~~~
+
 > ## Tuples and exchanges {.challenge}
 >
 > Explain what the overall effect of this code is:
