@@ -179,6 +179,18 @@ This is different from how variables worked in lesson 1, and more similar to how
 > my_list = []
 > ~~~
 
+>## Slicing correctly {.challenge}
+>Given the list below, which option underneath will return the subset of list entries `['nothing', 'drive', 'away,', 'can', 'them', 'for', 'day.']` ?
+>
+>~~~{.python}
+>bowie = ['Though', 'nothing', 'will', 'drive', 'them', 'away', 'we', 'can', 'beat', 'them', 'just', 'for', 'one', 'day']
+>~~~
+>
+>a) bowie[1,3,5,7,9,11,13]  
+>b) bowie[::2]  
+>c) bowie[1::2]  
+>d) bowie[:2]  
+
 > ## Tuples and exchanges {.challenge}
 >
 > Explain what the overall effect of this code is:
