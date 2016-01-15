@@ -200,3 +200,23 @@ This is different from how variables worked in lesson 1, and more similar to how
 >
 > Do they always do the same thing?
 > Which do you find easier to read?
+
+> ##Modifying data in place {.challenge}
+
+>The * operator repeats the items in a list a given number of times. With a list, the repetition operator creates copies of the references. 
+>
+>What would be printed by the following statement:
+>
+>~~~ {.python}
+>counts = [2, 4, 6, 8, 10]
+>repeats = [counts] * 2
+>counts[1] = 0
+>print(repeats)
+>~~~
+>
+>A.  [2, 4, 6, 8, 10, 2, 4, 6, 8, 10]
+>B.  [[2, 4, 6, 8, 10],[2, 4, 6, 8, 10]]
+>C.  [[2, 0, 6, 8, 10],[2, 0, 6, 8, 10]]
+>D.  [2, 0, 6, 8, 10, 2, 0, 6, 8, 10]
+>E.  [2, 0, 6, 8, 10, 2, 4, 6, 8, 10]
+>F.  [[2, 0, 6, 8, 10],[2, 4, 6, 8, 10]]
