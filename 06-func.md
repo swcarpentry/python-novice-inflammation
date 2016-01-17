@@ -701,9 +701,13 @@ the second parameter in the list.
 > ~~~
 > 
 > Which of the following will the code display?
+> 
 > 1. 1234
+> 
 > 2. one2three4
+> 
 > 3. 1239
+> 
 > 4. SyntaxError
 > 
 > Copy and run the code, then edit the code to produce the other possible outputs.
