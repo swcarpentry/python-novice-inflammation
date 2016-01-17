@@ -123,7 +123,8 @@ Solutions to exercises:
 >
 > Write a loop that takes a string,
 > and produces a new string with the characters in reverse order.
-> ~~~ {.output}
+>
+> ~~~ {.python}
 > newstring = ''
 > oldstring = 'Newton'
 > length_old = len(oldstring)
