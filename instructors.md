@@ -141,11 +141,12 @@ After discussing these challenges could be a good time to introduce the `b*=2` s
 ## [Storing Multiple Values in Lists](03-lists.html)
 
 Solutions to exercises:
+
 >## Turn a string into a list {.challenge}
 >
 > Use a for-loop to convert the string "hello" into a list of letters:
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > my_list = []
 > for char in "hello":
 >     my_list.append(char)
@@ -161,6 +162,7 @@ Solutions to exercises:
 ## [Making Choices](05-cond.html)
 
 Solutions to exercises:
+
 > ## How many paths? {.challenge}
 >
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
@@ -231,7 +233,8 @@ Solutions to exercises:
 >
 > Write some code that sums the positive and negative numbers in a list separately,
 > using in-place operators.
-> ~~~ {.output}
+>
+> ~~~ {.python}
 > positive_sum = 0
 > negative_sum = 0
 > test_list = [3,4,6,1,-1,-5,0,7,-8]
@@ -266,25 +269,29 @@ Solutions to exercises:
 > The code swaps the contents of the variables right and left.
 > ~~~
 > Compare it to:
+>
 > ~~~ {.python}
 > left, right = right, left
 > ~~~
 >
 > Do they always do the same thing? Which do you find easier to read?
+>
 > ~~~ {.output}
-> Yes, although it's possible the internal implementation is different. Answers will vary on which is easier to read.
+> Yes, although it's possible the internal implementation is different. 
+> Answers will vary on which is easier to read.
 > ~~~
 
 
 ## [Creating Functions](06-func.html)
 
 Solutions to exercises:
+
 > ## Combining strings {.challenge}
 >
 > Write a function called `fence` that takes two parameters called `original` and `wrapper`
 > and returns a new string that has the wrapper character at the beginning and end of the original.
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > def fence(original, wrapper):
 >     return wrapper + original + wrapper
 > ~~~
@@ -294,7 +301,7 @@ Solutions to exercises:
 > Write a function called `outer`
 > that returns a string made up of just the first and last characters of its input.
 >
-> ~~~ {.output}
+> ~~~ {.python}
 > def outer(input_string):
 >     return input_string[0] + input_string[-1]
 > ~~~
@@ -508,6 +515,7 @@ Solutions to exercises:
 > What pre-conditions and post-conditions would you write for it?
 > Compare your answer to your neighbor's:
 > can you think of a function that will pass your tests but not hers or vice versa?
+>
 > ~~~ {.output}
 > Answer:
 > a possible pre-condition:
@@ -547,7 +555,7 @@ Solutions to exercises:
 >
 > Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
 >
->~~~ {.output}
+>~~~ {.python}
 >import numpy
 >def range_overlap(ranges):
 >    '''Return common overlap among a set of [low, high] ranges.'''
