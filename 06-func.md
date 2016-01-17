@@ -687,3 +687,23 @@ the second parameter in the list.
 >
 > print(k)
 > ~~~
+
+> ## Mixing default and non-default parameters {.challenge}
+>
+> Given the following code:
+>
+> ~~~ {.python}
+> def numbers(one, two=2, three, four=4):
+>     n = str(one) + str(two) + str(three) + str(four)
+>     return n
+> 
+> print(numbers(1, three=3))
+> ~~~
+> 
+> Which of the following will the code display?
+> a. 1234
+> b. one2three4
+> c. 1239
+> d. SyntaxError
+> 
+> Copy and run the code, then edit the code to produce the other possible outputs.
