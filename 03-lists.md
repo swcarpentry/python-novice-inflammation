@@ -201,22 +201,24 @@ This is different from how variables worked in lesson 1, and more similar to how
 > Do they always do the same thing?
 > Which do you find easier to read?
 
-> ##Modifying data in place {.challenge}
+> ##Overloaded operators {.challenge}
 
->The * operator repeats the items in a list a given number of times. With a list, the repetition operator creates copies of the references. 
+>In lesson 1 we learned to perform simple mathematical operations on arrays of data with the add ('+'), subtract ('-'), multiply ('*') and division ('/') operators. However, the same operator can behave differently with different objects and this is called operator overloading. For example, in this lesson we see that the ('+') operator can be used to concatenate a list to another. 
+
+>Given how the ('+') operator works on lists,  how do you think the ('*') operator will act on the 'counts' list in the following code?
 >
->What would be printed by the following statement:
->
+>What will be the output following the code:
 >~~~ {.python}
 >counts = [2, 4, 6, 8, 10]
->repeats = [counts] * 2
->counts[1] = 0
+>repeats = counts * 2
 >print(repeats)
 >~~~
 >
+>
 >A.  [2, 4, 6, 8, 10, 2, 4, 6, 8, 10]
->B.  [[2, 4, 6, 8, 10],[2, 4, 6, 8, 10]]
->C.  [[2, 0, 6, 8, 10],[2, 0, 6, 8, 10]]
->D.  [2, 0, 6, 8, 10, 2, 0, 6, 8, 10]
->E.  [2, 0, 6, 8, 10, 2, 4, 6, 8, 10]
->F.  [[2, 0, 6, 8, 10],[2, 4, 6, 8, 10]]
+>
+>B.  [4, 8, 12, 16, 20]
+>
+>C.  [[2, 4, 6, 8, 10],[2, 4, 6, 8, 10]]
+>
+>D.  [2, 4, 6, 8, 10, 4, 8, 12, 16, 20]
