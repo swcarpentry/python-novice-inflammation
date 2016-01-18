@@ -695,11 +695,11 @@ the second parameter in the list.
 > What should be A and B so that the function below returns the factorial?
 >
 > ~~~ {.python}
-> def factorial(n):
->     if n == 1 or n == 0:
->         return A
->     elif n > 1:
->         return n * factorial(B)
+> def factorial(A):
+>     result = 1
+>     for i in range(2, n+1):
+>         result *= i
+>     return B
 > ~~~
 >
-> Test the function for different values of `n`.
+> Test the function for different arguments.
