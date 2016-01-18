@@ -23,7 +23,7 @@ To do that, we'll have to teach the computer how to repeat the same task
 over and over again.
 
 An example task that we might want to repeat is printing each character in a
-word on a line of its own. One way to do this would be to use a series of `print` statements:
+word per line. One way to do this would be to use a series of `print` statements:
 
 ~~~ {.python}
 word = 'lead'
