@@ -97,6 +97,8 @@ Solutions to exercises:
 > Using `range`,
 > write a loop that uses `range` to print the first 3 natural numbers.
 >
+> ----
+>
 > ~~~ {.python}
 > for i in range(1, 4):
 >    print(i)
@@ -110,6 +112,8 @@ Solutions to exercises:
 > ## Computing powers with loops {.challenge}
 > Write a loop that calculates the same result as `5 ** 3` using
 > multiplication (and without exponentiation).
+>
+> ----
 >
 > ~~~ {.python}
 > result = 1
@@ -125,6 +129,8 @@ Solutions to exercises:
 >
 > Write a loop that takes a string,
 > and produces a new string with the characters in reverse order.
+>
+> ----
 >
 > ~~~ {.python}
 > newstring = ''
@@ -147,6 +153,8 @@ Solutions to exercises:
 > ## Turn a string into a list {.challenge}
 >
 > Use a `for` loop to convert the string `"hello"` into a list of letters:
+>
+> ----
 >
 > ~~~ {.python}
 > my_list = []
@@ -177,9 +185,9 @@ Solutions to exercises:
 >     print('C')
 > ~~~
 >
-> C gets printed, because the first two conditions, `4 > 5` and `4 == 5` are not true, but `4 < 5` is true.
+> ----
 >
-
+> C gets printed, because the first two conditions, `4 > 5` and `4 == 5` are not true, but `4 < 5` is true.
 
 > ## What is truth? {.challenge}
 >
@@ -200,19 +208,22 @@ Solutions to exercises:
 > if 1:
 >     print('one is true')
 > ~~~
-> ~~~ {.output}
+>
+> ----
+>
 > First line prints nothing: an empty string is false
-> Second line prints 'word is true': a non-empty string is true
+> Second line prints `'word is true'`: a non-empty string is true
 > Third line prints nothing: an empty list is false
-> Fourth line prints 'non-empty list is true': a non-empty list is true
+> Fourth line prints `'non-empty list is true'`: a non-empty list is true
 > Fifth line prints nothing: 0 is false
-> Sixth line prints 'one is true': 1 is true
-> ~~~
+> Sixth line prints `'one is true'`: 1 is true
 
 > ## Close enough {.challenge}
 >
 > Write some conditions that print `True` if the variable `a` is within 10% of the variable `b`
 > and `False` otherwise.
+>
+> ----
 >
 > ~~~ {.python}
 > a = 5
@@ -232,11 +243,13 @@ Solutions to exercises:
 >
 > This works because the boolean objects `True` and `False` have string representations which can be `print`ed.
 
-
 > ## In-place operators {.challenge}
 >
 > Write some code that sums the positive and negative numbers in a list separately,
 > using in-place operators.
+>
+> ----
+>
 > ~~~ {.python}
 > positive_sum = 0
 > negative_sum = 0
@@ -270,6 +283,8 @@ Solutions to exercises:
 > right = temp
 > ~~~
 >
+> ----
+>
 > The code swaps the contents of the variables right and left.
 >
 > Compare it to:
@@ -278,8 +293,11 @@ Solutions to exercises:
 > left, right = right, left
 > ~~~
 >
+> ----
+>
 > Do they always do the same thing? Which do you find easier to read?
 >
+> ----
 >
 > Yes, although it's possible the internal implementation is different. Answers will vary on which is easier to read.
 
@@ -292,6 +310,8 @@ Solutions to exercises:
 > Write a function called `fence` that takes two parameters called `original` and `wrapper`
 > and returns a new string that has the wrapper character at the beginning and end of the original.
 >
+> ----
+>
 > ~~~ {.python}
 > def fence(original, wrapper):
 >     return wrapper + original + wrapper
@@ -301,6 +321,8 @@ Solutions to exercises:
 >
 > Write a function called `outer`
 > that returns a string made up of just the first and last characters of its input.
+>
+> ----
 >
 > ~~~ {.python}
 > def outer(input_string):
@@ -313,6 +335,8 @@ Solutions to exercises:
 > and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
 > (Hint: If $L$ and $H$ are the lowest and highest values in the original array,
 > then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
+>
+> ----
 >
 > ~~~ {.python}
 > def rescale(input_array):
@@ -330,6 +354,8 @@ Solutions to exercises:
 > Once you've successfully tested your function,
 > add a docstring that explains what it does.
 >
+> ----
+>
 > ~~~ {.python}
 > '''Takes an array as input, and returns a corresponding array scaled so
 > that 0 corresponds to the minimum and 1 to the maximum value of the input array.
@@ -341,7 +367,6 @@ Solutions to exercises:
 > >>> rescale(np.linspace(0, 100, 5))
 > array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
 > '''
->
 > ~~~
 
 > ## Defining defaults {.challenge}
@@ -350,6 +375,8 @@ Solutions to exercises:
 > but will allow the caller to specify lower and upper bounds if they want.
 > Compare your implementation to your neighbor's:
 > do the two functions always behave the same way?
+>
+> ----
 >
 > ~~~ {.python}
 > def rescale(input_array, low_val=0.0, high_val=1.0):
@@ -380,13 +407,15 @@ Solutions to exercises:
 > print(k)
 > ~~~
 >
+> ----
+>
 > ~~~ {.output}
 > 259.81666666666666
 > 287.15
 > 273.15
 > 0
 > ~~~
-> k is 0 because the `k` inside the function `f2k` doesn't know about the `k` defined outside the function.
+> `k` is 0 because the `k` inside the function `f2k` doesn't know about the `k` defined outside the function.
 
 ## [Errors and Exceptions](07-errors.html)
 
@@ -429,6 +458,8 @@ Solutions to exercises:
 > KeyError: 'Friday'
 > ~~~
 >
+> ----
+>
 > 1. 3 levels
 > 2. `errors_02.py`
 > 3. `print_message`
@@ -449,6 +480,8 @@ Solutions to exercises:
 >      print("But at least python tells us about them!")
 >     print("So they are usually not too hard to fix.")
 > ~~~
+>
+> ----
 >
 > `SyntaxError` for missing `():` at end of first line, `IndentationError` for mismatch between second and third lines.
 >
@@ -477,6 +510,8 @@ Solutions to exercises:
 >         message = message + "b"
 > print(message)
 > ~~~
+>
+> ----
 >
 > 3 `NameError`s for `number` being misspelled, for `message` not defined, and for `a` not being in quotes.
 >
@@ -507,6 +542,8 @@ Solutions to exercises:
 > print('My favorite season is ', seasons[4])
 > ~~~
 >
+> ----
+>
 > `IndexError`; the last entry is `seasons[3]`, so `seasons[4]` doesn't make sense.
 >
 > Fixed version:
@@ -526,6 +563,8 @@ Solutions to exercises:
 > What pre-conditions and post-conditions would you write for it?
 > Compare your answer to your neighbor's:
 > can you think of a function that will pass your tests but not hers or vice versa?
+>
+> ----
 >
 > ~~~ {.python}
 > # a possible pre-condition:
@@ -553,6 +592,8 @@ Solutions to exercises:
 >     return result
 > ~~~
 >
+> ----
+>
 > *   The first assertion checks that the input sequence `values` is not empty.
 >     An empty sequence such as `[]` will make it fail.
 > *   The second assertion checks that the first value in the list is positive.
@@ -563,6 +604,8 @@ Solutions to exercises:
 > ## Fixing and testing {.challenge}
 >
 > Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
+>
+> ----
 >
 > ~~~ {.python}
 > import numpy
@@ -604,6 +647,8 @@ Solutions to exercises:
 > ~~~ {.output}
 > -1
 > ~~~
+>
+> ----
 >
 > ~~~ {.python}
 > # this is code/arith.py
@@ -653,6 +698,8 @@ Solutions to exercises:
 > zero.py
 > ~~~
 >
+> ----
+>
 > ~~~ {.python}
 > # this is code/my_ls.py
 > import sys
@@ -676,6 +723,8 @@ Solutions to exercises:
 > Rewrite `readings.py` so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
 > Is the code easier to read?
 > Is the program easier to understand?
+>
+> ----
 >
 > ~~~ {.python}
 > # this is code/readings-07.py
@@ -716,6 +765,8 @@ Solutions to exercises:
 > modify `readings.py` so that if no parameters are given
 > (i.e., no action is specified and no filenames are given),
 > it prints a message explaining how it should be used.
+>
+> ----
 >
 > ~~~ {.python}
 > # this is code/readings-08.py
@@ -763,6 +814,8 @@ Solutions to exercises:
 > modify `readings.py` so that if no action is given
 > it displays the means of the data.
 >
+> ----
+>
 > ~~~ {.python}
 > # this is code/readings-09.py
 > import sys
@@ -805,6 +858,8 @@ Solutions to exercises:
 > and checks that all the files have the same number of rows and columns.
 > What is the best way to test your program?
 >
+> ----
+>
 > ~~~ {.python}
 > # this is code/check.py
 > import sys
@@ -842,6 +897,8 @@ Solutions to exercises:
 >
 > *   If no filenames are given, it reports the number of lines in standard input.
 > *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
+>
+> ----
 >
 > ~~~ {.python}
 > # this is code/line-count.py
