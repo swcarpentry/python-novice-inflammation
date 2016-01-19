@@ -333,8 +333,8 @@ if I am currently in a folder called `myproject`,
 and I have a file in `myproject/writing/myfile.txt`,
 but I try to just open `myfile.txt`,
 this will fail.
-The correct path would be `writing/myfile.
-xt`. It is also possible (like with `NameError`) that you just made a typo.
+The correct path would be `writing/myfile.txt`.
+It is also possible (like with `NameError`) that you just made a typo.
 
 Another issue could be that you used the "read" flag instead of the "write" flag.
 Python will not give you an error if you try to open a file for writing when the file does not exist.

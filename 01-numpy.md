@@ -531,7 +531,7 @@ inflammation rises and falls over a 40-day period.
 > ~~~ {.python}
 > % matplotlib inline
 > ~~~
->  
+>
 > The `%` indicates an IPython magic function -
 > a function that is only valid within the notebook environment.
 > Note that you only have to execute this function once per notebook.

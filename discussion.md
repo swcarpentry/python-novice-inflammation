@@ -111,14 +111,14 @@ the mininum and maximum values in an array:
 import numpy
 
 def span(a):
-diff = a.max() - a.min()
-return diff
+    diff = a.max() - a.min()
+    return diff
 
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-print('span of data', span(data))
+print('span of data:', span(data))
 ~~~
 ~~~ {.output}
-span of data 20.0
+span of data: 20.0
 ~~~
 
 Notice that `span` assigns a value to a variable called `diff`.
