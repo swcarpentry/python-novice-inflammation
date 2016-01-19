@@ -92,7 +92,7 @@ else:
     print('at least one part is false')
 ~~~
 ~~~ {.output}
-one part is not true
+at least one part is false
 ~~~
 
 while `or` is true if at least one part is true:
