@@ -239,3 +239,7 @@ and false statements. However, they aren't the only values in Python that are tr
 > using in-place operators.
 > Do you think the result is more or less readable than writing the same without in-place operators?
 
+> ## Counting vowels {.challenge}
+>
+> Write a loop that counts the number of vowels in a string.  Test it on
+> a few individual words and full sentences.
