@@ -380,6 +380,23 @@ tripledata:
  [ 6.  6.  3.  3.]]
 ~~~
 
+> ## MCQ: Understanding numpy array operations {.challenge}
+>
+> What will be the content of the variable `result`, once the following code is executed:
+>
+> ~~~ {.python}
+> array1 = [1,5,3,9]
+> array2 = [3,7,3,8]
+> result = array1[1:] + array2[1:]
+> ~~~
+>
+> 1. Syntax error
+> 2. [5,3,9,7,3,8]
+> 3. [4,12,6,17]
+> 4. [12,6,17]
+> 5. 12
+
+
 Often, we want to do more than add, subtract, multiply, and divide values of data.
 Arrays also know how to do more complex operations on their values.
 If we want to find the average inflammation for all patients on all days,
