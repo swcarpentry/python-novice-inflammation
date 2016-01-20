@@ -129,7 +129,7 @@ does not.
 > index operations shown in the image:
 >
 > ~~~ {.python}
-> print([i[0]])
+> print([x[0]])
 > ~~~
 >
 > ~~~ {.output}
@@ -137,7 +137,7 @@ does not.
 > ~~~
 >
 > ~~~ {.python}
-> print(i[0])
+> print(x[0])
 > ~~~
 >
 > ~~~ {.output}
@@ -145,7 +145,7 @@ does not.
 > ~~~
 >
 > ~~~ {.python}
-> print(i[0][0])
+> print(x[0][0])
 > ~~~
 >
 > ~~~ {.output}
