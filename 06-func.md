@@ -113,6 +113,7 @@ and we have access to the value that we returned.
 >
 > And if you want an integer result from division in Python 3,
 > use a double-slash:
+>
 > ~~~ {.python}
 > 4//2
 > ~~~
