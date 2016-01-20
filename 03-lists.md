@@ -151,6 +151,9 @@ does not.
 > ~~~ {.output}
 > 'pepper'
 > ~~~
+>
+> Thanks to [Hadley Wickham](https://twitter.com/hadleywickham/status/643381054758363136)
+> for the image above.
 
 There are many ways to change the contents of lists besides assigning new values to
 individual elements:
