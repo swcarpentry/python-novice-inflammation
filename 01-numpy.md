@@ -403,16 +403,16 @@ minimum inflammation: 0.0
 standard deviation: 4.61383319712
 ~~~
 
-> ## Mystery methods {.callout}
+> ## Mystery methods in IPython {.callout}
 >
 > How did we know what methods data has and how to use them? When you are working
-> on your own data it might be something different to a numpy object, and how will
-> you know then what methods you can use then? Well IPython gives us an easy way
-> of finding this out. If you type the name of your object with a full-stop then
-> you can use tab completion (e.g. type `data.` and then press tab) to see a
-> list of all methods that you can use on that object. After selecting one you can
-> also add a question mark (e.g. `data.cumprod?`) and IPython will return an explanation
-> of the method!
+> on your own data it might be something different to a numpy object: how will
+> you know what methods you can use then? If you are working in the IPython/Jupyter 
+> Notebook there is an easy way to find out. If you type the name of your object
+> with a full-stop then you can use tab completion (e.g. type `data.` and then press tab)
+> to see a list of all methods that you can use on that object. After selecting one you
+> can also add a question mark (e.g. `data.cumprod?`) and IPython will return an 
+> explanation of the method!
 
 
 When analyzing data,
