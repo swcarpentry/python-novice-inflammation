@@ -111,12 +111,12 @@ does not.
 > ## Nested Lists {.callout}
 > Since lists can contain any Python variable, it can even contain other lists.
 >
-> For example, we could represent a matrix as a list of lists:
+> For example, we could represent the products in the shelves of a small grocery shop:
 >
 > ~~~ {.python}
-> x = [[1, 0, 0],
->      [0, 1, 0],
->      [0, 0, 1]]
+> x = [['pepper', 'zucchini', 'onion'],
+>      ['cabbage', 'lettuce', 'garlic'],
+>      ['apple', 'pear', 'banana']]
 > ~~~
 >
 >
@@ -133,7 +133,7 @@ does not.
 > ~~~
 >
 > ~~~ {.output}
-> [[1, 0, 0]]
+> [['pepper', 'lettuce', 'onion']]
 > ~~~
 >
 > ~~~ {.python}
@@ -141,7 +141,7 @@ does not.
 > ~~~
 >
 > ~~~ {.output}
-> [1, 0, 0]
+> ['pepper', 'lettuce', 'onion']
 > ~~~
 >
 > ~~~ {.python}
@@ -149,7 +149,7 @@ does not.
 > ~~~
 >
 > ~~~ {.output}
-> 1
+> 'pepper'
 > ~~~
 
 There are many ways to change the contents of lists besides assigning new values to
