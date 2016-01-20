@@ -107,6 +107,51 @@ does not.
 > it is often far more efficient to modify a large data structure in place than to create a modified copy for
 > every small change. You should consider both of these aspects when writing your code.
 
+
+> ## Nested Lists {.callout}
+> Since lists can contain any Python variable, it can even contain other lists.
+>
+> For example, we could represent the products in the shelves of a small grocery shop:
+>
+> ~~~ {.python}
+> x = [['pepper', 'zucchini', 'onion'],
+>      ['cabbage', 'lettuce', 'garlic'],
+>      ['apple', 'pear', 'banana']]
+> ~~~
+>
+>
+> Here is a visual example of how indexing a list of lists `x` works:
+>
+> <a href='https://twitter.com/hadleywickham/status/643381054758363136'>
+> ![The first element of a list. Adapted from @hadleywickham's tweet about R > lists.](img/indexing_lists_python.png)</a>
+>
+> Using the previously declared list `x`, these would be the results of the
+> index operations shown in the image:
+>
+> ~~~ {.python}
+> print([x[0]])
+> ~~~
+>
+> ~~~ {.output}
+> [['pepper', 'lettuce', 'onion']]
+> ~~~
+>
+> ~~~ {.python}
+> print(x[0])
+> ~~~
+>
+> ~~~ {.output}
+> ['pepper', 'lettuce', 'onion']
+> ~~~
+>
+> ~~~ {.python}
+> print(x[0][0])
+> ~~~
+>
+> ~~~ {.output}
+> 'pepper'
+> ~~~
+
 There are many ways to change the contents of lists besides assigning new values to
 individual elements:
 
