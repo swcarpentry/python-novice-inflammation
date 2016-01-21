@@ -223,9 +223,30 @@ This is different from how variables worked in lesson 1, and more similar to how
 > ["h", "e", "l", "l", "o"]
 > ~~~
 > Hint: You can create an empty list like this:
+>
 > ~~~ {.python}
 > my_list = []
 > ~~~
+
+> ## Extracting elements from lists {.challenge}
+> Earlier we saw that you can extract elements from NumPy arrays, for example, using the two-dimension
+> array `data` that we saw before:
+>
+> ~~~ {.python}
+> print(data[0, 0])
+> ~~~
+> ~~~ {.output}
+> 0.0
+> ~~~
+>
+> This also works with lists. How would you extract the first number from this list of numbers? How would
+> you extract all the odd numbers?
+>
+> ~~~ {.python}
+> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+> ~~~
+>
+> Could you use a loop to extract all the odd numbers? Try it!
 
 > ## Tuples and exchanges {.challenge}
 >
