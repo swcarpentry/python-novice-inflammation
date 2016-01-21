@@ -700,11 +700,11 @@ the second parameter in the list.
 > print(numbers(1, three=3))
 > ~~~
 > 
-> Which of the following will the code display?
+> Copy and run the code, which of the following results do you get? Why do you think that is the case?
 > 
 > 1. 1234
 > 2. one2three4
 > 3. 1239
 > 4. SyntaxError
 > 
-> Copy and run the code, then edit the code to produce the other possible outputs.
+> Edit the code to produce the other possible outputs.
