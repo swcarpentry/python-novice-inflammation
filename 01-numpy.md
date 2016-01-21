@@ -703,3 +703,22 @@ the graphs will actually be squeezed together more closely.)
 > ## Moving plots around {.challenge}
 >
 > Modify the program to display the three plots on top of one another instead of side by side.
+
+> ## Converting between an array and a vector {.challenge}
+>
+> In some cases in NumPy, an vector of size N behaves differently than an Nx1 array.
+> The vector will have a shape (N,), while the array will have a shape (N,1).
+>
+> The code below generates a 5x5 array of random numbers `A`,
+> then uses slices to extract the last column of `A` as a vector with shape (5,) and store it in `b`.
+> 
+> Modify it so that `b` is an array with shape (5,1).
+>
+> ~~~ {.python}
+> import numpy
+> 
+> A = numpy.random.random([5,5]) # array of random numbers
+> b = A[:,-1] # take the last column from A
+> 
+> print(b.shape)
+> ~~~
