@@ -66,7 +66,10 @@ To do all that, we'll have to learn a little bit about programming.
 
 > ## Starting Python {.getready}
 >
-> If you will be using the iPython or Jupyter notebook for the lessons, you should have already installed Anaconda which includes the notebook.
+> If you will be using the IPython or Jupyter notebook for the lesson,
+> you should have already
+> [installed Anaconda](http://swcarpentry.github.io/workshop-template/#setup)
+> which includes the notebook.
 >
 > To start the notebook, open a terminal or git bash and type the command:
 >
