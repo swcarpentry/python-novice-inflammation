@@ -98,7 +98,7 @@ boiling point of water: 373.15</code></pre>
 <pre class="output"><code>freezing point of water in Celsius: 0.0</code></pre>
 <p>This is our first taste of how larger programs are built: we define basic operations, then combine them in ever-large chunks to get the effect we want. Real-life functions will usually be larger than the ones shown here — typically half a dozen to a few dozen lines — but they shouldn’t ever be much longer than that, or the next person who reads it won’t be able to understand what’s going on.</p>
 <h2 id="tidying-up">Tidying up</h2>
-<p>Now that we know how to wrap bits of code up in functions, we can make our inflammation analyasis easier to read and easier to reuse. First, let’s make an <code>analyze</code> function that generates our plots:</p>
+<p>Now that we know how to wrap bits of code up in functions, we can make our inflammation analysis easier to read and easier to reuse. First, let’s make an <code>analyze</code> function that generates our plots:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> analyze(filename):
 
     data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
