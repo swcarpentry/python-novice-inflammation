@@ -170,7 +170,7 @@ or the next person who reads it won't be able to understand what's going on.
 ## Tidying up
 
 Now that we know how to wrap bits of code up in functions,
-we can make our inflammation analyasis easier to read and easier to reuse.
+we can make our inflammation analysis easier to read and easier to reuse.
 First, let's make an `analyze` function that generates our plots:
 
 ~~~ {.python}
