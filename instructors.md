@@ -417,6 +417,31 @@ Solutions to exercises:
 > ~~~
 > `k` is 0 because the `k` inside the function `f2k` doesn't know about the `k` defined outside the function.
 
+> ## Floating-point accuracy {.challenge}
+>
+> What does the following code print? Is it what you expect?
+> Can you give an explanation for the result?
+>
+> ~~~ {.python}
+> x = 0.0
+> for i in range(100):
+>     x = x + 0.1
+>
+> y = 0.1 * 100
+>
+> print(x, y)
+> ~~~
+>
+> ----
+>
+> ~~~ {.output}
+> 9.99999999999998 10.0
+> ~~~
+Python (and most computers) uses base-2 to store numbers. Just as there are some values that cannot be represented
+exactly in decimal (e.g., 1/3), the value 0.1 cannot be represented exactly in base-2. Over many operations (i.e.,
+multiple summations in the exercise), the small error is compounded. A function like `numpy.allclose` can be used
+to compare arrays fuzzily.
+
 ## [Errors and Exceptions](07-errors.html)
 
 Solutions to exercises:
