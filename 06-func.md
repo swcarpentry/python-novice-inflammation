@@ -194,7 +194,7 @@ def analyze(filename):
     axes3.plot(data.min(axis=0))
 
     fig.tight_layout()
-    matplotlib.pyplot.show(fig)
+    matplotlib.pyplot.show()
 ~~~
 
 and another function called `detect_problems` that checks for those systematics
