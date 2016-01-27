@@ -223,6 +223,7 @@ This is different from how variables worked in lesson 1, and more similar to how
 > ["h", "e", "l", "l", "o"]
 > ~~~
 > Hint: You can create an empty list like this:
+>
 > ~~~ {.python}
 > my_list = []
 > ~~~
