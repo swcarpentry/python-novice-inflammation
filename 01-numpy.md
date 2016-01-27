@@ -579,12 +579,12 @@ You can group similar plots in a single figure using subplots.
 This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
 creates a space into which we will place all of our plots. The parameter `figsize`
 tells Python how big to make this space. Each subplot is placed into the figure using
-the `subplot` command. The `subplot` command takes 3 parameters. The first denotes
+its `add_subplot` method. The `add_subplot` method takes 3 parameters. The first denotes
 how many total rows of subplots there are, the second parameter refers to the
 total number of subplot columns, and the final parameters denotes which subplot
-your variable is referencing. Each subplot is stored in a different variable (axes1, axes2,
-axes3). Once a subplot is created, the axes are can be titled using the
-`set_xlabel()` command (or `set_ylabel()`).
+your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a
+different variable (`axes1`, `axes2`, `axes3`). Once a subplot is created, the axes can
+be titled using the `set_xlabel()` command (or `set_ylabel()`).
 Here are our three plots side by side:
 
 ~~~ {.python}
@@ -618,7 +618,7 @@ matplotlib.pyplot.show()
 The [call](reference.html#function-call) to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
 how large we want the figure to be,
-that we're creating three sub-plots,
+that we're creating three subplots,
 what to draw for each one,
 and that we want a tight layout.
 (Perversely,
