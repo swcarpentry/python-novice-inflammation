@@ -122,7 +122,7 @@ for variable in collection:
 We can call the [loop variable](reference.html#loop-variable) anything we like,
 but there must be a colon at the end of the line starting the loop,
 and we must indent anything we want to run inside the loop. Unlike many other languages, there is no
-command to end a loop (e.g. end for); what is indented after the for statement belongs to the loop.
+command to signify the end of the loop body (e.g. end for); what is indented after the for statement belongs to the loop.
 
 Here's another loop that repeatedly updates a variable:
 
