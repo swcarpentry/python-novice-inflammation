@@ -146,7 +146,7 @@ What about converting Fahrenheit to Celsius?
 We could write out the formula,
 but we don't need to.
 Instead,
-we can [compose](reference.html#function-composition) the two functions we have already created:
+we can [compose](reference.html#compose) the two functions we have already created:
 
 ~~~ {.python}
 def fahr_to_celsius(temp_f):
