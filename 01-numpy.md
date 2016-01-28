@@ -412,8 +412,8 @@ standard deviation: 4.61383319712
 > with a full-stop then you can use tab completion (e.g. type `data.` and then press tab)
 > to see a list of all methods that you can use on that object. After selecting one you
 > can also add a question mark (e.g. `data.cumprod?`) and IPython will return an 
-> explanation of the method! This is the same as doing `help(data.cumprod)', and shows
-> the docstring of the `np.cumprod' function.
+> explanation of the method! This is the same as doing `help(data.cumprod)`, and shows
+> the docstring of the `np.cumprod` function.
 
 
 When analyzing data,
