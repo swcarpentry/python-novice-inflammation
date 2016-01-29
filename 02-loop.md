@@ -241,11 +241,15 @@ so we should always use it when we can.
 > d = {'apples': 0.49, 'oranges': 0.99, 'pears': 1.49, 'bananas': 0.32}
 > #default looping
 > for key in d:
->    print key, d[key]
+>    print(key, d[key])
 > ~~~
 > 
 > Knowing this, use a for loop to calculate how much it'll cost you 
 > to buy 2 pieces of each fruit.
+>
+> Extra Challenge: Python allows others ways to iterature over a dictionary.
+> Check the help files for `dict.values()` and `dict.items()` to see what
+> they return. Edit the loop you wrote above using these methods.
 
 
 
