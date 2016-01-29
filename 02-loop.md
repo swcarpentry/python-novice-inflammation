@@ -247,7 +247,7 @@ so we should always use it when we can.
 > Knowing this, use a for loop to calculate how much it'll cost you 
 > to buy 2 pieces of each fruit.
 >
-> Extra Challenge: Python allows others ways to iterature over a dictionary.
+> Extra Challenge: Python allows others ways to iterate over a dictionary.
 > Check the help files for `dict.values()` and `dict.items()` to see what
 > they return. Edit the loop you wrote above using these methods.
 
