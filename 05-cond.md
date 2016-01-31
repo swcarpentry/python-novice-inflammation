@@ -212,6 +212,23 @@ and false statements. However, they aren't the only values in Python that are tr
 >     print('one is true')
 > ~~~
 
+> ## not not True is True {.challenge}
+>
+> Sometimes it is useful to check whether some condition is not true.
+> The special word `not` can do this explicitly.
+> After reading and running the code below,
+> write some conditions that use `not` to test the rule you formulated in the previous challenge.
+>
+> ~~~ {.python}
+> if not '':
+>     print('empty string is not true')
+> if not 'word':
+>     print('word is not true')
+> if not not True:
+>     print('not not True is true')
+> ~~~
+ 
+
 > ## Close enough {.challenge}
 >
 > Write some conditions that print `True` if the variable `a` is within 10% of the variable `b`
