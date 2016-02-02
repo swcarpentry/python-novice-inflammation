@@ -133,7 +133,7 @@ does not.
 > ~~~
 >
 > ~~~ {.output}
-> [['pepper', 'lettuce', 'onion']]
+> [['pepper', 'zucchini', 'onion']]
 > ~~~
 >
 > ~~~ {.python}
@@ -141,7 +141,7 @@ does not.
 > ~~~
 >
 > ~~~ {.output}
-> ['pepper', 'lettuce', 'onion']
+> ['pepper', 'zucchini', 'onion']
 > ~~~
 >
 > ~~~ {.python}
