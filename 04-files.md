@@ -21,7 +21,7 @@ that finds files whose names match a pattern.
 We provide those patterns as strings:
 the character `*` matches zero or more characters,
 while `?` matches any one character.
-We can use this to get the names of all the HTML files in the current directory:
+We can use this to get the names of all the csv files in the current directory:
 
 ~~~ {.python}
 print(glob.glob('data/inflammation*.csv'))
