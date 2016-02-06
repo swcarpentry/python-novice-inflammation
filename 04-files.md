@@ -24,7 +24,7 @@ while `?` matches any one character.
 We can use this to get the names of all the HTML files in the current directory:
 
 ~~~ {.python}
-print(glob.glob('data/inflammation*.csv'))
+print(sorted(glob.glob('data/inflammation*.csv')))
 ~~~
 
 ~~~ {.output}

@@ -511,6 +511,7 @@ and use two of its functions to create and display a heat map of our data:
 
 ~~~ {.python}
 import matplotlib.pyplot
+% matplotlib inline
 image  = matplotlib.pyplot.imshow(data)
 matplotlib.pyplot.show(image)
 ~~~
