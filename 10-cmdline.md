@@ -403,11 +403,15 @@ but there are several things wrong with it:
 
 1.  `main` is too large to read comfortably.
 
-2.  If `action` isn't one of the three recognized flags,
-    the program loads each file but does nothing with it
-    (because none of the branches in the conditional match).
-    [Silent failures](reference.html#silence-failure) like this
+2. If we do not specify at least two additional arguments on the
+    command-line, one for the **flag** and one for the **filename**, but only
+    one, the program will not throw an exception but will run. It assumes that the file
+    list is empty, as `sys.argv[1]` will be considered the `action`, even if it
+    is a filename. [Silent failures](reference.html#silence-failure)  like this
     are always hard to debug.
+
+3. The program should check if the submitted `action` isn't one of the three recognized flags. 
+
 
 This version pulls the processing of each file out of the loop into a function of its own.
 It also checks that `action` is one of the allowed flags
