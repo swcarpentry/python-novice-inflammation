@@ -42,7 +42,7 @@
 </ul>
 </div>
 </section>
-<p>At this point, we’ve written code to draw some interesting features in our inflammation data, loop over all our data files to quickly draw these plots for each of them, and have Python make decisions based on what it sees in our data. But, our code is getting pretty long and complicated; what if we had thousands of datasets, and didn’t want to generate a figure for every single one? Commenting out the figure-drawing code is a nuisance. Also, what if we want to use that code again, on a different dataset or at a different point in our program? Cutting and pasting it is going to make our code get very long and very repetative, very quickly. We’d like a way to package our code so that it is easier to reuse, and Python provides for this by letting us define things called ‘functions’ - a shorthand way of re-executing longer pieces of code.</p>
+<p>At this point, we’ve written code to draw some interesting features in our inflammation data, loop over all our data files to quickly draw these plots for each of them, and have Python make decisions based on what it sees in our data. But, our code is getting pretty long and complicated; what if we had thousands of datasets, and didn’t want to generate a figure for every single one? Commenting out the figure-drawing code is a nuisance. Also, what if we want to use that code again, on a different dataset or at a different point in our program? Cutting and pasting it is going to make our code get very long and very repetitive, very quickly. We’d like a way to package our code so that it is easier to reuse, and Python provides for this by letting us define things called ‘functions’ - a shorthand way of re-executing longer pieces of code.</p>
 <p>Let’s start by defining a function <code>fahr_to_kelvin</code> that converts temperatures from Fahrenheit to Kelvin:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_kelvin(temp):
     <span class="cf">return</span> ((temp <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>)) <span class="op">+</span> <span class="fl">273.15</span></code></pre></div>
@@ -88,7 +88,7 @@ boiling point of water: 373.15</code></pre>
 
 <span class="bu">print</span>(<span class="st">&#39;absolute zero in Celsius:&#39;</span>, kelvin_to_celsius(<span class="fl">0.0</span>))</code></pre></div>
 <pre class="output"><code>absolute zero in Celsius: -273.15</code></pre>
-<p>What about converting Fahrenheit to Celsius? We could write out the formula, but we don’t need to. Instead, we can <a href="reference.html#function-composition">compose</a> the two functions we have already created:</p>
+<p>What about converting Fahrenheit to Celsius? We could write out the formula, but we don’t need to. Instead, we can <a href="reference.html#compose">compose</a> the two functions we have already created:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fahr_to_celsius(temp_f):
     temp_k <span class="op">=</span> fahr_to_kelvin(temp_f)
     result <span class="op">=</span> kelvin_to_celsius(temp_k)
@@ -119,7 +119,7 @@ boiling point of water: 373.15</code></pre>
     axes3.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>))
 
     fig.tight_layout()
-    matplotlib.pyplot.show(fig)</code></pre></div>
+    matplotlib.pyplot.show()</code></pre></div>
 <p>and another function called <code>detect_problems</code> that checks for those systematics we noticed:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> detect_problems(filename):
 
@@ -162,7 +162,7 @@ centered <span class="op">=</span> center(data, <span class="dv">0</span>)
 <span class="bu">print</span>(<span class="st">&#39;min, mean, and and max of centered data are:&#39;</span>, centered.<span class="bu">min</span>(), centered.mean(), centered.<span class="bu">max</span>())</code></pre></div>
 <pre class="output"><code>original min, mean, and max are: 0.0 6.14875 20.0
 min, mean, and and max of centered data are: -6.14875 2.84217094304e-16 13.85125</code></pre>
-<p>That seems almost right: the original mean was about 6.1, so the lower bound from zero is how about -6.1. The mean of the centered data isn’t quite zero — we’ll explore why not in the challenges — but it’s pretty close. We can even go further and check that the standard deviation hasn’t changed:</p>
+<p>That seems almost right: the original mean was about 6.1, so the lower bound from zero is now about -6.1. The mean of the centered data isn’t quite zero — we’ll explore why not in the challenges — but it’s pretty close. We can even go further and check that the standard deviation hasn’t changed:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;std dev before and after:&#39;</span>, data.std(), centered.std())</code></pre></div>
 <pre class="output"><code>std dev before and after: 4.61383319712 4.61383319712</code></pre>
 <p>Those values look the same, but we probably wouldn’t notice if they were different in the sixth decimal place. Let’s do this instead:</p>
