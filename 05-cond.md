@@ -219,6 +219,22 @@ and false statements. However, they aren't the only values in Python that are tr
 > Compare your implementation with your partner's:
 > do you get the same answer for all possible pairs of numbers?
 
+> ## New Question, combining concepts {.challenge}
+> 
+> Now that you have learned about conditions and loops we can combine these concepts to look
+> at another type of loop: while loops. The structure is exactly like an if state the only difference
+> being that it will repeat what is within your loop until your condition becomes false. 
+> Try the following:
+> * Create a list that contains the following five numbers: [2,3,5,6,9]
+> * Create a variable and set it equal to zero, we will use this to point at the numbers in your list
+> * Create a condition that checks if the current value we are pointing to in your list is less than 6, 
+> and place it as if you were writing an if state except that instead of 'if' use the word 'while'
+> * Print the number that is being compared inside the loop
+> * Lastly, remember to iterate your variable otherwise you will end up with an infinite loop
+> 
+> This type of loop is useful in cases where you do not know exactly how many times you need to repeat your
+> loop contents.
+
 
 > ## In-place operators {.challenge}
 >
