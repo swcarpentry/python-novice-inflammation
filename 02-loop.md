@@ -120,7 +120,7 @@ for variable in collection:
 ~~~
 
 Using the oxygen example above, the loop might look like this:
-<img src='loop_image.png' style='width:300px';/>
+![loop_image](./fig/loops_image.png)
 
 Where each character (`char`) in the variable `word` is looped through and printed one character after another. The numbers in the diagram denote which loop cycle the character was printed in (1 being the first loop, and 6 being the final loop).
 
