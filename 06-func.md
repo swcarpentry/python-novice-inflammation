@@ -39,8 +39,7 @@ The function definition opens with the word `def`,
 which is followed by the name of the function
 and a parenthesized list of parameter names.
 The [body](reference.html#function-body) of the function --- the
-statements that are executed when it runs --- is indented below the definition line,
-typically by four spaces.
+statements that are executed when it runs --- is indented below the definition line.
 
 When we call the function,
 the values we pass to it are assigned to those variables
