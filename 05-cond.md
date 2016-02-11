@@ -18,7 +18,7 @@ runs only when certain conditions are true.
 
 ## Conditionals
 
-We can ask Python to take different actions, depending on a condition, with an if statement:
+We can ask Python to take different actions, depending on a condition, with an `if` statement:
 
 ~~~ {.python}
 num = 37
