@@ -254,7 +254,8 @@ main()</code></pre></div>
 <p>but there are several things wrong with it:</p>
 <ol style="list-style-type: decimal">
 <li><p><code>main</code> is too large to read comfortably.</p></li>
-<li><p>If <code>action</code> isn’t one of the three recognized flags, the program loads each file but does nothing with it (because none of the branches in the conditional match). <a href="reference.html#silence-failure">Silent failures</a> like this are always hard to debug.</p></li>
+<li><p>If we do not specify at least two additional arguments on the command-line, one for the <strong>flag</strong> and one for the <strong>filename</strong>, but only one, the program will not throw an exception but will run. It assumes that the file list is empty, as <code>sys.argv[1]</code> will be considered the <code>action</code>, even if it is a filename. <a href="reference.html#silence-failure">Silent failures</a> like this are always hard to debug.</p></li>
+<li><p>The program should check if the submitted <code>action</code> is one of the three recognized flags.</p></li>
 </ol>
 <p>This version pulls the processing of each file out of the loop into a function of its own. It also checks that <code>action</code> is one of the allowed flags before doing any processing, so that the program fails fast:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> readings-05.py</code></pre></div>
