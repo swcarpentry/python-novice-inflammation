@@ -119,10 +119,17 @@ for variable in collection:
     do things with variable
 ~~~
 
+Using the oxygen example above, the loop might look like this:
+<img src='loop_image.png' style='width:300px';/>
+
+Where each character (`char`) in the variable `word` is looped through and printed one character after another. The numbers in the diagram denote which loop cycle the character was printed in (1 being the first loop, and 6 being the final loop).
+
 We can call the [loop variable](reference.html#loop-variable) anything we like,
 but there must be a colon at the end of the line starting the loop,
 and we must indent anything we want to run inside the loop. Unlike many other languages, there is no
 command to end a loop (e.g. end for); what is indented after the for statement belongs to the loop.
+
+
 
 Here's another loop that repeatedly updates a variable:
 
