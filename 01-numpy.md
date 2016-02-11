@@ -207,7 +207,7 @@ print(type(data))
 <class 'numpy.ndarray'>
 ~~~
 
-The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library. These data correspond to arthritis patients' inflammation. The rows are the individual patients and the columns are there daily inflammation measurements.
+The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library. These data correspond to arthritis patients' inflammation. The rows are the individual patients and the columns are their daily inflammation measurements.
 We can see what its [shape](reference.html#shape) is like this:
 
 ~~~ {.python}
@@ -512,7 +512,7 @@ and use two of its functions to create and display a heat map of our data:
 ~~~ {.python}
 import matplotlib.pyplot
 image  = matplotlib.pyplot.imshow(data)
-matplotlib.pyplot.show(image)
+matplotlib.pyplot.show()
 ~~~
 
 ![Heatmap of the Data](fig/01-numpy_71_0.png)
@@ -541,7 +541,7 @@ Let's take a look at the average inflammation over time:
 ~~~ {.python}
 ave_inflammation = data.mean(axis=0)
 ave_plot = matplotlib.pyplot.plot(ave_inflammation)
-matplotlib.pyplot.show(ave_plot)
+matplotlib.pyplot.show()
 ~~~
 
 ![Average Inflammation Over Time](fig/01-numpy_73_0.png)
@@ -557,14 +557,14 @@ Let's have a look at two other statistics:
 
 ~~~ {.python}
 max_plot = matplotlib.pyplot.plot(data.max(axis=0))
-matplotlib.pyplot.show(max_plot)
+matplotlib.pyplot.show()
 ~~~
 
 ![Maximum Value Along The First Axis](fig/01-numpy_75_1.png)
 
 ~~~ {.python}
 min_plot = matplotlib.pyplot.plot(data.min(axis=0))
-matplotlib.pyplot.show(min_plot)
+matplotlib.pyplot.show()
 ~~~
 
 ![Minimum Value Along The First Axis](fig/01-numpy_75_3.png)
@@ -579,12 +579,12 @@ You can group similar plots in a single figure using subplots.
 This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
 creates a space into which we will place all of our plots. The parameter `figsize`
 tells Python how big to make this space. Each subplot is placed into the figure using
-the `subplot` command. The `subplot` command takes 3 parameters. The first denotes
+its `add_subplot` method. The `add_subplot` method takes 3 parameters. The first denotes
 how many total rows of subplots there are, the second parameter refers to the
 total number of subplot columns, and the final parameters denotes which subplot
-your variable is referencing. Each subplot is stored in a different variable (axes1, axes2,
-axes3). Once a subplot is created, the axes are can be titled using the
-`set_xlabel()` command (or `set_ylabel()`).
+your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a
+different variable (`axes1`, `axes2`, `axes3`). Once a subplot is created, the axes can
+be titled using the `set_xlabel()` command (or `set_ylabel()`).
 Here are our three plots side by side:
 
 ~~~ {.python}
@@ -610,7 +610,7 @@ axes3.plot(data.min(axis=0))
 
 fig.tight_layout()
 
-matplotlib.pyplot.show(fig)
+matplotlib.pyplot.show()
 ~~~
 
 ![The Previous Plots as Subplots](fig/01-numpy_80_0.png)
@@ -618,7 +618,7 @@ matplotlib.pyplot.show(fig)
 The [call](reference.html#function-call) to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
 how large we want the figure to be,
-that we're creating three sub-plots,
+that we're creating three subplots,
 what to draw for each one,
 and that we want a tight layout.
 (Perversely,

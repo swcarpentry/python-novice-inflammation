@@ -22,7 +22,7 @@ and didn't want to generate a figure for every single one?
 Commenting out the figure-drawing code is a nuisance.
 Also, what if we want to use that code again,
 on a different dataset or at a different point in our program?
-Cutting and pasting it is going to make our code get very long and very repetative,
+Cutting and pasting it is going to make our code get very long and very repetitive,
 very quickly.
 We'd like a way to package our code so that it is easier to reuse,
 and Python provides for this by letting us define things called 'functions' -
@@ -145,7 +145,7 @@ What about converting Fahrenheit to Celsius?
 We could write out the formula,
 but we don't need to.
 Instead,
-we can [compose](reference.html#function-composition) the two functions we have already created:
+we can [compose](reference.html#compose) the two functions we have already created:
 
 ~~~ {.python}
 def fahr_to_celsius(temp_f):
@@ -193,7 +193,7 @@ def analyze(filename):
     axes3.plot(data.min(axis=0))
 
     fig.tight_layout()
-    matplotlib.pyplot.show(fig)
+    matplotlib.pyplot.show()
 ~~~
 
 and another function called `detect_problems` that checks for those systematics
@@ -288,7 +288,7 @@ min, mean, and and max of centered data are: -6.14875 2.84217094304e-16 13.85125
 
 That seems almost right:
 the original mean was about 6.1,
-so the lower bound from zero is how about -6.1.
+so the lower bound from zero is now about -6.1.
 The mean of the centered data isn't quite zero --- we'll explore why not in the challenges --- but it's pretty close.
 We can even go further and check that the standard deviation hasn't changed:
 
