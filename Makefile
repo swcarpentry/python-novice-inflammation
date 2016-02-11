@@ -35,7 +35,7 @@ all : commands
 
 ## check    : Validate all lesson content against the template.
 check: $(ALL_MD)
-	python3 tools/check.py .
+	python tools/check.py .
 
 ## clean    : Clean up temporary and intermediate files.
 clean :

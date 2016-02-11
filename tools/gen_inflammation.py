@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 '''Generate pseudo-random patient inflammation data.'''
 
