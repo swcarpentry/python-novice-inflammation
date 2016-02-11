@@ -252,6 +252,9 @@ $ python readings-02.py inflammation-01.csv
 > we should use Python's `argparse` library,
 > which handles common cases in a systematic way,
 > and also makes it easy for us to provide sensible error messages for our users.
+> We will not cover this module in this lesson
+> but you can go to Tshepang Lekhonkhobe's [Argparse tutorial](http://docs.python.org/dev/howto/argparse.html)
+> that is part of Python's Official Documentation.
 
 ## Handling Multiple Files
 
@@ -449,11 +452,6 @@ main()
 
 This is four lines longer than its predecessor,
 but broken into more digestible chunks of 8 and 12 lines.
-
-Python has a module named [argparse](http://docs.python.org/dev/library/argparse.html)
-that helps handle complex command-line flags. We will not cover this module in this lesson
-but you can go to Tshepang Lekhonkhobe's [Argparse tutorial](http://docs.python.org/dev/howto/argparse.html)
-that is part of Python's Official Documentation.
 
 ## Handling Standard Input
 
