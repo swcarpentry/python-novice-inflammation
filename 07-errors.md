@@ -336,7 +336,7 @@ this will fail.
 The correct path would be `writing/myfile.txt`.
 It is also possible (like with `NameError`) that you just made a typo.
 
-Another issue could be that you used the "read" flag instead of the "write" flag.
+A related issue can occur if you use the "read" flag instead of the "write" flag.
 Python will not give you an error if you try to open a file for writing when the file does not exist.
 However,
 if you meant to open a file for reading,
