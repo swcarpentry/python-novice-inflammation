@@ -102,7 +102,7 @@ hopefully the custom error message is informative enough to help you figure out 
 
 When you forget a colon at the end of a line,
 accidentally add one space too many when indenting under an `if` statement,
-or forget a parentheses,
+or forget a parenthesis,
 you will encounter a [syntax error](reference.html#syntax-error).
 This means that Python couldn't figure out how to read your program.
 This is similar to forgetting punctuation in English:
