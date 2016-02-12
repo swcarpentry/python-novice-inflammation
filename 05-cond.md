@@ -212,6 +212,32 @@ and false statements. However, they aren't the only values in Python that are tr
 >     print('one is true')
 > ~~~
 
+> ## Taking a break {.challenge}
+
+> When working with loops that use conditionals, the `break` statement will let you exit
+> the current loop if the conditional is met. For example:
+
+> ~~~ {.python}
+>for n in range(1,10):
+>    if n == 4:
+>        print('Found 4!')
+>        break
+>    else:
+>        print('Looking for 4...')
+> ~~~
+> ~~~ {.output}
+> Looking for 4...
+> Looking for 4...
+> Looking for 4...
+> Found 4!
+> ~~~
+
+> Use the `break` statement and a `for` (or `while`) loop to print a list of all numbers
+> under 100 in the fibonacci sequence.
+>
+> Hint: The next number in the fibonacci sequence is always obtained by summing the two
+> numbers before it. Try starting with the list [0, 1, 1].
+
 > ## Close enough {.challenge}
 >
 > Write some conditions that print `True` if the variable `a` is within 10% of the variable `b`
