@@ -684,7 +684,7 @@ the second parameter in the list.
 >
 > print(k)
 > ~~~
-> ## Combining functions {.challenge}
+> ## Composing functions {.challenge}
 > Write a function `string_first_chars` that takes a string `s` and an integer `n`
 > as input and returns a substring consisting of the first `n` characters of `s`.
 > Test `string_first_chars` on a simple string.
