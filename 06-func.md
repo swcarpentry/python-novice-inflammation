@@ -685,10 +685,9 @@ the second parameter in the list.
 > print(k)
 > ~~~
 > ## Combining functions {.challenge}
-> Write a function `string_first_chars` that takes a string s and an integer n
-> as input and returns a string consisting of the first n characters of s.
+> Write a function `string_first_chars` that takes a string `s` and an integer `n`
+> as input and returns a substring consisting of the first `n` characters of `s`.
 > Test `string_first_chars` on a simple string.
-> Write a function `substring_concatenate` that takes two strings s1 and s2 and to
-> integer numbers n1 and n2 as input and concatenates the first n1 characters 
-> from s1 with the first n2 characters from s2. `substring_concatenate` must 
-> return the concatenated string.
+> Write a function `substring_concatenate` that takes two strings `s1` and `s2` 
+> and two integer numbers `n1` and `n2` as input, concatenates the first `n1` characters 
+> from `s1` to the first `n2` characters from `s2`, and returns the concatenated string.
