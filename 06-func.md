@@ -685,9 +685,12 @@ the second parameter in the list.
 > print(k)
 > ~~~
 > ## Composing functions {.challenge}
-> Write a function `string_first_chars` that takes a string `s` and an integer `n`
-> as input and returns a substring consisting of the first `n` characters of `s`.
-> Test `string_first_chars` on a simple string.
-> Write a function `substring_concatenate` that takes two strings `s1` and `s2` 
-> and two integer numbers `n1` and `n2` as input, concatenates the first `n1` characters 
-> from `s1` to the first `n2` characters from `s2`, and returns the concatenated string.
+> Write a function `remove_string_ends` that takes a string `s` 
+> as input, removes one character from each string end, and returns the resulting
+> substring.
+> Test `remove_string_ends` on a simple string.
+> Write a function `trimming` that takes a string `s` and an integer  
+> number `n` as input, and recursively removes one character from each string end
+> until obtaining a substring whose length is >= n.
+> The function should return the trimmed string and its lenght.
+> What if `n` is greater then or equals the length of the input string? 
