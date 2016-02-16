@@ -689,8 +689,9 @@ the second parameter in the list.
 > as input, removes one character from each string end, and returns the resulting
 > substring.
 > Test `remove_string_ends` on a simple string.
-> Write a function `trimming` that takes a string `s` and an integer  
-> number `n` as input, and recursively removes one character from each string end
-> until obtaining a substring whose length is >= n.
+> Write a function `trimming` that takes a string `s` and an integer 
+> number `n` as input, and recursively removes one character from each string 
+> end until obtaining a substring whose length is >= n.
 > The function should return the trimmed string and its lenght.
 > What if `n` is greater then or equals the length of the input string? 
+> What happens with input strings with an even/odd number of characters?
