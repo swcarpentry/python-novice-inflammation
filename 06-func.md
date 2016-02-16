@@ -695,4 +695,4 @@ the second parameter in the list.
 > The function must return the trimmed string and its lenght.
 > What if `n` is greater than or equal to the length of the input string? 
 > What happens with input strings with an even/odd number of characters?
-> Call `string_trimming` with different input strings, print the output and compare.
+> Call `string_trimming` with input strings of different lenght, print the output and compare.
