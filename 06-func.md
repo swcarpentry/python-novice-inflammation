@@ -684,3 +684,20 @@ the second parameter in the list.
 >
 > print(k)
 > ~~~
+
+> ## Check your understanding: function with parameter {.challenge}
+>
+> What does the following piece of code display when run?
+>
+> ~~~ {.python}
+> def fun(a, b = 3, c = 6):
+>   print('a: ', a, 'b: ', b,'c:', c)
+> 
+> fun(-1, 2)
+> ~~~
+> ~~~ {.output}
+> 1. a: b:3 c:6
+> 2. a:-1 b:3 c:6
+> 3. a:-1 b:2 c:6
+> 4. a: b:-1 c:2
+> ~~~
