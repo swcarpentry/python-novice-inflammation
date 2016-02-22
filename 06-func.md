@@ -684,3 +684,55 @@ the second parameter in the list.
 >
 > print(k)
 > ~~~
+
+
+> ## Self-documenting code {.challenge}
+>
+> What do these two functions do?
+>
+> ~~~ {.python}
+> import math
+>
+> def sd(s):
+>     a = 0
+>     for v in s:
+>         a += v
+>     sm = a / len(s)
+>     ssd = 0
+>     for v in s:
+>         ssd += (v - sm) * (v - sm)
+>     return math.sqrt(ssd / (len(s) - 1))
+> 
+> def std_dev(sample):
+>     sample_sum = 0
+>     for value in sample:
+>         sample_sum += value
+> 
+>     sample_mean = sample_sum / len(sample)
+> 
+>     sum_squared_dev = 0
+>     for value in sample:
+>         sum_squared_dev += (value - sample_mean) * (value - sample_mean)
+> 
+>     return math.sqrt(sum_squared_dev / (len(sample) - 1))
+> ~~~
+>
+> As you probably realized, the two functions are equivalent in terms of what
+> they do, but to a human reader, they look very different.  Which did you find
+> easier to read and understand?
+>
+> This example illustrates how a programmer's _coding style_ can have a big
+> impact on how easy it is for others to read and understand the programmer's
+> code.  Choosing meaningful variable names and using blank spaces to break the
+> code into logical "chunks" are helpful techniques for producing _self-documenting
+> code_ -- that is, code that can be easily interpreted without the use of
+> additional documentation.  This is useful not only for sharing code with others,
+> but also for the original programmer.  For instance, if you need to revisit code
+> that you wrote months ago and haven't thought about since then, you will
+> appreciate the value of self-documenting code!
+>
+> Revise a function you wrote for one of the previous exercises to make the code
+> more self-documenting.  Then, collaborate with one of your neighbors to 
+> critique each other's functions and discuss how your function implementations
+> could be further improved.
+
