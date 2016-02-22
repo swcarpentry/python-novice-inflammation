@@ -685,7 +685,6 @@ the second parameter in the list.
 > print(k)
 > ~~~
 
-
 > ## Self-documenting code {.challenge}
 >
 > What do these two functions do?
