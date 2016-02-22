@@ -693,15 +693,15 @@ the second parameter in the list.
 > ~~~ {.python}
 > import math
 >
-> def sd(s):
+> def s(p):
 >     a = 0
->     for v in s:
+>     for v in p:
 >         a += v
->     sm = a / len(s)
->     ssd = 0
->     for v in s:
->         ssd += (v - sm) * (v - sm)
->     return math.sqrt(ssd / (len(s) - 1))
+>     m = a / len(p)
+>     d = 0
+>     for v in p:
+>         d += (v - m) * (v - m)
+>     return math.sqrt(d / (len(p) - 1))
 > 
 > def std_dev(sample):
 >     sample_sum = 0
@@ -710,29 +710,30 @@ the second parameter in the list.
 > 
 >     sample_mean = sample_sum / len(sample)
 > 
->     sum_squared_dev = 0
+>     sum_squared_devs = 0
 >     for value in sample:
->         sum_squared_dev += (value - sample_mean) * (value - sample_mean)
+>         sum_squared_devs += (value - sample_mean) * (value - sample_mean)
 > 
->     return math.sqrt(sum_squared_dev / (len(sample) - 1))
+>     return math.sqrt(sum_squared_devs / (len(sample) - 1))
 > ~~~
 >
-> As you probably realized, the two functions are equivalent in terms of what
-> they do, but to a human reader, they look very different.  Which did you find
-> easier to read and understand?
+> The functions `s()` and `std_dev()` are computationally equivalent (they both
+> calculate the sample standard deviation), but to a human reader, they look
+> very different.  You probably found one much easier to read and understand
+> than the other.
 >
-> This example illustrates how a programmer's _coding style_ can have a big
-> impact on how easy it is for others to read and understand the programmer's
-> code.  Choosing meaningful variable names and using blank spaces to break the
-> code into logical "chunks" are helpful techniques for producing _self-documenting
-> code_ -- that is, code that can be easily interpreted without the use of
+> As this example illustrates, a programmer's _coding style_ determines
+> how easy it is for others to read and understand the programmer's code.
+> Choosing meaningful variable names and using blank spaces to break the code
+> into logical "chunks" are helpful techniques for producing _self-documenting
+> code_ -- that is, code that can be easily interpreted (by humans) without the use of
 > additional documentation.  This is useful not only for sharing code with others,
 > but also for the original programmer.  For instance, if you need to revisit code
 > that you wrote months ago and haven't thought about since then, you will
 > appreciate the value of self-documenting code!
 >
-> Revise a function you wrote for one of the previous exercises to make the code
-> more self-documenting.  Then, collaborate with one of your neighbors to 
-> critique each other's functions and discuss how your function implementations
-> could be further improved.
+> Revise a function you wrote for one of the previous exercises to try to make
+> the code more self-documenting.  Then, collaborate with one of your neighbors
+> to critique each other's functions and discuss how your function implementations
+> could be further improved to make them more readable.
 
