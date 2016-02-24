@@ -35,6 +35,11 @@ def fahr_to_kelvin(temp):
     return ((temp - 32) * (5/9)) + 273.15
 ~~~
 
+![The blueprint for a python function](fig/python-function.svg)
+
+<!--- see https://gist.github.com/wd15/2b4ffbe5ce0d0ddb8a5b to
+regenerate the above figure --->
+
 The function definition opens with the word `def`,
 which is followed by the name of the function
 and a parenthesized list of parameter names.
