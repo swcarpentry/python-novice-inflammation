@@ -380,14 +380,14 @@ tripledata:
  [ 6.  6.  3.  3.]]
 ~~~
 
-> ## MCQ: Understanding numpy array operations {.challenge}
+> ## MCQ: Understanding list operations {.challenge}
 >
 > What will be the content of the variable `result`, once the following code is executed:
 >
 > ~~~ {.python}
-> array1 = [1,5,3,9]
-> array2 = [3,7,3,8]
-> result = array1[1:] + array2[1:]
+> list1 = [1,5,3,9]
+> list2 = [3,7,3,8]
+> result = list1[1:] + list2[1:]
 > ~~~
 >
 > 1. Syntax error
