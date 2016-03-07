@@ -16,8 +16,8 @@ subtitle: Reference
 *   Use `low:high` to specify a slice that includes the indices from `low` to `high-1`.
 *   All the indexing and slicing that works on arrays also works on strings.
 *   Use `# some kind of explanation` to add comments to programs.
-*   Use `array.mean()`, `array.max()`, and `array.min()` to calculate simple statistics.
-*   Use `array.mean(axis=0)` or `array.mean(axis=1)` to calculate statistics across the specified axis.
+*   Use `numpy.mean(array)`, `numpy.max(array)`, and `numpy.min(array)` to calculate simple statistics.
+*   Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis.
 *   Use the `pyplot` library from `matplotlib` for creating simple visualizations.
 
 ## [Repeating Actions with Loops](02-loop.html)
@@ -190,6 +190,10 @@ floating-point number
 for loop
 :   A loop that is executed once for each value in some kind of set, list, or range.
     See also: [while loop](#while-loop).
+
+function
+:   A group of instructions (i.e., lines of code) that transform
+    some input [arguments](#argument) to some output.
 
 function call
 :   A use of a function in another piece of software.
