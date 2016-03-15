@@ -222,7 +222,7 @@ and false statements. However, they aren't the only values in Python that are tr
 
 > ## In-place operators {.challenge}
 >
-> Python (and most other languages in the C family) provides [in-place operators](reference.html#in-place-operator)
+> Python (and most other languages in the C family) provides [in-place operators](reference.html#in-place-operators)
 > that work like this:
 >
 > ~~~ {.python}
