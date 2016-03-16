@@ -684,3 +684,26 @@ the second parameter in the list.
 >
 > print(k)
 > ~~~
+
+> ## The old switcheroo {.challenge}
+>
+> Which of the following would be printed if you were to run this code? Why did you pick this answer?
+>
+> a. 7 3
+> b. 3 7
+> c. 3 3
+> d. 7 7
+>
+> ~~~ {.python}
+> a = 3 
+> b = 7
+>
+> def swap(a, b):
+>     temp = a
+>     a = b
+>     b = temp
+>
+> swap(a, b)
+>     
+> print(a, b)
+> ~~~
