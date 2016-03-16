@@ -684,3 +684,29 @@ the second parameter in the list.
 >
 > print(k)
 > ~~~
+
+> ## Write a function to swap a given string.
+>
+> There are multiple ways to achieve this:
+
+def reverse(given):
+    s = ''
+    for i in range(0, len(given)):
+        s = s+given[len(given)-i-1]
+    return s
+
+Here trainer could explain why it is not good to use += in string concatenation and how it is really expensive to do this way. Explain that strings are immutable and cannot be changed in place. A new copy has to be created in each iteration. It essentially become n^2 complexity.
+
+Anther way:
+
+def reverse(given):
+    return ''.join((given[i] for i in range(len(given)-1, -1, -1)))
+
+Here trainer can explain how join works in python and what is complexity of this function.
+
+Another way of achieving this would be using extended slicing. It is really neat trick that would be handy for students to learn
+
+def reverse(given):
+    return given[::-1]
+
+
