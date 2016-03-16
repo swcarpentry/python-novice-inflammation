@@ -685,28 +685,29 @@ the second parameter in the list.
 > print(k)
 > ~~~
 
-> ## Write a function to swap a given string.
+>## Cost of reversing a string{.challenge}
+> 
+>Write a function to reverse a given string.
 >
-> There are multiple ways to achieve this:
+> Given that you have learnt the use of function range(), the straightforward way is to make use of it and iterate through the string in backwards manner. 
+>def reverse(given):
+>    s = ''
+>    for i in range(0, len(given)):
+>        s = s+given[len(given)-i-1]
+>    return s
 
-def reverse(given):
-    s = ''
-    for i in range(0, len(given)):
-        s = s+given[len(given)-i-1]
-    return s
+>This is a good working solution. However strings in python are immutable and cannot be changed in place. A new copy of same string has to be created in each iteration. It essentially makes n^2 operations where n is length of string.
 
-Here trainer could explain why it is not good to use += in string concatenation and how it is really expensive to do this way. Explain that strings are immutable and cannot be changed in place. A new copy has to be created in each iteration. It essentially become n^2 complexity.
+>Consider the following two functions and dicuss if they would generate same output. Why and why not?
 
-Anther way:
+>def reverse(given):
+>    return ''.join((given[i] for i in range(len(given)-1, -1, -1)))
 
-def reverse(given):
-    return ''.join((given[i] for i in range(len(given)-1, -1, -1)))
+>Here trainer can explain how join works in python and what is complexity of this function.
 
-Here trainer can explain how join works in python and what is complexity of this function.
+>Another way of achieving this would be using extended slicing. It is really neat trick that would be handy for students to learn
 
-Another way of achieving this would be using extended slicing. It is really neat trick that would be handy for students to learn
-
-def reverse(given):
-    return given[::-1]
+>def reverse(given):
+>    return given[::-1]
 
 
