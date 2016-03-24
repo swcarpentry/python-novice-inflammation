@@ -274,8 +274,8 @@ NameError: name 'count' is not defined
 
 ## Item Errors
 
-Next up are errors having to do with containers (like lists and dictionaries) and the items within them.
-If you try to access an item in a list or a dictionary that does not exist,
+Next up are errors having to do with containers (like lists and strings) and the items within them.
+If you try to access an item in a list or a string that does not exist,
 then you will get an error.
 This makes sense:
 if you asked someone what day they would like to get coffee,
