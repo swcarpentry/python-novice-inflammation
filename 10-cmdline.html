@@ -300,7 +300,7 @@ count <span class="op">=</span> <span class="dv">0</span>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> count-stdin.py <span class="kw">&lt;</span> small-01.csv</code></pre></div>
 <pre class="output"><code>2 lines in standard input</code></pre>
 <p>A common mistake is to try to run something that reads from standard input like this:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">count_stdin.py</span> small-01.csv</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> count_stdin.py small-01.csv</code></pre></div>
 <p>i.e., to forget the <code>&lt;</code> character that redirect the file to standard input. In this case, there’s nothing in standard input, so the program waits at the start of the loop for someone to type something on the keyboard. Since there’s no way for us to do this, our program is stuck, and we have to halt it using the <code>Interrupt</code> option from the <code>Kernel</code> menu in the Notebook.</p>
 <p>We now need to rewrite the program so that it loads data from <code>sys.stdin</code> if no filenames are provided. Luckily, <code>numpy.loadtxt</code> can handle either a filename or an open file as its first parameter, so we don’t actually need to change <code>process</code>. Only <code>main</code> changes:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> readings-06.py</code></pre></div>
@@ -334,7 +334,7 @@ count <span class="op">=</span> <span class="dv">0</span>
 
 main()</code></pre></div>
 <p>Let’s try it out:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> readings-06.py --mean small-01.csv</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> readings-06.py --mean <span class="kw">&lt;</span> small-01.csv</code></pre></div>
 <pre class="output"><code>0.333333333333
 1.0</code></pre>
 <p>That’s better. In fact, that’s done: the program now does everything we set out to do.</p>
