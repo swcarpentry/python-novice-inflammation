@@ -496,7 +496,7 @@ $ python count-stdin.py < small-01.csv
 A common mistake is to try to run something that reads from standard input like this:
 
 ~~~ {.bash}
-$ count_stdin.py small-01.csv
+$ python count_stdin.py small-01.csv
 ~~~
 
 i.e., to forget the `<` character that redirect the file to standard input.
@@ -552,7 +552,7 @@ main()
 Let's try it out:
 
 ~~~ {.bash}
-$ python readings-06.py --mean small-01.csv
+$ python readings-06.py --mean < small-01.csv
 ~~~
 
 ~~~ {.output}
