@@ -325,6 +325,26 @@ small is:
  [ 2.  2.  1.  1.]]
 ~~~
 
+> ## Check your understanding: Slicing arrays or lists {.challenge}
+>
+> Can you slice an array to get the correct part?
+> Try to pick x and y so the resulting slice contains 3rd till 7th element:
+>
+> ~~~ {.python}
+> data = numpy.array([4, 6, 2, 7, 9, 3, 6, 12, 7, 9, 9])
+> print(data[x:y])
+> ~~~
+> ~~~ {.output}
+array([2, 7, 9, 3, 6])
+> ~~~
+>
+> What gives the correct result?
+>
+> 1. x = 2, y = 6
+> 2. x = 2, y = 7 
+> 3. x = 3, y = 7 
+> 4. x = 3, y = 8
+
 Arrays also know how to perform common mathematical operations on their values.
 The simplest operations with data are arithmetic:
 add, subtract, multiply, and divide.

@@ -89,6 +89,34 @@ which are covered in the lesson on the shell.
 
 ## [Analyzing Patient Data](01-numpy.html)
 
+Solutions to exercises:
+
+> ## Check your understanding: Slicing arrays or lists {.challenge}
+>
+> Can you slice an array to get the correct part?
+> Try to pick x and y so the resulting slice contains 3rd till 7th element:
+>
+> ~~~ {.python}
+> data = numpy.array([4, 6, 2, 7, 9, 3, 6, 12, 7, 9, 9])
+> print(data[x:y])
+> ~~~
+> ~~~ {.output}
+array([2, 7, 9, 3, 6])
+> ~~~
+>
+> What gives the correct result?
+>
+> ----
+>
+> This multiple choice question tries to identify a few common pitfalls:
+>
+> 1. x = 2, y = 6 *Here the student is probably forgetting that the last number of the slice is exclusive*
+> 2. x = 2, y = 7 *Correct answer*
+> 3. x = 3, y = 7 *This would be forgetting that index starts at 0 and that the last number is exclusive*
+> 4. x = 3, y = 8 *This would be forgetting that index starts at 0*
+
+
+
 ## [Repeating Actions with Loops](02-loop.html)
 
 Solutions to exercises:
