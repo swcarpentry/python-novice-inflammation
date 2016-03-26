@@ -407,14 +407,15 @@ they do things with variables.
 >
 > Generally, a function uses inputs to produce outputs.
 > However, some functions produce outputs without
-> needing any input. For example, generating a random number
-> between 0 and 1 doesn't require any input.
+> needing any input. For example, checking the current time
+> doesn't require any input.
 >
 > ~~~ {.python}
-> print(numpy.random.random())
+> import time
+> print(time.ctime())
 > ~~~
 > ~~~ {.output}
-> 0.1307966624414867
+> 'Sat Mar 26 13:07:33 2016'
 > ~~~
 >
 > For functions that don't take in any arguments,
