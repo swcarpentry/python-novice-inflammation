@@ -87,6 +87,14 @@ which are covered in the lesson on the shell.
     these aliases when you teach this lesson, but we encourage you to please
     read those arguments thoroughly before deciding one way or the other.
 
+*   NumPy methods.
+
+    We used to use NumPy array methods in the first [NumPy topic](01-numpy.html).
+    We switched these methods to the equivalent functions because a majority
+    of instructors supported the change; see
+    [PR #244](https://github.com/swcarpentry/python-novice-inflammation/pull/244)
+    for detailed arguments for and against the change.
+
 ## [Analyzing Patient Data](01-numpy.html)
 
 Solutions to exercises:
