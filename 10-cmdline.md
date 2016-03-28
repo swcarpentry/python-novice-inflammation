@@ -10,7 +10,7 @@ minutes: 30
 > *   Handle flags and files separately in a command-line program.
 > *   Read data from standard input in a program so that it can be used in a pipeline.
 
-The IPython Notebook and other interactive tools are great for prototyping code and exploring data,
+The Jupyter Notebook and other interactive tools are great for prototyping code and exploring data,
 but sooner or later we will want to use our program in a pipeline
 or run it in a shell script to process thousands of data files.
 In order to do that,
