@@ -164,7 +164,7 @@ it *always* means that there is a problem with how your code is indented.
 > especially if you are mixing spaces and tabs.
 > Because they are both [whitespace](reference.html#whitespace),
 > it is difficult to visually tell the difference.
-> The IPython notebook actually gives us a bit of a hint,
+> The Jupyter notebook actually gives us a bit of a hint,
 > but not all Python editors will do that.
 > In the following example,
 > the first two lines are using a tab for indentation,
