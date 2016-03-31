@@ -94,3 +94,22 @@ the maxima of the first two data sets show exactly the same ramp as the first,
 and their minima show the same staircase structure;
 a different situation has been revealed in the third dataset,
 where the maxima are a bit less regular, but the minima are consistently zero.
+
+> ## Generate Composite statistics {.challenge}
+>
+> Use each of the files once to generate a dataset containing values averaged over all patients: 
+>
+>
+> ~~~ {.python}
+> filenames = glob.glob('data/inflammation*.csv')
+> composite_data = numpy.zeros((60,40)) 
+> for f in filenames:
+> # sum each new file's data into as it's read
+>
+> # and then divide the composite_data by number of samples
+> composite_data /= len(filenames)
+> ~~~
+>
+> Then use pyplot to generate average, max, and min for all patients.
+>
+
