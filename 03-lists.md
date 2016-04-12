@@ -255,7 +255,7 @@ This is different from how variables worked in lesson 1, and more similar to how
 > 
 >
 > Let’s say we create two lists of integers, 
-> list1 contains numbers but will be treated as strings because each number is quoted ‘’
+> list1 contains numbers that will be treated as strings because each number is quoted ‘’.
 > list2 contains numbers which will be treated as integers
 > 
 > ~~~ {.python}
@@ -263,8 +263,9 @@ This is different from how variables worked in lesson 1, and more similar to how
 > list2=[8,7,6,5,4,3,2,1]
 > ~~~
 > 
-> Now we would like to convert the list1 to a list of integers i.e. removing the quotes in order to match list2 values type. 
-> In order to do that we will use the basic python function called int() which will remove the quotes around the numbers in list1
+> Now we would like to convert the list1 to a list of integers i.e. removing the quotes in order to match list2 items type. 
+> In order to do that we will use the basic python function called int() which will remove the quotes around the numbers in list1.
+>
 > We will also use a for loop that we already saw in the previous lesson (02-loop)
 > 
 > ~~~ {.python}
@@ -279,11 +280,12 @@ This is different from how variables worked in lesson 1, and more similar to how
 >
 > ~~~ {.output}
 > [‘1’, '2', '3', '4', '5', '6', '7', '8']
-> [1, 2, 3, 4, 5, 6, 7, 8]~~~
+> [1, 2, 3, 4, 5, 6, 7, 8]
 > ~~~
 > 
-> Now let’s do the same thing with a single line code. In order to do so, we need to use the nested loop within list1_int.
-> This concept is called list comprehensions which allows us to perform an operation on all list values (list1) and returns a new list in our case it is list1_int.
+> Now let’s do the same thing with a single code line. In order to do so, we need to use the nested loop within list1_int.
+>
+> This concept is called "list comprehensions" which allows us to perform one or mutiple operations over a list items e.g. list1 and returns a list  e.g. list1_int
 >
 > ~~~ {.python}
 > list1_int = [int(x) for x in list1]
@@ -301,6 +303,7 @@ This is different from how variables worked in lesson 1, and more similar to how
 > ## Arithmetics over multiple list indexes {.challenge}
 >
 >  Here it gets a little more complicated, we would like to sum up the items in list1_int and list2 with respect to their positions using list comprehension. 
+>
 > In other words, print out a result list that is the sum of list1_int and list2, with respect to items indexes (summing up the first item of list1_int to the first item list2 than the second until the last item). 
 > HINTS: Use the function zip() which aggregates items with respect to their position in two lists.
 >
