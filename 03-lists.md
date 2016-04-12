@@ -251,11 +251,11 @@ This is different from how variables worked in lesson 1, and more similar to how
 > Which do you find easier to read?
 > ## Nested loops in list comprehension {.callout}
 >
-> Use a loop inside a list to perform basic and complex list manipulations in a straight forward way. 
+> Usage of a loop inside a list to perform basic and complex list manipulations in a straight forward way. 
 > 
 >
 > Let’s say we create two lists of integers, 
-> list1 contains also numbers but will be treated as strings because each number is quoted ‘’.
+> list1 contains numbers but will be treated as strings because each number is quoted ‘’
 > list2 contains numbers which will be treated as integers
 > 
 > ~~~ {.python}
