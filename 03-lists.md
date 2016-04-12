@@ -310,6 +310,7 @@ This is different from how variables worked in lesson 1, and more similar to how
 >
 > ~~~ {.python}
 > summed_lists= [ k+j for k,j in zip(list1_int, list2)] 
+> print summed_lists
 > ~~~
 >
 > ~~~ {.output}
