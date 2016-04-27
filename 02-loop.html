@@ -43,7 +43,7 @@
 </section>
 <p>In the last lesson, we wrote some code that plots some values of interest from our first inflammation dataset, and reveals some suspicious features in it, such as from <code>inflammation-01.csv</code></p>
 <p><img src="fig/03-loop_2_0.png" alt="Analysis of inflammation-01.csv" /><br />
- We have a dozen data sets right now, though, and more on the way. We want to create plots for all of our data sets with a single statement. To do that, we’ll have to teach the computer how to repeat things.</p>
+We have a dozen data sets right now, though, and more on the way. We want to create plots for all of our data sets with a single statement. To do that, we’ll have to teach the computer how to repeat things.</p>
 <p>An example task that we might want to repeat is printing each character in a word on a line of its own. One way to do this would be to use a series of <code>print</code> statements:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">word <span class="op">=</span> <span class="st">&#39;lead&#39;</span>
 <span class="bu">print</span>(word[<span class="dv">0</span>])
@@ -122,7 +122,7 @@ after the loop, letter is c</code></pre>
 <h2 id="from-1-to-n"><span class="glyphicon glyphicon-pencil"></span>From 1 to N</h2>
 </div>
 <div class="panel-body">
-<p>Python has a built-in function called <code>range</code> that creates a sequence of numbers. Range can accept 1-3 parameters. If one parameter is input, range creates an array of that length, starting at zero and incrementing by 1. If 2 parameters are input, range starts at the first and ends at the second, incrementing by one. If range is passed 3 parameters, it starts at the first one, ends at the second one, and increments by the third one. For example, <code>range(3)</code> produces the numbers 0, 1, 2, while <code>range(2, 5)</code> produces 2, 3, 4, and <code>range(3, 10, 3)</code> produces 3, 6, 9. Using <code>range</code>, write a loop that uses <code>range</code> to print the first 3 natural numbers:</p>
+<p>Python has a built-in function called <code>range</code> that creates a sequence of numbers. Range can accept 1-3 parameters. If one parameter is input, range creates an array of that length, starting at zero and incrementing by 1. If 2 parameters are input, range starts at the first and ends just before the second, incrementing by one. If range is passed 3 parameters, it starts at the first one, ends just before the second one, and increments by the third one. For example, <code>range(3)</code> produces the numbers 0, 1, 2, while <code>range(2, 5)</code> produces 2, 3, 4, and <code>range(3, 10, 3)</code> produces 3, 6, 9. Using <code>range</code>, write a loop that uses <code>range</code> to print the first 3 natural numbers:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dv">1</span>
 <span class="dv">2</span>
 <span class="dv">3</span></code></pre></div>
