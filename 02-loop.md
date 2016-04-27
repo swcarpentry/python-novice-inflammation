@@ -195,8 +195,8 @@ so we should always use it when we can.
 > Python has a built-in function called `range` that creates a sequence of numbers. Range can
 > accept 1-3 parameters. If one parameter is input, range creates an array of that length,
 > starting at zero and incrementing by 1. If 2 parameters are input, range starts at
-> the first and ends at the second, incrementing by one. If range is passed 3 parameters,
-> it starts at the first one, ends at the second one, and increments by the third one. For
+> the first and ends just before the second, incrementing by one. If range is passed 3 parameters,
+> it starts at the first one, ends just before the second one, and increments by the third one. For
 > example,
 > `range(3)` produces the numbers 0, 1, 2, while `range(2, 5)` produces 2, 3, 4,
 > and `range(3, 10, 3)` produces 3, 6, 9.
