@@ -94,3 +94,8 @@ the maxima of the first two data sets show exactly the same ramp as the first,
 and their minima show the same staircase structure;
 a different situation has been revealed in the third dataset,
 where the maxima are a bit less regular, but the minima are consistently zero.
+
+> ## Plotting the difference between 2 datasets {.challenge}
+>
+> Plot the difference between the average of the first dataset and the average of the second dataset. 
+> ie plot the difference between the leftmost plot of the first two figures.
