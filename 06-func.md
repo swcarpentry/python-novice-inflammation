@@ -22,7 +22,7 @@ and didn't want to generate a figure for every single one?
 Commenting out the figure-drawing code is a nuisance.
 Also, what if we want to use that code again,
 on a different dataset or at a different point in our program?
-Cutting and pasting it is going to make our code get very long and very repetative,
+Cutting and pasting it is going to make our code get very long and very repetitive,
 very quickly.
 We'd like a way to package our code so that it is easier to reuse,
 and Python provides for this by letting us define things called 'functions' -
@@ -39,8 +39,7 @@ The function definition opens with the word `def`,
 which is followed by the name of the function
 and a parenthesized list of parameter names.
 The [body](reference.html#function-body) of the function --- the
-statements that are executed when it runs --- is indented below the definition line,
-typically by four spaces.
+statements that are executed when it runs --- is indented below the definition line.
 
 When we call the function,
 the values we pass to it are assigned to those variables
@@ -113,6 +112,7 @@ and we have access to the value that we returned.
 >
 > And if you want an integer result from division in Python 3,
 > use a double-slash:
+>
 > ~~~ {.python}
 > 4//2
 > ~~~
@@ -145,7 +145,7 @@ What about converting Fahrenheit to Celsius?
 We could write out the formula,
 but we don't need to.
 Instead,
-we can [compose](reference.html#function-composition) the two functions we have already created:
+we can [compose](reference.html#compose) the two functions we have already created:
 
 ~~~ {.python}
 def fahr_to_celsius(temp_f):
@@ -169,7 +169,7 @@ or the next person who reads it won't be able to understand what's going on.
 ## Tidying up
 
 Now that we know how to wrap bits of code up in functions,
-we can make our inflammation analyasis easier to read and easier to reuse.
+we can make our inflammation analysis easier to read and easier to reuse.
 First, let's make an `analyze` function that generates our plots:
 
 ~~~ {.python}
@@ -193,7 +193,7 @@ def analyze(filename):
     axes3.plot(data.min(axis=0))
 
     fig.tight_layout()
-    matplotlib.pyplot.show(fig)
+    matplotlib.pyplot.show()
 ~~~
 
 and another function called `detect_problems` that checks for those systematics
@@ -288,7 +288,7 @@ min, mean, and and max of centered data are: -6.14875 2.84217094304e-16 13.85125
 
 That seems almost right:
 the original mean was about 6.1,
-so the lower bound from zero is how about -6.1.
+so the lower bound from zero is now about -6.1.
 The mean of the centered data isn't quite zero --- we'll explore why not in the challenges --- but it's pretty close.
 We can even go further and check that the standard deviation hasn't changed:
 
@@ -346,7 +346,6 @@ Help on function center in module __main__:
 
 center(data, desired)
     Return a new array containing the original data centered around the desired value.
-
 ~~~
 
 A string like this is called a [docstring](reference.html#docstring).
@@ -368,7 +367,6 @@ Help on function center in module __main__:
 center(data, desired)
     Return a new array containing the original data centered around the desired value.
     Example: center([1, 2, 3], 0) => [-1, 0, 1]
-
 ~~~
 
 ## Defining Defaults
@@ -588,13 +586,12 @@ loadtxt(fname, dtype=<class 'float'>, comments='#', delimiter=None, converters=N
     array([ 1.,  3.])
     >>> y
     array([ 2.,  4.])
-
 ~~~
 
 There's a lot of information here,
 but the most important part is the first couple of lines:
 
-~~~python
+~~~ {.output}
 loadtxt(fname, dtype=<type 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None,
         unpack=False, ndmin=0)
 ~~~
@@ -603,7 +600,7 @@ This tells us that `loadtxt` has one parameter called `fname` that doesn't have 
 and eight others that do.
 If we call the function like this:
 
-~~~python
+~~~ {.python}
 numpy.loadtxt('inflammation-01.csv', ',')
 ~~~
 

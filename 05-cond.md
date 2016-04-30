@@ -18,7 +18,7 @@ runs only when certain conditions are true.
 
 ## Conditionals
 
-We can ask Python to take different actions, depending on a condition, with an if statement:
+We can ask Python to take different actions, depending on a condition, with an `if` statement:
 
 ~~~ {.python}
 num = 37
@@ -92,7 +92,7 @@ else:
     print('at least one part is false')
 ~~~
 ~~~ {.output}
-one part is not true
+at least one part is false
 ~~~
 
 while `or` is true if at least one part is true:
@@ -222,7 +222,7 @@ and false statements. However, they aren't the only values in Python that are tr
 
 > ## In-place operators {.challenge}
 >
-> Python (and most other languages in the C family) provides [in-place operators](reference.html#in-place-operator)
+> Python (and most other languages in the C family) provides [in-place operators](reference.html#in-place-operators)
 > that work like this:
 >
 > ~~~ {.python}

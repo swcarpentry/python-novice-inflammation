@@ -107,6 +107,54 @@ does not.
 > it is often far more efficient to modify a large data structure in place than to create a modified copy for
 > every small change. You should consider both of these aspects when writing your code.
 
+
+> ## Nested Lists {.callout}
+> Since lists can contain any Python variable, it can even contain other lists.
+>
+> For example, we could represent the products in the shelves of a small grocery shop:
+>
+> ~~~ {.python}
+> x = [['pepper', 'zucchini', 'onion'],
+>      ['cabbage', 'lettuce', 'garlic'],
+>      ['apple', 'pear', 'banana']]
+> ~~~
+>
+>
+> Here is a visual example of how indexing a list of lists `x` works:
+>
+> <a href='https://twitter.com/hadleywickham/status/643381054758363136'>
+> ![The first element of a list. Adapted from @hadleywickham's tweet about R > lists.](img/indexing_lists_python.png)</a>
+>
+> Using the previously declared list `x`, these would be the results of the
+> index operations shown in the image:
+>
+> ~~~ {.python}
+> print([x[0]])
+> ~~~
+>
+> ~~~ {.output}
+> [['pepper', 'zucchini', 'onion']]
+> ~~~
+>
+> ~~~ {.python}
+> print(x[0])
+> ~~~
+>
+> ~~~ {.output}
+> ['pepper', 'zucchini', 'onion']
+> ~~~
+>
+> ~~~ {.python}
+> print(x[0][0])
+> ~~~
+>
+> ~~~ {.output}
+> 'pepper'
+> ~~~
+>
+> Thanks to [Hadley Wickham](https://twitter.com/hadleywickham/status/643381054758363136)
+> for the image above.
+
 There are many ways to change the contents of lists besides assigning new values to
 individual elements:
 
@@ -134,7 +182,7 @@ print('odds after reversing:', odds)
 odds after reversing: [11, 7, 5, 3]
 ~~~
 
-While modifying in place, it is useful to remember that python treats lists in a slightly counterintuitive way.
+While modifying in place, it is useful to remember that Python treats lists in a slightly counterintuitive way.
 
 If we make a list and (attempt to) copy it then modify in place, we can cause all sorts of trouble:
 
@@ -150,8 +198,8 @@ primes: [1, 3, 5, 7, 2]
 odds: [1, 3, 5, 7, 2]
 ~~~
 
-This is because python stores a list in memory, and then can use multiple names to refer to the same list.
-If all we want to do is copy a (simple) list, we can use the list() command, so we do not modify a list we did not mean to:
+This is because Python stores a list in memory, and then can use multiple names to refer to the same list.
+If all we want to do is copy a (simple) list, we can use the `list` function, so we do not modify a list we did not mean to:
 
 ~~~ {.python}
 odds = [1, 3, 5, 7]
@@ -174,7 +222,6 @@ This is different from how variables worked in lesson 1, and more similar to how
 > ~~~ {.python}
 > ["h", "e", "l", "l", "o"]
 > ~~~
->
 > Hint: You can create an empty list like this:
 >
 > ~~~ {.python}
@@ -202,11 +249,3 @@ This is different from how variables worked in lesson 1, and more similar to how
 >
 > Do they always do the same thing?
 > Which do you find easier to read?
-
-
-> ## Generate a list of numbers {.challenge}
->
-> Generate and print a list where the values are square of numbers between 1 and 20 (both included).
->
-> Hint: Use ** operator to get power of a number.
-> Hint: Use range() for loops.

@@ -122,7 +122,7 @@ weight_lb   float      126.5</code></pre>
 <p>Now that our data is in memory, we can start doing things with it. First, let’s ask what <a href="reference.html#type">type</a> of thing <code>data</code> refers to:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="bu">type</span>(data))</code></pre></div>
 <pre class="output"><code>&lt;class &#39;numpy.ndarray&#39;&gt;</code></pre>
-<p>The output tells us that <code>data</code> currently refers to an N-dimensional array created by the NumPy library. These data corresponds to arthritis patient’s inflammation. The rows are the individual patients and the columns are there daily inflammation measurements. We can see what its <a href="reference.html#shape">shape</a> is like this:</p>
+<p>The output tells us that <code>data</code> currently refers to an N-dimensional array created by the NumPy library. These data correspond to arthritis patients’ inflammation. The rows are the individual patients and the columns are their daily inflammation measurements. We can see what its <a href="reference.html#shape">shape</a> is like this:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(data.shape)</code></pre></div>
 <pre class="output"><code>(60, 40)</code></pre>
 <p>This tells us that <code>data</code> has 60 rows and 40 columns. When we created the variable <code>data</code> to store our arthritis data, we didn’t just create the array, we also created information about the array, called <a href="reference.html#member">members</a> or attributes. This extra information describes <code>data</code> in the same way an adjective describes a noun. <code>data.shape</code> is an attribute of <code>data</code> which described the dimensions of <code>data</code>. We use the same dotted notation for the attributes of variables that we use for the functions in libraries because they have the same part-and-whole relationship.</p>
@@ -234,7 +234,7 @@ standard deviation: 4.61383319712</code></pre>
 <p>The mathematician Richard Hamming once said, “The purpose of computing is insight, not numbers,” and the best way to develop insight is often to visualize data. Visualization deserves an entire lecture (or course) of its own, but we can explore a few features of Python’s <code>matplotlib</code> library here. While there is no “official” plotting library, this package is the de facto standard. First, we will import the <code>pyplot</code> module from <code>matplotlib</code> and use two of its functions to create and display a heat map of our data:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot
 image  <span class="op">=</span> matplotlib.pyplot.imshow(data)
-matplotlib.pyplot.show(image)</code></pre></div>
+matplotlib.pyplot.show()</code></pre></div>
 <div class="figure">
 <img src="fig/01-numpy_71_0.png" alt="Heatmap of the Data" />
 <p class="caption">Heatmap of the Data</p>
@@ -253,26 +253,26 @@ matplotlib.pyplot.show(image)</code></pre></div>
 <p>Let’s take a look at the average inflammation over time:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">ave_inflammation <span class="op">=</span> data.mean(axis<span class="op">=</span><span class="dv">0</span>)
 ave_plot <span class="op">=</span> matplotlib.pyplot.plot(ave_inflammation)
-matplotlib.pyplot.show(ave_plot)</code></pre></div>
+matplotlib.pyplot.show()</code></pre></div>
 <div class="figure">
 <img src="fig/01-numpy_73_0.png" alt="Average Inflammation Over Time" />
 <p class="caption">Average Inflammation Over Time</p>
 </div>
 <p>Here, we have put the average per day across all patients in the variable <code>ave_inflammation</code>, then asked <code>matplotlib.pyplot</code> to create and display a line graph of those values. The result is roughly a linear rise and fall, which is suspicious: based on other studies, we expect a sharper rise and slower fall. Let’s have a look at two other statistics:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">max_plot <span class="op">=</span> matplotlib.pyplot.plot(data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>))
-matplotlib.pyplot.show(max_plot)</code></pre></div>
+matplotlib.pyplot.show()</code></pre></div>
 <div class="figure">
 <img src="fig/01-numpy_75_1.png" alt="Maximum Value Along The First Axis" />
 <p class="caption">Maximum Value Along The First Axis</p>
 </div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">min_plot <span class="op">=</span> matplotlib.pyplot.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>))
-matplotlib.pyplot.show(min_plot)</code></pre></div>
+matplotlib.pyplot.show()</code></pre></div>
 <div class="figure">
 <img src="fig/01-numpy_75_3.png" alt="Minimum Value Along The First Axis" />
 <p class="caption">Minimum Value Along The First Axis</p>
 </div>
 <p>The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there’s a mistake in our calculations or something is wrong with our data.</p>
-<p>You can group similar plots in a single figure using subplots. This script below uses a number of new commands. The function <code>matplotlib.pyplot.figure()</code> creates a space into which we will place all of our plots. The parameter <code>figsize</code> tells Python how big to make this space. Each subplot is placed into the figure using the <code>subplot</code> command. The <code>subplot</code> command takes 3 parameters. The first denotes how many total rows of subplots there are, the second parameter refers to the total number of subplot columns, and the final parameters denotes which subplot your variable is referencing. Each subplot is stored in a different variable (axes1, axes2, axes3). Once a subplot is created, the axes are can be titled using the <code>set_xlabel()</code> command (or <code>set_ylabel()</code>). Here are our three plots side by side:</p>
+<p>You can group similar plots in a single figure using subplots. This script below uses a number of new commands. The function <code>matplotlib.pyplot.figure()</code> creates a space into which we will place all of our plots. The parameter <code>figsize</code> tells Python how big to make this space. Each subplot is placed into the figure using its <code>add_subplot</code> method. The <code>add_subplot</code> method takes 3 parameters. The first denotes how many total rows of subplots there are, the second parameter refers to the total number of subplot columns, and the final parameters denotes which subplot your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a different variable (<code>axes1</code>, <code>axes2</code>, <code>axes3</code>). Once a subplot is created, the axes can be titled using the <code>set_xlabel()</code> command (or <code>set_ylabel()</code>). Here are our three plots side by side:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy
 <span class="im">import</span> matplotlib.pyplot
 
@@ -295,12 +295,12 @@ axes3.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span c
 
 fig.tight_layout()
 
-matplotlib.pyplot.show(fig)</code></pre></div>
+matplotlib.pyplot.show()</code></pre></div>
 <div class="figure">
 <img src="fig/01-numpy_80_0.png" alt="The Previous Plots as Subplots" />
 <p class="caption">The Previous Plots as Subplots</p>
 </div>
-<p>The <a href="reference.html#function-call">call</a> to <code>loadtxt</code> reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we’re creating three sub-plots, what to draw for each one, and that we want a tight layout. (Perversely, if we leave out that call to <code>fig.tight_layout()</code>, the graphs will actually be squeezed together more closely.)</p>
+<p>The <a href="reference.html#function-call">call</a> to <code>loadtxt</code> reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we’re creating three subplots, what to draw for each one, and that we want a tight layout. (Perversely, if we leave out that call to <code>fig.tight_layout()</code>, the graphs will actually be squeezed together more closely.)</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
 <h2 id="scientists-dislike-typing"><span class="glyphicon glyphicon-pushpin"></span>Scientists dislike typing</h2>

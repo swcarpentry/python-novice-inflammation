@@ -42,7 +42,7 @@
 </section>
 <p>In our last lesson, we discovered something suspicious was going on in our inflammation data by drawing some plots. How can we use Python to automatically recognize the different features we saw, and take a different action for each? In this lesson, we’ll learn how to write code that runs only when certain conditions are true.</p>
 <h2 id="conditionals">Conditionals</h2>
-<p>We can ask Python to take different actions, depending on a condition, with an if statement:</p>
+<p>We can ask Python to take different actions, depending on a condition, with an <code>if</code> statement:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num <span class="op">=</span> <span class="dv">37</span>
 <span class="cf">if</span> num <span class="op">&gt;</span> <span class="dv">100</span>:
     <span class="bu">print</span>(<span class="st">&#39;greater&#39;</span>)
@@ -54,7 +54,7 @@ done
 </code></pre>
 <p>The second line of this code uses the keyword <code>if</code> to tell Python that we want to make a choice. If the test that follows the <code>if</code> statement is true, the body of the <code>if</code> (i.e., the lines indented underneath it) are executed. If the test is false, the body of the <code>else</code> is executed instead. Only one or the other is ever executed:</p>
 <p><img src="fig/python-flowchart-conditional.svg" alt="Executing a Conditional" /><br />
- Conditional statements don’t have to include an <code>else</code>. If there isn’t one, Python simply does nothing if the test is false:</p>
+Conditional statements don’t have to include an <code>else</code>. If there isn’t one, Python simply does nothing if the test is false:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num <span class="op">=</span> <span class="dv">53</span>
 <span class="bu">print</span>(<span class="st">&#39;before conditional...&#39;</span>)
 <span class="cf">if</span> num <span class="op">&gt;</span> <span class="dv">100</span>:
@@ -78,7 +78,7 @@ done
     <span class="bu">print</span>(<span class="st">&#39;both parts are true&#39;</span>)
 <span class="cf">else</span>:
     <span class="bu">print</span>(<span class="st">&#39;at least one part is false&#39;</span>)</code></pre></div>
-<pre class="output"><code>one part is not true</code></pre>
+<pre class="output"><code>at least one part is false</code></pre>
 <p>while <code>or</code> is true if at least one part is true:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> (<span class="dv">1</span> <span class="op">&lt;</span> <span class="dv">0</span>) <span class="op">or</span> (<span class="op">-</span><span class="dv">1</span> <span class="op">&lt;</span> <span class="dv">0</span>):
     <span class="bu">print</span>(<span class="st">&#39;at least one test is true&#39;</span>)</code></pre></div>
@@ -164,7 +164,7 @@ done
 <h2 id="in-place-operators"><span class="glyphicon glyphicon-pencil"></span>In-place operators</h2>
 </div>
 <div class="panel-body">
-<p>Python (and most other languages in the C family) provides <a href="reference.html#in-place-operator">in-place operators</a> that work like this:</p>
+<p>Python (and most other languages in the C family) provides <a href="reference.html#in-place-operators">in-place operators</a> that work like this:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="dv">1</span>  <span class="co"># original value</span>
 x <span class="op">+=</span> <span class="dv">1</span> <span class="co"># add one to x, assigning result back to x</span>
 x <span class="op">*=</span> <span class="dv">3</span> <span class="co"># multiply x by 3</span>

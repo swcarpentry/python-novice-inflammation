@@ -102,7 +102,7 @@ hopefully the custom error message is informative enough to help you figure out 
 
 When you forget a colon at the end of a line,
 accidentally add one space too many when indenting under an `if` statement,
-or forget a parentheses,
+or forget a parenthesis,
 you will encounter a [syntax error](reference.html#syntax-error).
 This means that Python couldn't figure out how to read your program.
 This is similar to forgetting punctuation in English:
@@ -313,7 +313,7 @@ Python is telling us that there is an `IndexError` in our code, meaning we tried
 
 The last type of error we'll cover today are those associated with reading and writing files: `FileNotFoundError`.
 If you try to read a file that does not exist,
-you will recieve an `FileNotFoundError` telling you so.
+you will receive a `FileNotFoundError` telling you so.
 
 ~~~ {.python}
 file_handle = open('myfile.txt', 'r')
@@ -333,10 +333,10 @@ if I am currently in a folder called `myproject`,
 and I have a file in `myproject/writing/myfile.txt`,
 but I try to just open `myfile.txt`,
 this will fail.
-The correct path would be `writing/myfile.
-xt`. It is also possible (like with `NameError`) that you just made a typo.
+The correct path would be `writing/myfile.txt`.
+It is also possible (like with `NameError`) that you just made a typo.
 
-Another issue could be that you used the "read" flag instead of the "write" flag.
+A related issue can occur if you use the "read" flag instead of the "write" flag.
 Python will not give you an error if you try to open a file for writing when the file does not exist.
 However,
 if you meant to open a file for reading,

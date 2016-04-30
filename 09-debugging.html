@@ -30,7 +30,7 @@
           <h2 class="subtitle">Debugging</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -53,7 +53,7 @@
 <p>We can only debug something when it fails, so the second step is always to find a test case that <em>makes it fail every time</em>. The “every time” part is important because few things are more frustrating than debugging an intermittent problem: if we have to call a function a dozen times to get a single failure, the odds are good that we’ll scroll past the failure when it actually occurs.</p>
 <p>As part of this, it’s always important to check that our code is “plugged in”, i.e., that we’re actually exercising the problem that we think we are. Every programmer has spent hours chasing a bug, only to realize that they were actually calling their code on the wrong data set or with the wrong configuration parameters, or are using the wrong version of the software entirely. Mistakes like these are particularly likely to happen when we’re tired, frustrated, and up against a deadline, which is one of the reasons late-night (or overnight) coding sessions are almost never worthwhile.</p>
 <h2 id="make-it-fail-fast">Make It Fail Fast</h2>
-<p>If it takes 20 minutes for the bug to surface, we can only do three experiments an hour. That doesn’t must mean we’ll get less data in more time: we’re also more likely to be distracted by other things as we wait for our program to fail, which means the time we <em>are</em> spending on the problem is less focused. It’s therefore critical to <em>make it fail fast</em>.</p>
+<p>If it takes 20 minutes for the bug to surface, we can only do three experiments an hour. That doesn’t just mean we’ll get less data in more time: we’re also more likely to be distracted by other things as we wait for our program to fail, which means the time we <em>are</em> spending on the problem is less focused. It’s therefore critical to <em>make it fail fast</em>.</p>
 <p>As well as making the program fail fast in time, we want to make it fail fast in space, i.e., we want to localize the failure to the smallest possible region of code:</p>
 <ol style="list-style-type: decimal">
 <li><p>The smaller the gap between cause and effect, the easier the connection is to find. Many programmers therefore use a divide and conquer strategy to find bugs, i.e., if the output of a function is wrong, they check whether things are OK in the middle, then concentrate on either the first or second half, and so on.</p></li>
@@ -67,7 +67,7 @@
 <p>Records are particularly useful when the time comes to ask for help. People are more likely to listen to us when we can explain clearly what we did, and we’re better able to give them the information they need to be useful.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pushpin"></span>Version Control Revisited</h2>
+<h2 id="version-control-revisited"><span class="glyphicon glyphicon-pushpin"></span>Version Control Revisited</h2>
 </div>
 <div class="panel-body">
 <p>Version control is often used to reset software to a known state during debugging, and to explore recent changes to code that might be responsible for bugs. In particular, most version control systems have a <code>blame</code> command that will show who last changed particular lines of code…</p>
@@ -80,7 +80,7 @@
 <p>And that is what makes us most productive in the long run. As the saying goes, <em>A week of hard work can sometimes save you an hour of thought</em>. If we train ourselves to avoid making some kinds of mistakes, to break our code into modular, testable chunks, and to turn every assumption (or mistake) into an assertion, it will actually take us <em>less</em> time to produce working programs, not more.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Debug with a neighbor</h2>
+<h2 id="debug-with-a-neighbor"><span class="glyphicon glyphicon-pencil"></span>Debug with a neighbor</h2>
 </div>
 <div class="panel-body">
 <p>Take a function that you have written today, and introduce a tricky bug. Your function should still run, but will give the wrong output. Switch seats with your neighbor and attempt to debug the bug that they introduced into their function. Which of the principles discussed above did you find helpful?</p>

@@ -82,6 +82,28 @@ TypeError: &#39;str&#39; object does not support item assignment</code></pre>
 <p>Because of pitfalls like this, code which modifies data in place can be more difficult to understand. However, it is often far more efficient to modify a large data structure in place than to create a modified copy for every small change. You should consider both of these aspects when writing your code.</p>
 </div>
 </aside>
+<aside class="callout panel panel-info">
+<div class="panel-heading">
+<h2 id="nested-lists"><span class="glyphicon glyphicon-pushpin"></span>Nested Lists</h2>
+</div>
+<div class="panel-body">
+<p>Since lists can contain any Python variable, it can even contain other lists.</p>
+<p>For example, we could represent the products in the shelves of a small grocery shop:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> [[<span class="st">&#39;pepper&#39;</span>, <span class="st">&#39;zucchini&#39;</span>, <span class="st">&#39;onion&#39;</span>],
+     [<span class="st">&#39;cabbage&#39;</span>, <span class="st">&#39;lettuce&#39;</span>, <span class="st">&#39;garlic&#39;</span>],
+     [<span class="st">&#39;apple&#39;</span>, <span class="st">&#39;pear&#39;</span>, <span class="st">&#39;banana&#39;</span>]]</code></pre></div>
+<p>Here is a visual example of how indexing a list of lists <code>x</code> works:</p>
+<p><a href='https://twitter.com/hadleywickham/status/643381054758363136'> <img src="img/indexing_lists_python.png" alt="The first element of a list. Adapted from @hadleywickham’s tweet about R &gt; lists." /></a></p>
+<p>Using the previously declared list <code>x</code>, these would be the results of the index operations shown in the image:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>([x[<span class="dv">0</span>]])</code></pre></div>
+<pre class="output"><code>[[&#39;pepper&#39;, &#39;zucchini&#39;, &#39;onion&#39;]]</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(x[<span class="dv">0</span>])</code></pre></div>
+<pre class="output"><code>[&#39;pepper&#39;, &#39;zucchini&#39;, &#39;onion&#39;]</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(x[<span class="dv">0</span>][<span class="dv">0</span>])</code></pre></div>
+<pre class="output"><code>&#39;pepper&#39;</code></pre>
+<p>Thanks to <a href="https://twitter.com/hadleywickham/status/643381054758363136">Hadley Wickham</a> for the image above.</p>
+</div>
+</aside>
 <p>There are many ways to change the contents of lists besides assigning new values to individual elements:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">odds.append(<span class="dv">11</span>)
 <span class="bu">print</span>(<span class="st">&#39;odds after adding a value:&#39;</span>, odds)</code></pre></div>
@@ -92,7 +114,7 @@ TypeError: &#39;str&#39; object does not support item assignment</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">odds.reverse()
 <span class="bu">print</span>(<span class="st">&#39;odds after reversing:&#39;</span>, odds)</code></pre></div>
 <pre class="output"><code>odds after reversing: [11, 7, 5, 3]</code></pre>
-<p>While modifying in place, it is useful to remember that python treats lists in a slightly counterintuitive way.</p>
+<p>While modifying in place, it is useful to remember that Python treats lists in a slightly counterintuitive way.</p>
 <p>If we make a list and (attempt to) copy it then modify in place, we can cause all sorts of trouble:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">odds <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>]
 primes <span class="op">=</span> odds
@@ -101,7 +123,7 @@ primes <span class="op">+=</span> [<span class="dv">2</span>]
 <span class="bu">print</span>(<span class="st">&#39;odds:&#39;</span>, odds)</code></pre></div>
 <pre class="output"><code>primes: [1, 3, 5, 7, 2]
 odds: [1, 3, 5, 7, 2]</code></pre>
-<p>This is because python stores a list in memory, and then can use multiple names to refer to the same list. If all we want to do is copy a (simple) list, we can use the list() command, so we do not modify a list we did not mean to:</p>
+<p>This is because Python stores a list in memory, and then can use multiple names to refer to the same list. If all we want to do is copy a (simple) list, we can use the <code>list</code> function, so we do not modify a list we did not mean to:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">odds <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>]
 primes <span class="op">=</span> <span class="bu">list</span>(odds)
 primes <span class="op">+=</span> [<span class="dv">2</span>]
