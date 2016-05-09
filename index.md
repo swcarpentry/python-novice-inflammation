@@ -74,7 +74,7 @@ To do all that, we'll have to learn a little bit about programming.
 > To start the notebook, open a terminal or git bash and type the command:
 >
 > ~~~ {.input}
-> $ ipython notebook
+> $ jupyter notebook
 > ~~~
 >
 > To start the Python intrepreter without the notebook, open a terminal or git bash and type the command:
