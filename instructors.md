@@ -47,11 +47,11 @@ Explain that we use Python because:
     as we'd covered in three days in Perl,
     and that retention was higher.)
 
-We do *not* include instructions on running the IPython Notebook in the tutorial
+We do *not* include instructions on running the Jupyter Notebook in the tutorial
 because we want to focus on the language rather than the tools.
 Instructors should, however, walk learners through some basic operations:
 
-*   Launch from the command line with `ipython notebook`.
+*   Launch from the command line with `jupyter notebook`.
 *   Create a new notebook.
 *   Enter code or data in a cell and execute it.
 *   Explain the difference between `In[#]` and `Out[#]`.
