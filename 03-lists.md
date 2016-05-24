@@ -249,3 +249,74 @@ This is different from how variables worked in lesson 1, and more similar to how
 >
 > Do they always do the same thing?
 > Which do you find easier to read?
+> ## Nested loops in list comprehension {.callout}
+>
+> Usage of a loop inside a list to perform basic and complex list manipulations in a straight forward way. 
+> 
+>
+> Let’s say we create two lists of integers, 
+> list1 contains numbers that will be treated as strings because each number is quoted ‘’.
+> list2 contains numbers which will be treated as integers
+> 
+> ~~~ {.python}
+> list1=['1','2','3','4','5','6','7','8']
+> list2=[8,7,6,5,4,3,2,1]
+> ~~~
+> 
+> Now we would like to convert the list1 to a list of integers i.e. removing the quotes in order to match list2 items type. 
+> In order to do that we will use the basic python function called int() which will remove the quotes around the numbers in list1.
+>
+> We will also use a for loop that we already saw in the previous lesson (02-loop)
+> 
+> ~~~ {.python}
+> list1_int=[]
+> for x in list1:
+> 	list1_int.append(int(x))
+>
+> print list1
+> print list1_int
+> ~~~
+>
+>
+> ~~~ {.output}
+> [‘1’, '2', '3', '4', '5', '6', '7', '8']
+> [1, 2, 3, 4, 5, 6, 7, 8]
+> ~~~
+> 
+> Now let’s do the same thing with a single code line. In order to do so, we need to use the nested loop within list1_int.
+>
+> This concept is called "list comprehensions" which allows us to perform one or mutiple operations over a list items e.g. list1 and returns a list  e.g. list1_int
+>
+> ~~~ {.python}
+> list1_int = [int(x) for x in list1]
+> print list1_int
+> ~~~
+>
+> ~~~ {.output}
+> [1, 2, 3, 4, 5, 6, 7, 8]
+> ~~~
+>
+> In the upper code we applied the function int() of the variable x that will go through list1 items and will append the values to list1_int
+> in one step
+>
+>
+> ## Arithmetics over multiple list indexes {.challenge}
+>
+>  Here it gets a little more complicated, we would like to sum up the items in list1_int and list2 with respect to their positions using list comprehension. 
+>
+> In other words, print out a result list that is the sum of list1_int and list2, with respect to items indexes (summing up the first item of list1_int to the first item list2 than the second until the last item). 
+> HINTS: Use the function zip() which aggregates items with respect to their position in two lists.
+>
+>
+> ~~~ {.python}
+> summed_lists= [ k+j for k,j in zip(list1_int, list2)] 
+> print summed_lists
+> ~~~
+>
+> ~~~ {.output}
+> [9, 9, 9, 9, 9, 9, 9, 9]
+> ~~~
+>
+>
+> In the upper code we assigned two variables to iterate over two lists i.e. k will iterate over list1_int and j will iterate over list2 at the same time. 
+> k+j will perform the operation of summing at each simultaneous iteration of k and j. the zip() will make sure the item indexes are respected.
