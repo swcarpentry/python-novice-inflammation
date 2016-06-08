@@ -6,7 +6,6 @@ minutes: 30
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Explain the similarities and differences between tuples and lists.
 > *   Write conditional statements including `if`, `elif`, and `else` branches.
 > *   Correctly evaluate expressions containing `and` and `or`.
 
