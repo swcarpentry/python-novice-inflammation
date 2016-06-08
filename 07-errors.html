@@ -146,45 +146,45 @@ NameError: name &#39;hello&#39; is not defined</code></pre>
 <p>The second is that you just forgot to create the variable before using it. In the following example, <code>count</code> should have been defined (e.g., with <code>count = 0</code>) before the for loop:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> number <span class="op">in</span> <span class="bu">range</span>(<span class="dv">10</span>):
     count <span class="op">=</span> count <span class="op">+</span> number
-<span class="bu">print</span>(<span class="st">&quot;The count is: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(count))</code></pre></div>
+<span class="bu">print</span>(<span class="st">&quot;The count is:&quot;</span>, count)</code></pre></div>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 &lt;ipython-input-9-dd6a12d7ca5c&gt; in &lt;module&gt;()
       1 for number in range(10):
 ----&gt; 2     count = count + number
-      3 print(&quot;The count is: &quot; + str(count))
+      3 print(&quot;The count is:&quot;, count)
 
 NameError: name &#39;count&#39; is not defined</code></pre>
 <p>Finally, the third possibility is that you made a typo when you were writing your code. Let’s say we fixed the error above by adding the line <code>Count = 0</code> before the for loop. Frustratingly, this actually does not fix the error. Remember that variables are <a href="reference.html#case-sensitive">case-sensitive</a>, so the variable <code>count</code> is different from <code>Count</code>. We still get the same error, because we still have not defined <code>count</code>:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Count <span class="op">=</span> <span class="dv">0</span>
 <span class="cf">for</span> number <span class="op">in</span> <span class="bu">range</span>(<span class="dv">10</span>):
     count <span class="op">=</span> count <span class="op">+</span> number
-<span class="bu">print</span>(<span class="st">&quot;The count is: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(count))</code></pre></div>
+<span class="bu">print</span>(<span class="st">&quot;The count is:&quot;</span>, count)</code></pre></div>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 &lt;ipython-input-10-d77d40059aea&gt; in &lt;module&gt;()
       1 Count = 0
       2 for number in range(10):
 ----&gt; 3     count = count + number
-      4 print(&quot;The count is: &quot; + str(count))
+      4 print(&quot;The count is:&quot;, count)
 
 NameError: name &#39;count&#39; is not defined</code></pre>
 <h2 id="item-errors">Item Errors</h2>
 <p>Next up are errors having to do with containers (like lists and strings) and the items within them. If you try to access an item in a list or a string that does not exist, then you will get an error. This makes sense: if you asked someone what day they would like to get coffee, and they answered “caturday”, you might be a bit annoyed. Python gets similarly annoyed if you try to ask it for an item that doesn’t exist:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">letters <span class="op">=</span> [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>]
-<span class="bu">print</span>(<span class="st">&quot;Letter #1 is &quot;</span> <span class="op">+</span> letters[<span class="dv">0</span>])
-<span class="bu">print</span>(<span class="st">&quot;Letter #2 is &quot;</span> <span class="op">+</span> letters[<span class="dv">1</span>])
-<span class="bu">print</span>(<span class="st">&quot;Letter #3 is &quot;</span> <span class="op">+</span> letters[<span class="dv">2</span>])
-<span class="bu">print</span>(<span class="st">&quot;Letter #4 is &quot;</span> <span class="op">+</span> letters[<span class="dv">3</span>])</code></pre></div>
+<span class="bu">print</span>(<span class="st">&quot;Letter #1 is&quot;</span>, letters[<span class="dv">0</span>])
+<span class="bu">print</span>(<span class="st">&quot;Letter #2 is&quot;</span>, letters[<span class="dv">1</span>])
+<span class="bu">print</span>(<span class="st">&quot;Letter #3 is&quot;</span>, letters[<span class="dv">2</span>])
+<span class="bu">print</span>(<span class="st">&quot;Letter #4 is&quot;</span>, letters[<span class="dv">3</span>])</code></pre></div>
 <pre class="output"><code>Letter #1 is a
 Letter #2 is b
 Letter #3 is c</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 &lt;ipython-input-11-d817f55b7d6c&gt; in &lt;module&gt;()
-      3 print(&quot;Letter #2 is &quot; + letters[1])
-      4 print(&quot;Letter #3 is &quot; + letters[2])
-----&gt; 5 print(&quot;Letter #4 is &quot; + letters[3])
+      3 print(&quot;Letter #2 is&quot;, letters[1])
+      4 print(&quot;Letter #3 is&quot;, letters[2])
+----&gt; 5 print(&quot;Letter #4 is&quot;, letters[3])
 
 IndexError: list index out of range</code></pre>
 <p>Here, Python is telling us that there is an <code>IndexError</code> in our code, meaning we tried to access a list index that did not exist.</p>
