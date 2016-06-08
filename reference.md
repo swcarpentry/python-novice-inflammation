@@ -40,8 +40,6 @@ subtitle: Reference
 
 ## [Making Choices](05-cond.html)
 
-*   Use the `ImageGrid` class from the `ipythonblocks` library to create simple "images" made of colored blocks.
-*   Specify colors use (red, green, blue) triples, each component of which is an integer in the range 0..255.
 *   Use `if condition` to start a conditional statement, `elif condition` to provide additional tests, and `else` to provide a default.
 *   The bodies of the branches of conditional statements must be indented.
 *   Use `==` to test for equality.
