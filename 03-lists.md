@@ -249,3 +249,68 @@ This is different from how variables worked in lesson 1, and more similar to how
 >
 > Do they always do the same thing?
 > Which do you find easier to read?
+
+> ## Populate a list from an external file {.challenge}
+> 
+> Numpy is a great library for importing numerical data from external files and automagically turning them into data structures like an N-dimensional array. However, it is often convenient to read data in a more manual fashion and create custom data structures.
+> 
+> As an alternative to numpy.loadtxt(), we can read an external file with the following:
+> 
+> ~~~ {.python}
+> with open('inflammation-01.csv', 'r') as IN:
+> ~~~
+> 
+> The with statement is designed to "clean up" an object, in this case it ensures that the file is closed properly after you're down working with it. The open() function requires at least one argument, which is the file to be opened. If a second argument isn't provided then open() will assume you want to read the file. Here we have specified 'r' for read. Alternatively you could create a file to write to using 'w'. Finally, we are assigning the file to a variable called IN.
+> 
+> The statement above on it's own will yield an error message. This is because this control structure is expecting you to do something with the file once you've opened it. A typical approach is to read the file line by line, and do something with each of the lines:
+> 
+> ~~~ {.python}
+> with open('inflammation-01.csv', 'r') as IN:
+> 
+>     for line in IN:
+> 
+>         print(line)
+> ~~~
+> 
+> Instead of just printing the line, we might want to capture the data. A convenient method for assigning data to a list is split:
+> 
+> ~~~ {.python}
+> with open('inflammation-01.csv', 'r') as IN:
+> 
+>     for line in IN:
+> 
+>         line = line.split(',')
+>         print(line)
+> ~~~
+> 
+> The split method assigns the chunks of data into a list, and can split on any character. Here we are splitting by the comma, as we are reading the CSV format. If no argument is provided it will split the data by whitespace characters. You will notice here that there is a strange character captured from the data at the end of each line - "\n". This is a newline character which is normally interpreted by text editors and spreadsheet programs where to start a new line. You can remove these from your data with the strip method:
+> 
+> ~~~ {.python}
+> with open('inflammation-01.csv', 'r') as IN:
+> 
+>     for line in IN:
+> 
+>         line = line.strip()
+>         line = line.split(',')
+>         print(line)
+> ~~~
+> 
+> Write a script that reads the external file and creates a list of lists with the same dimensions as importing with numpy.
+> 
+> ~~~ {.python}
+> import numpy
+> 
+> data = []
+> 
+> with open('inflammation-01.csv', 'r') as IN:
+> 
+>     #print(type(IN))
+>     for line in IN:
+> 
+>         line = line.strip()
+>         line = line.split(',')
+>         data.append(line)
+> 
+> npdata = numpy.array(data)
+> print(npdata.shape)
+> ~~~
