@@ -689,3 +689,18 @@ the second parameter in the list.
 >
 > print(k)
 > ~~~
+
+> ## Floating-point accuracy {.challenge}
+>
+> What does the following code print? Is it what you expect?
+> Can you give an explanation for the result?
+>
+> ~~~ {.python}
+> x = 0.0
+> for i in range(100):
+>     x = x + 0.1
+>
+> y = 0.1 * 100
+>
+> print(x, y)
+> ~~~
