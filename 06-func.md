@@ -689,3 +689,30 @@ the second parameter in the list.
 >
 > print(k)
 > ~~~
+
+>## Cost of reversing a string{.challenge}
+> 
+>Write a function to reverse a given string.
+>
+> Given that you have learnt the use of function range(), the straightforward way is to make use of it and iterate through the string in backwards manner. 
+>def reverse(given):
+>    s = ''
+>    for i in range(0, len(given)):
+>        s = s+given[len(given)-i-1]
+>    return s
+
+>This is a good working solution. However strings in python are immutable and cannot be changed in place. A new copy of same string has to be created in each iteration. It essentially makes n^2 operations where n is length of string.
+
+>Consider the following two functions and dicuss if they would generate same output. Why and why not?
+
+>def reverse(given):
+>    return ''.join((given[i] for i in range(len(given)-1, -1, -1)))
+
+>Here trainer can explain how join works in python and what is complexity of this function.
+
+>Another way of achieving this would be using extended slicing. It is really neat trick that would be handy for students to learn
+
+>def reverse(given):
+>    return given[::-1]
+
+
