@@ -689,3 +689,15 @@ the second parameter in the list.
 >
 > print(k)
 > ~~~
+> ## Composing functions {.challenge}
+> Write a function `remove_string_ends` that takes a string `s` 
+> as input, removes one character from each string end, and returns the resulting
+> substring.
+> Test `remove_string_ends` on a simple string.
+> Write a function `string_trimming` that takes a string `s` and an integer 
+> number `n` as input, and recursively removes one character from each string 
+> end until obtaining the shortest possible substring whose length is at least `n`.
+> The function must return the trimmed string and its lenght.
+> What if `n` is greater than or equal to the length of the input string? 
+> What happens with input strings with an even/odd number of characters?
+> Call `string_trimming` with input strings of different lenght, print the output and compare.
