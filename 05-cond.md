@@ -238,3 +238,56 @@ and false statements. However, they aren't the only values in Python that are tr
 > using in-place operators.
 > Do you think the result is more or less readable than writing the same without in-place operators?
 
+> ## Tuples and Exchanges {.challenge}
+>
+> Explain what the overall effect of this code is:
+>
+> ~~~ {.python}
+> left = 'L'
+> right = 'R'
+>
+> temp = left
+> left = right
+> right = temp
+> ~~~
+>
+> Compare it to:
+>
+> ~~~ {.python}
+> left, right = right, left
+> ~~~
+>
+> Do they always do the same thing?
+> Which do you find easier to read?
+
+> ## Sorting a List Into Buckets {.challenge}
+>
+> The folder containing our data files has large data sets whose names start with
+> "inflammation-", small ones whose names with "small-", and possibly other files
+> whose sizes we don't know.  Our goal is to sort those files into three lists
+> called `large_files`, `small_files`, and `other_files` respectively.  Add code
+> to the template below to do this.  Note that the string method
+> [`startswith`](https://docs.python.org/3.5/library/stdtypes.html#str.startswith)
+> returns `True` if and only if the string it is called on starts with the string
+> passed as an argument.
+>
+> ~~~ {.python}
+> files = ['inflammation-01.csv', 'myscript.py', 'inflammation-02.csv', 'small-01.csv', 'small-02.csv']
+> large_files = []
+> small_files = []
+> other_files = []
+> ~~~
+>
+> Your solution should:
+>
+> 1.  loop over the names of the files
+> 2.  figure out which group each filename belongs
+> 3.  append the filename to that list
+>
+> In the end the three lists should be:
+>
+> ~~~ {.python}
+> large_files = ['inflammation-01.csv', 'inflammation-02.csv']
+> small_files = ['small-01.csv', 'small-02.csv']
+> other_files = ['myscript.py']
+> ~~~
