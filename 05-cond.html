@@ -52,7 +52,7 @@
 done
 </code></pre>
 <p>The second line of this code uses the keyword <code>if</code> to tell Python that we want to make a choice. If the test that follows the <code>if</code> statement is true, the body of the <code>if</code> (i.e., the lines indented underneath it) are executed. If the test is false, the body of the <code>else</code> is executed instead. Only one or the other is ever executed:</p>
-<p><img src="fig/python-flowchart-conditional.svg" alt="Executing a Conditional" /><br />
+<p><img src="fig/python-flowchart-conditional.png" alt="Executing a Conditional" /><br />
 Conditional statements don’t have to include an <code>else</code>. If there isn’t one, Python simply does nothing if the test is false:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num <span class="op">=</span> <span class="dv">53</span>
 <span class="bu">print</span>(<span class="st">&#39;before conditional...&#39;</span>)
@@ -170,6 +170,45 @@ x <span class="op">*=</span> <span class="dv">3</span> <span class="co"># multip
 <span class="bu">print</span>(x)</code></pre></div>
 <pre class="output"><code>6</code></pre>
 <p>Write some code that sums the positive and negative numbers in a list separately, using in-place operators. Do you think the result is more or less readable than writing the same without in-place operators?</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="tuples-and-exchanges"><span class="glyphicon glyphicon-pencil"></span>Tuples and Exchanges</h2>
+</div>
+<div class="panel-body">
+<p>Explain what the overall effect of this code is:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">left <span class="op">=</span> <span class="st">&#39;L&#39;</span>
+right <span class="op">=</span> <span class="st">&#39;R&#39;</span>
+
+temp <span class="op">=</span> left
+left <span class="op">=</span> right
+right <span class="op">=</span> temp</code></pre></div>
+<p>Compare it to:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">left, right <span class="op">=</span> right, left</code></pre></div>
+<p>Do they always do the same thing? Which do you find easier to read?</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="sorting-a-list-into-buckets"><span class="glyphicon glyphicon-pencil"></span>Sorting a List Into Buckets</h2>
+</div>
+<div class="panel-body">
+<p>The folder containing our data files has large data sets whose names start with “inflammation-”, small ones whose names with “small-”, and possibly other files whose sizes we don’t know. Our goal is to sort those files into three lists called <code>large_files</code>, <code>small_files</code>, and <code>other_files</code> respectively. Add code to the template below to do this. Note that the string method <a href="https://docs.python.org/3.5/library/stdtypes.html#str.startswith"><code>startswith</code></a> returns <code>True</code> if and only if the string it is called on starts with the string passed as an argument.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">files <span class="op">=</span> [<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;myscript.py&#39;</span>, <span class="st">&#39;inflammation-02.csv&#39;</span>, <span class="st">&#39;small-01.csv&#39;</span>, <span class="st">&#39;small-02.csv&#39;</span>]
+large_files <span class="op">=</span> []
+small_files <span class="op">=</span> []
+other_files <span class="op">=</span> []</code></pre></div>
+<p>Your solution should:</p>
+<ol style="list-style-type: decimal">
+<li>loop over the names of the files</li>
+<li>figure out which group each filename belongs</li>
+<li>append the filename to that list</li>
+</ol>
+<p>In the end the three lists should be:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">large_files <span class="op">=</span> [<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;inflammation-02.csv&#39;</span>]
+small_files <span class="op">=</span> [<span class="st">&#39;small-01.csv&#39;</span>, <span class="st">&#39;small-02.csv&#39;</span>]
+other_files <span class="op">=</span> [<span class="st">&#39;myscript.py&#39;</span>]</code></pre></div>
 </div>
 </section>
         </div>
