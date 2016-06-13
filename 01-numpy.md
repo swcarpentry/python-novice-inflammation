@@ -217,15 +217,24 @@ print(data.shape)
 (60, 40)
 ~~~
 
-This tells us that `data` has 60 rows and 40 columns. When we created the
-variable `data` to store our arthritis data, we didn't just create the array, we also
-created information about the array, called [members](reference.html#member) or
-attributes. This extra information describes `data` in
-the same way an adjective describes a noun.
+This tells us that `data` has 60 rows and 40 columns. We can also find out
+the type of elements in `data`:
+~~~ {.python}
+print(data.dtype)
+~~~
+~~~ {.output}
+dtype('float64')
+~~~
+so elements are [floating-point numbers](reference.html#floating-point number).
+When we created the variable `data` to store our arthritis data, we didn't just 
+create the array, we also created information about the array, 
+called [members](reference.html#member) or attributes. This extra information 
+describes `data` in the same way an adjective describes a noun.
 `data.shape` is an attribute  of `data` which described the dimensions of `data`.
 We use the same dotted notation for the attributes of variables
 that we use for the functions in libraries
 because they have the same part-and-whole relationship.
+
 
 If we want to get a single number from the array,
 we must provide an [index](reference.html#index) in square brackets,
