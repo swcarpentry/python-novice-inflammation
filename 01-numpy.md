@@ -223,7 +223,7 @@ variable `data` to store our arthritis data, we didn't just create the array, we
 created information about the array, called [members](reference.html#member) or
 attributes. This extra information describes `data` in
 the same way an adjective describes a noun.
-`data.shape` is an attribute  of `data` which described the dimensions of `data`.
+`data.shape` is an attribute  of `data` which describes the dimensions of `data`.
 We use the same dotted notation for the attributes of variables
 that we use for the functions in libraries
 because they have the same part-and-whole relationship.
