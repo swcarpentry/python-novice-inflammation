@@ -158,7 +158,7 @@ This is different from the way spreadsheets work.
 
 > ## Who's who in the memory {.callout}
 >
->You can use the `%whos` command at any time to see what variables you have created and what modules you have loaded into the computers memory. As this is an IPython command, it will only work if you are in an IPython terminal or the Jupyter Notebook. 
+>You can use the `%whos` command at any time to see what variables you have created and what modules you have loaded into the computers memory. As this is an IPython command, it will only work if you are in an IPython terminal or the Jupyter Notebook.
 >
 >~~~ {.python}
 >%whos
@@ -581,7 +581,7 @@ creates a space into which we will place all of our plots. The parameter `figsiz
 tells Python how big to make this space. Each subplot is placed into the figure using
 its `add_subplot` method. The `add_subplot` method takes 3 parameters. The first denotes
 how many total rows of subplots there are, the second parameter refers to the
-total number of subplot columns, and the final parameters denotes which subplot
+total number of subplot columns, and the final parameter denotes which subplot
 your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a
 different variable (`axes1`, `axes2`, `axes3`). Once a subplot is created, the axes can
 be titled using the `set_xlabel()` command (or `set_ylabel()`).
