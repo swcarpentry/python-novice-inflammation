@@ -22,7 +22,7 @@ specialized tools built up from these basic units live in [libraries](reference.
 that can be called upon when needed.
 
 In order to load our inflammation data,
-we need to [import](reference.html#import) a library called NumPy.
+we need to [import](reference.html#import) a library called [NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").
 In general you should use this library if you want to do fancy things with numbers,
 especially if you have matrices or arrays.
 We can load NumPy using:
