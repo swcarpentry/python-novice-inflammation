@@ -37,7 +37,7 @@ This means we can loop over it
 to do something with each filename in turn.
 In our case,
 the "something" we want to do is generate a set of plots for each file in our inflammation dataset.
-Let's test it by analyzing the first three files in the list:
+If we want to start by analyzing just the first three files in alphabetical order, we can use the `sorted` built-in function to generate a new sorted list from the the `glob.glob` output:
 
 ~~~ {.python}
 import numpy
