@@ -17,8 +17,9 @@ minutes: 30
 Words are useful,
 but what's more useful are the sentences and stories we build with them.
 Similarly,
-while a lot of powerful tools are built into languages like Python,
-even more live in the [libraries](reference.html#library) they are used to build.
+while a lot of powerful, general tools are built into languages like Python,
+specialized tools built up from these basic units live in [libraries](reference.html#library) 
+that can be called upon when needed.
 
 In order to load our inflammation data,
 we need to [import](reference.html#import) a library called NumPy.
@@ -49,7 +50,7 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 ~~~
 
 The expression `numpy.loadtxt(...)` is a [function call](reference.html#function-call)
-that asks Python to run the function `loadtxt` that belongs to the `numpy` library.
+that asks Python to run the function `loadtxt` which belongs to the `numpy` library.
 This [dotted notation](reference.html#dotted-notation) is used everywhere in Python
 to refer to the parts of things as `thing.component`.
 
@@ -108,6 +109,9 @@ print('weight in pounds:', 2.2 * weight_kg)
 weight in pounds: 121.0
 ~~~
 
+As the example above shows,
+we can print several things at once by separating them with commas.
+
 We can also change a variable's value by assigning it a new one:
 
 ~~~ {.python}
@@ -117,9 +121,6 @@ print('weight in kilograms is now:', weight_kg)
 ~~~ {.output}
 weight in kilograms is now: 57.5
 ~~~
-
-As the example above shows,
-we can print several things at once by separating them with commas.
 
 If we imagine the variable as a sticky note with a name written on it,
 assignment is like putting the sticky note on a particular value:
@@ -208,7 +209,7 @@ print(type(data))
 ~~~
 
 The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library. These data correspond to arthritis patients' inflammation. The rows are the individual patients and the columns are their daily inflammation measurements.
-We can see what its [shape](reference.html#shape) is like this:
+We can see what the array's [shape](reference.html#shape) is like this:
 
 ~~~ {.python}
 print(data.shape)
@@ -384,7 +385,7 @@ Often, we want to do more than add, subtract, multiply, and divide values of dat
 Arrays also know how to do more complex operations on their values.
 If we want to find the average inflammation for all patients on all days,
 for example,
-we can just ask the array for its mean value
+we can just ask the array for its mean value:
 
 ~~~ {.python}
 print(data.mean())
@@ -433,6 +434,11 @@ print('maximum inflammation for patient 0:', patient_0.max())
 ~~~ {.output}
 maximum inflammation for patient 0: 18.0
 ~~~
+
+Everything in a line of code following the '#' symbol is a 
+[comment](reference.html#comment) that is ignored by the computer. 
+Comments allow programmers to leave explanatory notes for other 
+programmers or their future selves.
 
 We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the method call:
@@ -574,6 +580,8 @@ while the minimum seems to be a step function.
 Neither result seems particularly likely,
 so either there's a mistake in our calculations
 or something is wrong with our data.
+This insight would have been difficult to reach by 
+examining the data without visualization tools.
 
 You can group similar plots in a single figure using subplots.
 This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
