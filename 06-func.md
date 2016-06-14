@@ -649,6 +649,16 @@ the second parameter in the list.
 > hm
 > ~~~
 
+> ## Composing functions {.challenge}
+>
+> In addition to the Kelvin, Celsius and Fahrenheit scales there are a number of more obscure
+> temperature scales still in use in some fields. One such is the Rankine scale, for which
+> zero is absolute zero, as for Kelvin, but the Rankine degree is the same size as one degree
+> Fahrenheit.
+> Using either or both of the `fahr_to_kelvin` and `kelvin_to_celsius` functions defined earlier,
+> write a function to convert degrees Rankine to degrees Celsius.
+> (Hint: Absolute zero is -459.67 degrees Fahrenheit.)
+
 > ## Rescaling an array {.challenge}
 >
 > Write a function `rescale` that takes an array as input
