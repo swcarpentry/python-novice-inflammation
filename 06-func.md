@@ -709,3 +709,17 @@ the second parameter in the list.
 > 2.  `one2three4`
 > 3.  `1239`
 > 4.  `SyntaxError`
+>
+> Given that, what does the following piece of code display when run?
+>
+> ~~~ {.python}
+> def func(a, b = 3, c = 6):
+>   print('a: ', a, 'b: ', b,'c:', c)
+> 
+> func(-1, 2)
+> ~~~
+>
+> 1. `a: b: 3 c: 6`
+> 2. `a: -1 b: 3 c: 6`
+> 3. `a: -1 b: 2 c: 6`
+> 4. `a: b: -1 c: 2`
