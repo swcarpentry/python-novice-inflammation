@@ -291,3 +291,13 @@ and false statements. However, they aren't the only values in Python that are tr
 > small_files = ['small-01.csv', 'small-02.csv']
 > other_files = ['myscript.py']
 > ~~~
+
+> ## Counting Vowels {.challenge}
+>
+> 1.  Write a loop that counts the number of vowels in a character string.
+>
+> 2. Test it on a few individual words and full sentences.
+>
+> 3. Once you are done, compare your solution to your neighbor's.
+>    Did you make the same decisions about how to handle the letter 'y'
+>    (which some people think is a vowel, and some do not)?
