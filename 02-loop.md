@@ -235,3 +235,25 @@ so we should always use it when we can.
 > Write a loop that takes a string,
 > and produces a new string with the characters in reverse order,
 > so `'Newton'` becomes `'notweN'`.
+
+> ## Indexing nested variables {.challenge}
+>
+> Sometimes you may work with data that has a nested structure. For example, you might
+> have a list that contains multiple sublists.
+>
+> ~~~ {.python}
+> my_list = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]
+> ~~~
+>
+> In a FOR-loop, we call iterable items within a variable, for example: `'for x in my_list`'.
+> We can then use Python indexing to specify certain items in `'x'` we want to perform
+> an action on.
+>
+> Using the `'del'` function, write a set of commands that initially prints the contents
+> of `'my_list'`, then deletes the first number in each sublist, then prints the
+> modified list. You answer should look like this:
+>
+> ~~~ {.python}
+> [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]
+> [[2], [4], [6], [8], [10]]
+> ~~~
