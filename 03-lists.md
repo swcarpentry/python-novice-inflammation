@@ -251,17 +251,17 @@ last 4
 ~~~
 
 >## Slicing from the end {.challenge}
-> Use slicing to access only the last five characters of a string or entries of a list.
+> Use slicing to access only the last four characters of a string or entries of a list.
 > 
 > ~~~ {.python}
-> string_for_slicing = "abcdefghijklmnopqrstuvwxyz"
-> list_for_slicing = [1, "two", "III", 4.0, 5, "six"]
+> string_for_slicing = "Observation date: 02-Feb-2013"
+> list_for_slicing = ("fluorine", "F"), ("chlorine", "Cl"), ("bromine", "Br"), ("iodine", "I"), ("astatine", "At")]
 > ~~~
 > ~~~ {.output}
-> "vwxyz"
-> ["two", "III", 4.0, 5, "six"]
+> "2013"
+> [("chlorine", "Cl"), ("bromine", "Br"), ("iodine", "I"), ("astatine", "At")]
 > ~~~
-> Would your solution work for a string or list of any length greater than four? If not, try to change your approach to make it more robust.
+> Would your solution work regardless of whether you knew beforehand the length of the string or list (e.g. if you wanted to apply the solution to a set of lists of different lengths)? If not, try to change your approach to make it more robust.
 
 > ## Tuples and exchanges {.challenge}
 >
