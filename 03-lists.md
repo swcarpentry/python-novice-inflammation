@@ -255,7 +255,7 @@ last 4
 > 
 > ~~~ {.python}
 > string_for_slicing = "Observation date: 02-Feb-2013"
-> list_for_slicing = ("fluorine", "F"), ("chlorine", "Cl"), ("bromine", "Br"), ("iodine", "I"), ("astatine", "At")]
+> list_for_slicing = [("fluorine", "F"), ("chlorine", "Cl"), ("bromine", "Br"), ("iodine", "I"), ("astatine", "At")]
 > ~~~
 > ~~~ {.output}
 > "2013"
