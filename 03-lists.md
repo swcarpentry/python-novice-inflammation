@@ -249,3 +249,24 @@ This is different from how variables worked in lesson 1, and more similar to how
 >
 > Do they always do the same thing?
 > Which do you find easier to read?
+
+> ## Overloading {.challenge}
+>
+> `+` usually means addition, but when used on strings or lists, it means "concatenate".
+> Given that, what do you think the multiplication operator `*` does on lists?
+> In particular, what will be the output of the following code?
+>
+>~~~ {.python}
+> counts = [2, 4, 6, 8, 10]
+> repeats = counts * 2
+> print(repeats)
+>~~~
+>
+> 1.  `[2, 4, 6, 8, 10, 2, 4, 6, 8, 10]`
+> 2.  `[4, 8, 12, 16, 20]`
+> 3.  `[[2, 4, 6, 8, 10],[2, 4, 6, 8, 10]]`
+> 4.  `[2, 4, 6, 8, 10, 4, 8, 12, 16, 20]`
+>
+> The technical term for this is *operator overloading*:
+> a single operator, like `+` or `*`,
+> can do different things depending on what it's applied to.
