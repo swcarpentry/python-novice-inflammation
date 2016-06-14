@@ -113,7 +113,7 @@ are almost never worthwhile.
 
 If it takes 20 minutes for the bug to surface,
 we can only do three experiments an hour.
-That doesn't must mean we'll get less data in more time:
+That doesn't just mean we'll get less data in more time:
 we're also more likely to be distracted by other things as we wait for our program to fail,
 which means the time we *are* spending on the problem is less focused.
 It's therefore critical to *make it fail fast*.

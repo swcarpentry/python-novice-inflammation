@@ -17,11 +17,12 @@ minutes: 30
 Words are useful,
 but what's more useful are the sentences and stories we build with them.
 Similarly,
-while a lot of powerful tools are built into languages like Python,
-even more live in the [libraries](reference.html#library) they are used to build.
+while a lot of powerful, general tools are built into languages like Python,
+specialized tools built up from these basic units live in [libraries](reference.html#library) 
+that can be called upon when needed.
 
 In order to load our inflammation data,
-we need to [import](reference.html#import) a library called NumPy.
+we need to [import](reference.html#import) a library called [NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").
 In general you should use this library if you want to do fancy things with numbers,
 especially if you have matrices or arrays.
 We can load NumPy using:
@@ -49,7 +50,7 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 ~~~
 
 The expression `numpy.loadtxt(...)` is a [function call](reference.html#function-call)
-that asks Python to run the function `loadtxt` that belongs to the `numpy` library.
+that asks Python to run the function `loadtxt` which belongs to the `numpy` library.
 This [dotted notation](reference.html#dotted-notation) is used everywhere in Python
 to refer to the parts of things as `thing.component`.
 
@@ -108,6 +109,9 @@ print('weight in pounds:', 2.2 * weight_kg)
 weight in pounds: 121.0
 ~~~
 
+As the example above shows,
+we can print several things at once by separating them with commas.
+
 We can also change a variable's value by assigning it a new one:
 
 ~~~ {.python}
@@ -117,9 +121,6 @@ print('weight in kilograms is now:', weight_kg)
 ~~~ {.output}
 weight in kilograms is now: 57.5
 ~~~
-
-As the example above shows,
-we can print several things at once by separating them with commas.
 
 If we imagine the variable as a sticky note with a name written on it,
 assignment is like putting the sticky note on a particular value:
@@ -158,10 +159,10 @@ This is different from the way spreadsheets work.
 
 > ## Who's who in the memory {.callout}
 >
->You can use the `whos` command at any time to see what variables you have created and what modules you have loaded into the computers memory. As this is an IPython command, it will only work if you are in an IPython terminal or the Jupyter Notebook. 
+>You can use the `%whos` command at any time to see what variables you have created and what modules you have loaded into the computers memory. As this is an IPython command, it will only work if you are in an IPython terminal or the Jupyter Notebook.
 >
 >~~~ {.python}
->whos
+>%whos
 >~~~
 >~~~ {.output}
 >Variable    Type       Data/Info
@@ -207,8 +208,8 @@ print(type(data))
 <class 'numpy.ndarray'>
 ~~~
 
-The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library. These data corresponds to arthritis patient's inflammation. The rows are the individual patients and the columns are there daily inflammation measurements.
-We can see what its [shape](reference.html#shape) is like this:
+The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library. These data correspond to arthritis patients' inflammation. The rows are the individual patients and the columns are their daily inflammation measurements.
+We can see what the array's [shape](reference.html#shape) is like this:
 
 ~~~ {.python}
 print(data.shape)
@@ -222,7 +223,7 @@ variable `data` to store our arthritis data, we didn't just create the array, we
 created information about the array, called [members](reference.html#member) or
 attributes. This extra information describes `data` in
 the same way an adjective describes a noun.
-`data.shape` is an attribute  of `data` which described the dimensions of `data`.
+`data.shape` is an attribute  of `data` which describes the dimensions of `data`.
 We use the same dotted notation for the attributes of variables
 that we use for the functions in libraries
 because they have the same part-and-whole relationship.
@@ -384,7 +385,7 @@ Often, we want to do more than add, subtract, multiply, and divide values of dat
 Arrays also know how to do more complex operations on their values.
 If we want to find the average inflammation for all patients on all days,
 for example,
-we can just ask the array for its mean value
+we can just ask the array for its mean value:
 
 ~~~ {.python}
 print(data.mean())
@@ -434,6 +435,11 @@ print('maximum inflammation for patient 0:', patient_0.max())
 maximum inflammation for patient 0: 18.0
 ~~~
 
+Everything in a line of code following the '#' symbol is a 
+[comment](reference.html#comment) that is ignored by the computer. 
+Comments allow programmers to leave explanatory notes for other 
+programmers or their future selves.
+
 We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the method call:
 
@@ -449,7 +455,7 @@ next diagram on the left), or the average for each day (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
-![Operations Across Axes](fig/python-operations-across-axes.svg)
+![Operations Across Axes](fig/python-operations-across-axes.png)
 
 To support this,
 most array methods allow us to specify the axis we want to work on.
@@ -512,7 +518,7 @@ and use two of its functions to create and display a heat map of our data:
 ~~~ {.python}
 import matplotlib.pyplot
 image  = matplotlib.pyplot.imshow(data)
-matplotlib.pyplot.show(image)
+matplotlib.pyplot.show()
 ~~~
 
 ![Heatmap of the Data](fig/01-numpy_71_0.png)
@@ -531,7 +537,7 @@ inflammation rises and falls over a 40-day period.
 > ~~~ {.python}
 > % matplotlib inline
 > ~~~
->  
+>
 > The `%` indicates an IPython magic function -
 > a function that is only valid within the notebook environment.
 > Note that you only have to execute this function once per notebook.
@@ -541,7 +547,7 @@ Let's take a look at the average inflammation over time:
 ~~~ {.python}
 ave_inflammation = data.mean(axis=0)
 ave_plot = matplotlib.pyplot.plot(ave_inflammation)
-matplotlib.pyplot.show(ave_plot)
+matplotlib.pyplot.show()
 ~~~
 
 ![Average Inflammation Over Time](fig/01-numpy_73_0.png)
@@ -557,14 +563,14 @@ Let's have a look at two other statistics:
 
 ~~~ {.python}
 max_plot = matplotlib.pyplot.plot(data.max(axis=0))
-matplotlib.pyplot.show(max_plot)
+matplotlib.pyplot.show()
 ~~~
 
 ![Maximum Value Along The First Axis](fig/01-numpy_75_1.png)
 
 ~~~ {.python}
 min_plot = matplotlib.pyplot.plot(data.min(axis=0))
-matplotlib.pyplot.show(min_plot)
+matplotlib.pyplot.show()
 ~~~
 
 ![Minimum Value Along The First Axis](fig/01-numpy_75_3.png)
@@ -574,17 +580,19 @@ while the minimum seems to be a step function.
 Neither result seems particularly likely,
 so either there's a mistake in our calculations
 or something is wrong with our data.
+This insight would have been difficult to reach by 
+examining the data without visualization tools.
 
 You can group similar plots in a single figure using subplots.
 This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
 creates a space into which we will place all of our plots. The parameter `figsize`
 tells Python how big to make this space. Each subplot is placed into the figure using
-the `subplot` command. The `subplot` command takes 3 parameters. The first denotes
+its `add_subplot` method. The `add_subplot` method takes 3 parameters. The first denotes
 how many total rows of subplots there are, the second parameter refers to the
-total number of subplot columns, and the final parameters denotes which subplot
-your variable is referencing. Each subplot is stored in a different variable (axes1, axes2,
-axes3). Once a subplot is created, the axes are can be titled using the
-`set_xlabel()` command (or `set_ylabel()`).
+total number of subplot columns, and the final parameter denotes which subplot
+your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a
+different variable (`axes1`, `axes2`, `axes3`). Once a subplot is created, the axes can
+be titled using the `set_xlabel()` command (or `set_ylabel()`).
 Here are our three plots side by side:
 
 ~~~ {.python}
@@ -610,7 +618,7 @@ axes3.plot(data.min(axis=0))
 
 fig.tight_layout()
 
-matplotlib.pyplot.show(fig)
+matplotlib.pyplot.show()
 ~~~
 
 ![The Previous Plots as Subplots](fig/01-numpy_80_0.png)
@@ -618,7 +626,7 @@ matplotlib.pyplot.show(fig)
 The [call](reference.html#function-call) to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
 how large we want the figure to be,
-that we're creating three sub-plots,
+that we're creating three subplots,
 what to draw for each one,
 and that we want a tight layout.
 (Perversely,
