@@ -188,10 +188,11 @@ freeing us from having to manually examine every plot for features we've seen be
 >     print('C')
 > ~~~
 
-> ## What is truth? {.challenge}
+> ## What Is Truth? {.challenge}
 >
-> `True` and `False` are special words in Python called `booleans` which represent true
-and false statements. However, they aren't the only values in Python that are true and false.
+> `True` and `False` are special words in Python called `booleans`
+> which represent true and false statements.
+> However, they aren't the only values in Python that are true and false.
 > In fact, *any* value can be used in an `if` or `elif`.
 > After reading and running the code below,
 > explain what the rule is for which values are considered true and which are considered false.
@@ -211,13 +212,12 @@ and false statements. However, they aren't the only values in Python that are tr
 >     print('one is true')
 > ~~~
 
-> ## Close enough {.challenge}
+> ## Close Enough {.challenge}
 >
 > Write some conditions that print `True` if the variable `a` is within 10% of the variable `b`
 > and `False` otherwise.
 > Compare your implementation with your partner's:
 > do you get the same answer for all possible pairs of numbers?
-
 
 > ## In-place operators {.challenge}
 >
