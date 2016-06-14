@@ -690,7 +690,7 @@ the second parameter in the list.
 > print(k)
 > ~~~
 
-> ## Mixing default and non-default parameters {.challenge}
+> ## Mixing Default and Non-Default Parameters {.challenge}
 >
 > Given the following code:
 >
@@ -702,11 +702,10 @@ the second parameter in the list.
 > print(numbers(1, three=3))
 > ~~~
 > 
-> Copy and run the code, which of the following results do you get? Why do you think that is the case?
+> what do you expect will be printed?  What is actually printed?
+> What rule do you think Python is following?
 > 
-> 1. 1234
-> 2. one2three4
-> 3. 1239
-> 4. SyntaxError
-> 
-> Edit the code to produce the other possible outputs.
+> 1.  `1234`
+> 2.  `one2three4`
+> 3.  `1239`
+> 4.  `SyntaxError`
