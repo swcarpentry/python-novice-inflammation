@@ -212,6 +212,22 @@ freeing us from having to manually examine every plot for features we've seen be
 >     print('one is true')
 > ~~~
 
+> ## That's Not Not What I Meant {.challenge}
+>
+> Sometimes it is useful to check whether some condition is not true.
+> The Boolean operator `not` can do this explicitly.
+> After reading and running the code below,
+> write some `if` statements that use `not` to test the rule you formulated in the previous challenge.
+>
+> ~~~ {.python}
+> if not '':
+>     print('empty string is not true')
+> if not 'word':
+>     print('word is not true')
+> if not not True:
+>     print('not not True is true')
+> ~~~
+
 > ## Close Enough {.challenge}
 >
 > Write some conditions that print `True` if the variable `a` is within 10% of the variable `b`
