@@ -102,7 +102,7 @@ hopefully the custom error message is informative enough to help you figure out 
 
 When you forget a colon at the end of a line,
 accidentally add one space too many when indenting under an `if` statement,
-or forget a parentheses,
+or forget a parenthesis,
 you will encounter a [syntax error](reference.html#syntax-error).
 This means that Python couldn't figure out how to read your program.
 This is similar to forgetting punctuation in English:
@@ -164,7 +164,7 @@ it *always* means that there is a problem with how your code is indented.
 > especially if you are mixing spaces and tabs.
 > Because they are both [whitespace](reference.html#whitespace),
 > it is difficult to visually tell the difference.
-> The IPython notebook actually gives us a bit of a hint,
+> The Jupyter notebook actually gives us a bit of a hint,
 > but not all Python editors will do that.
 > In the following example,
 > the first two lines are using a tab for indentation,
@@ -235,7 +235,7 @@ In the following example,
 ~~~ {.python}
 for number in range(10):
     count = count + number
-print("The count is: " + str(count))
+print("The count is:", count)
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
@@ -243,7 +243,7 @@ NameError                                 Traceback (most recent call last)
 <ipython-input-9-dd6a12d7ca5c> in <module>()
       1 for number in range(10):
 ----> 2     count = count + number
-      3 print("The count is: " + str(count))
+      3 print("The count is:", count)
 
 NameError: name 'count' is not defined
 ~~~
@@ -258,7 +258,7 @@ so the variable `count` is different from `Count`. We still get the same error, 
 Count = 0
 for number in range(10):
     count = count + number
-print("The count is: " + str(count))
+print("The count is:", count)
 ~~~
 ~~~ {.error}
 ---------------------------------------------------------------------------
@@ -267,15 +267,15 @@ NameError                                 Traceback (most recent call last)
       1 Count = 0
       2 for number in range(10):
 ----> 3     count = count + number
-      4 print("The count is: " + str(count))
+      4 print("The count is:", count)
 
 NameError: name 'count' is not defined
 ~~~
 
 ## Item Errors
 
-Next up are errors having to do with containers (like lists and dictionaries) and the items within them.
-If you try to access an item in a list or a dictionary that does not exist,
+Next up are errors having to do with containers (like lists and strings) and the items within them.
+If you try to access an item in a list or a string that does not exist,
 then you will get an error.
 This makes sense:
 if you asked someone what day they would like to get coffee,
@@ -285,10 +285,10 @@ Python gets similarly annoyed if you try to ask it for an item that doesn't exis
 
 ~~~ {.python}
 letters = ['a', 'b', 'c']
-print("Letter #1 is " + letters[0])
-print("Letter #2 is " + letters[1])
-print("Letter #3 is " + letters[2])
-print("Letter #4 is " + letters[3])
+print("Letter #1 is", letters[0])
+print("Letter #2 is", letters[1])
+print("Letter #3 is", letters[2])
+print("Letter #4 is", letters[3])
 ~~~
 ~~~ {.output}
 Letter #1 is a
@@ -299,9 +299,9 @@ Letter #3 is c
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-11-d817f55b7d6c> in <module>()
-      3 print("Letter #2 is " + letters[1])
-      4 print("Letter #3 is " + letters[2])
-----> 5 print("Letter #4 is " + letters[3])
+      3 print("Letter #2 is", letters[1])
+      4 print("Letter #3 is", letters[2])
+----> 5 print("Letter #4 is", letters[3])
 
 IndexError: list index out of range
 ~~~
@@ -313,7 +313,7 @@ Python is telling us that there is an `IndexError` in our code, meaning we tried
 
 The last type of error we'll cover today are those associated with reading and writing files: `FileNotFoundError`.
 If you try to read a file that does not exist,
-you will recieve an `FileNotFoundError` telling you so.
+you will receive a `FileNotFoundError` telling you so.
 
 ~~~ {.python}
 file_handle = open('myfile.txt', 'r')
@@ -333,10 +333,10 @@ if I am currently in a folder called `myproject`,
 and I have a file in `myproject/writing/myfile.txt`,
 but I try to just open `myfile.txt`,
 this will fail.
-The correct path would be `writing/myfile.
-xt`. It is also possible (like with `NameError`) that you just made a typo.
+The correct path would be `writing/myfile.txt`.
+It is also possible (like with `NameError`) that you just made a typo.
 
-Another issue could be that you used the "read" flag instead of the "write" flag.
+A related issue can occur if you use the "read" flag instead of the "write" flag.
 Python will not give you an error if you try to open a file for writing when the file does not exist.
 However,
 if you meant to open a file for reading,

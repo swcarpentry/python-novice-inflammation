@@ -27,6 +27,6 @@ def process(filename, action):
         values = data.max(axis=1)
 
     for m in values:
-        print m
+        print(m)
 
 main()

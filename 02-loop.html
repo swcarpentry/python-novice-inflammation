@@ -92,10 +92,10 @@ y
 g
 e
 n</code></pre>
-<p>The improved version of <code>print_characters</code> uses a <a href="reference.html#for-loop">for loop</a> to repeat an operation—in this case, printing—once for each thing in a collection. The general form of a loop is:</p>
+<p>The improved version uses a <a href="reference.html#for-loop">for loop</a> to repeat an operation—in this case, printing—once for each thing in a collection. The general form of a loop is:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> variable in collection:
     do things <span class="kw">with</span> variable</code></pre>
-<p>We can call the <a href="reference.html#loop-variable">loop variable</a> anything we like, but there must be a colon at the end of the line starting the loop, and we must indent anything we want to run inside the loop. Unlike many other languages, there is no command to end a loop (e.g. end for); what is indented after the for statement belongs to the loop.</p>
+<p>We can call the <a href="reference.html#loop-variable">loop variable</a> anything we like, but there must be a colon at the end of the line starting the loop, and we must indent anything we want to run inside the loop. Unlike many other languages, there is no command to signify the end of the loop body (e.g. end for); what is indented after the for statement belongs to the loop.</p>
 <p>Here’s another loop that repeatedly updates a variable:</p>
 <pre class="sourceCode python"><code class="sourceCode python">length = <span class="dv">0</span>
 <span class="kw">for</span> vowel in <span class="st">&#39;aeiou&#39;</span>:
@@ -121,7 +121,7 @@ after the loop, letter is c</code></pre>
 <h2><span class="glyphicon glyphicon-pencil"></span>From 1 to N</h2>
 </div>
 <div class="panel-body">
-<p>Python has a built-in function called <code>range</code> that creates a sequence of numbers. Range can accept 1-3 parameters. If one parameter is input, range creates an array of that length, starting at zero and incrementing by 1. If 2 parameters are input, range starts at the first and ends at the second, incrementing by one. If range is passed 3 parameters, it stars at the first one, ends at the second one, and increments by the third one. For example, <code>range(3)</code> produces the numbers 0, 1, 2, while <code>range(2, 5)</code> produces 2, 3, 4, and <code>range(3, 10, 3)</code> produces 3, 6, 9. Using <code>range</code>, write a loop that uses <code>range</code> to print the first 3 natural numbers:</p>
+<p>Python has a built-in function called <code>range</code> that creates a sequence of numbers. Range can accept 1-3 parameters. If one parameter is input, range creates an array of that length, starting at zero and incrementing by 1. If 2 parameters are input, range starts at the first and ends just before the second, incrementing by one. If range is passed 3 parameters, it starts at the first one, ends just before the second one, and increments by the third one. For example, <code>range(3)</code> produces the numbers 0, 1, 2, while <code>range(2, 5)</code> produces 2, 3, 4, and <code>range(3, 10, 3)</code> produces 3, 6, 9. Using <code>range</code>, write a loop that uses <code>range</code> to print the first 3 natural numbers:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dv">1</span>
 <span class="dv">2</span>
 <span class="dv">3</span></code></pre>
@@ -133,8 +133,8 @@ after the loop, letter is c</code></pre>
 </div>
 <div class="panel-body">
 <p>Exponentiation is built into Python:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="dv">5</span>**<span class="dv">3</span>)
-<span class="dv">125</span></code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="dv">5</span> ** <span class="dv">3</span>)</code></pre>
+<pre class="output"><code>125</code></pre>
 <p>Write a loop that calculates the same result as <code>5 ** 3</code> using multiplication (and without exponentiation).</p>
 </div>
 </section>
@@ -159,5 +159,16 @@ after the loop, letter is c</code></pre>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
     <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
   </body>
 </html>

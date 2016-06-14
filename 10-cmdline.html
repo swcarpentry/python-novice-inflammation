@@ -40,7 +40,7 @@
 </ul>
 </div>
 </section>
-<p>The IPython Notebook and other interactive tools are great for prototyping code and exploring data, but sooner or later we will want to use our program in a pipeline or run it in a shell script to process thousands of data files. In order to do that, we need to make our programs work like other Unix command-line tools. For example, we may want a program that reads a dataset and prints the average inflammation per patient.</p>
+<p>The Jupyter Notebook and other interactive tools are great for prototyping code and exploring data, but sooner or later we will want to use our program in a pipeline or run it in a shell script to process thousands of data files. In order to do that, we need to make our programs work like other Unix command-line tools. For example, we may want a program that reads a dataset and prints the average inflammation per patient.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
 <h2 id="switching-to-shell-commands"><span class="glyphicon glyphicon-pushpin"></span>Switching to Shell Commands</h2>
@@ -50,18 +50,18 @@
 </div>
 </aside>
 <p>This program does exactly what we want - it prints the average inflammation per patient for a given file.</p>
-<pre><code>$ python readings.py --mean inflammation-01.csv
-5.45
-5.425
-6.1
-...
-6.4
-7.05
-5.9</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> code/readings-04.py --mean data/inflammation-01.csv
+<span class="kw">5.45</span>
+<span class="kw">5.425</span>
+<span class="kw">6.1</span>
+<span class="kw">...</span>
+<span class="kw">6.4</span>
+<span class="kw">7.05</span>
+<span class="kw">5.9</span></code></pre></div>
 <p>We might also want to look at the minimum of the first four lines</p>
-<pre><code>$ head -4 inflammation-01.csv | python readings.py --min</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">head</span> -4 data/inflammation-01.csv <span class="kw">|</span> <span class="kw">python</span> code/readings-04.py --min</code></pre></div>
 <p>or the maximum inflammations in several files one after another:</p>
-<pre><code>$ python readings.py --max inflammation-*.csv</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> code/readings-04.py --max data/inflammation-*.csv</code></pre></div>
 <p>Our scripts should do the following:</p>
 <ol style="list-style-type: decimal">
 <li>If no filename is given on the command line, read data from <a href="reference.html#standard-input">standard input</a>.</li>
@@ -71,50 +71,50 @@
 <p>To make this work, we need to know how to handle command-line arguments in a program, and how to get at standard input. We’ll tackle these questions in turn below.</p>
 <h2 id="command-line-arguments">Command-Line Arguments</h2>
 <p>Using the text editor of your choice, save the following in a text file called <code>sys-version.py</code>:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="dt">print</span>(<span class="st">&#39;version is&#39;</span>, sys.version)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+<span class="bu">print</span>(<span class="st">&#39;version is&#39;</span>, sys.version)</code></pre></div>
 <p>The first line imports a library called <code>sys</code>, which is short for “system”. It defines values such as <code>sys.version</code>, which describes which version of Python we are running. We can run this script from the command line like this:</p>
-<pre class="input"><code>$ python sys-version.py</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> sys-version.py</code></pre></div>
 <pre class="output"><code>version is 3.4.3+ (default, Jul 28 2015, 13:17:50)
 [GCC 4.9.3]</code></pre>
 <p>Create another file called <code>argv-list.py</code> and save the following text to it.</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="dt">print</span>(<span class="st">&#39;sys.argv is&#39;</span>, sys.argv)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+<span class="bu">print</span>(<span class="st">&#39;sys.argv is&#39;</span>, sys.argv)</code></pre></div>
 <p>The strange name <code>argv</code> stands for “argument values”. Whenever Python runs a program, it takes all of the values given on the command line and puts them in the list <code>sys.argv</code> so that the program can determine what they were. If we run this program with no arguments:</p>
-<pre class="input"><code>$ python argv-list.py</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> argv-list.py</code></pre></div>
 <pre class="output"><code>sys.argv is [&#39;argv-list.py&#39;]</code></pre>
 <p>the only thing in the list is the full path to our script, which is always <code>sys.argv[0]</code>. If we run it with a few arguments, however:</p>
-<pre class="input"><code>$ python argv-list.py first second third</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> argv-list.py first second third</code></pre></div>
 <pre class="output"><code>sys.argv is [&#39;argv-list.py&#39;, &#39;first&#39;, &#39;second&#39;, &#39;third&#39;]</code></pre>
 <p>then Python adds each of those arguments to that magic list.</p>
 <p>With this in hand, let’s build a version of <code>readings.py</code> that always prints the per-patient mean of a single data file. The first step is to write a function that outlines our implementation, and a placeholder for the function that does the actual work. By convention this function is usually called <code>main</code>, though we can call it whatever we want:</p>
-<pre class="input"><code>$ cat readings-01.py</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="ch">import</span> numpy
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> readings-01.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+<span class="im">import</span> numpy
 
 <span class="kw">def</span> main():
-    script = sys.argv[<span class="dv">0</span>]
-    filename = sys.argv[<span class="dv">1</span>]
-    data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
-    <span class="kw">for</span> m in data.mean(axis=<span class="dv">1</span>):
-        <span class="dt">print</span>(m)</code></pre>
+    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]
+    filename <span class="op">=</span> sys.argv[<span class="dv">1</span>]
+    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
+    <span class="cf">for</span> m <span class="op">in</span> data.mean(axis<span class="op">=</span><span class="dv">1</span>):
+        <span class="bu">print</span>(m)</code></pre></div>
 <p>This function gets the name of the script from <code>sys.argv[0]</code>, because that’s where it’s always put, and the name of the file to process from <code>sys.argv[1]</code>. Here’s a simple test:</p>
-<pre class="input"><code>$ python readings-01.py inflammation-01.csv</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> readings-01.py inflammation-01.csv</code></pre></div>
 <p>There is no output because we have defined a function, but haven’t actually called it. Let’s add a call to <code>main</code>:</p>
-<pre class="input"><code>$ cat readings-02.py</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="ch">import</span> numpy
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> readings-02.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+<span class="im">import</span> numpy
 
 <span class="kw">def</span> main():
-    script = sys.argv[<span class="dv">0</span>]
-    filename = sys.argv[<span class="dv">1</span>]
-    data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
-    <span class="kw">for</span> m in data.mean(axis=<span class="dv">1</span>):
-        <span class="dt">print</span>(m)
+    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]
+    filename <span class="op">=</span> sys.argv[<span class="dv">1</span>]
+    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
+    <span class="cf">for</span> m <span class="op">in</span> data.mean(axis<span class="op">=</span><span class="dv">1</span>):
+        <span class="bu">print</span>(m)
 
-main()</code></pre>
+main()</code></pre></div>
 <p>and run that:</p>
-<pre class="input"><code>$ python readings-02.py inflammation-01.csv</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> readings-02.py inflammation-01.csv</code></pre></div>
 <pre class="output"><code>5.45
 5.425
 6.1
@@ -180,36 +180,36 @@ main()</code></pre>
 <h2 id="the-right-way-to-do-it"><span class="glyphicon glyphicon-pushpin"></span>The Right Way to Do It</h2>
 </div>
 <div class="panel-body">
-<p>If our programs can take complex parameters or multiple filenames, we shouldn’t handle <code>sys.argv</code> directly. Instead, we should use Python’s <code>argparse</code> library, which handles common cases in a systematic way, and also makes it easy for us to provide sensible error messages for our users.</p>
+<p>If our programs can take complex parameters or multiple filenames, we shouldn’t handle <code>sys.argv</code> directly. Instead, we should use Python’s <code>argparse</code> library, which handles common cases in a systematic way, and also makes it easy for us to provide sensible error messages for our users. We will not cover this module in this lesson but you can go to Tshepang Lekhonkhobe’s <a href="http://docs.python.org/dev/howto/argparse.html">Argparse tutorial</a> that is part of Python’s Official Documentation.</p>
 </div>
 </aside>
 <h2 id="handling-multiple-files">Handling Multiple Files</h2>
 <p>The next step is to teach our program how to handle multiple files. Since 60 lines of output per file is a lot to page through, we’ll start by using three smaller files, each of which has three days of data for two patients:</p>
-<pre class="input"><code>$ ls small-*.csv</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> small-*.csv</code></pre></div>
 <pre class="output"><code>small-01.csv small-02.csv small-03.csv</code></pre>
-<pre class="input"><code>$ cat small-01.csv</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> small-01.csv</code></pre></div>
 <pre class="output"><code>0,0,1
 0,1,2</code></pre>
-<pre class="input"><code>$ python readings-02.py small-01.csv</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> readings-02.py small-01.csv</code></pre></div>
 <pre class="output"><code>0.333333333333
 1.0</code></pre>
 <p>Using small data files as input also allows us to check our results more easily: here, for example, we can see that our program is calculating the mean correctly for each line, whereas we were really taking it on faith before. This is yet another rule of programming: <em>test the simple things first</em>.</p>
 <p>We want our program to process each file separately, so we need a loop that executes once for each filename. If we specify the files on the command line, the filenames will be in <code>sys.argv</code>, but we need to be careful: <code>sys.argv[0]</code> will always be the name of our script, rather than the name of a file. We also need to handle an unknown number of filenames, since our program could be run for any number of files.</p>
 <p>The solution to both problems is to loop over the contents of <code>sys.argv[1:]</code>. The ‘1’ tells Python to start the slice at location 1, so the program’s name isn’t included; since we’ve left off the upper bound, the slice runs to the end of the list, and includes all the filenames. Here’s our changed program <code>readings-03.py</code>:</p>
-<pre class="input"><code>$ cat readings-03.py</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="ch">import</span> numpy
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> readings-03.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+<span class="im">import</span> numpy
 
 <span class="kw">def</span> main():
-    script = sys.argv[<span class="dv">0</span>]
-    <span class="kw">for</span> filename in sys.argv[<span class="dv">1</span>:]:
-        data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
-        <span class="kw">for</span> m in data.mean(axis=<span class="dv">1</span>):
-            <span class="dt">print</span>(m)
+    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]
+    <span class="cf">for</span> filename <span class="op">in</span> sys.argv[<span class="dv">1</span>:]:
+        data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
+        <span class="cf">for</span> m <span class="op">in</span> data.mean(axis<span class="op">=</span><span class="dv">1</span>):
+            <span class="bu">print</span>(m)
 
-main()</code></pre>
+main()</code></pre></div>
 <p>and here it is in action:</p>
-<pre class="input"><code>$ python readings-03.py small-01.csv small-02.csv</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> readings-03.py small-01.csv small-02.csv</code></pre></div>
 <pre class="output"><code>0.333333333333
 1.0
 13.6666666667
@@ -224,99 +224,117 @@ main()</code></pre>
 </aside>
 <h2 id="handling-command-line-flags">Handling Command-Line Flags</h2>
 <p>The next step is to teach our program to pay attention to the <code>--min</code>, <code>--mean</code>, and <code>--max</code> flags. These always appear before the names of the files, so we could just do this:</p>
-<pre class="input"><code>$ cat readings-04.py</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="ch">import</span> numpy
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> readings-04.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+<span class="im">import</span> numpy
 
 <span class="kw">def</span> main():
-    script = sys.argv[<span class="dv">0</span>]
-    action = sys.argv[<span class="dv">1</span>]
-    filenames = sys.argv[<span class="dv">2</span>:]
+    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]
+    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]
+    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]
 
-    <span class="kw">for</span> f in filenames:
-        data = numpy.loadtxt(f, delimiter=<span class="st">&#39;,&#39;</span>)
+    <span class="cf">for</span> f <span class="op">in</span> filenames:
+        data <span class="op">=</span> numpy.loadtxt(f, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
 
-        <span class="kw">if</span> action == <span class="st">&#39;--min&#39;</span>:
-            values = data.<span class="dt">min</span>(axis=<span class="dv">1</span>)
-        <span class="kw">elif</span> action == <span class="st">&#39;--mean&#39;</span>:
-            values = data.mean(axis=<span class="dv">1</span>)
-        <span class="kw">elif</span> action == <span class="st">&#39;--max&#39;</span>:
-            values = data.<span class="dt">max</span>(axis=<span class="dv">1</span>)
+        <span class="cf">if</span> action <span class="op">==</span> <span class="st">&#39;--min&#39;</span>:
+            values <span class="op">=</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>)
+        <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--mean&#39;</span>:
+            values <span class="op">=</span> data.mean(axis<span class="op">=</span><span class="dv">1</span>)
+        <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--max&#39;</span>:
+            values <span class="op">=</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)
 
-        <span class="kw">for</span> m in values:
-            <span class="dt">print</span>(m)
+        <span class="cf">for</span> m <span class="op">in</span> values:
+            <span class="bu">print</span>(m)
 
-main()</code></pre>
+main()</code></pre></div>
 <p>This works:</p>
-<pre class="input"><code>$ python readings-04.py --max small-01.csv</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> readings-04.py --max small-01.csv</code></pre></div>
 <pre class="output"><code>1.0
 2.0</code></pre>
 <p>but there are several things wrong with it:</p>
 <ol style="list-style-type: decimal">
 <li><p><code>main</code> is too large to read comfortably.</p></li>
-<li><p>If <code>action</code> isn’t one of the three recognized flags, the program loads each file but does nothing with it (because none of the branches in the conditional match). <a href="reference.html#silence-failure">Silent failures</a> like this are always hard to debug.</p></li>
+<li><p>If we do not specify at least two additional arguments on the command-line, one for the <strong>flag</strong> and one for the <strong>filename</strong>, but only one, the program will not throw an exception but will run. It assumes that the file list is empty, as <code>sys.argv[1]</code> will be considered the <code>action</code>, even if it is a filename. <a href="reference.html#silence-failure">Silent failures</a> like this are always hard to debug.</p></li>
+<li><p>The program should check if the submitted <code>action</code> is one of the three recognized flags.</p></li>
 </ol>
 <p>This version pulls the processing of each file out of the loop into a function of its own. It also checks that <code>action</code> is one of the allowed flags before doing any processing, so that the program fails fast:</p>
-<pre class="input"><code>$ cat readings-05.py</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
-<span class="ch">import</span> numpy
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> readings-05.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+<span class="im">import</span> numpy
 
 <span class="kw">def</span> main():
-    script = sys.argv[<span class="dv">0</span>]
-    action = sys.argv[<span class="dv">1</span>]
-    filenames = sys.argv[<span class="dv">2</span>:]
-    <span class="kw">assert</span> action in [<span class="st">&#39;--min&#39;</span>, <span class="st">&#39;--mean&#39;</span>, <span class="st">&#39;--max&#39;</span>], \
-           <span class="co">&#39;Action is not one of --min, --mean, or --max: &#39;</span> + action
-    <span class="kw">for</span> f in filenames:
+    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]
+    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]
+    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]
+    <span class="cf">assert</span> action <span class="op">in</span> [<span class="st">&#39;--min&#39;</span>, <span class="st">&#39;--mean&#39;</span>, <span class="st">&#39;--max&#39;</span>], <span class="op">\</span>
+           <span class="co">&#39;Action is not one of --min, --mean, or --max: &#39;</span> <span class="op">+</span> action
+    <span class="cf">for</span> f <span class="op">in</span> filenames:
         process(f, action)
 
 <span class="kw">def</span> process(filename, action):
-    data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
+    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
 
-    <span class="kw">if</span> action == <span class="st">&#39;--min&#39;</span>:
-        values = data.<span class="dt">min</span>(axis=<span class="dv">1</span>)
-    <span class="kw">elif</span> action == <span class="st">&#39;--mean&#39;</span>:
-        values = data.mean(axis=<span class="dv">1</span>)
-    <span class="kw">elif</span> action == <span class="st">&#39;--max&#39;</span>:
-        values = data.<span class="dt">max</span>(axis=<span class="dv">1</span>)
+    <span class="cf">if</span> action <span class="op">==</span> <span class="st">&#39;--min&#39;</span>:
+        values <span class="op">=</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>)
+    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--mean&#39;</span>:
+        values <span class="op">=</span> data.mean(axis<span class="op">=</span><span class="dv">1</span>)
+    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--max&#39;</span>:
+        values <span class="op">=</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)
 
-    <span class="kw">for</span> m in values:
-        <span class="dt">print</span>(m)
+    <span class="cf">for</span> m <span class="op">in</span> values:
+        <span class="bu">print</span>(m)
 
-main()</code></pre>
+main()</code></pre></div>
 <p>This is four lines longer than its predecessor, but broken into more digestible chunks of 8 and 12 lines.</p>
-<p>Python has a module named <a href="http://docs.python.org/dev/library/argparse.html">argparse</a> that helps handle complex command-line flags. We will not cover this module in this lesson but you can go to Tshepang Lekhonkhobe’s <a href="http://docs.python.org/dev/howto/argparse.html">Argparse tutorial</a> that is part of Python’s Official Documentation.</p>
 <h2 id="handling-standard-input">Handling Standard Input</h2>
 <p>The next thing our program has to do is read data from standard input if no filenames are given so that we can put it in a pipeline, redirect input to it, and so on. Let’s experiment in another script called <code>count-stdin.py</code>:</p>
-<pre class="input"><code>$ cat count-stdin.py</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> count-stdin.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
 
-count = <span class="dv">0</span>
-<span class="kw">for</span> line in sys.stdin:
-    count += <span class="dv">1</span>
+count <span class="op">=</span> <span class="dv">0</span>
+<span class="cf">for</span> line <span class="op">in</span> sys.stdin:
+    count <span class="op">+=</span> <span class="dv">1</span>
 
-<span class="dt">print</span>(count, <span class="st">&#39;lines in standard input&#39;</span>)</code></pre>
+<span class="bu">print</span>(count, <span class="st">&#39;lines in standard input&#39;</span>)</code></pre></div>
 <p>This little program reads lines from a special “file” called <code>sys.stdin</code>, which is automatically connected to the program’s standard input. We don’t have to open it — Python and the operating system take care of that when the program starts up — but we can do almost anything with it that we could do to a regular file. Let’s try running it as if it were a regular command-line program:</p>
-<pre class="input"><code>$ python count-stdin.py &lt; small-01.csv</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> count-stdin.py <span class="kw">&lt;</span> small-01.csv</code></pre></div>
 <pre class="output"><code>2 lines in standard input</code></pre>
 <p>A common mistake is to try to run something that reads from standard input like this:</p>
-<pre class="input"><code>$ count_stdin.py small-01.csv</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> count_stdin.py small-01.csv</code></pre></div>
 <p>i.e., to forget the <code>&lt;</code> character that redirect the file to standard input. In this case, there’s nothing in standard input, so the program waits at the start of the loop for someone to type something on the keyboard. Since there’s no way for us to do this, our program is stuck, and we have to halt it using the <code>Interrupt</code> option from the <code>Kernel</code> menu in the Notebook.</p>
-<p>We now need to rewrite the program so that it loads data from <code>sys.stdin</code> if no filenames are provided. Luckily, <code>numpy.loadtxt</code> can handle either a filename or an open file as its first parameter, so we don’t actually need to change <code>process</code>. That leaves <code>main</code>:</p>
-<pre class="input"><code>$ cat readings-06.py</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> main():
-    script = sys.argv[<span class="dv">0</span>]
-    action = sys.argv[<span class="dv">1</span>]
-    filenames = sys.argv[<span class="dv">2</span>:]
-    <span class="kw">assert</span> action in [<span class="st">&#39;--min&#39;</span>, <span class="st">&#39;--mean&#39;</span>, <span class="st">&#39;--max&#39;</span>], \
-           <span class="co">&#39;Action is not one of --min, --mean, or --max: &#39;</span> + action
-    <span class="kw">if</span> <span class="dt">len</span>(filenames) == <span class="dv">0</span>:
+<p>We now need to rewrite the program so that it loads data from <code>sys.stdin</code> if no filenames are provided. Luckily, <code>numpy.loadtxt</code> can handle either a filename or an open file as its first parameter, so we don’t actually need to change <code>process</code>. Only <code>main</code> changes:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> readings-06.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+<span class="im">import</span> numpy
+
+<span class="kw">def</span> main():
+    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]
+    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]
+    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]
+    <span class="cf">assert</span> action <span class="op">in</span> [<span class="st">&#39;--min&#39;</span>, <span class="st">&#39;--mean&#39;</span>, <span class="st">&#39;--max&#39;</span>], <span class="op">\</span>
+           <span class="co">&#39;Action is not one of --min, --mean, or --max: &#39;</span> <span class="op">+</span> action
+    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:
         process(sys.stdin, action)
-    <span class="kw">else</span>:
-        <span class="kw">for</span> f in filenames:
-            process(f, action)</code></pre>
+    <span class="cf">else</span>:
+        <span class="cf">for</span> f <span class="op">in</span> filenames:
+            process(f, action)
+
+<span class="kw">def</span> process(filename, action):
+    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
+
+    <span class="cf">if</span> action <span class="op">==</span> <span class="st">&#39;--min&#39;</span>:
+        values <span class="op">=</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>)
+    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--mean&#39;</span>:
+        values <span class="op">=</span> data.mean(axis<span class="op">=</span><span class="dv">1</span>)
+    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--max&#39;</span>:
+        values <span class="op">=</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)
+
+    <span class="cf">for</span> m <span class="op">in</span> values:
+        <span class="bu">print</span>(m)
+
+main()</code></pre></div>
 <p>Let’s try it out:</p>
-<pre class="input"><code>$ python readings-06.py --mean small-01.csv</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> readings-06.py --mean <span class="kw">&lt;</span> small-01.csv</code></pre></div>
 <pre class="output"><code>0.333333333333
 1.0</code></pre>
 <p>That’s better. In fact, that’s done: the program now does everything we set out to do.</p>
@@ -326,9 +344,9 @@ count = <span class="dv">0</span>
 </div>
 <div class="panel-body">
 <p>Write a command-line program that does addition and subtraction:</p>
-<pre class="sourceCode python"><code class="sourceCode python">$ python arith.py add <span class="dv">1</span> <span class="dv">2</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python arith.py add <span class="dv">1</span> <span class="dv">2</span></code></pre></div>
 <pre class="output"><code>3</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python">$ python arith.py subtract <span class="dv">3</span> <span class="dv">4</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python arith.py subtract <span class="dv">3</span> <span class="dv">4</span></code></pre></div>
 <pre class="output"><code>-1</code></pre>
 </div>
 </section>
@@ -338,7 +356,7 @@ count = <span class="dv">0</span>
 </div>
 <div class="panel-body">
 <p>Using the <code>glob</code> module introduced <a href="04-files.html">earlier</a>, write a simple version of <code>ls</code> that shows files in the current directory with a particular suffix. A call to this script should look like this:</p>
-<pre class="sourceCode python"><code class="sourceCode python">$ python my_ls.py py</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python my_ls.py py</code></pre></div>
 <pre class="output"><code>left.py
 right.py
 zero.py</code></pre>
@@ -401,5 +419,16 @@ zero.py</code></pre>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
     <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
   </body>
 </html>

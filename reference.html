@@ -65,8 +65,6 @@
 </ul>
 <h2 id="making-choices"><a href="05-cond.html">Making Choices</a></h2>
 <ul>
-<li>Use the <code>ImageGrid</code> class from the <code>ipythonblocks</code> library to create simple “images” made of colored blocks.</li>
-<li>Specify colors use (red, green, blue) triples, each component of which is an integer in the range 0..255.</li>
 <li>Use <code>if condition</code> to start a conditional statement, <code>elif condition</code> to provide additional tests, and <code>else</code> to provide a default.</li>
 <li>The bodies of the branches of conditional statements must be indented.</li>
 <li>Use <code>==</code> to test for equality.</li>
@@ -95,7 +93,7 @@
 <li>Tracebacks can look intimidating, but they give us a lot of useful information about what went wrong in our program, including where the error occurred and what type of error it was.</li>
 <li>An error having to do with the “grammar” or syntax of the program is called a <code>SyntaxError</code>. If the issue has to do with how the code is indented, then it will be called an <code>IndentationError</code>.</li>
 <li>A <code>NameError</code> will occur if you use a variable that has not been defined (either because you meant to use quotes around a string, you forgot to define the variable, or you just made a typo).</li>
-<li>Containers like lists and dictionaries will generate errors if you try to access items in them that do not exist. For lists, this type of error is called an <code>IndexError</code>; for dictionaries, it is called a <code>KeyError</code>.</li>
+<li>Containers like lists and strings will generate errors if you try to access items in them that do not exist. This type of error is called an <code>IndexError</code>.</li>
 <li>Trying to read a file that does not exist will give you an <code>IOError</code>. Trying to read a file that is open for writing, or writing to a file that is open for reading, will also give you an <code>IOError</code>.</li>
 </ul>
 <h2 id="defensive-programming"><a href="08-defensive.html">Defensive Programming</a></h2>
@@ -316,5 +314,16 @@
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
     <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
   </body>
 </html>

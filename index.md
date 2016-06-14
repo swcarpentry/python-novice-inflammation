@@ -64,6 +64,25 @@ To do all that, we'll have to learn a little bit about programming.
 > $ cd && cd Desktop/python-novice-inflammation/data
 > ~~~
 
+> ## Starting Python {.getready}
+>
+> If you will be using the Jupyter (IPython) notebook for the lesson,
+> you should have already
+> [installed Anaconda](http://swcarpentry.github.io/workshop-template/#setup)
+> which includes the notebook.
+>
+> To start the notebook, open a terminal or git bash and type the command:
+>
+> ~~~ {.input}
+> $ jupyter notebook
+> ~~~
+>
+> To start the Python intrepreter without the notebook, open a terminal or git bash and type the command:
+>
+> ~~~ {.input}
+> $ python
+> ~~~
+
 ## Topics
 
 1.  [Analyzing Patient Data](01-numpy.html)

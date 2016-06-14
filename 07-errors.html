@@ -30,7 +30,7 @@
           <h2 class="subtitle">Errors and Exceptions</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -52,8 +52,8 @@
 </section>
 <p>Every programmer encounters errors, both those who are just beginning, and those who have been programming for years. Encountering errors and exceptions can be very frustrating at times, and can make coding feel like a hopeless endeavour. However, understanding what the different types of errors are and when you are likely to encounter them can help a lot. Once you know <em>why</em> you get certain types of errors, they become much easier to fix.</p>
 <p>Errors in Python have a very specific form, called a <a href="reference.html#traceback">traceback</a>. Let’s examine one:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> errors_01
-errors_01.favorite_ice_cream()</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> errors_01
+errors_01.favorite_ice_cream()</code></pre></div>
 <pre class="error"><code>---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 &lt;ipython-input-1-9d0462a5b07c&gt; in &lt;module&gt;()
@@ -74,7 +74,7 @@ IndexError: list index out of range</code></pre>
 <p>The last level is the actual place where the error occurred. The other level(s) show what function the program executed to get to the next level down. So, in this case, the program first performed a <a href="reference.html#function-call">function call</a> to the function <code>favorite_ice_cream</code>. Inside this function, the program encountered an error on Line 7, when it tried to run the code <code>print(ice_creams[3])</code>.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pushpin"></span>Long Tracebacks</h2>
+<h2 id="long-tracebacks"><span class="glyphicon glyphicon-pushpin"></span>Long Tracebacks</h2>
 </div>
 <div class="panel-body">
 <p>Sometimes, you might see a traceback that is very long – sometimes they might even be 20 levels deep! This can make it seem like something horrible happened, but really it just means that your program called many functions before it ran into the error. Most of the time, you can just pay attention to the bottom-most level, which is the actual place where the error occurred.</p>
@@ -84,25 +84,25 @@ IndexError: list index out of range</code></pre>
 <p>If you encounter an error and don’t know what it means, it is still important to read the traceback closely. That way, if you fix the error, but encounter a new one, you can tell that the error changed. Additionally, sometimes just knowing <em>where</em> the error occurred is enough to fix it, even if you don’t entirely understand the message.</p>
 <p>If you do encounter an error you don’t recognize, try looking at the <a href="http://docs.python.org/3/library/exceptions.html">official documentation on errors</a>. However, note that you may not always be able to find the error there, as it is possible to create custom errors. In that case, hopefully the custom error message is informative enough to help you figure out what went wrong.</p>
 <h2 id="syntax-errors">Syntax Errors</h2>
-<p>When you forget a colon at the end of a line, accidentally add one space too many when indenting under an <code>if</code> statement, or forget a parentheses, you will encounter a <a href="reference.html#syntax-error">syntax error</a>. This means that Python couldn’t figure out how to read your program. This is similar to forgetting punctuation in English:</p>
+<p>When you forget a colon at the end of a line, accidentally add one space too many when indenting under an <code>if</code> statement, or forget a parenthesis, you will encounter a <a href="reference.html#syntax-error">syntax error</a>. This means that Python couldn’t figure out how to read your program. This is similar to forgetting punctuation in English:</p>
 <blockquote>
 <p>this text is difficult to read there is no punctuation there is also no capitalization why is this hard because you have to figure out where each sentence ends you also have to figure out where each sentence begins to some extent it might be ambiguous if there should be a sentence break or not</p>
 </blockquote>
 <p>People can typically figure out what is meant by text with no punctuation, but people are much smarter than computers. If Python doesn’t know how to read the program, it will just give up and inform you with an error. For example:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> some_function()
-    msg = <span class="st">&quot;hello, world!&quot;</span>
-    <span class="dt">print</span>(msg)
-     <span class="kw">return</span> msg</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> some_function()
+    msg <span class="op">=</span> <span class="st">&quot;hello, world!&quot;</span>
+    <span class="bu">print</span>(msg)
+     <span class="cf">return</span> msg</code></pre></div>
 <pre class="error"><code>  File &quot;&lt;ipython-input-3-6bb841ea1423&gt;&quot;, line 1
     def some_function()
                        ^
 SyntaxError: invalid syntax</code></pre>
 <p>Here, Python tells us that there is a <code>SyntaxError</code> on line 1, and even puts a little arrow in the place where there is an issue. In this case the problem is that the function definition is missing a colon at the end.</p>
 <p>Actually, the function above has <em>two</em> issues with syntax. If we fix the problem with the colon, we see that there is <em>also</em> an <code>IndentationError</code>, which means that the lines in the function definition do not all have the same indentation:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> some_function():
-    msg = <span class="st">&quot;hello, world!&quot;</span>
-    <span class="dt">print</span>(msg)
-     <span class="kw">return</span> msg</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> some_function():
+    msg <span class="op">=</span> <span class="st">&quot;hello, world!&quot;</span>
+    <span class="bu">print</span>(msg)
+     <span class="cf">return</span> msg</code></pre></div>
 <pre class="error"><code>  File &quot;&lt;ipython-input-4-ae290e7659cb&gt;&quot;, line 4
     return msg
     ^
@@ -110,14 +110,14 @@ IndentationError: unexpected indent</code></pre>
 <p>Both <code>SyntaxError</code> and <code>IndentationError</code> indicate a problem with the syntax of your program, but an <code>IndentationError</code> is more specific: it <em>always</em> means that there is a problem with how your code is indented.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pushpin"></span>Tabs and Spaces</h2>
+<h2 id="tabs-and-spaces"><span class="glyphicon glyphicon-pushpin"></span>Tabs and Spaces</h2>
 </div>
 <div class="panel-body">
-<p>A quick note on indentation errors: they can sometimes be insidious, especially if you are mixing spaces and tabs. Because they are both <a href="reference.html#whitespace">whitespace</a>, it is difficult to visually tell the difference. The IPython notebook actually gives us a bit of a hint, but not all Python editors will do that. In the following example, the first two lines are using a tab for indentation, while the third line uses four spaces:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> some_function():
-    msg = <span class="st">&quot;hello, world!&quot;</span>
-    <span class="dt">print</span>(msg)
-    <span class="kw">return</span> msg</code></pre>
+<p>A quick note on indentation errors: they can sometimes be insidious, especially if you are mixing spaces and tabs. Because they are both <a href="reference.html#whitespace">whitespace</a>, it is difficult to visually tell the difference. The Jupyter notebook actually gives us a bit of a hint, but not all Python editors will do that. In the following example, the first two lines are using a tab for indentation, while the third line uses four spaces:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> some_function():
+    msg <span class="op">=</span> <span class="st">&quot;hello, world!&quot;</span>
+    <span class="bu">print</span>(msg)
+    <span class="cf">return</span> msg</code></pre></div>
 <pre class="error"><code>  File &quot;&lt;ipython-input-5-653b36fbcd41&gt;&quot;, line 4
     return msg
               ^
@@ -127,7 +127,7 @@ IndentationError: unindent does not match any outer indentation level</code></pr
 </aside>
 <h2 id="variable-name-errors">Variable Name Errors</h2>
 <p>Another very common type of error is called a <code>NameError</code>, and occurs when you try to use a variable that does not exist. For example:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(a)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(a)</code></pre></div>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 &lt;ipython-input-7-9d7b17ad5387&gt; in &lt;module&gt;()
@@ -136,7 +136,7 @@ NameError                                 Traceback (most recent call last)
 NameError: name &#39;a&#39; is not defined</code></pre>
 <p>Variable name errors come with some of the most informative error messages, which are usually of the form “name ‘the_variable_name’ is not defined”.</p>
 <p>Why does this error message occur? That’s harder question to answer, because it depends on what your code is supposed to do. However, there are a few very common reasons why you might have an undefined variable. The first is that you meant to use a <a href="reference.html#string">string</a>, but forgot to put quotes around it:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(hello)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(hello)</code></pre></div>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 &lt;ipython-input-8-9553ee03b645&gt; in &lt;module&gt;()
@@ -144,63 +144,63 @@ NameError                                 Traceback (most recent call last)
 
 NameError: name &#39;hello&#39; is not defined</code></pre>
 <p>The second is that you just forgot to create the variable before using it. In the following example, <code>count</code> should have been defined (e.g., with <code>count = 0</code>) before the for loop:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> number in <span class="dt">range</span>(<span class="dv">10</span>):
-    count = count + number
-<span class="dt">print</span>(<span class="st">&quot;The count is: &quot;</span> + <span class="dt">str</span>(count))</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> number <span class="op">in</span> <span class="bu">range</span>(<span class="dv">10</span>):
+    count <span class="op">=</span> count <span class="op">+</span> number
+<span class="bu">print</span>(<span class="st">&quot;The count is:&quot;</span>, count)</code></pre></div>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 &lt;ipython-input-9-dd6a12d7ca5c&gt; in &lt;module&gt;()
       1 for number in range(10):
 ----&gt; 2     count = count + number
-      3 print(&quot;The count is: &quot; + str(count))
+      3 print(&quot;The count is:&quot;, count)
 
 NameError: name &#39;count&#39; is not defined</code></pre>
 <p>Finally, the third possibility is that you made a typo when you were writing your code. Let’s say we fixed the error above by adding the line <code>Count = 0</code> before the for loop. Frustratingly, this actually does not fix the error. Remember that variables are <a href="reference.html#case-sensitive">case-sensitive</a>, so the variable <code>count</code> is different from <code>Count</code>. We still get the same error, because we still have not defined <code>count</code>:</p>
-<pre class="sourceCode python"><code class="sourceCode python">Count = <span class="dv">0</span>
-<span class="kw">for</span> number in <span class="dt">range</span>(<span class="dv">10</span>):
-    count = count + number
-<span class="dt">print</span>(<span class="st">&quot;The count is: &quot;</span> + <span class="dt">str</span>(count))</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Count <span class="op">=</span> <span class="dv">0</span>
+<span class="cf">for</span> number <span class="op">in</span> <span class="bu">range</span>(<span class="dv">10</span>):
+    count <span class="op">=</span> count <span class="op">+</span> number
+<span class="bu">print</span>(<span class="st">&quot;The count is:&quot;</span>, count)</code></pre></div>
 <pre class="error"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 &lt;ipython-input-10-d77d40059aea&gt; in &lt;module&gt;()
       1 Count = 0
       2 for number in range(10):
 ----&gt; 3     count = count + number
-      4 print(&quot;The count is: &quot; + str(count))
+      4 print(&quot;The count is:&quot;, count)
 
 NameError: name &#39;count&#39; is not defined</code></pre>
 <h2 id="item-errors">Item Errors</h2>
-<p>Next up are errors having to do with containers (like lists and dictionaries) and the items within them. If you try to access an item in a list or a dictionary that does not exist, then you will get an error. This makes sense: if you asked someone what day they would like to get coffee, and they answered “caturday”, you might be a bit annoyed. Python gets similarly annoyed if you try to ask it for an item that doesn’t exist:</p>
-<pre class="sourceCode python"><code class="sourceCode python">letters = [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>]
-<span class="dt">print</span>(<span class="st">&quot;Letter #1 is &quot;</span> + letters[<span class="dv">0</span>])
-<span class="dt">print</span>(<span class="st">&quot;Letter #2 is &quot;</span> + letters[<span class="dv">1</span>])
-<span class="dt">print</span>(<span class="st">&quot;Letter #3 is &quot;</span> + letters[<span class="dv">2</span>])
-<span class="dt">print</span>(<span class="st">&quot;Letter #4 is &quot;</span> + letters[<span class="dv">3</span>])</code></pre>
+<p>Next up are errors having to do with containers (like lists and strings) and the items within them. If you try to access an item in a list or a string that does not exist, then you will get an error. This makes sense: if you asked someone what day they would like to get coffee, and they answered “caturday”, you might be a bit annoyed. Python gets similarly annoyed if you try to ask it for an item that doesn’t exist:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">letters <span class="op">=</span> [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>]
+<span class="bu">print</span>(<span class="st">&quot;Letter #1 is&quot;</span>, letters[<span class="dv">0</span>])
+<span class="bu">print</span>(<span class="st">&quot;Letter #2 is&quot;</span>, letters[<span class="dv">1</span>])
+<span class="bu">print</span>(<span class="st">&quot;Letter #3 is&quot;</span>, letters[<span class="dv">2</span>])
+<span class="bu">print</span>(<span class="st">&quot;Letter #4 is&quot;</span>, letters[<span class="dv">3</span>])</code></pre></div>
 <pre class="output"><code>Letter #1 is a
 Letter #2 is b
 Letter #3 is c</code></pre>
 <pre class="error"><code>---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 &lt;ipython-input-11-d817f55b7d6c&gt; in &lt;module&gt;()
-      3 print(&quot;Letter #2 is &quot; + letters[1])
-      4 print(&quot;Letter #3 is &quot; + letters[2])
-----&gt; 5 print(&quot;Letter #4 is &quot; + letters[3])
+      3 print(&quot;Letter #2 is&quot;, letters[1])
+      4 print(&quot;Letter #3 is&quot;, letters[2])
+----&gt; 5 print(&quot;Letter #4 is&quot;, letters[3])
 
 IndexError: list index out of range</code></pre>
 <p>Here, Python is telling us that there is an <code>IndexError</code> in our code, meaning we tried to access a list index that did not exist.</p>
 <h2 id="file-errors">File Errors</h2>
-<p>The last type of error we’ll cover today are those associated with reading and writing files: <code>FileNotFoundError</code>. If you try to read a file that does not exist, you will recieve an <code>FileNotFoundError</code> telling you so.</p>
-<pre class="sourceCode python"><code class="sourceCode python">file_handle = <span class="dt">open</span>(<span class="st">&#39;myfile.txt&#39;</span>, <span class="st">&#39;r&#39;</span>)</code></pre>
+<p>The last type of error we’ll cover today are those associated with reading and writing files: <code>FileNotFoundError</code>. If you try to read a file that does not exist, you will receive a <code>FileNotFoundError</code> telling you so.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">file_handle <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;myfile.txt&#39;</span>, <span class="st">&#39;r&#39;</span>)</code></pre></div>
 <pre class="error"><code>---------------------------------------------------------------------------
 FileNotFoundError                         Traceback (most recent call last)
 &lt;ipython-input-14-f6e1ac4aee96&gt; in &lt;module&gt;()
 ----&gt; 1 file_handle = open(&#39;myfile.txt&#39;, &#39;r&#39;)
 
 FileNotFoundError: [Errno 2] No such file or directory: &#39;myfile.txt&#39;</code></pre>
-<p>One reason for receiving this error is that you specified an incorrect path to the file. For example, if I am currently in a folder called <code>myproject</code>, and I have a file in <code>myproject/writing/myfile.txt</code>, but I try to just open <code>myfile.txt</code>, this will fail. The correct path would be <code>writing/myfile. xt</code>. It is also possible (like with <code>NameError</code>) that you just made a typo.</p>
-<p>Another issue could be that you used the “read” flag instead of the “write” flag. Python will not give you an error if you try to open a file for writing when the file does not exist. However, if you meant to open a file for reading, but accidentally opened it for writing, and then try to read from it, you will get an <code>UnsupportedOperation</code> error telling you that the file was not opened for reading:</p>
-<pre class="sourceCode python"><code class="sourceCode python">file_handle = <span class="dt">open</span>(<span class="st">&#39;myfile.txt&#39;</span>, <span class="st">&#39;w&#39;</span>)
-file_handle.read()</code></pre>
+<p>One reason for receiving this error is that you specified an incorrect path to the file. For example, if I am currently in a folder called <code>myproject</code>, and I have a file in <code>myproject/writing/myfile.txt</code>, but I try to just open <code>myfile.txt</code>, this will fail. The correct path would be <code>writing/myfile.txt</code>. It is also possible (like with <code>NameError</code>) that you just made a typo.</p>
+<p>A related issue can occur if you use the “read” flag instead of the “write” flag. Python will not give you an error if you try to open a file for writing when the file does not exist. However, if you meant to open a file for reading, but accidentally opened it for writing, and then try to read from it, you will get an <code>UnsupportedOperation</code> error telling you that the file was not opened for reading:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">file_handle <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;myfile.txt&#39;</span>, <span class="st">&#39;w&#39;</span>)
+file_handle.read()</code></pre></div>
 <pre class="error"><code>---------------------------------------------------------------------------
 UnsupportedOperation                      Traceback (most recent call last)
 &lt;ipython-input-15-b846479bc61f&gt; in &lt;module&gt;()
@@ -211,7 +211,7 @@ UnsupportedOperation: not readable</code></pre>
 <p>These are the most common errors with files, though many others exist. If you get an error that you’ve never seen before, searching the Internet for that error type often reveals common reasons why you might get that error.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Reading Error Messages</h2>
+<h2 id="reading-error-messages"><span class="glyphicon glyphicon-pencil"></span>Reading Error Messages</h2>
 </div>
 <div class="panel-body">
 <p>Read the traceback below, and identify the following pieces of information about it:</p>
@@ -223,8 +223,8 @@ UnsupportedOperation: not readable</code></pre>
 <li>What is the type of error?</li>
 <li>What is the error message?</li>
 </ol>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> errors_02
-errors_02.print_friday_message()</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> errors_02
+errors_02.print_friday_message()</code></pre></div>
 <pre class="error"><code>---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
 &lt;ipython-input-2-e4c4cbafeeb5&gt; in &lt;module&gt;()
@@ -248,7 +248,7 @@ KeyError: &#39;Friday&#39;</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Identifying Syntax Errors</h2>
+<h2 id="identifying-syntax-errors"><span class="glyphicon glyphicon-pencil"></span>Identifying Syntax Errors</h2>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
@@ -257,15 +257,15 @@ KeyError: &#39;Friday&#39;</code></pre>
 <li>Fix the error.</li>
 <li>Repeat steps 2 and 3, until you have fixed all the errors.</li>
 </ol>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> another_function
-  <span class="dt">print</span>(<span class="st">&quot;Syntax errors are annoying.&quot;</span>)
-   <span class="dt">print</span>(<span class="st">&quot;But at least python tells us about them!&quot;</span>)
-  <span class="dt">print</span>(<span class="st">&quot;So they are usually not too hard to fix.&quot;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> another_function
+  <span class="bu">print</span>(<span class="st">&quot;Syntax errors are annoying.&quot;</span>)
+   <span class="bu">print</span>(<span class="st">&quot;But at least python tells us about them!&quot;</span>)
+  <span class="bu">print</span>(<span class="st">&quot;So they are usually not too hard to fix.&quot;</span>)</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Identifying Variable Name Errors</h2>
+<h2 id="identifying-variable-name-errors"><span class="glyphicon glyphicon-pencil"></span>Identifying Variable Name Errors</h2>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
@@ -274,18 +274,18 @@ KeyError: &#39;Friday&#39;</code></pre>
 <li>Fix the error.</li>
 <li>Repeat steps 2 and 3, until you have fixed all the errors.</li>
 </ol>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> number in <span class="dt">range</span>(<span class="dv">10</span>):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> number <span class="op">in</span> <span class="bu">range</span>(<span class="dv">10</span>):
     <span class="co"># use a if the number is a multiple of 3, otherwise use b</span>
-    <span class="kw">if</span> (Number % <span class="dv">3</span>) == <span class="dv">0</span>:
-        message = message + a
-    <span class="kw">else</span>:
-        message = message + <span class="st">&quot;b&quot;</span>
-<span class="dt">print</span>(message)</code></pre>
+    <span class="cf">if</span> (Number <span class="op">%</span> <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span>:
+        message <span class="op">=</span> message <span class="op">+</span> a
+    <span class="cf">else</span>:
+        message <span class="op">=</span> message <span class="op">+</span> <span class="st">&quot;b&quot;</span>
+<span class="bu">print</span>(message)</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Identifying Item Errors</h2>
+<h2 id="identifying-item-errors"><span class="glyphicon glyphicon-pencil"></span>Identifying Item Errors</h2>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
@@ -293,8 +293,8 @@ KeyError: &#39;Friday&#39;</code></pre>
 <li>Run the code, and read the error message. What type of error is it?</li>
 <li>Fix the error.</li>
 </ol>
-<pre class="sourceCode python"><code class="sourceCode python">seasons = [<span class="st">&#39;Spring&#39;</span>, <span class="st">&#39;Summer&#39;</span>, <span class="st">&#39;Fall&#39;</span>, <span class="st">&#39;Winter&#39;</span>]
-<span class="dt">print</span>(<span class="st">&#39;My favorite season is &#39;</span>, seasons[<span class="dv">4</span>])</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">seasons <span class="op">=</span> [<span class="st">&#39;Spring&#39;</span>, <span class="st">&#39;Summer&#39;</span>, <span class="st">&#39;Fall&#39;</span>, <span class="st">&#39;Winter&#39;</span>]
+<span class="bu">print</span>(<span class="st">&#39;My favorite season is &#39;</span>, seasons[<span class="dv">4</span>])</code></pre></div>
 </div>
 </section>
         </div>
@@ -310,5 +310,16 @@ KeyError: &#39;Friday&#39;</code></pre>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
     <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-37305346-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
   </body>
 </html>
