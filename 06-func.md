@@ -131,6 +131,15 @@ and we have access to the value that we returned.
 > 1
 > ~~~
 
+> ## Integer division challenge {.challenge}
+> 
+> What is the output of `print(5.0/9)`?
+> 
+> 1. `0` in both Python 2 and Python 3
+> 2. `0.555555555556` in both Python 2 and Python 3
+> 3. `0` in Python 2, `0.555555555556` in Python 3
+> 4. `0.555555555556` in Python 2, `0` in Python 3
+
 ## Composing Functions
 
 Now that we've seen how to turn Fahrenheit into Kelvin,
