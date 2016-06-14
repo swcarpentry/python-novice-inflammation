@@ -689,3 +689,24 @@ the second parameter in the list.
 >
 > print(k)
 > ~~~
+
+> ## Mixing default and non-default parameters {.challenge}
+>
+> Given the following code:
+>
+> ~~~ {.python}
+> def numbers(one, two=2, three, four=4):
+>     n = str(one) + str(two) + str(three) + str(four)
+>     return n
+> 
+> print(numbers(1, three=3))
+> ~~~
+> 
+> Copy and run the code, which of the following results do you get? Why do you think that is the case?
+> 
+> 1. 1234
+> 2. one2three4
+> 3. 1239
+> 4. SyntaxError
+> 
+> Edit the code to produce the other possible outputs.
