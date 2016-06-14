@@ -228,3 +228,29 @@ so we should always use it when we can.
 > Write a loop that takes a string,
 > and produces a new string with the characters in reverse order,
 > so `'Newton'` becomes `'notweN'`.
+
+> ## Looping through Dictionaries {.challenge}
+>
+> So far, we've seen two ways to loop through objects in Python. 
+> Looping through a *string* iterates through character by character.
+> Looping through a *list* iterates through item by item. 
+> We can also loop through python *dictionaries*. 
+> The default looping behavior iterates through each key in the dictionary.
+> 
+> ~~~ {.python}
+> d = {'apples': 0.49, 'oranges': 0.99, 'pears': 1.49, 'bananas': 0.32}
+> #default looping
+> for key in d:
+>    print(key, d[key])
+> ~~~
+> 
+> Knowing this, use a for loop to calculate how much it'll cost you 
+> to buy 2 pieces of each fruit.
+>
+> Extra Challenge: Python allows others ways to iterate over a dictionary.
+> Check the help files for `dict.values()` and `dict.items()` to see what
+> they return. Edit the loop you wrote above using these methods.
+
+
+
+
