@@ -228,3 +228,37 @@ so we should always use it when we can.
 > Write a loop that takes a string,
 > and produces a new string with the characters in reverse order,
 > so `'Newton'` becomes `'notweN'`.
+
+> ## Ranking Olympians {.challenge}
+> 
+> Given a list of five men alpine skiing finalists at Sochi 2014 Winter Olympics:
+>
+> ~~~ {.python}
+> finalists = ['Viletta SUI', 'Kostelic CRO', 'Innerhofer ITA', 'Jansrud NOR', 'Zampa SVK']
+> ~~~
+> 
+> write a piece of code that prints ranked finalists:
+> 
+> ~~~ {.python}
+> 1 Viletta SUI
+> 2 Kostelic CRO
+> 3 Innerhofer ITA
+> 4 Jansrud NOR
+> 5 Zampa SVK
+> ~~~
+>
+> When working with collections such as lists and strings, it is common to use
+> the index of an element and the element inside the loop at the same time. To
+> make it easier for us, Python provides a handy `enumerate` object which
+> returns the index as the first loop variable and the element as the second
+> loop variable. It is used in a following way:
+>
+> ~~~ {.python}
+> for index, element in enumerate(collection):
+>	do things with index and element 
+> ~~~
+>
+> Rewrite your code for printing ranked finalists using `enumerate`.
+>
+
+
