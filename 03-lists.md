@@ -231,22 +231,23 @@ This is different from how variables worked in lesson 1, and more similar to how
 Subsets of lists and strings can be accessed by specifying ranges of values in brackets, similar to how we accessed ranges of positions in a Numpy matrix. This is commonly referred to as "slicing" the list/string.
 
 ~~~ {.python}
-date = "Monday 4 January 2016"
-months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
-day = date[0:6]
-year = date[17:21]
-summer = months[5:8]
-last = months[-1]
-print("day", day)
-print("year", year)
-print("summer", summer)
+binomial_name = "Drosophila melanogaster"
+common_name = "common fruit fly"
+chromosomes = ["X", "Y", "2", "3", "4"]
+group = binomial_name[0:10]
+species = binomial_name[11:24]
+autosomes = chromosomes[2:5]
+last = chromosomes[-1]
+print("group", group)
+print("species", species)
+print("autosomes", autosomes)
 print("last", last)
 ~~~
 ~~~ {.output}
-day Monday
-year 2016
-summer ["jun", "jul", "aug"]
-last dec
+group Drosophila
+species melanogaster
+autosomes ["2", "3", "4"]
+last 4
 ~~~
 
 >## Slicing from the end {.challenge}
