@@ -689,3 +689,19 @@ the second parameter in the list.
 >
 > print(k)
 > ~~~
+
+> ## Factorial {.challenge}
+>
+> Factorial of n (where n is non-negative integer) is the product of all positive integers equals or less to n. For example, factorial of n = 4 is equal to 4 * 3 * 2 * 1 = 24. With an exception that factorial of 0 equals 1
+>
+> What should be A and B so that the function below returns the factorial?
+>
+> ~~~ {.python}
+> def factorial(A):
+>     result = 1
+>     for i in range(2, n+1):
+>         result *= i
+>     return B
+> ~~~
+>
+> Test the function for different arguments.
