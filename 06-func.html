@@ -425,6 +425,37 @@ f2k(<span class="dv">32</span>)
 <span class="bu">print</span>(k)</code></pre></div>
 </div>
 </section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="mixing-default-and-non-default-parameters"><span class="glyphicon glyphicon-pencil"></span>Mixing Default and Non-Default Parameters</h2>
+</div>
+<div class="panel-body">
+<p>Given the following code:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> numbers(one, two<span class="op">=</span><span class="dv">2</span>, three, four<span class="op">=</span><span class="dv">4</span>):
+    n <span class="op">=</span> <span class="bu">str</span>(one) <span class="op">+</span> <span class="bu">str</span>(two) <span class="op">+</span> <span class="bu">str</span>(three) <span class="op">+</span> <span class="bu">str</span>(four)
+    <span class="cf">return</span> n
+
+<span class="bu">print</span>(numbers(<span class="dv">1</span>, three<span class="op">=</span><span class="dv">3</span>))</code></pre></div>
+<p>what do you expect will be printed? What is actually printed? What rule do you think Python is following?</p>
+<ol style="list-style-type: decimal">
+<li><code>1234</code></li>
+<li><code>one2three4</code></li>
+<li><code>1239</code></li>
+<li><code>SyntaxError</code></li>
+</ol>
+<p>Given that, what does the following piece of code display when run?</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> func(a, b <span class="op">=</span> <span class="dv">3</span>, c <span class="op">=</span> <span class="dv">6</span>):
+  <span class="bu">print</span>(<span class="st">&#39;a: &#39;</span>, a, <span class="st">&#39;b: &#39;</span>, b,<span class="st">&#39;c:&#39;</span>, c)
+
+func(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>)</code></pre></div>
+<ol style="list-style-type: decimal">
+<li><code>a: b: 3 c: 6</code></li>
+<li><code>a: -1 b: 3 c: 6</code></li>
+<li><code>a: -1 b: 2 c: 6</code></li>
+<li><code>a: b: -1 c: 2</code></li>
+</ol>
+</div>
+</section>
         </div>
       </div>
       </article>

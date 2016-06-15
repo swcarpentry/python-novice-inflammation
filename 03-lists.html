@@ -160,6 +160,24 @@ right <span class="op">=</span> temp</code></pre></div>
 <p>Do they always do the same thing? Which do you find easier to read?</p>
 </div>
 </section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="overloading"><span class="glyphicon glyphicon-pencil"></span>Overloading</h2>
+</div>
+<div class="panel-body">
+<p><code>+</code> usually means addition, but when used on strings or lists, it means “concatenate”. Given that, what do you think the multiplication operator <code>*</code> does on lists? In particular, what will be the output of the following code?</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">counts <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>]
+repeats <span class="op">=</span> counts <span class="op">*</span> <span class="dv">2</span>
+<span class="bu">print</span>(repeats)</code></pre></div>
+<ol style="list-style-type: decimal">
+<li><code>[2, 4, 6, 8, 10, 2, 4, 6, 8, 10]</code></li>
+<li><code>[4, 8, 12, 16, 20]</code></li>
+<li><code>[[2, 4, 6, 8, 10],[2, 4, 6, 8, 10]]</code></li>
+<li><code>[2, 4, 6, 8, 10, 4, 8, 12, 16, 20]</code></li>
+</ol>
+<p>The technical term for this is <em>operator overloading</em>: a single operator, like <code>+</code> or <code>*</code>, can do different things depending on what it’s applied to.</p>
+</div>
+</section>
         </div>
       </div>
       </article>

@@ -30,7 +30,7 @@
           <h2 class="subtitle">Analyzing Data from Multiple Files</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -40,44 +40,72 @@
 </div>
 </section>
 <p>We now have almost everything we need to process all our data files. The only thing that’s missing is a library with a rather unpleasant name:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> glob</code></pre>
-<p>The <code>glob</code> library contains a single function, also called <code>glob</code>, that finds files whose names match a pattern. We provide those patterns as strings: the character <code>*</code> matches zero or more characters, while <code>?</code> matches any one character. We can use this to get the names of all the CSV files in the current directory:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(glob.glob(<span class="st">&#39;data/inflammation*.csv&#39;</span>))</code></pre>
-<pre class="output"><code>[&#39;data/inflammation-01.csv&#39;, &#39;data/inflammation-02.csv&#39;, &#39;data/inflammation-03.csv&#39;, &#39;data/inflammation-04.csv&#39;, &#39;data/inflammation-05.csv&#39;, &#39;data/inflammation-06.csv&#39;, &#39;data/inflammation-07.csv&#39;, &#39;data/inflammation-08.csv&#39;, &#39;data/inflammation-09.csv&#39;, &#39;data/inflammation-10.csv&#39;, &#39;data/inflammation-11.csv&#39;, &#39;data/inflammation-12.csv&#39;]</code></pre>
-<p>As these examples show, <code>glob.glob</code>’s result is a list of strings, which means we can loop over it to do something with each filename in turn. In our case, the “something” we want to do is generate a set of plots for each file in our inflammation dataset. Let’s test it by analyzing the first three files in the list:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy
-<span class="ch">import</span> matplotlib.pyplot
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> glob</code></pre></div>
+<p>The <code>glob</code> library contains a function, also called <code>glob</code>, that finds files and directories whose names match a pattern. We provide those patterns as strings: the character <code>*</code> matches zero or more characters, while <code>?</code> matches any one character. We can use this to get the names of all the CSV files in the current directory:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(glob.glob(<span class="st">&#39;data/inflammation*.csv&#39;</span>))</code></pre></div>
+<pre class="output"><code>[&#39;data/inflammation-05.csv&#39;, &#39;data/inflammation-11.csv&#39;, &#39;data/inflammation-12.csv&#39;, &#39;data/inflammation-08.csv&#39;, &#39;data/inflammation-03.csv&#39;, &#39;data/inflammation-06.csv&#39;, &#39;data/inflammation-09.csv&#39;, &#39;data/inflammation-07.csv&#39;, &#39;data/inflammation-10.csv&#39;, &#39;data/inflammation-02.csv&#39;, &#39;data/inflammation-04.csv&#39;, &#39;data/inflammation-01.csv&#39;]</code></pre>
+<p>As these examples show, <code>glob.glob</code>’s result is a list of file and directory paths in arbitrary order. This means we can loop over it to do something with each filename in turn. In our case, the “something” we want to do is generate a set of plots for each file in our inflammation dataset. If we want to start by analyzing just the first three files in alphabetical order, we can use the <code>sorted</code> built-in function to generate a new sorted list from the the <code>glob.glob</code> output:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy
+<span class="im">import</span> matplotlib.pyplot
 
-filenames = glob.glob(<span class="st">&#39;data/inflammation*.csv&#39;</span>)
-filenames = filenames[<span class="dv">0</span>:<span class="dv">3</span>]
-<span class="kw">for</span> f in filenames:
-    <span class="dt">print</span>(f)
+filenames <span class="op">=</span> <span class="bu">sorted</span>(glob.glob(<span class="st">&#39;data/inflammation*.csv&#39;</span>))
+filenames <span class="op">=</span> filenames[<span class="dv">0</span>:<span class="dv">3</span>]
+<span class="cf">for</span> f <span class="op">in</span> filenames:
+    <span class="bu">print</span>(f)
 
-    data = numpy.loadtxt(fname=f, delimiter=<span class="st">&#39;,&#39;</span>)
+    data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>f, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
 
-    fig = matplotlib.pyplot.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+    fig <span class="op">=</span> matplotlib.pyplot.figure(figsize<span class="op">=</span>(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
 
-    axes1 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
-    axes2 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
-    axes3 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
+    axes1 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+    axes2 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+    axes3 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
 
     axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
-    axes1.plot(data.mean(axis=<span class="dv">0</span>))
+    axes1.plot(data.mean(axis<span class="op">=</span><span class="dv">0</span>))
 
     axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
-    axes2.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+    axes2.plot(data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>))
 
     axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
-    axes3.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+    axes3.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>))
 
     fig.tight_layout()
-    matplotlib.pyplot.show()</code></pre>
+    matplotlib.pyplot.show()</code></pre></div>
 <pre class="output"><code>inflammation-01.csv</code></pre>
-<p><img src="fig/03-loop_49_1.png" alt="Analysis of inflammation-01.csv" /><br /></p>
+<p><img src="fig/03-loop_49_1.png" alt="Analysis of inflammation-01.csv" /><br />
+</p>
 <pre class="output"><code>inflammation-02.csv</code></pre>
-<p><img src="fig/03-loop_49_3.png" alt="Analysis of inflammation-02.csv" /><br /></p>
+<p><img src="fig/03-loop_49_3.png" alt="Analysis of inflammation-02.csv" /><br />
+</p>
 <pre class="output"><code>inflammation-03.csv</code></pre>
-<p><img src="fig/03-loop_49_5.png" alt="Analysis of inflammation-03.csv" /><br /> Sure enough, the maxima of the first two data sets show exactly the same ramp as the first, and their minima show the same staircase structure; a different situation has been revealed in the third dataset, where the maxima are a bit less regular, but the minima are consistently zero.</p>
+<p><img src="fig/03-loop_49_5.png" alt="Analysis of inflammation-03.csv" /><br />
+Sure enough, the maxima of the first two data sets show exactly the same ramp as the first, and their minima show the same staircase structure; a different situation has been revealed in the third dataset, where the maxima are a bit less regular, but the minima are consistently zero.</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="plotting-differences"><span class="glyphicon glyphicon-pencil"></span>Plotting Differences</h2>
+</div>
+<div class="panel-body">
+<p>Plot the difference between the average of the first dataset and the average of the second dataset, i.e., the difference between the leftmost plot of the first two figures.</p>
+<p><strong>Solution</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> glob
+<span class="im">import</span> numpy
+<span class="im">import</span> matplotlib.pyplot
+
+filenames <span class="op">=</span> glob.glob(<span class="st">&#39;data/inflammation*.csv&#39;</span>)
+
+data0 <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filenames[<span class="dv">0</span>], delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
+data1 <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filenames[<span class="dv">1</span>], delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
+
+fig <span class="op">=</span> matplotlib.pyplot.figure(figsize<span class="op">=</span>(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+
+matplotlib.pyplot.ylabel(<span class="st">&#39;Difference in average&#39;</span>)
+matplotlib.pyplot.plot(data0.mean(axis<span class="op">=</span><span class="dv">0</span>) <span class="op">-</span> data1.mean(axis<span class="op">=</span><span class="dv">0</span>))
+
+fig.tight_layout()
+matplotlib.pyplot.show()</code></pre></div>
+</div>
+</section>
         </div>
       </div>
       </article>

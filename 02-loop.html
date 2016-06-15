@@ -30,7 +30,7 @@
           <h2 class="subtitle">Repeating Actions with Loops</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -42,13 +42,14 @@
 </div>
 </section>
 <p>In the last lesson, we wrote some code that plots some values of interest from our first inflammation dataset, and reveals some suspicious features in it, such as from <code>inflammation-01.csv</code></p>
-<p><img src="fig/03-loop_2_0.png" alt="Analysis of inflammation-01.csv" /><br /> We have a dozen data sets right now, though, and more on the way. We want to create plots for all of our data sets with a single statement. To do that, we’ll have to teach the computer how to repeat things.</p>
+<p><img src="fig/03-loop_2_0.png" alt="Analysis of inflammation-01.csv" /><br />
+We have a dozen data sets right now, though, and more on the way. We want to create plots for all of our data sets with a single statement. To do that, we’ll have to teach the computer how to repeat things.</p>
 <p>An example task that we might want to repeat is printing each character in a word on a line of its own. One way to do this would be to use a series of <code>print</code> statements:</p>
-<pre class="sourceCode python"><code class="sourceCode python">word = <span class="st">&#39;lead&#39;</span>
-<span class="dt">print</span>(word[<span class="dv">0</span>])
-<span class="dt">print</span>(word[<span class="dv">1</span>])
-<span class="dt">print</span>(word[<span class="dv">2</span>])
-<span class="dt">print</span>(word[<span class="dv">3</span>])</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">word <span class="op">=</span> <span class="st">&#39;lead&#39;</span>
+<span class="bu">print</span>(word[<span class="dv">0</span>])
+<span class="bu">print</span>(word[<span class="dv">1</span>])
+<span class="bu">print</span>(word[<span class="dv">2</span>])
+<span class="bu">print</span>(word[<span class="dv">3</span>])</code></pre></div>
 <pre class="output"><code>l
 e
 a
@@ -58,11 +59,11 @@ d</code></pre>
 <li><p>It doesn’t scale: if we want to print the characters in a string that’s hundreds of letters long, we’d be better off just typing them in.</p></li>
 <li><p>It’s fragile: if we give it a longer string, it only prints part of the data, and if we give it a shorter one, it produces an error because we’re asking for characters that don’t exist.</p></li>
 </ol>
-<pre class="sourceCode python"><code class="sourceCode python">word = <span class="st">&#39;tin&#39;</span>
-<span class="dt">print</span>(word[<span class="dv">0</span>])
-<span class="dt">print</span>(word[<span class="dv">1</span>])
-<span class="dt">print</span>(word[<span class="dv">2</span>])
-<span class="dt">print</span>(word[<span class="dv">3</span>])</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">word <span class="op">=</span> <span class="st">&#39;tin&#39;</span>
+<span class="bu">print</span>(word[<span class="dv">0</span>])
+<span class="bu">print</span>(word[<span class="dv">1</span>])
+<span class="bu">print</span>(word[<span class="dv">2</span>])
+<span class="bu">print</span>(word[<span class="dv">3</span>])</code></pre></div>
 <pre class="output"><code>t
 i
 n</code></pre>
@@ -75,17 +76,17 @@ IndexError                                Traceback (most recent call last)
 
 IndexError: string index out of range</code></pre>
 <p>Here’s a better approach:</p>
-<pre class="sourceCode python"><code class="sourceCode python">word = <span class="st">&#39;lead&#39;</span>
-<span class="kw">for</span> char in word:
-    <span class="dt">print</span>(char)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">word <span class="op">=</span> <span class="st">&#39;lead&#39;</span>
+<span class="cf">for</span> char <span class="op">in</span> word:
+    <span class="bu">print</span>(char)</code></pre></div>
 <pre class="output"><code>l
 e
 a
 d</code></pre>
 <p>This is shorter—certainly shorter than something that prints every character in a hundred-letter string—and more robust as well:</p>
-<pre class="sourceCode python"><code class="sourceCode python">word = <span class="st">&#39;oxygen&#39;</span>
-<span class="kw">for</span> char in word:
-    <span class="dt">print</span>(char)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">word <span class="op">=</span> <span class="st">&#39;oxygen&#39;</span>
+<span class="cf">for</span> char <span class="op">in</span> word:
+    <span class="bu">print</span>(char)</code></pre></div>
 <pre class="output"><code>o
 x
 y
@@ -93,54 +94,56 @@ g
 e
 n</code></pre>
 <p>The improved version uses a <a href="reference.html#for-loop">for loop</a> to repeat an operation—in this case, printing—once for each thing in a collection. The general form of a loop is:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> variable in collection:
-    do things <span class="kw">with</span> variable</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> variable <span class="op">in</span> collection:
+    do things <span class="cf">with</span> variable</code></pre></div>
+<p>Using the oxygen example above, the loop might look like this: <img src="./fig/loops_image.png" alt="loop_image" /></p>
+<p>Where each character (<code>char</code>) in the variable <code>word</code> is looped through and printed one character after another. The numbers in the diagram denote which loop cycle the character was printed in (1 being the first loop, and 6 being the final loop).</p>
 <p>We can call the <a href="reference.html#loop-variable">loop variable</a> anything we like, but there must be a colon at the end of the line starting the loop, and we must indent anything we want to run inside the loop. Unlike many other languages, there is no command to signify the end of the loop body (e.g. end for); what is indented after the for statement belongs to the loop.</p>
 <p>Here’s another loop that repeatedly updates a variable:</p>
-<pre class="sourceCode python"><code class="sourceCode python">length = <span class="dv">0</span>
-<span class="kw">for</span> vowel in <span class="st">&#39;aeiou&#39;</span>:
-    length = length + <span class="dv">1</span>
-<span class="dt">print</span>(<span class="st">&#39;There are&#39;</span>, length, <span class="st">&#39;vowels&#39;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">length <span class="op">=</span> <span class="dv">0</span>
+<span class="cf">for</span> vowel <span class="op">in</span> <span class="st">&#39;aeiou&#39;</span>:
+    length <span class="op">=</span> length <span class="op">+</span> <span class="dv">1</span>
+<span class="bu">print</span>(<span class="st">&#39;There are&#39;</span>, length, <span class="st">&#39;vowels&#39;</span>)</code></pre></div>
 <pre class="output"><code>There are 5 vowels</code></pre>
 <p>It’s worth tracing the execution of this little program step by step. Since there are five characters in <code>'aeiou'</code>, the statement on line 3 will be executed five times. The first time around, <code>length</code> is zero (the value assigned to it on line 1) and <code>vowel</code> is <code>'a'</code>. The statement adds 1 to the old value of <code>length</code>, producing 1, and updates <code>length</code> to refer to that new value. The next time around, <code>vowel</code> is <code>'e'</code> and <code>length</code> is 1, so <code>length</code> is updated to be 2. After three more updates, <code>length</code> is 5; since there is nothing left in <code>'aeiou'</code> for Python to process, the loop finishes and the <code>print</code> statement on line 4 tells us our final answer.</p>
 <p>Note that a loop variable is just a variable that’s being used to record progress in a loop. It still exists after the loop is over, and we can re-use variables previously defined as loop variables as well:</p>
-<pre class="sourceCode python"><code class="sourceCode python">letter = <span class="st">&#39;z&#39;</span>
-<span class="kw">for</span> letter in <span class="st">&#39;abc&#39;</span>:
-    <span class="dt">print</span>(letter)
-<span class="dt">print</span>(<span class="st">&#39;after the loop, letter is&#39;</span>, letter)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">letter <span class="op">=</span> <span class="st">&#39;z&#39;</span>
+<span class="cf">for</span> letter <span class="op">in</span> <span class="st">&#39;abc&#39;</span>:
+    <span class="bu">print</span>(letter)
+<span class="bu">print</span>(<span class="st">&#39;after the loop, letter is&#39;</span>, letter)</code></pre></div>
 <pre class="output"><code>a
 b
 c
 after the loop, letter is c</code></pre>
 <p>Note also that finding the length of a string is such a common operation that Python actually has a built-in function to do it called <code>len</code>:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="dt">len</span>(<span class="st">&#39;aeiou&#39;</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="bu">len</span>(<span class="st">&#39;aeiou&#39;</span>))</code></pre></div>
 <pre class="output"><code>5</code></pre>
 <p><code>len</code> is much faster than any function we could write ourselves, and much easier to read than a two-line loop; it will also give us the length of many other things that we haven’t met yet, so we should always use it when we can.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>From 1 to N</h2>
+<h2 id="from-1-to-n"><span class="glyphicon glyphicon-pencil"></span>From 1 to N</h2>
 </div>
 <div class="panel-body">
 <p>Python has a built-in function called <code>range</code> that creates a sequence of numbers. Range can accept 1-3 parameters. If one parameter is input, range creates an array of that length, starting at zero and incrementing by 1. If 2 parameters are input, range starts at the first and ends just before the second, incrementing by one. If range is passed 3 parameters, it starts at the first one, ends just before the second one, and increments by the third one. For example, <code>range(3)</code> produces the numbers 0, 1, 2, while <code>range(2, 5)</code> produces 2, 3, 4, and <code>range(3, 10, 3)</code> produces 3, 6, 9. Using <code>range</code>, write a loop that uses <code>range</code> to print the first 3 natural numbers:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dv">1</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="dv">1</span>
 <span class="dv">2</span>
-<span class="dv">3</span></code></pre>
+<span class="dv">3</span></code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Computing powers with loops</h2>
+<h2 id="computing-powers-with-loops"><span class="glyphicon glyphicon-pencil"></span>Computing powers with loops</h2>
 </div>
 <div class="panel-body">
 <p>Exponentiation is built into Python:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="dv">5</span> ** <span class="dv">3</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="dv">5</span> <span class="op">**</span> <span class="dv">3</span>)</code></pre></div>
 <pre class="output"><code>125</code></pre>
 <p>Write a loop that calculates the same result as <code>5 ** 3</code> using multiplication (and without exponentiation).</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Reverse a string</h2>
+<h2 id="reverse-a-string"><span class="glyphicon glyphicon-pencil"></span>Reverse a string</h2>
 </div>
 <div class="panel-body">
 <p>Write a loop that takes a string, and produces a new string with the characters in reverse order, so <code>'Newton'</code> becomes <code>'notweN'</code>.</p>

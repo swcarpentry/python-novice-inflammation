@@ -132,7 +132,7 @@ Conditional statements don’t have to include an <code>else</code>. If there is
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="what-is-truth"><span class="glyphicon glyphicon-pencil"></span>What is truth?</h2>
+<h2 id="what-is-truth"><span class="glyphicon glyphicon-pencil"></span>What Is Truth?</h2>
 </div>
 <div class="panel-body">
 <p><code>True</code> and <code>False</code> are special words in Python called <code>booleans</code> which represent true and false statements. However, they aren’t the only values in Python that are true and false. In fact, <em>any</em> value can be used in an <code>if</code> or <code>elif</code>. After reading and running the code below, explain what the rule is for which values are considered true and which are considered false.</p>
@@ -152,7 +152,21 @@ Conditional statements don’t have to include an <code>else</code>. If there is
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="close-enough"><span class="glyphicon glyphicon-pencil"></span>Close enough</h2>
+<h2 id="thats-not-not-what-i-meant"><span class="glyphicon glyphicon-pencil"></span>That’s Not Not What I Meant</h2>
+</div>
+<div class="panel-body">
+<p>Sometimes it is useful to check whether some condition is not true. The Boolean operator <code>not</code> can do this explicitly. After reading and running the code below, write some <code>if</code> statements that use <code>not</code> to test the rule you formulated in the previous challenge.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> <span class="op">not</span> <span class="st">&#39;&#39;</span>:
+    <span class="bu">print</span>(<span class="st">&#39;empty string is not true&#39;</span>)
+<span class="cf">if</span> <span class="op">not</span> <span class="st">&#39;word&#39;</span>:
+    <span class="bu">print</span>(<span class="st">&#39;word is not true&#39;</span>)
+<span class="cf">if</span> <span class="op">not</span> <span class="op">not</span> <span class="va">True</span>:
+    <span class="bu">print</span>(<span class="st">&#39;not not True is true&#39;</span>)</code></pre></div>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="close-enough"><span class="glyphicon glyphicon-pencil"></span>Close Enough</h2>
 </div>
 <div class="panel-body">
 <p>Write some conditions that print <code>True</code> if the variable <code>a</code> is within 10% of the variable <code>b</code> and <code>False</code> otherwise. Compare your implementation with your partner’s: do you get the same answer for all possible pairs of numbers?</p>
@@ -209,6 +223,18 @@ other_files <span class="op">=</span> []</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">large_files <span class="op">=</span> [<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;inflammation-02.csv&#39;</span>]
 small_files <span class="op">=</span> [<span class="st">&#39;small-01.csv&#39;</span>, <span class="st">&#39;small-02.csv&#39;</span>]
 other_files <span class="op">=</span> [<span class="st">&#39;myscript.py&#39;</span>]</code></pre></div>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="counting-vowels"><span class="glyphicon glyphicon-pencil"></span>Counting Vowels</h2>
+</div>
+<div class="panel-body">
+<ol style="list-style-type: decimal">
+<li><p>Write a loop that counts the number of vowels in a character string.</p></li>
+<li><p>Test it on a few individual words and full sentences.</p></li>
+<li><p>Once you are done, compare your solution to your neighbor’s. Did you make the same decisions about how to handle the letter ‘y’ (which some people think is a vowel, and some do not)?</p></li>
+</ol>
 </div>
 </section>
         </div>
