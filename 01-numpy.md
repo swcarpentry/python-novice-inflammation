@@ -704,21 +704,43 @@ the graphs will actually be squeezed together more closely.)
 >
 > Modify the program to display the three plots on top of one another instead of side by side.
 
-> ## Converting between an array and a vector {.challenge}
+> ## Stacking arrays {.challenge}
 >
-> In some cases in NumPy, an vector of size N behaves differently than an Nx1 array.
-> The vector will have a shape (N,), while the array will have a shape (N,1).
->
-> The code below generates a 5x5 array of random numbers `A`,
-> then uses slices to extract the last column of `A` as a vector with shape (5,) and store it in `b`.
+> Arrays can be concatenated and stacked on top of one another,
+> using NumPy's `vstack` and `hstack` functions for vertical and horizontal stacking, respectively.
 > 
-> Modify it so that `b` is an array with shape (5,1).
->
 > ~~~ {.python}
 > import numpy
 > 
-> A = numpy.random.random([5,5]) # array of random numbers
-> b = A[:,-1] # take the last column from A
+> A = numpy.array([[1,2,3], [4,5,6], [7, 8, 9]])
+> print('A = ')
+> print(A)
 > 
-> print(b.shape)
+> B = numpy.hstack([A, A])
+> print('B = ')
+> print(B)
+> 
+> C = numpy.vstack([A, A])
+> print('C = ')
+> print(C)
 > ~~~
+> 
+> ~~~ {.output}
+> A = 
+> [[1 2 3]
+>  [4 5 6]
+>  [7 8 9]]
+> B = 
+> [[1 2 3 1 2 3]
+>  [4 5 6 4 5 6]
+>  [7 8 9 7 8 9]]
+> C = 
+> [[1 2 3]
+>  [4 5 6]
+>  [7 8 9]
+>  [1 2 3]
+>  [4 5 6]
+>  [7 8 9]]
+> ~~~
+> 
+> Write some additional code that slices the first and last columns of `A`, and stacks them into a 3x2 array. Make sure to `print` the results to verify your solution.
