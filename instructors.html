@@ -57,11 +57,125 @@
 <p>It is up to you as an individual instructor whether you want to introduce these aliases when you teach this lesson, but we encourage you to please read those arguments thoroughly before deciding one way or the other.</p></li>
 </ul>
 <h2 id="analyzing-patient-data"><a href="01-numpy.html">Analyzing Patient Data</a></h2>
+<p>Solutions to exercises:</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="sorting-out-references"><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
+</div>
+<div class="panel-body">
+<p>What does the following program print out?</p>
+<pre class="sourceCode python"><code class="sourceCode python">first, second = <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hopper&#39;</span>
+third, fourth = second, first
+<span class="dt">print</span>(third, fourth)</code></pre>
+<pre class="output"><code>Hopper Grace </code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="slicing-strings"><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
+</div>
+<div class="panel-body">
+<p>A section of an array is called a <a href="reference.html#slice">slice</a>. We can take slices of character strings as well:</p>
+<pre class="sourceCode python"><code class="sourceCode python">element = <span class="st">&#39;oxygen&#39;</span></code></pre>
+<p>What is the value of <code>element[:4]</code>? What about <code>element[4:]</code>? Or <code>element[:]</code>?</p>
+<pre class="output"><code>oxyg
+en
+oxygen</code></pre>
+<p>What is <code>element[-1]</code>? What is <code>element[-2]</code>?</p>
+<pre class="output"><code>n
+e</code></pre>
+<p>Given those answers, explain what <code>element[1:-1]</code> does.</p>
+<pre class="output"><code>Creates a substring from index 1 up to (not including) the final index, effectively removing the first and last letters from &#39;oxygen&#39;</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="thin-slices"><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
+</div>
+<div class="panel-body">
+<p>The expression <code>element[3:3]</code> produces an <a href="reference.html#empty-string">empty string</a>, i.e., a string that contains no characters. If <code>data</code> holds our array of patient data, what does <code>data[3:3, 4:4]</code> produce? What about <code>data[3:3, :]</code>?</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(data[<span class="dv">3</span>:<span class="dv">3</span>, <span class="dv">4</span>:<span class="dv">4</span>])
+<span class="dt">print</span>(data[<span class="dv">3</span>:<span class="dv">3</span>, :])</code></pre>
+<pre class="output"><code>[]
+[] </code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="check-your-understanding-plot-scaling"><span class="glyphicon glyphicon-pencil"></span>Check your understanding: plot scaling</h2>
+</div>
+<div class="panel-body">
+<p>Why do all of our plots stop just short of the upper end of our graph? Update your plotting code to automatically set a more appropriate scale (hint: you can make use of the <code>max</code> and <code>min</code> methods to help)</p>
+<pre class="output"><code>Because matplotlib normally sets x and y axes limits to the min and max of our data (depending on data range)</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#for example:</span>
+axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
+axes3.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+axes3.set_ylim(<span class="dv">0</span>,<span class="dv">6</span>)
+
+<span class="co">#or a more automated approach:</span>
+min_data = data.<span class="dt">min</span>(axis=<span class="dv">0</span>)
+axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
+axes3.plot(min_data)
+axes3.set_ylim(min_data.<span class="dt">min</span>(),min_data.<span class="dt">max</span>() * <span class="fl">1.1</span>)</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="check-your-understanding-drawing-straight-lines"><span class="glyphicon glyphicon-pencil"></span>Check your understanding: drawing straight lines</h2>
+</div>
+<div class="panel-body">
+<p>Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?</p>
+<pre class="output"><code>Because matplotlib interpolates (draws a straight line) between the points</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="make-your-own-plot"><span class="glyphicon glyphicon-pencil"></span>Make your own plot</h2>
+</div>
+<div class="panel-body">
+<p>Create a plot showing the standard deviation (<code>numpy.std</code>) of the inflammation data for each day across all patients.</p>
+<pre class="sourceCode python"><code class="sourceCode python">max_plot = matplotlib.pyplot.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+matplotlib.pyplot.show()</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="moving-plots-around"><span class="glyphicon glyphicon-pencil"></span>Moving plots around</h2>
+</div>
+<div class="panel-body">
+<p>Modify the program to display the three plots on top of one another instead of side by side.</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy
+<span class="ch">import</span> matplotlib.pyplot
+
+data = numpy.loadtxt(fname=<span class="st">&#39;data/inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
+
+<span class="co">#change figsize (swap width and height) </span>
+fig = matplotlib.pyplot.figure(figsize=(<span class="fl">3.0</span>, <span class="fl">10.0</span>))
+
+<span class="co">#change add_subplot (swap first two parameters)</span>
+axes1 = fig.add_subplot(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>)
+axes2 = fig.add_subplot(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>)
+axes3 = fig.add_subplot(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">3</span>)
+
+axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
+axes1.plot(data.mean(axis=<span class="dv">0</span>))
+
+axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
+axes2.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+
+axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
+axes3.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+
+fig.tight_layout()
+
+matplotlib.pyplot.show()</code></pre>
+</div>
+</section>
 <h2 id="repeating-actions-with-loops"><a href="02-loop.html">Repeating Actions with Loops</a></h2>
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>From 1 to N</h2>
+<h2 id="from-1-to-n"><span class="glyphicon glyphicon-pencil"></span>From 1 to N</h2>
 </div>
 <div class="panel-body">
 <p>Using <code>range</code>, write a loop that uses <code>range</code> to print the first 3 natural numbers.</p>
@@ -75,7 +189,7 @@
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Computing powers with loops</h2>
+<h2 id="computing-powers-with-loops"><span class="glyphicon glyphicon-pencil"></span>Computing powers with loops</h2>
 </div>
 <div class="panel-body">
 <p>Write a loop that calculates the same result as <code>5 ** 3</code> using multiplication (and without exponentiation).</p>
@@ -89,7 +203,7 @@
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Reverse a string</h2>
+<h2 id="reverse-a-string"><span class="glyphicon glyphicon-pencil"></span>Reverse a string</h2>
 </div>
 <div class="panel-body">
 <p>Write a loop that takes a string, and produces a new string with the characters in reverse order.</p>
@@ -108,7 +222,7 @@ length_old = <span class="dt">len</span>(oldstring)
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Turn a string into a list</h2>
+<h2 id="turn-a-string-into-a-list"><span class="glyphicon glyphicon-pencil"></span>Turn a string into a list</h2>
 </div>
 <div class="panel-body">
 <p>Use a <code>for</code> loop to convert the string <code>&quot;hello&quot;</code> into a list of letters:</p>
@@ -125,7 +239,7 @@ length_old = <span class="dt">len</span>(oldstring)
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>How many paths?</h2>
+<h2 id="how-many-paths"><span class="glyphicon glyphicon-pencil"></span>How many paths?</h2>
 </div>
 <div class="panel-body">
 <p>Which of the following would be printed if you were to run this code? Why did you pick this answer?</p>
@@ -141,7 +255,7 @@ length_old = <span class="dt">len</span>(oldstring)
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>What is truth?</h2>
+<h2 id="what-is-truth"><span class="glyphicon glyphicon-pencil"></span>What is truth?</h2>
 </div>
 <div class="panel-body">
 <p>After reading and running the code below, explain the rules for which values are considered true and which are considered false.</p>
@@ -163,7 +277,7 @@ length_old = <span class="dt">len</span>(oldstring)
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Close enough</h2>
+<h2 id="close-enough"><span class="glyphicon glyphicon-pencil"></span>Close enough</h2>
 </div>
 <div class="panel-body">
 <p>Write some conditions that print <code>True</code> if the variable <code>a</code> is within 10% of the variable <code>b</code> and <code>False</code> otherwise.</p>
@@ -182,7 +296,7 @@ b = <span class="fl">5.1</span>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>In-place operators</h2>
+<h2 id="in-place-operators"><span class="glyphicon glyphicon-pencil"></span>In-place operators</h2>
 </div>
 <div class="panel-body">
 <p>Write some code that sums the positive and negative numbers in a list separately, using in-place operators.</p>
@@ -204,7 +318,7 @@ test_list = [<span class="dv">3</span>, <span class="dv">4</span>, <span class="
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Tuples and exchanges</h2>
+<h2 id="tuples-and-exchanges"><span class="glyphicon glyphicon-pencil"></span>Tuples and exchanges</h2>
 </div>
 <div class="panel-body">
 <p>Explain what the overall effect of this code is:</p>
@@ -228,7 +342,7 @@ right = temp</code></pre>
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Combining strings</h2>
+<h2 id="combining-strings"><span class="glyphicon glyphicon-pencil"></span>Combining strings</h2>
 </div>
 <div class="panel-body">
 <p>Write a function called <code>fence</code> that takes two parameters called <code>original</code> and <code>wrapper</code> and returns a new string that has the wrapper character at the beginning and end of the original.</p>
@@ -239,7 +353,7 @@ right = temp</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Selecting characters from strings</h2>
+<h2 id="selecting-characters-from-strings"><span class="glyphicon glyphicon-pencil"></span>Selecting characters from strings</h2>
 </div>
 <div class="panel-body">
 <p>Write a function called <code>outer</code> that returns a string made up of just the first and last characters of its input.</p>
@@ -250,7 +364,7 @@ right = temp</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Rescaling an array</h2>
+<h2 id="rescaling-an-array"><span class="glyphicon glyphicon-pencil"></span>Rescaling an array</h2>
 </div>
 <div class="panel-body">
 <p>Write a function <code>rescale</code> that takes an array as input and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0. (Hint: If <span class="math">\(L\)</span> and <span class="math">\(H\)</span> are the lowest and highest values in the original array, then the replacement for a value <span class="math">\(v\)</span> should be <span class="math">\((v-L) / (H-L)\)</span>.)</p>
@@ -264,7 +378,7 @@ right = temp</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Testing and documenting your function</h2>
+<h2 id="testing-and-documenting-your-function"><span class="glyphicon glyphicon-pencil"></span>Testing and documenting your function</h2>
 </div>
 <div class="panel-body">
 <p>Run the commands <code>help(numpy.arange)</code> and <code>help(numpy.linspace)</code> to see how to use these functions to generate regularly-spaced values, then use those values to test your <code>rescale</code> function. Once you’ve successfully tested your function, add a docstring that explains what it does.</p>
@@ -283,7 +397,7 @@ right = temp</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Defining defaults</h2>
+<h2 id="defining-defaults"><span class="glyphicon glyphicon-pencil"></span>Defining defaults</h2>
 </div>
 <div class="panel-body">
 <p>Rewrite the <code>rescale</code> function so that it scales data to lie between 0.0 and 1.0 by default, but will allow the caller to specify lower and upper bounds if they want. Compare your implementation to your neighbor’s: do the two functions always behave the same way?</p>
@@ -299,7 +413,7 @@ right = temp</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Variables inside and outside functions</h2>
+<h2 id="variables-inside-and-outside-functions"><span class="glyphicon glyphicon-pencil"></span>Variables inside and outside functions</h2>
 </div>
 <div class="panel-body">
 <p>What does the following piece of code display when run - and why?</p>
@@ -327,7 +441,7 @@ k = <span class="dv">0</span>
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Reading Error Messages</h2>
+<h2 id="reading-error-messages"><span class="glyphicon glyphicon-pencil"></span>Reading Error Messages</h2>
 </div>
 <div class="panel-body">
 <p>Read the traceback below, and identify the following pieces of information about it:</p>
@@ -373,7 +487,7 @@ KeyError: &#39;Friday&#39;</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Identifying Syntax Errors</h2>
+<h2 id="identifying-syntax-errors"><span class="glyphicon glyphicon-pencil"></span>Identifying Syntax Errors</h2>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
@@ -397,7 +511,7 @@ KeyError: &#39;Friday&#39;</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Identifying Variable Name Errors</h2>
+<h2 id="identifying-variable-name-errors"><span class="glyphicon glyphicon-pencil"></span>Identifying Variable Name Errors</h2>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
@@ -429,7 +543,7 @@ KeyError: &#39;Friday&#39;</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Identifying Item Errors</h2>
+<h2 id="identifying-item-errors"><span class="glyphicon glyphicon-pencil"></span>Identifying Item Errors</h2>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
@@ -450,7 +564,7 @@ KeyError: &#39;Friday&#39;</code></pre>
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Pre- and post-conditions</h2>
+<h2 id="pre--and-post-conditions"><span class="glyphicon glyphicon-pencil"></span>Pre- and post-conditions</h2>
 </div>
 <div class="panel-body">
 <p>Suppose you are writing a function called <code>average</code> that calculates the average of the numbers in a list. What pre-conditions and post-conditions would you write for it? Compare your answer to your neighbor’s: can you think of a function that will pass your tests but not hers or vice versa?</p>
@@ -463,7 +577,7 @@ KeyError: &#39;Friday&#39;</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Testing assertions</h2>
+<h2 id="testing-assertions"><span class="glyphicon glyphicon-pencil"></span>Testing assertions</h2>
 </div>
 <div class="panel-body">
 <p>Given a sequence of values, the function <code>running</code> returns a list containing the running totals at each index. Explain in words what the assertions in this function check, and for each one, give an example of input that will make that assertion fail.</p>
@@ -485,7 +599,7 @@ KeyError: &#39;Friday&#39;</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Fixing and testing</h2>
+<h2 id="fixing-and-testing"><span class="glyphicon glyphicon-pencil"></span>Fixing and testing</h2>
 </div>
 <div class="panel-body">
 <p>Fix <code>range_overlap</code>. Re-run <code>test_range_overlap</code> after each change you make.</p>
@@ -512,7 +626,7 @@ KeyError: &#39;Friday&#39;</code></pre>
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Arithmetic on the command line</h2>
+<h2 id="arithmetic-on-the-command-line"><span class="glyphicon glyphicon-pencil"></span>Arithmetic on the command line</h2>
 </div>
 <div class="panel-body">
 <p>Write a command-line program that does addition and subtraction:</p>
@@ -555,7 +669,7 @@ main()</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Finding particular files</h2>
+<h2 id="finding-particular-files"><span class="glyphicon glyphicon-pencil"></span>Finding particular files</h2>
 </div>
 <div class="panel-body">
 <p>Using the <code>glob</code> module introduced <a href="04-files.html">earlier</a>, write a simple version of <code>ls</code> that shows files in the current directory with a particular suffix. A call to this script should look like this:</p>
@@ -583,7 +697,7 @@ main()</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Changing flags</h2>
+<h2 id="changing-flags"><span class="glyphicon glyphicon-pencil"></span>Changing flags</h2>
 </div>
 <div class="panel-body">
 <p>Rewrite <code>readings.py</code> so that it uses <code>-n</code>, <code>-m</code>, and <code>-x</code> instead of <code>--min</code>, <code>--mean</code>, and <code>--max</code> respectively. Is the code easier to read? Is the program easier to understand?</p>
@@ -622,7 +736,7 @@ main()</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Adding a help message</h2>
+<h2 id="adding-a-help-message"><span class="glyphicon glyphicon-pencil"></span>Adding a help message</h2>
 </div>
 <div class="panel-body">
 <p>Separately, modify <code>readings.py</code> so that if no parameters are given (i.e., no action is specified and no filenames are given), it prints a message explaining how it should be used.</p>
@@ -668,7 +782,7 @@ main()</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Adding a default action</h2>
+<h2 id="adding-a-default-action"><span class="glyphicon glyphicon-pencil"></span>Adding a default action</h2>
 </div>
 <div class="panel-body">
 <p>Separately, modify <code>readings.py</code> so that if no action is given it displays the means of the data.</p>
@@ -710,7 +824,7 @@ main()</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>A file-checker</h2>
+<h2 id="a-file-checker"><span class="glyphicon glyphicon-pencil"></span>A file-checker</h2>
 </div>
 <div class="panel-body">
 <p>Write a program called <code>check.py</code> that takes the names of one or more inflammation data files as arguments and checks that all the files have the same number of rows and columns. What is the best way to test your program?</p>
@@ -747,7 +861,7 @@ main()</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Counting lines</h2>
+<h2 id="counting-lines"><span class="glyphicon glyphicon-pencil"></span>Counting lines</h2>
 </div>
 <div class="panel-body">
 <p>Write a program called <code>line-count.py</code> that works like the Unix <code>wc</code> command:</p>
