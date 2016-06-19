@@ -89,6 +89,152 @@ which are covered in the lesson on the shell.
 
 ## [Analyzing Patient Data](01-numpy.html)
 
+Solutions to exercises:
+
+> ## Sorting out references {.challenge}
+>
+> What does the following program print out?
+>
+> ~~~ {.python}
+> first, second = 'Grace', 'Hopper'
+> third, fourth = second, first
+> print(third, fourth)
+> ~~~
+>
+> ~~~ {.output}
+> Hopper Grace 
+> ~~~
+
+
+> ## Slicing strings {.challenge}
+>
+> A section of an array is called a [slice](reference.html#slice).
+> We can take slices of character strings as well:
+>
+> ~~~ {.python}
+> element = 'oxygen'
+> ~~~
+>
+> What is the value of `element[:4]`?
+> What about `element[4:]`?
+> Or `element[:]`?
+>
+> ~~~ {.output}
+> oxyg
+> en
+> oxygen
+> ~~~
+>
+> What is `element[-1]`?
+> What is `element[-2]`?
+>
+> ~~~ {.output}
+> n
+> e
+> ~~~
+>
+> Given those answers,
+> explain what `element[1:-1]` does.
+> 
+> ~~~ {.output}
+> Creates a substring from index 1 up to (not including) the final index, effectively removing the first and last letters from 'oxygen'
+> ~~~
+
+
+> ## Thin slices {.challenge}
+>
+> The expression `element[3:3]` produces an [empty string](reference.html#empty-string),
+> i.e., a string that contains no characters.
+> If `data` holds our array of patient data,
+> what does `data[3:3, 4:4]` produce?
+> What about `data[3:3, :]`?
+>
+> ~~~ {.python}
+> print(data[3:3, 4:4])
+> print(data[3:3, :])
+> ~~~
+>
+> ~~~ {.output}
+> []
+> [] 
+> ~~~
+
+> ## Check your understanding: plot scaling {.challenge}
+>
+> Why do all of our plots stop just short of the upper end of our graph?
+> Update your plotting code to automatically set a more appropriate scale (hint: you can make use of the `max` and `min` methods to help)
+>
+> ~~~ {.output}
+> Because matplotlib normally sets x and y axes limits to the min and max of our data (depending on data range)
+> ~~~
+>
+> ~~~ {.python}
+> # for example:
+> axes3.set_ylabel('min')
+> axes3.plot(data.min(axis=0))
+> axes3.set_ylim(0,6)
+>
+> # or a more automated approach:
+> min_data = data.min(axis=0)
+> axes3.set_ylabel('min')
+> axes3.plot(min_data)
+> axes3.set_ylim(min_data.min(),min_data.max() * 1.1)
+> ~~~
+
+
+
+> ## Check your understanding: drawing straight lines {.challenge}
+>
+> Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?
+> 
+> ~~~ {.output}
+> Because matplotlib interpolates (draws a straight line) between the points
+> ~~~
+
+
+> ## Make your own plot {.challenge}
+>
+> Create a plot showing the standard deviation (`numpy.std`) of the inflammation data for each day across all patients.
+>
+> ~~~ {.python}
+> max_plot = matplotlib.pyplot.plot(data.max(axis=0))
+> matplotlib.pyplot.show()
+> ~~~
+
+> ## Moving plots around {.challenge}
+>
+> Modify the program to display the three plots on top of one another instead of side by side.
+>
+> ~~~ {.python}
+> import numpy
+> import matplotlib.pyplot
+> 
+> data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
+>
+> # change figsize (swap width and height) 
+> fig = matplotlib.pyplot.figure(figsize=(3.0, 10.0))
+> 
+> # change add_subplot (swap first two parameters)
+> axes1 = fig.add_subplot(3, 1, 1)
+> axes2 = fig.add_subplot(3, 1, 2)
+> axes3 = fig.add_subplot(3, 1, 3)
+> 
+> axes1.set_ylabel('average')
+> axes1.plot(data.mean(axis=0))
+>
+> axes2.set_ylabel('max')
+> axes2.plot(data.max(axis=0))
+>
+> axes3.set_ylabel('min')
+> axes3.plot(data.min(axis=0))
+>
+> fig.tight_layout()
+>
+> matplotlib.pyplot.show()
+> ~~~
+
+
+
 ## [Repeating Actions with Loops](02-loop.html)
 
 Solutions to exercises:
