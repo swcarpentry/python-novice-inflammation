@@ -698,7 +698,14 @@ the graphs will actually be squeezed together more closely.)
 
 > ## Check your understanding: plot scaling {.challenge}
 >
-> Why do all of our plots stop just short of the upper end of our graph?
+> Why do all of our plots stop just short of the upper end of our graph? 
+> If we want to change this, we can use the `set_ylim(min, max)` method of each 'axes', for example: 
+>
+> ~~~ {.python}
+> axes3.set_ylim(0,6)
+> ~~~
+> 
+> Update your plotting code to automatically set a more appropriate scale (hint: you can make use of the `max` and `min` methods to help)
 
 > ## Check your understanding: drawing straight lines {.challenge}
 >
