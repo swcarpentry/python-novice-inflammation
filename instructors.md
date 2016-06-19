@@ -102,7 +102,7 @@ Solutions to exercises:
 > ~~~
 >
 > ~~~ {.output}
-> Hopper Grace 
+> Hopper Grace
 > ~~~
 
 
@@ -135,7 +135,7 @@ Solutions to exercises:
 >
 > Given those answers,
 > explain what `element[1:-1]` does.
-> 
+>
 > ~~~ {.output}
 > Creates a substring from index 1 up to (not including) the final index, effectively removing the first and last letters from 'oxygen'
 > ~~~
@@ -156,7 +156,7 @@ Solutions to exercises:
 >
 > ~~~ {.output}
 > []
-> [] 
+> []
 > ~~~
 
 > ## Check your understanding: plot scaling {.challenge}
@@ -186,7 +186,7 @@ Solutions to exercises:
 > ## Check your understanding: drawing straight lines {.challenge}
 >
 > Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?
-> 
+>
 > ~~~ {.output}
 > Because matplotlib interpolates (draws a straight line) between the points
 > ~~~
@@ -197,7 +197,7 @@ Solutions to exercises:
 > Create a plot showing the standard deviation (`numpy.std`) of the inflammation data for each day across all patients.
 >
 > ~~~ {.python}
-> max_plot = matplotlib.pyplot.plot(data.max(axis=0))
+> max_plot = matplotlib.pyplot.plot(data.std(axis=0))
 > matplotlib.pyplot.show()
 > ~~~
 
@@ -208,17 +208,17 @@ Solutions to exercises:
 > ~~~ {.python}
 > import numpy
 > import matplotlib.pyplot
-> 
+>
 > data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 >
-> # change figsize (swap width and height) 
+> # change figsize (swap width and height)
 > fig = matplotlib.pyplot.figure(figsize=(3.0, 10.0))
-> 
+>
 > # change add_subplot (swap first two parameters)
 > axes1 = fig.add_subplot(3, 1, 1)
 > axes2 = fig.add_subplot(3, 1, 2)
 > axes3 = fig.add_subplot(3, 1, 3)
-> 
+>
 > axes1.set_ylabel('average')
 > axes1.plot(data.mean(axis=0))
 >
