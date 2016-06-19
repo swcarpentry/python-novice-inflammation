@@ -57,17 +57,131 @@
 <p>It is up to you as an individual instructor whether you want to introduce these aliases when you teach this lesson, but we encourage you to please read those arguments thoroughly before deciding one way or the other.</p></li>
 </ul>
 <h2 id="analyzing-patient-data"><a href="01-numpy.html">Analyzing Patient Data</a></h2>
+<p>Solutions to exercises:</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="sorting-out-references"><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
+</div>
+<div class="panel-body">
+<p>What does the following program print out?</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">first, second <span class="op">=</span> <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hopper&#39;</span>
+third, fourth <span class="op">=</span> second, first
+<span class="bu">print</span>(third, fourth)</code></pre></div>
+<pre class="output"><code>Hopper Grace</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="slicing-strings"><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
+</div>
+<div class="panel-body">
+<p>A section of an array is called a <a href="reference.html#slice">slice</a>. We can take slices of character strings as well:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">element <span class="op">=</span> <span class="st">&#39;oxygen&#39;</span></code></pre></div>
+<p>What is the value of <code>element[:4]</code>? What about <code>element[4:]</code>? Or <code>element[:]</code>?</p>
+<pre class="output"><code>oxyg
+en
+oxygen</code></pre>
+<p>What is <code>element[-1]</code>? What is <code>element[-2]</code>?</p>
+<pre class="output"><code>n
+e</code></pre>
+<p>Given those answers, explain what <code>element[1:-1]</code> does.</p>
+<pre class="output"><code>Creates a substring from index 1 up to (not including) the final index, effectively removing the first and last letters from &#39;oxygen&#39;</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="thin-slices"><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
+</div>
+<div class="panel-body">
+<p>The expression <code>element[3:3]</code> produces an <a href="reference.html#empty-string">empty string</a>, i.e., a string that contains no characters. If <code>data</code> holds our array of patient data, what does <code>data[3:3, 4:4]</code> produce? What about <code>data[3:3, :]</code>?</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(data[<span class="dv">3</span>:<span class="dv">3</span>, <span class="dv">4</span>:<span class="dv">4</span>])
+<span class="bu">print</span>(data[<span class="dv">3</span>:<span class="dv">3</span>, :])</code></pre></div>
+<pre class="output"><code>[]
+[]</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="check-your-understanding-plot-scaling"><span class="glyphicon glyphicon-pencil"></span>Check your understanding: plot scaling</h2>
+</div>
+<div class="panel-body">
+<p>Why do all of our plots stop just short of the upper end of our graph? Update your plotting code to automatically set a more appropriate scale (hint: you can make use of the <code>max</code> and <code>min</code> methods to help)</p>
+<pre class="output"><code>Because matplotlib normally sets x and y axes limits to the min and max of our data (depending on data range)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># for example:</span>
+axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
+axes3.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>))
+axes3.set_ylim(<span class="dv">0</span>,<span class="dv">6</span>)
+
+<span class="co"># or a more automated approach:</span>
+min_data <span class="op">=</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>)
+axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
+axes3.plot(min_data)
+axes3.set_ylim(min_data.<span class="bu">min</span>(),min_data.<span class="bu">max</span>() <span class="op">*</span> <span class="fl">1.1</span>)</code></pre></div>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="check-your-understanding-drawing-straight-lines"><span class="glyphicon glyphicon-pencil"></span>Check your understanding: drawing straight lines</h2>
+</div>
+<div class="panel-body">
+<p>Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?</p>
+<pre class="output"><code>Because matplotlib interpolates (draws a straight line) between the points</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="make-your-own-plot"><span class="glyphicon glyphicon-pencil"></span>Make your own plot</h2>
+</div>
+<div class="panel-body">
+<p>Create a plot showing the standard deviation (<code>numpy.std</code>) of the inflammation data for each day across all patients.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">max_plot <span class="op">=</span> matplotlib.pyplot.plot(data.std(axis<span class="op">=</span><span class="dv">0</span>))
+matplotlib.pyplot.show()</code></pre></div>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="moving-plots-around"><span class="glyphicon glyphicon-pencil"></span>Moving plots around</h2>
+</div>
+<div class="panel-body">
+<p>Modify the program to display the three plots on top of one another instead of side by side.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy
+<span class="im">import</span> matplotlib.pyplot
+
+data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">&#39;data/inflammation-01.csv&#39;</span>, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
+
+<span class="co"># change figsize (swap width and height)</span>
+fig <span class="op">=</span> matplotlib.pyplot.figure(figsize<span class="op">=</span>(<span class="fl">3.0</span>, <span class="fl">10.0</span>))
+
+<span class="co"># change add_subplot (swap first two parameters)</span>
+axes1 <span class="op">=</span> fig.add_subplot(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>)
+axes2 <span class="op">=</span> fig.add_subplot(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>)
+axes3 <span class="op">=</span> fig.add_subplot(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">3</span>)
+
+axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
+axes1.plot(data.mean(axis<span class="op">=</span><span class="dv">0</span>))
+
+axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
+axes2.plot(data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>))
+
+axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
+axes3.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>))
+
+fig.tight_layout()
+
+matplotlib.pyplot.show()</code></pre></div>
+</div>
+</section>
 <h2 id="repeating-actions-with-loops"><a href="02-loop.html">Repeating Actions with Loops</a></h2>
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>From 1 to N</h2>
+<h2 id="from-1-to-n"><span class="glyphicon glyphicon-pencil"></span>From 1 to N</h2>
 </div>
 <div class="panel-body">
 <p>Using <code>range</code>, write a loop that uses <code>range</code> to print the first 3 natural numbers.</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">1</span>, <span class="dv">4</span>):
-   <span class="dt">print</span>(i)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">4</span>):
+   <span class="bu">print</span>(i)</code></pre></div>
 <pre class="output"><code>1
 2
 3</code></pre>
@@ -75,31 +189,31 @@
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Computing powers with loops</h2>
+<h2 id="computing-powers-with-loops"><span class="glyphicon glyphicon-pencil"></span>Computing powers with loops</h2>
 </div>
 <div class="panel-body">
 <p>Write a loop that calculates the same result as <code>5 ** 3</code> using multiplication (and without exponentiation).</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python">result = <span class="dv">1</span>
-<span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">0</span>, <span class="dv">3</span>):
-   result = result * <span class="dv">5</span>
-<span class="dt">print</span>(result)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">result <span class="op">=</span> <span class="dv">1</span>
+<span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">3</span>):
+   result <span class="op">=</span> result <span class="op">*</span> <span class="dv">5</span>
+<span class="bu">print</span>(result)</code></pre></div>
 <pre class="output"><code>125</code></pre>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Reverse a string</h2>
+<h2 id="reverse-a-string"><span class="glyphicon glyphicon-pencil"></span>Reverse a string</h2>
 </div>
 <div class="panel-body">
 <p>Write a loop that takes a string, and produces a new string with the characters in reverse order.</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python">newstring = <span class="st">&#39;&#39;</span>
-oldstring = <span class="st">&#39;Newton&#39;</span>
-length_old = <span class="dt">len</span>(oldstring)
-<span class="kw">for</span> char_index in <span class="dt">range</span>(length_old):
-   newstring = newstring + oldstring[length_old - char_index - <span class="dv">1</span>]
-<span class="dt">print</span>(newstring)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">newstring <span class="op">=</span> <span class="st">&#39;&#39;</span>
+oldstring <span class="op">=</span> <span class="st">&#39;Newton&#39;</span>
+length_old <span class="op">=</span> <span class="bu">len</span>(oldstring)
+<span class="cf">for</span> char_index <span class="op">in</span> <span class="bu">range</span>(length_old):
+   newstring <span class="op">=</span> newstring <span class="op">+</span> oldstring[length_old <span class="op">-</span> char_index <span class="op">-</span> <span class="dv">1</span>]
+<span class="bu">print</span>(newstring)</code></pre></div>
 <pre class="output"><code>&#39;notweN&#39;</code></pre>
 </div>
 </section>
@@ -108,15 +222,15 @@ length_old = <span class="dt">len</span>(oldstring)
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Turn a string into a list</h2>
+<h2 id="turn-a-string-into-a-list"><span class="glyphicon glyphicon-pencil"></span>Turn a string into a list</h2>
 </div>
 <div class="panel-body">
 <p>Use a <code>for</code> loop to convert the string <code>&quot;hello&quot;</code> into a list of letters:</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python">my_list = []
-<span class="kw">for</span> char in <span class="st">&quot;hello&quot;</span>:
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">my_list <span class="op">=</span> []
+<span class="cf">for</span> char <span class="op">in</span> <span class="st">&quot;hello&quot;</span>:
     my_list.append(char)
-<span class="dt">print</span>(my_list)</code></pre>
+<span class="bu">print</span>(my_list)</code></pre></div>
 <pre class="output"><code>[&quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;]</code></pre>
 </div>
 </section>
@@ -125,99 +239,99 @@ length_old = <span class="dt">len</span>(oldstring)
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>How many paths?</h2>
+<h2 id="how-many-paths"><span class="glyphicon glyphicon-pencil"></span>How many paths?</h2>
 </div>
 <div class="panel-body">
 <p>Which of the following would be printed if you were to run this code? Why did you pick this answer?</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> <span class="dv">4</span> &gt; <span class="dv">5</span>:
-    <span class="dt">print</span>(<span class="st">&#39;A&#39;</span>)
-<span class="kw">elif</span> <span class="dv">4</span> == <span class="dv">5</span>:
-    <span class="dt">print</span>(<span class="st">&#39;B&#39;</span>)
-<span class="kw">elif</span> <span class="dv">4</span> &lt; <span class="dv">5</span>:
-    <span class="dt">print</span>(<span class="st">&#39;C&#39;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> <span class="dv">4</span> <span class="op">&gt;</span> <span class="dv">5</span>:
+    <span class="bu">print</span>(<span class="st">&#39;A&#39;</span>)
+<span class="cf">elif</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">5</span>:
+    <span class="bu">print</span>(<span class="st">&#39;B&#39;</span>)
+<span class="cf">elif</span> <span class="dv">4</span> <span class="op">&lt;</span> <span class="dv">5</span>:
+    <span class="bu">print</span>(<span class="st">&#39;C&#39;</span>)</code></pre></div>
 <hr />
 <p>C gets printed, because the first two conditions, <code>4 &gt; 5</code> and <code>4 == 5</code> are not true, but <code>4 &lt; 5</code> is true.</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>What is truth?</h2>
+<h2 id="what-is-truth"><span class="glyphicon glyphicon-pencil"></span>What is truth?</h2>
 </div>
 <div class="panel-body">
 <p>After reading and running the code below, explain the rules for which values are considered true and which are considered false.</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> <span class="st">&#39;&#39;</span>:
-    <span class="dt">print</span>(<span class="st">&#39;empty string is true&#39;</span>)
-<span class="kw">if</span> <span class="st">&#39;word&#39;</span>:
-    <span class="dt">print</span>(<span class="st">&#39;word is true&#39;</span>)
-<span class="kw">if</span> []:
-    <span class="dt">print</span>(<span class="st">&#39;empty list is true&#39;</span>)
-<span class="kw">if</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]:
-    <span class="dt">print</span>(<span class="st">&#39;non-empty list is true&#39;</span>)
-<span class="kw">if</span> <span class="dv">0</span>:
-    <span class="dt">print</span>(<span class="st">&#39;zero is true&#39;</span>)
-<span class="kw">if</span> <span class="dv">1</span>:
-    <span class="dt">print</span>(<span class="st">&#39;one is true&#39;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> <span class="st">&#39;&#39;</span>:
+    <span class="bu">print</span>(<span class="st">&#39;empty string is true&#39;</span>)
+<span class="cf">if</span> <span class="st">&#39;word&#39;</span>:
+    <span class="bu">print</span>(<span class="st">&#39;word is true&#39;</span>)
+<span class="cf">if</span> []:
+    <span class="bu">print</span>(<span class="st">&#39;empty list is true&#39;</span>)
+<span class="cf">if</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]:
+    <span class="bu">print</span>(<span class="st">&#39;non-empty list is true&#39;</span>)
+<span class="cf">if</span> <span class="dv">0</span>:
+    <span class="bu">print</span>(<span class="st">&#39;zero is true&#39;</span>)
+<span class="cf">if</span> <span class="dv">1</span>:
+    <span class="bu">print</span>(<span class="st">&#39;one is true&#39;</span>)</code></pre></div>
 <hr />
 <p>First line prints nothing: an empty string is false Second line prints <code>'word is true'</code>: a non-empty string is true Third line prints nothing: an empty list is false Fourth line prints <code>'non-empty list is true'</code>: a non-empty list is true Fifth line prints nothing: 0 is false Sixth line prints <code>'one is true'</code>: 1 is true</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Close enough</h2>
+<h2 id="close-enough"><span class="glyphicon glyphicon-pencil"></span>Close enough</h2>
 </div>
 <div class="panel-body">
 <p>Write some conditions that print <code>True</code> if the variable <code>a</code> is within 10% of the variable <code>b</code> and <code>False</code> otherwise.</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python">a = <span class="dv">5</span>
-b = <span class="fl">5.1</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">a <span class="op">=</span> <span class="dv">5</span>
+b <span class="op">=</span> <span class="fl">5.1</span>
 
-<span class="kw">if</span> <span class="dt">abs</span>(a - b) &lt; <span class="fl">0.1</span> * <span class="dt">abs</span>(b):
-    <span class="dt">print</span>(<span class="st">&#39;True&#39;</span>)
-<span class="kw">else</span>:
-    <span class="dt">print</span>(<span class="st">&#39;False&#39;</span>)</code></pre>
+<span class="cf">if</span> <span class="bu">abs</span>(a <span class="op">-</span> b) <span class="op">&lt;</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="bu">abs</span>(b):
+    <span class="bu">print</span>(<span class="st">&#39;True&#39;</span>)
+<span class="cf">else</span>:
+    <span class="bu">print</span>(<span class="st">&#39;False&#39;</span>)</code></pre></div>
 <p>Another possible solution:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="dt">abs</span>(a - b) &lt; <span class="fl">0.1</span> * <span class="dt">abs</span>(b))</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="bu">abs</span>(a <span class="op">-</span> b) <span class="op">&lt;</span> <span class="fl">0.1</span> <span class="op">*</span> <span class="bu">abs</span>(b))</code></pre></div>
 <p>This works because the boolean objects <code>True</code> and <code>False</code> have string representations which can be <code>print</code>ed.</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>In-place operators</h2>
+<h2 id="in-place-operators"><span class="glyphicon glyphicon-pencil"></span>In-place operators</h2>
 </div>
 <div class="panel-body">
 <p>Write some code that sums the positive and negative numbers in a list separately, using in-place operators.</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python">positive_sum = <span class="dv">0</span>
-negative_sum = <span class="dv">0</span>
-test_list = [<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">1</span>, -<span class="dv">1</span>, -<span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">7</span>, -<span class="dv">8</span>]
-<span class="kw">for</span> num in test_list:
-    <span class="kw">if</span> num &gt; <span class="dv">0</span>:
-        positive_sum += num
-    <span class="kw">elif</span> num == <span class="dv">0</span>:
-        <span class="kw">pass</span>
-    <span class="kw">else</span>:
-        negative_sum += num
-<span class="dt">print</span>(positive_sum, negative_sum)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">positive_sum <span class="op">=</span> <span class="dv">0</span>
+negative_sum <span class="op">=</span> <span class="dv">0</span>
+test_list <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="op">-</span><span class="dv">8</span>]
+<span class="cf">for</span> num <span class="op">in</span> test_list:
+    <span class="cf">if</span> num <span class="op">&gt;</span> <span class="dv">0</span>:
+        positive_sum <span class="op">+=</span> num
+    <span class="cf">elif</span> num <span class="op">==</span> <span class="dv">0</span>:
+        <span class="cf">pass</span>
+    <span class="cf">else</span>:
+        negative_sum <span class="op">+=</span> num
+<span class="bu">print</span>(positive_sum, negative_sum)</code></pre></div>
 <pre class="output"><code>21 -14</code></pre>
 <p>Here <code>pass</code> means “don’t do anything”. In this particular case, it’s not actually needed, since if <code>num == 0</code> neither sum needs to change, but it illustrates the use of <code>elif</code>.</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Tuples and exchanges</h2>
+<h2 id="tuples-and-exchanges"><span class="glyphicon glyphicon-pencil"></span>Tuples and exchanges</h2>
 </div>
 <div class="panel-body">
 <p>Explain what the overall effect of this code is:</p>
-<pre class="sourceCode python"><code class="sourceCode python">left = <span class="st">&#39;L&#39;</span>
-right = <span class="st">&#39;R&#39;</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">left <span class="op">=</span> <span class="st">&#39;L&#39;</span>
+right <span class="op">=</span> <span class="st">&#39;R&#39;</span>
 
-temp = left
-left = right
-right = temp</code></pre>
+temp <span class="op">=</span> left
+left <span class="op">=</span> right
+right <span class="op">=</span> temp</code></pre></div>
 <hr />
 <p>The code swaps the contents of the variables right and left.</p>
 <p>Compare it to:</p>
-<pre class="sourceCode python"><code class="sourceCode python">left, right = right, left</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">left, right <span class="op">=</span> right, left</code></pre></div>
 <hr />
 <p>Do they always do the same thing? Which do you find easier to read?</p>
 <hr />
@@ -228,48 +342,48 @@ right = temp</code></pre>
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Combining strings</h2>
+<h2 id="combining-strings"><span class="glyphicon glyphicon-pencil"></span>Combining strings</h2>
 </div>
 <div class="panel-body">
 <p>Write a function called <code>fence</code> that takes two parameters called <code>original</code> and <code>wrapper</code> and returns a new string that has the wrapper character at the beginning and end of the original.</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fence(original, wrapper):
-    <span class="kw">return</span> wrapper + original + wrapper</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fence(original, wrapper):
+    <span class="cf">return</span> wrapper <span class="op">+</span> original <span class="op">+</span> wrapper</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Selecting characters from strings</h2>
+<h2 id="selecting-characters-from-strings"><span class="glyphicon glyphicon-pencil"></span>Selecting characters from strings</h2>
 </div>
 <div class="panel-body">
 <p>Write a function called <code>outer</code> that returns a string made up of just the first and last characters of its input.</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> outer(input_string):
-    <span class="kw">return</span> input_string[<span class="dv">0</span>] + input_string[-<span class="dv">1</span>]</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> outer(input_string):
+    <span class="cf">return</span> input_string[<span class="dv">0</span>] <span class="op">+</span> input_string[<span class="op">-</span><span class="dv">1</span>]</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Rescaling an array</h2>
+<h2 id="rescaling-an-array"><span class="glyphicon glyphicon-pencil"></span>Rescaling an array</h2>
 </div>
 <div class="panel-body">
-<p>Write a function <code>rescale</code> that takes an array as input and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0. (Hint: If <span class="math">\(L\)</span> and <span class="math">\(H\)</span> are the lowest and highest values in the original array, then the replacement for a value <span class="math">\(v\)</span> should be <span class="math">\((v-L) / (H-L)\)</span>.)</p>
+<p>Write a function <code>rescale</code> that takes an array as input and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0. (Hint: If <span class="math inline">\(L\)</span> and <span class="math inline">\(H\)</span> are the lowest and highest values in the original array, then the replacement for a value <span class="math inline">\(v\)</span> should be <span class="math inline">\((v-L) / (H-L)\)</span>.)</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> rescale(input_array):
-    L = input_array.<span class="dt">min</span>()
-    H = input_array.<span class="dt">max</span>()
-    output_array = (input_array - L) / (H - L)
-    <span class="kw">return</span> output_array</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> rescale(input_array):
+    L <span class="op">=</span> input_array.<span class="bu">min</span>()
+    H <span class="op">=</span> input_array.<span class="bu">max</span>()
+    output_array <span class="op">=</span> (input_array <span class="op">-</span> L) <span class="op">/</span> (H <span class="op">-</span> L)
+    <span class="cf">return</span> output_array</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Testing and documenting your function</h2>
+<h2 id="testing-and-documenting-your-function"><span class="glyphicon glyphicon-pencil"></span>Testing and documenting your function</h2>
 </div>
 <div class="panel-body">
 <p>Run the commands <code>help(numpy.arange)</code> and <code>help(numpy.linspace)</code> to see how to use these functions to generate regularly-spaced values, then use those values to test your <code>rescale</code> function. Once you’ve successfully tested your function, add a docstring that explains what it does.</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co">&#39;&#39;&#39;Takes an array as input, and returns a corresponding array scaled so</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">&#39;&#39;&#39;Takes an array as input, and returns a corresponding array scaled so</span>
 <span class="co">that 0 corresponds to the minimum and 1 to the maximum value of the input array.</span>
 
 <span class="co">Examples:</span>
@@ -278,43 +392,43 @@ right = temp</code></pre>
 <span class="co">       0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])</span>
 <span class="co">&gt;&gt;&gt; rescale(np.linspace(0, 100, 5))</span>
 <span class="co">array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])</span>
-<span class="co">&#39;&#39;&#39;</span></code></pre>
+<span class="co">&#39;&#39;&#39;</span></code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Defining defaults</h2>
+<h2 id="defining-defaults"><span class="glyphicon glyphicon-pencil"></span>Defining defaults</h2>
 </div>
 <div class="panel-body">
 <p>Rewrite the <code>rescale</code> function so that it scales data to lie between 0.0 and 1.0 by default, but will allow the caller to specify lower and upper bounds if they want. Compare your implementation to your neighbor’s: do the two functions always behave the same way?</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> rescale(input_array, low_val=<span class="fl">0.0</span>, high_val=<span class="fl">1.0</span>):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> rescale(input_array, low_val<span class="op">=</span><span class="fl">0.0</span>, high_val<span class="op">=</span><span class="fl">1.0</span>):
     <span class="co">&#39;&#39;&#39;rescales input array values to lie between low_val and high_val&#39;&#39;&#39;</span>
-    L = input_array.<span class="dt">min</span>()
-    H = input_array.<span class="dt">max</span>()
-    intermed_array = (input_array - L) / (H - L)
-    output_array = intermed_array * (high_val - low_val) + low_val
-    <span class="kw">return</span> output_array</code></pre>
+    L <span class="op">=</span> input_array.<span class="bu">min</span>()
+    H <span class="op">=</span> input_array.<span class="bu">max</span>()
+    intermed_array <span class="op">=</span> (input_array <span class="op">-</span> L) <span class="op">/</span> (H <span class="op">-</span> L)
+    output_array <span class="op">=</span> intermed_array <span class="op">*</span> (high_val <span class="op">-</span> low_val) <span class="op">+</span> low_val
+    <span class="cf">return</span> output_array</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Variables inside and outside functions</h2>
+<h2 id="variables-inside-and-outside-functions"><span class="glyphicon glyphicon-pencil"></span>Variables inside and outside functions</h2>
 </div>
 <div class="panel-body">
 <p>What does the following piece of code display when run - and why?</p>
-<pre class="sourceCode python"><code class="sourceCode python">f = <span class="dv">0</span>
-k = <span class="dv">0</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">f <span class="op">=</span> <span class="dv">0</span>
+k <span class="op">=</span> <span class="dv">0</span>
 
 <span class="kw">def</span> f2k(f):
-    k = ((f<span class="dv">-32</span>)*(<span class="fl">5.0</span>/<span class="fl">9.0</span>)) + <span class="fl">273.15</span>
-    <span class="kw">return</span> k
+    k <span class="op">=</span> ((f<span class="dv">-32</span>)<span class="op">*</span>(<span class="fl">5.0</span><span class="op">/</span><span class="fl">9.0</span>)) <span class="op">+</span> <span class="fl">273.15</span>
+    <span class="cf">return</span> k
 
-<span class="dt">print</span>(f2k(<span class="dv">8</span>))
-<span class="dt">print</span>(f2k(<span class="dv">41</span>))
-<span class="dt">print</span>(f2k(<span class="dv">32</span>))
+<span class="bu">print</span>(f2k(<span class="dv">8</span>))
+<span class="bu">print</span>(f2k(<span class="dv">41</span>))
+<span class="bu">print</span>(f2k(<span class="dv">32</span>))
 
-<span class="dt">print</span>(k)</code></pre>
+<span class="bu">print</span>(k)</code></pre></div>
 <hr />
 <pre class="output"><code>259.81666666666666
 287.15
@@ -327,7 +441,7 @@ k = <span class="dv">0</span>
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Reading Error Messages</h2>
+<h2 id="reading-error-messages"><span class="glyphicon glyphicon-pencil"></span>Reading Error Messages</h2>
 </div>
 <div class="panel-body">
 <p>Read the traceback below, and identify the following pieces of information about it:</p>
@@ -339,8 +453,8 @@ k = <span class="dv">0</span>
 <li>What is the type of error?</li>
 <li>What is the error message?</li>
 </ol>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> errors_02
-errors_02.print_friday_message()</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> errors_02
+errors_02.print_friday_message()</code></pre></div>
 <pre class="error"><code>---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
 &lt;ipython-input-2-e4c4cbafeeb5&gt; in &lt;module&gt;()
@@ -373,7 +487,7 @@ KeyError: &#39;Friday&#39;</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Identifying Syntax Errors</h2>
+<h2 id="identifying-syntax-errors"><span class="glyphicon glyphicon-pencil"></span>Identifying Syntax Errors</h2>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
@@ -382,22 +496,22 @@ KeyError: &#39;Friday&#39;</code></pre>
 <li>Fix the error.</li>
 <li>Repeat steps 2 and 3, until you have fixed all the errors.</li>
 </ol>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> another_function
-    <span class="dt">print</span>(<span class="st">&quot;Syntax errors are annoying.&quot;</span>)
-     <span class="dt">print</span>(<span class="st">&quot;But at least python tells us about them!&quot;</span>)
-    <span class="dt">print</span>(<span class="st">&quot;So they are usually not too hard to fix.&quot;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> another_function
+    <span class="bu">print</span>(<span class="st">&quot;Syntax errors are annoying.&quot;</span>)
+     <span class="bu">print</span>(<span class="st">&quot;But at least python tells us about them!&quot;</span>)
+    <span class="bu">print</span>(<span class="st">&quot;So they are usually not too hard to fix.&quot;</span>)</code></pre></div>
 <hr />
 <p><code>SyntaxError</code> for missing <code>():</code> at end of first line, <code>IndentationError</code> for mismatch between second and third lines.</p>
 <p>Fixed version:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> another_function():
-    <span class="dt">print</span>(<span class="st">&quot;Syntax errors are annoying.&quot;</span>)
-    <span class="dt">print</span>(<span class="st">&quot;But at least python tells us about them!&quot;</span>)
-    <span class="dt">print</span>(<span class="st">&quot;So they are usually not too hard to fix.&quot;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> another_function():
+    <span class="bu">print</span>(<span class="st">&quot;Syntax errors are annoying.&quot;</span>)
+    <span class="bu">print</span>(<span class="st">&quot;But at least python tells us about them!&quot;</span>)
+    <span class="bu">print</span>(<span class="st">&quot;So they are usually not too hard to fix.&quot;</span>)</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Identifying Variable Name Errors</h2>
+<h2 id="identifying-variable-name-errors"><span class="glyphicon glyphicon-pencil"></span>Identifying Variable Name Errors</h2>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
@@ -406,30 +520,30 @@ KeyError: &#39;Friday&#39;</code></pre>
 <li>Fix the error.</li>
 <li>Repeat steps 2 and 3, until you have fixed all the errors.</li>
 </ol>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> number in <span class="dt">range</span>(<span class="dv">10</span>):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> number <span class="op">in</span> <span class="bu">range</span>(<span class="dv">10</span>):
     <span class="co"># use a if the number is a multiple of 3, otherwise use b</span>
-    <span class="kw">if</span> (Number % <span class="dv">3</span>) == <span class="dv">0</span>:
-        message = message + a
-    <span class="kw">else</span>:
-        message = message + <span class="st">&quot;b&quot;</span>
-<span class="dt">print</span>(message)</code></pre>
+    <span class="cf">if</span> (Number <span class="op">%</span> <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span>:
+        message <span class="op">=</span> message <span class="op">+</span> a
+    <span class="cf">else</span>:
+        message <span class="op">=</span> message <span class="op">+</span> <span class="st">&quot;b&quot;</span>
+<span class="bu">print</span>(message)</code></pre></div>
 <hr />
 <p>3 <code>NameError</code>s for <code>number</code> being misspelled, for <code>message</code> not defined, and for <code>a</code> not being in quotes.</p>
 <p>Fixed version:</p>
-<pre class="sourceCode python"><code class="sourceCode python">message = <span class="st">&quot;&quot;</span>
-<span class="kw">for</span> number in <span class="dt">range</span>(<span class="dv">10</span>):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">message <span class="op">=</span> <span class="st">&quot;&quot;</span>
+<span class="cf">for</span> number <span class="op">in</span> <span class="bu">range</span>(<span class="dv">10</span>):
     <span class="co"># use a if the number is a multiple of 3, otherwise use b</span>
-    <span class="kw">if</span> (number % <span class="dv">3</span>) == <span class="dv">0</span>:
-        message = message + <span class="st">&quot;a&quot;</span>
-    <span class="kw">else</span>:
-        message = message + <span class="st">&quot;b&quot;</span>
-<span class="dt">print</span>(message)</code></pre>
+    <span class="cf">if</span> (number <span class="op">%</span> <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span>:
+        message <span class="op">=</span> message <span class="op">+</span> <span class="st">&quot;a&quot;</span>
+    <span class="cf">else</span>:
+        message <span class="op">=</span> message <span class="op">+</span> <span class="st">&quot;b&quot;</span>
+<span class="bu">print</span>(message)</code></pre></div>
 <pre class="output"><code>abbabbabba</code></pre>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Identifying Item Errors</h2>
+<h2 id="identifying-item-errors"><span class="glyphicon glyphicon-pencil"></span>Identifying Item Errors</h2>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
@@ -437,44 +551,44 @@ KeyError: &#39;Friday&#39;</code></pre>
 <li>Run the code, and read the error message. What type of error is it?</li>
 <li>Fix the error.</li>
 </ol>
-<pre class="sourceCode python"><code class="sourceCode python">seasons = [<span class="st">&#39;Spring&#39;</span>, <span class="st">&#39;Summer&#39;</span>, <span class="st">&#39;Fall&#39;</span>, <span class="st">&#39;Winter&#39;</span>]
-<span class="dt">print</span>(<span class="st">&#39;My favorite season is &#39;</span>, seasons[<span class="dv">4</span>])</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">seasons <span class="op">=</span> [<span class="st">&#39;Spring&#39;</span>, <span class="st">&#39;Summer&#39;</span>, <span class="st">&#39;Fall&#39;</span>, <span class="st">&#39;Winter&#39;</span>]
+<span class="bu">print</span>(<span class="st">&#39;My favorite season is &#39;</span>, seasons[<span class="dv">4</span>])</code></pre></div>
 <hr />
 <p><code>IndexError</code>; the last entry is <code>seasons[3]</code>, so <code>seasons[4]</code> doesn’t make sense.</p>
 <p>Fixed version:</p>
-<pre class="sourceCode python"><code class="sourceCode python">seasons = [<span class="st">&#39;Spring&#39;</span>, <span class="st">&#39;Summer&#39;</span>, <span class="st">&#39;Fall&#39;</span>, <span class="st">&#39;Winter&#39;</span>]
-<span class="dt">print</span>(<span class="st">&#39;My favorite season is &#39;</span>, seasons[-<span class="dv">1</span>])</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">seasons <span class="op">=</span> [<span class="st">&#39;Spring&#39;</span>, <span class="st">&#39;Summer&#39;</span>, <span class="st">&#39;Fall&#39;</span>, <span class="st">&#39;Winter&#39;</span>]
+<span class="bu">print</span>(<span class="st">&#39;My favorite season is &#39;</span>, seasons[<span class="op">-</span><span class="dv">1</span>])</code></pre></div>
 </div>
 </section>
 <h2 id="defensive-programming"><a href="08-defensive.html">Defensive Programming</a></h2>
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Pre- and post-conditions</h2>
+<h2 id="pre--and-post-conditions"><span class="glyphicon glyphicon-pencil"></span>Pre- and post-conditions</h2>
 </div>
 <div class="panel-body">
 <p>Suppose you are writing a function called <code>average</code> that calculates the average of the numbers in a list. What pre-conditions and post-conditions would you write for it? Compare your answer to your neighbor’s: can you think of a function that will pass your tests but not hers or vice versa?</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># a possible pre-condition:</span>
-<span class="kw">assert</span> <span class="dt">len</span>(<span class="dt">input</span>) &gt; <span class="dv">0</span>, <span class="st">&#39;List length must be non-zero&#39;</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># a possible pre-condition:</span>
+<span class="cf">assert</span> <span class="bu">len</span>(<span class="bu">input</span>) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">&#39;List length must be non-zero&#39;</span>
 <span class="co"># a possible post-condition:</span>
-<span class="kw">assert</span> <span class="dt">input</span>.<span class="dt">min</span>() &lt; average &lt; <span class="dt">input</span>.<span class="dt">max</span>(), <span class="st">&#39;Average should be between min and max of input values&#39;</span></code></pre>
+<span class="cf">assert</span> <span class="bu">input</span>.<span class="bu">min</span>() <span class="op">&lt;</span> average <span class="op">&lt;</span> <span class="bu">input</span>.<span class="bu">max</span>(), <span class="st">&#39;Average should be between min and max of input values&#39;</span></code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Testing assertions</h2>
+<h2 id="testing-assertions"><span class="glyphicon glyphicon-pencil"></span>Testing assertions</h2>
 </div>
 <div class="panel-body">
 <p>Given a sequence of values, the function <code>running</code> returns a list containing the running totals at each index. Explain in words what the assertions in this function check, and for each one, give an example of input that will make that assertion fail.</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> running(values):
-    <span class="kw">assert</span> <span class="dt">len</span>(values) &gt; <span class="dv">0</span>
-    result = [values[<span class="dv">0</span>]]
-    <span class="kw">for</span> v in values[<span class="dv">1</span>:]:
-        <span class="kw">assert</span> result[-<span class="dv">1</span>] &gt;= <span class="dv">0</span>
-        result.append(result[-<span class="dv">1</span>] + v)
-        <span class="kw">assert</span> result[-<span class="dv">1</span>] &gt;= result[<span class="dv">0</span>]
-    <span class="kw">return</span> result</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> running(values):
+    <span class="cf">assert</span> <span class="bu">len</span>(values) <span class="op">&gt;</span> <span class="dv">0</span>
+    result <span class="op">=</span> [values[<span class="dv">0</span>]]
+    <span class="cf">for</span> v <span class="op">in</span> values[<span class="dv">1</span>:]:
+        <span class="cf">assert</span> result[<span class="op">-</span><span class="dv">1</span>] <span class="op">&gt;=</span> <span class="dv">0</span>
+        result.append(result[<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> v)
+        <span class="cf">assert</span> result[<span class="op">-</span><span class="dv">1</span>] <span class="op">&gt;=</span> result[<span class="dv">0</span>]
+    <span class="cf">return</span> result</code></pre></div>
 <hr />
 <ul>
 <li>The first assertion checks that the input sequence <code>values</code> is not empty. An empty sequence such as <code>[]</code> will make it fail.</li>
@@ -485,26 +599,26 @@ KeyError: &#39;Friday&#39;</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Fixing and testing</h2>
+<h2 id="fixing-and-testing"><span class="glyphicon glyphicon-pencil"></span>Fixing and testing</h2>
 </div>
 <div class="panel-body">
 <p>Fix <code>range_overlap</code>. Re-run <code>test_range_overlap</code> after each change you make.</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy
 
 <span class="kw">def</span> range_overlap(ranges):
     <span class="co">&#39;&#39;&#39;Return common overlap among a set of [low, high] ranges.&#39;&#39;&#39;</span>
-    <span class="kw">if</span> <span class="dt">len</span>(ranges) == <span class="dv">1</span>: <span class="co"># only one entry, so return it</span>
-        <span class="kw">return</span> ranges[<span class="dv">0</span>]
-    lowest = -numpy.inf <span class="co"># lowest possible number</span>
-    highest = numpy.inf <span class="co"># highest possible number</span>
-    <span class="kw">for</span> (low, high) in ranges:
-        lowest = <span class="dt">max</span>(lowest, low)
-        highest = <span class="dt">min</span>(highest, high)
-    <span class="kw">if</span> lowest &gt;= highest: <span class="co"># no overlap</span>
-        <span class="kw">return</span> <span class="ot">None</span>
-    <span class="kw">else</span>:
-        <span class="kw">return</span> (lowest, highest)</code></pre>
+    <span class="cf">if</span> <span class="bu">len</span>(ranges) <span class="op">==</span> <span class="dv">1</span>: <span class="co"># only one entry, so return it</span>
+        <span class="cf">return</span> ranges[<span class="dv">0</span>]
+    lowest <span class="op">=</span> <span class="op">-</span>numpy.inf <span class="co"># lowest possible number</span>
+    highest <span class="op">=</span> numpy.inf <span class="co"># highest possible number</span>
+    <span class="cf">for</span> (low, high) <span class="op">in</span> ranges:
+        lowest <span class="op">=</span> <span class="bu">max</span>(lowest, low)
+        highest <span class="op">=</span> <span class="bu">min</span>(highest, high)
+    <span class="cf">if</span> lowest <span class="op">&gt;=</span> highest: <span class="co"># no overlap</span>
+        <span class="cf">return</span> <span class="va">None</span>
+    <span class="cf">else</span>:
+        <span class="cf">return</span> (lowest, highest)</code></pre></div>
 </div>
 </section>
 <h2 id="debugging"><a href="09-debugging.html">Debugging</a></h2>
@@ -512,242 +626,242 @@ KeyError: &#39;Friday&#39;</code></pre>
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Arithmetic on the command line</h2>
+<h2 id="arithmetic-on-the-command-line"><span class="glyphicon glyphicon-pencil"></span>Arithmetic on the command line</h2>
 </div>
 <div class="panel-body">
 <p>Write a command-line program that does addition and subtraction:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> arith.py add 1 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> arith.py add 1 2</code></pre></div>
 <pre class="output"><code>3</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> arith.py subtract 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> arith.py subtract 3 4</code></pre></div>
 <pre class="output"><code>-1</code></pre>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/arith.py</span>
-<span class="ch">import</span> sys
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/arith.py</span>
+<span class="im">import</span> sys
 
 <span class="kw">def</span> main():
-    <span class="kw">assert</span> <span class="dt">len</span>(sys.argv) == <span class="dv">4</span>, <span class="st">&#39;Need exactly 3 arguments&#39;</span>
+    <span class="cf">assert</span> <span class="bu">len</span>(sys.argv) <span class="op">==</span> <span class="dv">4</span>, <span class="st">&#39;Need exactly 3 arguments&#39;</span>
 
-    operator = sys.argv[<span class="dv">1</span>]
-    <span class="kw">assert</span> operator in [<span class="st">&#39;add&#39;</span>, <span class="st">&#39;subtract&#39;</span>, <span class="st">&#39;multiply&#39;</span>, <span class="st">&#39;divide&#39;</span>], \
+    operator <span class="op">=</span> sys.argv[<span class="dv">1</span>]
+    <span class="cf">assert</span> operator <span class="op">in</span> [<span class="st">&#39;add&#39;</span>, <span class="st">&#39;subtract&#39;</span>, <span class="st">&#39;multiply&#39;</span>, <span class="st">&#39;divide&#39;</span>], <span class="op">\</span>
         <span class="co">&#39;Operator is not one of add, subtract, multiply, or divide: bailing out&#39;</span>
-    <span class="kw">try</span>:
-        operand1, operand2 = <span class="dt">float</span>(sys.argv[<span class="dv">2</span>]), <span class="dt">float</span>(sys.argv[<span class="dv">3</span>])
-    <span class="kw">except</span> <span class="ot">ValueError</span>:
-        <span class="dt">print</span>(<span class="st">&#39;cannot convert input to a number: bailing out&#39;</span>)
-        <span class="kw">return</span>
+    <span class="cf">try</span>:
+        operand1, operand2 <span class="op">=</span> <span class="bu">float</span>(sys.argv[<span class="dv">2</span>]), <span class="bu">float</span>(sys.argv[<span class="dv">3</span>])
+    <span class="cf">except</span> <span class="pp">ValueError</span>:
+        <span class="bu">print</span>(<span class="st">&#39;cannot convert input to a number: bailing out&#39;</span>)
+        <span class="cf">return</span>
 
     do_arithmetic(operand1, operator, operand2)
 
 <span class="kw">def</span> do_arithmetic(operand1, operator, operand2):
 
-    <span class="kw">if</span> operator == <span class="st">&#39;add&#39;</span>:
-        value = operand1 + operand2
-    <span class="kw">elif</span> operator == <span class="st">&#39;subtract&#39;</span>:
-        value = operand1 - operand2
-    <span class="kw">elif</span> operator == <span class="st">&#39;multiply&#39;</span>:
-        value = operand1 * operand2
-    <span class="kw">elif</span> operator == <span class="st">&#39;divide&#39;</span>:
-        value = operand1 / operand2
-    <span class="dt">print</span>(value)
+    <span class="cf">if</span> operator <span class="op">==</span> <span class="st">&#39;add&#39;</span>:
+        value <span class="op">=</span> operand1 <span class="op">+</span> operand2
+    <span class="cf">elif</span> operator <span class="op">==</span> <span class="st">&#39;subtract&#39;</span>:
+        value <span class="op">=</span> operand1 <span class="op">-</span> operand2
+    <span class="cf">elif</span> operator <span class="op">==</span> <span class="st">&#39;multiply&#39;</span>:
+        value <span class="op">=</span> operand1 <span class="op">*</span> operand2
+    <span class="cf">elif</span> operator <span class="op">==</span> <span class="st">&#39;divide&#39;</span>:
+        value <span class="op">=</span> operand1 <span class="op">/</span> operand2
+    <span class="bu">print</span>(value)
 
-main()</code></pre>
+main()</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Finding particular files</h2>
+<h2 id="finding-particular-files"><span class="glyphicon glyphicon-pencil"></span>Finding particular files</h2>
 </div>
 <div class="panel-body">
 <p>Using the <code>glob</code> module introduced <a href="04-files.html">earlier</a>, write a simple version of <code>ls</code> that shows files in the current directory with a particular suffix. A call to this script should look like this:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> my_ls.py py</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> my_ls.py py</code></pre></div>
 <pre class="output"><code>left.py
 right.py
 zero.py</code></pre>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/my_ls.py</span>
-<span class="ch">import</span> sys
-<span class="ch">import</span> glob
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/my_ls.py</span>
+<span class="im">import</span> sys
+<span class="im">import</span> glob
 
 <span class="kw">def</span> main():
     <span class="co">&#39;&#39;&#39;prints names of all files with sys.argv as suffix&#39;&#39;&#39;</span>
-    <span class="kw">assert</span> <span class="dt">len</span>(sys.argv) &gt;= <span class="dv">2</span>, <span class="st">&#39;Argument list cannot be empty&#39;</span>
-    suffix = sys.argv[<span class="dv">1</span>] <span class="co"># NB: behaviour is not as you&#39;d expect if sys.argv[1] is *</span>
-    glob_input = <span class="st">&#39;*.&#39;</span> + suffix <span class="co"># construct the input</span>
-    glob_output = <span class="dt">sorted</span>(glob.glob(glob_input)) <span class="co"># call the glob function</span>
-    <span class="kw">for</span> item in glob_output: <span class="co"># print the output</span>
-        <span class="dt">print</span>(item)
-    <span class="kw">return</span>
+    <span class="cf">assert</span> <span class="bu">len</span>(sys.argv) <span class="op">&gt;=</span> <span class="dv">2</span>, <span class="st">&#39;Argument list cannot be empty&#39;</span>
+    suffix <span class="op">=</span> sys.argv[<span class="dv">1</span>] <span class="co"># NB: behaviour is not as you&#39;d expect if sys.argv[1] is *</span>
+    glob_input <span class="op">=</span> <span class="st">&#39;*.&#39;</span> <span class="op">+</span> suffix <span class="co"># construct the input</span>
+    glob_output <span class="op">=</span> <span class="bu">sorted</span>(glob.glob(glob_input)) <span class="co"># call the glob function</span>
+    <span class="cf">for</span> item <span class="op">in</span> glob_output: <span class="co"># print the output</span>
+        <span class="bu">print</span>(item)
+    <span class="cf">return</span>
 
-main()</code></pre>
+main()</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Changing flags</h2>
+<h2 id="changing-flags"><span class="glyphicon glyphicon-pencil"></span>Changing flags</h2>
 </div>
 <div class="panel-body">
 <p>Rewrite <code>readings.py</code> so that it uses <code>-n</code>, <code>-m</code>, and <code>-x</code> instead of <code>--min</code>, <code>--mean</code>, and <code>--max</code> respectively. Is the code easier to read? Is the program easier to understand?</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/readings-07.py</span>
-<span class="ch">import</span> sys
-<span class="ch">import</span> numpy
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/readings-07.py</span>
+<span class="im">import</span> sys
+<span class="im">import</span> numpy
 
 <span class="kw">def</span> main():
-    script = sys.argv[<span class="dv">0</span>]
-    action = sys.argv[<span class="dv">1</span>]
-    filenames = sys.argv[<span class="dv">2</span>:]
-    <span class="kw">assert</span> action in [<span class="st">&#39;-n&#39;</span>, <span class="st">&#39;-m&#39;</span>, <span class="st">&#39;-x&#39;</span>], \
-           <span class="co">&#39;Action is not one of -n, -m, or -x: &#39;</span> + action
-    <span class="kw">if</span> <span class="dt">len</span>(filenames) == <span class="dv">0</span>:
+    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]
+    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]
+    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]
+    <span class="cf">assert</span> action <span class="op">in</span> [<span class="st">&#39;-n&#39;</span>, <span class="st">&#39;-m&#39;</span>, <span class="st">&#39;-x&#39;</span>], <span class="op">\</span>
+           <span class="co">&#39;Action is not one of -n, -m, or -x: &#39;</span> <span class="op">+</span> action
+    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:
         process(sys.stdin, action)
-    <span class="kw">else</span>:
-        <span class="kw">for</span> f in filenames:
+    <span class="cf">else</span>:
+        <span class="cf">for</span> f <span class="op">in</span> filenames:
             process(f, action)
 
 <span class="kw">def</span> process(filename, action):
-    data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
+    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
 
-    <span class="kw">if</span> action == <span class="st">&#39;-n&#39;</span>:
-        values = data.<span class="dt">min</span>(axis=<span class="dv">1</span>)
-    <span class="kw">elif</span> action == <span class="st">&#39;-m&#39;</span>:
-        values = data.mean(axis=<span class="dv">1</span>)
-    <span class="kw">elif</span> action == <span class="st">&#39;-x&#39;</span>:
-        values = data.<span class="dt">max</span>(axis=<span class="dv">1</span>)
+    <span class="cf">if</span> action <span class="op">==</span> <span class="st">&#39;-n&#39;</span>:
+        values <span class="op">=</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>)
+    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;-m&#39;</span>:
+        values <span class="op">=</span> data.mean(axis<span class="op">=</span><span class="dv">1</span>)
+    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;-x&#39;</span>:
+        values <span class="op">=</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)
 
-    <span class="kw">for</span> m in values:
-        <span class="dt">print</span>(m)
+    <span class="cf">for</span> m <span class="op">in</span> values:
+        <span class="bu">print</span>(m)
 
-main()</code></pre>
+main()</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Adding a help message</h2>
+<h2 id="adding-a-help-message"><span class="glyphicon glyphicon-pencil"></span>Adding a help message</h2>
 </div>
 <div class="panel-body">
 <p>Separately, modify <code>readings.py</code> so that if no parameters are given (i.e., no action is specified and no filenames are given), it prints a message explaining how it should be used.</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/readings-08.py</span>
-<span class="ch">import</span> sys
-<span class="ch">import</span> numpy
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/readings-08.py</span>
+<span class="im">import</span> sys
+<span class="im">import</span> numpy
 
 <span class="kw">def</span> main():
-    script = sys.argv[<span class="dv">0</span>]
-    <span class="kw">if</span> <span class="dt">len</span>(sys.argv) == <span class="dv">1</span>: <span class="co"># no arguments, so print help message</span>
-        <span class="dt">print</span>(<span class="st">&quot;&quot;&quot;Usage: python readings-08.py action filenames</span>
+    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]
+    <span class="cf">if</span> <span class="bu">len</span>(sys.argv) <span class="op">==</span> <span class="dv">1</span>: <span class="co"># no arguments, so print help message</span>
+        <span class="bu">print</span>(<span class="st">&quot;&quot;&quot;Usage: python readings-08.py action filenames</span>
 <span class="st">              action must be one of --min --mean --max</span>
 <span class="st">              if filenames is blank, input is taken from stdin;</span>
 <span class="st">              otherwise, each filename in the list of arguments is processed in turn&quot;&quot;&quot;</span>)
-        <span class="kw">return</span>
+        <span class="cf">return</span>
 
-    action = sys.argv[<span class="dv">1</span>]
-    filenames = sys.argv[<span class="dv">2</span>:]
-    <span class="kw">assert</span> action in [<span class="st">&#39;--min&#39;</span>, <span class="st">&#39;--mean&#39;</span>, <span class="st">&#39;--max&#39;</span>], \
-           <span class="co">&#39;Action is not one of --min, --mean, or --max: &#39;</span> + action
-    <span class="kw">if</span> <span class="dt">len</span>(filenames) == <span class="dv">0</span>:
+    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]
+    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]
+    <span class="cf">assert</span> action <span class="op">in</span> [<span class="st">&#39;--min&#39;</span>, <span class="st">&#39;--mean&#39;</span>, <span class="st">&#39;--max&#39;</span>], <span class="op">\</span>
+           <span class="co">&#39;Action is not one of --min, --mean, or --max: &#39;</span> <span class="op">+</span> action
+    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:
         process(sys.stdin, action)
-    <span class="kw">else</span>:
-        <span class="kw">for</span> f in filenames:
+    <span class="cf">else</span>:
+        <span class="cf">for</span> f <span class="op">in</span> filenames:
             process(f, action)
 
 <span class="kw">def</span> process(filename, action):
-    data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
+    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
 
-    <span class="kw">if</span> action == <span class="st">&#39;--min&#39;</span>:
-        values = data.<span class="dt">min</span>(axis=<span class="dv">1</span>)
-    <span class="kw">elif</span> action == <span class="st">&#39;--mean&#39;</span>:
-        values = data.mean(axis=<span class="dv">1</span>)
-    <span class="kw">elif</span> action == <span class="st">&#39;--max&#39;</span>:
-        values = data.<span class="dt">max</span>(axis=<span class="dv">1</span>)
+    <span class="cf">if</span> action <span class="op">==</span> <span class="st">&#39;--min&#39;</span>:
+        values <span class="op">=</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>)
+    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--mean&#39;</span>:
+        values <span class="op">=</span> data.mean(axis<span class="op">=</span><span class="dv">1</span>)
+    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--max&#39;</span>:
+        values <span class="op">=</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)
 
-    <span class="kw">for</span> m in values:
-        <span class="dt">print</span>(m)
+    <span class="cf">for</span> m <span class="op">in</span> values:
+        <span class="bu">print</span>(m)
 
-main()</code></pre>
+main()</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Adding a default action</h2>
+<h2 id="adding-a-default-action"><span class="glyphicon glyphicon-pencil"></span>Adding a default action</h2>
 </div>
 <div class="panel-body">
 <p>Separately, modify <code>readings.py</code> so that if no action is given it displays the means of the data.</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/readings-09.py</span>
-<span class="ch">import</span> sys
-<span class="ch">import</span> numpy
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/readings-09.py</span>
+<span class="im">import</span> sys
+<span class="im">import</span> numpy
 
 <span class="kw">def</span> main():
-    script = sys.argv[<span class="dv">0</span>]
-    action = sys.argv[<span class="dv">1</span>]
-    <span class="kw">if</span> action not in [<span class="st">&#39;--min&#39;</span>, <span class="st">&#39;--mean&#39;</span>, <span class="st">&#39;--max&#39;</span>]: <span class="co"># if no action given</span>
-        action = <span class="st">&#39;--mean&#39;</span>    <span class="co"># set a default action, that being mean</span>
-        filenames = sys.argv[<span class="dv">1</span>:] <span class="co"># start the filenames one place earlier in the argv list</span>
-    <span class="kw">else</span>:
-        filenames = sys.argv[<span class="dv">2</span>:]
+    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]
+    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]
+    <span class="cf">if</span> action <span class="op">not</span> <span class="op">in</span> [<span class="st">&#39;--min&#39;</span>, <span class="st">&#39;--mean&#39;</span>, <span class="st">&#39;--max&#39;</span>]: <span class="co"># if no action given</span>
+        action <span class="op">=</span> <span class="st">&#39;--mean&#39;</span>    <span class="co"># set a default action, that being mean</span>
+        filenames <span class="op">=</span> sys.argv[<span class="dv">1</span>:] <span class="co"># start the filenames one place earlier in the argv list</span>
+    <span class="cf">else</span>:
+        filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]
 
-    <span class="kw">if</span> <span class="dt">len</span>(filenames) == <span class="dv">0</span>:
+    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:
         process(sys.stdin, action)
-    <span class="kw">else</span>:
-        <span class="kw">for</span> f in filenames:
+    <span class="cf">else</span>:
+        <span class="cf">for</span> f <span class="op">in</span> filenames:
             process(f, action)
 
 <span class="kw">def</span> process(filename, action):
-    data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
+    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
 
-    <span class="kw">if</span> action == <span class="st">&#39;--min&#39;</span>:
-        values = data.<span class="dt">min</span>(axis=<span class="dv">1</span>)
-    <span class="kw">elif</span> action == <span class="st">&#39;--mean&#39;</span>:
-        values = data.mean(axis=<span class="dv">1</span>)
-    <span class="kw">elif</span> action == <span class="st">&#39;--max&#39;</span>:
-        values = data.<span class="dt">max</span>(axis=<span class="dv">1</span>)
+    <span class="cf">if</span> action <span class="op">==</span> <span class="st">&#39;--min&#39;</span>:
+        values <span class="op">=</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>)
+    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--mean&#39;</span>:
+        values <span class="op">=</span> data.mean(axis<span class="op">=</span><span class="dv">1</span>)
+    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--max&#39;</span>:
+        values <span class="op">=</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)
 
-    <span class="kw">for</span> m in values:
-        <span class="dt">print</span>(m)
+    <span class="cf">for</span> m <span class="op">in</span> values:
+        <span class="bu">print</span>(m)
 
-main()</code></pre>
+main()</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>A file-checker</h2>
+<h2 id="a-file-checker"><span class="glyphicon glyphicon-pencil"></span>A file-checker</h2>
 </div>
 <div class="panel-body">
 <p>Write a program called <code>check.py</code> that takes the names of one or more inflammation data files as arguments and checks that all the files have the same number of rows and columns. What is the best way to test your program?</p>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/check.py</span>
-<span class="ch">import</span> sys
-<span class="ch">import</span> numpy
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/check.py</span>
+<span class="im">import</span> sys
+<span class="im">import</span> numpy
 
 <span class="kw">def</span> main():
-    script = sys.argv[<span class="dv">0</span>]
-    filenames = sys.argv[<span class="dv">1</span>:]
-    <span class="kw">if</span> <span class="dt">len</span>(filenames) &lt;=<span class="dv">1</span>: <span class="co">#nothing to check</span>
-        <span class="dt">print</span>(<span class="st">&#39;Only 1 file specified on input&#39;</span>)
-    <span class="kw">else</span>:
-        nrow0, ncol0 = row_col_count(filenames[<span class="dv">0</span>])
-        <span class="dt">print</span>(<span class="st">&#39;First file </span><span class="ot">%s</span><span class="st">: </span><span class="ot">%d</span><span class="st"> rows and </span><span class="ot">%d</span><span class="st"> columns&#39;</span> % (filenames[<span class="dv">0</span>], nrow0, ncol0))
-        <span class="kw">for</span> f in filenames[<span class="dv">1</span>:]:
-            nrow, ncol = row_col_count(f)
-            <span class="kw">if</span> nrow != nrow0 or ncol != ncol0:
-                <span class="dt">print</span>(<span class="st">&#39;File </span><span class="ot">%s</span><span class="st"> does not check: </span><span class="ot">%d</span><span class="st"> rows and </span><span class="ot">%d</span><span class="st"> columns&#39;</span> % (f, nrow, ncol))
-            <span class="kw">else</span>:
-                <span class="dt">print</span>(<span class="st">&#39;File </span><span class="ot">%s</span><span class="st"> checks&#39;</span> % f)
-        <span class="kw">return</span>
+    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]
+    filenames <span class="op">=</span> sys.argv[<span class="dv">1</span>:]
+    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">&lt;=</span><span class="dv">1</span>: <span class="co">#nothing to check</span>
+        <span class="bu">print</span>(<span class="st">&#39;Only 1 file specified on input&#39;</span>)
+    <span class="cf">else</span>:
+        nrow0, ncol0 <span class="op">=</span> row_col_count(filenames[<span class="dv">0</span>])
+        <span class="bu">print</span>(<span class="st">&#39;First file </span><span class="sc">%s</span><span class="st">: </span><span class="sc">%d</span><span class="st"> rows and </span><span class="sc">%d</span><span class="st"> columns&#39;</span> <span class="op">%</span> (filenames[<span class="dv">0</span>], nrow0, ncol0))
+        <span class="cf">for</span> f <span class="op">in</span> filenames[<span class="dv">1</span>:]:
+            nrow, ncol <span class="op">=</span> row_col_count(f)
+            <span class="cf">if</span> nrow <span class="op">!=</span> nrow0 <span class="op">or</span> ncol <span class="op">!=</span> ncol0:
+                <span class="bu">print</span>(<span class="st">&#39;File </span><span class="sc">%s</span><span class="st"> does not check: </span><span class="sc">%d</span><span class="st"> rows and </span><span class="sc">%d</span><span class="st"> columns&#39;</span> <span class="op">%</span> (f, nrow, ncol))
+            <span class="cf">else</span>:
+                <span class="bu">print</span>(<span class="st">&#39;File </span><span class="sc">%s</span><span class="st"> checks&#39;</span> <span class="op">%</span> f)
+        <span class="cf">return</span>
 
 <span class="kw">def</span> row_col_count(filename):
-    <span class="kw">try</span>:
-        nrow, ncol = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>).shape
-    <span class="kw">except</span> <span class="ot">ValueError</span>: <span class="co">#get this if file doesn&#39;t have same number of rows and columns, or if it has non-numeric content</span>
-        nrow, ncol = (<span class="dv">0</span>, <span class="dv">0</span>)
-    <span class="kw">return</span> nrow, ncol
+    <span class="cf">try</span>:
+        nrow, ncol <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>).shape
+    <span class="cf">except</span> <span class="pp">ValueError</span>: <span class="co">#get this if file doesn&#39;t have same number of rows and columns, or if it has non-numeric content</span>
+        nrow, ncol <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>)
+    <span class="cf">return</span> nrow, ncol
 
-main()</code></pre>
+main()</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Counting lines</h2>
+<h2 id="counting-lines"><span class="glyphicon glyphicon-pencil"></span>Counting lines</h2>
 </div>
 <div class="panel-body">
 <p>Write a program called <code>line-count.py</code> that works like the Unix <code>wc</code> command:</p>
@@ -756,40 +870,40 @@ main()</code></pre>
 <li>If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.</li>
 </ul>
 <hr />
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/line-count.py</span>
-<span class="ch">import</span> sys
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/line-count.py</span>
+<span class="im">import</span> sys
 
 <span class="kw">def</span> main():
     <span class="co">&#39;&#39;&#39;print each input filename and the number of lines in it,</span>
 <span class="co">       and print the sum of the number of lines&#39;&#39;&#39;</span>
-    filenames = sys.argv[<span class="dv">1</span>:]
-    sum_nlines = <span class="dv">0</span> <span class="co">#initialize counting variable</span>
+    filenames <span class="op">=</span> sys.argv[<span class="dv">1</span>:]
+    sum_nlines <span class="op">=</span> <span class="dv">0</span> <span class="co">#initialize counting variable</span>
 
-    <span class="kw">if</span> <span class="dt">len</span>(filenames) == <span class="dv">0</span>: <span class="co"># no filenames, just stdin</span>
-        sum_nlines = count_file_like(sys.stdin)
-        <span class="dt">print</span>(<span class="st">&#39;stdin: </span><span class="ot">%d</span><span class="st">&#39;</span> % sum_nlines)
-    <span class="kw">else</span>:
-        <span class="kw">for</span> f in filenames:
-            n = count_file(f)
-            <span class="dt">print</span>(<span class="st">&#39;</span><span class="ot">%s</span><span class="st"> </span><span class="ot">%d</span><span class="st">&#39;</span> % (f, n))
-            sum_nlines += n
-        <span class="dt">print</span>(<span class="st">&#39;total: </span><span class="ot">%d</span><span class="st">&#39;</span> % sum_nlines)
+    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>: <span class="co"># no filenames, just stdin</span>
+        sum_nlines <span class="op">=</span> count_file_like(sys.stdin)
+        <span class="bu">print</span>(<span class="st">&#39;stdin: </span><span class="sc">%d</span><span class="st">&#39;</span> <span class="op">%</span> sum_nlines)
+    <span class="cf">else</span>:
+        <span class="cf">for</span> f <span class="op">in</span> filenames:
+            n <span class="op">=</span> count_file(f)
+            <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">%s</span><span class="st"> </span><span class="sc">%d</span><span class="st">&#39;</span> <span class="op">%</span> (f, n))
+            sum_nlines <span class="op">+=</span> n
+        <span class="bu">print</span>(<span class="st">&#39;total: </span><span class="sc">%d</span><span class="st">&#39;</span> <span class="op">%</span> sum_nlines)
 
 <span class="kw">def</span> count_file(filename):
     <span class="co">&#39;&#39;&#39;count the number of lines in a file&#39;&#39;&#39;</span>
-    f = <span class="dt">open</span>(filename,<span class="st">&#39;r&#39;</span>)
-    nlines = <span class="dt">len</span>(f.readlines())
+    f <span class="op">=</span> <span class="bu">open</span>(filename,<span class="st">&#39;r&#39;</span>)
+    nlines <span class="op">=</span> <span class="bu">len</span>(f.readlines())
     f.close()
-    <span class="kw">return</span>(nlines)
+    <span class="cf">return</span>(nlines)
 
 <span class="kw">def</span> count_file_like(file_like):
     <span class="co">&#39;&#39;&#39;count the number of lines in a file-like object (eg stdin)&#39;&#39;&#39;</span>
-    n = <span class="dv">0</span>
-    <span class="kw">for</span> line in file_like:
-        n = n<span class="dv">+1</span>
-    <span class="kw">return</span> n
+    n <span class="op">=</span> <span class="dv">0</span>
+    <span class="cf">for</span> line <span class="op">in</span> file_like:
+        n <span class="op">=</span> n<span class="dv">+1</span>
+    <span class="cf">return</span> n
 
-main()</code></pre>
+main()</code></pre></div>
 </div>
 </section>
         </div>

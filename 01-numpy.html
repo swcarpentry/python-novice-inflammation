@@ -361,7 +361,9 @@ last three characters: gen</code></pre>
 <h2 id="check-your-understanding-plot-scaling"><span class="glyphicon glyphicon-pencil"></span>Check your understanding: plot scaling</h2>
 </div>
 <div class="panel-body">
-<p>Why do all of our plots stop just short of the upper end of our graph?</p>
+<p>Why do all of our plots stop just short of the upper end of our graph? If we want to change this, we can use the <code>set_ylim(min, max)</code> method of each ‘axes’, for example:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">axes3.set_ylim(<span class="dv">0</span>,<span class="dv">6</span>)</code></pre></div>
+<p>Update your plotting code to automatically set a more appropriate scale (hint: you can make use of the <code>max</code> and <code>min</code> methods to help)</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
