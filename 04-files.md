@@ -95,6 +95,7 @@ and their minima show the same staircase structure;
 a different situation has been revealed in the third dataset,
 where the maxima are a bit less regular, but the minima are consistently zero.
 
+
 > ## Plotting Differences {.challenge}
 >
 > Plot the difference between the average of the first dataset and the average of the second dataset,
@@ -106,17 +107,35 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > import glob
 > import numpy
 > import matplotlib.pyplot
-> 
+>
 > filenames = glob.glob('data/inflammation*.csv')
-> 
+>
 > data0 = numpy.loadtxt(fname=filenames[0], delimiter=',')
 > data1 = numpy.loadtxt(fname=filenames[1], delimiter=',')
-> 
+>
 > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
-> 
+>
 > matplotlib.pyplot.ylabel('Difference in average')
 > matplotlib.pyplot.plot(data0.mean(axis=0) - data1.mean(axis=0))
-> 
+>
 > fig.tight_layout()
 > matplotlib.pyplot.show()
 > ~~~
+
+> ## Generate Composite statistics {.challenge}
+>
+> Use each of the files once to generate a dataset containing values averaged over all patients:
+>
+>
+> ~~~ {.python}
+> filenames = glob.glob('data/inflammation*.csv')
+> composite_data = numpy.zeros((60,40))
+> for f in filenames:
+> # sum each new file's data into as it's read
+>
+> # and then divide the composite_data by number of samples
+> composite_data /= len(filenames)
+> ~~~
+>
+> Then use pyplot to generate average, max, and min for all patients.
+>
