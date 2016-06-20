@@ -231,19 +231,27 @@ This is different from how variables worked in lesson 1, and more similar to how
 Subsets of lists and strings can be accessed by specifying ranges of values in brackets, similar to how we accessed ranges of positions in a Numpy matrix. This is commonly referred to as "slicing" the list/string.
 
 ~~~ {.python}
-binomial_name = "Drosophila melanogaster"
 common_name = "common fruit fly"
-chromosomes = ["X", "Y", "2", "3", "4"]
+title = common_name[:]
+print(title)
+
+binomial_name = "Drosophila melanogaster"
 group = binomial_name[0:10]
-species = binomial_name[11:24]
-autosomes = chromosomes[2:5]
-last = chromosomes[-1]
 print("group", group)
+
+species = binomial_name[11:24]
 print("species", species)
+
+chromosomes = ["X", "Y", "2", "3", "4"]
+autosomes = chromosomes[2:5]
 print("autosomes", autosomes)
+
+last = chromosomes[-1]
 print("last", last)
+
 ~~~
 ~~~ {.output}
+common fruit fly
 group Drosophila
 species melanogaster
 autosomes ["2", "3", "4"]
@@ -255,11 +263,11 @@ last 4
 >
 > ~~~ {.python}
 > string_for_slicing = "Observation date: 02-Feb-2013"
-> list_for_slicing = [("fluorine", "F"), ("chlorine", "Cl"), ("bromine", "Br"), ("iodine", "I"), ("astatine", "At")]
+> list_for_slicing = [["fluorine", "F"], ["chlorine", "Cl"], ["bromine", "Br"], ["iodine", "I"], ["astatine", "At"]]
 > ~~~
 > ~~~ {.output}
 > "2013"
-> [("chlorine", "Cl"), ("bromine", "Br"), ("iodine", "I"), ("astatine", "At")]
+> [["chlorine", "Cl"], ["bromine", "Br"], ["iodine", "I"], ["astatine", "At"]]
 > ~~~
 > Would your solution work regardless of whether you knew beforehand the length of the string or list (e.g. if you wanted to apply the solution to a set of lists of different lengths)? If not, try to change your approach to make it more robust.
 
