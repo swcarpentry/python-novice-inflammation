@@ -140,7 +140,45 @@ odds: [1, 3, 5, 7]</code></pre>
 <p>Use a for-loop to convert the string “hello” into a list of letters:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">[<span class="st">&quot;h&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;l&quot;</span>, <span class="st">&quot;l&quot;</span>, <span class="st">&quot;o&quot;</span>]</code></pre></div>
 <p>Hint: You can create an empty list like this:</p>
+</div>
+</section>
+<blockquote>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">my_list <span class="op">=</span> []</code></pre></div>
+</blockquote>
+<p>Subsets of lists and strings can be accessed by specifying ranges of values in brackets, similar to how we accessed ranges of positions in a Numpy matrix. This is commonly referred to as “slicing” the list/string.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">common_name <span class="op">=</span> <span class="st">&quot;common fruit fly&quot;</span>
+title <span class="op">=</span> common_name[:]
+<span class="bu">print</span>(title)
+
+binomial_name <span class="op">=</span> <span class="st">&quot;Drosophila melanogaster&quot;</span>
+group <span class="op">=</span> binomial_name[<span class="dv">0</span>:<span class="dv">10</span>]
+<span class="bu">print</span>(<span class="st">&quot;group&quot;</span>, group)
+
+species <span class="op">=</span> binomial_name[<span class="dv">11</span>:<span class="dv">24</span>]
+<span class="bu">print</span>(<span class="st">&quot;species&quot;</span>, species)
+
+chromosomes <span class="op">=</span> [<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;4&quot;</span>]
+autosomes <span class="op">=</span> chromosomes[<span class="dv">2</span>:<span class="dv">5</span>]
+<span class="bu">print</span>(<span class="st">&quot;autosomes&quot;</span>, autosomes)
+
+last <span class="op">=</span> chromosomes[<span class="op">-</span><span class="dv">1</span>]
+<span class="bu">print</span>(<span class="st">&quot;last&quot;</span>, last)</code></pre></div>
+<pre class="output"><code>common fruit fly
+group Drosophila
+species melanogaster
+autosomes [&quot;2&quot;, &quot;3&quot;, &quot;4&quot;]
+last 4</code></pre>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="slicing-from-the-end"><span class="glyphicon glyphicon-pencil"></span>Slicing from the end</h2>
+</div>
+<div class="panel-body">
+<p>Use slicing to access only the last four characters of a string or entries of a list.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">string_for_slicing <span class="op">=</span> <span class="st">&quot;Observation date: 02-Feb-2013&quot;</span>
+list_for_slicing <span class="op">=</span> [[<span class="st">&quot;fluorine&quot;</span>, <span class="st">&quot;F&quot;</span>], [<span class="st">&quot;chlorine&quot;</span>, <span class="st">&quot;Cl&quot;</span>], [<span class="st">&quot;bromine&quot;</span>, <span class="st">&quot;Br&quot;</span>], [<span class="st">&quot;iodine&quot;</span>, <span class="st">&quot;I&quot;</span>], [<span class="st">&quot;astatine&quot;</span>, <span class="st">&quot;At&quot;</span>]]</code></pre></div>
+<pre class="output"><code>&quot;2013&quot;
+[[&quot;chlorine&quot;, &quot;Cl&quot;], [&quot;bromine&quot;, &quot;Br&quot;], [&quot;iodine&quot;, &quot;I&quot;], [&quot;astatine&quot;, &quot;At&quot;]]</code></pre>
+<p>Would your solution work regardless of whether you knew beforehand the length of the string or list (e.g. if you wanted to apply the solution to a set of lists of different lengths)? If not, try to change your approach to make it more robust.</p>
 </div>
 </section>
 <section class="challenge panel panel-success">
