@@ -30,11 +30,12 @@
           <h2 class="subtitle">Debugging</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
 <li>Debug code containing an error systematically.</li>
+<li>Identify ways of making code less error-prone and more easily tested.</li>
 </ul>
 </div>
 </section>
@@ -67,7 +68,7 @@
 <p>Records are particularly useful when the time comes to ask for help. People are more likely to listen to us when we can explain clearly what we did, and we’re better able to give them the information they need to be useful.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pushpin"></span>Version Control Revisited</h2>
+<h2 id="version-control-revisited"><span class="glyphicon glyphicon-pushpin"></span>Version Control Revisited</h2>
 </div>
 <div class="panel-body">
 <p>Version control is often used to reset software to a known state during debugging, and to explore recent changes to code that might be responsible for bugs. In particular, most version control systems have a <code>blame</code> command that will show who last changed particular lines of code…</p>
@@ -80,10 +81,31 @@
 <p>And that is what makes us most productive in the long run. As the saying goes, <em>A week of hard work can sometimes save you an hour of thought</em>. If we train ourselves to avoid making some kinds of mistakes, to break our code into modular, testable chunks, and to turn every assumption (or mistake) into an assertion, it will actually take us <em>less</em> time to produce working programs, not more.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Debug with a neighbor</h2>
+<h2 id="debug-with-a-neighbor"><span class="glyphicon glyphicon-pencil"></span>Debug with a neighbor</h2>
 </div>
 <div class="panel-body">
 <p>Take a function that you have written today, and introduce a tricky bug. Your function should still run, but will give the wrong output. Switch seats with your neighbor and attempt to debug the bug that they introduced into their function. Which of the principles discussed above did you find helpful?</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="debug-the-following-problem"><span class="glyphicon glyphicon-pencil"></span>Debug the following problem</h2>
+</div>
+<div class="panel-body">
+<p>You are assisting a researcher with Python code that computes the Body Mass Index (BMI) of patients. The researcher is concerned because all patients seemingly have identical BMIs, despite having different physiques. BMI is calculated as <strong>weight in kilograms</strong> divided by the the square of <strong>height in metres</strong>.</p>
+<p>Use the debugging principles in this exercise and locate problems with the code. What suggestions would you give the researcher for ensuring any later changes they make work correctly?</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">patients <span class="op">=</span> [[<span class="dv">70</span>, <span class="fl">1.8</span>], [<span class="dv">80</span>, <span class="fl">1.9</span>], [<span class="dv">150</span>, <span class="fl">1.7</span>]]
+
+<span class="kw">def</span> calculate_bmi(weight, height):
+    <span class="cf">return</span> weight <span class="op">/</span> (height <span class="op">**</span> <span class="dv">2</span>)
+
+<span class="cf">for</span> patient <span class="op">in</span> patients:
+    height, weight <span class="op">=</span> patients[<span class="dv">0</span>]
+    bmi <span class="op">=</span> calculate_bmi(height, weight)
+    <span class="bu">print</span>(<span class="st">&quot;Patient&#39;s BMI is: </span><span class="sc">%f</span><span class="st">&quot;</span> <span class="op">%</span> bmi)</code></pre></div>
+<pre class="output"><code>Patient&#39;s BMI is: 21.604938
+Patient&#39;s BMI is: 21.604938
+Patient&#39;s BMI is: 21.604938</code></pre>
 </div>
 </section>
         </div>
