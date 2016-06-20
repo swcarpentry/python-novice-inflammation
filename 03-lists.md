@@ -223,10 +223,45 @@ This is different from how variables worked in lesson 1, and more similar to how
 > ["h", "e", "l", "l", "o"]
 > ~~~
 > Hint: You can create an empty list like this:
->
+
 > ~~~ {.python}
 > my_list = []
 > ~~~
+
+Subsets of lists and strings can be accessed by specifying ranges of values in brackets, similar to how we accessed ranges of positions in a Numpy matrix. This is commonly referred to as "slicing" the list/string.
+
+~~~ {.python}
+binomial_name = "Drosophila melanogaster"
+common_name = "common fruit fly"
+chromosomes = ["X", "Y", "2", "3", "4"]
+group = binomial_name[0:10]
+species = binomial_name[11:24]
+autosomes = chromosomes[2:5]
+last = chromosomes[-1]
+print("group", group)
+print("species", species)
+print("autosomes", autosomes)
+print("last", last)
+~~~
+~~~ {.output}
+group Drosophila
+species melanogaster
+autosomes ["2", "3", "4"]
+last 4
+~~~
+
+>## Slicing from the end {.challenge}
+> Use slicing to access only the last four characters of a string or entries of a list.
+>
+> ~~~ {.python}
+> string_for_slicing = "Observation date: 02-Feb-2013"
+> list_for_slicing = [("fluorine", "F"), ("chlorine", "Cl"), ("bromine", "Br"), ("iodine", "I"), ("astatine", "At")]
+> ~~~
+> ~~~ {.output}
+> "2013"
+> [("chlorine", "Cl"), ("bromine", "Br"), ("iodine", "I"), ("astatine", "At")]
+> ~~~
+> Would your solution work regardless of whether you knew beforehand the length of the string or list (e.g. if you wanted to apply the solution to a set of lists of different lengths)? If not, try to change your approach to make it more robust.
 
 > ## Tuples and exchanges {.challenge}
 >
@@ -249,6 +284,7 @@ This is different from how variables worked in lesson 1, and more similar to how
 >
 > Do they always do the same thing?
 > Which do you find easier to read?
+
 
 > ## Overloading {.challenge}
 >
