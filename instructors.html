@@ -235,6 +235,31 @@ length_old <span class="op">=</span> <span class="bu">len</span>(oldstring)
 </div>
 </section>
 <h2 id="analyzing-data-from-multiple-files"><a href="04-files.html">Analyzing Data from Multiple Files</a></h2>
+<p>Solutions to exercises:</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="plotting-differences"><span class="glyphicon glyphicon-pencil"></span>Plotting Differences</h2>
+</div>
+<div class="panel-body">
+<p>Plot the difference between the average of the first dataset and the average of the second dataset, i.e., the difference between the leftmost plot of the first two figures.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> glob
+<span class="im">import</span> numpy
+<span class="im">import</span> matplotlib.pyplot
+
+filenames <span class="op">=</span> glob.glob(<span class="st">&#39;data/inflammation*.csv&#39;</span>)
+
+data0 <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filenames[<span class="dv">0</span>], delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
+data1 <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filenames[<span class="dv">1</span>], delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
+
+fig <span class="op">=</span> matplotlib.pyplot.figure(figsize<span class="op">=</span>(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+
+matplotlib.pyplot.ylabel(<span class="st">&#39;Difference in average&#39;</span>)
+matplotlib.pyplot.plot(data0.mean(axis<span class="op">=</span><span class="dv">0</span>) <span class="op">-</span> data1.mean(axis<span class="op">=</span><span class="dv">0</span>))
+
+fig.tight_layout()
+matplotlib.pyplot.show()</code></pre></div>
+</div>
+</section>
 <h2 id="making-choices"><a href="05-cond.html">Making Choices</a></h2>
 <p>Solutions to exercises:</p>
 <section class="challenge panel panel-success">

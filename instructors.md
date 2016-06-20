@@ -314,6 +314,33 @@ Solutions to exercises:
 
 ## [Analyzing Data from Multiple Files](04-files.html)
 
+Solutions to exercises:
+
+> ## Plotting Differences {.challenge}
+>
+> Plot the difference between the average of the first dataset and the average of the second dataset,
+> i.e., the difference between the leftmost plot of the first two figures.
+>
+>
+> ~~~ {.python}
+> import glob
+> import numpy
+> import matplotlib.pyplot
+>
+> filenames = glob.glob('data/inflammation*.csv')
+>
+> data0 = numpy.loadtxt(fname=filenames[0], delimiter=',')
+> data1 = numpy.loadtxt(fname=filenames[1], delimiter=',')
+>
+> fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+>
+> matplotlib.pyplot.ylabel('Difference in average')
+> matplotlib.pyplot.plot(data0.mean(axis=0) - data1.mean(axis=0))
+>
+> fig.tight_layout()
+> matplotlib.pyplot.show()
+> ~~~
+
 ## [Making Choices](05-cond.html)
 
 Solutions to exercises:
