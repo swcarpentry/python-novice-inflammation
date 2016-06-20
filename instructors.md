@@ -800,6 +800,20 @@ Solutions to exercises:
 
 ## [Debugging](09-debugging.html)
 
+Solutions to exercises:
+
+> ## Debug the following problem {.challenge}
+>
+> This exercise has the aim of ensuring learners are able to step through
+> unseen code with unexpected output to locate issues. The issues present
+> are that:
+>
+> * The loop is not being utilised correctly. `height` and `weight` are always
+>   set as the first patient's data during each iteration of the loop.
+>
+> * The height/weight variables are reversed in the function call to
+>   `calculate_bmi(...)`
+
 ## [Command-Line Programs](10-cmdline.html)
 
 Solutions to exercises:

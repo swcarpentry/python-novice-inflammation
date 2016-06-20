@@ -7,6 +7,7 @@ minutes: 30
 > ## Learning Objectives {.objectives}
 >
 > *   Debug code containing an error systematically.
+> *   Identify ways of making code less error-prone and more easily tested.
 
 Once testing has uncovered problems,
 the next step is to fix them.
@@ -231,3 +232,32 @@ not more.
 > Switch seats with your neighbor and attempt to debug
 > the bug that they introduced into their function.
 > Which of the principles discussed above did you find helpful?
+
+> ## Debug the following problem {.challenge}
+>
+> You are assisting a researcher with Python code that computes the
+> Body Mass Index (BMI) of patients.  The researcher is concerned because
+> all patients seemingly have identical BMIs, despite having different
+> physiques.  BMI is calculated as **weight in kilograms**
+> divided by the the square of **height in metres**.
+>
+> Use the debugging principles in this exercise and locate problems
+> with the code. What suggestions would you give the researcher for 
+> ensuring any later changes they make work correctly?
+>
+> ~~~ {.python}
+> patients = [[70, 1.8], [80, 1.9], [150, 1.7]]
+>
+> def calculate_bmi(weight, height):
+>     return weight / (height ** 2)
+>
+> for patient in patients:
+>     height, weight = patients[0]
+>     bmi = calculate_bmi(height, weight)
+>     print("Patient's BMI is: %f" % bmi)
+> ~~~
+> ~~~ {.output}
+> Patient's BMI is: 21.604938
+> Patient's BMI is: 21.604938
+> Patient's BMI is: 21.604938
+> ~~~
