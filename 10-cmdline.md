@@ -632,7 +632,20 @@ the program now does everything we set out to do.
 
 > ## Generate an Error message {.challenge}
 >
-> Write a program called `check_argument.py` that print usage then exit program if there are no arguments are submitted. (Hint) You can use `sys.exit()` for exit program.
+> Write a program called `check_arguments.py` that prints usage
+> then exits the program if no arguments are provided.
+> (Hint) You can use `sys.exit()` to exit the program.
+>
+> ~~~ {.bash}
+> $ python check_arguments.py
+> ~~~
 > ~~~ {.output}
 > usage: python check_argument.py filename.txt
+> ~~~
+>
+> ~~~ {.bash}
+> $ python check_arguments.py filename.txt
+> ~~~
+> ~~~ {.output}
+> Thanks for specifying arguments!
 > ~~~
