@@ -251,7 +251,7 @@ but `data[0, 0]` might.
 Programming languages like Fortran and MATLAB start counting at 1,
 because that's what human beings have done for thousands of years.
 Languages in the C family (including C++, Java, Perl, and Python) count from 0
-because that's simpler for computers to do.
+because that's more convenient when indices are computed rather than constant.
 As a result,
 if we have an M&times;N array in Python,
 its indices go from 0 to M-1 on the first axis
