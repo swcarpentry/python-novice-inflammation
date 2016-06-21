@@ -690,6 +690,7 @@ the second parameter in the list.
 > print(k)
 > ~~~
 
+
 > ## Mixing Default and Non-Default Parameters {.challenge}
 >
 > Given the following code:
@@ -698,13 +699,13 @@ the second parameter in the list.
 > def numbers(one, two=2, three, four=4):
 >     n = str(one) + str(two) + str(three) + str(four)
 >     return n
-> 
+>
 > print(numbers(1, three=3))
 > ~~~
-> 
+>
 > what do you expect will be printed?  What is actually printed?
 > What rule do you think Python is following?
-> 
+>
 > 1.  `1234`
 > 2.  `one2three4`
 > 3.  `1239`
@@ -715,7 +716,7 @@ the second parameter in the list.
 > ~~~ {.python}
 > def func(a, b = 3, c = 6):
 >   print('a: ', a, 'b: ', b,'c:', c)
-> 
+>
 > func(-1, 2)
 > ~~~
 >
@@ -723,3 +724,26 @@ the second parameter in the list.
 > 2. `a: -1 b: 3 c: 6`
 > 3. `a: -1 b: 2 c: 6`
 > 4. `a: b: -1 c: 2`
+
+> ## The old switcheroo {.challenge}
+>
+> Which of the following would be printed if you were to run this code? Why did you pick this answer?
+>
+> a. 7 3
+> b. 3 7
+> c. 3 3
+> d. 7 7
+>
+> ~~~ {.python}
+> a = 3
+> b = 7
+>
+> def swap(a, b):
+>     temp = a
+>     a = b
+>     b = temp
+>
+> swap(a, b)
+>     
+> print(a, b)
+> ~~~
