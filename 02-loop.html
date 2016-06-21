@@ -44,9 +44,10 @@
 <p>In the last lesson, we wrote some code that plots some values of interest from our first inflammation dataset, and reveals some suspicious features in it, such as from <code>inflammation-01.csv</code></p>
 <p><img src="fig/03-loop_2_0.png" alt="Analysis of inflammation-01.csv" /><br />
 We have a dozen data sets right now, though, and more on the way. We want to create plots for all of our data sets with a single statement. To do that, we’ll have to teach the computer how to repeat things.</p>
-<p>An example task that we might want to repeat is printing each character in a word on a line of its own. One way to do this would be to use a series of <code>print</code> statements:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">word <span class="op">=</span> <span class="st">&#39;lead&#39;</span>
-<span class="bu">print</span>(word[<span class="dv">0</span>])
+<p>An example task that we might want to repeat is printing each character in a word on a line of its own.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">word <span class="op">=</span> <span class="st">&#39;lead&#39;</span></code></pre></div>
+<p>We can access a character in a string using its index. For example, we can get the first character of the word ‘lead’, by using word[0]. One way to print each character is to use four <code>print</code> statements:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(word[<span class="dv">0</span>])
 <span class="bu">print</span>(word[<span class="dv">1</span>])
 <span class="bu">print</span>(word[<span class="dv">2</span>])
 <span class="bu">print</span>(word[<span class="dv">3</span>])</code></pre></div>

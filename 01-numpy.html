@@ -131,7 +131,7 @@ weight_lb   float      126.5</code></pre>
 <pre class="output"><code>first value in data: 0.0</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;middle value in data:&#39;</span>, data[<span class="dv">30</span>, <span class="dv">20</span>])</code></pre></div>
 <pre class="output"><code>middle value in data: 13.0</code></pre>
-<p>The expression <code>data[30, 20]</code> may not surprise you, but <code>data[0, 0]</code> might. Programming languages like Fortran and MATLAB start counting at 1, because that’s what human beings have done for thousands of years. Languages in the C family (including C++, Java, Perl, and Python) count from 0 because that’s simpler for computers to do. As a result, if we have an M×N array in Python, its indices go from 0 to M-1 on the first axis and 0 to N-1 on the second. It takes a bit of getting used to, but one way to remember the rule is that the index is how many steps we have to take from the start to get the item we want.</p>
+<p>The expression <code>data[30, 20]</code> may not surprise you, but <code>data[0, 0]</code> might. Programming languages like Fortran and MATLAB start counting at 1, because that’s what human beings have done for thousands of years. Languages in the C family (including C++, Java, Perl, and Python) count from 0 because that’s more convenient when indices are computed rather than constant (see <a href="http://exple.tive.org/blarg/2013/10/22/citation-needed/">Mike Hoye’s blog post</a> for historical details). As a result, if we have an M×N array in Python, its indices go from 0 to M-1 on the first axis and 0 to N-1 on the second. It takes a bit of getting used to, but one way to remember the rule is that the index is how many steps we have to take from the start to get the item we want.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
 <h2 id="in-the-corner"><span class="glyphicon glyphicon-pushpin"></span>In the Corner</h2>
@@ -190,10 +190,12 @@ doubledata:
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(data.mean())</code></pre></div>
 <pre class="output"><code>6.14875</code></pre>
 <p><code>mean</code> is a <a href="reference.html#method">method</a> of the array, i.e., a function that belongs to it in the same way that the member <code>shape</code> does. If variables are nouns, methods are verbs: they are what the thing in question knows how to do. We need empty parentheses for <code>data.mean()</code>, even when we’re not passing in any parameters, to tell Python to go and do something for us. <code>data.shape</code> doesn’t need <code>()</code> because it is just a description but <code>data.mean()</code> requires the <code>()</code> because it is an action.</p>
-<p>NumPy arrays have lots of useful methods:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;maximum inflammation:&#39;</span>, data.<span class="bu">max</span>())
-<span class="bu">print</span>(<span class="st">&#39;minimum inflammation:&#39;</span>, data.<span class="bu">min</span>())
-<span class="bu">print</span>(<span class="st">&#39;standard deviation:&#39;</span>, data.std())</code></pre></div>
+<p>NumPy arrays have lots of useful methods. Let’s use three of those methods to get some descriptive values about the dataset. We’ll also use multiple assignment, a convenient Python feature that will enable us to do this all in one line.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">maxval, minval, stdval <span class="op">=</span> data.<span class="bu">max</span>(), data.<span class="bu">min</span>(), data.std()
+
+<span class="bu">print</span>(<span class="st">&#39;maximum inflammation:&#39;</span>, maxval)
+<span class="bu">print</span>(<span class="st">&#39;minimum inflammation:&#39;</span>, minval)
+<span class="bu">print</span>(<span class="st">&#39;standard deviation:&#39;</span>, stdval)</code></pre></div>
 <pre class="output"><code>maximum inflammation: 20.0
 minimum inflammation: 0.0
 standard deviation: 4.61383319712</code></pre>
