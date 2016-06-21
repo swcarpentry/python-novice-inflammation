@@ -456,6 +456,31 @@ func(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</spa
 </ol>
 </div>
 </section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="the-old-switcheroo"><span class="glyphicon glyphicon-pencil"></span>The old switcheroo</h2>
+</div>
+<div class="panel-body">
+<p>Which of the following would be printed if you were to run this code? Why did you pick this answer?</p>
+<ol style="list-style-type: lower-alpha">
+<li>7 3</li>
+<li>3 7</li>
+<li>3 3</li>
+<li>7 7</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">a <span class="op">=</span> <span class="dv">3</span>
+b <span class="op">=</span> <span class="dv">7</span>
+
+<span class="kw">def</span> swap(a, b):
+    temp <span class="op">=</span> a
+    a <span class="op">=</span> b
+    b <span class="op">=</span> temp
+
+swap(a, b)
+    
+<span class="bu">print</span>(a, b)</code></pre></div>
+</div>
+</section>
         </div>
       </div>
       </article>
