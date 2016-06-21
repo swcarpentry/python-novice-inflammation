@@ -400,6 +400,43 @@ last three characters: gen</code></pre>
 <p>Modify the program to display the three plots on top of one another instead of side by side.</p>
 </div>
 </section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="stacking-arrays"><span class="glyphicon glyphicon-pencil"></span>Stacking arrays</h2>
+</div>
+<div class="panel-body">
+<p>Arrays can be concatenated and stacked on top of one another, using NumPy’s <code>vstack</code> and <code>hstack</code> functions for vertical and horizontal stacking, respectively.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy
+
+A <span class="op">=</span> numpy.array([[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>], [<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])
+<span class="bu">print</span>(<span class="st">&#39;A = &#39;</span>)
+<span class="bu">print</span>(A)
+
+B <span class="op">=</span> numpy.hstack([A, A])
+<span class="bu">print</span>(<span class="st">&#39;B = &#39;</span>)
+<span class="bu">print</span>(B)
+
+C <span class="op">=</span> numpy.vstack([A, A])
+<span class="bu">print</span>(<span class="st">&#39;C = &#39;</span>)
+<span class="bu">print</span>(C)</code></pre></div>
+<pre class="output"><code>A = 
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+B = 
+[[1 2 3 1 2 3]
+ [4 5 6 4 5 6]
+ [7 8 9 7 8 9]]
+C = 
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]
+ [1 2 3]
+ [4 5 6]
+ [7 8 9]]</code></pre>
+<p>Write some additional code that slices the first and last columns of <code>A</code>, and stacks them into a 3x2 array. Make sure to <code>print</code> the results to verify your solution.</p>
+</div>
+</section>
         </div>
       </div>
       </article>
