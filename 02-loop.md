@@ -22,15 +22,21 @@ We want to create plots for all of our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
 An example task that we might want to repeat is printing each character in a
-word on a line of its own. One way to do this would be to use a series of `print` statements:
+word on a line of its own.
 
 ~~~ {.python}
 word = 'lead'
+~~~
+
+We can access a character in a string using its index. For example, we can get the first
+character of the word 'lead', by using word[0]. One way to print each character is to use
+four `print` statements:
+
+~~~ {.python}
 print(word[0])
 print(word[1])
 print(word[2])
 print(word[3])
-
 ~~~
 ~~~ {.output}
 l
