@@ -406,12 +406,16 @@ to tell Python to go and do something for us. `data.shape` doesn't
 need `()` because it is just a description but `data.mean()` requires the `()`
 because it is an action.
 
-NumPy arrays have lots of useful methods:
+NumPy arrays have lots of useful methods, lets use three of those methods to get some descriptive values about the dataset.
 
 ~~~ {.python}
-print('maximum inflammation:', data.max())
-print('minimum inflammation:', data.min())
-print('standard deviation:', data.std())
+# we can assign multiple values to multiple variables at once
+maxval, minval, stdval = data.max(), data.min(), data.std()
+	
+	
+print('maximum inflammation:', maxval)
+print('minimum inflammation:', minval)
+print('standard deviation:', stdval)
 ~~~
 ~~~ {.output}
 maximum inflammation: 20.0
