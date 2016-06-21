@@ -406,13 +406,14 @@ to tell Python to go and do something for us. `data.shape` doesn't
 need `()` because it is just a description but `data.mean()` requires the `()`
 because it is an action.
 
-NumPy arrays have lots of useful methods, lets use three of those methods to get some descriptive values about the dataset.
+NumPy arrays have lots of useful methods.
+Let's use three of those methods to get some descriptive values about the dataset.
+We'll also use multiple assignment,
+a convenient Python feature that will enable us to do this all in one line.
 
 ~~~ {.python}
-# we can assign multiple values to multiple variables at once
 maxval, minval, stdval = data.max(), data.min(), data.std()
-	
-	
+
 print('maximum inflammation:', maxval)
 print('minimum inflammation:', minval)
 print('standard deviation:', stdval)
@@ -431,7 +432,7 @@ standard deviation: 4.61383319712
 > Notebook there is an easy way to find out. If you type the name of your object
 > with a full-stop then you can use tab completion (e.g. type `data.` and then press tab)
 > to see a list of all methods that you can use on that object. After selecting one you
-> can also add a question mark (e.g. `data.cumprod?`) and IPython will return an 
+> can also add a question mark (e.g. `data.cumprod?`) and IPython will return an
 > explanation of the method! This is the same as doing `help(data.cumprod)`..
 
 
