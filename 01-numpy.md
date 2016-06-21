@@ -18,7 +18,7 @@ Words are useful,
 but what's more useful are the sentences and stories we build with them.
 Similarly,
 while a lot of powerful, general tools are built into languages like Python,
-specialized tools built up from these basic units live in [libraries](reference.html#library) 
+specialized tools built up from these basic units live in [libraries](reference.html#library)
 that can be called upon when needed.
 
 In order to load our inflammation data,
@@ -423,13 +423,12 @@ standard deviation: 4.61383319712
 >
 > How did we know what methods data has and how to use them? When you are working
 > on your own data it might be something different to a numpy object: how will
-> you know what methods you can use then? If you are working in the IPython/Jupyter 
+> you know what methods you can use then? If you are working in the IPython/Jupyter
 > Notebook there is an easy way to find out. If you type the name of your object
 > with a full-stop then you can use tab completion (e.g. type `data.` and then press tab)
 > to see a list of all methods that you can use on that object. After selecting one you
 > can also add a question mark (e.g. `data.cumprod?`) and IPython will return an 
-> explanation of the method! This is the same as doing `help(data.cumprod)`, and shows
-> the docstring of the `np.cumprod` function.
+> explanation of the method! This is the same as doing `help(data.cumprod)`..
 
 
 When analyzing data,
@@ -448,9 +447,9 @@ print('maximum inflammation for patient 0:', patient_0.max())
 maximum inflammation for patient 0: 18.0
 ~~~
 
-Everything in a line of code following the '#' symbol is a 
-[comment](reference.html#comment) that is ignored by the computer. 
-Comments allow programmers to leave explanatory notes for other 
+Everything in a line of code following the '#' symbol is a
+[comment](reference.html#comment) that is ignored by the computer.
+Comments allow programmers to leave explanatory notes for other
 programmers or their future selves.
 
 We don't actually need to store the row in a variable of its own.
@@ -593,7 +592,7 @@ while the minimum seems to be a step function.
 Neither result seems particularly likely,
 so either there's a mistake in our calculations
 or something is wrong with our data.
-This insight would have been difficult to reach by 
+This insight would have been difficult to reach by
 examining the data without visualization tools.
 
 You can group similar plots in a single figure using subplots.
@@ -711,13 +710,13 @@ the graphs will actually be squeezed together more closely.)
 
 > ## Check your understanding: plot scaling {.challenge}
 >
-> Why do all of our plots stop just short of the upper end of our graph? 
-> If we want to change this, we can use the `set_ylim(min, max)` method of each 'axes', for example: 
+> Why do all of our plots stop just short of the upper end of our graph?
+> If we want to change this, we can use the `set_ylim(min, max)` method of each 'axes', for example:
 >
 > ~~~ {.python}
 > axes3.set_ylim(0,6)
 > ~~~
-> 
+>
 > Update your plotting code to automatically set a more appropriate scale (hint: you can make use of the `max` and `min` methods to help)
 
 > ## Check your understanding: drawing straight lines {.challenge}

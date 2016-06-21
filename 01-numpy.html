@@ -197,6 +197,14 @@ doubledata:
 <pre class="output"><code>maximum inflammation: 20.0
 minimum inflammation: 0.0
 standard deviation: 4.61383319712</code></pre>
+<aside class="callout panel panel-info">
+<div class="panel-heading">
+<h2 id="mystery-methods-in-ipython"><span class="glyphicon glyphicon-pushpin"></span>Mystery methods in IPython</h2>
+</div>
+<div class="panel-body">
+<p>How did we know what methods data has and how to use them? When you are working on your own data it might be something different to a numpy object: how will you know what methods you can use then? If you are working in the IPython/Jupyter Notebook there is an easy way to find out. If you type the name of your object with a full-stop then you can use tab completion (e.g. type <code>data.</code> and then press tab) to see a list of all methods that you can use on that object. After selecting one you can also add a question mark (e.g. <code>data.cumprod?</code>) and IPython will return an explanation of the method! This is the same as doing <code>help(data.cumprod)</code>..</p>
+</div>
+</aside>
 <p>When analyzing data, though, we often want to look at partial statistics, such as the maximum value per patient or the average value per day. One way to do this is to create a new temporary array of the data we want, then ask it to do the calculation:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">patient_0 <span class="op">=</span> data[<span class="dv">0</span>, :] <span class="co"># 0 on the first axis, everything on the second</span>
 <span class="bu">print</span>(<span class="st">&#39;maximum inflammation for patient 0:&#39;</span>, patient_0.<span class="bu">max</span>())</code></pre></div>
