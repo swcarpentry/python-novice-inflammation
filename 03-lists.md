@@ -296,7 +296,7 @@ print("subset", subset)
 subset [5, 13, 23, 37]
 >~~~
 >
->Use the step size argument to create a new string that contains only every other character in the string "In an octopus's garden in the shade"  
+>Use the step size argument to create a new string that contains only every other character in the string "In an octopus's garden in the shade"
 >
 > ~~~{.python}
 > beatles = "In an octopus's garden in the shade"
@@ -305,6 +305,36 @@ subset [5, 13, 23, 37]
 > I notpssgre ntesae
 > ~~~
 
+If you want to take a slice from the beginning of a sequence, you can omit the first index in the range:
+
+~~~{.python}
+date = "Monday 4 January 2016"
+day = date[0:6]
+print("Using 0 to begin range:", day)
+day = date[:6]
+print("Omitting beginning index:", day)
+~~~
+~~~{.output}
+Using 0 to begin range: Monday
+Omitting beginning index: Monday
+~~~
+
+And equally, you can omit the ending index in the range to take a slice to the very end of the sequence:
+
+~~~{.python}
+months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+sond = months[8:12]
+print("With known last position:", sond)
+sond = months[8:len(months)]
+print("Using len() to get last entry:", sond)
+sond = months[8:]
+("Omitting ending index:", sond)
+~~~
+~~~{.output}
+With known last position: ["sep", "oct", "nov", "dec"]
+Using len() to get last entry: ["sep", "oct", "nov", "dec"]
+Omitting ending index: ["sep", "oct", "nov", "dec"]
+~~~
 
 > ## Tuples and exchanges {.challenge}
 >
@@ -327,8 +357,6 @@ subset [5, 13, 23, 37]
 >
 > Do they always do the same thing?
 > Which do you find easier to read?
-
-
 
 > ## Overloading {.challenge}
 >
