@@ -95,6 +95,17 @@ which are covered in the lesson on the shell.
     [PR #244](https://github.com/swcarpentry/python-novice-inflammation/pull/244)
     for detailed arguments for and against the change.
 
+*   Underscores vs. hyphens in filenames
+
+    We used to use hyphens in filenames in order to signify that these Python
+    files should only be run as scripts and never imported. However, after some
+    [discussion](https://github.com/swcarpentry/python-novice-inflammation/pull/254),
+    including an informal Twitter poll, we switched over to underscores because
+    many files that start off as Python scripts end up being imported eventually.
+    For that reason, we also added `if __name__ == '__main__'` guards around
+    `main()` calls, which is how real-world Python scripts ensure that imports
+    do not result in side-effects.
+
 ## [Analyzing Patient Data](01-numpy.html)
 
 Solutions to exercises:
