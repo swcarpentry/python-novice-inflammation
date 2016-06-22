@@ -62,13 +62,13 @@ filenames <span class="op">=</span> filenames[<span class="dv">0</span>:<span cl
     axes3 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
 
     axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
-    axes1.plot(data.mean(axis<span class="op">=</span><span class="dv">0</span>))
+    axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))
 
     axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
-    axes2.plot(data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>))
+    axes2.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>))
 
     axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
-    axes3.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>))
+    axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))
 
     fig.tight_layout()
     matplotlib.pyplot.show()</code></pre></div>

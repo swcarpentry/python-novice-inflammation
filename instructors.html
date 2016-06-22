@@ -55,6 +55,10 @@
 <li><p><code>import ... as ...</code> syntax.</p>
 <p>This syntax is commonly used in the scientific Python community; it is explicitly recommended in documentation to <code>import numpy as np</code> and <code>import matplotlib.pyplot as plt</code>. Despite that, we have decided not to introduce aliasing imports in this novice lesson due to the additional cognitive load it puts on students, despite the typing that it saves. A good summary of arguments for and against can be found in <a href="https://github.com/swcarpentry/python-novice-inflammation/pull/61">PR #61</a>.</p>
 <p>It is up to you as an individual instructor whether you want to introduce these aliases when you teach this lesson, but we encourage you to please read those arguments thoroughly before deciding one way or the other.</p></li>
+<li><p>NumPy methods.</p>
+<p>We used to use NumPy array methods in the first <a href="01-numpy.html">NumPy topic</a>. We switched these methods to the equivalent functions because a majority of instructors supported the change; see <a href="https://github.com/swcarpentry/python-novice-inflammation/pull/244">PR #244</a> for detailed arguments for and against the change.</p></li>
+<li><p>Underscores vs. hyphens in filenames</p>
+<p>We used to use hyphens in filenames in order to signify that these Python files should only be run as scripts and never imported. However, after some <a href="https://github.com/swcarpentry/python-novice-inflammation/pull/254">discussion</a>, including an informal Twitter poll, we switched over to underscores because many files that start off as Python scripts end up being imported eventually. For that reason, we also added <code>if __name__ == '__main__'</code> guards around <code>main()</code> calls, which is how real-world Python scripts ensure that imports do not result in side-effects.</p></li>
 </ul>
 <h2 id="analyzing-patient-data"><a href="01-numpy.html">Analyzing Patient Data</a></h2>
 <p>Solutions to exercises:</p>
@@ -109,14 +113,14 @@ e</code></pre>
 <pre class="output"><code>Because matplotlib normally sets x and y axes limits to the min and max of our data (depending on data range)</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># for example:</span>
 axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
-axes3.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>))
+axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))
 axes3.set_ylim(<span class="dv">0</span>,<span class="dv">6</span>)
 
 <span class="co"># or a more automated approach:</span>
-min_data <span class="op">=</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>)
+min_data <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>)
 axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
 axes3.plot(min_data)
-axes3.set_ylim(min_data.<span class="bu">min</span>(),min_data.<span class="bu">max</span>() <span class="op">*</span> <span class="fl">1.1</span>)</code></pre></div>
+axes3.set_ylim(numpy.<span class="bu">min</span>(min_data), numpy.<span class="bu">max</span>(min_data) <span class="op">*</span> <span class="fl">1.1</span>)</code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
@@ -134,7 +138,7 @@ axes3.set_ylim(min_data.<span class="bu">min</span>(),min_data.<span class="bu">
 </div>
 <div class="panel-body">
 <p>Create a plot showing the standard deviation (<code>numpy.std</code>) of the inflammation data for each day across all patients.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">max_plot <span class="op">=</span> matplotlib.pyplot.plot(data.std(axis<span class="op">=</span><span class="dv">0</span>))
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">max_plot <span class="op">=</span> matplotlib.pyplot.plot(numpy.std(data, axis<span class="op">=</span><span class="dv">0</span>))
 matplotlib.pyplot.show()</code></pre></div>
 </div>
 </section>
@@ -158,13 +162,13 @@ axes2 <span class="op">=</span> fig.add_subplot(<span class="dv">3</span>, <span
 axes3 <span class="op">=</span> fig.add_subplot(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">3</span>)
 
 axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
-axes1.plot(data.mean(axis<span class="op">=</span><span class="dv">0</span>))
+axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))
 
 axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
-axes2.plot(data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>))
+axes2.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>))
 
 axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
-axes3.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>))
+axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))
 
 fig.tight_layout()
 
@@ -395,8 +399,8 @@ right <span class="op">=</span> temp</code></pre></div>
 <p>Write a function <code>rescale</code> that takes an array as input and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0. (Hint: If <span class="math inline">\(L\)</span> and <span class="math inline">\(H\)</span> are the lowest and highest values in the original array, then the replacement for a value <span class="math inline">\(v\)</span> should be <span class="math inline">\((v-L) / (H-L)\)</span>.)</p>
 <hr />
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> rescale(input_array):
-    L <span class="op">=</span> input_array.<span class="bu">min</span>()
-    H <span class="op">=</span> input_array.<span class="bu">max</span>()
+    L <span class="op">=</span> numpy.<span class="bu">min</span>(input_array)
+    H <span class="op">=</span> numpy.<span class="bu">max</span>(input_array)
     output_array <span class="op">=</span> (input_array <span class="op">-</span> L) <span class="op">/</span> (H <span class="op">-</span> L)
     <span class="cf">return</span> output_array</code></pre></div>
 </div>
@@ -412,10 +416,10 @@ right <span class="op">=</span> temp</code></pre></div>
 <span class="co">that 0 corresponds to the minimum and 1 to the maximum value of the input array.</span>
 
 <span class="co">Examples:</span>
-<span class="co">&gt;&gt;&gt; rescale(np.arange(10.0))</span>
+<span class="co">&gt;&gt;&gt; rescale(numpy.arange(10.0))</span>
 <span class="co">array([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,</span>
 <span class="co">       0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])</span>
-<span class="co">&gt;&gt;&gt; rescale(np.linspace(0, 100, 5))</span>
+<span class="co">&gt;&gt;&gt; rescale(numpy.linspace(0, 100, 5))</span>
 <span class="co">array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])</span>
 <span class="co">&#39;&#39;&#39;</span></code></pre></div>
 </div>
@@ -429,8 +433,8 @@ right <span class="op">=</span> temp</code></pre></div>
 <hr />
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> rescale(input_array, low_val<span class="op">=</span><span class="fl">0.0</span>, high_val<span class="op">=</span><span class="fl">1.0</span>):
     <span class="co">&#39;&#39;&#39;rescales input array values to lie between low_val and high_val&#39;&#39;&#39;</span>
-    L <span class="op">=</span> input_array.<span class="bu">min</span>()
-    H <span class="op">=</span> input_array.<span class="bu">max</span>()
+    L <span class="op">=</span> numpy.<span class="bu">min</span>(input_array)
+    H <span class="op">=</span> numpy.<span class="bu">max</span>(input_array)
     intermed_array <span class="op">=</span> (input_array <span class="op">-</span> L) <span class="op">/</span> (H <span class="op">-</span> L)
     output_array <span class="op">=</span> intermed_array <span class="op">*</span> (high_val <span class="op">-</span> low_val) <span class="op">+</span> low_val
     <span class="cf">return</span> output_array</code></pre></div>
@@ -597,7 +601,7 @@ KeyError: &#39;Friday&#39;</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># a possible pre-condition:</span>
 <span class="cf">assert</span> <span class="bu">len</span>(<span class="bu">input</span>) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">&#39;List length must be non-zero&#39;</span>
 <span class="co"># a possible post-condition:</span>
-<span class="cf">assert</span> <span class="bu">input</span>.<span class="bu">min</span>() <span class="op">&lt;</span> average <span class="op">&lt;</span> <span class="bu">input</span>.<span class="bu">max</span>(), <span class="st">&#39;Average should be between min and max of input values&#39;</span></code></pre></div>
+<span class="cf">assert</span> numpy.<span class="bu">min</span>(<span class="bu">input</span>) <span class="op">&lt;</span> average <span class="op">&lt;</span> numpy.<span class="bu">max</span>(<span class="bu">input</span>), <span class="st">&#39;Average should be between min and max of input values&#39;</span></code></pre></div>
 </div>
 </section>
 <section class="challenge panel panel-success">
@@ -740,7 +744,7 @@ main()</code></pre></div>
 <div class="panel-body">
 <p>Rewrite <code>readings.py</code> so that it uses <code>-n</code>, <code>-m</code>, and <code>-x</code> instead of <code>--min</code>, <code>--mean</code>, and <code>--max</code> respectively. Is the code easier to read? Is the program easier to understand?</p>
 <hr />
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/readings-07.py</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/readings_07.py</span>
 <span class="im">import</span> sys
 <span class="im">import</span> numpy
 
@@ -760,11 +764,11 @@ main()</code></pre></div>
     data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
 
     <span class="cf">if</span> action <span class="op">==</span> <span class="st">&#39;-n&#39;</span>:
-        values <span class="op">=</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>)
+        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)
     <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;-m&#39;</span>:
-        values <span class="op">=</span> data.mean(axis<span class="op">=</span><span class="dv">1</span>)
+        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)
     <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;-x&#39;</span>:
-        values <span class="op">=</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)
+        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)
 
     <span class="cf">for</span> m <span class="op">in</span> values:
         <span class="bu">print</span>(m)
@@ -779,14 +783,14 @@ main()</code></pre></div>
 <div class="panel-body">
 <p>Separately, modify <code>readings.py</code> so that if no parameters are given (i.e., no action is specified and no filenames are given), it prints a message explaining how it should be used.</p>
 <hr />
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/readings-08.py</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/readings_08.py</span>
 <span class="im">import</span> sys
 <span class="im">import</span> numpy
 
 <span class="kw">def</span> main():
     script <span class="op">=</span> sys.argv[<span class="dv">0</span>]
     <span class="cf">if</span> <span class="bu">len</span>(sys.argv) <span class="op">==</span> <span class="dv">1</span>: <span class="co"># no arguments, so print help message</span>
-        <span class="bu">print</span>(<span class="st">&quot;&quot;&quot;Usage: python readings-08.py action filenames</span>
+        <span class="bu">print</span>(<span class="st">&quot;&quot;&quot;Usage: python readings_08.py action filenames</span>
 <span class="st">              action must be one of --min --mean --max</span>
 <span class="st">              if filenames is blank, input is taken from stdin;</span>
 <span class="st">              otherwise, each filename in the list of arguments is processed in turn&quot;&quot;&quot;</span>)
@@ -806,11 +810,11 @@ main()</code></pre></div>
     data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
 
     <span class="cf">if</span> action <span class="op">==</span> <span class="st">&#39;--min&#39;</span>:
-        values <span class="op">=</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>)
+        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)
     <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--mean&#39;</span>:
-        values <span class="op">=</span> data.mean(axis<span class="op">=</span><span class="dv">1</span>)
+        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)
     <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--max&#39;</span>:
-        values <span class="op">=</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)
+        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)
 
     <span class="cf">for</span> m <span class="op">in</span> values:
         <span class="bu">print</span>(m)
@@ -825,7 +829,7 @@ main()</code></pre></div>
 <div class="panel-body">
 <p>Separately, modify <code>readings.py</code> so that if no action is given it displays the means of the data.</p>
 <hr />
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/readings-09.py</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/readings_09.py</span>
 <span class="im">import</span> sys
 <span class="im">import</span> numpy
 
@@ -848,11 +852,11 @@ main()</code></pre></div>
     data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
 
     <span class="cf">if</span> action <span class="op">==</span> <span class="st">&#39;--min&#39;</span>:
-        values <span class="op">=</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>)
+        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)
     <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--mean&#39;</span>:
-        values <span class="op">=</span> data.mean(axis<span class="op">=</span><span class="dv">1</span>)
+        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)
     <span class="cf">elif</span> action <span class="op">==</span> <span class="st">&#39;--max&#39;</span>:
-        values <span class="op">=</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)
+        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)
 
     <span class="cf">for</span> m <span class="op">in</span> values:
         <span class="bu">print</span>(m)
@@ -902,13 +906,13 @@ main()</code></pre></div>
 <h2 id="counting-lines"><span class="glyphicon glyphicon-pencil"></span>Counting lines</h2>
 </div>
 <div class="panel-body">
-<p>Write a program called <code>line-count.py</code> that works like the Unix <code>wc</code> command:</p>
+<p>Write a program called <code>line_count.py</code> that works like the Unix <code>wc</code> command:</p>
 <ul>
 <li>If no filenames are given, it reports the number of lines in standard input.</li>
 <li>If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.</li>
 </ul>
 <hr />
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/line-count.py</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this is code/line_count.py</span>
 <span class="im">import</span> sys
 
 <span class="kw">def</span> main():

@@ -116,13 +116,13 @@ boiling point of water: 373.15</code></pre>
     axes3 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
 
     axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
-    axes1.plot(data.mean(axis<span class="op">=</span><span class="dv">0</span>))
+    axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))
 
     axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
-    axes2.plot(data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>))
+    axes2.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>))
 
     axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
-    axes3.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>))
+    axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))
 
     fig.tight_layout()
     matplotlib.pyplot.show()</code></pre></div>
@@ -131,9 +131,9 @@ boiling point of water: 373.15</code></pre>
 
     data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filename, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
 
-    <span class="cf">if</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:
+    <span class="cf">if</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:
         <span class="bu">print</span>(<span class="st">&#39;Suspicious looking maxima!&#39;</span>)
-    <span class="cf">elif</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>).<span class="bu">sum</span>() <span class="op">==</span> <span class="dv">0</span>:
+    <span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:
         <span class="bu">print</span>(<span class="st">&#39;Minima add up to zero!&#39;</span>)
     <span class="cf">else</span>:
         <span class="bu">print</span>(<span class="st">&#39;Seems OK!&#39;</span>)</code></pre></div>
@@ -146,7 +146,7 @@ boiling point of water: 373.15</code></pre>
 <h2 id="testing-and-documenting">Testing and Documenting</h2>
 <p>Once we start putting things in functions so that we can re-use them, we need to start testing that those functions are working correctly. To see how to do this, let’s write a function to center a dataset around a particular value:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
-    <span class="cf">return</span> (data <span class="op">-</span> data.mean()) <span class="op">+</span> desired</code></pre></div>
+    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> desired</code></pre></div>
 <p>We could test this on our actual data, but since we don’t know what the values ought to be, it will be hard to tell if the result was correct. Instead, let’s use NumPy to create a matrix of 0’s and then center that around 3:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">z <span class="op">=</span> numpy.zeros((<span class="dv">2</span>,<span class="dv">2</span>))
 <span class="bu">print</span>(center(z, <span class="dv">3</span>))</code></pre></div>
@@ -163,26 +163,26 @@ boiling point of water: 373.15</code></pre>
  [-6.14875 -6.14875 -6.14875 ..., -6.14875 -4.14875 -6.14875]
  [-6.14875 -6.14875 -5.14875 ..., -5.14875 -5.14875 -6.14875]]</code></pre>
 <p>It’s hard to tell from the default output whether the result is correct, but there are a few simple tests that will reassure us:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;original min, mean, and max are:&#39;</span>, data.<span class="bu">min</span>(), data.mean(), data.<span class="bu">max</span>())
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;original min, mean, and max are:&#39;</span>, numpy.<span class="bu">min</span>(data), numpy.mean(data), numpy.<span class="bu">max</span>(data))
 centered <span class="op">=</span> center(data, <span class="dv">0</span>)
-<span class="bu">print</span>(<span class="st">&#39;min, mean, and and max of centered data are:&#39;</span>, centered.<span class="bu">min</span>(), centered.mean(), centered.<span class="bu">max</span>())</code></pre></div>
+<span class="bu">print</span>(<span class="st">&#39;min, mean, and and max of centered data are:&#39;</span>, numpy.<span class="bu">min</span>(centered), numpy.mean(centered), numpy.<span class="bu">max</span>(centered))</code></pre></div>
 <pre class="output"><code>original min, mean, and max are: 0.0 6.14875 20.0
 min, mean, and and max of centered data are: -6.14875 2.84217094304e-16 13.85125</code></pre>
 <p>That seems almost right: the original mean was about 6.1, so the lower bound from zero is now about -6.1. The mean of the centered data isn’t quite zero — we’ll explore why not in the challenges — but it’s pretty close. We can even go further and check that the standard deviation hasn’t changed:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;std dev before and after:&#39;</span>, data.std(), centered.std())</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;std dev before and after:&#39;</span>, numpy.std(data), numpy.std(centered))</code></pre></div>
 <pre class="output"><code>std dev before and after: 4.61383319712 4.61383319712</code></pre>
 <p>Those values look the same, but we probably wouldn’t notice if they were different in the sixth decimal place. Let’s do this instead:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;difference in standard deviations before and after:&#39;</span>, data.std() <span class="op">-</span> centered.std())</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;difference in standard deviations before and after:&#39;</span>, numpy.std(data) <span class="op">-</span> numpy.std(centered))</code></pre></div>
 <pre class="output"><code>difference in standard deviations before and after: -3.5527136788e-15</code></pre>
 <p>Again, the difference is very small. It’s still possible that our function is wrong, but it seems unlikely enough that we should probably get back to doing our analysis. We have one more task first, though: we should write some <a href="reference.html#documentation">documentation</a> for our function to remind ourselves later what it’s for and how to use it.</p>
 <p>The usual way to put documentation in software is to add <a href="reference.html#comment">comments</a> like this:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># center(data, desired): return a new array containing the original data centered around the desired value.</span>
 <span class="kw">def</span> center(data, desired):
-    <span class="cf">return</span> (data <span class="op">-</span> data.mean()) <span class="op">+</span> desired</code></pre></div>
+    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> desired</code></pre></div>
 <p>There’s a better way, though. If the first thing in a function is a string that isn’t assigned to a variable, that string is attached to the function as its documentation:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
     <span class="co">&#39;&#39;&#39;Return a new array containing the original data centered around the desired value.&#39;&#39;&#39;</span>
-    <span class="cf">return</span> (data <span class="op">-</span> data.mean()) <span class="op">+</span> desired</code></pre></div>
+    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> desired</code></pre></div>
 <p>This is better because we can now ask Python’s built-in help system to show us the documentation for the function:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">help</span>(center)</code></pre></div>
 <pre class="output"><code>Help on function center in module __main__:
@@ -193,7 +193,7 @@ center(data, desired)
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired):
     <span class="co">&#39;&#39;&#39;Return a new array containing the original data centered around the desired value.</span>
 <span class="co">    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]&#39;&#39;&#39;</span>
-    <span class="cf">return</span> (data <span class="op">-</span> data.mean()) <span class="op">+</span> desired
+    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> desired
 
 <span class="bu">help</span>(center)</code></pre></div>
 <pre class="output"><code>Help on function center in module __main__:
@@ -230,7 +230,7 @@ TypeError: data type &quot;,&quot; not understood</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> center(data, desired<span class="op">=</span><span class="fl">0.0</span>):
     <span class="co">&#39;&#39;&#39;Return a new array containing the original data centered around the desired value (0 by default).</span>
 <span class="co">    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]&#39;&#39;&#39;</span>
-    <span class="cf">return</span> (data <span class="op">-</span> data.mean()) <span class="op">+</span> desired</code></pre></div>
+    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> desired</code></pre></div>
 <p>The key change is that the second parameter is now written <code>desired=0.0</code> instead of just <code>desired</code>. If we call the function with two arguments, it works as it did before:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">test_data <span class="op">=</span> numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))
 <span class="bu">print</span>(center(test_data, <span class="dv">3</span>))</code></pre></div>
@@ -361,6 +361,32 @@ loadtxt(fname, dtype=&lt;class &#39;float&#39;&gt;, comments=&#39;#&#39;, delimi
 <p>This tells us that <code>loadtxt</code> has one parameter called <code>fname</code> that doesn’t have a default value, and eight others that do. If we call the function like this:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(<span class="st">&#39;inflammation-01.csv&#39;</span>, <span class="st">&#39;,&#39;</span>)</code></pre></div>
 <p>then the filename is assigned to <code>fname</code> (which is what we want), but the delimiter string <code>','</code> is assigned to <code>dtype</code> rather than <code>delimiter</code>, because <code>dtype</code> is the second parameter in the list. However ‘,’ isn’t a known <code>dtype</code> so our code produced an error message when we tried to run it. When we call <code>loadtxt</code> we don’t have to provide <code>fname=</code> for the filename because it’s the first item in the list, but if we want the ‘,’ to be assigned to the variable <code>delimiter</code>, we <em>do</em> have to provide <code>delimiter=</code> for the second parameter since <code>delimiter</code> is not the second parameter in the list.</p>
+<h2 id="readable-functions">Readable functions</h2>
+<p>Consider these two functions:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> s(p):
+    a <span class="op">=</span> <span class="dv">0</span>
+    <span class="cf">for</span> v <span class="op">in</span> p:
+        a <span class="op">+=</span> v
+    m <span class="op">=</span> a <span class="op">/</span> <span class="bu">len</span>(p)
+    d <span class="op">=</span> <span class="dv">0</span>
+    <span class="cf">for</span> v <span class="op">in</span> p:
+        d <span class="op">+=</span> (v <span class="op">-</span> m) <span class="op">*</span> (v <span class="op">-</span> m)
+    <span class="cf">return</span> numpy.sqrt(d <span class="op">/</span> (<span class="bu">len</span>(p) <span class="op">-</span> <span class="dv">1</span>))
+
+<span class="kw">def</span> std_dev(sample):
+    sample_sum <span class="op">=</span> <span class="dv">0</span>
+    <span class="cf">for</span> value <span class="op">in</span> sample:
+        sample_sum <span class="op">+=</span> value
+
+    sample_mean <span class="op">=</span> sample_sum <span class="op">/</span> <span class="bu">len</span>(sample)
+
+    sum_squared_devs <span class="op">=</span> <span class="dv">0</span>
+    <span class="cf">for</span> value <span class="op">in</span> sample:
+        sum_squared_devs <span class="op">+=</span> (value <span class="op">-</span> sample_mean) <span class="op">*</span> (value <span class="op">-</span> sample_mean)
+
+    <span class="cf">return</span> numpy.sqrt(sum_squared_devs <span class="op">/</span> (<span class="bu">len</span>(sample) <span class="op">-</span> <span class="dv">1</span>))</code></pre></div>
+<p>The functions <code>s</code> and <code>std_dev</code> are computationally equivalent (they both calculate the sample standard deviation), but to a human reader, they look very different. You probably found <code>std_dev</code> much easier to read and understand than <code>s</code>.</p>
+<p>As this example illustrates, both documentation and a programmer’s <em>coding style</em> combine to determine how easy it is for others to read and understand the programmer’s code. Choosing meaningful variable names and using blank spaces to break the code into logical “chunks” are helpful techniques for producing <em>readable code</em>. This is useful not only for sharing code with others, but also for the original programmer. If you need to revisit code that you wrote months ago and haven’t thought about since then, you will appreciate the value of readable code!</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2 id="combining-strings"><span class="glyphicon glyphicon-pencil"></span>Combining strings</h2>
@@ -477,8 +503,16 @@ b <span class="op">=</span> <span class="dv">7</span>
     b <span class="op">=</span> temp
 
 swap(a, b)
-    
+
 <span class="bu">print</span>(a, b)</code></pre></div>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="readable-code"><span class="glyphicon glyphicon-pencil"></span>Readable code</h2>
+</div>
+<div class="panel-body">
+<p>Revise a function you wrote for one of the previous exercises to try to make the code more readable. Then, collaborate with one of your neighbors to critique each other’s functions and discuss how your function implementations could be further improved to make them more readable.</p>
 </div>
 </section>
         </div>

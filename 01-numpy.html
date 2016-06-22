@@ -56,7 +56,7 @@
        [ 0.,  1.,  1., ...,  1.,  1.,  1.],
        [ 0.,  0.,  0., ...,  0.,  2.,  0.],
        [ 0.,  0.,  1., ...,  1.,  1.,  0.]])</code></pre>
-<p>The expression <code>numpy.loadtxt(...)</code> is a <a href="reference.html#function-call">function call</a> that asks Python to run the function <code>loadtxt</code> which belongs to the <code>numpy</code> library. This <a href="reference.html#dotted-notation">dotted notation</a> is used everywhere in Python to refer to the parts of things as <code>thing.component</code>.</p>
+<p>The expression <code>numpy.loadtxt(...)</code> is a <a href="reference.html#function-call">function call</a> that asks Python to run the <a href="reference.html#function">function</a> <code>loadtxt</code> which belongs to the <code>numpy</code> library. This <a href="reference.html#dotted-notation">dotted notation</a> is used everywhere in Python to refer to the parts of things as <code>thing.component</code>.</p>
 <p><code>numpy.loadtxt</code> has two <a href="reference.html#parameter">parameters</a>: the name of the file we want to read, and the <a href="reference.html#delimiter">delimiter</a> that separates values on a line. These both need to be character strings (or <a href="reference.html#string">strings</a> for short), so we put them in quotes.</p>
 <p>When we are finished typing and press Shift+Enter, the notebook runs our command. Since we haven’t told it to do anything else with the function’s output, the notebook displays it. In this case, that output is the data we just loaded. By default, only a few rows and columns are shown (with <code>...</code> to omit elements when displaying big arrays). To save space, Python displays numbers as <code>1.</code> instead of <code>1.0</code> when there’s nothing interesting after the decimal point.</p>
 <p>Our call to <code>numpy.loadtxt</code> read our file, but didn’t save the data in memory. To do that, we need to <a href="reference.html#assignment">assign</a> the array to a <a href="reference.html#variable">variable</a>. A variable is just a name for a value, such as <code>x</code>, <code>current_temperature</code>, or <code>subject_id</code>. Python’s variables must begin with a letter and are <a href="reference.html#case-sensitive">case sensitive</a>. We can create a new variable by assigning a value to it using <code>=</code>. As an illustration, let’s step back and instead of considering a table of data, consider the simplest “collection” of data, a single value. The line below assigns the value <code>55</code> to a variable <code>weight_kg</code>:</p>
@@ -99,7 +99,7 @@
 <h2 id="whos-who-in-the-memory"><span class="glyphicon glyphicon-pushpin"></span>Who’s who in the memory</h2>
 </div>
 <div class="panel-body">
-<p>You can use the <code>%whos</code> command at any time to see what variables you have created and what modules you have loaded into the computers memory. As this is an IPython command, it will only work if you are in an IPython terminal or the Jupyter Notebook.</p>
+<p>You can use the <code>%whos</code> command at any time to see what variables you have created and what modules you have loaded into the computer’s memory. As this is an IPython command, it will only work if you are in an IPython terminal or the Jupyter Notebook.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>whos</code></pre></div>
 <pre class="output"><code>Variable    Type       Data/Info
 --------------------------------
@@ -186,12 +186,24 @@ doubledata:
 [[ 6.  9.  0.  0.]
  [ 3.  3.  0.  3.]
  [ 6.  6.  3.  3.]]</code></pre>
-<p>Often, we want to do more than add, subtract, multiply, and divide values of data. Arrays also know how to do more complex operations on their values. If we want to find the average inflammation for all patients on all days, for example, we can just ask the array for its mean value:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(data.mean())</code></pre></div>
+<p>Often, we want to do more than add, subtract, multiply, and divide values of data. NumPy knows how to do more complex operations on arrays. If we want to find the average inflammation for all patients on all days, for example, we can ask NumPy to compute <code>data</code>’s mean value:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(numpy.mean(data))</code></pre></div>
 <pre class="output"><code>6.14875</code></pre>
-<p><code>mean</code> is a <a href="reference.html#method">method</a> of the array, i.e., a function that belongs to it in the same way that the member <code>shape</code> does. If variables are nouns, methods are verbs: they are what the thing in question knows how to do. We need empty parentheses for <code>data.mean()</code>, even when we’re not passing in any parameters, to tell Python to go and do something for us. <code>data.shape</code> doesn’t need <code>()</code> because it is just a description but <code>data.mean()</code> requires the <code>()</code> because it is an action.</p>
-<p>NumPy arrays have lots of useful methods. Let’s use three of those methods to get some descriptive values about the dataset. We’ll also use multiple assignment, a convenient Python feature that will enable us to do this all in one line.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">maxval, minval, stdval <span class="op">=</span> data.<span class="bu">max</span>(), data.<span class="bu">min</span>(), data.std()
+<p><code>mean</code> is a <a href="reference.html#function">function</a> that takes an array as an <a href="reference.html#argument">argument</a>. If variables are nouns, functions are verbs: they do things with variables.</p>
+<aside class="callout panel panel-info">
+<div class="panel-heading">
+<h2 id="not-all-functions-have-input"><span class="glyphicon glyphicon-pushpin"></span>Not all functions have input</h2>
+</div>
+<div class="panel-body">
+<p>Generally, a function uses inputs to produce outputs. However, some functions produce outputs without needing any input. For example, checking the current time doesn’t require any input.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> time
+<span class="bu">print</span>(time.ctime())</code></pre></div>
+<pre class="output"><code>&#39;Sat Mar 26 13:07:33 2016&#39;</code></pre>
+<p>For functions that don’t take in any arguments, we still need parentheses (<code>()</code>) to tell Python to go and do something for us.</p>
+</div>
+</aside>
+<p>NumPy has lots of useful functions that take an array as input. Let’s use three of those functions to get some descriptive values about the dataset. We’ll also use multiple assignment, a convenient Python feature that will enable us to do this all in one line.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">maxval, minval, stdval <span class="op">=</span> numpy.<span class="bu">max</span>(data), numpy.<span class="bu">min</span>(data), numpy.std(data)
 
 <span class="bu">print</span>(<span class="st">&#39;maximum inflammation:&#39;</span>, maxval)
 <span class="bu">print</span>(<span class="st">&#39;minimum inflammation:&#39;</span>, minval)
@@ -201,10 +213,10 @@ minimum inflammation: 0.0
 standard deviation: 4.61383319712</code></pre>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="mystery-methods-in-ipython"><span class="glyphicon glyphicon-pushpin"></span>Mystery methods in IPython</h2>
+<h2 id="mystery-functions-in-ipython"><span class="glyphicon glyphicon-pushpin"></span>Mystery functions in IPython</h2>
 </div>
 <div class="panel-body">
-<p>How did we know what methods data has and how to use them? When you are working on your own data it might be something different to a numpy object: how will you know what methods you can use then? If you are working in the IPython/Jupyter Notebook there is an easy way to find out. If you type the name of your object with a full-stop then you can use tab completion (e.g. type <code>data.</code> and then press tab) to see a list of all methods that you can use on that object. After selecting one you can also add a question mark (e.g. <code>data.cumprod?</code>) and IPython will return an explanation of the method! This is the same as doing <code>help(data.cumprod)</code>..</p>
+<p>How did we know what functions NumPy has and how to use them? If you are working in the IPython/Jupyter Notebook there is an easy way to find out. If you type the name of something with a full-stop then you can use tab completion (e.g. type <code>numpy.</code> and then press tab) to see a list of all functions and attributes that you can use. After selecting one you can also add a question mark (e.g. <code>numpy.cumprod?</code>) and IPython will return an explanation of the method! This is the same as doing <code>help(numpy.cumprod)</code>.</p>
 </div>
 </aside>
 <p>When analyzing data, though, we often want to look at partial statistics, such as the maximum value per patient or the average value per day. One way to do this is to create a new temporary array of the data we want, then ask it to do the calculation:</p>
@@ -212,16 +224,16 @@ standard deviation: 4.61383319712</code></pre>
 <span class="bu">print</span>(<span class="st">&#39;maximum inflammation for patient 0:&#39;</span>, patient_0.<span class="bu">max</span>())</code></pre></div>
 <pre class="output"><code>maximum inflammation for patient 0: 18.0</code></pre>
 <p>Everything in a line of code following the ‘#’ symbol is a <a href="reference.html#comment">comment</a> that is ignored by the computer. Comments allow programmers to leave explanatory notes for other programmers or their future selves.</p>
-<p>We don’t actually need to store the row in a variable of its own. Instead, we can combine the selection and the method call:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;maximum inflammation for patient 2:&#39;</span>, data[<span class="dv">2</span>, :].<span class="bu">max</span>())</code></pre></div>
+<p>We don’t actually need to store the row in a variable of its own. Instead, we can combine the selection and the function call:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;maximum inflammation for patient 2:&#39;</span>, numpy.<span class="bu">max</span>(data[<span class="dv">2</span>, :]))</code></pre></div>
 <pre class="output"><code>maximum inflammation for patient 2: 19.0</code></pre>
 <p>What if we need the maximum inflammation for <em>all</em> patients (as in the next diagram on the left), or the average for each day (as in the diagram on the right)? As the diagram below shows, we want to perform the operation across an axis:</p>
 <div class="figure">
 <img src="fig/python-operations-across-axes.png" alt="Operations Across Axes" />
 <p class="caption">Operations Across Axes</p>
 </div>
-<p>To support this, most array methods allow us to specify the axis we want to work on. If we ask for the average across axis 0 (rows in our 2D example), we get:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(data.mean(axis<span class="op">=</span><span class="dv">0</span>))</code></pre></div>
+<p>To support this, most array functions allow us to specify the axis we want to work on. If we ask for the average across axis 0 (rows in our 2D example), we get:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))</code></pre></div>
 <pre class="output"><code>[  0.           0.45         1.11666667   1.75         2.43333333   3.15
    3.8          3.88333333   5.23333333   5.51666667   5.95         5.9
    8.35         7.73333333   8.36666667   9.5          9.58333333
@@ -231,10 +243,10 @@ standard deviation: 4.61383319712</code></pre>
    3.3          3.56666667   2.48333333   1.5          1.13333333
    0.56666667]</code></pre>
 <p>As a quick check, we can ask this array what its shape is:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(data.mean(axis<span class="op">=</span><span class="dv">0</span>).shape)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>).shape)</code></pre></div>
 <pre class="output"><code>(40,)</code></pre>
 <p>The expression <code>(40,)</code> tells us we have an N×1 vector, so this is the average inflammation per day for all patients. If we average across axis 1 (columns in our 2D example), we get:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(data.mean(axis<span class="op">=</span><span class="dv">1</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>))</code></pre></div>
 <pre class="output"><code>[ 5.45   5.425  6.1    5.9    5.55   6.225  5.975  6.65   6.625  6.525
   6.775  5.8    6.225  5.75   5.225  6.3    6.55   5.7    5.85   6.55
   5.775  5.825  6.175  6.1    5.8    6.425  6.05   6.025  6.175  6.55
@@ -262,7 +274,7 @@ matplotlib.pyplot.show()</code></pre></div>
 </div>
 </aside>
 <p>Let’s take a look at the average inflammation over time:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">ave_inflammation <span class="op">=</span> data.mean(axis<span class="op">=</span><span class="dv">0</span>)
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">ave_inflammation <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>)
 ave_plot <span class="op">=</span> matplotlib.pyplot.plot(ave_inflammation)
 matplotlib.pyplot.show()</code></pre></div>
 <div class="figure">
@@ -270,20 +282,20 @@ matplotlib.pyplot.show()</code></pre></div>
 <p class="caption">Average Inflammation Over Time</p>
 </div>
 <p>Here, we have put the average per day across all patients in the variable <code>ave_inflammation</code>, then asked <code>matplotlib.pyplot</code> to create and display a line graph of those values. The result is roughly a linear rise and fall, which is suspicious: based on other studies, we expect a sharper rise and slower fall. Let’s have a look at two other statistics:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">max_plot <span class="op">=</span> matplotlib.pyplot.plot(data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>))
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">max_plot <span class="op">=</span> matplotlib.pyplot.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>))
 matplotlib.pyplot.show()</code></pre></div>
 <div class="figure">
 <img src="fig/01-numpy_75_1.png" alt="Maximum Value Along The First Axis" />
 <p class="caption">Maximum Value Along The First Axis</p>
 </div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">min_plot <span class="op">=</span> matplotlib.pyplot.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>))
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">min_plot <span class="op">=</span> matplotlib.pyplot.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))
 matplotlib.pyplot.show()</code></pre></div>
 <div class="figure">
 <img src="fig/01-numpy_75_3.png" alt="Minimum Value Along The First Axis" />
 <p class="caption">Minimum Value Along The First Axis</p>
 </div>
 <p>The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there’s a mistake in our calculations or something is wrong with our data. This insight would have been difficult to reach by examining the data without visualization tools.</p>
-<p>You can group similar plots in a single figure using subplots. This script below uses a number of new commands. The function <code>matplotlib.pyplot.figure()</code> creates a space into which we will place all of our plots. The parameter <code>figsize</code> tells Python how big to make this space. Each subplot is placed into the figure using its <code>add_subplot</code> method. The <code>add_subplot</code> method takes 3 parameters. The first denotes how many total rows of subplots there are, the second parameter refers to the total number of subplot columns, and the final parameter denotes which subplot your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a different variable (<code>axes1</code>, <code>axes2</code>, <code>axes3</code>). Once a subplot is created, the axes can be titled using the <code>set_xlabel()</code> command (or <code>set_ylabel()</code>). Here are our three plots side by side:</p>
+<p>You can group similar plots in a single figure using subplots. This script below uses a number of new commands. The function <code>matplotlib.pyplot.figure()</code> creates a space into which we will place all of our plots. The parameter <code>figsize</code> tells Python how big to make this space. Each subplot is placed into the figure using its <code>add_subplot</code> <a href="reference.html#method">method</a>. The <code>add_subplot</code> method takes 3 parameters. The first denotes how many total rows of subplots there are, the second parameter refers to the total number of subplot columns, and the final parameter denotes which subplot your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a different variable (<code>axes1</code>, <code>axes2</code>, <code>axes3</code>). Once a subplot is created, the axes can be titled using the <code>set_xlabel()</code> command (or <code>set_ylabel()</code>). Here are our three plots side by side:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy
 <span class="im">import</span> matplotlib.pyplot
 
@@ -296,13 +308,13 @@ axes2 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span
 axes3 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
 
 axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
-axes1.plot(data.mean(axis<span class="op">=</span><span class="dv">0</span>))
+axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))
 
 axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
-axes2.plot(data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>))
+axes2.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>))
 
 axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
-axes3.plot(data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>))
+axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))
 
 fig.tight_layout()
 
@@ -419,15 +431,15 @@ B <span class="op">=</span> numpy.hstack([A, A])
 C <span class="op">=</span> numpy.vstack([A, A])
 <span class="bu">print</span>(<span class="st">&#39;C = &#39;</span>)
 <span class="bu">print</span>(C)</code></pre></div>
-<pre class="output"><code>A = 
+<pre class="output"><code>A =
 [[1 2 3]
  [4 5 6]
  [7 8 9]]
-B = 
+B =
 [[1 2 3 1 2 3]
  [4 5 6 4 5 6]
  [7 8 9 7 8 9]]
-C = 
+C =
 [[1 2 3]
  [4 5 6]
  [7 8 9]

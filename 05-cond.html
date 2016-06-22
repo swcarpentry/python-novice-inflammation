@@ -84,27 +84,27 @@ Conditional statements don’t have to include an <code>else</code>. If there is
 <pre class="output"><code>at least one test is true</code></pre>
 <h2 id="checking-our-data">Checking our Data</h2>
 <p>Now that we’ve seen how conditionals work, we can use them to check for the suspicious features we saw in our inflammation data. In the first couple of plots, the maximum inflammation per day seemed to rise like a straight line, one unit per day. We can check for this inside the <code>for</code> loop we wrote with the following conditional:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:
     <span class="bu">print</span>(<span class="st">&#39;Suspicious looking maxima!&#39;</span>)</code></pre></div>
 <p>We also saw a different problem in the third dataset; the minima per day were all zero (looks like a healthy person snuck into our study). We can also check for this with an <code>elif</code> condition:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">elif</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>).<span class="bu">sum</span>() <span class="op">==</span> <span class="dv">0</span>:
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:
     <span class="bu">print</span>(<span class="st">&#39;Minima add up to zero!&#39;</span>)</code></pre></div>
 <p>And if neither of these conditions are true, we can use <code>else</code> to give the all-clear:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">else</span>:
     <span class="bu">print</span>(<span class="st">&#39;Seems OK!&#39;</span>)</code></pre></div>
 <p>Let’s test that out:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">&#39;inflammation-01.csv&#39;</span>, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
-<span class="cf">if</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:
+<span class="cf">if</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:
     <span class="bu">print</span>(<span class="st">&#39;Suspicious looking maxima!&#39;</span>)
-<span class="cf">elif</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>).<span class="bu">sum</span>() <span class="op">==</span> <span class="dv">0</span>:
+<span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:
     <span class="bu">print</span>(<span class="st">&#39;Minima add up to zero!&#39;</span>)
 <span class="cf">else</span>:
     <span class="bu">print</span>(<span class="st">&#39;Seems OK!&#39;</span>)</code></pre></div>
 <pre class="output"><code>Suspicious looking maxima!</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">&#39;inflammation-03.csv&#39;</span>, delimiter<span class="op">=</span><span class="st">&#39;,&#39;</span>)
-<span class="cf">if</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:
+<span class="cf">if</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="op">and</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:
     <span class="bu">print</span>(<span class="st">&#39;Suspicious looking maxima!&#39;</span>)
-<span class="cf">elif</span> data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>).<span class="bu">sum</span>() <span class="op">==</span> <span class="dv">0</span>:
+<span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:
     <span class="bu">print</span>(<span class="st">&#39;Minima add up to zero!&#39;</span>)
 <span class="cf">else</span>:
     <span class="bu">print</span>(<span class="st">&#39;Seems OK!&#39;</span>)</code></pre></div>
