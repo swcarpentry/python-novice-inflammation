@@ -210,7 +210,30 @@ print(type(data))
 <class 'numpy.ndarray'>
 ~~~
 
-The output tells us that `data` currently refers to an N-dimensional array created by the NumPy library. These data correspond to arthritis patients' inflammation. The rows are the individual patients and the columns are their daily inflammation measurements.
+The output tells us that `data` currently refers to
+an N-dimensional array created by the NumPy library.
+These data correspond to arthritis patients' inflammation.
+The rows are the individual patients and the columns
+are their daily inflammation measurements.
+
+> ## Data Type {.callout}
+>
+> A Numpy array contains one or more elements
+> of the same type. `type` will only tell you that
+> a variable is a NumPy array.
+> We can also find the out the type
+> of the data contained in the NumPy array.
+>
+> ~~~ {.python}
+> print(data.dtype)
+> ~~~
+> ~~~ {.output}
+> dtype('float64')
+> ~~~
+>
+> This tells us that the NumPy array's elements are
+> [floating-point numbers](reference.html#floating-point number).
+
 We can see what the array's [shape](reference.html#shape) is like this:
 
 ~~~ {.python}
