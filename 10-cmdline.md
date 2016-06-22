@@ -28,7 +28,7 @@ This program does exactly what we want - it prints the average inflammation per 
 for a given file.
 
 ~~~ {.bash}
-$ python code/readings-04.py --mean data/inflammation-01.csv
+$ python code/readings_04.py --mean data/inflammation-01.csv
 5.45
 5.425
 6.1
@@ -41,13 +41,13 @@ $ python code/readings-04.py --mean data/inflammation-01.csv
 We might also want to look at the minimum of the first four lines
 
 ~~~ {.bash}
-$ head -4 data/inflammation-01.csv | python code/readings-04.py --min
+$ head -4 data/inflammation-01.csv | python code/readings_04.py --min
 ~~~
 
 or the maximum inflammations in several files one after another:
 
 ~~~ {.bash}
-$ python code/readings-04.py --max data/inflammation-*.csv
+$ python code/readings_04.py --max data/inflammation-*.csv
 ~~~
 
 Our scripts should do the following:
