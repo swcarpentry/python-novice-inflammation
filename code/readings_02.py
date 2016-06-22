@@ -8,4 +8,5 @@ def main():
     for m in data.mean(axis=1):
         print(m)
 
-main()
+if __name__ == '__main__':
+    main()

@@ -1,5 +1,5 @@
 import sys
-import numpy 
+import numpy
 
 def main():
     script = sys.argv[0]
@@ -24,4 +24,5 @@ def row_col_count(filename):
         nrow, ncol = (0, 0)
     return nrow, ncol
 
-main()
+if __name__ == '__main__':
+    main()

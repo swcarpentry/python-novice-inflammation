@@ -172,7 +172,8 @@ def main():
     for m in numpy.mean(data, axis=1):
         print(m)
 
-main()
+if __name__ == '__main__':
+   main()
 ~~~
 
 and run that:
@@ -243,6 +244,32 @@ $ python readings_02.py inflammation-01.csv
 7.05
 5.9
 ~~~
+
+> ## Running versus importing {.callout}
+>
+> Running a Python script in bash is very similar to
+> importing that file in Python.
+> The biggest difference is that we don't expect anything
+> to happen when we import a file,
+> whereas when running a script, we expect to see some
+> output printed to the console.
+>
+> In order for a Python script to work as expected
+> when imported or when run as a script,
+> we typically put the part of the script
+> that produces output in the following if statement:
+>
+> ~~~ {.python}
+> if __name__ == '__main__':
+>     main()  # Or whatever function produces output
+> ~~~
+>
+> When you import a Python file, `__name__` is the name
+> of that file (e.g., when importing `readings.py`,
+> `__name__` is `'readings'`). However, when running a
+> script in bash, `__name__` is always set to `'__main__'`
+> in that script so that you can determine if the file
+> is being imported or run as a script.
 
 > ## The Right Way to Do It {.callout}
 >
@@ -328,7 +355,8 @@ def main():
         for m in numpy.mean(data, axis=1):
             print(m)
 
-main()
+if __name__ == '__main__':
+   main()
 ~~~
 
 and here it is in action:
@@ -389,7 +417,8 @@ def main():
         for m in values:
             print(m)
 
-main()
+if __name__ == '__main__':
+   main()
 ~~~
 
 This works:
@@ -450,7 +479,8 @@ def process(filename, action):
     for m in values:
         print(m)
 
-main()
+if __name__ == '__main__':
+   main()
 ~~~
 
 This is four lines longer than its predecessor,
@@ -546,7 +576,8 @@ def process(filename, action):
     for m in values:
         print(m)
 
-main()
+if __name__ == '__main__':
+   main()
 ~~~
 
 Let's try it out:
