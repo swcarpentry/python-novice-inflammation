@@ -7,7 +7,7 @@ minutes: 30
 > ## Learning Objectives {.objectives}
 >
 > *   Explain what a library is, and what libraries are used for.
-> *   Load a Python library and use the things it contains.
+> *   Import a Python library and use the things it contains.
 > *   Read tabular data from a file into a program.
 > *   Assign values to variables.
 > *   Select individual values and subsections from data.
@@ -22,10 +22,10 @@ specialized tools built up from these basic units live in [libraries](reference.
 that can be called upon when needed.
 
 In order to load our inflammation data,
-we need to [import](reference.html#import) a library called [NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").
+we need to open ([import](reference.html#import) in Python terminology) a library called [NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").
 In general you should use this library if you want to do fancy things with numbers,
 especially if you have matrices or arrays.
-We can load NumPy using:
+We can import NumPy  using:
 
 ~~~ {.python}
 import numpy
@@ -33,7 +33,7 @@ import numpy
 
 Importing a library is like getting a piece of lab equipment out of a storage locker
 and setting it up on the bench. Libraries provide additional functionality to the basic Python package, much like a new piece of equipment adds functionality to a lab space.
-Once you've loaded the library,
+Once you've imported the library,
 we can ask the library to read our data file for us:
 
 ~~~ {.python}
