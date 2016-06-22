@@ -222,43 +222,40 @@ This is different from how variables worked in lesson 1, and more similar to how
 > ~~~ {.python}
 > ["h", "e", "l", "l", "o"]
 > ~~~
+>
 > Hint: You can create an empty list like this:
-
+>
 > ~~~ {.python}
 > my_list = []
 > ~~~
 
-Subsets of lists and strings can be accessed by specifying ranges of values in brackets, similar to how we accessed ranges of positions in a Numpy matrix. This is commonly referred to as "slicing" the list/string.
+Subsets of lists and strings can be accessed by specifying ranges of values in brackets,
+similar to how we accessed ranges of positions in a Numpy array.
+This is commonly referred to as "slicing" the list/string.
 
 ~~~ {.python}
-common_name = "common fruit fly"
-title = common_name[:]
-print(title)
-
 binomial_name = "Drosophila melanogaster"
 group = binomial_name[0:10]
-print("group", group)
+print("group:", group)
 
 species = binomial_name[11:24]
-print("species", species)
+print("species:", species)
 
 chromosomes = ["X", "Y", "2", "3", "4"]
 autosomes = chromosomes[2:5]
-print("autosomes", autosomes)
+print("autosomes:", autosomes)
 
 last = chromosomes[-1]
-print("last", last)
-
+print("last:", last)
 ~~~
 ~~~ {.output}
-common fruit fly
-group Drosophila
-species melanogaster
-autosomes ["2", "3", "4"]
-last 4
+group: Drosophila
+species: melanogaster
+autosomes: ["2", "3", "4"]
+last: 4
 ~~~
 
->## Slicing from the end {.challenge}
+> ## Slicing from the end {.challenge}
 > Use slicing to access only the last four characters of a string or entries of a list.
 >
 > ~~~ {.python}
@@ -269,52 +266,65 @@ last 4
 > "2013"
 > [["chlorine", "Cl"], ["bromine", "Br"], ["iodine", "I"], ["astatine", "At"]]
 > ~~~
-> Would your solution work regardless of whether you knew beforehand the length of the string or list (e.g. if you wanted to apply the solution to a set of lists of different lengths)? If not, try to change your approach to make it more robust.
+> Would your solution work regardless of whether you knew beforehand
+> the length of the string or list
+> (e.g. if you wanted to apply the solution to a set of lists of different lengths)?
+> If not, try to change your approach to make it more robust.
 
->## Non-continuous slices {.challenge}
->So far we've seen how to use slicing to take single blocks of successive entries from a sequence. But what if we want to take a subset of entries that aren't next to each other in the sequence?
+> ## Non-continuous slices {.challenge}
+> So far we've seen how to use slicing to take single blocks
+> of successive entries from a sequence.
+> But what if we want to take a subset of entries
+> that aren't next to each other in the sequence?
 >
->You can achieve this by providing a third argument to the range within the brackets, called the _step size_. The example below shows how you can take every third entry in a list:
+> You can achieve this by providing a third argument
+> to the range within the brackets, called the _step size_.
+> The example below shows how you can take every third entry in a list:
 >
->~~~{.python}
->primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
->subset = primes[0:12:3]
->print("subset", subset)
->~~~
->~~~{.output}
->subset [2, 7, 17, 29]
->~~~
+> ~~~ {.python}
+> primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+> subset = primes[0:12:3]
+> print("subset", subset)
+> ~~~
+> ~~~ {.output}
+> subset [2, 7, 17, 29]
+> ~~~
 >
->Notice that the slice taken begins with the first entry in the range, followed by entries taken at equally-spaced intervals (the steps) thereafter. If you wanted to begin the subset with the third entry, you would need to specify that as the starting point of the sliced range:
+> Notice that the slice taken begins with the first entry in the range,
+> followed by entries taken at equally-spaced intervals (the steps) thereafter.
+> If you wanted to begin the subset with the third entry,
+> you would need to specify that as the starting point of the sliced range:
 >
->~~~{.python}
-primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
-subset = primes[2:12:3]
-print("subset", subset)
->~~~
->~~~{.output}
-subset [5, 13, 23, 37]
->~~~
+> ~~~ {.python}
+> primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+> subset = primes[2:12:3]
+> print("subset", subset)
+> ~~~
+> ~~~ {.output}
+> subset [5, 13, 23, 37]
+> ~~~
 >
->Use the step size argument to create a new string that contains only every other character in the string "In an octopus's garden in the shade"
+> Use the step size argument to create a new string
+> that contains only every other character in the string
+> "In an octopus's garden in the shade"
 >
-> ~~~{.python}
+> ~~~ {.python}
 > beatles = "In an octopus's garden in the shade"
 > ~~~
-> ~~~{.output}
+> ~~~ {.output}
 > I notpssgre ntesae
 > ~~~
 
 If you want to take a slice from the beginning of a sequence, you can omit the first index in the range:
 
-~~~{.python}
+~~~ {.python}
 date = "Monday 4 January 2016"
 day = date[0:6]
 print("Using 0 to begin range:", day)
 day = date[:6]
 print("Omitting beginning index:", day)
 ~~~
-~~~{.output}
+~~~ {.output}
 Using 0 to begin range: Monday
 Omitting beginning index: Monday
 ~~~
@@ -364,11 +374,11 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > Given that, what do you think the multiplication operator `*` does on lists?
 > In particular, what will be the output of the following code?
 >
->~~~ {.python}
+> ~~~ {.python}
 > counts = [2, 4, 6, 8, 10]
 > repeats = counts * 2
 > print(repeats)
->~~~
+> ~~~
 >
 > 1.  `[2, 4, 6, 8, 10, 2, 4, 6, 8, 10]`
 > 2.  `[4, 8, 12, 16, 20]`
