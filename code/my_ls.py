@@ -11,4 +11,5 @@ def main():
         print item
     return
 
-main()
+if __name__ == '__main__':
+    main()

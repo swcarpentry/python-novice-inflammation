@@ -1,7 +1,7 @@
 import sys
 
 def main():
-    '''print each input filename and the number of lines in it, 
+    '''print each input filename and the number of lines in it,
        and print the sum of the number of lines'''
     filenames = sys.argv[1:]
     sum_nlines = 0 #initialize counting variable
@@ -30,4 +30,5 @@ def count_file_like(file_like):
         n = n+1
     return n
 
-main()
+if __name__ == '__main__':
+    main()

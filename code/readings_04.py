@@ -19,4 +19,5 @@ def main():
         for m in values:
             print(m)
 
-main()
+if __name__ == '__main__':
+    main()
