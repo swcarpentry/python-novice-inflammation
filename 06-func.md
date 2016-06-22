@@ -189,13 +189,13 @@ def analyze(filename):
     axes3 = fig.add_subplot(1, 3, 3)
 
     axes1.set_ylabel('average')
-    axes1.plot(data.mean(axis=0))
+    axes1.plot(numpy.mean(data, axis=0))
 
     axes2.set_ylabel('max')
-    axes2.plot(data.max(axis=0))
+    axes2.plot(numpy.max(data, axis=0))
 
     axes3.set_ylabel('min')
-    axes3.plot(data.min(axis=0))
+    axes3.plot(numpy.min(data, axis=0))
 
     fig.tight_layout()
     matplotlib.pyplot.show()
@@ -209,9 +209,9 @@ def detect_problems(filename):
 
     data = numpy.loadtxt(fname=filename, delimiter=',')
 
-    if data.max(axis=0)[0] == 0 and data.max(axis=0)[20] == 20:
+    if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
         print('Suspicious looking maxima!')
-    elif data.min(axis=0).sum() == 0:
+    elif numpy.sum(numpy.min(data, axis=0)) == 0:
         print('Minima add up to zero!')
     else:
         print('Seems OK!')
@@ -242,7 +242,7 @@ let's write a function to center a dataset around a particular value:
 
 ~~~ {.python}
 def center(data, desired):
-    return (data - data.mean()) + desired
+    return (data - numpy.mean(data)) + desired
 ~~~
 
 We could test this on our actual data,
@@ -282,9 +282,9 @@ It's hard to tell from the default output whether the result is correct,
 but there are a few simple tests that will reassure us:
 
 ~~~ {.python}
-print('original min, mean, and max are:', data.min(), data.mean(), data.max())
+print('original min, mean, and max are:', numpy.min(data), numpy.mean(data), numpy.max(data))
 centered = center(data, 0)
-print('min, mean, and and max of centered data are:', centered.min(), centered.mean(), centered.max())
+print('min, mean, and and max of centered data are:', numpy.min(centered), numpy.mean(centered), numpy.max(centered))
 ~~~
 ~~~ {.output}
 original min, mean, and max are: 0.0 6.14875 20.0
@@ -298,7 +298,7 @@ The mean of the centered data isn't quite zero --- we'll explore why not in the 
 We can even go further and check that the standard deviation hasn't changed:
 
 ~~~ {.python}
-print('std dev before and after:', data.std(), centered.std())
+print('std dev before and after:', numpy.std(data), numpy.std(centered))
 ~~~
 ~~~ {.output}
 std dev before and after: 4.61383319712 4.61383319712
@@ -309,7 +309,7 @@ but we probably wouldn't notice if they were different in the sixth decimal plac
 Let's do this instead:
 
 ~~~ {.python}
-print('difference in standard deviations before and after:', data.std() - centered.std())
+print('difference in standard deviations before and after:', numpy.std(data) - numpy.std(centered))
 ~~~
 ~~~ {.output}
 difference in standard deviations before and after: -3.5527136788e-15
@@ -328,7 +328,7 @@ The usual way to put documentation in software is to add [comments](reference.ht
 ~~~ {.python}
 # center(data, desired): return a new array containing the original data centered around the desired value.
 def center(data, desired):
-    return (data - data.mean()) + desired
+    return (data - numpy.mean(data)) + desired
 ~~~
 
 There's a better way, though.
@@ -338,7 +338,7 @@ that string is attached to the function as its documentation:
 ~~~ {.python}
 def center(data, desired):
     '''Return a new array containing the original data centered around the desired value.'''
-    return (data - data.mean()) + desired
+    return (data - numpy.mean(data)) + desired
 ~~~
 
 This is better because we can now ask Python's built-in help system to show us the documentation for the function:
@@ -362,7 +362,7 @@ we can break the string across multiple lines:
 def center(data, desired):
     '''Return a new array containing the original data centered around the desired value.
     Example: center([1, 2, 3], 0) => [-1, 0, 1]'''
-    return (data - data.mean()) + desired
+    return (data - numpy.mean(data)) + desired
 
 help(center)
 ~~~
@@ -424,7 +424,7 @@ let's re-define our `center` function like this:
 def center(data, desired=0.0):
     '''Return a new array containing the original data centered around the desired value (0 by default).
     Example: center([1, 2, 3], 0) => [-1, 0, 1]'''
-    return (data - data.mean()) + desired
+    return (data - numpy.mean(data)) + desired
 ~~~
 
 The key change is that the second parameter is now written `desired=0.0` instead of just `desired`.
