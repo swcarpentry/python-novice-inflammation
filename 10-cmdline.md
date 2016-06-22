@@ -64,7 +64,7 @@ We'll tackle these questions in turn below.
 ## Command-Line Arguments
 
 Using the text editor of your choice,
-save the following in a text file called `sys-version.py`:
+save the following in a text file called `sys_version.py`:
 
 ~~~ {.python}
 import sys
@@ -78,7 +78,7 @@ which describes which version of Python we are running.
 We can run this script from the command line like this:
 
 ~~~ {.bash}
-$ python sys-version.py
+$ python sys_version.py
 ~~~
 
 ~~~ {.output}
@@ -86,7 +86,7 @@ version is 3.4.3+ (default, Jul 28 2015, 13:17:50)
 [GCC 4.9.3]
 ~~~
 
-Create another file called `argv-list.py` and save the following text to it.
+Create another file called `argv_list.py` and save the following text to it.
 
 ~~~ {.python}
 import sys
@@ -101,11 +101,11 @@ so that the program can determine what they were.
 If we run this program with no arguments:
 
 ~~~ {.bash}
-$ python argv-list.py
+$ python argv_list.py
 ~~~
 
 ~~~ {.output}
-sys.argv is ['argv-list.py']
+sys.argv is ['argv_list.py']
 ~~~
 
 the only thing in the list is the full path to our script,
@@ -113,10 +113,10 @@ which is always `sys.argv[0]`.
 If we run it with a few arguments, however:
 
 ~~~ {.bash}
-$ python argv-list.py first second third
+$ python argv_list.py first second third
 ~~~
 ~~~ {.output}
-sys.argv is ['argv-list.py', 'first', 'second', 'third']
+sys.argv is ['argv_list.py', 'first', 'second', 'third']
 ~~~
 
 then Python adds each of those arguments to that magic list.
@@ -129,7 +129,7 @@ By convention this function is usually called `main`,
 though we can call it whatever we want:
 
 ~~~ {.bash}
-$ cat readings-01.py
+$ cat readings_01.py
 ~~~
 
 ~~~ {.python}
@@ -150,7 +150,7 @@ and the name of the file to process from `sys.argv[1]`.
 Here's a simple test:
 
 ~~~ {.bash}
-$ python readings-01.py inflammation-01.csv
+$ python readings_01.py inflammation-01.csv
 ~~~
 
 There is no output because we have defined a function,
@@ -158,7 +158,7 @@ but haven't actually called it.
 Let's add a call to `main`:
 
 ~~~ {.bash}
-$ cat readings-02.py
+$ cat readings_02.py
 ~~~
 
 ~~~ {.python}
@@ -178,7 +178,7 @@ main()
 and run that:
 
 ~~~ {.bash}
-$ python readings-02.py inflammation-01.csv
+$ python readings_02.py inflammation-01.csv
 ~~~
 
 ~~~ {.output}
@@ -279,7 +279,7 @@ $ cat small-01.csv
 ~~~
 
 ~~~ {.bash}
-$ python readings-02.py small-01.csv
+$ python readings_02.py small-01.csv
 ~~~
 ~~~ {.output}
 0.333333333333
@@ -311,10 +311,10 @@ since we've left off the upper bound,
 the slice runs to the end of the list,
 and includes all the filenames.
 Here's our changed program
-`readings-03.py`:
+`readings_03.py`:
 
 ~~~ {.bash}
-$ cat readings-03.py
+$ cat readings_03.py
 ~~~
 
 ~~~ {.python}
@@ -334,7 +334,7 @@ main()
 and here it is in action:
 
 ~~~ {.bash}
-$ python readings-03.py small-01.csv small-02.csv
+$ python readings_03.py small-01.csv small-02.csv
 ~~~
 
 ~~~ {.output}
@@ -347,8 +347,8 @@ $ python readings-03.py small-01.csv small-02.csv
 > ## The Right Way to Do It {.callout}
 >
 > At this point,
-> we have created three versions of our script called `readings-01.py`,
-> `readings-02.py`, and `readings-03.py`.
+> we have created three versions of our script called `readings_01.py`,
+> `readings_02.py`, and `readings_03.py`.
 > We wouldn't do this in real life:
 > instead,
 > we would have one file called `readings.py` that we committed to version control
@@ -364,7 +364,7 @@ These always appear before the names of the files,
 so we could just do this:
 
 ~~~ {.bash}
-$ cat readings-04.py
+$ cat readings_04.py
 ~~~
 
 ~~~ {.python}
@@ -395,7 +395,7 @@ main()
 This works:
 
 ~~~ {.bash}
-$ python readings-04.py --max small-01.csv
+$ python readings_04.py --max small-01.csv
 ~~~
 ~~~ {.output}
 1.0
@@ -421,7 +421,7 @@ before doing any processing,
 so that the program fails fast:
 
 ~~~ {.bash}
-$ cat readings-05.py
+$ cat readings_05.py
 ~~~
 
 ~~~ {.python}
@@ -462,10 +462,10 @@ The next thing our program has to do is read data from standard input if no file
 so that we can put it in a pipeline,
 redirect input to it,
 and so on.
-Let's experiment in another script called `count-stdin.py`:
+Let's experiment in another script called `count_stdin.py`:
 
 ~~~ {.bash}
-$ cat count-stdin.py
+$ cat count_stdin.py
 ~~~
 
 ~~~ {.python}
@@ -486,7 +486,7 @@ but we can do almost anything with it that we could do to a regular file.
 Let's try running it as if it were a regular command-line program:
 
 ~~~ {.bash}
-$ python count-stdin.py < small-01.csv
+$ python count_stdin.py < small-01.csv
 ~~~
 
 ~~~ {.output}
@@ -514,7 +514,7 @@ so we don't actually need to change `process`.
 Only `main` changes:
 
 ~~~ {.bash}
-$ cat readings-06.py
+$ cat readings_06.py
 ~~~
 
 ~~~ {.python}
@@ -552,7 +552,7 @@ main()
 Let's try it out:
 
 ~~~ {.bash}
-$ python readings-06.py --mean < small-01.csv
+$ python readings_06.py --mean < small-01.csv
 ~~~
 
 ~~~ {.output}
@@ -625,7 +625,7 @@ the program now does everything we set out to do.
 
 > ## Counting lines {.challenge}
 >
-> Write a program called `line-count.py` that works like the Unix `wc` command:
+> Write a program called `line_count.py` that works like the Unix `wc` command:
 >
 > *   If no filenames are given, it reports the number of lines in standard input.
 > *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
