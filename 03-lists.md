@@ -273,9 +273,9 @@ last 4
 
 >## Non-continuous slices {.challenge}
 >So far we've seen how to use slicing to take single blocks of successive entries from a sequence. But what if we want to take a subset of entries that aren't next to each other in the sequence?
-
+>
 >You can achieve this by providing a third argument to the range within the brackets, called the _step size_. The example below shows how you can take every third entry in a list:
-
+>
 >~~~{.python}
 >primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
 >subset = primes[0:12:3]
@@ -284,9 +284,9 @@ last 4
 >~~~{.output}
 >subset [2, 7, 17, 29]
 >~~~
-
+>
 >Notice that the slice taken begins with the first entry in the range, followed by entries taken at equally-spaced intervals (the steps) thereafter. If you wanted to begin the subset with the third entry, you would need to specify that as the starting point of the sliced range:
-
+>
 >~~~{.python}
 primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
 subset = primes[2:12:3]
@@ -295,7 +295,7 @@ print("subset", subset)
 >~~~{.output}
 subset [5, 13, 23, 37]
 >~~~
-
+>
 >Use the step size argument to create a new string that contains only every other character in the string "In an octopus's garden in the shade"  
 >
 > ~~~{.python}
