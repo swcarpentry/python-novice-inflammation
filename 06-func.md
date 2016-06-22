@@ -618,6 +618,50 @@ first item in the list, but if we want the ',' to be assigned to the variable `d
 we *do* have to provide `delimiter=` for the second parameter since `delimiter` is not
 the second parameter in the list.
 
+## Readable functions
+
+Consider these two functions:
+
+~~~ {.python}
+def s(p):
+    a = 0
+    for v in p:
+        a += v
+    m = a / len(p)
+    d = 0
+    for v in p:
+        d += (v - m) * (v - m)
+    return numpy.sqrt(d / (len(p) - 1))
+
+def std_dev(sample):
+    sample_sum = 0
+    for value in sample:
+        sample_sum += value
+
+    sample_mean = sample_sum / len(sample)
+
+    sum_squared_devs = 0
+    for value in sample:
+        sum_squared_devs += (value - sample_mean) * (value - sample_mean)
+
+    return numpy.sqrt(sum_squared_devs / (len(sample) - 1))
+~~~
+
+The functions `s` and `std_dev` are computationally equivalent (they
+both calculate the sample standard deviation), but to a human reader,
+they look very different. You probably found `std_dev` much easier to
+read and understand than `s`.
+
+As this example illustrates, both documentation and a programmer's
+_coding style_ combine to determine how easy it is for others to read
+and understand the programmer's code. Choosing meaningful variable
+names and using blank spaces to break the code into logical "chunks"
+are helpful techniques for producing _readable code_. This is useful
+not only for sharing code with others, but also for the original
+programmer. If you need to revisit code that you wrote months ago and
+haven't thought about since then, you will appreciate the value of
+readable code!
+
 > ## Combining strings {.challenge}
 >
 > "Adding" two strings produces their concatenation:
@@ -747,53 +791,9 @@ the second parameter in the list.
 > print(a, b)
 > ~~~
 
-> ## Self-documenting code {.challenge}
->
-> What do these two functions do?
->
-> ~~~ {.python}
-> import math
->
-> def s(p):
->     a = 0
->     for v in p:
->         a += v
->     m = a / len(p)
->     d = 0
->     for v in p:
->         d += (v - m) * (v - m)
->     return math.sqrt(d / (len(p) - 1))
->
-> def std_dev(sample):
->     sample_sum = 0
->     for value in sample:
->         sample_sum += value
->
->     sample_mean = sample_sum / len(sample)
->
->     sum_squared_devs = 0
->     for value in sample:
->         sum_squared_devs += (value - sample_mean) * (value - sample_mean)
->
->     return math.sqrt(sum_squared_devs / (len(sample) - 1))
-> ~~~
->
-> The functions `s()` and `std_dev()` are computationally equivalent (they both
-> calculate the sample standard deviation), but to a human reader, they look
-> very different.  You probably found one much easier to read and understand
-> than the other.
->
-> As this example illustrates, a programmer's _coding style_ determines
-> how easy it is for others to read and understand the programmer's code.
-> Choosing meaningful variable names and using blank spaces to break the code
-> into logical "chunks" are helpful techniques for producing _self-documenting
-> code_ -- that is, code that can be easily interpreted (by humans) without the use of
-> additional documentation.  This is useful not only for sharing code with others,
-> but also for the original programmer.  For instance, if you need to revisit code
-> that you wrote months ago and haven't thought about since then, you will
-> appreciate the value of self-documenting code!
+> ## Readable code {.challenge}
 >
 > Revise a function you wrote for one of the previous exercises to try to make
-> the code more self-documenting.  Then, collaborate with one of your neighbors
+> the code more readable. Then, collaborate with one of your neighbors
 > to critique each other's functions and discuss how your function implementations
 > could be further improved to make them more readable.
