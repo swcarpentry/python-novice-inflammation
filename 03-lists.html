@@ -140,34 +140,27 @@ odds: [1, 3, 5, 7]</code></pre>
 <p>Use a for-loop to convert the string “hello” into a list of letters:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">[<span class="st">&quot;h&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;l&quot;</span>, <span class="st">&quot;l&quot;</span>, <span class="st">&quot;o&quot;</span>]</code></pre></div>
 <p>Hint: You can create an empty list like this:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">my_list <span class="op">=</span> []</code></pre></div>
 </div>
 </section>
-<blockquote>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">my_list <span class="op">=</span> []</code></pre></div>
-</blockquote>
-<p>Subsets of lists and strings can be accessed by specifying ranges of values in brackets, similar to how we accessed ranges of positions in a Numpy matrix. This is commonly referred to as “slicing” the list/string.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">common_name <span class="op">=</span> <span class="st">&quot;common fruit fly&quot;</span>
-title <span class="op">=</span> common_name[:]
-<span class="bu">print</span>(title)
-
-binomial_name <span class="op">=</span> <span class="st">&quot;Drosophila melanogaster&quot;</span>
+<p>Subsets of lists and strings can be accessed by specifying ranges of values in brackets, similar to how we accessed ranges of positions in a Numpy array. This is commonly referred to as “slicing” the list/string.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">binomial_name <span class="op">=</span> <span class="st">&quot;Drosophila melanogaster&quot;</span>
 group <span class="op">=</span> binomial_name[<span class="dv">0</span>:<span class="dv">10</span>]
-<span class="bu">print</span>(<span class="st">&quot;group&quot;</span>, group)
+<span class="bu">print</span>(<span class="st">&quot;group:&quot;</span>, group)
 
 species <span class="op">=</span> binomial_name[<span class="dv">11</span>:<span class="dv">24</span>]
-<span class="bu">print</span>(<span class="st">&quot;species&quot;</span>, species)
+<span class="bu">print</span>(<span class="st">&quot;species:&quot;</span>, species)
 
 chromosomes <span class="op">=</span> [<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;4&quot;</span>]
 autosomes <span class="op">=</span> chromosomes[<span class="dv">2</span>:<span class="dv">5</span>]
-<span class="bu">print</span>(<span class="st">&quot;autosomes&quot;</span>, autosomes)
+<span class="bu">print</span>(<span class="st">&quot;autosomes:&quot;</span>, autosomes)
 
 last <span class="op">=</span> chromosomes[<span class="op">-</span><span class="dv">1</span>]
-<span class="bu">print</span>(<span class="st">&quot;last&quot;</span>, last)</code></pre></div>
-<pre class="output"><code>common fruit fly
-group Drosophila
-species melanogaster
-autosomes [&quot;2&quot;, &quot;3&quot;, &quot;4&quot;]
-last 4</code></pre>
+<span class="bu">print</span>(<span class="st">&quot;last:&quot;</span>, last)</code></pre></div>
+<pre class="output"><code>group: Drosophila
+species: melanogaster
+autosomes: [&quot;2&quot;, &quot;3&quot;, &quot;4&quot;]
+last: 4</code></pre>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2 id="slicing-from-the-end"><span class="glyphicon glyphicon-pencil"></span>Slicing from the end</h2>
@@ -202,6 +195,25 @@ subset <span class="op">=</span> primes[<span class="dv">2</span>:<span class="d
 <pre class="output"><code>I notpssgre ntesae</code></pre>
 </div>
 </section>
+<p>If you want to take a slice from the beginning of a sequence, you can omit the first index in the range:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">date <span class="op">=</span> <span class="st">&quot;Monday 4 January 2016&quot;</span>
+day <span class="op">=</span> date[<span class="dv">0</span>:<span class="dv">6</span>]
+<span class="bu">print</span>(<span class="st">&quot;Using 0 to begin range:&quot;</span>, day)
+day <span class="op">=</span> date[:<span class="dv">6</span>]
+<span class="bu">print</span>(<span class="st">&quot;Omitting beginning index:&quot;</span>, day)</code></pre></div>
+<pre class="output"><code>Using 0 to begin range: Monday
+Omitting beginning index: Monday</code></pre>
+<p>And equally, you can omit the ending index in the range to take a slice to the very end of the sequence:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">months <span class="op">=</span> [<span class="st">&quot;jan&quot;</span>, <span class="st">&quot;feb&quot;</span>, <span class="st">&quot;mar&quot;</span>, <span class="st">&quot;apr&quot;</span>, <span class="st">&quot;may&quot;</span>, <span class="st">&quot;jun&quot;</span>, <span class="st">&quot;jul&quot;</span>, <span class="st">&quot;aug&quot;</span>, <span class="st">&quot;sep&quot;</span>, <span class="st">&quot;oct&quot;</span>, <span class="st">&quot;nov&quot;</span>, <span class="st">&quot;dec&quot;</span>]
+sond <span class="op">=</span> months[<span class="dv">8</span>:<span class="dv">12</span>]
+<span class="bu">print</span>(<span class="st">&quot;With known last position:&quot;</span>, sond)
+sond <span class="op">=</span> months[<span class="dv">8</span>:<span class="bu">len</span>(months)]
+<span class="bu">print</span>(<span class="st">&quot;Using len() to get last entry:&quot;</span>, sond)
+sond <span class="op">=</span> months[<span class="dv">8</span>:]
+(<span class="st">&quot;Omitting ending index:&quot;</span>, sond)</code></pre></div>
+<pre class="output"><code>With known last position: [&quot;sep&quot;, &quot;oct&quot;, &quot;nov&quot;, &quot;dec&quot;]
+Using len() to get last entry: [&quot;sep&quot;, &quot;oct&quot;, &quot;nov&quot;, &quot;dec&quot;]
+Omitting ending index: [&quot;sep&quot;, &quot;oct&quot;, &quot;nov&quot;, &quot;dec&quot;]</code></pre>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2 id="tuples-and-exchanges"><span class="glyphicon glyphicon-pencil"></span>Tuples and exchanges</h2>
