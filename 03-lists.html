@@ -187,31 +187,21 @@ list_for_slicing <span class="op">=</span> [[<span class="st">&quot;fluorine&quo
 </div>
 <div class="panel-body">
 <p>So far we’ve seen how to use slicing to take single blocks of successive entries from a sequence. But what if we want to take a subset of entries that aren’t next to each other in the sequence?</p>
-</div>
-</section>
-<blockquote>
 <p>You can achieve this by providing a third argument to the range within the brackets, called the <em>step size</em>. The example below shows how you can take every third entry in a list:</p>
-</blockquote>
-<blockquote>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">primes <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">23</span>, <span class="dv">29</span>, <span class="dv">31</span>, <span class="dv">37</span>]
 subset <span class="op">=</span> primes[<span class="dv">0</span>:<span class="dv">12</span>:<span class="dv">3</span>]
 <span class="bu">print</span>(<span class="st">&quot;subset&quot;</span>, subset)</code></pre></div>
 <pre class="output"><code>subset [2, 7, 17, 29]</code></pre>
-</blockquote>
-<blockquote>
 <p>Notice that the slice taken begins with the first entry in the range, followed by entries taken at equally-spaced intervals (the steps) thereafter. If you wanted to begin the subset with the third entry, you would need to specify that as the starting point of the sliced range:</p>
-</blockquote>
-<blockquote>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">primes <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">23</span>, <span class="dv">29</span>, <span class="dv">31</span>, <span class="dv">37</span>]
 subset <span class="op">=</span> primes[<span class="dv">2</span>:<span class="dv">12</span>:<span class="dv">3</span>]
 <span class="bu">print</span>(<span class="st">&quot;subset&quot;</span>, subset)</code></pre></div>
 <pre class="output"><code>subset [5, 13, 23, 37]</code></pre>
-</blockquote>
-<blockquote>
 <p>Use the step size argument to create a new string that contains only every other character in the string “In an octopus’s garden in the shade”</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">beatles <span class="op">=</span> <span class="st">&quot;In an octopus&#39;s garden in the shade&quot;</span></code></pre></div>
 <pre class="output"><code>I notpssgre ntesae</code></pre>
-</blockquote>
+</div>
+</section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2 id="tuples-and-exchanges"><span class="glyphicon glyphicon-pencil"></span>Tuples and exchanges</h2>
