@@ -922,7 +922,7 @@ Solutions to exercises:
 > ----
 >
 > ~~~ {.python}
-> # this is code/readings-07.py
+> # this is code/readings_07.py
 > import sys
 > import numpy
 >
@@ -964,14 +964,14 @@ Solutions to exercises:
 > ----
 >
 > ~~~ {.python}
-> # this is code/readings-08.py
+> # this is code/readings_08.py
 > import sys
 > import numpy
 >
 > def main():
 >     script = sys.argv[0]
 >     if len(sys.argv) == 1: # no arguments, so print help message
->         print("""Usage: python readings-08.py action filenames
+>         print("""Usage: python readings_08.py action filenames
 >               action must be one of --min --mean --max
 >               if filenames is blank, input is taken from stdin;
 >               otherwise, each filename in the list of arguments is processed in turn""")
@@ -1012,7 +1012,7 @@ Solutions to exercises:
 > ----
 >
 > ~~~ {.python}
-> # this is code/readings-09.py
+> # this is code/readings_09.py
 > import sys
 > import numpy
 >
@@ -1088,7 +1088,7 @@ Solutions to exercises:
 
 > ## Counting lines {.challenge}
 >
-> Write a program called `line-count.py` that works like the Unix `wc` command:
+> Write a program called `line_count.py` that works like the Unix `wc` command:
 >
 > *   If no filenames are given, it reports the number of lines in standard input.
 > *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
@@ -1096,7 +1096,7 @@ Solutions to exercises:
 > ----
 >
 > ~~~ {.python}
-> # this is code/line-count.py
+> # this is code/line_count.py
 > import sys
 >
 > def main():
