@@ -1,7 +1,7 @@
 ---
-layout: page
-title: Programming with Python
+layout: lesson
 ---
+
 The best way to learn how to program is to do something useful,
 so this introduction to Python is built around a common scientific task:
 data analysis.
@@ -34,6 +34,7 @@ The first few rows of our first file look like this:
 0,0,2,0,4,2,2,1,6,7,10,7,9,13,8,8,15,10,10,7,17,4,4,7,6,15,6,4,9,11,3,5,6,3,3,4,2,3,2,1
 0,1,1,3,3,1,3,5,2,4,4,7,6,5,3,10,8,10,6,17,9,14,9,7,13,9,12,6,7,7,9,6,3,2,2,4,2,0,1,1
 ~~~
+{: .source}
 
 We want to:
 
@@ -43,62 +44,11 @@ We want to:
 
 To do all that, we'll have to learn a little bit about programming.
 
-> ## Prerequisites {.prereq}
+> ## Prerequisites
 >
 > Learners need to understand the concepts of files and directories
 > (including the working directory) and how to start a Python
 > interpreter before tackling this lesson. This lesson references the Jupyter (IPython)
 > Notebook although it can be taught through any Python interpreter.
 > The commands in this lesson pertain to **Python 3**.
-
-> ## Getting ready {.getready}
->
-> You need to download some files to follow this lesson:
->
-> 1. Make a new folder in your Desktop called `python-novice-inflammation`.
-> 2. Download [python-novice-inflammation-data.zip](./python-novice-inflammation-data.zip) and move the file to this folder.
-> 3. If it's not unzipped yet, double-click on it to unzip it. You should end up with a new folder called `data`.
-> 4. You can access this folder from the Unix shell with:
->
-> ~~~ {.input}
-> $ cd && cd Desktop/python-novice-inflammation/data
-> ~~~
-
-> ## Starting Python {.getready}
->
-> If you will be using the Jupyter (IPython) notebook for the lesson,
-> you should have already
-> [installed Anaconda](http://swcarpentry.github.io/workshop-template/#setup)
-> which includes the notebook.
->
-> To start the notebook, open a terminal or git bash and type the command:
->
-> ~~~ {.input}
-> $ jupyter notebook
-> ~~~
->
-> To start the Python intrepreter without the notebook, open a terminal or git bash and type the command:
->
-> ~~~ {.input}
-> $ python
-> ~~~
-
-## Topics
-
-1.  [Analyzing Patient Data](01-numpy.html)
-2.  [Repeating Actions with Loops](02-loop.html)
-3.  [Storing Multiple Values in Lists](03-lists.html)
-4.  [Analyzing Data from Multiple Files](04-files.html)
-5.  [Making Choices](05-cond.html)
-6.  [Creating Functions](06-func.html)
-7.  [Errors and Exceptions](07-errors.html)
-8.  [Defensive Programming](08-defensive.html)
-9.  [Debugging](09-debugging.html)
-10.  [Command-Line Programs](10-cmdline.html)
-
-
-## Other Resources
-
-*   [Reference](reference.html)
-*   [Discussion](discussion.html)
-*   [Instructor's Guide](instructors.html)
+{: .prereq}
