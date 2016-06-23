@@ -17,7 +17,7 @@ In the last lesson,
 we wrote some code that plots some values of interest from our first inflammation dataset,
 and reveals some suspicious features in it, such as from `inflammation-01.csv`
 
-![Analysis of inflammation-01.csv]({{ site.github.url }}/fig/03-loop_2_0.png)
+![Analysis of inflammation-01.csv]({{ site.root }}/fig/03-loop_2_0.png)
 
 We have a dozen data sets right now, though, and more on the way.
 We want to create plots for all of our data sets with a single statement.
@@ -142,7 +142,7 @@ for variable in collection:
 
 Using the oxygen example above, the loop might look like this:
 
-![loop_image]({{ site.github.url }}/fig/loops_image.png)
+![loop_image]({{ site.root }}/fig/loops_image.png)
 
 where each character (`char`) in the variable `word` is looped through and printed one character after another.
 The numbers in the diagram denote which loop cycle the character was printed in (1 being the first loop, and 6 being the final loop).

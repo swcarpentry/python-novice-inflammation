@@ -135,7 +135,7 @@ does not.
 > Here is a visual example of how indexing a list of lists `x` works:
 >
 > <a href='https://twitter.com/hadleywickham/status/643381054758363136'>
-> ![The first element of a list. Adapted from @hadleywickham's tweet about R lists.]({{ site.github.url }}/fig/indexing_lists_python.png)</a>
+> ![The first element of a list. Adapted from @hadleywickham's tweet about R lists.]({{ site.root }}/fig/indexing_lists_python.png)</a>
 >
 > Using the previously declared list `x`, these would be the results of the
 > index operations shown in the image:
