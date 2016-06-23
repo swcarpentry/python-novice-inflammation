@@ -45,7 +45,7 @@ If the test is false,
 the body of the `else` is executed instead.
 Only one or the other is ever executed:
 
-![Executing a Conditional]({{ site.github.url }}/fig/python-flowchart-conditional.png)
+![Executing a Conditional]({{ site.root }}/fig/python-flowchart-conditional.png)
 
 Conditional statements don't have to include an `else`.
 If there isn't one,

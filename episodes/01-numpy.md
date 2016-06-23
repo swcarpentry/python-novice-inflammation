@@ -143,7 +143,7 @@ weight in kilograms is now: 57.5
 If we imagine the variable as a sticky note with a name written on it,
 assignment is like putting the sticky note on a particular value:
 
-![Variables as Sticky Notes]({{ site.github.url }}/fig/python-sticky-note-variables-01.svg)
+![Variables as Sticky Notes]({{ site.root }}/fig/python-sticky-note-variables-01.svg)
 
 This means that assigning a value to one variable does *not* change the values of other variables.
 For example,
@@ -160,7 +160,7 @@ weight in kilograms: 57.5 and in pounds: 126.5
 ~~~
 {: .output}
 
-![Creating Another Variable]({{ site.github.url }}/fig/python-sticky-note-variables-02.svg)
+![Creating Another Variable]({{ site.root }}/fig/python-sticky-note-variables-02.svg)
 
 and then change `weight_kg`:
 
@@ -175,7 +175,7 @@ weight in kilograms is now: 100.0 and weight in pounds is still: 126.5
 ~~~
 {: .output}
 
-![Updating a Variable]({{ site.github.url }}/fig/python-sticky-note-variables-03.svg)
+![Updating a Variable]({{ site.root }}/fig/python-sticky-note-variables-03.svg)
 
 Since `weight_lb` doesn't "remember" where its value came from,
 it isn't automatically updated when `weight_kg` changes.
@@ -591,7 +591,7 @@ next diagram on the left), or the average for each day (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
-![Operations Across Axes]({{ site.github.url }}/fig/python-operations-across-axes.png)
+![Operations Across Axes]({{ site.root }}/fig/python-operations-across-axes.png)
 
 To support this,
 most array functions allow us to specify the axis we want to work on.
@@ -667,7 +667,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .python}
 
-![Heatmap of the Data]({{ site.github.url }}/fig/01-numpy_71_0.png)
+![Heatmap of the Data]({{ site.root }}/fig/01-numpy_71_0.png)
 
 Blue regions in this heat map are low values, while red shows high values.
 As we can see,
@@ -699,7 +699,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .python}
 
-![Average Inflammation Over Time]({{ site.github.url }}/fig/01-numpy_73_0.png)
+![Average Inflammation Over Time]({{ site.root }}/fig/01-numpy_73_0.png)
 
 Here,
 we have put the average per day across all patients in the variable `ave_inflammation`,
@@ -716,7 +716,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .python}
 
-![Maximum Value Along The First Axis]({{ site.github.url }}/fig/01-numpy_75_1.png)
+![Maximum Value Along The First Axis]({{ site.root }}/fig/01-numpy_75_1.png)
 
 ~~~
 min_plot = matplotlib.pyplot.plot(numpy.min(data, axis=0))
@@ -724,7 +724,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .python}
 
-![Minimum Value Along The First Axis]({{ site.github.url }}/fig/01-numpy_75_3.png)
+![Minimum Value Along The First Axis]({{ site.root }}/fig/01-numpy_75_3.png)
 
 The maximum value rises and falls perfectly smoothly,
 while the minimum seems to be a step function.
@@ -773,7 +773,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .python}
 
-![The Previous Plots as Subplots]({{ site.github.url }}/fig/01-numpy_80_0.png)
+![The Previous Plots as Subplots]({{ site.root }}/fig/01-numpy_80_0.png)
 
 The [call](reference.html#function-call) to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
