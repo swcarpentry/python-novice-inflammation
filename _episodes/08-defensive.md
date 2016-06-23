@@ -1,16 +1,18 @@
 ---
-layout: page
-title: Programming with Python
-subtitle: Defensive Programming
-minutes: 30
+title: Defensive Programming
+teaching: 30
+exercises: 0
+questions:
+- "FIXME"
+objectives:
+- "Explain what an assertion is."
+- "Add assertions that check the program's state is correct."
+- "Correctly add precondition and postcondition assertions to functions."
+- "Explain what test-driven development is, and use it when creating new functions."
+- "Explain why variables should be initialized using actual data values rather than arbitrary constants."
+keypoints:
+- "FIXME"
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Explain what an assertion is.
-> *   Add assertions that check the program's state is correct.
-> *   Correctly add precondition and postcondition assertions to functions.
-> *   Explain what test-driven development is, and use it when creating new functions.
-> *   Explain why variables should be initialized using actual data values rather than arbitrary constants.
 
 Our previous lessons have introduced the basic tools of programming:
 variables and lists,
@@ -56,7 +58,7 @@ and prints the error message if one is provided.
 For example,
 this piece of code halts as soon as the loop encounters a value that isn't positive:
 
-~~~ {.python}
+~~~
 numbers = [1.5, 2.3, 0.7, -0.001, 4.4]
 total = 0.0
 for n in numbers:
@@ -64,7 +66,9 @@ for n in numbers:
     total += n
 print('total is:', total)
 ~~~
-~~~ {.error}
+{: .python}
+
+~~~
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-19-33d87ea29ae4> in <module>()
@@ -76,6 +80,7 @@ AssertionError                            Traceback (most recent call last)
 
 AssertionError: Data should only contain positive values
 ~~~
+{: .error}
 
 Programs like the Firefox browser are full of assertions:
 10-20% of the code they contain
@@ -98,7 +103,7 @@ and the longest side is 1.0 units long.
 This function does that,
 but checks that its input is correctly formatted and that its result makes sense:
 
-~~~ {.python}
+~~~
 def normalize_rectangle(rect):
     '''Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.'''
     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
@@ -120,13 +125,16 @@ def normalize_rectangle(rect):
 
     return (0, 0, upper_x, upper_y)
 ~~~
+{: .python}
 
 The preconditions on lines 2, 4, and 5 catch invalid inputs:
 
-~~~ {.python}
+~~~
 print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
 ~~~
-~~~ {.error}
+{: .python}
+
+~~~
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-21-3a97b1dcab70> in <module>()
@@ -141,11 +149,14 @@ AssertionError                            Traceback (most recent call last)
 
 AssertionError: Rectangles must contain 4 coordinates
 ~~~
+{: .error}
 
-~~~ {.python}
+~~~
 print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted
 ~~~
-~~~ {.error}
+{: .python}
+
+~~~
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-22-f05ae7878a45> in <module>()
@@ -160,25 +171,31 @@ AssertionError                            Traceback (most recent call last)
 
 AssertionError: Invalid X coordinates
 ~~~
+{: .error}
 
 The post-conditions help us catch bugs by telling us when our calculations cannot have been correct.
 For example,
 if we normalize a rectangle that is taller than it is wide everything seems OK:
 
-~~~ {.python}
+~~~
 print(normalize_rectangle( (0.0, 0.0, 1.0, 5.0) ))
 ~~~
-~~~ {.output}
+{: .python}
+
+~~~
 (0, 0, 0.2, 1.0)
 ~~~
+{: .output}
 
 but if we normalize one that's wider than it is tall,
 the assertion is triggered:
 
-~~~ {.python}
+~~~
 print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))
 ~~~
-~~~ {.error}
+{: .python}
+
+~~~
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-24-5f0ef7954aeb> in <module>()
@@ -193,6 +210,7 @@ AssertionError                            Traceback (most recent call last)
 
 AssertionError: Calculated upper Y coordinate invalid
 ~~~
+{: .error}
 
 Re-reading our function,
 we realize that line 10 should divide `dy` by `dx` rather than `dx` by `dy`.
@@ -241,7 +259,7 @@ The range of each time series is represented as a pair of numbers,
 which are the time the interval started and ended.
 The output is the largest range that they all include:
 
-![Overlapping Ranges](fig/python-overlapping-ranges.svg)\
+![Overlapping Ranges]({{ site.github.url }}/fig/python-overlapping-ranges.svg)
 
 Most novice programmers would solve this problem like this:
 
@@ -269,12 +287,14 @@ Its advocates believe it produces better code faster because:
 
 Here are three test functions for `range_overlap`:
 
-~~~ {.python}
+~~~
 assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
 assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
 assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
 ~~~
-~~~ {.error}
+{: .python}
+
+~~~
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-25-d8be150fbef6> in <module>()
@@ -284,6 +304,7 @@ AssertionError                            Traceback (most recent call last)
 
 AssertionError:
 ~~~
+{: .error}
 
 The error is actually reassuring:
 we haven't written `range_overlap` yet,
@@ -299,9 +320,10 @@ and produce a single pair as output.
 Something important is missing, though.
 We don't have any tests for the case where the ranges don't overlap at all:
 
-~~~ {.python}
+~~~
 assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == ???
 ~~~
+{: .python}
 
 What should `range_overlap` do in this case:
 fail with an error message,
@@ -314,9 +336,10 @@ before we realized there was an issue.
 
 And what about this case?
 
-~~~ {.python}
+~~~
 assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == ???
 ~~~
+{: .python}
 
 Do two segments that touch at their endpoints overlap or not?
 Mathematicians usually say "yes",
@@ -339,11 +362,13 @@ and means "nothing here".
 With that decision made,
 we can finish writing our last two tests:
 
-~~~ {.python}
+~~~
 assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
 assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
 ~~~
-~~~ {.error}
+{: .python}
+
+~~~
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-26-d877ef460ba2> in <module>()
@@ -352,12 +377,13 @@ AssertionError                            Traceback (most recent call last)
 
 AssertionError:
 ~~~
+{: .error}
 
 Again,
 we get an error because we haven't written our function,
 but we're now ready to do so:
 
-~~~ {.python}
+~~~
 def range_overlap(ranges):
     '''Return common overlap among a set of [low, high] ranges.'''
     lowest = 0.0
@@ -367,6 +393,7 @@ def range_overlap(ranges):
         highest = min(highest, high)
     return (lowest, highest)
 ~~~
+{: .python}
 
 (Take a moment to think about why we use `max` to raise `lowest`
 and `min` to lower `highest`).
@@ -375,7 +402,7 @@ but they're scattered across three different cells.
 To make running them easier,
 let's put them all in a function:
 
-~~~ {.python}
+~~~
 def test_range_overlap():
     assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
     assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
@@ -383,13 +410,16 @@ def test_range_overlap():
     assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
     assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
 ~~~
+{: .python}
 
 We can now test `range_overlap` with a single function call:
 
-~~~ {.python}
+~~~
 test_range_overlap()
 ~~~
-~~~ {.error}
+{: .python}
+
+~~~
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-29-cf9215c96457> in <module>()
@@ -404,6 +434,7 @@ AssertionError                            Traceback (most recent call last)
 
 AssertionError:
 ~~~
+{: .error}
 
 The first test that was supposed to produce `None` fails,
 so we know something is wrong with our function.
@@ -417,39 +448,44 @@ regardless of the input values.
 This violates another important rule of programming:
 *always initialize from data*.
 
-> ## Pre- and post-conditions {.challenge}
+> ## Pre- and Post-Conditions
 >
 > Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
 > What pre-conditions and post-conditions would you write for it?
 > Compare your answer to your neighbor's:
 > can you think of a function that will pass your tests but not hers or vice versa?
+{: .challenge}
 
-> ## Testing assertions {.challenge}
+> ## Testing Assertions
 >
 > Given a sequence of values, the function `running` returns
 > a list containing the running totals at each index.
 >
-> ~~~{.python}
+> ~~~
 > running([1, 2, 3, 4])
 > ~~~
+> {: .python}
 >
-> ~~~{.output}
+> ~~
 > [1, 3, 6, 10]
 > ~~~
+> {: .output}
 >
-> ~~~{.python}
+> ~~~
 > running('abc')
 > ~~~
+> {: .python}
 >
-> ~~~{.output}
+> ~~
 > ['a', 'ab', 'abc']
 > ~~~
+> {: .output}
 >
 > Explain in words what the assertions in this function check,
 > and for each one,
 > give an example of input that will make that assertion fail.
 >
-> ~~~ {.python}
+> ~~~
 > def running(values):
 >     assert len(values) > 0
 >     result = [values[0]]
@@ -459,7 +495,10 @@ This violates another important rule of programming:
 >         assert result[-1] >= result[0]
 >     return result
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Fixing and testing {.challenge}
+> ## Fixing and Testing
 >
 > Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
+{: .challenge}

@@ -1,13 +1,15 @@
 ---
-layout: page
-title: Programming with Python
-subtitle: Debugging
-minutes: 30
+title: Debugging
+teaching: 30
+exercises: 0
+questions:
+- "FIXME"
+objectives:
+- "Debug code containing an error systematically."
+- "Identify ways of making code less error-prone and more easily tested."
+keypoints:
+- "FIXME"
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Debug code containing an error systematically.
-> *   Identify ways of making code less error-prone and more easily tested.
 
 Once testing has uncovered problems,
 the next step is to fix them.
@@ -183,13 +185,14 @@ People are more likely to listen to us
 when we can explain clearly what we did,
 and we're better able to give them the information they need to be useful.
 
-> ## Version Control Revisited {.callout}
+> ## Version Control Revisited
 >
 > Version control is often used to reset software to a known state during debugging,
 > and to explore recent changes to code that might be responsible for bugs.
 > In particular,
 > most version control systems have a `blame` command
 > that will show who last changed particular lines of code...
+{: .callout}
 
 ## Be Humble
 
@@ -225,15 +228,16 @@ and to turn every assumption (or mistake) into an assertion,
 it will actually take us *less* time to produce working programs,
 not more.
 
-> ## Debug with a neighbor {.challenge}
+> ## Debug With a Neighbor
 >
 > Take a function that you have written today, and introduce a tricky bug.
 > Your function should still run, but will give the wrong output.
 > Switch seats with your neighbor and attempt to debug
 > the bug that they introduced into their function.
 > Which of the principles discussed above did you find helpful?
+{: .challenge}
 
-> ## Debug the following problem {.challenge}
+> ## Not Supposed to be the Same
 >
 > You are assisting a researcher with Python code that computes the
 > Body Mass Index (BMI) of patients.  The researcher is concerned because
@@ -245,7 +249,7 @@ not more.
 > with the code. What suggestions would you give the researcher for 
 > ensuring any later changes they make work correctly?
 >
-> ~~~ {.python}
+> ~~~
 > patients = [[70, 1.8], [80, 1.9], [150, 1.7]]
 >
 > def calculate_bmi(weight, height):
@@ -256,8 +260,12 @@ not more.
 >     bmi = calculate_bmi(height, weight)
 >     print("Patient's BMI is: %f" % bmi)
 > ~~~
-> ~~~ {.output}
+> {: .python}
+>
+> ~~~
 > Patient's BMI is: 21.604938
 > Patient's BMI is: 21.604938
 > Patient's BMI is: 21.604938
 > ~~~
+> {: .output}
+{: .challenge}

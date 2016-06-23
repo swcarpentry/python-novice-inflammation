@@ -1,8 +1,7 @@
 ---
-layout: page
-title: Programming with Python
-subtitle: Reference
+layout: reference
 ---
+
 ## [Analyzing Patient Data](01-numpy.html)
 
 *   Import a library into a program using `import libraryname`.

@@ -110,57 +110,63 @@ which are covered in the lesson on the shell.
 
 Solutions to exercises:
 
-> ## Sorting out references {.challenge}
+> ## Sorting Out References
 >
 > What does the following program print out?
 >
-> ~~~ {.python}
+> ~~~
 > first, second = 'Grace', 'Hopper'
 > third, fourth = second, first
 > print(third, fourth)
 > ~~~
+> {: .python}
 >
-> ~~~ {.output}
+> ~~~
 > Hopper Grace
 > ~~~
+> {: .output}
+{: .challenge}
 
-
-> ## Slicing strings {.challenge}
+> ## Slicing Strings
 >
 > A section of an array is called a [slice](reference.html#slice).
 > We can take slices of character strings as well:
 >
-> ~~~ {.python}
+> ~~~
 > element = 'oxygen'
 > ~~~
+> {: .python}
 >
 > What is the value of `element[:4]`?
 > What about `element[4:]`?
 > Or `element[:]`?
 >
-> ~~~ {.output}
+> ~~~
 > oxyg
 > en
 > oxygen
 > ~~~
+> {: .output}
 >
 > What is `element[-1]`?
 > What is `element[-2]`?
 >
-> ~~~ {.output}
+> ~~~
 > n
 > e
 > ~~~
+> {: .output}
 >
 > Given those answers,
 > explain what `element[1:-1]` does.
 >
-> ~~~ {.output}
+> ~~~
 > Creates a substring from index 1 up to (not including) the final index, effectively removing the first and last letters from 'oxygen'
 > ~~~
+> {: .output}
+{: .challenge}
 
-
-> ## Thin slices {.challenge}
+> ## Thin Slices
 >
 > The expression `element[3:3]` produces an [empty string](reference.html#empty-string),
 > i.e., a string that contains no characters.
@@ -168,26 +174,30 @@ Solutions to exercises:
 > what does `data[3:3, 4:4]` produce?
 > What about `data[3:3, :]`?
 >
-> ~~~ {.python}
+> ~~~
 > print(data[3:3, 4:4])
 > print(data[3:3, :])
 > ~~~
+> {: .python}
 >
-> ~~~ {.output}
+> ~~~
 > []
 > []
 > ~~~
+> {: .output}
+{: .challenge}
 
-> ## Check your understanding: plot scaling {.challenge}
+> ## Plot Scaling
 >
 > Why do all of our plots stop just short of the upper end of our graph?
 > Update your plotting code to automatically set a more appropriate scale (hint: you can make use of the `max` and `min` methods to help)
 >
-> ~~~ {.output}
+> ~~~
 > Because matplotlib normally sets x and y axes limits to the min and max of our data (depending on data range)
 > ~~~
+> {: .output}
 >
-> ~~~ {.python}
+> ~~~
 > # for example:
 > axes3.set_ylabel('min')
 > axes3.plot(numpy.min(data, axis=0))
@@ -199,32 +209,35 @@ Solutions to exercises:
 > axes3.plot(min_data)
 > axes3.set_ylim(numpy.min(min_data), numpy.max(min_data) * 1.1)
 > ~~~
+> {: .python}
+{: .challenge}
 
-
-
-> ## Check your understanding: drawing straight lines {.challenge}
+> ## Drawing Straight Lines
 >
 > Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?
 >
-> ~~~ {.output}
+> ~~~
 > Because matplotlib interpolates (draws a straight line) between the points
 > ~~~
+> {: .output}
+{: .challenge}
 
-
-> ## Make your own plot {.challenge}
+> ## Make Your Own Plot
 >
 > Create a plot showing the standard deviation (`numpy.std`) of the inflammation data for each day across all patients.
 >
-> ~~~ {.python}
+> ~~~
 > max_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
 > matplotlib.pyplot.show()
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Moving plots around {.challenge}
+> ## Moving Plots Around
 >
 > Modify the program to display the three plots on top of one another instead of side by side.
 >
-> ~~~ {.python}
+> ~~~
 > import numpy
 > import matplotlib.pyplot
 >
@@ -251,53 +264,60 @@ Solutions to exercises:
 >
 > matplotlib.pyplot.show()
 > ~~~
-
-
+> {: .python}
+{: .challenge}
 
 ## [Repeating Actions with Loops](02-loop.html)
 
 Solutions to exercises:
 
-> ## From 1 to N {.challenge}
+> ## From 1 to N
 > Using `range`,
 > write a loop that uses `range` to print the first 3 natural numbers.
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > for i in range(1, 4):
 >    print(i)
 > ~~~
-> ~~~ {.output}
+> {: .python}
+> ~~~
 > 1
 > 2
 > 3
 > ~~~
+> {: .output}
+{: .challenge}
 
-> ## Computing powers with loops {.challenge}
+> ## Computing Powers With Loops
 > Write a loop that calculates the same result as `5 ** 3` using
 > multiplication (and without exponentiation).
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > result = 1
 > for i in range(0, 3):
 >    result = result * 5
 > print(result)
 > ~~~
-> ~~~ {.output}
+> {: .python}
+>
+> ~~~
 > 125
 > ~~~
+> {: .output}
+{: .challenge}
 
-> ## Reverse a string {.challenge}
+> ## Reverse a String
 >
 > Write a loop that takes a string,
 > and produces a new string with the characters in reverse order.
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > newstring = ''
 > oldstring = 'Newton'
 > length_old = len(oldstring)
@@ -305,9 +325,13 @@ Solutions to exercises:
 >    newstring = newstring + oldstring[length_old - char_index - 1]
 > print(newstring)
 > ~~~
-> ~~~ {.output}
+> {: .python}
+>
+> ~~~
 > 'notweN'
 > ~~~
+> {: .output}
+{: .challenge}
 
 After discussing these challenges could be a good time to introduce the `b *= 2` syntax.
 
@@ -315,33 +339,37 @@ After discussing these challenges could be a good time to introduce the `b *= 2`
 
 Solutions to exercises:
 
-> ## Turn a string into a list {.challenge}
+> ## Turn a String Into a List
 >
 > Use a `for` loop to convert the string `"hello"` into a list of letters:
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > my_list = []
 > for char in "hello":
 >     my_list.append(char)
 > print(my_list)
 > ~~~
-> ~~~ {.output}
+> {: .python}
+>
+> ~~~
 > ["h", "e", "l", "l", "o"]
 > ~~~
+> {: .output}
+{: .challenge}
 
 ## [Analyzing Data from Multiple Files](04-files.html)
 
 Solutions to exercises:
 
-> ## Plotting Differences {.challenge}
+> ## Plotting Differences
 >
 > Plot the difference between the average of the first dataset and the average of the second dataset,
 > i.e., the difference between the leftmost plot of the first two figures.
 >
 >
-> ~~~ {.python}
+> ~~~
 > import glob
 > import numpy
 > import matplotlib.pyplot
@@ -359,16 +387,18 @@ Solutions to exercises:
 > fig.tight_layout()
 > matplotlib.pyplot.show()
 > ~~~
+> {: .python}
+{: .challenge}
 
 ## [Making Choices](05-cond.html)
 
 Solutions to exercises:
 
-> ## How many paths? {.challenge}
+> ## How Many Paths?
 >
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
 >
-> ~~~ {.python}
+> ~~~
 > if 4 > 5:
 >     print('A')
 > elif 4 == 5:
@@ -376,17 +406,19 @@ Solutions to exercises:
 > elif 4 < 5:
 >     print('C')
 > ~~~
+> {: .python}
 >
 > ----
 >
 > C gets printed, because the first two conditions, `4 > 5` and `4 == 5` are not true, but `4 < 5` is true.
+{: .challenge}
 
-> ## What is truth? {.challenge}
+> ## What is Truth?
 >
 > After reading and running the code below,
 > explain the rules for which values are considered true and which are considered false.
 >
-> ~~~ {.python}
+> ~~~
 > if '':
 >     print('empty string is true')
 > if 'word':
@@ -400,6 +432,7 @@ Solutions to exercises:
 > if 1:
 >     print('one is true')
 > ~~~
+> {: .python}
 >
 > ----
 >
@@ -409,15 +442,16 @@ Solutions to exercises:
 > Fourth line prints `'non-empty list is true'`: a non-empty list is true
 > Fifth line prints nothing: 0 is false
 > Sixth line prints `'one is true'`: 1 is true
+{: .challenge}
 
-> ## Close enough {.challenge}
+> ## Close Enough
 >
 > Write some conditions that print `True` if the variable `a` is within 10% of the variable `b`
 > and `False` otherwise.
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > a = 5
 > b = 5.1
 >
@@ -426,23 +460,26 @@ Solutions to exercises:
 > else:
 >     print('False')
 > ~~~
+> {: .python}
 >
 > Another possible solution:
 >
-> ~~~ {.python}
+> ~~~
 > print(abs(a - b) < 0.1 * abs(b))
 > ~~~
+> {: .python}
 >
 > This works because the boolean objects `True` and `False` have string representations which can be `print`ed.
+{: .challenge}
 
-> ## In-place operators {.challenge}
+> ## In-Place Operators
 >
 > Write some code that sums the positive and negative numbers in a list separately,
 > using in-place operators.
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > positive_sum = 0
 > negative_sum = 0
 > test_list = [3, 4, 6, 1, -1, -5, 0, 7, -8]
@@ -455,18 +492,22 @@ Solutions to exercises:
 >         negative_sum += num
 > print(positive_sum, negative_sum)
 > ~~~
-> ~~~ {.output}
+> {: .python}
+>
+> ~~~
 > 21 -14
 > ~~~
+> {: .output}
 >
 > Here `pass` means "don't do anything". In this particular case, it's not actually needed, since if `num == 0` neither
 > sum needs to change, but it illustrates the use of `elif`.
+{: .challenge}
 
-> ## Tuples and exchanges {.challenge}
+> ## Tuples and Exchanges
 >
 > Explain what the overall effect of this code is:
 >
-> ~~~ {.python}
+> ~~~
 > left = 'L'
 > right = 'R'
 >
@@ -474,6 +515,7 @@ Solutions to exercises:
 > left = right
 > right = temp
 > ~~~
+> {: .python}
 >
 > ----
 >
@@ -481,9 +523,10 @@ Solutions to exercises:
 >
 > Compare it to:
 >
-> ~~~ {.python}
+> ~~~
 > left, right = right, left
 > ~~~
+> {: .python}
 >
 > ----
 >
@@ -492,36 +535,41 @@ Solutions to exercises:
 > ----
 >
 > Yes, although it's possible the internal implementation is different. Answers will vary on which is easier to read.
+{: .challenge}
 
 ## [Creating Functions](06-func.html)
 
 Solutions to exercises:
 
-> ## Combining strings {.challenge}
+> ## Combining Strings
 >
 > Write a function called `fence` that takes two parameters called `original` and `wrapper`
 > and returns a new string that has the wrapper character at the beginning and end of the original.
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > def fence(original, wrapper):
 >     return wrapper + original + wrapper
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Selecting characters from strings {.challenge}
+> ## Selecting Characters From Strings
 >
 > Write a function called `outer`
 > that returns a string made up of just the first and last characters of its input.
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > def outer(input_string):
 >     return input_string[0] + input_string[-1]
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Rescaling an array {.challenge}
+> ## Rescaling an Array
 >
 > Write a function `rescale` that takes an array as input
 > and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
@@ -530,15 +578,17 @@ Solutions to exercises:
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > def rescale(input_array):
 >     L = numpy.min(input_array)
 >     H = numpy.max(input_array)
 >     output_array = (input_array - L) / (H - L)
 >     return output_array
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Testing and documenting your function {.challenge}
+> ## Testing and Documenting Your Function
 >
 > Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
 > to see how to use these functions to generate regularly-spaced values,
@@ -548,7 +598,7 @@ Solutions to exercises:
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > '''Takes an array as input, and returns a corresponding array scaled so
 > that 0 corresponds to the minimum and 1 to the maximum value of the input array.
 >
@@ -560,8 +610,10 @@ Solutions to exercises:
 > array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
 > '''
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Defining defaults {.challenge}
+> ## Defining Defaults
 >
 > Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
 > but will allow the caller to specify lower and upper bounds if they want.
@@ -570,7 +622,7 @@ Solutions to exercises:
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > def rescale(input_array, low_val=0.0, high_val=1.0):
 >     '''rescales input array values to lie between low_val and high_val'''
 >     L = numpy.min(input_array)
@@ -579,12 +631,14 @@ Solutions to exercises:
 >     output_array = intermed_array * (high_val - low_val) + low_val
 >     return output_array
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Variables inside and outside functions {.challenge}
+> ## Variables Inside and Outside Functions
 >
 > What does the following piece of code display when run - and why?
 >
-> ~~~ {.python}
+> ~~~
 > f = 0
 > k = 0
 >
@@ -598,22 +652,25 @@ Solutions to exercises:
 >
 > print(k)
 > ~~~
+> {: .python}
 >
 > ----
 >
-> ~~~ {.output}
+> ~~~
 > 259.81666666666666
 > 287.15
 > 273.15
 > 0
 > ~~~
+> {: .output}
 > `k` is 0 because the `k` inside the function `f2k` doesn't know about the `k` defined outside the function.
+{: .challenge}
 
 ## [Errors and Exceptions](07-errors.html)
 
 Solutions to exercises:
 
-> ## Reading Error Messages {.challenge}
+> ## Reading Error Messages
 >
 > Read the traceback below, and identify the following pieces of information about it:
 >
@@ -624,11 +681,13 @@ Solutions to exercises:
 > 5.  What is the type of error?
 > 6.  What is the error message?
 >
-> ~~~ {.python}
+> ~~~
 > import errors_02
 > errors_02.print_friday_message()
 > ~~~
-> ~~~ {.error}
+> {: .python}
+>
+> ~~~
 > ---------------------------------------------------------------------------
 > KeyError                                  Traceback (most recent call last)
 > <ipython-input-2-e4c4cbafeeb5> in <module>()
@@ -649,6 +708,7 @@ Solutions to exercises:
 >
 > KeyError: 'Friday'
 > ~~~
+> {: .error}
 >
 > ----
 >
@@ -658,20 +718,22 @@ Solutions to exercises:
 > 4. 11
 > 5. `KeyError`
 > 6. There isn't really a message; you're supposed to infer that `Friday` is not a key in `messages`.
+{: .challenge}
 
-> ## Identifying Syntax Errors {.challenge}
+> ## Identifying Syntax Errors
 >
 > 1. Read the code below, and (without running it) try to identify what the errors are.
 > 2. Run the code, and read the error message. Is it a `SyntaxError` or an `IndentationError`?
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
 >
-> ~~~ {.python}
+> ~~~
 > def another_function
 >     print("Syntax errors are annoying.")
 >      print("But at least python tells us about them!")
 >     print("So they are usually not too hard to fix.")
 > ~~~
+> {: .python}
 >
 > ----
 >
@@ -679,21 +741,23 @@ Solutions to exercises:
 >
 > Fixed version:
 >
-> ~~~ {.python}
+> ~~~
 > def another_function():
 >     print("Syntax errors are annoying.")
 >     print("But at least python tells us about them!")
 >     print("So they are usually not too hard to fix.")
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Identifying Variable Name Errors {.challenge}
+> ## Identifying Variable Name Errors
 >
 > 1. Read the code below, and (without running it) try to identify what the errors are.
 > 2. Run the code, and read the error message. What type of `NameError` do you think this is? In other words, is it a string with no quotes, a misspelled variable, or a variable that should have been defined but was not?
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
 >
-> ~~~ {.python}
+> ~~~
 > for number in range(10):
 >     # use a if the number is a multiple of 3, otherwise use b
 >     if (Number % 3) == 0:
@@ -702,6 +766,7 @@ Solutions to exercises:
 >         message = message + "b"
 > print(message)
 > ~~~
+> {: .python}
 >
 > ----
 >
@@ -709,7 +774,7 @@ Solutions to exercises:
 >
 > Fixed version:
 >
-> ~~~ {.python}
+> ~~~
 > message = ""
 > for number in range(10):
 >     # use a if the number is a multiple of 3, otherwise use b
@@ -719,20 +784,25 @@ Solutions to exercises:
 >         message = message + "b"
 > print(message)
 > ~~~
-> ~~~ {.output}
+> {: .python}
+>
+> ~~~
 > abbabbabba
 > ~~~
+> {: .output}
+{: .challenge}
 
-> ## Identifying Item Errors {.challenge}
+> ## Identifying Item Errors
 >
 > 1. Read the code below, and (without running it) try to identify what the errors are.
 > 2. Run the code, and read the error message. What type of error is it?
 > 3. Fix the error.
 >
-> ~~~ {.python}
+> ~~~
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > print('My favorite season is ', seasons[4])
 > ~~~
+> {: .python}
 >
 > ----
 >
@@ -740,16 +810,18 @@ Solutions to exercises:
 >
 > Fixed version:
 >
-> ~~~ {.python}
+> ~~~
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > print('My favorite season is ', seasons[-1])
 > ~~~
+> {: .python}
+{: .challenge}
 
 ## [Defensive Programming](08-defensive.html)
 
 Solutions to exercises:
 
-> ## Pre- and post-conditions {.challenge}
+> ## Pre- and Post-Conditions
 >
 > Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
 > What pre-conditions and post-conditions would you write for it?
@@ -758,14 +830,16 @@ Solutions to exercises:
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > # a possible pre-condition:
 > assert len(input) > 0, 'List length must be non-zero'
 > # a possible post-condition:
 > assert numpy.min(input) < average < numpy.max(input), 'Average should be between min and max of input values'
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Testing assertions {.challenge}
+> ## Testing Assertions
 >
 > Given a sequence of values, the function `running` returns
 > a list containing the running totals at each index.
@@ -773,7 +847,7 @@ Solutions to exercises:
 > and for each one,
 > give an example of input that will make that assertion fail.
 >
-> ~~~ {.python}
+> ~~~
 > def running(values):
 >     assert len(values) > 0
 >     result = [values[0]]
@@ -783,6 +857,7 @@ Solutions to exercises:
 >         assert result[-1] >= result[0]
 >     return result
 > ~~~
+> {: .python}
 >
 > ----
 >
@@ -792,14 +867,15 @@ Solutions to exercises:
 >     Input such as `[-1,0,2,3]` will make it fail.
 > *   The third assertion checks that the running total always increases.
 >     Input such as `[0,1,3,-5,4]` will make it fail.
+{: .challenge}
 
-> ## Fixing and testing {.challenge}
+> ## Fixing and Testing
 >
 > Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > import numpy
 >
 > def range_overlap(ranges):
@@ -816,12 +892,14 @@ Solutions to exercises:
 >     else:
 >         return (lowest, highest)
 > ~~~
+> {: .python}
+{: .challenge}
 
 ## [Debugging](09-debugging.html)
 
 Solutions to exercises:
 
-> ## Debug the following problem {.challenge}
+> ## Debug the Following Problem
 >
 > This exercise has the aim of ensuring learners are able to step through
 > unseen code with unexpected output to locate issues. The issues present
@@ -832,31 +910,38 @@ Solutions to exercises:
 >
 > * The height/weight variables are reversed in the function call to
 >   `calculate_bmi(...)`
+{: .challenge}
 
 ## [Command-Line Programs](10-cmdline.html)
 
 Solutions to exercises:
 
-> ## Arithmetic on the command line {.challenge}
+> ## Arithmetic on the Command Line
 >
 > Write a command-line program that does addition and subtraction:
 >
-> ~~~ {.bash}
+> ~~~
 > $ python arith.py add 1 2
 > ~~~
-> ~~~ {.output}
+> {: .bash}
+>
+> ~~~
 > 3
 > ~~~
-> ~~~ {.bash}
+> {: .output}
+> ~~~
 > $ python arith.py subtract 3 4
 > ~~~
-> ~~~ {.output}
+> {: .bash}
+>
+> ~~~
 > -1
 > ~~~
+> {: .output}
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > # this is code/arith.py
 > import sys
 >
@@ -888,25 +973,30 @@ Solutions to exercises:
 >
 > main()
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Finding particular files {.challenge}
+> ## Finding Particular Files
 >
 > Using the `glob` module introduced [earlier](04-files.html),
 > write a simple version of `ls` that shows files in the current directory with a particular suffix.
 > A call to this script should look like this:
 >
-> ~~~ {.bash}
+> ~~~
 > $ python my_ls.py py
 > ~~~
-> ~~~ {.output}
+> {: .bash}
+>
+> ~~~
 > left.py
 > right.py
 > zero.py
 > ~~~
+> {: .output}
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > # this is code/my_ls.py
 > import sys
 > import glob
@@ -923,8 +1013,10 @@ Solutions to exercises:
 >
 > main()
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Changing flags {.challenge}
+> ## Changing Flags
 >
 > Rewrite `readings.py` so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
 > Is the code easier to read?
@@ -932,7 +1024,7 @@ Solutions to exercises:
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > # this is code/readings_07.py
 > import sys
 > import numpy
@@ -964,8 +1056,10 @@ Solutions to exercises:
 >
 > main()
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Adding a help message {.challenge}
+> ## Adding a Help Message
 >
 > Separately,
 > modify `readings.py` so that if no parameters are given
@@ -974,7 +1068,7 @@ Solutions to exercises:
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > # this is code/readings_08.py
 > import sys
 > import numpy
@@ -1013,8 +1107,10 @@ Solutions to exercises:
 >
 > main()
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Adding a default action {.challenge}
+> ## Adding a Default Action
 >
 > Separately,
 > modify `readings.py` so that if no action is given
@@ -1022,7 +1118,7 @@ Solutions to exercises:
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > # this is code/readings_09.py
 > import sys
 > import numpy
@@ -1057,8 +1153,10 @@ Solutions to exercises:
 >
 > main()
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## A file-checker {.challenge}
+> ## A File-Checker
 >
 > Write a program called `check.py` that takes the names of one or more inflammation data files as arguments
 > and checks that all the files have the same number of rows and columns.
@@ -1066,7 +1164,7 @@ Solutions to exercises:
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > # this is code/check.py
 > import sys
 > import numpy
@@ -1096,8 +1194,10 @@ Solutions to exercises:
 >
 > main()
 > ~~~
+> {: .python}
+{: .challenge}
 
-> ## Counting lines {.challenge}
+> ## Counting Lines
 >
 > Write a program called `line_count.py` that works like the Unix `wc` command:
 >
@@ -1106,7 +1206,7 @@ Solutions to exercises:
 >
 > ----
 >
-> ~~~ {.python}
+> ~~~
 > # this is code/line_count.py
 > import sys
 >
@@ -1143,3 +1243,5 @@ Solutions to exercises:
 > main()
 >
 > ~~~
+> {: .python}
+{: .challenge}
