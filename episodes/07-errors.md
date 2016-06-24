@@ -333,11 +333,13 @@ IndexError: list index out of range
 {: .error}
 
 Here,
-Python is telling us that there is an `IndexError` in our code, meaning we tried to access a list index that did not exist.
+Python is telling us that there is an `IndexError` in our code,
+meaning we tried to access a list index that did not exist.
 
 ## File Errors
 
-The last type of error we'll cover today are those associated with reading and writing files: `FileNotFoundError`.
+The last type of error we'll cover today
+are those associated with reading and writing files: `FileNotFoundError`.
 If you try to read a file that does not exist,
 you will receive a `FileNotFoundError` telling you so.
 
@@ -457,7 +459,11 @@ often reveals common reasons why you might get that error.
 > ## Identifying Variable Name Errors
 >
 > 1. Read the code below, and (without running it) try to identify what the errors are.
-> 2. Run the code, and read the error message. What type of `NameError` do you think this is? In other words, is it a string with no quotes, a misspelled variable, or a variable that should have been defined but was not?
+> 2. Run the code, and read the error message.
+>    What type of `NameError` do you think this is?
+>    In other words, is it a string with no quotes,
+>    a misspelled variable,
+>    or a variable that should have been defined but was not?
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
 >

@@ -102,7 +102,6 @@ and their minima show the same staircase structure;
 a different situation has been revealed in the third dataset,
 where the maxima are a bit less regular, but the minima are consistently zero.
 
-
 > ## Plotting Differences
 >
 > Plot the difference between the average of the first dataset and the average of the second dataset,
