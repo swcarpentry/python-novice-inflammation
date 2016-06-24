@@ -296,6 +296,7 @@ last: 4
 {: .output}
 
 > ## Slicing From the End
+>
 > Use slicing to access only the last four characters of a string or entries of a list.
 >
 > ~~~
@@ -317,6 +318,7 @@ last: 4
 {: .challenge}
 
 > ## Non-Continuous Slices
+>
 > So far we've seen how to use slicing to take single blocks
 > of successive entries from a sequence.
 > But what if we want to take a subset of entries
