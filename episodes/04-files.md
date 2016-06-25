@@ -8,7 +8,8 @@ objectives:
 - "Use a library function to get a list of filenames that match a simple wildcard pattern."
 - "Use a for loop to process multiple files."
 keypoints:
-- "FIXME"
+- "Use `glob.glob(pattern)` to create a list of files whose names match a pattern."
+- "Use `*` in a pattern to match zero or more characters, and `?` to match any single character."
 ---
 
 We now have almost everything we need to process all our data files.

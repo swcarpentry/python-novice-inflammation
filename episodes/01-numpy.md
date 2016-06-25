@@ -13,7 +13,20 @@ objectives:
 - "Perform operations on arrays of data."
 - "Display simple graphs."
 keypoints:
-- "FIXME"
+- "Import a library into a program using `import libraryname`."
+- "Use the `numpy` library to work with arrays in Python."
+- "Use `variable = value` to assign a value to a variable in order to record it in memory."
+- "Variables are created on demand whenever a value is assigned to them."
+- "Use `print(something)` to display the value of `something`."
+- "The expression `array.shape` gives the shape of an array."
+- "Use `array[x, y]` to select a single element from an array."
+- "Array indices start at 0, not 1."
+- "Use `low:high` to specify a slice that includes the indices from `low` to `high-1`."
+- "All the indexing and slicing that works on arrays also works on strings."
+- "Use `# some kind of explanation` to add comments to programs."
+- "Use `numpy.mean(array)`, `numpy.max(array)`, and `numpy.min(array)` to calculate simple statistics."
+- "Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis."
+- "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
 ---
 
 Words are useful,
