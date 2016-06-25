@@ -11,7 +11,11 @@ objectives:
 - "Explain what test-driven development is, and use it when creating new functions."
 - "Explain why variables should be initialized using actual data values rather than arbitrary constants."
 keypoints:
-- "FIXME"
+- "Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do."
+- "Put assertions in programs to check their state as they run, and to help readers understand how those programs are supposed to work."
+- "Use preconditions to check that the inputs to a function are safe to use."
+- "Use postconditions to check that the output from a function is safe to use."
+- "Write tests before writing code in order to help determine exactly what that code is supposed to do."
 ---
 
 Our previous lessons have introduced the basic tools of programming:

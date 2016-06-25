@@ -10,7 +10,9 @@ objectives:
 - "Trace changes to a loop variable as the loop runs."
 - "Trace changes to other variables as they are updated by a for loop."
 keypoints:
-- "FIXME"
+- "Use `for variable in collection` to process the elements of a collection one at a time."
+- "The body of a for loop must be indented."
+- "Use `len(thing)` to determine the length of something that contains other values."
 ---
 
 In the last lesson,

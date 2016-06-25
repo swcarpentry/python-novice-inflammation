@@ -8,7 +8,10 @@ objectives:
 - "Explain what a list is."
 - "Create and index lists of simple values."
 keypoints:
-- "FIXME"
+- "`[value1, value2, value3, ...]` creates a list."
+- "Lists are indexed and sliced in the same way as strings and arrays."
+- "Lists are mutable (i.e., their values can be changed in place)."
+- "Strings are immutable (i.e., the characters in them cannot be changed)."
 ---
 
 Just as a `for` loop is a way to do operations many times,

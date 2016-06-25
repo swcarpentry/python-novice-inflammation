@@ -8,7 +8,11 @@ objectives:
 - "To be able to read a traceback, and determine where the error took place and what type it is."
 - "To be able to describe the types of situations in which syntax errors, indentation errors, name errors, index errors, and missing file errors occur."
 keypoints:
-- "FIXME"
+- "Tracebacks can look intimidating, but they give us a lot of useful information about what went wrong in our program, including where the error occurred and what type of error it was."
+- "An error having to do with the 'grammar' or syntax of the program is called a `SyntaxError`. If the issue has to do with how the code is indented, then it will be called an `IndentationError`."
+- "A `NameError` will occur if you use a variable that has not been defined, either because you meant to use quotes around a string, you forgot to define the variable, or you just made a typo."
+- "Containers like lists and strings will generate errors if you try to access items in them that do not exist. This type of error is called an `IndexError`."
+- "Trying to read a file that does not exist will give you an `IOError`. Trying to read a file that is open for writing, or writing to a file that is open for reading, will also give you an `IOError`."
 ---
 
 Every programmer encounters errors,

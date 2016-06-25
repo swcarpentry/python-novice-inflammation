@@ -11,7 +11,17 @@ objectives:
 - "Set default values for function parameters."
 - "Explain why we should divide programs into small, single-purpose functions."
 keypoints:
-- "FIXME"
+- "Define a function using `def name(...params...)`."
+- "The body of a function must be indented."
+- "Call a function using `name(...values...)`."
+- "Numbers are stored as integers or floating-point numbers."
+- "Integer division produces the whole part of the answer (not the fractional part)."
+- "Each time a function is called, a new stack frame is created on the **call stack** to hold its parameters and local variables."
+- "Python looks for variables in the current stack frame before looking for them at the top level."
+- "Use `help(thing)` to view help for something."
+- "Put docstrings in functions to provide help for that function."
+- "Specify default values for parameters when defining a function using `name=value` in the parameter list."
+- "Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used)."
 ---
 
 At this point,
