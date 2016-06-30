@@ -155,6 +155,31 @@ does not.
 > Thanks to [Hadley Wickham](https://twitter.com/hadleywickham/status/643381054758363136)
 > for the image above.
 
+Lists can contain heterogeneous data. This means that a sequence of values in a list can be from any data type (or class object). We can even have lists of lists as mentioned above. For example 
+
+~~~ {.python}
+ages = {'lion': 35, 'tiger': 22, 'crocodile': 45, 'vulture': 30, 'hippo': 45}
+
+MyList = ["I attended the SWC/DC workshop", ages, "average hight", 1.7,
+        "average age", 21, 
+        "MinTem", [-1.0, -0.5, 0.0, 0.5, 1.0], 
+        "MaxTemp", [17, 14, 25, 18, 17]]
+~~~
+The variable <ages> is a dictionary and typing 
+
+~~~ {.python}
+MyList[1]['crocodile']
+~~~
+
+returns 
+
+~~~ {.output}
+45
+~~~
+
+
+
+
 There are many ways to change the contents of lists besides assigning new values to
 individual elements:
 
