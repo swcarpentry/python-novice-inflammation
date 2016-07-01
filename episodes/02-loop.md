@@ -3,7 +3,7 @@ title: Repeating Actions with Loops
 teaching: 30
 exercises: 0
 questions:
-- "FIXME"
+- "How can I do the same operations on many different values?"
 objectives:
 - "Explain what a for loop does."
 - "Correctly write for loops to repeat simple calculations."

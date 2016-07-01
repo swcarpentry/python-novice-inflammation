@@ -3,7 +3,7 @@ title: Storing Multiple Values in Lists
 teaching: 30
 exercises: 0
 questions:
-- "FIXME"
+- "How can I store many values together?"
 objectives:
 - "Explain what a list is."
 - "Create and index lists of simple values."

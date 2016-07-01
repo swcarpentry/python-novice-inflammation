@@ -3,7 +3,8 @@ title: Errors and Exceptions
 teaching: 30
 exercises: 0
 questions:
-- "FIXME"
+- "How does Python report errors?"
+- "How can I handle errors in Python programs?"
 objectives:
 - "To be able to read a traceback, and determine where the error took place and what type it is."
 - "To be able to describe the types of situations in which syntax errors, indentation errors, name errors, index errors, and missing file errors occur."

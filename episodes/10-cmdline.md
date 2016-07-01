@@ -3,7 +3,7 @@ title: Command-Line Programs
 teaching: 30
 exercises: 0
 questions:
-- "FIXME"
+- "How can I write Python programs that will work like Unix command-line tools?"
 objectives:
 - "Use the values of command-line arguments in a program."
 - "Handle flags and files separately in a command-line program."

@@ -3,7 +3,7 @@ title: Analyzing Data from Multiple Files
 teaching: 20
 exercises: 0
 questions:
-- "FIXME"
+- "How can I do the same operations on many different files?"
 objectives:
 - "Use a library function to get a list of filenames that match a simple wildcard pattern."
 - "Use a for loop to process multiple files."

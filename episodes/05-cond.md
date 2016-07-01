@@ -3,7 +3,7 @@ title: Making Choices
 teaching: 30
 exercises: 0
 questions:
-- "FIXME"
+- "How can my programs do different things based on data values?"
 objectives:
 - "Write conditional statements including `if`, `elif`, and `else` branches."
 - "Correctly evaluate expressions containing `and` and `or`."

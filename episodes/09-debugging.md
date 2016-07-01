@@ -3,7 +3,7 @@ title: Debugging
 teaching: 30
 exercises: 0
 questions:
-- "FIXME"
+- "How can I debug my program?"
 objectives:
 - "Debug code containing an error systematically."
 - "Identify ways of making code less error-prone and more easily tested."
