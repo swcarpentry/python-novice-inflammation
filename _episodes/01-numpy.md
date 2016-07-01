@@ -3,7 +3,7 @@ title: Analyzing Patient Data
 teaching: 30
 exercises: 0
 questions:
-- "FIXME"
+- "How can I process tabular data files in Python?"
 objectives:
 - "Explain what a library is, and what libraries are used for."
 - "Import a Python library and use the things it contains."

@@ -3,7 +3,9 @@ title: Creating Functions
 teaching: 30
 exercises: 0
 questions:
-- "FIXME"
+- "How can I define new functions?"
+- "What's the difference between defining and calling a function?"
+- "What happens when I call a function?"
 objectives:
 - "Define a function that takes parameters."
 - "Return a value from a function."

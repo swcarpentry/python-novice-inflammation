@@ -3,7 +3,7 @@ title: Defensive Programming
 teaching: 30
 exercises: 0
 questions:
-- "FIXME"
+- "How can I make my programs more reliable?"
 objectives:
 - "Explain what an assertion is."
 - "Add assertions that check the program's state is correct."
