@@ -71,6 +71,44 @@ TypeError                                 Traceback (most recent call last)
 
 TypeError: &#39;str&#39; object does not support item assignment</code></pre>
 <p>does not.</p>
+
+<aside class="callout panel panel-info">
+<div class="panel-heading">
+<h2 id="list-sharing"><span class="glyphicon glyphicon-pushpin"></span>Share list memory or list values?</h2>
+
+</div>
+<div class="panel-body">
+<p>One thing we should know in python, while assigning a list A to another list B, the instruction B=A does assign A values to B, rather it shares A memory to B. In other words, A and B have the same memory, which means any change in A concerns B and vice versa. Let see it through the following example:
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">A <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">25</span>, <span class="dv">36</span>]
+B <span class="op">=</span> A
+<span class="bu">print</span>(<span class="st">&#39;A is :&#39;</span>, A)
+<span class="bu">print</span>(<span class="st">&#39;B is :&#39;</span>, B)
+</code></pre></div>
+<pre class="output"><code>A is: [1, 4, 9, 25, 36]
+B is: [1, 4, 9, 25, 36]
+</code></pre>
+<p>The change of the first value of A will change also the first value of B and vice versa since they share the same memory location:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">A[<span class="dv">0</span>]<span class="op">=</span> <span class="dv">10</span>
+B[<span class="dv">3</span>]<span class="op">=</span> <span class="dv">8</span>
+<span class="bu">print</span>(<span class="st">&#39;A is :&#39;</span>, A)
+<span class="bu">print</span>(<span class="st">&#39;B is :&#39;</span>, B)
+</code></pre></div>
+<pre class="output"><code>A is: [10, 4, 9, 8, 36]
+B is: [10, 4, 9, 8, 36]
+</code></pre>
+<p>All depends on the motivation of doing it. But if the motivation is to have a new list B with its own memory location, one of the ways is to do as follows:
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">B <span class="op">=</span> A[<span class="dv">0</span>:]
+A[<span class="dv">0</span>]<span class="op">=</span> <span class="dv">5</span>
+B[<span class="dv">3</span>]<span class="op">=</span> <span class="dv">11</span>
+<span class="bu">print</span>(<span class="st">&#39;A is :&#39;</span>, A)
+<span class="bu">print</span>(<span class="st">&#39;B is :&#39;</span>, B)
+</code></pre></div>
+<pre class="output"><code>A is: [5, 4, 9, 8, 36]
+B is: [10, 4, 9, 11, 36]
+</code></pre>
+</div>
+<p>But most of the time, the motivation of doing that is to have a new list for further use (e.g. sorting algorithms). We conclude by saying, while assigning a list A to another list B, developper has to know whether he shares the content or the memory.</p>
+</aside>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
 <h2 id="ch-ch-ch-changes"><span class="glyphicon glyphicon-pushpin"></span>Ch-Ch-Ch-Changes</h2>
