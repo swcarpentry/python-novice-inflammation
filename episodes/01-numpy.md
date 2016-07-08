@@ -831,6 +831,13 @@ the graphs will actually be squeezed together more closely.)
 > print(third, fourth)
 > ~~~
 > {: .python}
+>
+> > ## Solution
+> > ~~~
+> > Hopper Grace
+> > ~~~
+> > {: .output}
+> {: .solution}
 {: .challenge}
 
 > ## Slicing Strings
@@ -855,10 +862,33 @@ the graphs will actually be squeezed together more closely.)
 > What about `element[4:]`?
 > Or `element[:]`?
 >
+> > ## Solution
+> > ~~~
+> > oxyg
+> > en
+> > oxygen
+> > ~~~
+> > {: .output}
+> {: .solution}
+>
 > What is `element[-1]`?
 > What is `element[-2]`?
+>
+> > ## Solution
+> > ~~~
+> > n
+> > e
+> > ~~~
+> > {: .output}
+> {: .solution}
+>
 > Given those answers,
 > explain what `element[1:-1]` does.
+>
+> > ## Solution
+> > Creates a substring from index 1 up to (not including) the final index,
+> > effectively removing the first and last letters from 'oxygen'
+> {: .solution}
 {: .challenge}
 
 > ## Thin Slices
@@ -868,34 +898,117 @@ the graphs will actually be squeezed together more closely.)
 > If `data` holds our array of patient data,
 > what does `data[3:3, 4:4]` produce?
 > What about `data[3:3, :]`?
+>
+> > ## Solution
+> > ~~~
+> > []
+> > []
+> > ~~~
+> > {: .output}
+> {: .solution}
 {: .challenge}
 
 > ## Plot Scaling
 >
 > Why do all of our plots stop just short of the upper end of our graph?
-> If we want to change this, we can use the `set_ylim(min, max)` method of each 'axes', for example:
+>
+> > ## Solution
+> > Because matplotlib normally sets x and y axes limits to the min and max of our data
+> > (depending on data range)
+> {: .solution}
+>
+> If we want to change this, we can use the `set_ylim(min, max)` method of each 'axes',
+> for example:
 >
 > ~~~
 > axes3.set_ylim(0,6)
 > ~~~
 > {: .python}
 >
-> Update your plotting code to automatically set a more appropriate scale (hint: you can make use of the `max` and `min` methods to help)
+> Update your plotting code to automatically set a more appropriate scale.
+> (Hint: you can make use of the `max` and `min` methods to help.)
+>
+> > ## Solution
+> > ~~~
+> > # One method
+> > axes3.set_ylabel('min')
+> > axes3.plot(numpy.min(data, axis=0))
+> > axes3.set_ylim(0,6)
+> > ~~~
+> > {: .python}
+> {: .solution}
+>
+> > ## Solution
+> > ~~~
+> > # A more automated approach
+> > min_data = numpy.min(data, axis=0)
+> > axes3.set_ylabel('min')
+> > axes3.plot(min_data)
+> > axes3.set_ylim(numpy.min(min_data), numpy.max(min_data) * 1.1)
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Drawing Straight Lines
 >
-> Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?
+> Why are the vertical lines in our plot of the minimum inflammation per day
+> not perfectly vertical?
+>
+> > ## Solution
+> > Because matplotlib interpolates (draws a straight line) between the points
+> {: .solution}
 {: .challenge}
 
 > ## Make Your Own Plot
 >
-> Create a plot showing the standard deviation (`numpy.std`) of the inflammation data for each day across all patients.
+> Create a plot showing the standard deviation (`numpy.std`)
+> of the inflammation data for each day across all patients.
+>
+> > ## Solution
+> > ~~~
+> > max_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
+> > matplotlib.pyplot.show()
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Moving Plots Around
 >
-> Modify the program to display the three plots on top of one another instead of side by side.
+> Modify the program to display the three plots on top of one another
+> instead of side by side.
+>
+> > ## Solution
+> > ~~~
+> > import numpy
+> > import matplotlib.pyplot
+> >
+> > data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
+> >
+> > # change figsize (swap width and height)
+> > fig = matplotlib.pyplot.figure(figsize=(3.0, 10.0))
+> >
+> > # change add_subplot (swap first two parameters)
+> > axes1 = fig.add_subplot(3, 1, 1)
+> > axes2 = fig.add_subplot(3, 1, 2)
+> > axes3 = fig.add_subplot(3, 1, 3)
+> >
+> > axes1.set_ylabel('average')
+> > axes1.plot(numpy.mean(data, axis=0))
+> >
+> > axes2.set_ylabel('max')
+> > axes2.plot(numpy.max(data, axis=0))
+> >
+> > axes3.set_ylabel('min')
+> > axes3.plot(numpy.min(data, axis=0))
+> >
+> > fig.tight_layout()
+> >
+> > matplotlib.pyplot.show()
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Stacking Arrays
