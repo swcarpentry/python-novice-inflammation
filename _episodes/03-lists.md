@@ -267,6 +267,16 @@ This is different from how variables worked in lesson 1, and more similar to how
 > my_list = []
 > ~~~
 > {: .python}
+>
+> > ## Solution
+> > ~~~
+> > my_list = []
+> > for char in "hello":
+> >     my_list.append(char)
+> > print(my_list)
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 Subsets of lists and strings can be accessed by specifying ranges of values in brackets,

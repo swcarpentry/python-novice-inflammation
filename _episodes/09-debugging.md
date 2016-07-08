@@ -273,4 +273,12 @@ not more.
 > Patient's BMI is: 21.604938
 > ~~~
 > {: .output}
+>
+> > ## Solution
+> > * The loop is not being utilised correctly. `height` and `weight` are always
+> >   set as the first patient's data during each iteration of the loop.
+> >
+> > * The height/weight variables are reversed in the function call to
+> >   `calculate_bmi(...)`
+> {: .solution}
 {: .challenge}

@@ -202,7 +202,8 @@ freeing us from having to manually examine every plot for features we've seen be
 
 > ## How Many Paths?
 >
-> Which of the following would be printed if you were to run this code? Why did you pick this answer?
+> Which of the following would be printed if you were to run this code?
+> Why did you pick this answer?
 >
 > 1.  A
 > 2.  B
@@ -218,6 +219,11 @@ freeing us from having to manually examine every plot for features we've seen be
 >     print('C')
 > ~~~
 > {: .python}
+>
+> > ## Solution
+> > C gets printed because the first two conditions, `4 > 5` and `4 == 5`, are not true,
+> > but `4 < 5` is true.
+> {: .solution}
 {: .challenge}
 
 > ## What Is Truth?
@@ -251,7 +257,8 @@ freeing us from having to manually examine every plot for features we've seen be
 > Sometimes it is useful to check whether some condition is not true.
 > The Boolean operator `not` can do this explicitly.
 > After reading and running the code below,
-> write some `if` statements that use `not` to test the rule you formulated in the previous challenge.
+> write some `if` statements that use `not` to test the rule
+> that you formulated in the previous challenge.
 >
 > ~~~
 > if not '':
@@ -270,6 +277,29 @@ freeing us from having to manually examine every plot for features we've seen be
 > and `False` otherwise.
 > Compare your implementation with your partner's:
 > do you get the same answer for all possible pairs of numbers?
+>
+> > ## Solution 1
+> > ~~~
+> > a = 5
+> > b = 5.1
+> >
+> > if abs(a - b) < 0.1 * abs(b):
+> >     print('True')
+> > else:
+> >     print('False')
+> > ~~~
+> > {: .python}
+> {: .solution}
+>
+> > ## Solution 2
+> > ~~~
+> > print(abs(a - b) < 0.1 * abs(b))
+> > ~~~
+> > {: .python}
+> >
+> > This works because the Booleans `True` and `False`
+> > have string representations which can be printed.
+> {: .solution}
 {: .challenge}
 
 > ## In-Place Operators
@@ -293,6 +323,27 @@ freeing us from having to manually examine every plot for features we've seen be
 > Write some code that sums the positive and negative numbers in a list separately,
 > using in-place operators.
 > Do you think the result is more or less readable than writing the same without in-place operators?
+>
+> > ## Solution
+> > ~~~
+> > positive_sum = 0
+> > negative_sum = 0
+> > test_list = [3, 4, 6, 1, -1, -5, 0, 7, -8]
+> > for num in test_list:
+> >     if num > 0:
+> >         positive_sum += num
+> >     elif num == 0:
+> >         pass
+> >     else:
+> >         negative_sum += num
+> > print(positive_sum, negative_sum)
+> > ~~~
+> > {: .python}
+> >
+> > Here `pass` means "don't do anything".
+> In this particular case, it's not actually needed, since if `num == 0` neither
+> > sum needs to change, but it illustrates the use of `elif`.
+> {: .solution}
 {: .challenge}
 
 > ## Tuples and Exchanges
@@ -309,6 +360,10 @@ freeing us from having to manually examine every plot for features we've seen be
 > ~~~
 > {: .python}
 >
+> > ## Solution
+> > The code swaps the contents of the variables right and left.
+> {: .solution}
+>
 > Compare it to:
 >
 > ~~~
@@ -318,6 +373,10 @@ freeing us from having to manually examine every plot for features we've seen be
 >
 > Do they always do the same thing?
 > Which do you find easier to read?
+>
+> > ## Solution
+> > Yes, although it's possible the internal implementation is different.
+> {: .solution}
 {: .challenge}
 
 > ## Sorting a List Into Buckets
