@@ -244,6 +244,14 @@ so we should always use it when we can.
 > 3
 > ~~~
 > {: .python}
+>
+> > ## Solution
+> > ~~~
+> > for i in range(1, 4):
+> >    print(i)
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Computing Powers With Loops
@@ -262,6 +270,16 @@ so we should always use it when we can.
 >
 > Write a loop that calculates the same result as `5 ** 3` using
 > multiplication (and without exponentiation).
+>
+> > ## Solution
+> > ~~~
+> > result = 1
+> > for i in range(0, 3):
+> >    result = result * 5
+> > print(result)
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Reverse a String
@@ -269,4 +287,16 @@ so we should always use it when we can.
 > Write a loop that takes a string,
 > and produces a new string with the characters in reverse order,
 > so `'Newton'` becomes `'notweN'`.
+>
+> > ## Solution
+> > ~~~
+> > newstring = ''
+> > oldstring = 'Newton'
+> > length_old = len(oldstring)
+> > for char_index in range(length_old):
+> >    newstring = newstring + oldstring[length_old - char_index - 1]
+> > print(newstring)
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
