@@ -443,6 +443,15 @@ often reveals common reasons why you might get that error.
 > KeyError: 'Friday'
 > ~~~
 > {: .error}
+>
+> > ## Solution
+> > 1. 3 levels
+> > 2. `errors_02.py`
+> > 3. `print_message`
+> > 4. 11
+> > 5. `KeyError`
+> > 6. There isn't really a message; you're supposed to infer that `Friday` is not a key in `messages`.
+> {: .solution}
 {: .challenge}
 
 > ## Identifying Syntax Errors
@@ -459,6 +468,20 @@ often reveals common reasons why you might get that error.
 >   print("So they are usually not too hard to fix.")
 > ~~~
 > {: .python}
+>
+> > ## Solution
+> > `SyntaxError` for missing `():` at end of first line,
+> `IndentationError` for mismatch between second and third lines.
+> > A fixed version is:
+> >
+> > ~~~
+> > def another_function():
+> >     print("Syntax errors are annoying.")
+> >     print("But at least python tells us about them!")
+> >     print("So they are usually not too hard to fix.")
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Identifying Variable Name Errors
@@ -482,6 +505,24 @@ often reveals common reasons why you might get that error.
 > print(message)
 > ~~~
 > {: .python}
+>
+> > ## Solution
+> > 3 `NameError`s for `number` being misspelled, for `message` not defined, and for `a` not being in quotes.
+> >
+> > Fixed version:
+> >
+> > ~~~
+> > message = ""
+> > for number in range(10):
+> >     # use a if the number is a multiple of 3, otherwise use b
+> >     if (number % 3) == 0:
+> >         message = message + "a"
+> >     else:
+> >         message = message + "b"
+> > print(message)
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Identifying Item Errors
@@ -495,4 +536,15 @@ often reveals common reasons why you might get that error.
 > print('My favorite season is ', seasons[4])
 > ~~~
 > {: .python}
+>
+> > ## Solution
+> > `IndexError`; the last entry is `seasons[3]`, so `seasons[4]` doesn't make sense.
+> > A fixed version is:
+> >
+> > ~~~
+> > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+> > print('My favorite season is ', seasons[-1])
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}

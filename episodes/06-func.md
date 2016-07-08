@@ -783,6 +783,14 @@ readable code!
 > *name*
 > ~~~
 > {: .output}
+>
+> > ## Solution
+> > ~~~
+> > def fence(original, wrapper):
+> >     return wrapper + original + wrapper
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Selecting Characters From Strings
@@ -803,6 +811,14 @@ readable code!
 > hm
 > ~~~
 > {: .output}
+>
+> > ## Solution
+> > ~~~
+> > def outer(input_string):
+> >     return input_string[0] + input_string[-1]
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Rescaling an Array
@@ -811,6 +827,17 @@ readable code!
 > and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
 > (Hint: If $L$ and $H$ are the lowest and highest values in the original array,
 > then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
+>
+> > ## Challenge
+> > ~~~
+> > def rescale(input_array):
+> >     L = numpy.min(input_array)
+> >     H = numpy.max(input_array)
+> >     output_array = (input_array - L) / (H - L)
+> >     return output_array
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Testing and Documenting Your Function
@@ -820,6 +847,22 @@ readable code!
 > then use those values to test your `rescale` function.
 > Once you've successfully tested your function,
 > add a docstring that explains what it does.
+>
+> > ## Solution
+> > ~~~
+> > '''Takes an array as input, and returns a corresponding array scaled so
+> > that 0 corresponds to the minimum and 1 to the maximum value of the input array.
+> >
+> > Examples:
+> > >>> rescale(numpy.arange(10.0))
+> > array([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,
+> >        0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])
+> > >>> rescale(numpy.linspace(0, 100, 5))
+> > array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
+> > '''
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Defining Defaults
@@ -828,6 +871,19 @@ readable code!
 > but will allow the caller to specify lower and upper bounds if they want.
 > Compare your implementation to your neighbor's:
 > do the two functions always behave the same way?
+>
+> > ## Solution
+> > ~~~
+> > def rescale(input_array, low_val=0.0, high_val=1.0):
+> >     '''rescales input array values to lie between low_val and high_val'''
+> >     L = numpy.min(input_array)
+> >     H = numpy.max(input_array)
+> >     intermed_array = (input_array - L) / (H - L)
+> >     output_array = intermed_array * (high_val - low_val) + low_val
+> >     return output_array
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Variables Inside and Outside Functions
@@ -849,6 +905,18 @@ readable code!
 > print(k)
 > ~~~
 > {: .python}
+>
+> > ## Solution
+> >
+> > ~~~
+> > 259.81666666666666
+> > 287.15
+> > 273.15
+> > 0
+> > ~~~
+> > {: .output}
+> > `k` is 0 because the `k` inside the function `f2k` doesn't know about the `k` defined outside the function.
+> {: .solution}
 {: .challenge}
 
 > ## Mixing Default and Non-Default Parameters

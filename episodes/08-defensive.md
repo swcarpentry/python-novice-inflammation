@@ -458,6 +458,16 @@ This violates another important rule of programming:
 > What pre-conditions and post-conditions would you write for it?
 > Compare your answer to your neighbor's:
 > can you think of a function that will pass your tests but not hers or vice versa?
+>
+> > ## Solution
+> > ~~~
+> > # a possible pre-condition:
+> > assert len(input) > 0, 'List length must be non-zero'
+> > # a possible post-condition:
+> > assert numpy.min(input) < average < numpy.max(input), 'Average should be between min and max of input values'
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Testing Assertions
@@ -470,7 +480,7 @@ This violates another important rule of programming:
 > ~~~
 > {: .python}
 >
-> ~~
+> ~~~
 > [1, 3, 6, 10]
 > ~~~
 > {: .output}
@@ -480,7 +490,7 @@ This violates another important rule of programming:
 > ~~~
 > {: .python}
 >
-> ~~
+> ~~~
 > ['a', 'ab', 'abc']
 > ~~~
 > {: .output}
@@ -500,9 +510,39 @@ This violates another important rule of programming:
 >     return result
 > ~~~
 > {: .python}
+>
+> > ## Solution
+> > *   The first assertion checks that the input sequence `values` is not empty.
+> >     An empty sequence such as `[]` will make it fail.
+> > *   The second assertion checks that the first value in the list is positive.
+> >     Input such as `[-1,0,2,3]` will make it fail.
+> > *   The third assertion checks that the running total always increases.
+> >     Input such as `[0,1,3,-5,4]` will make it fail.
+> {: .solution}
 {: .challenge}
 
 > ## Fixing and Testing
 >
 > Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
+>
+> > ## Solution
+> > ~~~
+> > import numpy
+> >
+> > def range_overlap(ranges):
+> >     '''Return common overlap among a set of [low, high] ranges.'''
+> >     if len(ranges) == 1: # only one entry, so return it
+> >         return ranges[0]
+> >     lowest = -numpy.inf # lowest possible number
+> >     highest = numpy.inf # highest possible number
+> >     for (low, high) in ranges:
+> >         lowest = max(lowest, low)
+> >         highest = min(highest, high)
+> >     if lowest >= highest: # no overlap
+> >         return None
+> >     else:
+> >         return (lowest, highest)
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
