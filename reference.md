@@ -20,6 +20,17 @@ subtitle: Reference
 *   Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis.
 *   Use the `pyplot` library from `matplotlib` for creating simple visualizations.
 
+## [Making Choices](05-cond.html)
+
+*   Use `if condition` to start a conditional statement, `elif condition` to provide additional tests, and `else` to provide a default.
+*   The bodies of the branches of conditional statements must be indented.
+*   Use `==` to test for equality.
+*   `X and Y` is only true if both X and Y are true.
+*   `X or Y` is true if either X or Y, or both, are true.
+*   Zero, the empty string, and the empty list are considered false; all other numbers, strings, and lists are considered true.
+*   Nest loops to operate on multi-dimensional data.
+*   Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior.
+
 ## [Repeating Actions with Loops](02-loop.html)
 
 *   Use `for variable in collection` to process the elements of a collection one at a time.
@@ -37,17 +48,6 @@ subtitle: Reference
 
 *   Use `glob.glob(pattern)` to create a list of files whose names match a pattern.
 *   Use `*` in a pattern to match zero or more characters, and `?` to match any single character.
-
-## [Making Choices](05-cond.html)
-
-*   Use `if condition` to start a conditional statement, `elif condition` to provide additional tests, and `else` to provide a default.
-*   The bodies of the branches of conditional statements must be indented.
-*   Use `==` to test for equality.
-*   `X and Y` is only true if both X and Y are true.
-*   `X or Y` is true if either X or Y, or both, are true.
-*   Zero, the empty string, and the empty list are considered false; all other numbers, strings, and lists are considered true.
-*   Nest loops to operate on multi-dimensional data.
-*   Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior.
 
 ## [Creating Functions](06-func.html)
 
