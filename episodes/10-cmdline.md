@@ -804,7 +804,7 @@ the program now does everything we set out to do.
 > (i.e., no action is specified and no filenames are given),
 > it prints a message explaining how it should be used.
 >
-> > ## Solutin
+> > ## Solution
 > > ~~~
 > > # this is code/readings_08.py
 > > import sys
@@ -844,7 +844,7 @@ the program now does everything we set out to do.
 > >
 > > main()
 > > ~~~
-> {: .python}
+> > {: .python}
 > {: .solution}
 {: .challenge}
 
