@@ -185,7 +185,7 @@ it *always* means that there is a problem with how your code is indented.
 >
 > By default, one tab is equivalent to eight spaces,
 > so the only way to mix tabs and spaces is to make it look like this.
-> In general, is is better to just never use tabs and always use spaces,
+> In general, it is better to just never use tabs and always use spaces,
 > because it can make things very confusing.
 
 ## Variable Name Errors
