@@ -251,7 +251,7 @@ not more.
 > divided by the the square of **height in metres**.
 >
 > Use the debugging principles in this exercise and locate problems
-> with the code. What suggestions would you give the researcher for 
+> with the code. What suggestions would you give the researcher for
 > ensuring any later changes they make work correctly?
 >
 > ~~~
