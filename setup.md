@@ -29,7 +29,7 @@ $ jupyter notebook
 ~~~
 {: .source}
 
-To start the Python intrepreter without the notebook, open a terminal or git bash and type the command:
+To start the Python interpreter without the notebook, open a terminal or git bash and type the command:
 
 ~~~
 $ python

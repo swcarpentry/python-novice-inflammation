@@ -111,7 +111,7 @@ final value of temp after all function calls:
 Why go to all this trouble?
 Well,
 here's a function called `span` that calculates the difference between
-the mininum and maximum values in an array:
+the minimum and maximum values in an array:
 
 ~~~
 import numpy

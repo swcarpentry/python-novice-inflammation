@@ -74,7 +74,7 @@ scientists tend to do the following:
     without re-running that program.
 
 4.  *Check conservation laws.*
-    Mass, energy, and other quantitites are conserved in physical systems,
+    Mass, energy, and other quantities are conserved in physical systems,
     so they should be in programs as well.
     Similarly,
     if we are analyzing patient data,

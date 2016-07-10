@@ -213,7 +213,7 @@ odds after reversing: [11, 7, 5, 3]
 ~~~
 {: .output}
 
-While modifying in place, it is useful to remember that Python treats lists in a slightly counterintuitive way.
+While modifying in place, it is useful to remember that Python treats lists in a slightly counter-intuitive way.
 
 If we make a list and (attempt to) copy it then modify in place, we can cause all sorts of trouble:
 
