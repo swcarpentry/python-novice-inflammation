@@ -341,7 +341,7 @@ because that's more convenient when indices are computed rather than constant
 (see [Mike Hoye's blog post](http://exple.tive.org/blarg/2013/10/22/citation-needed/)
 for historical details).
 As a result,
-if we have an M&times;N array in Python,
+if we have an M×N array in Python,
 its indices go from 0 to M-1 on the first axis
 and 0 to N-1 on the second.
 It takes a bit of getting used to,
@@ -641,7 +641,7 @@ print(numpy.mean(data, axis=0).shape)
 ~~~
 {: .output}
 
-The expression `(40,)` tells us we have an N&times;1 vector,
+The expression `(40,)` tells us we have an N×1 vector,
 so this is the average inflammation per day for all patients.
 If we average across axis 1 (columns in our 2D example), we get:
 
