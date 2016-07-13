@@ -695,6 +695,11 @@ the graphs will actually be squeezed together more closely.)
 > to make a shortcut like so: `import numpy as np`.
 > If you ever see Python code online using a NumPy function with `np`
 > (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
+> 
+> You can also import numpy twice by using both `import numpy as np` and 
+> `import numpy`. When using both, you will be able to call NumPy functions 
+> using both `numpy` and `np`. This can be especially helpful if you borrow 
+> someone else's code and they have used a different convention than you have. 
 
 > ## Check your understanding {.challenge}
 >
