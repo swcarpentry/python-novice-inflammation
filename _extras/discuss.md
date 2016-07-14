@@ -33,7 +33,7 @@ final = fahr_to_celsius(original)
 
 The diagram below shows what memory looks like after the first line has been executed:
 
-![Call Stack (Initial State)]({{ site.root }}/fig/python-call-stack-01.svg)
+![Call Stack (Initial State)]({{ site.github.url }}/fig/python-call-stack-01.svg)
 
 When we call `fahr_to_celsius`,
 Python *doesn't* create the variable `temp` right away.
@@ -43,12 +43,12 @@ to keep track of the variables defined by `fahr_to_kelvin`.
 Initially,
 this stack frame only holds the value of `temp`:
 
-![Call Stack Immediately After First Function Call]({{ site.root }}/fig/python-call-stack-02.svg)
+![Call Stack Immediately After First Function Call]({{ site.github.url }}/fig/python-call-stack-02.svg)
 
 When we call `fahr_to_kelvin` inside `fahr_to_celsius`,
 Python creates another stack frame to hold `fahr_to_kelvin`'s variables:
 
-![Call Stack During First Nested Function Call]({{ site.root }}/fig/python-call-stack-03.svg)
+![Call Stack During First Nested Function Call]({{ site.github.url }}/fig/python-call-stack-03.svg)
 
 It does this because there are now two variables in play called `temp`:
 the parameter to `fahr_to_celsius`,
@@ -61,18 +61,18 @@ When the call to `fahr_to_kelvin` returns a value,
 Python throws away `fahr_to_kelvin`'s stack frame
 and creates a new variable in the stack frame for `fahr_to_celsius` to hold the temperature in Kelvin:
 
-![Call Stack After Return From First Nested Function Call]({{ site.root }}/fig/python-call-stack-04.svg)
+![Call Stack After Return From First Nested Function Call]({{ site.github.url }}/fig/python-call-stack-04.svg)
 
 It then calls `kelvin_to_celsius`,
 which means it creates a stack frame to hold that function's variables:
 
-![Call Stack During Call to Second Nested Function]({{ site.root }}/fig/python-call-stack-05.svg)
+![Call Stack During Call to Second Nested Function]({{ site.github.url }}/fig/python-call-stack-05.svg)
 
 Once again,
 Python throws away that stack frame when `kelvin_to_celsius` is done
 and creates the variable `result` in the stack frame for `fahr_to_celsius`:
 
-![Call Stack After Second Nested Function Returns]({{ site.root }}/fig/python-call-stack-06.svg)
+![Call Stack After Second Nested Function Returns]({{ site.github.url }}/fig/python-call-stack-06.svg)
 
 Finally,
 when `fahr_to_celsius` is done,
@@ -80,7 +80,7 @@ Python throws away *its* stack frame
 and puts its result in a new variable called `final`
 that lives in the stack frame we started with:
 
-![Call Stack After All Functions Have Finished]({{ site.root }}/fig/python-call-stack-07.svg)
+![Call Stack After All Functions Have Finished]({{ site.github.url }}/fig/python-call-stack-07.svg)
 
 This final stack frame is always there;
 it holds the variables we defined outside the functions in our code.
@@ -200,7 +200,7 @@ grid.show()
 ~~~
 {: .python}
 
-![]({{ site.root }}/fig/grid-01.png)
+![]({{ site.github.url }}/fig/grid-01.png)
 
 Just like a NumPy array,
 an `ImageGrid` has some properties that hold information about it:
@@ -228,7 +228,7 @@ RGB is an [additive color model](reference.html#additive-color-model):
 every shade is some combination of red, green, and blue intensities.
 We can think of these three values as being the axes in a cube:
 
-![RGB Color Cube]({{ site.root }}/fig/color-cube.png)
+![RGB Color Cube]({{ site.github.url }}/fig/color-cube.png)
 
 An RGB color is an example of a multi-part value:
 like a Cartesian coordinate,
@@ -310,7 +310,7 @@ row.show()
 ~~~
 {: .python}
 
-![]({{ site.root }}/fig/grid-02.png)
+![]({{ site.github.url }}/fig/grid-02.png)
 
 Simple color values like `(0,255,0)` are easy enough to decipher with a bit of practice,
 but what color is `(214,90,127)`?
@@ -323,7 +323,7 @@ show_color(214, 90, 127)
 ~~~
 {: .python}
 
-![]({{ site.root }}/fig/ipythonblocks_show_color_example.png)
+![]({{ site.github.url }}/fig/ipythonblocks_show_color_example.png)
 
 It also provides a table of standard colors:
 
@@ -340,7 +340,7 @@ c.show()
 ~~~
 {: .python}
 
-![]({{ site.root }}/fig/grid-03.png)
+![]({{ site.github.url }}/fig/grid-03.png)
 
 > ## Making a Colorbar
 >
