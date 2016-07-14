@@ -14,7 +14,7 @@ a list is a way to store many values.
 Unlike NumPy arrays,
 lists are built into the language (so we don't have to load a library
 to use them).
-We create a list by putting values inside square brackets:
+We create a list by putting values inside square brackets and separating the values with commas:
 
 ~~~ {.python}
 odds = [1, 3, 5, 7]
