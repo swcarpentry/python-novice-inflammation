@@ -86,6 +86,54 @@ TypeError: 'str' object does not support item assignment
 
 does not.
 
+> ## Do I share list memory or list values? {.callout}
+>
+> One thing we should know in python, while assigning a list A to another list B, the instruction B=A does assign A values to B, rather it shares A memory to B.
+> In other words, A and B have the same memory, which means any change in A concerns B and vice versa.Let see it through the following example:
+>
+>~~~ {.python}
+>A = [1, 4, 9, 25, 36]
+>B = A
+>print('A is :', A)
+>print('B is :', B)
+>~~~
+>
+>~~~ {.output}
+>A is: [1, 4, 9, 25, 36]
+>B is: [1, 4, 9, 25, 36]
+>~~~
+>
+>The change of the first value of A will change also the first value of B and the change of the fourth value of B will change the fourth value of A as well since they share the same memory location:
+>
+>~~~ {.python}
+>A[0]= 10
+>B[3]= 8
+>print('A is :', A)
+>print('B is :', B)
+>~~~
+>
+>~~~ {.output}
+>A is: [10, 4, 9, 8, 36]
+>B is: [10, 4, 9, 8, 36]
+>~~~
+>
+>All depends on the motivation of doing it. But if the motivation is to have a new list B with its own memory location, one of the ways is to do as follows: 
+>
+>~~~ {.python}
+>B=A[0:]
+>A[0]= 5
+>B[3]= 11
+>print('A is :', A)
+>print('B is :', B)
+>~~~
+>
+>~~~ {.output}
+>A is: [5, 4, 9, 8, 36]
+>B is: [10, 4, 9, 11, 36]
+>~~~
+>
+>But most of the time, the motivation of doing that is to have a new list for further use (e.g. sorting algorithms). We conclude by saying, while assigning a list A to another list B, developper has to know whether he shares the content or the memory.
+
 > ## Ch-Ch-Ch-Changes {.callout}
 >
 > Data which can be modified in place is called [mutable](reference.html#mutable),
