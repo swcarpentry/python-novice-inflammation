@@ -63,7 +63,7 @@ for number in odds:
 
 There is one important difference between lists and strings:
 we can change the values in a list,
-but we cannot change the characters in a string.
+but we cannot change individual characters in a string.
 For example:
 
 ~~~
