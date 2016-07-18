@@ -269,7 +269,7 @@ are their daily inflammation measurements.
 > A Numpy array contains one or more elements
 > of the same type. `type` will only tell you that
 > a variable is a NumPy array.
-> We can also find the out the type
+> We can also find out the type
 > of the data contained in the NumPy array.
 >
 > ~~~
