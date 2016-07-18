@@ -346,7 +346,7 @@ but there are a few simple tests that will reassure us:
 ~~~
 print('original min, mean, and max are:', numpy.min(data), numpy.mean(data), numpy.max(data))
 centered = center(data, 0)
-print('min, mean, and and max of centered data are:', numpy.min(centered), numpy.mean(centered), numpy.max(centered))
+print('min, mean, and max of centered data are:', numpy.min(centered), numpy.mean(centered), numpy.max(centered))
 ~~~
 {: .python}
 
