@@ -1,21 +1,25 @@
 ---
-layout: page
-title: Programming with Python
-subtitle: Repeating Actions with Loops
-minutes: 30
+title: Repeating Actions with Loops
+teaching: 30
+exercises: 0
+questions:
+- "How can I do the same operations on many different values?"
+objectives:
+- "Explain what a for loop does."
+- "Correctly write for loops to repeat simple calculations."
+- "Trace changes to a loop variable as the loop runs."
+- "Trace changes to other variables as they are updated by a for loop."
+keypoints:
+- "Use `for variable in collection` to process the elements of a collection one at a time."
+- "The body of a for loop must be indented."
+- "Use `len(thing)` to determine the length of something that contains other values."
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Explain what a for loop does.
-> *   Correctly write for loops to repeat simple calculations.
-> *   Trace changes to a loop variable as the loop runs.
-> *   Trace changes to other variables as they are updated by a for loop.
 
 In the last lesson,
 we wrote some code that plots some values of interest from our first inflammation dataset,
 and reveals some suspicious features in it, such as from `inflammation-01.csv`
 
-![Analysis of inflammation-01.csv](fig/03-loop_2_0.png)\
+![Analysis of inflammation-01.csv]({{ site.github.url }}/fig/03-loop_2_0.png)
 
 We have a dozen data sets right now, though, and more on the way.
 We want to create plots for all of our data sets with a single statement.
@@ -24,26 +28,30 @@ To do that, we'll have to teach the computer how to repeat things.
 An example task that we might want to repeat is printing each character in a
 word on a line of its own.
 
-~~~ {.python}
+~~~
 word = 'lead'
 ~~~
+{: .python}
 
 We can access a character in a string using its index. For example, we can get the first
 character of the word 'lead', by using word[0]. One way to print each character is to use
 four `print` statements:
 
-~~~ {.python}
+~~~
 print(word[0])
 print(word[1])
 print(word[2])
 print(word[3])
 ~~~
-~~~ {.output}
+{: .python}
+
+~~~
 l
 e
 a
 d
 ~~~
+{: .output}
 
 This is a bad approach for two reasons:
 
@@ -57,7 +65,7 @@ This is a bad approach for two reasons:
     and if we give it a shorter one,
     it produces an error because we're asking for characters that don't exist.
 
-~~~ {.python}
+~~~
 word = 'tin'
 print(word[0])
 print(word[1])
@@ -65,12 +73,16 @@ print(word[2])
 print(word[3])
 
 ~~~
-~~~ {.output}
+{: .python}
+
+~~~
 t
 i
 n
 ~~~
-~~~ {.error}
+{: .output}
+
+~~~
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-3-7974b6cdaf14> in <module>()
@@ -80,34 +92,37 @@ IndexError                                Traceback (most recent call last)
 
 IndexError: string index out of range
 ~~~
-
+{: .error}
 
 Here's a better approach:
 
-~~~ {.python}
+~~~
 word = 'lead'
 for char in word:
     print(char)
 
 ~~~
+{: .python}
 
-~~~ {.output}
+~~~
 l
 e
 a
 d
 ~~~
+{: .output}
 
 This is shorter---certainly shorter than something that prints every character in a hundred-letter string---and
 more robust as well:
 
-~~~ {.python}
+~~~
 word = 'oxygen'
 for char in word:
     print(char)
 ~~~
+{: .python}
 
-~~~ {.output}
+~~~
 o
 x
 y
@@ -115,40 +130,44 @@ g
 e
 n
 ~~~
+{: .output}
 
 The improved version uses a [for loop](reference.html#for-loop)
 to repeat an operation---in this case, printing---once for each thing in a collection.
 The general form of a loop is:
 
-~~~ {.python}
+~~~
 for variable in collection:
     do things with variable
 ~~~
+{: .python}
 
 Using the oxygen example above, the loop might look like this:
-![loop_image](./fig/loops_image.png)
 
-Where each character (`char`) in the variable `word` is looped through and printed one character after another. The numbers in the diagram denote which loop cycle the character was printed in (1 being the first loop, and 6 being the final loop).
+![loop_image]({{ site.github.url }}/fig/loops_image.png)
+
+where each character (`char`) in the variable `word` is looped through and printed one character after another.
+The numbers in the diagram denote which loop cycle the character was printed in (1 being the first loop, and 6 being the final loop).
 
 We can call the [loop variable](reference.html#loop-variable) anything we like,
 but there must be a colon at the end of the line starting the loop,
 and we must indent anything we want to run inside the loop. Unlike many other languages, there is no
 command to signify the end of the loop body (e.g. end for); what is indented after the for statement belongs to the loop.
 
-
-
 Here's another loop that repeatedly updates a variable:
 
-~~~ {.python}
+~~~
 length = 0
 for vowel in 'aeiou':
     length = length + 1
 print('There are', length, 'vowels')
 ~~~
+{: .python}
 
-~~~ {.output}
+~~~
 There are 5 vowels
 ~~~
+{: .output}
 
 It's worth tracing the execution of this little program step by step.
 Since there are five characters in `'aeiou'`,
@@ -172,38 +191,41 @@ Note that a loop variable is just a variable that's being used to record progres
 It still exists after the loop is over,
 and we can re-use variables previously defined as loop variables as well:
 
-~~~ {.python}
+~~~
 letter = 'z'
 for letter in 'abc':
     print(letter)
 print('after the loop, letter is', letter)
 ~~~
+{: .python}
 
-~~~ {.output}
+~~~
 a
 b
 c
 after the loop, letter is c
 ~~~
+{: .output}
 
 Note also that finding the length of a string is such a common operation
 that Python actually has a built-in function to do it called `len`:
 
-~~~ {.python}
+~~~
 print(len('aeiou'))
 ~~~
+{: .python}
 
-~~~ {.output}
+~~~
 5
 ~~~
+{: .output}
 
 `len` is much faster than any function we could write ourselves,
 and much easier to read than a two-line loop;
 it will also give us the length of many other things that we haven't met yet,
 so we should always use it when we can.
 
-
-> ## From 1 to N {.challenge}
+> ## From 1 to N
 >
 > Python has a built-in function called `range` that creates a sequence of numbers. Range can
 > accept 1-3 parameters. If one parameter is input, range creates an array of that length,
@@ -216,28 +238,65 @@ so we should always use it when we can.
 > Using `range`,
 > write a loop that uses `range` to print the first 3 natural numbers:
 >
-> ~~~ {.python}
+> ~~~
 > 1
 > 2
 > 3
 > ~~~
+> {: .python}
+>
+> > ## Solution
+> > ~~~
+> > for i in range(1, 4):
+> >    print(i)
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
 
-> ## Computing powers with loops {.challenge}
+> ## Computing Powers With Loops
 >
 > Exponentiation is built into Python:
 >
-> ~~~ {.python}
+> ~~~
 > print(5 ** 3)
 > ~~~
-> ~~~ {.output}
+> {: .python}
+>
+> ~~~
 > 125
 > ~~~
+> {: .output}
 >
 > Write a loop that calculates the same result as `5 ** 3` using
 > multiplication (and without exponentiation).
+>
+> > ## Solution
+> > ~~~
+> > result = 1
+> > for i in range(0, 3):
+> >    result = result * 5
+> > print(result)
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
 
-> ## Reverse a string {.challenge}
+> ## Reverse a String
 >
 > Write a loop that takes a string,
 > and produces a new string with the characters in reverse order,
 > so `'Newton'` becomes `'notweN'`.
+>
+> > ## Solution
+> > ~~~
+> > newstring = ''
+> > oldstring = 'Newton'
+> > length_old = len(oldstring)
+> > for char_index in range(length_old):
+> >    newstring = newstring + oldstring[length_old - char_index - 1]
+> > print(newstring)
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}

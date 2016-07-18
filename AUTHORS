@@ -1,50 +1,114 @@
-python-novice-inflammation was written by:
-Aaron O'Leary <aaron.oleary@gmail.com>
-Abigail Cabunoc <abigail.cabunoc@oicr.on.ca>
-Adam Richie-Halford <richford@uw.edu>
-Amy Brown <amyrhoda@gmail.com>
-Andrea Zonca <code@andreazonca.com>
-Andrew Lonsdale <andrew.lonsdale@lonsbio.com.au>
-Andy Boughton <abought@gmail.com>
-Ashwin Srinath <ashwinsrnth@gmail.com>
-Azalee Bostroem <abostroem@gmail.com>
-Bill Mills <mills.wj@gmail.com>
-Damien Irving <damien_irving@yahoo.com.au>
-David Dotson <dotsdl@gmail.com>
-Doug Latornell <djl@douglatornell.ca>
-Ethan White <ethan@weecology.org>
-Florian Rathgeber <florian.rathgeber@gmail.com>
-Francois Michonneau <francois.michonneau@gmail.com>
-Gabriel A. Devenyi <gdevenyi@gmail.com>
-Greg Wilson <gvwilson@software-carpentry.org>
-Ian Thomas <ianedwardthomas@gmail.com>
-James Allen <jamesallen0108@gmail.com>
-Janet Riley <jriley@janetriley.net>
-Jean-Christophe Leyder <leyder@users.noreply.github.com>
-Jeramia Ory <jeramia.ory@gmail.com>
-Jessica B. Hamrick <jhamrick@berkeley.edu>
-Johan Hjelm <johh@dtu.dk>
-John Blischak <jdblischak@gmail.com>
-Johnny Lin <johnny@johnny-lin.com>
-Jon Pipitone <jon.pipitone@utoronto.ca>
-Joshua Adelman <joshua.adelman@gmail.com>
-Kyler Brown <kylerjbrown@gmail.com>
-Leigh <leighs@msu.edu>
-Marianne Corvellec <marianne.corvellec@ens-lyon.org>
-Michael Hansen <hansen.mike@gmail.com>
-Nick Jones <n.jones@auckland.ac.nz>
-Pauline <pbarmby@uwo.ca>
-Peter Cock <p.j.a.cock@googlemail.com>
-Piotr Banaszkiewicz <piotr@banaszkiewicz.org>
-Raniere Silva <raniere@ime.unicamp.br>
-Rémi Emonet <remi.emonet@reverse--com.heeere>
-Sam Hames <samuel.hames@uqconnect.edu.au>
-Sung Bae <sung.bae@canterbury.ac.nz>
-Thomas Coudrat <thomas.coudrat@gmail.com>
-Timothée Poisot <tim@poisotlab.io>
-Trevor Bekolay <tbekolay@gmail.com>
-W. Trevor King <wking@tremily.us>
-Zakariyya Mughal <zaki.mughal@gmail.com>
-aussieraf <raffaella.demichelis@curtin.edu.au>
-ewanbarr <ewan.d.barr@googlemail.com>
-peterjc <p.j.a.cock@googlemail.com>
+Hakim Achterberg
+James Adams
+Joshua Adelman
+James Allen
+Sung Bae
+Piotr Banaszkiewicz
+Pauline Barmby
+Ewan Barr
+David Beitey
+Trevor Bekolay
+Jared Berghold
+John Blischak
+Maxime Boissonneau
+Azalee Bostroem
+Andy Boughton
+Amy Brown
+Kyler Brown
+Abigail Cabunoc Mayes
+John Chase
+Jin Choi
+Richard Clare
+Sarah Clayton
+Peter Cock
+Marianne Corvellec
+Thomas Coudrat
+Ryan Dale
+Matt Davis
+Andrew Davison
+Raffaella Demichelis
+Gabriel A. Devenyi
+Emily Dolson
+David Dotson
+Laurent Duchesne
+Jonah Duckles
+Rémi Emonet
+K. Arthur Endsley
+Nicolas Fauchereau
+Talitha Ford
+Ivan Gonzalez
+Jan Gosmann
+John Gosset
+Jeremy Gray
+Bastian Greshake
+Mary Haley
+Sam Hames
+Jessica B. Hamrick
+Michael Hansen
+Konrad Hinsen
+Johan Hjelm
+Toby Hodges
+Derek Howard
+Damien Irving
+Mike Jackson
+Ben Jolly
+Nick Jones
+Blake Joyce
+David Ketcheson
+W. Trevor King
+Sigrid Klerke
+Benjamin Laken
+Hilmar Lapp
+Doug Latornell
+Jean-Christophe Leyder
+Johnny Lin
+Andrew Lonsdale
+Alexandre Manhaes Savio
+Dan Mazur
+François Michonneau
+Bill Mills
+Zakariyya Mughal
+Narayanan
+Lex Nederbragt
+Ryan Neufeld
+Aaron O'Leary
+Adam Obeng
+Jeramia Ory
+Natalia Osiecka
+Jon Pipitone
+Adrianna Pińska
+Timothée Poisot
+Pawel Pomorski
+Florian Rathgeber
+Adam Richie-Halford
+Janet Riley
+Ariel Rokem
+Marjorie Roswell
+Mahdi Sadjadi
+Elliott Sales de Andrade
+Sebastian Schmeier
+Leigh Sheneman
+Arron Shiffer
+Ardita Shkurti
+Raniere Silva
+Nicola Soranzo
+Erik Spence
+Ashwin Srinath
+Valentina Staneva
+Jim Stapleton
+Brian Stucky
+Cody Taylor
+Bartosz Telenczuk
+Ian Thomas
+Brian Thorne
+Giovanni Torres
+Tim Tröndle
+Olav Vahtras
+Edwin van der Helm
+Alistair Walsh
+Derek Weitzel
+Daniel Wheeler
+Ethan White
+Frank Willmore
+Greg Wilson
+Andrea Zonca
