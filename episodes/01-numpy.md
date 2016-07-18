@@ -665,7 +665,7 @@ which is the average inflammation per patient across all days.
 The mathematician Richard Hamming once said,
 "The purpose of computing is insight, not numbers,"
 and the best way to develop insight is often to visualize data.
-Visualization deserves an entire lecture (or course) of its own,
+Visualization deserves an entire lecture (of course) of its own,
 but we can explore a few features of Python's `matplotlib` library here.
 While there is no "official" plotting library,
 this package is the de facto standard.
