@@ -83,8 +83,8 @@ final value of names: ['Newton', 'Darwin', 'Turing']
 works, but:
 
 ~~~
-name = 'Bell'
-name[0] = 'b'
+name = 'Darwin'
+name[0] = 'd'
 ~~~
 {: .python}
 
@@ -92,8 +92,8 @@ name[0] = 'b'
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-8-220df48aeb2e> in <module>()
-      1 name = 'Bell'
-----> 2 name[0] = 'b'
+      1 name = 'Darwin'
+----> 2 name[0] = 'd'
 
 TypeError: 'str' object does not support item assignment
 ~~~
