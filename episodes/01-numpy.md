@@ -599,7 +599,7 @@ maximum inflammation for patient 2: 19.0
 ~~~
 {: .output}
 
-What if we need the maximum inflammation for *all* patients (as in the
+What if we need the maximum inflammation for each patient over all days (as in the
 next diagram on the left), or the average for each day (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
