@@ -402,7 +402,7 @@ Omitting beginning index: Monday
 ~~~
 {: .output}
 
-And equally, you can omit the ending index in the range to take a slice to the very end of the sequence:
+And similarly, you can omit the ending index in the range to take a slice to the very end of the sequence:
 
 ~~~
 months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
