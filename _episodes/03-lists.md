@@ -415,7 +415,7 @@ sond = months[8:]
 ~~~
 {: .python}
 
-~~
+~~~
 With known last position: ["sep", "oct", "nov", "dec"]
 Using len() to get last entry: ["sep", "oct", "nov", "dec"]
 Omitting ending index: ["sep", "oct", "nov", "dec"]
