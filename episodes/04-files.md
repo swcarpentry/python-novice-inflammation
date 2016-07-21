@@ -81,21 +81,21 @@ inflammation-01.csv
 ~~~
 {: .output}
 
-![Analysis of inflammation-01.csv]({{ site.github.url }}/fig/03-loop_49_1.png)
+![Analysis of inflammation-01.csv](../fig/03-loop_49_1.png)
 
 ~~~
 inflammation-02.csv
 ~~~
 {: .output}
 
-![Analysis of inflammation-02.csv]({{ site.github.url }}/fig/03-loop_49_3.png)
+![Analysis of inflammation-02.csv](../fig/03-loop_49_3.png)
 
 ~~~
 inflammation-03.csv
 ~~~
 {: .output}
 
-![Analysis of inflammation-03.csv]({{ site.github.url }}/fig/03-loop_49_5.png)
+![Analysis of inflammation-03.csv](../fig/03-loop_49_5.png)
 
 Sure enough,
 the maxima of the first two data sets show exactly the same ramp as the first,
