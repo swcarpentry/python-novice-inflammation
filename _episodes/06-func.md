@@ -50,7 +50,7 @@ def fahr_to_kelvin(temp):
 ~~~
 {: .python}
 
-![The Blueprint for a Python Function]({{ site.github.url }}/fig/python-function.svg)
+![The Blueprint for a Python Function](../fig/python-function.svg)
 
 <!--- see https://gist.github.com/wd15/2b4ffbe5ce0d0ddb8a5b to
 regenerate the above figure --->
