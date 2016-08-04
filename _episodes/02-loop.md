@@ -292,9 +292,8 @@ so we should always use it when we can.
 > > ~~~
 > > newstring = ''
 > > oldstring = 'Newton'
-> > length_old = len(oldstring)
-> > for char_index in range(length_old):
-> >    newstring = newstring + oldstring[length_old - char_index - 1]
+> > for char in oldstring:
+> >    newstring = char + newstring
 > > print(newstring)
 > > ~~~
 > > {: .python}
