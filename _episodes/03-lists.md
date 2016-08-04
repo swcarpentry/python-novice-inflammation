@@ -115,38 +115,9 @@ does not.
 > modified copy and leaves the original unchanged.
 >
 > Be careful when modifying data in place.  If two variables refer to the same list, and you modify the list
-> value, it will change for both variables! For example:
->
-> ~~~
-> animals = ['cat', 'dog', 'horse']
-> mammals = animals
-> animals[-1] = 'chicken'
-> print(mammals)
-> ~~~
-> {: .python}
->
-> ~~~
-> ['cat', 'dog', 'chicken']
-> ~~~
-> {: .output}
->
-> If you want variables with mutable values to be independent, you
+> value, it will change for both variables! If you want variables with mutable values to be independent, you
 > must make a copy of the value when you assign it.
 >
-> ~~~
-> import copy
-> animals = ['cat', 'dog', 'horse']
-> mammals_copy = copy.copy(animals)
-> animals[-1] = 'chicken'
-> print(mammals_copy)
-> ~~~
-> {: .python}
->
-> ~~~
-> ['cat', 'dog', 'horse']
-> ~~~
-> {: .output}
-
 > Because of pitfalls like this, code which modifies data in place can be more difficult to understand. However,
 > it is often far more efficient to modify a large data structure in place than to create a modified copy for
 > every small change. You should consider both of these aspects when writing your code.
