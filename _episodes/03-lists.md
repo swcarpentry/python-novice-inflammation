@@ -220,15 +220,16 @@ If we make a list and (attempt to) copy it then modify in place, we can cause al
 ~~~
 odds = [1, 3, 5, 7]
 primes = odds
-primes += [2]
+primes[0] = 2
+odds += [9]
 print('primes:', primes)
 print('odds:', odds)
 ~~~
 {: .python}
 
 ~~~
-primes: [1, 3, 5, 7, 2]
-odds: [1, 3, 5, 7, 2]
+primes: [2, 3, 5, 7, 9]
+odds: [2, 3, 5, 7, 9]
 ~~~
 {: .output}
 
@@ -238,15 +239,16 @@ If all we want to do is copy a (simple) list, we can use the `list` function, so
 ~~~
 odds = [1, 3, 5, 7]
 primes = list(odds)
-primes += [2]
+primes[0] = 2
+odds += [9]
 print('primes:', primes)
 print('odds:', odds)
 ~~~
 {: .python}
 
 ~~~
-primes: [1, 3, 5, 7, 2]
-odds: [1, 3, 5, 7]
+primes: [2, 3, 5, 7]
+odds: [1, 3, 5, 7, 9]
 ~~~
 {: .output}
 
