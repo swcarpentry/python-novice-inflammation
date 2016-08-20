@@ -960,10 +960,10 @@ readable code!
 >
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
 >
-> a. 7 3
-> b. 3 7
-> c. 3 3
-> d. 7 7
+> 1. `7 3`
+> 2. `3 7`
+> 3. `3 3`
+> 4. `7 7`
 >
 > ~~~
 > a = 3
@@ -979,6 +979,13 @@ readable code!
 > print(a, b)
 > ~~~
 > {: .python}
+> > ## Solution
+> > `3, 7` is correct. Initially `a` has a value of 3 and `b` has a value of 7.
+> > When the swap function is called, it creates local variables (also called
+> > `a` and `b` in this case) and trades their values. The function does not
+> > return any values and does not alter `a` or `b` outside of its local copy.
+> > Therefore the original values of `a` and `b` remain unchanged.
+> {: .solution}
 {: .challenge}
 
 > ## Readable Code
