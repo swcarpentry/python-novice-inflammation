@@ -52,3 +52,6 @@ To do all that, we'll have to learn a little bit about programming.
 > Notebook although it can be taught through any Python interpreter.
 > The commands in this lesson pertain to **Python 3**.
 {: .prereq}
+
+### Getting Started
+To get started, follow the directions in the "[Setup](/setup/)" tab to download data to your computer and follow any installation instructions. 
