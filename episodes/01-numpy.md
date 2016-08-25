@@ -33,11 +33,11 @@ Words are useful,
 but what's more useful are the sentences and stories we build with them.
 Similarly,
 while a lot of powerful, general tools are built into languages like Python,
-specialized tools built up from these basic units live in [libraries](reference.html#library)
+specialized tools built up from these basic units live in [libraries]({{ site.github.url }}/reference/#library)
 that can be called upon when needed.
 
 In order to load our inflammation data,
-we need to access ([import](reference.html#import) in Python terminology)
+we need to access ([import]({{ site.github.url }}/reference/#import) in Python terminology)
 a library called [NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").
 In general you should use this library if you want to do fancy things with numbers,
 especially if you have matrices or arrays.
@@ -70,15 +70,15 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 ~~~
 {: .output}
 
-The expression `numpy.loadtxt(...)` is a [function call](reference.html#function-call)
-that asks Python to run the [function](reference.html#function) `loadtxt` which belongs to the `numpy` library.
-This [dotted notation](reference.html#dotted-notation) is used everywhere in Python
+The expression `numpy.loadtxt(...)` is a [function call]({{ site.github.url }}/reference/#function-call)
+that asks Python to run the [function]({{ site.github.url }}/reference/#function) `loadtxt` which belongs to the `numpy` library.
+This [dotted notation]({{ site.github.url }}/reference/#dotted-notation) is used everywhere in Python
 to refer to the parts of things as `thing.component`.
 
-`numpy.loadtxt` has two [parameters](reference.html#parameter):
+`numpy.loadtxt` has two [parameters]({{ site.github.url }}/reference/#parameter):
 the name of the file we want to read,
-and the [delimiter](reference.html#delimiter) that separates values on a line.
-These both need to be character strings (or [strings](reference.html#string) for short),
+and the [delimiter]({{ site.github.url }}/reference/#delimiter) that separates values on a line.
+These both need to be character strings (or [strings]({{ site.github.url }}/reference/#string) for short),
 so we put them in quotes.
 
 When we are finished typing and press Shift+Enter,
@@ -97,10 +97,10 @@ when there's nothing interesting after the decimal point.
 Our call to `numpy.loadtxt` read our file,
 but didn't save the data in memory.
 To do that,
-we need to [assign](reference.html#assignment) the array to a [variable](reference.html#variable).
+we need to [assign]({{ site.github.url }}/reference/#assignment) the array to a [variable]({{ site.github.url }}/reference/#variable).
 A variable is just a name for a value,
 such as `x`, `current_temperature`, or `subject_id`.
-Python's variables must begin with a letter and are [case sensitive](reference.html#case-sensitive).
+Python's variables must begin with a letter and are [case sensitive]({{ site.github.url }}/reference/#case-sensitive).
 We can create a new variable by assigning a value to it using `=`.
 As an illustration,
 let's step back and instead of considering a table of data,
@@ -246,7 +246,7 @@ print(data)
 Now that our data is in memory,
 we can start doing things with it.
 First,
-let's ask what [type](reference.html#type) of thing `data` refers to:
+let's ask what [type]({{ site.github.url }}/reference/#type) of thing `data` refers to:
 
 ~~~
 print(type(data))
@@ -283,10 +283,10 @@ are their daily inflammation measurements.
 > {: .output}
 >
 > This tells us that the NumPy array's elements are
-> [floating-point numbers](reference.html#floating-point number).
+> [floating-point numbers]({{ site.github.url }}/reference/#floating-point number).
 {: .callout}
 
-We can see what the array's [shape](reference.html#shape) is like this:
+We can see what the array's [shape]({{ site.github.url }}/reference/#shape) is like this:
 
 ~~~
 print(data.shape)
@@ -300,7 +300,7 @@ print(data.shape)
 
 This tells us that `data` has 60 rows and 40 columns. When we created the
 variable `data` to store our arthritis data, we didn't just create the array, we also
-created information about the array, called [members](reference.html#member) or
+created information about the array, called [members]({{ site.github.url }}/reference/#member) or
 attributes. This extra information describes `data` in
 the same way an adjective describes a noun.
 `data.shape` is an attribute  of `data` which describes the dimensions of `data`.
@@ -309,7 +309,7 @@ that we use for the functions in libraries
 because they have the same part-and-whole relationship.
 
 If we want to get a single number from the array,
-we must provide an [index](reference.html#index) in square brackets,
+we must provide an [index]({{ site.github.url }}/reference/#index) in square brackets,
 just as we do in math:
 
 ~~~
@@ -378,7 +378,7 @@ print(data[0:4, 0:10])
 ~~~
 {: .output}
 
-The [slice](reference.html#slice) `0:4` means,
+The [slice]({{ site.github.url }}/reference/#slice) `0:4` means,
 "Start at index 0 and go up to, but not including, index 4."
 Again,
 the up-to-but-not-including takes a bit of getting used to,
@@ -503,8 +503,8 @@ print(numpy.mean(data))
 ~~~
 {: .output}
 
-`mean` is a [function](reference.html#function) that takes
-an array as an [argument](reference.html#argument).
+`mean` is a [function]({{ site.github.url }}/reference/#function) that takes
+an array as an [argument]({{ site.github.url }}/reference/#argument).
 If variables are nouns, functions are verbs:
 they do things with variables.
 
@@ -582,7 +582,7 @@ maximum inflammation for patient 0: 18.0
 {: .output}
 
 Everything in a line of code following the '#' symbol is a
-[comment](reference.html#comment) that is ignored by the computer.
+[comment]({{ site.github.url }}/reference/#comment) that is ignored by the computer.
 Comments allow programmers to leave explanatory notes for other
 programmers or their future selves.
 
@@ -751,7 +751,7 @@ You can group similar plots in a single figure using subplots.
 This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
 creates a space into which we will place all of our plots. The parameter `figsize`
 tells Python how big to make this space. Each subplot is placed into the figure using
-its `add_subplot` [method](reference.html#method). The `add_subplot` method takes 3 parameters. The first denotes
+its `add_subplot` [method]({{ site.github.url }}/reference/#method). The `add_subplot` method takes 3 parameters. The first denotes
 how many total rows of subplots there are, the second parameter refers to the
 total number of subplot columns, and the final parameter denotes which subplot
 your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a
@@ -788,7 +788,7 @@ matplotlib.pyplot.show()
 
 ![The Previous Plots as Subplots](../fig/01-numpy_80_0.png)
 
-The [call](reference.html#function-call) to `loadtxt` reads our data,
+The [call]({{ site.github.url }}/reference/#function-call) to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
 how large we want the figure to be,
 that we're creating three subplots,
@@ -842,7 +842,7 @@ the graphs will actually be squeezed together more closely.)
 
 > ## Slicing Strings
 >
-> A section of an array is called a [slice](reference.html#slice).
+> A section of an array is called a [slice]({{ site.github.url }}/reference/#slice).
 > We can take slices of character strings as well:
 >
 > ~~~
@@ -893,7 +893,7 @@ the graphs will actually be squeezed together more closely.)
 
 > ## Thin Slices
 >
-> The expression `element[3:3]` produces an [empty string](reference.html#empty-string),
+> The expression `element[3:3]` produces an [empty string]({{ site.github.url }}/reference/#empty-string),
 > i.e., a string that contains no characters.
 > If `data` holds our array of patient data,
 > what does `data[3:3, 4:4]` produce?
