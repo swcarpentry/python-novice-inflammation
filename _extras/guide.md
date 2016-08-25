@@ -89,7 +89,7 @@ which are covered in the lesson on the shell.
 
 *   NumPy methods.
 
-    We used to use NumPy array methods in the first [NumPy topic](01-numpy.html).
+    We used to use NumPy array methods in the first [NumPy topic]({{ site.github.url }}/01-numpy/).
     We switched these methods to the equivalent functions because a majority
     of instructors supported the change; see
     [PR #244](https://github.com/swcarpentry/python-novice-inflammation/pull/244)
