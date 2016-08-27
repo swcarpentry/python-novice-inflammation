@@ -54,4 +54,4 @@ To do all that, we'll have to learn a little bit about programming.
 {: .prereq}
 
 ### Getting Started
-To get started, follow the directions in the "[Setup](/setup/)" tab to download data to your computer and follow any installation instructions. 
+To get started, follow the directions in the "[Setup](setup/)" tab to download data to your computer and follow any installation instructions. 
