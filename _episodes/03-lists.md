@@ -328,6 +328,16 @@ last: 4
 > the length of the string or list
 > (e.g. if you wanted to apply the solution to a set of lists of different lengths)?
 > If not, try to change your approach to make it more robust.
+>
+> > ## Solution
+> > Use negative indices to count elements from the end of a container (such as list or string):
+> >
+> > ~~~
+> > string_for_slicing[-4:]
+> > list_for_slicing[-4:]
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 > ## Non-Continuous Slices
@@ -383,6 +393,25 @@ last: 4
 > I notpssgre ntesae
 > ~~~
 > {: .output}
+>
+> > ## Solution
+> > To obtain every other character you need to provide a slice with the step
+> > size of 2:
+> >
+> > ~~~
+> > beatles[0:35:2]
+> > ~~~
+> > {: .python}
+> >
+> > You can also leave out the beginning and end of the slice to take the whole string
+> > and provide only the step argument to go every second
+> > element:
+> > 
+> > ~~~
+> > beatles[::2]
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
 
 If you want to take a slice from the beginning of a sequence, you can omit the first index in the range:
@@ -445,6 +474,22 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 >
 > Do they always do the same thing?
 > Which do you find easier to read?
+>
+> > ## Solution
+> > Both examples exchange the values of `left` and `right`:
+> >
+> > ~~~
+> > print(left, right)
+> > ~~~
+> > {: .python}
+> > 
+> > ~~~
+> > R L 
+> > ~~~
+> > {: .output}
+> >
+> >In the first case we used a temporary variable `temp` to keep the value of `left` before we overwrite it with the value of `right`. In the second case, we pack `right` and `left` into a tuple and then unpack it again into `left` and `right`.
+> {: .solution}
 {: .challenge}
 
 > ## Overloading
@@ -468,4 +513,21 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > The technical term for this is *operator overloading*:
 > a single operator, like `+` or `*`,
 > can do different things depending on what it's applied to.
+> 
+> > ## Solution
+> > 
+> > The multiplication operator `*` used on a list replicates elements of the list and concatenates them together:
+> > 
+> > ~~~
+> > [2, 4, 6, 8, 10, 2, 4, 6, 8, 10]
+> > ~~~
+> > {: .output}
+> >
+> > It's equivalent to:
+> >
+> > ~~~
+> > counts + counts
+> > ~~~
+> > {: .python}
+> {: .solution}
 {: .challenge}
