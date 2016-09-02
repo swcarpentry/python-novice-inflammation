@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Programming with Python
-subtitle: Instructor's Guide
+title: "Instructor's Guide"
+permalink: /guide/
 ---
 ## Legend
 
