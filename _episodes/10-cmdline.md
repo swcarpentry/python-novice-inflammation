@@ -63,7 +63,7 @@ $ python code/readings_04.py --max data/inflammation-*.csv
 
 Our scripts should do the following:
 
-1. If no filename is given on the command line, read data from [standard input]({{ site.github.url }}/reference/#standard-input).
+1. If no filename is given on the command line, read data from [standard input]({{ page.root }}/reference/#standard-input).
 2. If one or more filenames are given, read data from them and report statistics for each file separately.
 3. Use the `--min`, `--mean`, or `--max` flag to determine what statistic to print.
 
@@ -488,7 +488,7 @@ but there are several things wrong with it:
    command-line, one for the **flag** and one for the **filename**, but only
    one, the program will not throw an exception but will run. It assumes that the file
    list is empty, as `sys.argv[1]` will be considered the `action`, even if it
-   is a filename. [Silent failures]({{ site.github.url }}/reference/#silence-failure)  like this
+   is a filename. [Silent failures]({{ page.root }}/reference/#silence-failure)  like this
    are always hard to debug.
 
 3. The program should check if the submitted `action` is one of the three recognized flags.
@@ -718,7 +718,7 @@ the program now does everything we set out to do.
 
 > ## Finding Particular Files
 >
-> Using the `glob` module introduced [earlier]({{ site.github.url }}/04-files/),
+> Using the `glob` module introduced [earlier]({{ page.root }}/04-files/),
 > write a simple version of `ls` that shows files in the current directory with a particular suffix.
 > A call to this script should look like this:
 >

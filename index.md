@@ -1,5 +1,6 @@
 ---
 layout: lesson
+root: .
 ---
 
 The best way to learn how to program is to do something useful,
@@ -22,7 +23,7 @@ and to use that language *well*.
 
 We are studying inflammation in patients who have been given a new treatment for arthritis,
 and need to analyze the first dozen data sets of their daily inflammation.
-The data sets are stored in [comma-separated values]({{ site.github.url }}/reference/#comma-separated-values) (CSV) format:
+The data sets are stored in [comma-separated values]({{ page.root }}/reference/#comma-separated-values) (CSV) format:
 each row holds information for a single patient,
 and the columns represent successive days.
 The first few rows of our first file look like this:

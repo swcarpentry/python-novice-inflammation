@@ -304,7 +304,7 @@ freeing us from having to manually examine every plot for features we've seen be
 
 > ## In-Place Operators
 >
-> Python (and most other languages in the C family) provides [in-place operators]({{ site.github.url }}/reference/#in-place-operators)
+> Python (and most other languages in the C family) provides [in-place operators]({{ page.root }}/reference/#in-place-operators)
 > that work like this:
 >
 > ~~~
