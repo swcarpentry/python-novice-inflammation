@@ -57,7 +57,7 @@ regenerate the above figure --->
 
 The function definition opens with the keyword `def` followed by the
 name of the function and a parenthesized list of parameter names. The
-[body]({{ site.github.url }}/reference/#function-body) of the function --- the
+[body]({{ page.root }}/reference/#function-body) of the function --- the
 statements that are executed when it runs --- is indented below the
 definition line.
 
@@ -65,7 +65,7 @@ When we call the function,
 the values we pass to it are assigned to those variables
 so that we can use them inside the function.
 Inside the function,
-we use a [return statement]({{ site.github.url }}/reference/#return-statement) to send a result back to whoever asked for it.
+we use a [return statement]({{ page.root }}/reference/#return-statement) to send a result back to whoever asked for it.
 
 Let's try running our function.
 Calling our own function is no different from calling any other function:
@@ -199,7 +199,7 @@ What about converting Fahrenheit to Celsius?
 We could write out the formula,
 but we don't need to.
 Instead,
-we can [compose]({{ site.github.url }}/reference/#compose) the two functions we have already created:
+we can [compose]({{ page.root }}/reference/#compose) the two functions we have already created:
 
 ~~~
 def fahr_to_celsius(temp_f):
@@ -391,10 +391,10 @@ the difference is very small.
 It's still possible that our function is wrong,
 but it seems unlikely enough that we should probably get back to doing our analysis.
 We have one more task first, though:
-we should write some [documentation]({{ site.github.url }}/reference/#documentation) for our function
+we should write some [documentation]({{ page.root }}/reference/#documentation) for our function
 to remind ourselves later what it's for and how to use it.
 
-The usual way to put documentation in software is to add [comments]({{ site.github.url }}/reference/#comment) like this:
+The usual way to put documentation in software is to add [comments]({{ page.root }}/reference/#comment) like this:
 
 ~~~
 # center(data, desired): return a new array containing the original data centered around the desired value.
@@ -429,7 +429,7 @@ center(data, desired)
 ~~~
 {: .output}
 
-A string like this is called a [docstring]({{ site.github.url }}/reference/#docstring).
+A string like this is called a [docstring]({{ page.root }}/reference/#docstring).
 We don't need to use triple quotes when we write one,
 but if we do,
 we can break the string across multiple lines:
@@ -530,7 +530,7 @@ print(center(test_data, 3))
 {: .output}
 
 But we can also now call it with just one parameter,
-in which case `desired` is automatically assigned the [default value]({{ site.github.url }}/reference/#default-value) of 0.0:
+in which case `desired` is automatically assigned the [default value]({{ page.root }}/reference/#default-value) of 0.0:
 
 ~~~
 more_data = 5 + numpy.zeros((2, 2))

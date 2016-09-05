@@ -28,7 +28,7 @@ Once you know *why* you get certain types of errors,
 they become much easier to fix.
 
 Errors in Python have a very specific form,
-called a [traceback]({{ site.github.url }}/reference/#traceback).
+called a [traceback]({{ page.root }}/reference/#traceback).
 Let's examine one:
 
 ~~~
@@ -65,7 +65,7 @@ In this case:
 
 The last level is the actual place where the error occurred.
 The other level(s) show what function the program executed to get to the next level down.
-So, in this case, the program first performed a [function call]({{ site.github.url }}/reference/#function-call) to the function `favorite_ice_cream`.
+So, in this case, the program first performed a [function call]({{ page.root }}/reference/#function-call) to the function `favorite_ice_cream`.
 Inside this function,
 the program encountered an error on Line 7, when it tried to run the code `print(ice_creams[3])`.
 
@@ -107,7 +107,7 @@ hopefully the custom error message is informative enough to help you figure out 
 When you forget a colon at the end of a line,
 accidentally add one space too many when indenting under an `if` statement,
 or forget a parenthesis,
-you will encounter a [syntax error]({{ site.github.url }}/reference/#syntax-error).
+you will encounter a [syntax error]({{ page.root }}/reference/#syntax-error).
 This means that Python couldn't figure out how to read your program.
 This is similar to forgetting punctuation in English:
 for example,
@@ -172,7 +172,7 @@ it *always* means that there is a problem with how your code is indented.
 > A quick note on indentation errors:
 > they can sometimes be insidious,
 > especially if you are mixing spaces and tabs.
-> Because they are both [whitespace]({{ site.github.url }}/reference/#whitespace),
+> Because they are both [whitespace]({{ page.root }}/reference/#whitespace),
 > it is difficult to visually tell the difference.
 > The Jupyter notebook actually gives us a bit of a hint,
 > but not all Python editors will do that.
@@ -231,7 +231,7 @@ That's harder question to answer,
 because it depends on what your code is supposed to do.
 However,
 there are a few very common reasons why you might have an undefined variable.
-The first is that you meant to use a [string]({{ site.github.url }}/reference/#string), but forgot to put quotes around it:
+The first is that you meant to use a [string]({{ page.root }}/reference/#string), but forgot to put quotes around it:
 
 ~~~
 print(hello)
@@ -274,7 +274,7 @@ NameError: name 'count' is not defined
 Finally, the third possibility is that you made a typo when you were writing your code.
 Let's say we fixed the error above by adding the line `Count = 0` before the for loop.
 Frustratingly, this actually does not fix the error.
-Remember that variables are [case-sensitive]({{ site.github.url }}/reference/#case-sensitive),
+Remember that variables are [case-sensitive]({{ page.root }}/reference/#case-sensitive),
 so the variable `count` is different from `Count`. We still get the same error, because we still have not defined `count`:
 
 ~~~

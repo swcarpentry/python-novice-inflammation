@@ -36,4 +36,4 @@ $ python
 ~~~
 {: .source}
 
-[zipfile]: {{ site.github.url }}/data/python-novice-inflammation-data.zip
+[zipfile]: {{ page.root }}/data/python-novice-inflammation-data.zip
