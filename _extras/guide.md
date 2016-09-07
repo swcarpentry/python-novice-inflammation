@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Instructor's Guide"
+title: "Instructor Notes"
 permalink: /guide/
 ---
 ## Legend
