@@ -10,7 +10,7 @@ objectives:
 - "Trace changes to a loop variable as the loop runs."
 - "Trace changes to other variables as they are updated by a for loop."
 keypoints:
-- "Use `for variable in collection` to process the elements of a collection one at a time."
+- "Use `for variable in sequence` to process the elements of a sequence one at a time."
 - "The body of a for loop must be indented."
 - "Use `len(thing)` to determine the length of something that contains other values."
 ---
@@ -133,7 +133,7 @@ n
 {: .output}
 
 The improved version uses a [for loop]({{ site.github.url }}/reference/#for-loop)
-to repeat an operation---in this case, printing---once for each thing in a collection.
+to repeat an operation---in this case, printing---once for each thing in a sequence.
 The general form of a loop is:
 
 ~~~
