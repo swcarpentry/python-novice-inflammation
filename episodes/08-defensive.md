@@ -531,11 +531,8 @@ This violates another important rule of programming:
 > >
 > > def range_overlap(ranges):
 > >     '''Return common overlap among a set of [low, high] ranges.'''
-> >     if len(ranges) == 1: # only one entry, so return it
-> >         return ranges[0]
-> >     lowest = -numpy.inf # lowest possible number
-> >     highest = numpy.inf # highest possible number
-> >     for (low, high) in ranges:
+> >     lowest, highest = ranges[0]
+> >     for (low, high) in ranges[1:]:
 > >         lowest = max(lowest, low)
 > >         highest = min(highest, high)
 > >     if lowest >= highest: # no overlap
