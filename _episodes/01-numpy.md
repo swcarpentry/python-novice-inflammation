@@ -264,6 +264,18 @@ These data correspond to arthritis patients' inflammation.
 The rows are the individual patients and the columns
 are their daily inflammation measurements.
 
+> ## Objects, Properties, and Methods
+>
+> At this point we should talk about how Python stores data.
+> Python stores data units as objects.
+> Such objects can contain and provide information about themselves
+> to the user using so called "dot notation".
+ 
+![Objects and properties](../fig/python-objects-and-properties.png)
+
+Note, that in this example, the Python object is active. 
+This notation assumest that the object can move and rotate itself.
+
 > ## Data Type
 >
 > A Numpy array contains one or more elements
