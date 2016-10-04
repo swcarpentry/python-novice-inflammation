@@ -952,11 +952,42 @@ the graphs will actually be squeezed together more closely.)
 
 > ## Drawing Straight Lines
 >
-> Why are the vertical lines in our plot of the minimum inflammation per day
-> not perfectly vertical?
+> In the center and right subplots above, we  expect all lines to look like step functions, because
+> non-integer value are not realistic for the minimum and maximum values. However, you can see
+> that the lines are not always vertical or horizontal, and in particular the step function
+> in the subplot on the right looks slanted. Why is this?
 >
 > > ## Solution
-> > Because matplotlib interpolates (draws a straight line) between the points
+> > Because matplotlib interpolates (draws a straight line) between the points.
+> > One way to do avoid this is to use the Matplotlib `drawstyle` option:
+> >
+> > ~~~
+> > import numpy
+> > import matplotlib.pyplot
+> >
+> > data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+> >
+> > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+> >
+> > axes1 = fig.add_subplot(1, 3, 1)
+> > axes2 = fig.add_subplot(1, 3, 2)
+> > axes3 = fig.add_subplot(1, 3, 3)
+> >
+> > axes1.set_ylabel('average')
+> > axes1.plot(numpy.mean(data, axis=0), drawstyle='steps-mid')
+> >
+> > axes2.set_ylabel('max')
+> > axes2.plot(numpy.max(data, axis=0), drawstyle='steps-mid')
+> >
+> > axes3.set_ylabel('min')
+> > axes3.plot(numpy.min(data, axis=0), drawstyle='steps-mid')
+> >
+> > fig.tight_layout()
+> >
+> > matplotlib.pyplot.show()
+> > ~~~
+> > {: .python}
+> ![Plot with step lines](../fig/01-numpy_exercise_0.png)
 > {: .solution}
 {: .challenge}
 
