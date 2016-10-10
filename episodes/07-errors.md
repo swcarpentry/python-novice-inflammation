@@ -298,7 +298,7 @@ NameError: name 'count' is not defined
 ~~~
 {: .error}
 
-## Item Errors
+## Index Errors
 
 Next up are errors having to do with containers (like lists and strings) and the items within them.
 If you try to access an item in a list or a string that does not exist,
@@ -525,7 +525,7 @@ often reveals common reasons why you might get that error.
 > {: .solution}
 {: .challenge}
 
-> ## Identifying Item Errors
+> ## Identifying Index Errors
 >
 > 1. Read the code below, and (without running it) try to identify what the errors are.
 > 2. Run the code, and read the error message. What type of error is it?
