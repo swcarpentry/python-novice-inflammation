@@ -1088,4 +1088,49 @@ the graphs will actually be squeezed together more closely.)
 > Write some additional code that slices the first and last columns of `A`,
 > and stacks them into a 3x2 array.
 > Make sure to `print` the results to verify your solution.
+>
+> > ## Solution
+> >
+> > A 'gotcha' with array indexing is that singleton dimensions
+> > are dropped by default. That means `A[:, 0]` is a one dimensional
+> > array, which won't stack as desired. To preserve singleton dimensions,
+> > the index itself can be an array. For example, `A[:, [0]]` returns
+> > a two dimensional array with one singleton dimension.
+> >
+> > ~~~
+> > D = numpy.hstack((A[:, [0]], A[:, [2]]))
+> > print('D = ')
+> > print(D)
+> > ~~~
+> > {: .python}
+> > 
+> > ~~~
+> > D = 
+> > [[1 3]
+> >  [4 6]
+> >  [7 9]]
+> > ~~~
+> > {: .output}
+> {: .solution}
+>
+> > ## Solution
+> > 
+> > An alternative solution for this particular problem is to
+> > delete the second column of A.
+> > 
+> > ~~~
+> > D = numpy.delete(A, 1, 1)
+> > print('D = ')
+> > print(D)
+> > ~~~
+> > {: .python}
+> > 
+> > ~~~
+> > D = 
+> > [[1 3]
+> >  [4 6]
+> >  [7 9]]
+> > ~~~
+> > {: .output}
+> {: .solution}
 {: .challenge}
