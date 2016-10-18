@@ -677,7 +677,7 @@ and use two of its functions to create and display a heat map of our data:
 
 ~~~
 import matplotlib.pyplot
-image  = matplotlib.pyplot.imshow(data)
+image = matplotlib.pyplot.imshow(data)
 matplotlib.pyplot.show()
 ~~~
 {: .python}
