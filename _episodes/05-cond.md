@@ -346,39 +346,6 @@ freeing us from having to manually examine every plot for features we've seen be
 > {: .solution}
 {: .challenge}
 
-> ## Tuples and Exchanges
->
-> Explain what the overall effect of this code is:
->
-> ~~~
-> left = 'L'
-> right = 'R'
->
-> temp = left
-> left = right
-> right = temp
-> ~~~
-> {: .python}
->
-> > ## Solution
-> > The code swaps the contents of the variables right and left.
-> {: .solution}
->
-> Compare it to:
->
-> ~~~
-> left, right = right, left
-> ~~~
-> {: .python}
->
-> Do they always do the same thing?
-> Which do you find easier to read?
->
-> > ## Solution
-> > Yes, although it's possible the internal implementation is different.
-> {: .solution}
-{: .challenge}
-
 > ## Sorting a List Into Buckets
 >
 > The folder containing our data files has large data sets whose names start with
@@ -412,7 +379,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > other_files = ['myscript.py']
 > ~~~
 > {: .python}
-> 
+>
 > > ## Solution
 > > ~~~
 > > for file in files:
