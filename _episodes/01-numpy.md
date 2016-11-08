@@ -1098,7 +1098,7 @@ the graphs will actually be squeezed together more closely.)
 > > a two dimensional array with one singleton dimension.
 > >
 > > ~~~
-> > D = numpy.hstack((A[:, [0]], A[:, [2]]))
+> > D = numpy.hstack((A[:, :1], A[:, -1:]))
 > > print('D = ')
 > > print(D)
 > > ~~~
@@ -1115,8 +1115,8 @@ the graphs will actually be squeezed together more closely.)
 >
 > > ## Solution
 > > 
-> > An alternative solution for this particular problem is to
-> > delete the second column of A.
+> > An alternative way to achieve the same result is to use Numpy's
+> > delete function to remove the second column of A.
 > > 
 > > ~~~
 > > D = numpy.delete(A, 1, 1)
