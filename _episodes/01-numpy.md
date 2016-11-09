@@ -1094,8 +1094,9 @@ the graphs will actually be squeezed together more closely.)
 > > A 'gotcha' with array indexing is that singleton dimensions
 > > are dropped by default. That means `A[:, 0]` is a one dimensional
 > > array, which won't stack as desired. To preserve singleton dimensions,
-> > the index itself can be an array. For example, `A[:, [0]]` returns
-> > a two dimensional array with one singleton dimension.
+> > the index itself can be a slice or array. For example, `A[:, :1]` returns
+> > a two dimensional array with one singleton dimension (i.e. a column
+> > vector).
 > >
 > > ~~~
 > > D = numpy.hstack((A[:, :1], A[:, -1:]))
