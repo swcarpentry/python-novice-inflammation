@@ -347,6 +347,10 @@ The last type of error we'll cover today
 are those associated with reading and writing files: `FileNotFoundError`.
 If you try to read a file that does not exist,
 you will receive a `FileNotFoundError` telling you so.
+If you attempt to write to a file that was opened read-only, Python 3
+returns an `UnsupportedOperationError`.
+More generally, problems with input and output manifest as
+`IOError`s or `OSError`s, depending on the version of Python you use.
 
 ~~~
 file_handle = open('myfile.txt', 'r')
