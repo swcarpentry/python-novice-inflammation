@@ -943,8 +943,8 @@ readable code!
 > Given that, what does the following piece of code display when run?
 >
 > ~~~
-> def func(a, b = 3, c = 6):
->   print('a: ', a, 'b: ', b,'c:', c)
+> def func(a, b=3, c=6):
+>   print('a: ', a, 'b: ', b, 'c:', c)
 >
 > func(-1, 2)
 > ~~~
@@ -954,6 +954,18 @@ readable code!
 > 2. `a: -1 b: 3 c: 6`
 > 3. `a: -1 b: 2 c: 6`
 > 4. `a: b: -1 c: 2`
+>
+> > ## Solution
+> > Attempting to define the `numbers` function results in `4. SyntaxError`.
+> > The defined parameters `two` and `four` are given default values. Because
+> > `one` and `three` are not given default values, they are required to be
+> > be included as arguments when the function is called and must be placed
+> > before any parameters that have default values in the function definition.
+> > 
+> > The given call to `func` displays `a: -1 b: 2 c: 6`. -1 is assigned to
+> > the first parameter `a`, 2 is assigned to the next parameter `b`, and `c` is
+> > not passed a value, so it uses its default value 6.
+> {: .solution}
 {: .challenge}
 
 > ## The Old Switcheroo
