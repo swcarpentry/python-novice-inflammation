@@ -137,8 +137,8 @@ to repeat an operation---in this case, printing---once for each thing in a seque
 The general form of a loop is:
 
 ~~~
-for variable in collection:
-    do things with variable
+for element in variable:
+    do things with element
 ~~~
 {: .python}
 
