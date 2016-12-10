@@ -67,7 +67,7 @@ scientists tend to do the following:
 3.  *Compare to an oracle.*
     A [test oracle]({{ page.root }}/reference/#test-oracle) is something whose results are trusted,
     such as experimental data, an older program, or a human expert.
-    We use to test oracles to determine if our new program produces the correct results.
+    We use test oracles to determine if our new program produces the correct results.
     If we have a test oracle,
     we should store its output for particular cases
     so that we can compare it with our new results as often as we like
