@@ -958,8 +958,8 @@ readable code!
 > > ## Solution
 > > Attempting to define the `numbers` function results in `4. SyntaxError`.
 > > The defined parameters `two` and `four` are given default values. Because
-> > `one` and `three` are not given default values, they are required to be
-> > be included as arguments when the function is called and must be placed
+> > `one` and `three` are not given default values, they are required to be 
+> > included as arguments when the function is called and must be placed
 > > before any parameters that have default values in the function definition.
 > > 
 > > The given call to `func` displays `a: -1 b: 2 c: 6`. -1 is assigned to
