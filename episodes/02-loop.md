@@ -299,3 +299,47 @@ so we should always use it when we can.
 > > {: .python}
 > {: .solution}
 {: .challenge}
+
+> ## Computing the Value of a Polynomial
+>
+> The built-in function `enumerate` takes a sequence (e.g. a list) and generates a
+> new sequence of the same length. Each element of the new sequence contains the index
+> (0,1,2,...) and the value from the original sequence:
+>
+> ~~~
+> for i, x in enumerate(xs):
+>     # Do something with i and x
+> ~~~
+> {: .python}
+>
+> The loop above assigns the index to `i` and the value to `x`.
+>
+> Suppose you have encoded a polynomial as a list of coefficients in
+> the following way: the first element is the constant term, the
+> second element is the coefficient of the linear term, the third is the
+> coefficient of the quadratic term, etc.
+>
+> ~~~
+> x = 5
+> cc = [2, 4, 3]
+> ~~~
+> {: .python}
+>
+> ~~~
+> y = cc[0] * x**0 + cc[1] * x**1 + cc[2] * x**2
+> y = 97
+> ~~~
+> {: .output}
+>
+> Write a loop using `enumerate(cc)` which computes the value `y` of any
+> polynomial, given `x` and `cc`.
+>
+> > ## Solution
+> > ~~~
+> > y = 0
+> > for i, c in enumerate(cc):
+> >     y = y + x**i * c
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
