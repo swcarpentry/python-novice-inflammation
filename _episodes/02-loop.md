@@ -118,7 +118,7 @@ print(sum_temp / count)
 
 We create two variables prior to entering the loop - a running sum of the observed temperatures, and a count of the number of observations.  For each observation in the list, we increase the sum by the value of each new temperature reading, and we increase the count by one.  Once we exit the loop, we divide the sum of the temperature observations by the number of observations to get the average.
 
-As you use different methods and data types, you'll find that python often uses a list to store values, even if it isn't immediately apparant.  In the example above, we explicitely defined a list of numbers.  It turns out that Python also treats words this way as well.  A string, or word, is in fact a list of characters.  For example, the word "lead" is a list composed of 'l', 'e', 'a', 'd'.  
+It turns out that many different data types in python can be accessed through indices and loops.  For example, you can access the individual characters in the word "lead", 'l', 'e', 'a', 'd', through their position in the string.  
 
 Try it out!
 
