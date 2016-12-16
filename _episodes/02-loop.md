@@ -44,10 +44,10 @@ print(b)
 However, there will often be occasions when you need a way to store multiple values in a group.  For example, you might want to store daily temperature readings for a week.  You could use single variables for each.
 
 ~~~
-day1SFreading = 63
-day2SFreading = 62
-day3SFreading = 60
-day4SFreading = 66
+daily_temp_1 = 63
+daily_temp_2 = 62
+daily_temp_3 = 60
+daily_temp_4 = 66
 ~~~
 {: .python}
 
@@ -91,12 +91,38 @@ print(print(daily_temps[0] + daily_temps[1])
 
 You could find the average temperature reading for this week this way, by adding each element separately and dividing by the number of observations. This would reduce the value of our list, though, since we'd still have to type out each individual element.  What we need is a way to go through each element of the list, one by one.  
 
-Python 
+Python provides this ability with a loop, a method that allows you to step (or iterate) through the elements of a list.  
 
+~~~
+for daily_temp in daily_temps:
+    print(daily_temp)
+63
+62
+60
+66
+58
+58
+60
+~~~
+{: .python}
 
+This loop steps through each temperature reading in the list, assigns it to the variable daily_temp, and then prints the value of the daily_temp in the body of the loop.  You can also access and set variables defined outside the loop. For example, here's how we might use a loop to find the average temperature for the week.
 
-An example task that we might want to repeat is printing each character in a
-word on a line of its own.
+~~~
+sum_temp = 0
+count = 0
+for daily_temp in daily_temps:
+    sum_temp = sum_temp + daily_temp
+    count = count + 1
+print(sum_temp / count)
+~~~
+{: .python}
+
+We create two variables prior to entering the loop - a running sum of the observed temperatures, and a count of the number of observations.  For each observation in the list, we increase the sum by the value of each new temperature reading, and we increase the count by one.  Once we exit the loop, we divide the sum of the temperature observations by the number of observations to get the average.
+
+As you use different methods and data types, you'll find that python often uses a list to store values, even if it isn't immediately apparant.  In the example above, we explicitely defined a list of numbers.  It turns out that Python also treats words this way as well.  A string, or word, is in fact a list of characters.  For example, the word "lead" is a list composed of 'l', 'e', 'a', 'd'.  
+
+Try it out!
 
 ~~~
 word = 'lead'
@@ -123,7 +149,7 @@ d
 ~~~
 {: .output}
 
-This is a bad approach for two reasons:
+As with our explicit list of integers, this is a bad approach for two reasons:
 
 1.  It doesn't scale:
     if we want to print the characters in a string that's hundreds of letters long,
