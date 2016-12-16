@@ -472,26 +472,26 @@ This violates another important rule of programming:
 
 > ## Testing Assertions
 >
-> Given a sequence of values, the function `running` returns
-> a list containing the running totals at each index.
+> Given a sequence of values, the function `get_total` returns
+> the total of the sequence.
 >
 > ~~~
-> running([1, 2, 3, 4])
+> get_total([1, 2, 3, 4])
 > ~~~
 > {: .python}
 >
 > ~~~
-> [1, 3, 6, 10]
+> 10
 > ~~~
 > {: .output}
 >
 > ~~~
-> running('abc')
+> get_total(['a', 'b', 'c'])
 > ~~~
 > {: .python}
 >
 > ~~~
-> ['a', 'ab', 'abc']
+> ValueError: invalid literal for int() with base 10: 'a'
 > ~~~
 > {: .output}
 >
@@ -500,24 +500,24 @@ This violates another important rule of programming:
 > give an example of input that will make that assertion fail.
 >
 > ~~~
-> def running(values):
+> def get_total(values):
 >     assert len(values) > 0
->     result = [values[0]]
->     for v in values[1:]:
->         assert result[-1] >= 0
->         result.append(result[-1] + v)
->         assert result[-1] >= result[0]
->     return result
+>     for element in values:
+>     	assert int(element)
+>     values = [int(element) for element in values]
+>     total = sum(values)
+>     assert total > 0
+>     return total
 > ~~~
 > {: .python}
 >
 > > ## Solution
 > > *   The first assertion checks that the input sequence `values` is not empty.
 > >     An empty sequence such as `[]` will make it fail.
-> > *   The second assertion checks that the first value in the list is positive.
-> >     Input such as `[-1,0,2,3]` will make it fail.
-> > *   The third assertion checks that the running total always increases.
-> >     Input such as `[0,1,3,-5,4]` will make it fail.
+> > *   The second assertion checks that each value in the list can be turned into an integer.
+> >     Input such as `[1, 2,'c', 3]` will make it fail.
+> > *   The third assertion checks that the total of the list is greater than 0.
+> >     Input such as `[-10, 2, 3]` will make it fail.
 > {: .solution}
 {: .challenge}
 
