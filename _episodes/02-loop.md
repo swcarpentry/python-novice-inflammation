@@ -41,7 +41,7 @@ print(b)
 ~~~
 {: .python}
 
-However, there will often be occasions when you need a way to store multiple values in a group.  For example, you might want to store daily temperature readings for a week.  You could use single variables for each.
+However, there will often be occasions when you need a way to store multiple values in a group.  For example, you might want to store daily temperature readings for a week.  You could try using a separate variable for each element.
 
 ~~~
 daily_temp_1 = 63
@@ -51,9 +51,7 @@ daily_temp_4 = 66
 ~~~
 {: .python}
 
-With a large number of observations, this approach becomes unmanageable.  What you really need is a way to store a list of values in a single variable.  
-
-Python provides a number of different formats, or data structures, to store collections of variables.  The most basic data structure to store multiple values is a list.  Here's how we can store daily temperature readings in a list.
+With a large number of observations, this approach becomes unmanageable.  What you really need is a way to store a series of values in a single variable.  Python provides a number of different formats, or data structures, to store collections of variables.  The most basic data structure to store multiple values is a list.  Here's one way can store daily temperature readings in a list.
 
 ~~~
 daily_temps = [63, 62, 60, 66, 58, 58, 60]
@@ -62,7 +60,7 @@ print(daily_temps)
 ~~~
 {: .python}
 
-You can access the value for each element of a list by its index.  The index is the position of the element in a list, starting at zero.  For instance, to access the first temperature reading, you could print the value of the variable at position 0.
+You can access the value for each element of a list by its index.  The index is the position of the element in a list, starting at zero.  For instance, to access the first temperature reading, you would print the value of the variable at index 0.
 
 ~~~
 print(daily_temps[0])
@@ -81,7 +79,7 @@ IndexError: list index out of range
 ~~~
 {: .python}
 
-You can perform operations on elements of a list as if they were stand alone variables.  
+You add, multiply, or do other operations on the elements of a list in the same way you use stand alone variables.  
 
 ~~~
 print(print(daily_temps[0] + daily_temps[1])
@@ -89,7 +87,7 @@ print(print(daily_temps[0] + daily_temps[1])
 ~~~
 {: .python}
 
-You could find the average temperature reading for this week this way, by adding each element separately and dividing by the number of observations. This would reduce the value of our list, though, since we'd still have to type out each individual element.  What we need is a way to go through each element of the list, one by one.  
+We could find the average temperature reading for this week this way, by adding each element separately and dividing by the number of observations. This would reduce the usefulness of our list, though, since we'd still have to type out each individual element.  What we need is a way to go through each element of the list, one by one.  
 
 Python provides this ability with a loop, a method that allows you to step (or iterate) through the elements of a list.  
 
@@ -106,7 +104,7 @@ for daily_temp in daily_temps:
 ~~~
 {: .python}
 
-This loop steps through each temperature reading in the list, assigns it to the variable daily_temp, and then prints the value of the daily_temp in the body of the loop.  You can also access and set variables defined outside the loop. For example, here's how we might use a loop to find the average temperature for the week.
+This loop steps through each temperature reading in the list, assigns it to the variable daily_temp, and then prints the value of the daily_temp in the body of the loop.  You can also access and set variables defined outside the loop. For example, here's a loop to find the average temperature for the week.
 
 ~~~
 sum_temp = 0
