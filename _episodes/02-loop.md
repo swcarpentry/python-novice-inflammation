@@ -25,14 +25,14 @@ We have a dozen data sets right now, though, and more on the way.
 We want to create plots for all of our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
-So far, we've seen how to create variables that hold a single value.  For example, we can create a variabe, "a", that holds the integer value 10.
+So far, we've seen how to create variables that hold a single value.  For example, we can create a variable, "a", that holds the integer value 10.
 
 ~~~
 a = 10
 ~~~
 {: .python}
 
-We've also shown how to use these variables to create new values.  For instance, we can create a new variable, "b", that holds the value of the first variable multiplied by ten.
+We've also shown how to use these variables to create new variables.  For instance, we can create a new variable, "b", that holds the value of the first variable multiplied by ten.
 
 ~~~
 b = a * 10
@@ -68,7 +68,7 @@ print(daily_temps[0])
 ~~~
 {: .python}
 
-Note that you can't access an element that doesn't exist!  If you try to access element 7 of this list, python will reply that this index is out of range.  Remember, you start counting from 0, so daily_temps[6] represents the seventh value in this list!
+Note that you can't access an element that doesn't exist.  If you try to access element 7 of this list, python will reply that this index is out of range.  Remember, you start counting from 0, so daily_temps[6] represents the seventh value in this list.
 
 ~~~
 print(daily_temps[6])
@@ -79,7 +79,7 @@ IndexError: list index out of range
 ~~~
 {: .python}
 
-You add, multiply, or do other operations on the elements of a list in the same way you use stand alone variables.  
+You add, multiply, or perform other operations on the elements of a list in the same way you use stand alone variables.  
 
 ~~~
 print(print(daily_temps[0] + daily_temps[1])
