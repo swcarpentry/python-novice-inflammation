@@ -25,6 +25,76 @@ We have a dozen data sets right now, though, and more on the way.
 We want to create plots for all of our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
+So far, we've seen how to create variables that hold a single value.  For example, we can create a variabe, "a", that holds the integer value 10.
+
+~~~
+a = 10
+~~~
+{: .python}
+
+We've also shown how to use these variables to create new values.  For instance, we can create a new variable, "b", that holds the value of the first variable multiplied by ten.
+
+~~~
+b = a * 10
+print(b)
+100
+~~~
+{: .python}
+
+However, there will often be occasions when you need a way to store multiple values in a group.  For example, you might want to store daily temperature readings for a week.  You could use single variables for each.
+
+~~~
+day1SFreading = 63
+day2SFreading = 62
+day3SFreading = 60
+day4SFreading = 66
+~~~
+{: .python}
+
+With a large number of observations, this approach becomes unmanageable.  What you really need is a way to store a list of values in a single variable.  
+
+Python provides a number of different formats, or data structures, to store collections of variables.  The most basic data structure to store multiple values is a list.  Here's how we can store daily temperature readings in a list.
+
+~~~
+daily_temps = [63, 62, 60, 66, 58, 58, 60]
+print(daily_temps)
+[63, 62, 60, 66, 58, 58, 61]
+~~~
+{: .python}
+
+You can access the value for each element of a list by its index.  The index is the position of the element in a list, starting at zero.  For instance, to access the first temperature reading, you could print the value of the variable at position 0.
+
+~~~
+print(daily_temps[0])
+63
+~~~
+{: .python}
+
+Note that you can't access an element that doesn't exist!  If you try to access element 7 of this list, python will reply that this index is out of range.  Remember, you start counting from 0, so daily_temps[6] represents the seventh value in this list!
+
+~~~
+print(daily_temps[6])
+60
+print(daily_temps[7]
+...
+IndexError: list index out of range
+~~~
+{: .python}
+
+You can perform operations on elements of a list as if they were stand alone variables.  
+
+~~~
+print(print(daily_temps[0] + daily_temps[1])
+125
+~~~
+{: .python}
+
+You could find the average temperature reading for this week this way, by adding each element separately and dividing by the number of observations. This would reduce the value of our list, though, since we'd still have to type out each individual element.  What we need is a way to go through each element of the list, one by one.  
+
+Python 
+
+
+
 An example task that we might want to repeat is printing each character in a
 word on a line of its own.
 
