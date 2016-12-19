@@ -162,7 +162,7 @@ else:
 Let's test that out:
 
 ~~~
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
     print('Suspicious looking maxima!')
 elif numpy.sum(numpy.min(data, axis=0)) == 0:
@@ -178,7 +178,7 @@ Suspicious looking maxima!
 {: .output}
 
 ~~~
-data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
+data = numpy.loadtxt(fname='data/inflammation-03.csv', delimiter=',')
 if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
     print('Suspicious looking maxima!')
 elif numpy.sum(numpy.min(data, axis=0)) == 0:

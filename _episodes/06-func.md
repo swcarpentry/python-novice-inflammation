@@ -324,7 +324,7 @@ That looks right,
 so let's try `center` on our real data:
 
 ~~~
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 print(center(data, 0))
 ~~~
 {: .python}
@@ -462,7 +462,7 @@ In fact,
 we can pass the filename to `loadtxt` without the `fname=`:
 
 ~~~
-numpy.loadtxt('inflammation-01.csv', delimiter=',')
+numpy.loadtxt('data/inflammation-01.csv', delimiter=',')
 ~~~
 {: .python}
 
@@ -480,7 +480,7 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 but we still need to say `delimiter=`:
 
 ~~~
-numpy.loadtxt('inflammation-01.csv', ',')
+numpy.loadtxt('data/inflammation-01.csv', ',')
 ~~~
 {: .python}
 
@@ -488,7 +488,7 @@ numpy.loadtxt('inflammation-01.csv', ',')
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-26-e3bc6cf4fd6a> in <module>()
-----> 1 numpy.loadtxt('inflammation-01.csv', ',')
+----> 1 numpy.loadtxt('data/inflammation-01.csv', ',')
 
 /Users/gwilson/anaconda/lib/python2.7/site-packages/numpy/lib/npyio.pyc in loadtxt(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin)
     775     try:
@@ -708,7 +708,7 @@ and eight others that do.
 If we call the function like this:
 
 ~~~
-numpy.loadtxt('inflammation-01.csv', ',')
+numpy.loadtxt('data/inflammation-01.csv', ',')
 ~~~
 {: .python}
 

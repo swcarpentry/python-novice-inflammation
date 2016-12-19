@@ -172,7 +172,7 @@ and the name of the file to process from `sys.argv[1]`.
 Here's a simple test:
 
 ~~~
-$ python readings_01.py inflammation-01.csv
+$ python readings_01.py data/inflammation-01.csv
 ~~~
 {: .bash}
 
@@ -204,7 +204,7 @@ if __name__ == '__main__':
 and run that:
 
 ~~~
-$ python readings_02.py inflammation-01.csv
+$ python readings_02.py data/inflammation-01.csv
 ~~~
 {: .bash}
 
@@ -321,17 +321,17 @@ we'll start by using three smaller files,
 each of which has three days of data for two patients:
 
 ~~~
-$ ls small-*.csv
+$ ls data/small-*.csv
 ~~~
 {: .bash}
 
 ~~~
-small-01.csv small-02.csv small-03.csv
+data/small-01.csv data/small-02.csv data/small-03.csv
 ~~~
 {: .output}
 
 ~~~
-$ cat small-01.csv
+$ cat data/small-01.csv
 ~~~
 {: .bash}
 
@@ -342,7 +342,7 @@ $ cat small-01.csv
 {: .output}
 
 ~~~
-$ python readings_02.py small-01.csv
+$ python readings_02.py data/small-01.csv
 ~~~
 {: .bash}
 
@@ -403,7 +403,7 @@ if __name__ == '__main__':
 and here it is in action:
 
 ~~~
-$ python readings_03.py small-01.csv small-02.csv
+$ python readings_03.py data/small-01.csv data/small-02.csv
 ~~~
 {: .bash}
 
@@ -470,7 +470,7 @@ if __name__ == '__main__':
 This works:
 
 ~~~
-$ python readings_04.py --max small-01.csv
+$ python readings_04.py --max data/small-01.csv
 ~~~
 {: .bash}
 
@@ -569,7 +569,7 @@ but we can do almost anything with it that we could do to a regular file.
 Let's try running it as if it were a regular command-line program:
 
 ~~~
-$ python count_stdin.py < small-01.csv
+$ python count_stdin.py < data/small-01.csv
 ~~~
 {: .bash}
 
@@ -581,7 +581,7 @@ $ python count_stdin.py < small-01.csv
 A common mistake is to try to run something that reads from standard input like this:
 
 ~~~
-$ python count_stdin.py small-01.csv
+$ python count_stdin.py data/small-01.csv
 ~~~
 {: .bash}
 
@@ -641,7 +641,7 @@ if __name__ == '__main__':
 Let's try it out:
 
 ~~~
-$ python readings_06.py --mean < small-01.csv
+$ python readings_06.py --mean < data/small-01.csv
 ~~~
 {: .bash}
 
