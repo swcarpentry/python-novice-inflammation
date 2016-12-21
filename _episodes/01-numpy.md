@@ -133,7 +133,7 @@ print('weight in pounds:', 2.2 * weight_kg)
 {: .python}
 
 ~~~
-weight in pounds: 121.0
+('weight in pounds:', 121.00000000000001)
 ~~~
 {: .output}
 
