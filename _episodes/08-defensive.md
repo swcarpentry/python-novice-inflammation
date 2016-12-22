@@ -472,11 +472,11 @@ This violates another important rule of programming:
 
 > ## Testing Assertions
 >
-> Given a sequence of values, the function `get_total` returns
-> the total of the sequence.
+> Given a sequence of a number of cars, the function `get_total_cars` returns
+> the total number of cars.
 >
 > ~~~
-> get_total([1, 2, 3, 4])
+> get_total_cars([1, 2, 3, 4])
 > ~~~
 > {: .python}
 >
@@ -486,7 +486,7 @@ This violates another important rule of programming:
 > {: .output}
 >
 > ~~~
-> get_total(['a', 'b', 'c'])
+> get_total_cars(['a', 'b', 'c'])
 > ~~~
 > {: .python}
 >
