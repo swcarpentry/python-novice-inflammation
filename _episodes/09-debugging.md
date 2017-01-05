@@ -302,7 +302,7 @@ not more.
 > encounters one at time. Which errors masked each other and how?
 >
 > ~~~
-> #Mutants:    A    B   A_B
+> #Mutants:    a    b   a_b
 > mutants = [[0.5, 0.2, 0.9],\
 >           [0.3, 0.3, 0.1],\
 >           [0.3, 0.7, 1.0],\
@@ -310,19 +310,21 @@ not more.
 >           [0.5, 0.4, 0.5]]
 >
 > # Code
-> def AddInteraction(A,B,A_B):
->     ''' Compare the sum of individual mutants (A+B)
->     to the combined mutant (A_B)'''
+> def test_interaction(a,b,a_b):
+>     ''' 
+>     Compare the sum of individual mutants (a+b) to the combined mutant 
+>     (a_b). Return 1 if they are different, else 0.
+>     '''
 >
->     if A_B > A+B or A_B < A+B:
+>     if a_b > a+b or a_b < a+b:
 >         return 1
 >     else:
 >         return 1
 >
 > for mutant in mutants:
 >     count = 0
->     [A,B,A_B] = mutants[1:4]
->     count += AddInteraction(A,B,A_B)
+>     [a,b,a_b] = mutants[1:4]
+>     count += test_interaction(a,b,a_b)
 >
 > print("There are %i interaction(s) between genes" % count)
 > ~~~
