@@ -283,51 +283,47 @@ not more.
 > {: .solution}
 {: .challenge}
 
-> ## Interacting Begs for Interacting Genes
+> ## Interacting Bugs for Interacting Genes
 >
-> One test to check if products of two genes interact
-> is if effect (phenotype) of deleting both genes(AB) is
-> different from the sum of the effect of deleting each
-> gene individuals (A+B)
+> There is a group of genes in tomatos which causes seeds not to sprout when 
+> mutated. Because their mutants have the same effect when mutated, it is 
+> reasonable to assume that some of these genes interact. This can be tested 
+> by seeing if the frequency of seed loss (a value between 0 and 1) when both 
+> genes are mutated is larger or smaller than sum of both individual mutants.
+> The following code compares the seed loss of two individual mutants 
+> (called "A" and "B" arbitrarily) to the seed loss of the combined mutant 
+> (called "A_B").
 >
-> In the same way, bugs in your code may interact with one
-> another. The effects of one error may not be obvious until
-> another is fixed. This is why is making changes one at a
-> time with a clear goal in mind is so important.
->
-> To debug the following code, first determine how many
-> interacting genes are in the phenotype. Then address the
-> bugs you encounters one at time. Which errors masked each
-> other and how?
+> Be careful! In the same way genes can interact, bugs in your code may 
+> interact with one another. The effects of one error may not be obvious until
+> another is fixed. This is why is making changes one at a time with a clear 
+> goal in mind is so important. To debug the following code, first determine 
+> how many interacting genes are in the phenotype. Then address the bugs you 
+> encounters one at time. Which errors masked each other and how?
 >
 > ~~~
-> #Phenotypes:   A    B    AB
-> phenotypes = [[0.5, 0.2, 0.9],\
->              [0.3, 0.3, 0.1],\
->              [0.3, 0.7, 1.0],\
->              [0.3, 0.5, 0.8],\
->              [0.5, 0.4, 0.5]]
+> #Mutants:    A    B   A_B
+> mutants = [[0.5, 0.2, 0.9],\
+>           [0.3, 0.3, 0.1],\
+>           [0.3, 0.7, 1.0],\
+>           [0.3, 0.5, 0.8],\
+>           [0.5, 0.4, 0.5]]
 >
 > # Code
-> def AddInteraction(A,B,AB,count):
->    ''' Compare the sum of individual phenotypes (A+B)
->    of two genes to the combined phenotype (AB)'''
+> def AddInteraction(A,B,A_B):
+>     ''' Compare the sum of individual mutants (A+B)
+>     to the combined mutant (A_B)'''
 >
->    if AB > A+B or AB < A+B:
->        count += 1
->    else:
->        count += count
->    return count
+>     if A_B > A+B or A_B < A+B:
+>         return 1
+>     else:
+>         return 1
 >
-> for phenotype in phenotypes:
+> for mutant in mutants:
+>     count = 0
+>     [A,B,A_B] = mutants[1:4]
+>     count += AddInteraction(A,B,A_B)
 >
->    count = 0
->
->    A_phenotype = phenotypes[1]
->    B_phenotype = phenotypes[2]
->    AB_phenotype = phenotypes[3]
->
->    count = AddInteraction(A_phenotype,B_phenotype,AB_phenotype,count)
 > print("There are %i interaction(s) between genes" % count)
 > ~~~
 > {: .python}
@@ -343,13 +339,13 @@ not more.
 > > * First, move count = 0 outside of the for loop. Now there are 5 reported 
 > >   interactions
 > >
-> > * Next, change "phenotypes" in the for loop to "phenotype". Now, there will 
+> > * Next, change "mutants" in the for loop to "mutant". Now, there will 
 > >   be an index error
 > > 
 > > * To correct the index error, reduce each of the index values in the loop by 
-> >   1 (zero-indexing). Now there are 9 reported interactions
+> >   1 (zero-indexing). Now there are 5 reported interactions, again.
 > > 
-> > * Finally, in the else statement of the function, change "count += count" to 
-> >   "count += 0:
+> > * Finally, in the return else statement of the function, change "return 1" to 
+> >   "return 0"
 > {: .solution}
 {: .challenge}
