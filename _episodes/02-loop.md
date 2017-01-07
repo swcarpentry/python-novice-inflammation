@@ -154,6 +154,38 @@ but there must be a colon at the end of the line starting the loop,
 and we must indent anything we want to run inside the loop. Unlike many other languages, there is no
 command to signify the end of the loop body (e.g. end for); what is indented after the for statement belongs to the loop.
 
+
+> ## What's in a name? {.callout}
+> In the example above, the loop variable was given the name `char` as a mnemonic; it is short for 'character'. 'Char' is not a keyword in Python that pulls the characters from words or strings. In fact when a similar loop is run over a list rather than a word, the output would be each member of that list printed in order, rather than the characters.
+>~~~ {.python}
+>list = ['oxygen','nitrogen','argon']
+>for char in list:
+>    print(char)
+>~~~
+>
+>~~~ {.output}
+>oxygen
+>nitrogen
+>argon
+>~~~
+> We can choose any name we want for variables. We might just as easily have chosen the name `banana` for the loop variable, as long as we use the same name when we invoke the variable inside the loop:
+>~~~ {.python}
+>word = 'oxygen'
+>for banana in word:
+>    print(banana)
+>~~~
+>
+>~~~ {.output}
+>o
+>x
+>y
+>g
+>e
+>n
+>~~~
+> It is a good idea to choose variable names that are meaningful, otherwise it would be more difficult to understand what the loop is doing.
+
+
 Here's another loop that repeatedly updates a variable:
 
 ~~~
