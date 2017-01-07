@@ -41,6 +41,8 @@ A variable is just a name for a value,
 such as `x`, `current_temperature`, or `subject_id`.
 Python's variables must begin with a letter and are [case sensitive](reference.html#case-sensitive).
 We can create a new variable by assigning a value to it using `=`.
+When we are finished typing and press Shift+Enter,
+the notebook runs our command.
 
 Once a variable has a value, we can print it to the screen:
 
@@ -196,8 +198,6 @@ and the [delimiter](reference.html#delimiter) that separates values on a line.
 These both need to be character strings (or [strings](reference.html#string) for short),
 so we put them in quotes.
 
-When we are finished typing and press Shift+Enter,
-the notebook runs our command.
 Since we haven't told it to do anything else with the function's output,
 the notebook displays it.
 In this case,
