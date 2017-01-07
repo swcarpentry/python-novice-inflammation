@@ -809,7 +809,7 @@ the graphs will actually be squeezed together more closely.)
 > If you ever see Python code online using a NumPy function with `np`
 > (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
 > When working with other people, it is important to agree on a convention of how common libraries are imported.
-
+{: .callout}
 > ## Check Your Understanding
 >
 > Draw diagrams showing what variables refer to what values after each statement in the following program:
