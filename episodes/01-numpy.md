@@ -808,7 +808,7 @@ the graphs will actually be squeezed together more closely.)
 > to make a shortcut like so: `import numpy as np`.
 > If you ever see Python code online using a NumPy function with `np`
 > (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
-{: .callout}
+> When working with other people, it is important to agree on a convention of how common libraries are imported.
 
 > ## Check Your Understanding
 >
@@ -1104,9 +1104,9 @@ the graphs will actually be squeezed together more closely.)
 > > print(D)
 > > ~~~
 > > {: .python}
-> > 
+> >
 > > ~~~
-> > D = 
+> > D =
 > > [[1 3]
 > >  [4 6]
 > >  [7 9]]
@@ -1115,19 +1115,19 @@ the graphs will actually be squeezed together more closely.)
 > {: .solution}
 >
 > > ## Solution
-> > 
+> >
 > > An alternative way to achieve the same result is to use Numpy's
 > > delete function to remove the second column of A.
-> > 
+> >
 > > ~~~
 > > D = numpy.delete(A, 1, 1)
 > > print('D = ')
 > > print(D)
 > > ~~~
 > > {: .python}
-> > 
+> >
 > > ~~~
-> > D = 
+> > D =
 > > [[1 3]
 > >  [4 6]
 > >  [7 9]]
