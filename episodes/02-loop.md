@@ -155,7 +155,7 @@ and we must indent anything we want to run inside the loop. Unlike many other la
 command to signify the end of the loop body (e.g. end for); what is indented after the for statement belongs to the loop.
 
 
-> ## What's in a name? {.callout}
+> ## What's in a name?
 > In the example above, the loop variable was given the name `char` as a mnemonic; it is short for 'character'. 'Char' is not a keyword in Python that pulls the characters from words or strings. In fact when a similar loop is run over a list rather than a word, the output would be each member of that list printed in order, rather than the characters.
 >~~~ {.python}
 >list = ['oxygen','nitrogen','argon']
@@ -184,7 +184,7 @@ command to signify the end of the loop body (e.g. end for); what is indented aft
 >n
 >~~~
 > It is a good idea to choose variable names that are meaningful, otherwise it would be more difficult to understand what the loop is doing.
-
+{: .callout}
 
 Here's another loop that repeatedly updates a variable:
 
