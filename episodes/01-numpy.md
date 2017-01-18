@@ -1135,3 +1135,73 @@ the graphs will actually be squeezed together more closely.)
 > > {: .output}
 > {: .solution}
 {: .challenge}
+
+>## Change In Inflamation
+>
+>This patient data is _longitudinal_ in the sense that each row represents a
+>series of observations relating to one individual. This means that change
+>inflamation is a meaningful concept.
+>
+>The `numpy.diff()` function takes a NumPy array and returns the 
+>difference along a specified axis.
+>
+>Which axis would it make sense to use this function along?
+> > ## Solution
+> > Since the row axis (0) is patients, it does not make sense to get the
+> > difference between two arbitrary patients. The column axis (1) is in
+> > days, so the differnce is the change in inflamation -- a meaningful
+> > concept.
+> >
+> > ~~~
+> > numpy.diff(data, axis=1)
+> > ~~~
+> > {: .python}
+> {: .solution}
+>
+>If the shape of an individual data file is `(60, 40)` (60 rows and 40 columns)
+>, what would the shape of the array be after you run the `diff()` function and
+>why?
+> > ## Solution
+> > The shape will be `(60, 39)` because there is one fewer difference between
+> > columns than there are columns in the data.
+> {: .solution}
+>
+>How would you find the largest change in inflammation for each patient? Does
+>it matter if the change in inflammation is an increase or a decrease?
+> > ## Solution
+> > By using the `max()` function after you apply the `diff()` function, you
+> > will get the largest difference between days.
+> > ~~~
+> > numpy.diff(data, axis=1).max(axis=1)
+> > ~~~
+> > {: .python}
+> > ~~~
+> > array([  7.,  12.,  11.,  10.,  11.,  13.,  10.,   8.,  10.,  10.,   7.,
+> >          7.,  13.,   7.,  10.,  10.,   8.,  10.,   9.,  10.,  13.,   7.,
+> >         12.,   9.,  12.,  11.,  10.,  10.,   7.,  10.,  11.,  10.,   8.,
+> >         11.,  12.,  10.,   9.,  10.,  13.,  10.,   7.,   7.,  10.,  13.,
+> >         12.,   8.,   8.,  10.,  10.,   9.,   8.,  13.,  10.,   7.,  10.,
+> >          8.,  12.,  10.,   7.,  12.])
+> > ~~~
+> > {: .python}
+> > If a difference is a *decrease*, then the difference will be negative. If
+> > you are interested in the **magnitude** of the change and not just the
+> > direction, the `numpy.absolute()` function will provide that.
+> >
+> > Notice the difference if you get the largest _absolute_ difference
+> > between readings.
+> > ~~~
+> > numpy.absolute(numpy.diff(data, axis=1)).max(axis=1)
+> > ~~~
+> > {: .python}
+> > ~~~
+> > array([ 12.,  14.,  11.,  13.,  11.,  13.,  10.,  12.,  10.,  10.,  10.,
+> >         12.,  13.,  10.,  11.,  10.,  12.,  13.,   9.,  10.,  13.,   9.,
+> >         12.,   9.,  12.,  11.,  10.,  13.,   9.,  13.,  11.,  11.,   8.,
+> >         11.,  12.,  13.,   9.,  10.,  13.,  11.,  11.,  13.,  11.,  13.,
+> >         13.,  10.,   9.,  10.,  10.,   9.,   9.,  13.,  10.,   9.,  10.,
+> >         11.,  13.,  10.,  10.,  12.])
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
