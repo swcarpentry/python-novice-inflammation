@@ -6,7 +6,7 @@ questions:
 - "How can I do the same operations on many different files?"
 objectives:
 - "Use a library function to get a list of filenames that match a wildcard pattern."
-- "Write a for loop to process multiple files."
+- "Write a `for` loop to process multiple files."
 keypoints:
 - "Use `glob.glob(pattern)` to create a list of files whose names match a pattern."
 - "Use `*` in a pattern to match zero or more characters, and `?` to match any single character."
