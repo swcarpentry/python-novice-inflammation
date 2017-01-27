@@ -310,7 +310,7 @@ because they have the same part-and-whole relationship.
 
 If we want to get a single number from the array,
 we must provide an [index]({{ page.root }}/reference/#index) in square brackets,
-just as we do in math:
+just as we do in math when referring to an element of a matrix:
 
 ~~~
 print('first value in data:', data[0, 0])
