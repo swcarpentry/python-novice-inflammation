@@ -21,7 +21,7 @@ keypoints:
 - "The expression `array.shape` gives the shape of an array."
 - "Use `array[x, y]` to select a single element from a 2D array."
 - "Array indices start at 0, not 1."
-- "Use `low:high` to specify a slice that includes the indices from `low` to `high-1`."
+- "Use `low:high` to specify a `slice` that includes the indices from `low` to `high-1`."
 - "All the indexing and slicing that works on arrays also works on strings."
 - "Use `# some kind of explanation` to add comments to programs."
 - "Use `numpy.mean(array)`, `numpy.max(array)`, and `numpy.min(array)` to calculate simple statistics."
