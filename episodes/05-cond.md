@@ -202,13 +202,7 @@ freeing us from having to manually examine every plot for features we've seen be
 
 > ## How Many Paths?
 >
-> Which of the following would be printed if you were to run this code?
-> Why did you pick this answer?
->
-> 1.  A
-> 2.  B
-> 3.  C
-> 4.  B and C
+> Consider this code:
 >
 > ~~~
 > if 4 > 5:
@@ -219,6 +213,14 @@ freeing us from having to manually examine every plot for features we've seen be
 >     print('C')
 > ~~~
 > {: .python}
+>
+> Which of the following would be printed if you were to run this code?
+> Why did you pick this answer?
+>
+> 1.  A
+> 2.  B
+> 3.  C
+> 4.  B and C
 >
 > > ## Solution
 > > C gets printed because the first two conditions, `4 > 5` and `4 == 5`, are not true,
