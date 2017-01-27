@@ -573,7 +573,7 @@ One way to do this is to create a new temporary array of the data we want,
 then ask it to do the calculation:
 
 ~~~
-patient_0 = data[0, :] # 0 on the first axis, everything on the second
+patient_0 = data[0, :] # 0 on the first axis (row), everything on the second (column)
 print('maximum inflammation for patient 0:', patient_0.max())
 ~~~
 {: .python}
