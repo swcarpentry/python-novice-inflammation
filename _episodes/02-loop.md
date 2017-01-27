@@ -5,13 +5,13 @@ exercises: 0
 questions:
 - "How can I do the same operations on many different values?"
 objectives:
-- "Explain what a for loop does."
-- "Correctly write for loops to repeat simple calculations."
+- "Explain what a `for` loop does."
+- "Correctly write `for` loops to repeat simple calculations."
 - "Trace changes to a loop variable as the loop runs."
-- "Trace changes to other variables as they are updated by a for loop."
+- "Trace changes to other variables as they are updated by a `for` loop."
 keypoints:
 - "Use `for variable in sequence` to process the elements of a sequence one at a time."
-- "The body of a for loop must be indented."
+- "The body of a `for` loop must be indented."
 - "Use `len(thing)` to determine the length of something that contains other values."
 ---
 
