@@ -268,14 +268,19 @@ so we should always use it when we can.
 
 > ## From 1 to N
 >
-> Python has a built-in function called `range` that creates a sequence of numbers. Range can
-> accept 1-3 parameters. If one parameter is input, range creates an array of that length,
-> starting at zero and incrementing by 1. If 2 parameters are input, range starts at
-> the first and ends just before the second, incrementing by one. If range is passed 3 parameters,
-> it starts at the first one, ends just before the second one, and increments by the third one. For
-> example,
-> `range(3)` produces the numbers 0, 1, 2, while `range(2, 5)` produces 2, 3, 4,
-> and `range(3, 10, 3)` produces 3, 6, 9.
+> Python has a built-in function called `range` that creates a sequence of numbers. `range` can
+> accept 1, 2, or 3 parameters.
+>
+> * If one parameter is given, `range` creates an array of that length,
+>   starting at zero and incrementing by 1.
+>   For example, `range(3)` produces the numbers `0, 1, 2`.
+> * If two parameters are given, `range` starts at
+>   the first and ends just before the second, incrementing by one.
+>   For example, `range(2, 5)` produces `2, 3, 4`.
+> * If `range` is given 3 parameters,
+>   it starts at the first one, ends just before the second one, and increments by the third one.
+>   For exmaple `range(3, 10, 2)` produces `3, 5, 7, 9`.
+>
 > Using `range`,
 > write a loop that uses `range` to print the first 3 natural numbers:
 >
