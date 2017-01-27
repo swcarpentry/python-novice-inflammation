@@ -19,7 +19,7 @@ keypoints:
 - "Variables are created on demand whenever a value is assigned to them."
 - "Use `print(something)` to display the value of `something`."
 - "The expression `array.shape` gives the shape of an array."
-- "Use `array[x, y]` to select a single element from an array."
+- "Use `array[x, y]` to select a single element from a 2D array."
 - "Array indices start at 0, not 1."
 - "Use `low:high` to specify a slice that includes the indices from `low` to `high-1`."
 - "All the indexing and slicing that works on arrays also works on strings."
