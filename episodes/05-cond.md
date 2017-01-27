@@ -344,7 +344,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > >
 > > Here `pass` means "don't do anything".
 > In this particular case, it's not actually needed, since if `num == 0` neither
-> > sum needs to change, but it illustrates the use of `elif`.
+> > sum needs to change, but it illustrates the use of `elif` and `pass`.
 > {: .solution}
 {: .challenge}
 
