@@ -39,7 +39,7 @@ on a different dataset or at a different point in our program?
 Cutting and pasting it is going to make our code get very long and very repetitive,
 very quickly.
 We'd like a way to package our code so that it is easier to reuse,
-and Python provides for this by letting us define things called 'functions' -
+and Python provides for this by letting us define things called 'functions' ---
 a shorthand way of re-executing longer pieces of code.
 
 Let's start by defining a function `fahr_to_kelvin` that converts temperatures from Fahrenheit to Kelvin:
