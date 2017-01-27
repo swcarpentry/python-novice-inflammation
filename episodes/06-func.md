@@ -714,7 +714,7 @@ numpy.loadtxt('inflammation-01.csv', ',')
 
 then the filename is assigned to `fname` (which is what we want),
 but the delimiter string `','` is assigned to `dtype` rather than `delimiter`,
-because `dtype` is the second parameter in the list. However ',' isn't a known `dtype` so
+because `dtype` is the second parameter in the list. However `','` isn't a known `dtype` so
 our code produced an error message when we tried to run it.
 When we call `loadtxt` we don't have to provide `fname=` for the filename because it's the
 first item in the list, but if we want the ',' to be assigned to the variable `delimiter`,
