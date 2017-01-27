@@ -825,8 +825,8 @@ readable code!
 >
 > Write a function `rescale` that takes an array as input
 > and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
-> (Hint: If $L$ and $H$ are the lowest and highest values in the original array,
-> then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
+> (Hint: If `L` and `H` are the lowest and highest values in the original array,
+> then the replacement for a value `v` should be `(v-L) / (H-L)`.)
 >
 > > ## Challenge
 > > ~~~
@@ -867,7 +867,7 @@ readable code!
 
 > ## Defining Defaults
 >
-> Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
+> Rewrite the `rescale` function so that it scales data to lie between `0.0` and `1.0` by default,
 > but will allow the caller to specify lower and upper bounds if they want.
 > Compare your implementation to your neighbor's:
 > do the two functions always behave the same way?
@@ -888,7 +888,7 @@ readable code!
 
 > ## Variables Inside and Outside Functions
 >
-> What does the following piece of code display when run - and why?
+> What does the following piece of code display when run --- and why?
 >
 > ~~~
 > f = 0
@@ -970,12 +970,7 @@ readable code!
 
 > ## The Old Switcheroo
 >
-> Which of the following would be printed if you were to run this code? Why did you pick this answer?
->
-> 1. `7 3`
-> 2. `3 7`
-> 3. `3 3`
-> 4. `7 7`
+> Consider this code:
 >
 > ~~~
 > a = 3
@@ -991,6 +986,14 @@ readable code!
 > print(a, b)
 > ~~~
 > {: .python}
+>
+> Which of the following would be printed if you were to run this code? Why did you pick this answer?
+>
+> 1. `7 3`
+> 2. `3 7`
+> 3. `3 3`
+> 4. `7 7`
+>
 > > ## Solution
 > > `3, 7` is correct. Initially `a` has a value of 3 and `b` has a value of 7.
 > > When the swap function is called, it creates local variables (also called
