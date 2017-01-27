@@ -584,7 +584,7 @@ maximum inflammation for patient 0: 18.0
 {: .output}
 
 Everything in a line of code following the '#' symbol is a
-[comment]({{ page.root }}/reference/#comment) that is ignored by the computer.
+[comment]({{ page.root }}/reference/#comment) that is ignored by Python.
 Comments allow programmers to leave explanatory notes for other
 programmers or their future selves.
 
