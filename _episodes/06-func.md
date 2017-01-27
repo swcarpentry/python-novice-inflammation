@@ -717,7 +717,7 @@ but the delimiter string `','` is assigned to `dtype` rather than `delimiter`,
 because `dtype` is the second parameter in the list. However `','` isn't a known `dtype` so
 our code produced an error message when we tried to run it.
 When we call `loadtxt` we don't have to provide `fname=` for the filename because it's the
-first item in the list, but if we want the ',' to be assigned to the variable `delimiter`,
+first item in the list, but if we want the `','` to be assigned to the variable `delimiter`,
 we *do* have to provide `delimiter=` for the second parameter since `delimiter` is not
 the second parameter in the list.
 
