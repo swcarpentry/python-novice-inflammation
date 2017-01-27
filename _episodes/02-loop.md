@@ -34,7 +34,7 @@ word = 'lead'
 {: .python}
 
 We can access a character in a string using its index. For example, we can get the first
-character of the word 'lead', by using word[0]. One way to print each character is to use
+character of the word `'lead'`, by using `word[0]`. One way to print each character is to use
 four `print` statements:
 
 ~~~
