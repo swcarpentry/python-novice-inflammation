@@ -141,6 +141,7 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > composite_data = numpy.zeros((60,40))
 > for f in filenames:
 >     # sum each new file's data into as it's read
+>     #
 > # and then divide the composite_data by number of samples
 > composite_data /= len(filenames)
 > ~~~
