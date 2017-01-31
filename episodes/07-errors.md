@@ -422,7 +422,7 @@ often reveals common reasons why you might get that error.
 
 > ## Reading Error Messages
 >
-> Read the traceback below, and identify the following pieces of information about it:
+> Read the python code and the resulting traceback below, and answer the following questions:
 >
 > 1.  How many levels does the traceback have?
 > 2.  What is the function name where the error occurred?
@@ -431,7 +431,7 @@ often reveals common reasons why you might get that error.
 > 5.  What is the error message?
 >
 > ~~~
-> # This code has an intentional error. You can type it directly or
+> # This code has an intentional error. Do not type it directly;
 > # use it for reference to understand the error message below.
 > def print_message(day):
 >     messages = {
