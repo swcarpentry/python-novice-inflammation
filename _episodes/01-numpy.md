@@ -29,6 +29,13 @@ keypoints:
 - "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
 ---
 
+To follow this lecture on your machine, please make sure that you complete the [setup][setup] and run python from the working directory of this lecture. In the shell:
+
+~~~
+cd ~/Desktop/python-novice-inflammation
+jupyter notebook
+~~~
+
 Words are useful,
 but what's more useful are the sentences and stories we build with them.
 Similarly,
@@ -37,7 +44,7 @@ specialized tools built up from these basic units live in [libraries]({{ page.ro
 that can be called upon when needed.
 
 In order to load our inflammation data,
-we need to access ([import]({{ page.root }}/reference/#import) in Python terminology)
+we access ([import]({{ page.root }}/reference/#import) in Python terminology)
 a library called [NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").
 In general you should use this library if you want to do fancy things with numbers,
 especially if you have matrices or arrays.
@@ -55,7 +62,7 @@ Once you've imported the library,
 we can ask the library to read our data file for us:
 
 ~~~
-numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 ~~~
 {: .python}
 
@@ -219,7 +226,7 @@ Just as we can assign a single value to a variable, we can also assign an array 
 to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its result:
 
 ~~~
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 ~~~
 {: .python}
 
@@ -765,7 +772,7 @@ Here are our three plots side by side:
 import numpy
 import matplotlib.pyplot
 
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 
 fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
@@ -967,7 +974,7 @@ the graphs will actually be squeezed together more closely.)
 > > import numpy
 > > import matplotlib.pyplot
 > >
-> > data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+> > data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 > >
 > > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 > >
@@ -1135,3 +1142,6 @@ the graphs will actually be squeezed together more closely.)
 > > {: .output}
 > {: .solution}
 {: .challenge}
+
+
+[setup]: {{ page.root }}/setup
