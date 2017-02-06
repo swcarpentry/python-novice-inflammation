@@ -68,8 +68,14 @@ Inside the function,
 we use a [return statement]({{ page.root }}/reference/#return-statement) to send a result back to whoever asked for it.
 
 Let's try running our function.
-Calling our own function is no different from calling any other function:
 
+~~~
+fahr_to_kelvin(32)
+~~~
+
+This command should call our function, using "32" as the input and return the function value.
+
+In fact, calling our own function is no different from calling any other function:
 ~~~
 print('freezing point of water:', fahr_to_kelvin(32))
 print('boiling point of water:', fahr_to_kelvin(212))
