@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2017-02-08 23:51:37 +0100">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="/swc-releases/2017.02/python-novice-inflammation">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Programming with Python: Making Choices</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="../setup/">Setup</a></li>
+        <li><a href="../reference/">Reference</a></li>
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-numpy/">Analyzing Patient Data</a></li>
+            
+            <li><a href="../02-loop/">Repeating Actions with Loops</a></li>
+            
+            <li><a href="../03-lists/">Storing Multiple Values in Lists</a></li>
+            
+            <li><a href="../04-files/">Analyzing Data from Multiple Files</a></li>
+            
+            <li><a href="../05-cond/">Making Choices</a></li>
+            
+            <li><a href="../06-func/">Creating Functions</a></li>
+            
+            <li><a href="../07-errors/">Errors and Exceptions</a></li>
+            
+            <li><a href="../08-defensive/">Defensive Programming</a></li>
+            
+            <li><a href="../09-debugging/">Debugging</a></li>
+            
+            <li><a href="../10-cmdline/">Command-Line Programs</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../license/">License</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../04-files/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+    <h3 class="maintitle"><a href="../">Programming with Python</a></h3>
+    <h1 class="maintitle">Making Choices</h1>
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../06-func/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 30 min
+      <br/>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How can my programs do different things based on data values?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Write conditional statements including <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">elif</code>, and <code class="highlighter-rouge">else</code> branches.</p>
+</li>
+	
+	<li><p>Correctly evaluate expressions containing <code class="highlighter-rouge">and</code> and <code class="highlighter-rouge">or</code>.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>In our last lesson, we discovered something suspicious was going on
+in our inflammation data by drawing some plots.
+How can we use Python to automatically recognize the different features we saw,
+and take a different action for each? In this lesson, we’ll learn how to write code that
+runs only when certain conditions are true.</p>
+
+<h2 id="conditionals">Conditionals</h2>
+
+<p>We can ask Python to take different actions, depending on a condition, with an <code class="highlighter-rouge">if</code> statement:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>num = 37
+if num &gt; 100:
+    print('greater')
+else:
+    print('not greater')
+print('done')
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>not greater
+done
+</code></pre>
+</div>
+
+<p>The second line of this code uses the keyword <code class="highlighter-rouge">if</code> to tell Python that we want to make a choice.
+If the test that follows the <code class="highlighter-rouge">if</code> statement is true,
+the body of the <code class="highlighter-rouge">if</code>
+(i.e., the lines indented underneath it) are executed.
+If the test is false,
+the body of the <code class="highlighter-rouge">else</code> is executed instead.
+Only one or the other is ever executed:</p>
+
+<p><img src="../fig/python-flowchart-conditional.png" alt="Executing a Conditional" /></p>
+
+<p>Conditional statements don’t have to include an <code class="highlighter-rouge">else</code>.
+If there isn’t one,
+Python simply does nothing if the test is false:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>num = 53
+print('before conditional...')
+if num &gt; 100:
+    print('53 is greater than 100')
+print('...after conditional')
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>before conditional...
+...after conditional
+</code></pre>
+</div>
+
+<p>We can also chain several tests together using <code class="highlighter-rouge">elif</code>,
+which is short for “else if”.
+The following Python code uses <code class="highlighter-rouge">elif</code> to print the sign of a number.</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>num = -3
+
+if num &gt; 0:
+    print(num, "is positive")
+elif num == 0:
+    print(num, "is zero")
+else:
+    print(num, "is negative")
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>"-3 is negative"
+</code></pre>
+</div>
+
+<p>One important thing to notice in the code above is that we use a double equals sign <code class="highlighter-rouge">==</code> to test for equality
+rather than a single equals sign
+because the latter is used to mean assignment.</p>
+
+<p>We can also combine tests using <code class="highlighter-rouge">and</code> and <code class="highlighter-rouge">or</code>.
+<code class="highlighter-rouge">and</code> is only true if both parts are true:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>if (1 &gt; 0) and (-1 &gt; 0):
+    print('both parts are true')
+else:
+    print('at least one part is false')
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>at least one part is false
+</code></pre>
+</div>
+
+<p>while <code class="highlighter-rouge">or</code> is true if at least one part is true:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>if (1 &lt; 0) or (-1 &lt; 0):
+    print('at least one test is true')
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>at least one test is true
+</code></pre>
+</div>
+
+<h2 id="checking-our-data">Checking our Data</h2>
+
+<p>Now that we’ve seen how conditionals work,
+we can use them to check for the suspicious features we saw in our inflammation data.
+In the first couple of plots, the maximum inflammation per day
+seemed to rise like a straight line, one unit per day.
+We can check for this inside the <code class="highlighter-rouge">for</code> loop we wrote with the following conditional:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+    print('Suspicious looking maxima!')
+</code></pre>
+</div>
+
+<p>We also saw a different problem in the third dataset;
+the minima per day were all zero (looks like a healthy person snuck into our study).
+We can also check for this with an <code class="highlighter-rouge">elif</code> condition:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>elif numpy.sum(numpy.min(data, axis=0)) == 0:
+    print('Minima add up to zero!')
+</code></pre>
+</div>
+
+<p>And if neither of these conditions are true, we can use <code class="highlighter-rouge">else</code> to give the all-clear:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>else:
+    print('Seems OK!')
+</code></pre>
+</div>
+
+<p>Let’s test that out:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+    print('Suspicious looking maxima!')
+elif numpy.sum(numpy.min(data, axis=0)) == 0:
+    print('Minima add up to zero!')
+else:
+    print('Seems OK!')
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Suspicious looking maxima!
+</code></pre>
+</div>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
+if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+    print('Suspicious looking maxima!')
+elif numpy.sum(numpy.min(data, axis=0)) == 0:
+    print('Minima add up to zero!')
+else:
+    print('Seems OK!')
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Minima add up to zero!
+</code></pre>
+</div>
+
+<p>In this way,
+we have asked Python to do something different depending on the condition of our data.
+Here we printed messages in all cases,
+but we could also imagine not using the <code class="highlighter-rouge">else</code> catch-all
+so that messages are only printed when something is wrong,
+freeing us from having to manually examine every plot for features we’ve seen before.</p>
+
+<blockquote class="challenge">
+  <h2 id="how-many-paths">How Many Paths?</h2>
+
+  <p>Which of the following would be printed if you were to run this code?
+Why did you pick this answer?</p>
+
+  <ol>
+    <li>A</li>
+    <li>B</li>
+    <li>C</li>
+    <li>B and C</li>
+  </ol>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>if 4 &gt; 5:
+    print('A')
+elif 4 == 5:
+    print('B')
+elif 4 &lt; 5:
+    print('C')
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+    <p>C gets printed because the first two conditions, <code class="highlighter-rouge">4 &gt; 5</code> and <code class="highlighter-rouge">4 == 5</code>, are not true,
+but <code class="highlighter-rouge">4 &lt; 5</code> is true.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="what-is-truth">What Is Truth?</h2>
+
+  <p><code class="highlighter-rouge">True</code> and <code class="highlighter-rouge">False</code> are special words in Python called <code class="highlighter-rouge">booleans</code>
+which represent true and false statements.
+However, they aren’t the only values in Python that are true and false.
+In fact, <em>any</em> value can be used in an <code class="highlighter-rouge">if</code> or <code class="highlighter-rouge">elif</code>.
+After reading and running the code below,
+explain what the rule is for which values are considered true and which are considered false.</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>if '':
+    print('empty string is true')
+if 'word':
+    print('word is true')
+if []:
+    print('empty list is true')
+if [1, 2, 3]:
+    print('non-empty list is true')
+if 0:
+    print('zero is true')
+if 1:
+    print('one is true')
+</code></pre>
+  </div>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="thats-not-not-what-i-meant">That’s Not Not What I Meant</h2>
+
+  <p>Sometimes it is useful to check whether some condition is not true.
+The Boolean operator <code class="highlighter-rouge">not</code> can do this explicitly.
+After reading and running the code below,
+write some <code class="highlighter-rouge">if</code> statements that use <code class="highlighter-rouge">not</code> to test the rule
+that you formulated in the previous challenge.</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>if not '':
+    print('empty string is not true')
+if not 'word':
+    print('word is not true')
+if not not True:
+    print('not not True is true')
+</code></pre>
+  </div>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="close-enough">Close Enough</h2>
+
+  <p>Write some conditions that print <code class="highlighter-rouge">True</code> if the variable <code class="highlighter-rouge">a</code> is within 10% of the variable <code class="highlighter-rouge">b</code>
+and <code class="highlighter-rouge">False</code> otherwise.
+Compare your implementation with your partner’s:
+do you get the same answer for all possible pairs of numbers?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution 1</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>a = 5
+b = 5.1
+
+if abs(a - b) &lt; 0.1 * abs(b):
+    print('True')
+else:
+    print('False')
+</code></pre>
+    </div>
+  </blockquote>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution 2</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>print(abs(a - b) &lt; 0.1 * abs(b))
+</code></pre>
+    </div>
+
+    <p>This works because the Booleans <code class="highlighter-rouge">True</code> and <code class="highlighter-rouge">False</code>
+have string representations which can be printed.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="in-place-operators">In-Place Operators</h2>
+
+  <p>Python (and most other languages in the C family) provides <a href="../reference/#in-place-operators">in-place operators</a>
+that work like this:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>x = 1  # original value
+x += 1 # add one to x, assigning result back to x
+x *= 3 # multiply x by 3
+print(x)
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>6
+</code></pre>
+  </div>
+
+  <p>Write some code that sums the positive and negative numbers in a list separately,
+using in-place operators.
+Do you think the result is more or less readable than writing the same without in-place operators?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>positive_sum = 0
+negative_sum = 0
+test_list = [3, 4, 6, 1, -1, -5, 0, 7, -8]
+for num in test_list:
+    if num &gt; 0:
+        positive_sum += num
+    elif num == 0:
+        pass
+    else:
+        negative_sum += num
+print(positive_sum, negative_sum)
+</code></pre>
+    </div>
+
+    <p>Here <code class="highlighter-rouge">pass</code> means “don’t do anything”.
+In this particular case, it’s not actually needed, since if <code class="highlighter-rouge">num == 0</code> neither
+sum needs to change, but it illustrates the use of <code class="highlighter-rouge">elif</code>.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="sorting-a-list-into-buckets">Sorting a List Into Buckets</h2>
+
+  <p>The folder containing our data files has large data sets whose names start with
+“inflammation-“, small ones whose names with “small-“, and possibly other files
+whose sizes we don’t know.  Our goal is to sort those files into three lists
+called <code class="highlighter-rouge">large_files</code>, <code class="highlighter-rouge">small_files</code>, and <code class="highlighter-rouge">other_files</code> respectively.  Add code
+to the template below to do this.  Note that the string method
+<a href="https://docs.python.org/3.5/library/stdtypes.html#str.startswith"><code class="highlighter-rouge">startswith</code></a>
+returns <code class="highlighter-rouge">True</code> if and only if the string it is called on starts with the string
+passed as an argument.</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>files = ['inflammation-01.csv', 'myscript.py', 'inflammation-02.csv', 'small-01.csv', 'small-02.csv']
+large_files = []
+small_files = []
+other_files = []
+</code></pre>
+  </div>
+
+  <p>Your solution should:</p>
+
+  <ol>
+    <li>loop over the names of the files</li>
+    <li>figure out which group each filename belongs</li>
+    <li>append the filename to that list</li>
+  </ol>
+
+  <p>In the end the three lists should be:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>large_files = ['inflammation-01.csv', 'inflammation-02.csv']
+small_files = ['small-01.csv', 'small-02.csv']
+other_files = ['myscript.py']
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>for file in files:
+    if 'inflammation-' in file:
+        large_files.append(file)
+    elif 'small-' in file:
+        small_files.append(file)
+    else:
+        other_files.append(file)
+        
+print(large_files)
+print(small_files)
+print(other_files)
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="counting-vowels">Counting Vowels</h2>
+
+  <ol>
+    <li>Write a loop that counts the number of vowels in a character string.</li>
+    <li>Test it on a few individual words and full sentences.</li>
+    <li>Once you are done, compare your solution to your neighbor’s.
+Did you make the same decisions about how to handle the letter ‘y’
+(which some people think is a vowel, and some do not)?</li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>vowels = 'aeiouAEIOU'
+sentence = 'Mary had a little lamb.'
+count = 0
+for char in sentence:
+    if char in vowels:
+        count += 1
+        
+print("The number of vowels in this string is " + str(count))
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>Use <code class="highlighter-rouge">if condition</code> to start a conditional statement, <code class="highlighter-rouge">elif condition</code> to provide additional tests, and <code class="highlighter-rouge">else</code> to provide a default.</p>
+</li>
+    
+    <li><p>The bodies of the branches of conditional statements must be indented.</p>
+</li>
+    
+    <li><p>Use <code class="highlighter-rouge">==</code> to test for equality.</p>
+</li>
+    
+    <li><p><code class="highlighter-rouge">X and Y</code> is only true if both X and Y are true.</p>
+</li>
+    
+    <li><p><code class="highlighter-rouge">X or Y</code> is true if either X or Y, or both, are true.</p>
+</li>
+    
+    <li><p>Zero, the empty string, and the empty list are considered false; all other numbers, strings, and lists are considered true.</p>
+</li>
+    
+    <li><p>Nest loops to operate on multi-dimensional data.</p>
+</li>
+    
+    <li><p>Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../04-files/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../06-func/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      <footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="mailto:lessons@software-carpentry.org">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

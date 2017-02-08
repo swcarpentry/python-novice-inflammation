@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2017-02-08 23:51:37 +0100">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="/swc-releases/2017.02/python-novice-inflammation">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Programming with Python: Repeating Actions with Loops</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="../setup/">Setup</a></li>
+        <li><a href="../reference/">Reference</a></li>
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-numpy/">Analyzing Patient Data</a></li>
+            
+            <li><a href="../02-loop/">Repeating Actions with Loops</a></li>
+            
+            <li><a href="../03-lists/">Storing Multiple Values in Lists</a></li>
+            
+            <li><a href="../04-files/">Analyzing Data from Multiple Files</a></li>
+            
+            <li><a href="../05-cond/">Making Choices</a></li>
+            
+            <li><a href="../06-func/">Creating Functions</a></li>
+            
+            <li><a href="../07-errors/">Errors and Exceptions</a></li>
+            
+            <li><a href="../08-defensive/">Defensive Programming</a></li>
+            
+            <li><a href="../09-debugging/">Debugging</a></li>
+            
+            <li><a href="../10-cmdline/">Command-Line Programs</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../license/">License</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../01-numpy/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+    <h3 class="maintitle"><a href="../">Programming with Python</a></h3>
+    <h1 class="maintitle">Repeating Actions with Loops</h1>
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../03-lists/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 30 min
+      <br/>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How can I do the same operations on many different values?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Explain what a for loop does.</p>
+</li>
+	
+	<li><p>Correctly write for loops to repeat simple calculations.</p>
+</li>
+	
+	<li><p>Trace changes to a loop variable as the loop runs.</p>
+</li>
+	
+	<li><p>Trace changes to other variables as they are updated by a for loop.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>In the last lesson,
+we wrote some code that plots some values of interest from our first inflammation dataset,
+and reveals some suspicious features in it, such as from <code class="highlighter-rouge">inflammation-01.csv</code></p>
+
+<p><img src="../fig/03-loop_2_0.png" alt="Analysis of inflammation-01.csv" /></p>
+
+<p>We have a dozen data sets right now, though, and more on the way.
+We want to create plots for all of our data sets with a single statement.
+To do that, we’ll have to teach the computer how to repeat things.</p>
+
+<p>An example task that we might want to repeat is printing each character in a
+word on a line of its own.</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>word = 'lead'
+</code></pre>
+</div>
+
+<p>We can access a character in a string using its index. For example, we can get the first
+character of the word ‘lead’, by using word[0]. One way to print each character is to use
+four <code class="highlighter-rouge">print</code> statements:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>print(word[0])
+print(word[1])
+print(word[2])
+print(word[3])
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>l
+e
+a
+d
+</code></pre>
+</div>
+
+<p>This is a bad approach for two reasons:</p>
+
+<ol>
+  <li>
+    <p>It doesn’t scale:
+if we want to print the characters in a string that’s hundreds of letters long,
+we’d be better off just typing them in.</p>
+  </li>
+  <li>
+    <p>It’s fragile:
+if we give it a longer string,
+it only prints part of the data,
+and if we give it a shorter one,
+it produces an error because we’re asking for characters that don’t exist.</p>
+  </li>
+</ol>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>word = 'tin'
+print(word[0])
+print(word[1])
+print(word[2])
+print(word[3])
+
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>t
+i
+n
+</code></pre>
+</div>
+
+<div class="error highlighter-rouge"><pre class="highlight"><code>---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+&lt;ipython-input-3-7974b6cdaf14&gt; in &lt;module&gt;()
+      3 print(word[1])
+      4 print(word[2])
+----&gt; 5 print(word[3])
+
+IndexError: string index out of range
+</code></pre>
+</div>
+
+<p>Here’s a better approach:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>word = 'lead'
+for char in word:
+    print(char)
+
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>l
+e
+a
+d
+</code></pre>
+</div>
+
+<p>This is shorter—certainly shorter than something that prints every character in a hundred-letter string—and
+more robust as well:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>word = 'oxygen'
+for char in word:
+    print(char)
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>o
+x
+y
+g
+e
+n
+</code></pre>
+</div>
+
+<p>The improved version uses a <a href="../reference/#for-loop">for loop</a>
+to repeat an operation—in this case, printing—once for each thing in a sequence.
+The general form of a loop is:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>for element in variable:
+    do things with element
+</code></pre>
+</div>
+
+<p>Using the oxygen example above, the loop might look like this:</p>
+
+<p><img src="../fig/loops_image.png" alt="loop_image" /></p>
+
+<p>where each character (<code class="highlighter-rouge">char</code>) in the variable <code class="highlighter-rouge">word</code> is looped through and printed one character after another.
+The numbers in the diagram denote which loop cycle the character was printed in (1 being the first loop, and 6 being the final loop).</p>
+
+<p>We can call the <a href="../reference/#loop-variable">loop variable</a> anything we like,
+but there must be a colon at the end of the line starting the loop,
+and we must indent anything we want to run inside the loop. Unlike many other languages, there is no
+command to signify the end of the loop body (e.g. end for); what is indented after the for statement belongs to the loop.</p>
+
+<blockquote class="callout">
+  <h2 id="whats-in-a-name">What’s in a name?</h2>
+  <p>In the example above, the loop variable was given the name <code class="highlighter-rouge">char</code> as a mnemonic; it is short for ‘character’. ‘Char’ is not a keyword in Python that pulls the characters from words or strings. In fact when a similar loop is run over a list rather than a word, the output would be each member of that list printed in order, rather than the characters.</p>
+  <pre><code class="language-{.python}">list = ['oxygen','nitrogen','argon']
+for char in list:
+   print(char)
+</code></pre>
+
+  <pre><code class="language-{.output}">oxygen
+nitrogen
+argon
+</code></pre>
+  <p>We can choose any name we want for variables. We might just as easily have chosen the name <code class="highlighter-rouge">banana</code> for the loop variable, as long as we use the same name when we invoke the variable inside the loop:</p>
+  <pre><code class="language-{.python}">word = 'oxygen'
+for banana in word:
+   print(banana)
+</code></pre>
+
+  <pre><code class="language-{.output}">o
+x
+y
+g
+e
+n
+</code></pre>
+  <p>It is a good idea to choose variable names that are meaningful, otherwise it would be more difficult to understand what the loop is doing.</p>
+</blockquote>
+
+<p>Here’s another loop that repeatedly updates a variable:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>length = 0
+for vowel in 'aeiou':
+    length = length + 1
+print('There are', length, 'vowels')
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>There are 5 vowels
+</code></pre>
+</div>
+
+<p>It’s worth tracing the execution of this little program step by step.
+Since there are five characters in <code class="highlighter-rouge">'aeiou'</code>,
+the statement on line 3 will be executed five times.
+The first time around,
+<code class="highlighter-rouge">length</code> is zero (the value assigned to it on line 1)
+and <code class="highlighter-rouge">vowel</code> is <code class="highlighter-rouge">'a'</code>.
+The statement adds 1 to the old value of <code class="highlighter-rouge">length</code>,
+producing 1,
+and updates <code class="highlighter-rouge">length</code> to refer to that new value.
+The next time around,
+<code class="highlighter-rouge">vowel</code> is <code class="highlighter-rouge">'e'</code> and <code class="highlighter-rouge">length</code> is 1,
+so <code class="highlighter-rouge">length</code> is updated to be 2.
+After three more updates,
+<code class="highlighter-rouge">length</code> is 5;
+since there is nothing left in <code class="highlighter-rouge">'aeiou'</code> for Python to process,
+the loop finishes
+and the <code class="highlighter-rouge">print</code> statement on line 4 tells us our final answer.</p>
+
+<p>Note that a loop variable is just a variable that’s being used to record progress in a loop.
+It still exists after the loop is over,
+and we can re-use variables previously defined as loop variables as well:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>letter = 'z'
+for letter in 'abc':
+    print(letter)
+print('after the loop, letter is', letter)
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>a
+b
+c
+after the loop, letter is c
+</code></pre>
+</div>
+
+<p>Note also that finding the length of a string is such a common operation
+that Python actually has a built-in function to do it called <code class="highlighter-rouge">len</code>:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>print(len('aeiou'))
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>5
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">len</code> is much faster than any function we could write ourselves,
+and much easier to read than a two-line loop;
+it will also give us the length of many other things that we haven’t met yet,
+so we should always use it when we can.</p>
+
+<blockquote class="challenge">
+  <h2 id="from-1-to-n">From 1 to N</h2>
+
+  <p>Python has a built-in function called <code class="highlighter-rouge">range</code> that creates a sequence of numbers. Range can
+accept 1-3 parameters. If one parameter is input, range creates an array of that length,
+starting at zero and incrementing by 1. If 2 parameters are input, range starts at
+the first and ends just before the second, incrementing by one. If range is passed 3 parameters,
+it starts at the first one, ends just before the second one, and increments by the third one. For
+example,
+<code class="highlighter-rouge">range(3)</code> produces the numbers 0, 1, 2, while <code class="highlighter-rouge">range(2, 5)</code> produces 2, 3, 4,
+and <code class="highlighter-rouge">range(3, 10, 3)</code> produces 3, 6, 9.
+Using <code class="highlighter-rouge">range</code>,
+write a loop that uses <code class="highlighter-rouge">range</code> to print the first 3 natural numbers:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>1
+2
+3
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>for i in range(1, 4):
+   print(i)
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="computing-powers-with-loops">Computing Powers With Loops</h2>
+
+  <p>Exponentiation is built into Python:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>print(5 ** 3)
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>125
+</code></pre>
+  </div>
+
+  <p>Write a loop that calculates the same result as <code class="highlighter-rouge">5 ** 3</code> using
+multiplication (and without exponentiation).</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>result = 1
+for i in range(0, 3):
+   result = result * 5
+print(result)
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="reverse-a-string">Reverse a String</h2>
+
+  <p>Write a loop that takes a string,
+and produces a new string with the characters in reverse order,
+so <code class="highlighter-rouge">'Newton'</code> becomes <code class="highlighter-rouge">'notweN'</code>.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>newstring = ''
+oldstring = 'Newton'
+for char in oldstring:
+   newstring = char + newstring
+print(newstring)
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="computing-the-value-of-a-polynomial">Computing the Value of a Polynomial</h2>
+
+  <p>The built-in function <code class="highlighter-rouge">enumerate</code> takes a sequence (e.g. a list) and generates a
+new sequence of the same length. Each element of the new sequence contains the index
+(0,1,2,…) and the value from the original sequence:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>for i, x in enumerate(xs):
+    # Do something with i and x
+</code></pre>
+  </div>
+
+  <p>The loop above assigns the index to <code class="highlighter-rouge">i</code> and the value to <code class="highlighter-rouge">x</code>.</p>
+
+  <p>Suppose you have encoded a polynomial as a list of coefficients in
+the following way: the first element is the constant term, the
+second element is the coefficient of the linear term, the third is the
+coefficient of the quadratic term, etc.</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>x = 5
+cc = [2, 4, 3]
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>y = cc[0] * x**0 + cc[1] * x**1 + cc[2] * x**2
+y = 97
+</code></pre>
+  </div>
+
+  <p>Write a loop using <code class="highlighter-rouge">enumerate(cc)</code> which computes the value <code class="highlighter-rouge">y</code> of any
+polynomial, given <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">cc</code>.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>y = 0
+for i, c in enumerate(cc):
+    y = y + x**i * c
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>Use <code class="highlighter-rouge">for variable in sequence</code> to process the elements of a sequence one at a time.</p>
+</li>
+    
+    <li><p>The body of a for loop must be indented.</p>
+</li>
+    
+    <li><p>Use <code class="highlighter-rouge">len(thing)</code> to determine the length of something that contains other values.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../01-numpy/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../03-lists/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      <footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="mailto:lessons@software-carpentry.org">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

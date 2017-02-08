@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2017-02-08 23:51:37 +0100">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="/swc-releases/2017.02/python-novice-inflammation">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Programming with Python: Errors and Exceptions</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="../setup/">Setup</a></li>
+        <li><a href="../reference/">Reference</a></li>
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-numpy/">Analyzing Patient Data</a></li>
+            
+            <li><a href="../02-loop/">Repeating Actions with Loops</a></li>
+            
+            <li><a href="../03-lists/">Storing Multiple Values in Lists</a></li>
+            
+            <li><a href="../04-files/">Analyzing Data from Multiple Files</a></li>
+            
+            <li><a href="../05-cond/">Making Choices</a></li>
+            
+            <li><a href="../06-func/">Creating Functions</a></li>
+            
+            <li><a href="../07-errors/">Errors and Exceptions</a></li>
+            
+            <li><a href="../08-defensive/">Defensive Programming</a></li>
+            
+            <li><a href="../09-debugging/">Debugging</a></li>
+            
+            <li><a href="../10-cmdline/">Command-Line Programs</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../license/">License</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../06-func/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+    <h3 class="maintitle"><a href="../">Programming with Python</a></h3>
+    <h1 class="maintitle">Errors and Exceptions</h1>
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../08-defensive/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 30 min
+      <br/>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How does Python report errors?</p>
+</li>
+	
+	<li><p>How can I handle errors in Python programs?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>To be able to read a traceback, and determine where the error took place and what type it is.</p>
+</li>
+	
+	<li><p>To be able to describe the types of situations in which syntax errors, indentation errors, name errors, index errors, and missing file errors occur.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>Every programmer encounters errors,
+both those who are just beginning,
+and those who have been programming for years.
+Encountering errors and exceptions can be very frustrating at times,
+and can make coding feel like a hopeless endeavour.
+However,
+understanding what the different types of errors are
+and when you are likely to encounter them can help a lot.
+Once you know <em>why</em> you get certain types of errors,
+they become much easier to fix.</p>
+
+<p>Errors in Python have a very specific form,
+called a <a href="../reference/#traceback">traceback</a>.
+Let’s examine one:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code># This code has an intentional error. You can type it directly or
+# use it for reference to understand the error message below.
+def favorite_ice_cream():
+    ice_creams = [
+        "chocolate",
+        "vanilla",
+        "strawberry"
+    ]
+    print(ice_creams[3])
+
+favorite_ice_cream()
+</code></pre>
+</div>
+
+<div class="error highlighter-rouge"><pre class="highlight"><code>---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+&lt;ipython-input-1-70bd89baa4df&gt; in &lt;module&gt;()
+      6     print(ice_creams[3])
+      7 
+----&gt; 8 favorite_ice_cream()
+
+&lt;ipython-input-1-70bd89baa4df&gt; in favorite_ice_cream()
+      4         "vanilla",                                                                    "strawberry"
+      5     ]
+----&gt; 6     print(ice_creams[3])
+      7 
+      8 favorite_ice_cream()
+
+IndexError: list index out of range
+</code></pre>
+</div>
+
+<p>This particular traceback has two levels.
+You can determine the number of levels by looking for the number of arrows on the left hand side.
+In this case:</p>
+
+<ol>
+  <li>
+    <p>The first shows code from the cell above,
+with an arrow pointing to Line 8 (which is <code class="highlighter-rouge">favorite_ice_cream()</code>).</p>
+  </li>
+  <li>
+    <p>The second shows some code in the function <code class="highlighter-rouge">favorite_ice_cream</code>,
+with an arrow pointing to Line 6 (which is <code class="highlighter-rouge">print(ice_creams[3])</code>).</p>
+  </li>
+</ol>
+
+<p>The last level is the actual place where the error occurred.
+The other level(s) show what function the program executed to get to the next level down.
+So, in this case, the program first performed a <a href="../reference/#function-call">function call</a> to the function <code class="highlighter-rouge">favorite_ice_cream</code>.
+Inside this function,
+the program encountered an error on Line 6, when it tried to run the code <code class="highlighter-rouge">print(ice_creams[3])</code>.</p>
+
+<blockquote class="callout">
+  <h2 id="long-tracebacks">Long Tracebacks</h2>
+
+  <p>Sometimes, you might see a traceback that is very long – sometimes they might even be 20 levels deep!
+This can make it seem like something horrible happened,
+but really it just means that your program called many functions before it ran into the error.
+Most of the time,
+you can just pay attention to the bottom-most level,
+which is the actual place where the error occurred.</p>
+</blockquote>
+
+<p>So what error did the program actually encounter?
+In the last line of the traceback,
+Python helpfully tells us the category or type of error (in this case, it is an <code class="highlighter-rouge">IndexError</code>)
+and a more detailed error message (in this case, it says “list index out of range”).</p>
+
+<p>If you encounter an error and don’t know what it means,
+it is still important to read the traceback closely.
+That way,
+if you fix the error,
+but encounter a new one,
+you can tell that the error changed.
+Additionally,
+sometimes just knowing <em>where</em> the error occurred is enough to fix it,
+even if you don’t entirely understand the message.</p>
+
+<p>If you do encounter an error you don’t recognize,
+try looking at the <a href="http://docs.python.org/3/library/exceptions.html">official documentation on errors</a>.
+However,
+note that you may not always be able to find the error there,
+as it is possible to create custom errors.
+In that case,
+hopefully the custom error message is informative enough to help you figure out what went wrong.</p>
+
+<h2 id="syntax-errors">Syntax Errors</h2>
+
+<p>When you forget a colon at the end of a line,
+accidentally add one space too many when indenting under an <code class="highlighter-rouge">if</code> statement,
+or forget a parenthesis,
+you will encounter a <a href="../reference/#syntax-error">syntax error</a>.
+This means that Python couldn’t figure out how to read your program.
+This is similar to forgetting punctuation in English:
+for example,
+this text is difficult to read there is no punctuation there is also no capitalization
+why is this hard because you have to figure out where each sentence ends
+you also have to figure out where each sentence begins
+to some extent it might be ambiguous if there should be a sentence break or not</p>
+
+<p>People can typically figure out what is meant by text with no punctuation,
+but people are much smarter than computers.
+If Python doesn’t know how to read the program,
+it will just give up and inform you with an error.
+For example:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def some_function()
+    msg = "hello, world!"
+    print(msg)
+     return msg
+</code></pre>
+</div>
+
+<div class="error highlighter-rouge"><pre class="highlight"><code>  File "&lt;ipython-input-3-6bb841ea1423&gt;", line 1
+    def some_function()
+                       ^
+SyntaxError: invalid syntax
+</code></pre>
+</div>
+
+<p>Here, Python tells us that there is a <code class="highlighter-rouge">SyntaxError</code> on line 1,
+and even puts a little arrow in the place where there is an issue.
+In this case the problem is that the function definition is missing a colon at the end.</p>
+
+<p>Actually, the function above has <em>two</em> issues with syntax.
+If we fix the problem with the colon,
+we see that there is <em>also</em> an <code class="highlighter-rouge">IndentationError</code>,
+which means that the lines in the function definition do not all have the same indentation:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def some_function():
+    msg = "hello, world!"
+    print(msg)
+     return msg
+</code></pre>
+</div>
+
+<div class="error highlighter-rouge"><pre class="highlight"><code>  File "&lt;ipython-input-4-ae290e7659cb&gt;", line 4
+    return msg
+    ^
+IndentationError: unexpected indent
+</code></pre>
+</div>
+
+<p>Both <code class="highlighter-rouge">SyntaxError</code> and <code class="highlighter-rouge">IndentationError</code> indicate a problem with the syntax of your program,
+but an <code class="highlighter-rouge">IndentationError</code> is more specific:
+it <em>always</em> means that there is a problem with how your code is indented.</p>
+
+<blockquote class="callout">
+  <h2 id="tabs-and-spaces">Tabs and Spaces</h2>
+
+  <p>A quick note on indentation errors:
+they can sometimes be insidious,
+especially if you are mixing spaces and tabs.
+Because they are both <a href="../reference/#whitespace">whitespace</a>,
+it is difficult to visually tell the difference.
+The Jupyter notebook actually gives us a bit of a hint,
+but not all Python editors will do that.
+In the following example,
+the first two lines are using a tab for indentation,
+while the third line uses four spaces:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>def some_function():
+    msg = "hello, world!"
+    print(msg)
+    return msg
+</code></pre>
+  </div>
+
+  <div class="error highlighter-rouge"><pre class="highlight"><code>  File "&lt;ipython-input-5-653b36fbcd41&gt;", line 4
+    return msg
+              ^
+IndentationError: unindent does not match any outer indentation level
+</code></pre>
+  </div>
+
+  <p>By default, one tab is equivalent to eight spaces,
+so the only way to mix tabs and spaces is to make it look like this.
+In general, it is better to just never use tabs and always use spaces,
+because it can make things very confusing.</p>
+</blockquote>
+
+<h2 id="variable-name-errors">Variable Name Errors</h2>
+
+<p>Another very common type of error is called a <code class="highlighter-rouge">NameError</code>,
+and occurs when you try to use a variable that does not exist.
+For example:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>print(a)
+</code></pre>
+</div>
+
+<div class="error highlighter-rouge"><pre class="highlight"><code>---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+&lt;ipython-input-7-9d7b17ad5387&gt; in &lt;module&gt;()
+----&gt; 1 print(a)
+
+NameError: name 'a' is not defined
+</code></pre>
+</div>
+
+<p>Variable name errors come with some of the most informative error messages,
+which are usually of the form “name ‘the_variable_name’ is not defined”.</p>
+
+<p>Why does this error message occur?
+That’s harder question to answer,
+because it depends on what your code is supposed to do.
+However,
+there are a few very common reasons why you might have an undefined variable.
+The first is that you meant to use a <a href="../reference/#string">string</a>, but forgot to put quotes around it:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>print(hello)
+</code></pre>
+</div>
+
+<div class="error highlighter-rouge"><pre class="highlight"><code>---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+&lt;ipython-input-8-9553ee03b645&gt; in &lt;module&gt;()
+----&gt; 1 print(hello)
+
+NameError: name 'hello' is not defined
+</code></pre>
+</div>
+
+<p>The second is that you just forgot to create the variable before using it.
+In the following example,
+<code class="highlighter-rouge">count</code> should have been defined (e.g., with <code class="highlighter-rouge">count = 0</code>) before the for loop:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>for number in range(10):
+    count = count + number
+print("The count is:", count)
+</code></pre>
+</div>
+
+<div class="error highlighter-rouge"><pre class="highlight"><code>---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+&lt;ipython-input-9-dd6a12d7ca5c&gt; in &lt;module&gt;()
+      1 for number in range(10):
+----&gt; 2     count = count + number
+      3 print("The count is:", count)
+
+NameError: name 'count' is not defined
+</code></pre>
+</div>
+
+<p>Finally, the third possibility is that you made a typo when you were writing your code.
+Let’s say we fixed the error above by adding the line <code class="highlighter-rouge">Count = 0</code> before the for loop.
+Frustratingly, this actually does not fix the error.
+Remember that variables are <a href="../reference/#case-sensitive">case-sensitive</a>,
+so the variable <code class="highlighter-rouge">count</code> is different from <code class="highlighter-rouge">Count</code>. We still get the same error, because we still have not defined <code class="highlighter-rouge">count</code>:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>Count = 0
+for number in range(10):
+    count = count + number
+print("The count is:", count)
+</code></pre>
+</div>
+
+<div class="error highlighter-rouge"><pre class="highlight"><code>---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+&lt;ipython-input-10-d77d40059aea&gt; in &lt;module&gt;()
+      1 Count = 0
+      2 for number in range(10):
+----&gt; 3     count = count + number
+      4 print("The count is:", count)
+
+NameError: name 'count' is not defined
+</code></pre>
+</div>
+
+<h2 id="index-errors">Index Errors</h2>
+
+<p>Next up are errors having to do with containers (like lists and strings) and the items within them.
+If you try to access an item in a list or a string that does not exist,
+then you will get an error.
+This makes sense:
+if you asked someone what day they would like to get coffee,
+and they answered “caturday”,
+you might be a bit annoyed.
+Python gets similarly annoyed if you try to ask it for an item that doesn’t exist:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>letters = ['a', 'b', 'c']
+print("Letter #1 is", letters[0])
+print("Letter #2 is", letters[1])
+print("Letter #3 is", letters[2])
+print("Letter #4 is", letters[3])
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Letter #1 is a
+Letter #2 is b
+Letter #3 is c
+</code></pre>
+</div>
+
+<div class="error highlighter-rouge"><pre class="highlight"><code>---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+&lt;ipython-input-11-d817f55b7d6c&gt; in &lt;module&gt;()
+      3 print("Letter #2 is", letters[1])
+      4 print("Letter #3 is", letters[2])
+----&gt; 5 print("Letter #4 is", letters[3])
+
+IndexError: list index out of range
+</code></pre>
+</div>
+
+<p>Here,
+Python is telling us that there is an <code class="highlighter-rouge">IndexError</code> in our code,
+meaning we tried to access a list index that did not exist.</p>
+
+<h2 id="file-errors">File Errors</h2>
+
+<p>The last type of error we’ll cover today
+are those associated with reading and writing files: <code class="highlighter-rouge">FileNotFoundError</code>.
+If you try to read a file that does not exist,
+you will receive a <code class="highlighter-rouge">FileNotFoundError</code> telling you so.
+If you attempt to write to a file that was opened read-only, Python 3
+returns an <code class="highlighter-rouge">UnsupportedOperationError</code>.
+More generally, problems with input and output manifest as
+<code class="highlighter-rouge">IOError</code>s or <code class="highlighter-rouge">OSError</code>s, depending on the version of Python you use.</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>file_handle = open('myfile.txt', 'r')
+</code></pre>
+</div>
+
+<div class="error highlighter-rouge"><pre class="highlight"><code>---------------------------------------------------------------------------
+FileNotFoundError                         Traceback (most recent call last)
+&lt;ipython-input-14-f6e1ac4aee96&gt; in &lt;module&gt;()
+----&gt; 1 file_handle = open('myfile.txt', 'r')
+
+FileNotFoundError: [Errno 2] No such file or directory: 'myfile.txt'
+</code></pre>
+</div>
+
+<p>One reason for receiving this error is that you specified an incorrect path to the file.
+For example,
+if I am currently in a folder called <code class="highlighter-rouge">myproject</code>,
+and I have a file in <code class="highlighter-rouge">myproject/writing/myfile.txt</code>,
+but I try to just open <code class="highlighter-rouge">myfile.txt</code>,
+this will fail.
+The correct path would be <code class="highlighter-rouge">writing/myfile.txt</code>.
+It is also possible (like with <code class="highlighter-rouge">NameError</code>) that you just made a typo.</p>
+
+<p>A related issue can occur if you use the “read” flag instead of the “write” flag.
+Python will not give you an error if you try to open a file for writing when the file does not exist.
+However,
+if you meant to open a file for reading,
+but accidentally opened it for writing,
+and then try to read from it,
+you will get an <code class="highlighter-rouge">UnsupportedOperation</code> error
+telling you that the file was not opened for reading:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>file_handle = open('myfile.txt', 'w')
+file_handle.read()
+</code></pre>
+</div>
+
+<div class="error highlighter-rouge"><pre class="highlight"><code>---------------------------------------------------------------------------
+UnsupportedOperation                      Traceback (most recent call last)
+&lt;ipython-input-15-b846479bc61f&gt; in &lt;module&gt;()
+      1 file_handle = open('myfile.txt', 'w')
+----&gt; 2 file_handle.read()
+
+UnsupportedOperation: not readable
+</code></pre>
+</div>
+
+<p>These are the most common errors with files,
+though many others exist.
+If you get an error that you’ve never seen before,
+searching the Internet for that error type
+often reveals common reasons why you might get that error.</p>
+
+<blockquote class="challenge">
+  <h2 id="reading-error-messages">Reading Error Messages</h2>
+
+  <p>Read the python code and the resulting traceback below, and answer the following questions:</p>
+
+  <ol>
+    <li>How many levels does the traceback have?</li>
+    <li>What is the function name where the error occurred?</li>
+    <li>On which line number in this function did the error occurr?</li>
+    <li>What is the type of error?</li>
+    <li>What is the error message?</li>
+  </ol>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code># This code has an intentional error. Do not type it directly;
+# use it for reference to understand the error message below.
+def print_message(day):
+    messages = {
+        "monday": "Hello, world!",
+        "tuesday": "Today is tuesday!",
+        "wednesday": "It is the middle of the week.",
+        "thursday": "Today is Donnerstag in German!",
+        "friday": "Last day of the week!",
+        "saturday": "Hooray for the weekend!",
+        "sunday": "Aw, the weekend is almost over."
+    }
+    print(messages[day])
+
+def print_friday_message():
+    print_message("Friday")
+
+print_friday_message()
+</code></pre>
+  </div>
+
+  <div class="error highlighter-rouge"><pre class="highlight"><code>---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+&lt;ipython-input-1-4be1945adbe2&gt; in &lt;module&gt;()
+     14     print_message("Friday")
+     15
+---&gt; 16 print_friday_message()
+
+&lt;ipython-input-1-4be1945adbe2&gt; in print_friday_message()
+     12
+     13 def print_friday_message():
+---&gt; 14     print_message("Friday")
+     15
+     16 print_friday_message()
+
+&lt;ipython-input-1-4be1945adbe2&gt; in print_message(day)
+      9         "sunday": "Aw, the weekend is almost over."
+     10     }
+---&gt; 11     print(messages[day])
+     12
+     13 def print_friday_message():
+
+KeyError: 'Friday'
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+    <ol>
+      <li>3 levels</li>
+      <li><code class="highlighter-rouge">print_message</code></li>
+      <li>11</li>
+      <li><code class="highlighter-rouge">KeyError</code></li>
+      <li>There isn’t really a message; you’re supposed to infer that <code class="highlighter-rouge">Friday</code> is not a key in <code class="highlighter-rouge">messages</code>.</li>
+    </ol>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="identifying-syntax-errors">Identifying Syntax Errors</h2>
+
+  <ol>
+    <li>Read the code below, and (without running it) try to identify what the errors are.</li>
+    <li>Run the code, and read the error message. Is it a <code class="highlighter-rouge">SyntaxError</code> or an <code class="highlighter-rouge">IndentationError</code>?</li>
+    <li>Fix the error.</li>
+    <li>Repeat steps 2 and 3, until you have fixed all the errors.</li>
+  </ol>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>def another_function
+  print("Syntax errors are annoying.")
+   print("But at least python tells us about them!")
+  print("So they are usually not too hard to fix.")
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+    <p><code class="highlighter-rouge">SyntaxError</code> for missing <code class="highlighter-rouge">():</code> at end of first line,
+<code class="highlighter-rouge">IndentationError</code> for mismatch between second and third lines.
+A fixed version is:</p>
+
+    <div class="python highlighter-rouge"><pre class="highlight"><code>def another_function():
+    print("Syntax errors are annoying.")
+    print("But at least python tells us about them!")
+    print("So they are usually not too hard to fix.")
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="identifying-variable-name-errors">Identifying Variable Name Errors</h2>
+
+  <ol>
+    <li>Read the code below, and (without running it) try to identify what the errors are.</li>
+    <li>Run the code, and read the error message.
+What type of <code class="highlighter-rouge">NameError</code> do you think this is?
+In other words, is it a string with no quotes,
+a misspelled variable,
+or a variable that should have been defined but was not?</li>
+    <li>Fix the error.</li>
+    <li>Repeat steps 2 and 3, until you have fixed all the errors.</li>
+  </ol>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>for number in range(10):
+    # use a if the number is a multiple of 3, otherwise use b
+    if (Number % 3) == 0:
+        message = message + a
+    else:
+        message = message + "b"
+print(message)
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+    <p>3 <code class="highlighter-rouge">NameError</code>s for <code class="highlighter-rouge">number</code> being misspelled, for <code class="highlighter-rouge">message</code> not defined, and for <code class="highlighter-rouge">a</code> not being in quotes.</p>
+
+    <p>Fixed version:</p>
+
+    <div class="python highlighter-rouge"><pre class="highlight"><code>message = ""
+for number in range(10):
+    # use a if the number is a multiple of 3, otherwise use b
+    if (number % 3) == 0:
+        message = message + "a"
+    else:
+        message = message + "b"
+print(message)
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="identifying-index-errors">Identifying Index Errors</h2>
+
+  <ol>
+    <li>Read the code below, and (without running it) try to identify what the errors are.</li>
+    <li>Run the code, and read the error message. What type of error is it?</li>
+    <li>Fix the error.</li>
+  </ol>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+print('My favorite season is ', seasons[4])
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+    <p><code class="highlighter-rouge">IndexError</code>; the last entry is <code class="highlighter-rouge">seasons[3]</code>, so <code class="highlighter-rouge">seasons[4]</code> doesn’t make sense.
+A fixed version is:</p>
+
+    <div class="python highlighter-rouge"><pre class="highlight"><code>seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+print('My favorite season is ', seasons[-1])
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>Tracebacks can look intimidating, but they give us a lot of useful information about what went wrong in our program, including where the error occurred and what type of error it was.</p>
+</li>
+    
+    <li><p>An error having to do with the ‘grammar’ or syntax of the program is called a <code class="highlighter-rouge">SyntaxError</code>. If the issue has to do with how the code is indented, then it will be called an <code class="highlighter-rouge">IndentationError</code>.</p>
+</li>
+    
+    <li><p>A <code class="highlighter-rouge">NameError</code> will occur if you use a variable that has not been defined, either because you meant to use quotes around a string, you forgot to define the variable, or you just made a typo.</p>
+</li>
+    
+    <li><p>Containers like lists and strings will generate errors if you try to access items in them that do not exist. This type of error is called an <code class="highlighter-rouge">IndexError</code>.</p>
+</li>
+    
+    <li><p>Trying to read a file that does not exist will give you an <code class="highlighter-rouge">FileNotFoundError</code>. Trying to read a file that is open for writing, or writing to a file that is open for reading, will give you an <code class="highlighter-rouge">IOError</code>.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../06-func/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../08-defensive/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      <footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="mailto:lessons@software-carpentry.org">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
