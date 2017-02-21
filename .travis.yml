@@ -20,7 +20,7 @@ rvm:
 
 script:
     - git remote -v
-    - bundle exec jekyll build
+    - bundle exec jekyll build --config _config.yml,_travis.yml
     - bundle exec htmlproofer ./_site
     - github-pages health-check
 
