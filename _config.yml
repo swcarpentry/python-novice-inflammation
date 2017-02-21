@@ -67,3 +67,6 @@ exclude:
 
 # Turn off built-in syntax highlighting.
 highlighter: false
+
+# As per https://github.com/jekyll/github-metadata
+gems: ['jekyll-github-metadata']
