@@ -5,6 +5,9 @@ language: ruby
 rvm:
 - 2.3.3
 
+install:
+    - pip install --user pyyaml
+
 script:
     - bundle exec jekyll build --config _config.yml,_travis.yml
     - bundle exec htmlproofer ./_site
