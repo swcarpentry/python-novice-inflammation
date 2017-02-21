@@ -12,12 +12,16 @@ rvm:
 # the `install` step will run `bundle install` by default.
 #script: ./script/cibuild
 
-before_script:
-    - bundle update github-pages
+#install:
+#    - gem install jekyll html-proofer github-pages
+
+#before_script:
+#    - bundle update github-pages
 
 script:
     - bundle exec jekyll build
     - bundle exec htmlproofer ./_site
+    - github-pages health-check
 
 # branch whitelist, only for GitHub Pages
 # branches:
