@@ -19,6 +19,7 @@ rvm:
 #    - bundle update github-pages
 
 script:
+    - git remote -v
     - bundle exec jekyll build
     - bundle exec htmlproofer ./_site
     - github-pages health-check
