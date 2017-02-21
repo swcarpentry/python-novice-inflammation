@@ -283,7 +283,7 @@ are their daily inflammation measurements.
 > {: .output}
 >
 > This tells us that the NumPy array's elements are
-> [floating-point numbers]({{ page.root }}/reference/#floating-point number).
+> [floating-point numbers]({{ page.root }}/reference/#floating-point-number).
 {: .callout}
 
 We can see what the array's [shape]({{ page.root }}/reference/#shape) is like this:

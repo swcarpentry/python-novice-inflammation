@@ -200,7 +200,7 @@ grid.show()
 ~~~
 {: .python}
 
-![](../fig/grid-01.png)
+![A grid of boxes, 5 columns by 3 rows](../fig/grid-01.png)
 
 Just like a NumPy array,
 an `ImageGrid` has some properties that hold information about it:
@@ -310,7 +310,7 @@ row.show()
 ~~~
 {: .python}
 
-![](../fig/grid-02.png)
+![A row of colored boxes: black, white, red, green, blue, yellow, magenta, cyan](../fig/grid-02.png)
 
 Simple color values like `(0,255,0)` are easy enough to decipher with a bit of practice,
 but what color is `(214,90,127)`?
@@ -323,7 +323,7 @@ show_color(214, 90, 127)
 ~~~
 {: .python}
 
-![](../fig/ipythonblocks_show_color_example.png)
+![A large bar of a dark pink color.](../fig/ipythonblocks_show_color_example.png)
 
 It also provides a table of standard colors:
 
@@ -340,7 +340,7 @@ c.show()
 ~~~
 {: .python}
 
-![](../fig/grid-03.png)
+![A grid of colored boxes, 2 rows by 3 columns.  Top row: salmon, lavender, hot pink.  Bottom row: fuchsia, orchid, lime green.](../fig/grid-03.png)
 
 > ## Making a Colorbar
 >

@@ -488,7 +488,7 @@ but there are several things wrong with it:
    command-line, one for the **flag** and one for the **filename**, but only
    one, the program will not throw an exception but will run. It assumes that the file
    list is empty, as `sys.argv[1]` will be considered the `action`, even if it
-   is a filename. [Silent failures]({{ page.root }}/reference/#silence-failure)  like this
+   is a filename. [Silent failures]({{ page.root }}/reference/#silent-failure)  like this
    are always hard to debug.
 
 3. The program should check if the submitted `action` is one of the three recognized flags.
