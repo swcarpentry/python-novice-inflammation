@@ -8,7 +8,13 @@ rvm:
 script:
     - bundle exec jekyll build --config _config.yml,_travis.yml
     - bundle exec htmlproofer ./_site
-    # - github-pages health-check
+    - make unittest
+
+# FIXME -- this currently fails with a number of complaints.
+#- make less-check-all
+
+# Not needed -- no custom DNS
+# - github-pages health-check
 
 env:
   global:
