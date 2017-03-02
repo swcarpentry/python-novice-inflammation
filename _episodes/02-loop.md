@@ -156,8 +156,16 @@ command to signify the end of the loop body (e.g. end for); what is indented aft
 
 
 > ## What's in a name?
-> In the example above, the loop variable was given the name `char` as a mnemonic; it is short for 'character'. 'Char' is not a keyword in Python that pulls the characters from words or strings. In fact when a similar loop is run over a list rather than a word, the output would be each member of that list printed in order, rather than the characters.
-> ~~~ 
+>
+> In the example above, the loop variable was given the name `char`
+> as a mnemonic; it is short for 'character'.
+> 'Char' is not a keyword in Python that pulls the characters
+> from words or strings.
+> In fact when a similar loop is run over a list rather than a word,
+> the output would be each member of that list printed in order,
+> rather than the characters.
+>
+> ~~~
 > list = ['oxygen','nitrogen','argon']
 > for char in list:
 >    print(char)
@@ -170,13 +178,18 @@ command to signify the end of the loop body (e.g. end for); what is indented aft
 > argon
 > ~~~
 > {: .output}
-> We can choose any name we want for variables. We might just as easily have chosen the name `banana` for the loop variable, as long as we use the same name when we invoke the variable inside the loop:
+>
+> We can choose any name we want for variables.
+> We might just as easily have chosen the name `banana`
+> for the loop variable,
+> as long as we use the same name when we invoke the variable inside the loop:
+>
 > ~~~
 > word = 'oxygen'
 > for banana in word:
 >     print(banana)
 > ~~~
-> {.python}
+> {: .python}
 >
 > ~~~
 > o
@@ -187,7 +200,10 @@ command to signify the end of the loop body (e.g. end for); what is indented aft
 > n
 > ~~~
 > {: .output}
-> It is a good idea to choose variable names that are meaningful, otherwise it would be more difficult to understand what the loop is doing.
+>
+> It is a good idea to choose variable names
+> that are meaningful so that it is easier
+> to understand what the loop is doing.
 {: .callout}
 
 Here's another loop that repeatedly updates a variable:
