@@ -319,13 +319,13 @@ so we should always use it when we can.
 > ## Modifying a Dataset With Loops
 >
 > In the previous lesson on Analyzing Patient Data we used a numpy array to hold
-> patient information. Let's consider that we would like to subtract the average
+> patient information. Let's imagine that we would like to subtract the average
 > value of the data from each element in the array:
 >
 > First, we will need to create a dataset to play with.
 > ~~~
 > import numpy as np
-> patient_data = np.array([0, 0, 1, 1, 5, 4, 3, 6, 7, 3, 2, 1, 2, 0, 0])
+> patient_data = np.array([0.0, 0.0, 1.0, 1.0, 5.0, 4.0, 3.0, 6.0, 7.0, 3.0, 2.0, 1.0, 2.0, 0.0, 0.0])
 > ~~~
 > {: .python}
 >
@@ -335,78 +335,110 @@ so we should always use it when we can.
 > ~~~
 > {: .output}
 >
-> You goal is to write a loop that will subtract the average value from each element of the
-> patient_data array. You may want to print the array contents both before and after to
-> make sure that the result is correct.
+> Now, we can pursue our goal. Your assignment is to write a loop that will subtract the average
+> value from each element of the patient_data array. You may want to print the array contents both
+> before and after to make sure that the result is correct.
 >
 > > ## Solution
+> > There are multiple ways to solve this problem and number of interesting general programming
+> > and Python specific things that the solutions to this exercise can illustrate.
+> >
+> > Here is one fairly explicit solution that follows a traditional programming paradigm.
 > > ~~~
+> > import numpy as np
+> > patient_data = np.array([0.0, 0.0, 1.0, 1.0, 5.0, 4.0, 3.0, 6.0, 7.0, 3.0, 2.0, 1.0, 2.0, 0.0, 0.0])
 > > print(patient_data)
-> > for i in range(0, patient_data.size):
-> >    patient_data[i] =  patient_data[i] - average
+> > average = np.average(patient_data)
+> > print(average)
+> > for i in range(0, np.size(patient_data)):
+> >    patient_data[i] = patient_data[i] - average
 > > print(patient_data)
 > > ~~~
 > > {: .python}
-> {: .solution}
-{: .challenge}
-
-> ## Reverse a String
->
-> Write a loop that takes a string,
-> and produces a new string with the characters in reverse order,
-> so `'Newton'` becomes `'notweN'`.
->
-> > ## Solution
+> >
+> > Here is another solution that makes use of the -= operator.
 > > ~~~
-> > newstring = ''
-> > oldstring = 'Newton'
-> > for char in oldstring:
-> >    newstring = char + newstring
-> > print(newstring)
+> > import numpy as np
+> > patient_data = np.array([0.0, 0.0, 1.0, 1.0, 5.0, 4.0, 3.0, 6.0, 7.0, 3.0, 2.0, 1.0, 2.0, 0.0, 0.0])
+> > print(patient_data)
+> > average = np.average(patient_data)
+> > print(average)
+> > for i in range(0, np.size(patient_data)):
+> >    patient_data[i] -= average
+> > print(patient_data)
 > > ~~~
 > > {: .python}
+> > By using the -= operation we only need to write the name of the variable to be modified once.
+> > This is particularly useful for any kind of modification and you may use it with other operations
+> > such as addition (+=), multiplication (*=), and division (/=).
 > {: .solution}
 {: .challenge}
 
-> ## Computing the Value of a Polynomial
+> ## List Comprehensions as a Loop Construct
+> An important concept that applies to Python (as well as many other high-level languages) is that
+> the language often offers special syntax to the programmer to carry out very common types of
+> operations. If the programmer uses the special syntax, then the operations may be carried out
+> by the computer much faster than if a traditional (usually very explicit) form were used.
+> 
+> Loops over arrays are extremely common and so Python has a special syntax called a
+> List Comprehension for performing array operations. A List Comprehension takes the following
+> form: new_list = [<operation on item> for <item> in current list]
 >
-> The built-in function `enumerate` takes a sequence (e.g. a list) and generates a
-> new sequence of the same length. Each element of the new sequence contains the index
-> (0,1,2,...) and the value from the original sequence:
+> Try to solve the same problem as the previous exercise, except this time use a List
+> Comprehension.
+> > ## Solution
+> > ~~~
+> > import numpy as np
+> > patient_data = np.array([0.0, 0.0, 1.0, 1.0, 5.0, 4.0, 3.0, 6.0, 7.0, 3.0, 2.0, 1.0, 2.0, 0.0, 0.0])
+> > print(patient_data)
+> > average = np.average(patient_data)
+> > print(average)
+> > patient_data = np.array([datum-average for datum in patient_data])
+> > print(patient_data)
+> > ~~~
+> > {: .python}
+> >
+> > It is not important that you master List Comprehensions at this time, but it is important that
+> > you are aware that they exist. The reason is that the speed with which Python is able to perform
+> > operations using a List Comprehension form of an loop is much faster
+> {: .solution}
+{: .challenge}
+
+> ## Nesting Loops
 >
+> Another extremely important concept in programming is the idea that one block of operations can
+> be embedded within another block. Loops can be embedded within loops, if-then-else statements
+> (which you will see in another lesson) can be embedded within other if-then-else statement.
+> Loops can be embedded within if-then-else statements and vice-versa, etc. This concept of
+> embedding allows fairly complicated actions to be performed. In this assignment your goal is to
+> embed a loop within a loop to deal with the scenario that instead of having one array holding
+> data for one patient, we now have an array of arrays that holds patient data for many patients.
+>
+> We can load the sample data that was used in the previous lesson:
 > ~~~
-> for i, x in enumerate(xs):
->     # Do something with i and x
+> patients_data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+> print(patients_data)
 > ~~~
 > {: .python}
 >
-> The loop above assigns the index to `i` and the value to `x`.
->
-> Suppose you have encoded a polynomial as a list of coefficients in
-> the following way: the first element is the constant term, the
-> second element is the coefficient of the linear term, the third is the
-> coefficient of the quadratic term, etc.
->
-> ~~~
-> x = 5
-> cc = [2, 4, 3]
-> ~~~
-> {: .python}
->
-> ~~~
-> y = cc[0] * x**0 + cc[1] * x**1 + cc[2] * x**2
-> y = 97
-> ~~~
-> {: .output}
->
-> Write a loop using `enumerate(cc)` which computes the value `y` of any
-> polynomial, given `x` and `cc`.
+> As you formulate your solution, keep in mind that you when using the traditional loop constructs
+> you will need to have a different index variable for each loop. Perhaps 'i' for the first loop
+> and 'j' for the second. Also, you will need to compute the average separately for each patient.
+> Thus, average is computed after the start of the outer loop but before the start of the inner
+> loop. There are two other bits of technical complication: (1) To access an element of a multi-
+> dimensional array, use the form: "array[i,j]"; and (2) To compute the number of elements in a
+> particular dimension (dim) of a multidimensional array, use the form: "np.size(array,dim)".
 >
 > > ## Solution
 > > ~~~
-> > y = 0
-> > for i, c in enumerate(cc):
-> >     y = y + x**i * c
+> > import numpy as np
+> > patients_data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
+> > print(patients_data)
+> > for i in range(0, np.size(patients_data,0)):
+> >    average = np.average(patients_data[i])
+> >    for j in range (0, np.size(patients_data,1)):
+> >       patients_data[i,j] -= average
+> > print(patients_data)
 > > ~~~
 > > {: .python}
 > {: .solution}
