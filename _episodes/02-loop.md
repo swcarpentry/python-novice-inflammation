@@ -6,7 +6,7 @@ questions:
 - "How can I do the same operations on many different values?"
 objectives:
 - "Explain what a for loop does."
-- "Correctly write for loops to repeat simple calculations."
+- "Correctly write for loops to repeat simple operations."
 - "Trace changes to a loop variable as the loop runs."
 - "Trace changes to other variables as they are updated by a for loop."
 keypoints:
@@ -22,10 +22,20 @@ and reveals some suspicious features in it, such as from `inflammation-01.csv`
 ![Analysis of inflammation-01.csv](../fig/03-loop_2_0.png)
 
 We have a dozen data sets right now, though, and more on the way.
-We want to create plots for all of our data sets with a single statement.
-To do that, we'll have to teach the computer how to repeat things.
+We may want to create plots for all of our data sets with a single statement instead of
+writing each plot command separately. Alternatively, we may want to process each dataset
+in some way and accumulate an aggregate result. As yet another idea we may want to take
+a single representative dataset and systematically perturb or modify it in some way so as
+to produce child datasets.
 
-An example task that we might want to repeat is printing each character in a
+To do any of those specific cases or any other alternative scenario where repetitive but
+systematic work is required, we'll have to teach the computer how to repeat things.
+
+Let's first look at a fairly abstract scenario where we can disregard any complexities
+associated with a specific domain of application. Later we will apply the loop construct
+to a series of specific domain-relevant scenarios to help make the idea concrete.
+
+Therefore, the example task that we will consider is the goal of printing each character in a
 word on a line of its own.
 
 ~~~
@@ -306,29 +316,35 @@ so we should always use it when we can.
 > {: .solution}
 {: .challenge}
 
-> ## Computing Powers With Loops
+> ## Modifying a Dataset With Loops
 >
-> Exponentiation is built into Python:
+> In the previous lesson on Analyzing Patient Data we used a numpy array to hold
+> patient information. Let's consider that we would like to subtract the average
+> value of the data from each element in the array:
 >
+> First, we will need to create a dataset to play with.
 > ~~~
-> print(5 ** 3)
+> import numpy as np
+> patient_data = np.array([0, 0, 1, 1, 5, 4, 3, 6, 7, 3, 2, 1, 2, 0, 0])
 > ~~~
 > {: .python}
 >
+> Then, we will need to compute the average value.
 > ~~~
-> 125
+> average = np.average(patient_data)
 > ~~~
 > {: .output}
 >
-> Write a loop that calculates the same result as `5 ** 3` using
-> multiplication (and without exponentiation).
+> You goal is to write a loop that will subtract the average value from each element of the
+> patient_data array. You may want to print the array contents both before and after to
+> make sure that the result is correct.
 >
 > > ## Solution
 > > ~~~
-> > result = 1
-> > for i in range(0, 3):
-> >    result = result * 5
-> > print(result)
+> > print(patient_data)
+> > for i in range(0, patient_data.size):
+> >    patient_data[i] =  patient_data[i] - average
+> > print(patient_data)
 > > ~~~
 > > {: .python}
 > {: .solution}
