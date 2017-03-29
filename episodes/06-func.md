@@ -43,11 +43,11 @@ We'd like a way to package our code so that it is easier to reuse,
 and Python provides for this by letting us define things called 'functions' ---
 a shorthand way of re-executing longer pieces of code.
 
-Let's start by defining a function `fahr_to_kelvin` that converts temperatures from Fahrenheit to Kelvin:
+Let's start by defining a function `fahr_to_celsius` that converts temperatures from Fahrenheit to Celsius:
 
 ~~~
-def fahr_to_kelvin(temp):
-    return ((temp - 32) * (5/9)) + 273.15
+def fahr_to_celsius(temp):
+    return ((temp - 32) * (5/9))
 ~~~
 {: .language-python}
 
@@ -57,10 +57,10 @@ def fahr_to_kelvin(temp):
 regenerate the above figure --->
 
 The function definition opens with the keyword `def` followed by the
-name of the function and a parenthesized list of parameter names. The
+name of the function (`fahr_to_celsius`) and a parenthesized list of parameter names (`temp`). The
 [body]({{ page.root }}/reference/#function-body) of the function --- the
 statements that are executed when it runs --- is indented below the
-definition line.
+definition line.  The body concludes with a `return` keyword followed by the return value.
 
 When we call the function,
 the values we pass to it are assigned to those variables
@@ -71,21 +71,21 @@ we use a [return statement]({{ page.root }}/reference/#return-statement) to send
 Let's try running our function.
 
 ~~~
-fahr_to_kelvin(32)
+fahr_to_celsius(32)
 ~~~
 
 This command should call our function, using "32" as the input and return the function value.
 
 In fact, calling our own function is no different from calling any other function:
 ~~~
-print('freezing point of water:', fahr_to_kelvin(32))
-print('boiling point of water:', fahr_to_kelvin(212))
+print('freezing point of water:', fahr_to_celsius(32), 'C')
+print('boiling point of water:', fahr_to_celsius(212), 'C')
 ~~~
 {: .language-python}
 
 ~~~
-freezing point of water: 273.15
-boiling point of water: 373.15
+freezing point of water: 0.0 C
+boiling point of water: 100.0 C
 ~~~
 {: .output}
 
@@ -186,40 +186,40 @@ and we have access to the value that we returned.
 
 ## Composing Functions
 
-Now that we've seen how to turn Fahrenheit into Kelvin,
-it's easy to turn Kelvin into Celsius:
+Now that we've seen how to turn Fahrenheit into Celsius,
+we can also write the function to turn Celsius into Kelvin:
 
 ~~~
-def kelvin_to_celsius(temp_k):
-    return temp_k - 273.15
+def celsius_to_kelvin(temp_c):
+    return temp_c + 273.15
 
-print('absolute zero in Celsius:', kelvin_to_celsius(0.0))
+print('freezing point of water in Kelvin:', celsius_to_kelvin(0.))
 ~~~
 {: .language-python}
 
 ~~~
-absolute zero in Celsius: -273.15
+freezing point of water in Kelvin: 273.15
 ~~~
 {: .output}
 
-What about converting Fahrenheit to Celsius?
+What about converting Fahrenheit to Kelvin?
 We could write out the formula,
 but we don't need to.
 Instead,
 we can [compose]({{ page.root }}/reference/#compose) the two functions we have already created:
 
 ~~~
-def fahr_to_celsius(temp_f):
-    temp_k = fahr_to_kelvin(temp_f)
-    result = kelvin_to_celsius(temp_k)
-    return result
+def fahr_to_kelvin(temp_f):
+    temp_c = fahr_to_celsius(temp_f)
+    temp_k = celsius_to_kelvin(temp_c)
+    return temp_k
 
-print('freezing point of water in Celsius:', fahr_to_celsius(32.0))
+print('boiling point of water in Kelvin:', fahr_to_kelvin(212.0))
 ~~~
 {: .language-python}
 
 ~~~
-freezing point of water in Celsius: 0.0
+boiling point of water in Kelvin: 373.15
 ~~~
 {: .output}
 
