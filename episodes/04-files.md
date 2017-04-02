@@ -182,6 +182,6 @@ composite_data = numpy.zeros((60,40))
 > >
 > > matplotlib.pyplot.show()
 > > ~~~
-> > {:.python}
-> {:.solution}
-{:.challenge}
+> > {: .python}
+>{: .solution}
+{: .challenge}
