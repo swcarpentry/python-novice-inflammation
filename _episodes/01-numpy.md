@@ -696,7 +696,7 @@ inflammation rises and falls over a 40-day period.
 > in the notebook when `show()` is called:
 >
 > ~~~
-> % matplotlib inline
+> %matplotlib inline
 > ~~~
 > {: .python}
 >
