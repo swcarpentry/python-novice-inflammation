@@ -246,7 +246,7 @@ not more.
 >
 > You are assisting a researcher with Python code that computes the
 > Body Mass Index (BMI) of patients.  The researcher is concerned because
-> all patients seemingly have identical BMIs, despite having different
+> all patients seemingly have unusual and identical BMIs, despite having different
 > physiques.  BMI is calculated as **weight in kilograms**
 > divided by the the square of **height in metres**.
 >
@@ -261,16 +261,16 @@ not more.
 >     return weight / (height ** 2)
 >
 > for patient in patients:
->     height, weight = patients[0]
+>     weight, height = patients[0]
 >     bmi = calculate_bmi(height, weight)
 >     print("Patient's BMI is: %f" % bmi)
 > ~~~
 > {: .python}
 >
 > ~~~
-> Patient's BMI is: 21.604938
-> Patient's BMI is: 21.604938
-> Patient's BMI is: 21.604938
+> Patient's BMI is: 0.000367
+> Patient's BMI is: 0.000367
+> Patient's BMI is: 0.000367
 > ~~~
 > {: .output}
 >
@@ -279,6 +279,6 @@ not more.
 > >   set as the first patient's data during each iteration of the loop.
 > >
 > > * The height/weight variables are reversed in the function call to
-> >   `calculate_bmi(...)`
+> >   `calculate_bmi(...)`, the correct BMIs are 21.604938, 22.160665 and 51.903114.
 > {: .solution}
 {: .challenge}
