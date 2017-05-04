@@ -166,8 +166,8 @@ command to signify the end of the loop body (e.g. end for); what is indented aft
 > rather than the characters.
 >
 > ~~~
-> list = ['oxygen','nitrogen','argon']
-> for char in list:
+> elements = ['oxygen', 'nitrogen', 'argon']
+> for char in elements:
 >    print(char)
 > ~~~
 > {: .python}
@@ -336,7 +336,8 @@ so we should always use it when we can.
 
 > ## Reverse a String
 >
-> Write a loop that takes a string,
+> Knowing that two strings can be concatenated using the `+` operator,
+> write a loop that takes a string
 > and produces a new string with the characters in reverse order,
 > so `'Newton'` becomes `'notweN'`.
 >
@@ -355,8 +356,8 @@ so we should always use it when we can.
 > ## Computing the Value of a Polynomial
 >
 > The built-in function `enumerate` takes a sequence (e.g. a list) and generates a
-> new sequence of the same length. Each element of the new sequence contains the index
-> (0,1,2,...) and the value from the original sequence:
+> new sequence of the same length. Each element of the new sequence is a pair composed of the index
+> (0, 1, 2,...) and the value from the original sequence:
 >
 > ~~~
 > for i, x in enumerate(xs):
