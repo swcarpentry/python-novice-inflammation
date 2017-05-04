@@ -356,7 +356,7 @@ so we should always use it when we can.
 > ## Computing the Value of a Polynomial
 >
 > The built-in function `enumerate` takes a sequence (e.g. a list) and generates a
-> new sequence of the same length. Each element of the new sequence is a pair composed by the index
+> new sequence of the same length. Each element of the new sequence is a pair composed of the index
 > (0, 1, 2,...) and the value from the original sequence:
 >
 > ~~~
