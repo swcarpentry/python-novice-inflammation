@@ -531,11 +531,13 @@ This violates another important rule of programming:
 > >
 > > def range_overlap(ranges):
 > >     '''Return common overlap among a set of [low, high] ranges.'''
+> >     if not ranges:
+> >         return None
 > >     lowest, highest = ranges[0]
 > >     for (low, high) in ranges[1:]:
 > >         lowest = max(lowest, low)
 > >         highest = min(highest, high)
-> >     if lowest >= highest: # no overlap
+> >     if lowest >= highest:  # no overlap
 > >         return None
 > >     else:
 > >         return (lowest, highest)
