@@ -220,7 +220,7 @@ If we make a list and (attempt to) copy it then modify in place, we can cause al
 ~~~
 odds = [1, 3, 5, 7]
 primes = odds
-primes += [2]
+primes.append(2)
 print('primes:', primes)
 print('odds:', odds)
 ~~~
@@ -238,7 +238,7 @@ If all we want to do is copy a (simple) list, we can use the `list` function, so
 ~~~
 odds = [1, 3, 5, 7]
 primes = list(odds)
-primes += [2]
+primes.append(2)
 print('primes:', primes)
 print('odds:', odds)
 ~~~
