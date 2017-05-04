@@ -166,8 +166,8 @@ command to signify the end of the loop body (e.g. end for); what is indented aft
 > rather than the characters.
 >
 > ~~~
-> list = ['oxygen','nitrogen','argon']
-> for char in list:
+> elements = ['oxygen', 'nitrogen', 'argon']
+> for char in elements:
 >    print(char)
 > ~~~
 > {: .python}
