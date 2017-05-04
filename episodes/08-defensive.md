@@ -532,6 +532,7 @@ This violates another important rule of programming:
 > > def range_overlap(ranges):
 > >     '''Return common overlap among a set of [low, high] ranges.'''
 > >     if not ranges:
+> >         # ranges is None or an empty list
 > >         return None
 > >     lowest, highest = ranges[0]
 > >     for (low, high) in ranges[1:]:
