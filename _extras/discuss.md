@@ -33,7 +33,7 @@ final = fahr_to_celsius(original)
 
 The diagram below shows what memory looks like after the first line has been executed:
 
-![Call Stack (Initial State)](../fig/python-call-stack-01.svg)
+![Call Stack (Initial State)](../fig/python-call-stack-01.png)
 
 When we call `fahr_to_celsius`,
 Python *doesn't* create the variable `temp` right away.
@@ -43,12 +43,12 @@ to keep track of the variables defined by `fahr_to_kelvin`.
 Initially,
 this stack frame only holds the value of `temp`:
 
-![Call Stack Immediately After First Function Call](../fig/python-call-stack-02.svg)
+![Call Stack Immediately After First Function Call](../fig/python-call-stack-02.png)
 
 When we call `fahr_to_kelvin` inside `fahr_to_celsius`,
 Python creates another stack frame to hold `fahr_to_kelvin`'s variables:
 
-![Call Stack During First Nested Function Call](../fig/python-call-stack-03.svg)
+![Call Stack During First Nested Function Call](../fig/python-call-stack-03.png)
 
 It does this because there are now two variables in play called `temp`:
 the parameter to `fahr_to_celsius`,
@@ -61,18 +61,18 @@ When the call to `fahr_to_kelvin` returns a value,
 Python throws away `fahr_to_kelvin`'s stack frame
 and creates a new variable in the stack frame for `fahr_to_celsius` to hold the temperature in Kelvin:
 
-![Call Stack After Return From First Nested Function Call](../fig/python-call-stack-04.svg)
+![Call Stack After Return From First Nested Function Call](../fig/python-call-stack-04.png)
 
 It then calls `kelvin_to_celsius`,
 which means it creates a stack frame to hold that function's variables:
 
-![Call Stack During Call to Second Nested Function](../fig/python-call-stack-05.svg)
+![Call Stack During Call to Second Nested Function](../fig/python-call-stack-05.png)
 
 Once again,
 Python throws away that stack frame when `kelvin_to_celsius` is done
 and creates the variable `result` in the stack frame for `fahr_to_celsius`:
 
-![Call Stack After Second Nested Function Returns](../fig/python-call-stack-06.svg)
+![Call Stack After Second Nested Function Returns](../fig/python-call-stack-06.png)
 
 Finally,
 when `fahr_to_celsius` is done,
@@ -80,7 +80,7 @@ Python throws away *its* stack frame
 and puts its result in a new variable called `final`
 that lives in the stack frame we started with:
 
-![Call Stack After All Functions Have Finished](../fig/python-call-stack-07.svg)
+![Call Stack After All Functions Have Finished](../fig/python-call-stack-07.png)
 
 This final stack frame is always there;
 it holds the variables we defined outside the functions in our code.
