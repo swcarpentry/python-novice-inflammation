@@ -98,7 +98,7 @@ when there's nothing interesting after the decimal point.
 Our call to `numpy.loadtxt` read our file,
 but didn't save the data in memory.
 To do that,
-we need to [assign]({{ page.root }}/reference/#assignment) the array to a [variable]({{ page.root }}/reference/#variable).
+we need to [assign]({{ page.root }}/reference/#assign) the array to a [variable]({{ page.root }}/reference/#variable).
 A variable is just a name for a value,
 such as `x`, `current_temperature`, or `subject_id`.
 Python's variables must begin with a letter and are [case sensitive]({{ page.root }}/reference/#case-sensitive).
@@ -284,7 +284,7 @@ are their daily inflammation measurements.
 > {: .output}
 >
 > This tells us that the NumPy array's elements are
-> [floating-point numbers]({{ page.root }}/reference/#floating-point number).
+> [floating-point numbers]({{ page.root }}/reference/#floating-point-number).
 {: .callout}
 
 We can see what the array's [shape]({{ page.root }}/reference/#shape) is like this:

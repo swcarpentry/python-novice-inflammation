@@ -101,6 +101,9 @@ function
 :   A group of instructions (i.e., lines of code) that transform
     some input [arguments](#argument) to some output.
 
+function body
+:   The lines of code that will be executed when a function is called.
+
 function call
 :   A use of a function in another piece of software.
 
@@ -147,6 +150,9 @@ method
 :   A function which is tied to a particular [object](#object).
     Each of an object's methods typically implements one of the things it can do,
     or one of the questions it can answer.
+
+mutable
+:   An object whose value can be changed (or "mutated").  For example, the elements of a `list` can be changed, so a `list` is mutable; the elements of a `tuple` cannot be changed, so a `tuple` is immutable.
 
 object
 :   A collection of conceptually related variables ([members](#member)) and
@@ -243,13 +249,20 @@ tuple
 
 type
 :   The classification of something in a program (for example, the contents of a variable)
-    as a kind of number (e.g. [floating-point](#float), [integer](#integer)), [string](#string), or something else.
+    as a kind of number (e.g. [floating-point](#floating-point-number), [integer](#integer)), [string](#string), or something else.
 
 type of error
 :   Indicates the nature of an error in a program. For example, in Python,
     an `IOError` to problems with file input/output.
     See also: [syntax error](#syntax-error).
 
+variable
+:   A name that points to a value or object.
+
 while loop
 :   A loop that keeps executing as long as some condition is true.
     See also: [for loop](#for-loop).
+
+whitespace
+:   Spaces and tabs.
+
