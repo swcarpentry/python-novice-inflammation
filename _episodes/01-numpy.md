@@ -167,7 +167,8 @@ import numpy
 
 Importing a library is like getting a piece of lab equipment out of a storage locker and setting it up on the bench.
 Libraries provide additional functionality to the basic Python package,
-much like a new piece of equipment adds functionality to a lab space.
+much like a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too many libraries
+can sometimes complicate and slow down your programs - so we only import what we need for each program. 
 Once you've imported the library,
 we can ask the library to read our data file for us:
 
@@ -331,7 +332,7 @@ middle value in data: 13.0
 
 The expression `data[30, 20]` may not surprise you,
 but `data[0, 0]` might.
-Programming languages like Fortran and MATLAB start counting at 1,
+Programming languages like Fortran, MATLAB and R start counting at 1,
 because that's what human beings have done for thousands of years.
 Languages in the C family (including C++, Java, Perl, and Python) count from 0
 because it represents an offset from the first value in the array (the second
@@ -693,7 +694,7 @@ inflammation rises and falls over a 40-day period.
 > in the notebook when `show()` is called:
 >
 > ~~~
-> % matplotlib inline
+> %matplotlib inline
 > ~~~
 > {: .python}
 >
@@ -1130,5 +1131,84 @@ the graphs will actually be squeezed together more closely.)
 > >  [7 9]]
 > > ~~~
 > > {: .output}
+> {: .solution}
+{: .challenge}
+
+>## Change In Inflamation
+>
+>This patient data is _longitudinal_ in the sense that each row represents a
+>series of observations relating to one individual. This means that change
+>inflamation is a meaningful concept.
+>
+>The `numpy.diff()` function takes a NumPy array and returns the 
+>difference along a specified axis.
+>
+>Which axis would it make sense to use this function along?
+>
+> > ## Solution
+> > Since the row axis (0) is patients, it does not make sense to get the
+> > difference between two arbitrary patients. The column axis (1) is in
+> > days, so the differnce is the change in inflamation -- a meaningful
+> > concept.
+> >
+> > ~~~
+> > numpy.diff(data, axis=1)
+> > ~~~
+> > {: .python}
+> {: .solution}
+>
+>If the shape of an individual data file is `(60, 40)` (60 rows and 40
+>columns), what would the shape of the array be after you run the `diff()`
+>function and why?
+>
+> > ## Solution
+> > The shape will be `(60, 39)` because there is one fewer difference between
+> > columns than there are columns in the data.
+> {: .solution}
+>
+>How would you find the largest change in inflammation for each patient? Does
+>it matter if the change in inflammation is an increase or a decrease?
+>
+> > ## Solution
+> > By using the `numpy.max()` function after you apply the `numpy.diff()`
+> > function, you will get the largest difference between days.
+> >
+> > ~~~
+> > numpy.max(numpy.diff(data, axis=1), axis=1)
+> > ~~~
+> > {: .python}
+> >
+> > ~~~
+> > array([  7.,  12.,  11.,  10.,  11.,  13.,  10.,   8.,  10.,  10.,   7.,
+> >          7.,  13.,   7.,  10.,  10.,   8.,  10.,   9.,  10.,  13.,   7.,
+> >         12.,   9.,  12.,  11.,  10.,  10.,   7.,  10.,  11.,  10.,   8.,
+> >         11.,  12.,  10.,   9.,  10.,  13.,  10.,   7.,   7.,  10.,  13.,
+> >         12.,   8.,   8.,  10.,  10.,   9.,   8.,  13.,  10.,   7.,  10.,
+> >          8.,  12.,  10.,   7.,  12.])
+> > ~~~
+> > {: .python}
+> >
+> > If a difference is a *decrease*, then the difference will be negative. If
+> > you are interested in the **magnitude** of the change and not just the
+> > direction, the `numpy.absolute()` function will provide that.
+> >
+> > Notice the difference if you get the largest _absolute_ difference
+> > between readings.
+> >
+> > ~~~
+> > numpy.max(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
+> > ~~~
+> > {: .python}
+> >
+> > ~~~
+> > array([ 12.,  14.,  11.,  13.,  11.,  13.,  10.,  12.,  10.,  10.,  10.,
+> >         12.,  13.,  10.,  11.,  10.,  12.,  13.,   9.,  10.,  13.,   9.,
+> >         12.,   9.,  12.,  11.,  10.,  13.,   9.,  13.,  11.,  11.,   8.,
+> >         11.,  12.,  13.,   9.,  10.,  13.,  11.,  11.,  13.,  11.,  13.,
+> >         13.,  10.,   9.,  10.,  10.,   9.,   9.,  13.,  10.,   9.,  10.,
+> >         11.,  13.,  10.,  10.,  12.])
+> > ~~~
+> > {: .python}
+> >
 > {: .solution}
 {: .challenge}

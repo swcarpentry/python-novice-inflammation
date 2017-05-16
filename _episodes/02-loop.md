@@ -155,36 +155,56 @@ and we must indent anything we want to run inside the loop. Unlike many other la
 command to signify the end of the loop body (e.g. end for); what is indented after the for statement belongs to the loop.
 
 
-> ## What's in a name? {.callout}
-> In the example above, the loop variable was given the name `char` as a mnemonic; it is short for 'character'. 'Char' is not a keyword in Python that pulls the characters from words or strings. In fact when a similar loop is run over a list rather than a word, the output would be each member of that list printed in order, rather than the characters.
->~~~ {.python}
->list = ['oxygen','nitrogen','argon']
->for char in list:
+> ## What's in a name?
+>
+> In the example above, the loop variable was given the name `char`
+> as a mnemonic; it is short for 'character'.
+> 'Char' is not a keyword in Python that pulls the characters
+> from words or strings.
+> In fact when a similar loop is run over a list rather than a word,
+> the output would be each member of that list printed in order,
+> rather than the characters.
+>
+> ~~~
+> elements = ['oxygen', 'nitrogen', 'argon']
+> for char in elements:
 >    print(char)
->~~~
+> ~~~
+> {: .python}
 >
->~~~ {.output}
->oxygen
->nitrogen
->argon
->~~~
-> We can choose any name we want for variables. We might just as easily have chosen the name `banana` for the loop variable, as long as we use the same name when we invoke the variable inside the loop:
->~~~ {.python}
->word = 'oxygen'
->for banana in word:
->    print(banana)
->~~~
+> ~~~
+> oxygen
+> nitrogen
+> argon
+> ~~~
+> {: .output}
 >
->~~~ {.output}
->o
->x
->y
->g
->e
->n
->~~~
-> It is a good idea to choose variable names that are meaningful, otherwise it would be more difficult to understand what the loop is doing.
-
+> We can choose any name we want for variables.
+> We might just as easily have chosen the name `banana`
+> for the loop variable,
+> as long as we use the same name when we invoke the variable inside the loop:
+>
+> ~~~
+> word = 'oxygen'
+> for banana in word:
+>     print(banana)
+> ~~~
+> {: .python}
+>
+> ~~~
+> o
+> x
+> y
+> g
+> e
+> n
+> ~~~
+> {: .output}
+>
+> It is a good idea to choose variable names
+> that are meaningful so that it is easier
+> to understand what the loop is doing.
+{: .callout}
 
 Here's another loop that repeatedly updates a variable:
 
@@ -316,7 +336,8 @@ so we should always use it when we can.
 
 > ## Reverse a String
 >
-> Write a loop that takes a string,
+> Knowing that two strings can be concatenated using the `+` operator,
+> write a loop that takes a string
 > and produces a new string with the characters in reverse order,
 > so `'Newton'` becomes `'notweN'`.
 >
@@ -335,8 +356,8 @@ so we should always use it when we can.
 > ## Computing the Value of a Polynomial
 >
 > The built-in function `enumerate` takes a sequence (e.g. a list) and generates a
-> new sequence of the same length. Each element of the new sequence contains the index
-> (0,1,2,...) and the value from the original sequence:
+> new sequence of the same length. Each element of the new sequence is a pair composed of the index
+> (0, 1, 2,...) and the value from the original sequence:
 >
 > ~~~
 > for i, x in enumerate(xs):

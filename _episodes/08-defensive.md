@@ -131,7 +131,7 @@ def normalize_rectangle(rect):
 ~~~
 {: .python}
 
-The preconditions on lines 2, 4, and 5 catch invalid inputs:
+The preconditions on lines 3, 5, and 6 catch invalid inputs:
 
 ~~~
 print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
@@ -177,7 +177,7 @@ AssertionError: Invalid X coordinates
 ~~~
 {: .error}
 
-The post-conditions help us catch bugs by telling us when our calculations cannot have been correct.
+The post-conditions on lines 17 and 18 help us catch bugs by telling us when our calculations cannot have been correct.
 For example,
 if we normalize a rectangle that is taller than it is wide everything seems OK:
 
@@ -217,7 +217,7 @@ AssertionError: Calculated upper Y coordinate invalid
 {: .error}
 
 Re-reading our function,
-we realize that line 10 should divide `dy` by `dx` rather than `dx` by `dy`.
+we realize that line 11 should divide `dy` by `dx` rather than `dx` by `dy`.
 (You can display line numbers by typing Ctrl-M, then L.)
 If we had left out the assertion at the end of the function,
 we would have created and returned something that had the right shape as a valid answer,
@@ -531,11 +531,14 @@ This violates another important rule of programming:
 > >
 > > def range_overlap(ranges):
 > >     '''Return common overlap among a set of [low, high] ranges.'''
+> >     if not ranges:
+> >         # ranges is None or an empty list
+> >         return None
 > >     lowest, highest = ranges[0]
 > >     for (low, high) in ranges[1:]:
 > >         lowest = max(lowest, low)
 > >         highest = min(highest, high)
-> >     if lowest >= highest: # no overlap
+> >     if lowest >= highest:  # no overlap
 > >         return None
 > >     else:
 > >         return (lowest, highest)

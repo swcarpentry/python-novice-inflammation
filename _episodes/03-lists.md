@@ -115,8 +115,36 @@ does not.
 > modified copy and leaves the original unchanged.
 >
 > Be careful when modifying data in place.  If two variables refer to the same list, and you modify the list
-> value, it will change for both variables! If you want variables with mutable values to be independent, you
+> value, it will change for both variables!
+>
+> ~~~
+> salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
+> mySalsa = salsa        # <-- mySalsa and salsa point to the *same* list data in memory
+> salsa[0] = 'hot peppers'
+> print('Ingredients in my salsa:', mySalsa)
+> ~~~
+> {: .python}
+>
+> ~~~
+> Ingredients in my salsa: ['hot peppers', 'onions', 'cilantro', 'tomatoes']
+> ~~~
+> {: .output}
+>
+> If you want variables with mutable values to be independent, you
 > must make a copy of the value when you assign it.
+>
+> ~~~
+> salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
+> mySalsa = list(salsa)        # <-- makes a *copy* of the list
+> salsa[0] = 'hot peppers'
+> print('Ingredients in my salsa:', mySalsa)
+> ~~~
+> {: .python}
+>
+> ~~~
+> Ingredients in my salsa: ['peppers', 'onions', 'cilantro', 'tomatoes']
+> ~~~
+> {: .output}
 >
 > Because of pitfalls like this, code which modifies data in place can be more difficult to understand. However,
 > it is often far more efficient to modify a large data structure in place than to create a modified copy for
@@ -220,7 +248,7 @@ If we make a list and (attempt to) copy it then modify in place, we can cause al
 ~~~
 odds = [1, 3, 5, 7]
 primes = odds
-primes += [2]
+primes.append(2)
 print('primes:', primes)
 print('odds:', odds)
 ~~~
@@ -238,7 +266,7 @@ If all we want to do is copy a (simple) list, we can use the `list` function, so
 ~~~
 odds = [1, 3, 5, 7]
 primes = list(odds)
-primes += [2]
+primes.append(2)
 print('primes:', primes)
 print('odds:', odds)
 ~~~
@@ -468,7 +496,7 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > Compare it to:
 >
 > ~~~
-> left, right = right, left
+> left, right = [right, left]
 > ~~~
 > {: .python}
 >
@@ -488,7 +516,7 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > > ~~~
 > > {: .output}
 > >
-> >In the first case we used a temporary variable `temp` to keep the value of `left` before we overwrite it with the value of `right`. In the second case, we pack `right` and `left` into a tuple and then unpack it again into `left` and `right`.
+> >In the first case we used a temporary variable `temp` to keep the value of `left` before we overwrite it with the value of `right`. In the second case, `right` and `left` are packed into a list and then unpacked into `left` and `right`.
 > {: .solution}
 {: .challenge}
 
