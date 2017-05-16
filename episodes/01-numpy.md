@@ -335,7 +335,7 @@ middle value in data: 13.0
 
 The expression `data[30, 20]` may not surprise you,
 but `data[0, 0]` might.
-Programming languages like Fortran and MATLAB start counting at 1,
+Programming languages like Fortran, MATLAB and R start counting at 1,
 because that's what human beings have done for thousands of years.
 Languages in the C family (including C++, Java, Perl, and Python) count from 0
 because it represents an offset from the first value in the array (the second
