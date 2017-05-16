@@ -50,7 +50,8 @@ import numpy
 
 Importing a library is like getting a piece of lab equipment out of a storage locker and setting it up on the bench.
 Libraries provide additional functionality to the basic Python package,
-much like a new piece of equipment adds functionality to a lab space.
+much like a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too many libraries
+can sometimes complicate and slow down your programs - so we only import what we need for each program. 
 Once you've imported the library,
 we can ask the library to read our data file for us:
 
