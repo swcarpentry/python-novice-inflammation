@@ -834,7 +834,7 @@ readable code!
 > (Hint: If $L$ and $H$ are the lowest and highest values in the original array,
 > then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
 >
-> > ## Challenge
+> > ## Solution
 > > ~~~
 > > def rescale(input_array):
 > >     L = numpy.min(input_array)
