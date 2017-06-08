@@ -1134,11 +1134,11 @@ the graphs will actually be squeezed together more closely.)
 > {: .solution}
 {: .challenge}
 
->## Change In Inflamation
+>## Change In Inflammation
 >
 >This patient data is _longitudinal_ in the sense that each row represents a
 >series of observations relating to one individual. This means that change
->inflamation is a meaningful concept.
+>inflammation is a meaningful concept.
 >
 >The `numpy.diff()` function takes a NumPy array and returns the 
 >difference along a specified axis.
@@ -1148,7 +1148,7 @@ the graphs will actually be squeezed together more closely.)
 > > ## Solution
 > > Since the row axis (0) is patients, it does not make sense to get the
 > > difference between two arbitrary patients. The column axis (1) is in
-> > days, so the differnce is the change in inflamation -- a meaningful
+> > days, so the differnce is the change in inflammation -- a meaningful
 > > concept.
 > >
 > > ~~~
