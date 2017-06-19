@@ -140,7 +140,6 @@ The general form of a loop is:
 for element in variable:
     do things with element
 ~~~
-{: .python}
 
 Using the oxygen example above, the loop might look like this:
 
