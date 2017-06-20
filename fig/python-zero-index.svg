@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 460 74.6" style="enable-background:new 0 0 460 74.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.75;fill:#FFF200;}
+	.st1{opacity:0.5;fill:#F7941D;}
+	.st2{opacity:0.25;fill:#EC008C;}
+	.st3{fill:none;}
+	.st4{fill:#00A651;}
+	.st5{font-family:'Helvetica-Bold';}
+	.st6{font-size:12px;}
+	.st7{fill:#00ADDC;}
+	.st8{fill:#662D91;}
+	.st9{fill:#808285;}
+</style>
+<path class="st0" d="M98,70.2L98,70.2c-4.4,0-8-3.6-8-8V30.2c0-4.4,3.6-8,8-8h0c4.4,0,8,3.6,8,8v32.1C106,66.6,102.4,70.2,98,70.2z"
+	/>
+<path class="st1" d="M80.5,70.2L80.5,70.2c-4.4,0-8-3.6-8-8V30.2c0-4.4,3.6-8,8-8h0c4.4,0,8,3.6,8,8v32.1
+	C88.5,66.6,84.9,70.2,80.5,70.2z"/>
+<path class="st2" d="M62.8,70.2L62.8,70.2c-4.4,0-8-3.6-8-8V30.2c0-4.4,3.6-8,8-8h0c4.4,0,8,3.6,8,8v32.1
+	C70.8,66.6,67.2,70.2,62.8,70.2z"/>
+<rect x="53.4" y="26" class="st3" width="17.4" height="39.9"/>
+<text transform="matrix(1 0 0 1 57.754 34.6281)"><tspan x="0" y="0" class="st4 st5 st6">A</tspan><tspan x="0" y="14.4" class="st7 st5 st6">D</tspan><tspan x="-0.3" y="28.8" class="st8 st5 st6">G</tspan></text>
+<rect x="71.4" y="26" class="st3" width="17.4" height="40.7"/>
+<text transform="matrix(1 0 0 1 75.754 34.6281)"><tspan x="0" y="0" class="st4 st5 st6">B</tspan><tspan x="0.3" y="14.4" class="st7 st5 st6">E</tspan><tspan x="0" y="28.8" class="st8 st5 st6">H</tspan></text>
+<rect x="89.4" y="26" class="st3" width="17.4" height="38.6"/>
+<text transform="matrix(1 0 0 1 93.754 34.6281)"><tspan x="0" y="0" class="st4 st5 st6">C</tspan><tspan x="0.7" y="14.4" class="st7 st5 st6">F</tspan><tspan x="2.7" y="28.8" class="st8 st5 st6">I</tspan></text>
+<rect x="0" y="26" class="st3" width="53.4" height="45.7"/>
+<text transform="matrix(1 0 0 1 7.0493 34.6281)"><tspan x="0" y="0" class="st5 st6">data = [</tspan><tspan x="42.3" y="0" class="st4 st5 st6">[</tspan><tspan x="42.3" y="14.4" class="st7 st5 st6">[</tspan><tspan x="42.3" y="28.8" class="st8 st5 st6">[</tspan></text>
+<rect x="107.4" y="26" class="st3" width="17.4" height="45.7"/>
+<text transform="matrix(1 0 0 1 107.3912 34.6281)"><tspan x="0" y="0" class="st4 st5 st6">]</tspan><tspan x="0" y="14.4" class="st7 st5 st6">]</tspan><tspan x="0" y="28.8" class="st8 st5 st6">]</tspan><tspan x="4" y="28.8" class="st5 st6">]</tspan></text>
+<g>
+	<rect x="209.2" y="25.8" class="st2" width="12.1" height="11"/>
+	<rect x="209.4" y="40.2" class="st1" width="10.9" height="11"/>
+	<rect x="209.4" y="54.7" class="st0" width="11.4" height="11"/>
+	<circle class="st2" cx="243.8" cy="31.5" r="6.5"/>
+	<circle class="st1" cx="243.9" cy="45.9" r="6.5"/>
+	<circle class="st0" cx="244.1" cy="60.4" r="6.5"/>
+	<rect x="168.5" y="25.9" class="st3" width="68.8" height="45.7"/>
+	<text transform="matrix(1 0 0 1 168.5255 34.5443)"><tspan x="0" y="0" class="st5 st6">data</tspan><tspan x="24.7" y="0" class="st4 st5 st6">[0]</tspan><tspan x="39.3" y="0" class="st5 st6">[0]</tspan><tspan x="54" y="0" class="st5 st6"> =  </tspan><tspan x="0" y="14.4" class="st5 st6">data</tspan><tspan x="24.7" y="14.4" class="st4 st5 st6">[0]</tspan><tspan x="39.3" y="14.4" class="st5 st6">[1] =</tspan><tspan x="64.3" y="14.4" class="st5 st6"> </tspan><tspan x="0" y="28.8" class="st5 st6">data</tspan><tspan x="24.7" y="28.8" class="st4 st5 st6">[0]</tspan><tspan x="39.3" y="28.8" class="st5 st6">[2] =</tspan><tspan x="64.3" y="28.8" class="st5 st6"> </tspan></text>
+	<rect x="235.1" y="26.8" class="st3" width="17.4" height="45.7"/>
+	<text transform="matrix(1 0 0 1 239.4753 35.4697)"><tspan x="0" y="0" class="st4 st5 st6">A</tspan><tspan x="0" y="14.7" class="st4 st5 st6">B</tspan><tspan x="0" y="29.4" class="st4 st5 st6">C</tspan></text>
+</g>
+<rect x="308.8" y="25.5" class="st2" width="12.1" height="11"/>
+<rect x="309.1" y="39.9" class="st1" width="10.9" height="11"/>
+<rect x="309.1" y="54.3" class="st0" width="11.4" height="11"/>
+<circle class="st2" cx="343.5" cy="31.1" r="6.5"/>
+<circle class="st1" cx="343.6" cy="45.5" r="6.5"/>
+<circle class="st0" cx="343.8" cy="60.1" r="6.5"/>
+<rect x="268.2" y="25.6" class="st3" width="68.8" height="45.7"/>
+<text transform="matrix(1 0 0 1 268.1992 34.1801)"><tspan x="0" y="0" class="st5 st6">data</tspan><tspan x="24.7" y="0" class="st7 st5 st6">[1]</tspan><tspan x="39.3" y="0" class="st5 st6">[0] </tspan><tspan x="57.3" y="0" class="st5 st6">=  </tspan><tspan x="0" y="14.4" class="st5 st6">data</tspan><tspan x="24.7" y="14.4" class="st7 st5 st6">[1]</tspan><tspan x="39.3" y="14.4" class="st5 st6">[1]</tspan><tspan x="54" y="14.4" class="st5 st6"> = </tspan><tspan x="0" y="28.8" class="st5 st6">data</tspan><tspan x="24.7" y="28.8" class="st7 st5 st6">[1]</tspan><tspan x="39.3" y="28.8" class="st5 st6">[2] </tspan><tspan x="57.3" y="28.8" class="st5 st6">= </tspan></text>
+<rect x="334.8" y="26.5" class="st3" width="17.4" height="45.7"/>
+<text transform="matrix(1 0 0 1 339.149 35.1055)"><tspan x="0" y="0" class="st7 st5 st6">D</tspan><tspan x="0.3" y="14.7" class="st7 st5 st6">E</tspan><tspan x="0.7" y="29.4" class="st7 st5 st6">F</tspan></text>
+<rect x="408.5" y="25.1" class="st2" width="12.1" height="11"/>
+<rect x="408.7" y="39.5" class="st1" width="10.9" height="11"/>
+<rect x="408.7" y="53.9" class="st0" width="11.4" height="11"/>
+<circle class="st2" cx="443.1" cy="30.8" r="6.5"/>
+<circle class="st1" cx="443.2" cy="45.1" r="6.5"/>
+<circle class="st0" cx="443.4" cy="59.7" r="6.5"/>
+<rect x="367.8" y="25.2" class="st3" width="68.8" height="45.7"/>
+<text transform="matrix(1 0 0 1 367.8209 33.821)"><tspan x="0" y="0" class="st5 st6">data</tspan><tspan x="24.7" y="0" class="st8 st5 st6">[2]</tspan><tspan x="39.3" y="0" class="st5 st6">[0] =</tspan><tspan x="64.3" y="0" class="st5 st6">  </tspan><tspan x="0" y="14.4" class="st5 st6">data</tspan><tspan x="24.7" y="14.4" class="st8 st5 st6">[2]</tspan><tspan x="39.3" y="14.4" class="st5 st6">[1] </tspan><tspan x="57.3" y="14.4" class="st5 st6">= </tspan><tspan x="0" y="28.8" class="st5 st6">data</tspan><tspan x="24.7" y="28.8" class="st8 st5 st6">[2]</tspan><tspan x="39.3" y="28.8" class="st5 st6">[2]</tspan><tspan x="54" y="28.8" class="st5 st6"> = </tspan></text>
+<rect x="434.4" y="26.1" class="st3" width="17.4" height="45.7"/>
+<text transform="matrix(1 0 0 1 438.4367 34.7465)"><tspan x="0" y="0" class="st8 st5 st6">G</tspan><tspan x="0.3" y="14.7" class="st8 st5 st6">H</tspan><tspan x="3" y="29.4" class="st8 st5 st6">I</tspan></text>
+<rect x="55.8" y="4.5" class="st3" width="13.9" height="15.5"/>
+<text transform="matrix(1 0 0 1 59.4644 13.1507)" class="st9 st5 st6">0</text>
+<rect x="73.9" y="4.5" class="st3" width="13.9" height="15.5"/>
+<text transform="matrix(1 0 0 1 77.5352 13.1389)" class="st9 st5 st6">1</text>
+<rect x="91.3" y="4.3" class="st3" width="13.9" height="15.5"/>
+<text transform="matrix(1 0 0 1 94.8873 12.9771)" class="st9 st5 st6">2</text>
+<rect x="118.9" y="25.8" class="st3" width="17.4" height="45.7"/>
+<text transform="matrix(1 0 0 1 124.2303 34.4529)"><tspan x="0" y="0" class="st9 st5 st6">0</tspan><tspan x="0" y="14.7" class="st9 st5 st6">1</tspan><tspan x="0" y="29.4" class="st9 st5 st6">2</tspan></text>
+<g>
+	<g>
+		<polygon class="st9" points="60.2,14.8 62.7,19.1 65.2,14.8 		"/>
+	</g>
+</g>
+<g>
+	<g>
+		<polygon class="st9" points="78.7,14.8 81.2,19.1 83.7,14.8 		"/>
+	</g>
+</g>
+<g>
+	<g>
+		<polygon class="st9" points="95.5,14.8 98,19.1 100.5,14.8 		"/>
+	</g>
+</g>
+<g>
+	<g>
+		<polygon class="st9" points="123.3,28 119,30.5 123.3,33 		"/>
+	</g>
+</g>
+<g>
+	<g>
+		<polygon class="st9" points="123.3,42.7 119,45.2 123.3,47.7 		"/>
+	</g>
+</g>
+<g>
+	<g>
+		<polygon class="st9" points="123.3,57.4 119,59.9 123.3,62.4 		"/>
+	</g>
+</g>
+</svg>
