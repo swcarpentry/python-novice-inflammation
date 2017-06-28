@@ -462,9 +462,9 @@ This violates another important rule of programming:
 > > ## Solution
 > > ~~~
 > > # a possible pre-condition:
-> > assert len(input) > 0, 'List length must be non-zero'
+> > assert len(input_list) > 0, 'List length must be non-zero'
 > > # a possible post-condition:
-> > assert numpy.min(input) < average < numpy.max(input), 'Average should be between min and max of input values'
+> > assert numpy.min(input_list) <= average <= numpy.max(input_list), 'Average should be between min and max of input values (inclusive)'
 > > ~~~
 > > {: .python}
 > {: .solution}
