@@ -348,6 +348,8 @@ It takes a bit of getting used to,
 but one way to remember the rule is that
 the index is how many steps we have to take from the start to get the item we want.
 
+![Zero Index](../fig/python-zero-index.png)
+
 > ## In the Corner
 >
 > What may also surprise you is that when Python displays an array,
