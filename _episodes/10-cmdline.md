@@ -585,7 +585,7 @@ $ python count_stdin.py small-01.csv
 ~~~
 {: .bash}
 
-i.e., to forget the `<` character that redirect the file to standard input.
+i.e., to forget the `<` character that redirects the file to standard input.
 In this case,
 there's nothing in standard input,
 so the program waits at the start of the loop for someone to type something on the keyboard.
@@ -985,7 +985,7 @@ the program now does everything we set out to do.
 >
 > Write a program called `check_arguments.py` that prints usage
 > then exits the program if no arguments are provided.
-> (Hint) You can use `sys.exit()` to exit the program.
+> (Hint: You can use `sys.exit()` to exit the program.)
 >
 > ~~~
 > $ python check_arguments.py

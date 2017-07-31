@@ -19,9 +19,9 @@ keypoints:
 - "Variables are created on demand whenever a value is assigned to them."
 - "Use `print(something)` to display the value of `something`."
 - "The expression `array.shape` gives the shape of an array."
-- "Use `array[x, y]` to select a single element from an array."
+- "Use `array[x, y]` to select a single element from a 2D array."
 - "Array indices start at 0, not 1."
-- "Use `low:high` to specify a slice that includes the indices from `low` to `high-1`."
+- "Use `low:high` to specify a `slice` that includes the indices from `low` to `high-1`."
 - "All the indexing and slicing that works on arrays also works on strings."
 - "Use `# some kind of explanation` to add comments to programs."
 - "Use `numpy.mean(array)`, `numpy.max(array)`, and `numpy.min(array)` to calculate simple statistics."
@@ -29,6 +29,7 @@ keypoints:
 - "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
 ---
 In this lesson we will learn how to manipulate the inflammation dataset with Python. But before we discuss how to deal with many data points, we will show how to store a single value on the computer.
+
 
 The line below [assigns](reference.html#assignment) the value `55` to a [variable](reference.html#variable) `weight_kg`:
 
@@ -169,7 +170,7 @@ Importing a library is like getting a piece of lab equipment out of a storage lo
 Libraries provide additional functionality to the basic Python package,
 much like a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too many libraries
 can sometimes complicate and slow down your programs - so we only import what we need for each program. 
-Once you've imported the library,
+Once we've imported the library,
 we can ask the library to read our data file for us:
 
 ~~~
@@ -308,7 +309,7 @@ because they have the same part-and-whole relationship.
 
 If we want to get a single number from the array,
 we must provide an [index]({{ page.root }}/reference/#index) in square brackets,
-just as we do in math:
+just as we do in math when referring to an element of a matrix.  Our inflammation data has two dimensions, so we will need to use two indices to refer to a value:
 
 ~~~
 print('first value in data:', data[0, 0])
@@ -558,7 +559,7 @@ standard deviation: 4.61383319712
 >
 > How did we know what functions NumPy has and how to use them?
 > If you are working in the IPython/Jupyter Notebook there is an easy way to find out.
-> If you type the name of something with a full-stop then you can use tab completion
+> If you type the name of something followed by a dot, then you can use tab completion
 > (e.g. type `numpy.` and then press tab)
 > to see a list of all functions and attributes that you can use. After selecting one you
 > can also add a question mark (e.g. `numpy.cumprod?`) and IPython will return an
@@ -573,7 +574,7 @@ One way to do this is to create a new temporary array of the data we want,
 then ask it to do the calculation:
 
 ~~~
-patient_0 = data[0, :] # 0 on the first axis, everything on the second
+patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)
 print('maximum inflammation for patient 0:', patient_0.max())
 ~~~
 {: .python}
@@ -584,7 +585,7 @@ maximum inflammation for patient 0: 18.0
 {: .output}
 
 Everything in a line of code following the '#' symbol is a
-[comment]({{ page.root }}/reference/#comment) that is ignored by the computer.
+[comment]({{ page.root }}/reference/#comment) that is ignored by Python.
 Comments allow programmers to leave explanatory notes for other
 programmers or their future selves.
 

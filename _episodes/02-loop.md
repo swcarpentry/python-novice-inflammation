@@ -5,13 +5,13 @@ exercises: 0
 questions:
 - "How can I do the same operations on many different values?"
 objectives:
-- "Explain what a for loop does."
-- "Correctly write for loops to repeat simple calculations."
+- "Explain what a `for` loop does."
+- "Correctly write `for` loops to repeat simple calculations."
 - "Trace changes to a loop variable as the loop runs."
-- "Trace changes to other variables as they are updated by a for loop."
+- "Trace changes to other variables as they are updated by a `for` loop."
 keypoints:
 - "Use `for variable in sequence` to process the elements of a sequence one at a time."
-- "The body of a for loop must be indented."
+- "The body of a `for` loop must be indented."
 - "Use `len(thing)` to determine the length of something that contains other values."
 ---
 
@@ -34,7 +34,7 @@ word = 'lead'
 {: .python}
 
 We can access a character in a string using its index. For example, we can get the first
-character of the word 'lead', by using word[0]. One way to print each character is to use
+character of the word `'lead'`, by using `word[0]`. One way to print each character is to use
 four `print` statements:
 
 ~~~
@@ -151,18 +151,13 @@ The numbers in the diagram denote which loop cycle the character was printed in 
 We can call the [loop variable]({{ page.root }}/reference/#loop-variable) anything we like,
 but there must be a colon at the end of the line starting the loop,
 and we must indent anything we want to run inside the loop. Unlike many other languages, there is no
-command to signify the end of the loop body (e.g. end for); what is indented after the for statement belongs to the loop.
+command to signify the end of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop.
 
 
-> ## What's in a name?
+> ## What's in a name?{.callout}
 >
-> In the example above, the loop variable was given the name `char`
-> as a mnemonic; it is short for 'character'.
-> 'Char' is not a keyword in Python that pulls the characters
-> from words or strings.
-> In fact when a similar loop is run over a list rather than a word,
-> the output would be each member of that list printed in order,
-> rather than the characters.
+>
+> In the example above, the loop variable was given the name `char` as a mnemonic; it is short for 'character'. 'Char' is not a keyword in Python that pulls the characters from words or strings. In fact when a similar loop is run over a list rather than a word, the output would be each member of that list printed in order, rather than the characters.
 >
 > ~~~
 > elements = ['oxygen', 'nitrogen', 'argon']
@@ -178,10 +173,7 @@ command to signify the end of the loop body (e.g. end for); what is indented aft
 > ~~~
 > {: .output}
 >
-> We can choose any name we want for variables.
-> We might just as easily have chosen the name `banana`
-> for the loop variable,
-> as long as we use the same name when we invoke the variable inside the loop:
+> We can choose any name we want for variables. We might just as easily have chosen the name `banana` for the loop variable, as long as we use the same name when we invoke the variable inside the loop:
 >
 > ~~~
 > word = 'oxygen'
@@ -200,9 +192,7 @@ command to signify the end of the loop body (e.g. end for); what is indented aft
 > ~~~
 > {: .output}
 >
-> It is a good idea to choose variable names
-> that are meaningful so that it is easier
-> to understand what the loop is doing.
+> It is a good idea to choose variable names that are meaningful, otherwise it would be more difficult to understand what the loop is doing.
 {: .callout}
 
 Here's another loop that repeatedly updates a variable:
@@ -278,14 +268,19 @@ so we should always use it when we can.
 
 > ## From 1 to N
 >
-> Python has a built-in function called `range` that creates a sequence of numbers. Range can
-> accept 1-3 parameters. If one parameter is input, range creates an array of that length,
-> starting at zero and incrementing by 1. If 2 parameters are input, range starts at
-> the first and ends just before the second, incrementing by one. If range is passed 3 parameters,
-> it starts at the first one, ends just before the second one, and increments by the third one. For
-> example,
-> `range(3)` produces the numbers 0, 1, 2, while `range(2, 5)` produces 2, 3, 4,
-> and `range(3, 10, 3)` produces 3, 6, 9.
+> Python has a built-in function called `range` that creates a sequence of numbers. `range` can
+> accept 1, 2, or 3 parameters.
+>
+> * If one parameter is given, `range` creates an array of that length,
+>   starting at zero and incrementing by 1.
+>   For example, `range(3)` produces the numbers `0, 1, 2`.
+> * If two parameters are given, `range` starts at
+>   the first and ends just before the second, incrementing by one.
+>   For example, `range(2, 5)` produces `2, 3, 4`.
+> * If `range` is given 3 parameters,
+>   it starts at the first one, ends just before the second one, and increments by the third one.
+>   For exmaple `range(3, 10, 2)` produces `3, 5, 7, 9`.
+>
 > Using `range`,
 > write a loop that uses `range` to print the first 3 natural numbers:
 >

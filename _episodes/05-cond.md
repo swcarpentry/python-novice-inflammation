@@ -11,8 +11,8 @@ keypoints:
 - "Use `if condition` to start a conditional statement, `elif condition` to provide additional tests, and `else` to provide a default."
 - "The bodies of the branches of conditional statements must be indented."
 - "Use `==` to test for equality."
-- "`X and Y` is only true if both X and Y are true."
-- "`X or Y` is true if either X or Y, or both, are true."
+- "`X and Y` is only true if both `X` and `Y` are true."
+- "`X or Y` is true if either `X` or `Y`, or both, are true."
 - "Zero, the empty string, and the empty list are considered false; all other numbers, strings, and lists are considered true."
 - "Nest loops to operate on multi-dimensional data."
 - "Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior."
@@ -199,13 +199,7 @@ freeing us from having to manually examine every plot for features we've seen be
 
 > ## How Many Paths?
 >
-> Which of the following would be printed if you were to run this code?
-> Why did you pick this answer?
->
-> 1.  A
-> 2.  B
-> 3.  C
-> 4.  B and C
+> Consider this code:
 >
 > ~~~
 > if 4 > 5:
@@ -216,6 +210,14 @@ freeing us from having to manually examine every plot for features we've seen be
 >     print('C')
 > ~~~
 > {: .python}
+>
+> Which of the following would be printed if you were to run this code?
+> Why did you pick this answer?
+>
+> 1.  A
+> 2.  B
+> 3.  C
+> 4.  B and C
 >
 > > ## Solution
 > > C gets printed because the first two conditions, `4 > 5` and `4 == 5`, are not true,
@@ -339,7 +341,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > >
 > > Here `pass` means "don't do anything".
 > In this particular case, it's not actually needed, since if `num == 0` neither
-> > sum needs to change, but it illustrates the use of `elif`.
+> > sum needs to change, but it illustrates the use of `elif` and `pass`.
 > {: .solution}
 {: .challenge}
 
