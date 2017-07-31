@@ -285,7 +285,7 @@ are their daily inflammation measurements.
 > [floating-point numbers]({{ page.root }}/reference/#floating-point number).
 {: .callout}
 
-We can see what the array's [shape]({{ page.root }}/reference/#shape) is like this:
+With this command we can see the array's [shape]({{ page.root }}/reference/#shape):
 
 ~~~
 print(data.shape)
