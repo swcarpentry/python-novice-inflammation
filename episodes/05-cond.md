@@ -139,7 +139,6 @@ We can check for this inside the `for` loop we wrote with the following conditio
 if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
     print('Suspicious looking maxima!')
 ~~~
-{: .python}
 
 We also saw a different problem in the third dataset;
 the minima per day were all zero (looks like a healthy person snuck into our study).
@@ -149,7 +148,6 @@ We can also check for this with an `elif` condition:
 elif numpy.sum(numpy.min(data, axis=0)) == 0:
     print('Minima add up to zero!')
 ~~~
-{: .python}
 
 And if neither of these conditions are true, we can use `else` to give the all-clear:
 
@@ -157,7 +155,6 @@ And if neither of these conditions are true, we can use `else` to give the all-c
 else:
     print('Seems OK!')
 ~~~
-{: .python}
 
 Let's test that out:
 
