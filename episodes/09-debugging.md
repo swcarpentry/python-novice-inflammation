@@ -151,7 +151,7 @@ Replacing random chunks of code is unlikely to do much good.
 if you got it wrong the first time,
 you'll probably get it wrong the second and third as well.)
 Good programmers therefore
-*change one thing at a time, for a reason*
+*change one thing at a time, for a reason*.
 They are either trying to gather more information
 ("is the bug still there if we change the order of the loops?")
 or test a fix

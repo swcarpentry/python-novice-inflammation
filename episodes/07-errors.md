@@ -239,7 +239,7 @@ Variable name errors come with some of the most informative error messages,
 which are usually of the form "name 'the_variable_name' is not defined".
 
 Why does this error message occur?
-That's harder question to answer,
+That's a harder question to answer,
 because it depends on what your code is supposed to do.
 However,
 there are a few very common reasons why you might have an undefined variable.

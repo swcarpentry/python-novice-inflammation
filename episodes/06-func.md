@@ -39,7 +39,7 @@ on a different dataset or at a different point in our program?
 Cutting and pasting it is going to make our code get very long and very repetitive,
 very quickly.
 We'd like a way to package our code so that it is easier to reuse,
-and Python provides for this by letting us define things called 'functions' -
+and Python provides for this by letting us define things called 'functions' ---
 a shorthand way of re-executing longer pieces of code.
 
 Let's start by defining a function `fahr_to_kelvin` that converts temperatures from Fahrenheit to Kelvin:
@@ -720,10 +720,10 @@ numpy.loadtxt('inflammation-01.csv', ',')
 
 then the filename is assigned to `fname` (which is what we want),
 but the delimiter string `','` is assigned to `dtype` rather than `delimiter`,
-because `dtype` is the second parameter in the list. However ',' isn't a known `dtype` so
+because `dtype` is the second parameter in the list. However `','` isn't a known `dtype` so
 our code produced an error message when we tried to run it.
 When we call `loadtxt` we don't have to provide `fname=` for the filename because it's the
-first item in the list, but if we want the ',' to be assigned to the variable `delimiter`,
+first item in the list, but if we want the `','` to be assigned to the variable `delimiter`,
 we *do* have to provide `delimiter=` for the second parameter since `delimiter` is not
 the second parameter in the list.
 
@@ -831,8 +831,8 @@ readable code!
 >
 > Write a function `rescale` that takes an array as input
 > and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
-> (Hint: If $L$ and $H$ are the lowest and highest values in the original array,
-> then the replacement for a value $v$ should be $(v-L) / (H-L)$.)
+> (Hint: If `L` and `H` are the lowest and highest values in the original array,
+> then the replacement for a value `v` should be `(v-L) / (H-L)`.)
 >
 > > ## Solution
 > > ~~~
@@ -873,7 +873,7 @@ readable code!
 
 > ## Defining Defaults
 >
-> Rewrite the `rescale` function so that it scales data to lie between 0.0 and 1.0 by default,
+> Rewrite the `rescale` function so that it scales data to lie between `0.0` and `1.0` by default,
 > but will allow the caller to specify lower and upper bounds if they want.
 > Compare your implementation to your neighbor's:
 > do the two functions always behave the same way?
@@ -894,7 +894,7 @@ readable code!
 
 > ## Variables Inside and Outside Functions
 >
-> What does the following piece of code display when run - and why?
+> What does the following piece of code display when run --- and why?
 >
 > ~~~
 > f = 0
@@ -976,12 +976,7 @@ readable code!
 
 > ## The Old Switcheroo
 >
-> Which of the following would be printed if you were to run this code? Why did you pick this answer?
->
-> 1. `7 3`
-> 2. `3 7`
-> 3. `3 3`
-> 4. `7 7`
+> Consider this code:
 >
 > ~~~
 > a = 3
@@ -997,6 +992,14 @@ readable code!
 > print(a, b)
 > ~~~
 > {: .python}
+>
+> Which of the following would be printed if you were to run this code? Why did you pick this answer?
+>
+> 1. `7 3`
+> 2. `3 7`
+> 3. `3 3`
+> 4. `7 7`
+>
 > > ## Solution
 > > `3, 7` is correct. Initially `a` has a value of 3 and `b` has a value of 7.
 > > When the swap function is called, it creates local variables (also called
