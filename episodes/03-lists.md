@@ -468,7 +468,7 @@ print("With known last position:", sond)
 sond = months[8:len(months)]
 print("Using len() to get last entry:", sond)
 sond = months[8:]
-("Omitting ending index:", sond)
+print("Omitting ending index:", sond)
 ~~~
 {: .python}
 

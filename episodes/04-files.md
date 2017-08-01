@@ -28,12 +28,12 @@ while `?` matches any one character.
 We can use this to get the names of all the CSV files in the current directory:
 
 ~~~
-print(glob.glob('data/inflammation*.csv'))
+print(glob.glob('inflammation*.csv'))
 ~~~
 {: .python}
 
 ~~~
-['data/inflammation-05.csv', 'data/inflammation-11.csv', 'data/inflammation-12.csv', 'data/inflammation-08.csv', 'data/inflammation-03.csv', 'data/inflammation-06.csv', 'data/inflammation-09.csv', 'data/inflammation-07.csv', 'data/inflammation-10.csv', 'data/inflammation-02.csv', 'data/inflammation-04.csv', 'data/inflammation-01.csv']
+['inflammation-05.csv', 'inflammation-11.csv', 'inflammation-12.csv', 'inflammation-08.csv', 'inflammation-03.csv', 'inflammation-06.csv', 'inflammation-09.csv', 'inflammation-07.csv', 'inflammation-10.csv', 'inflammation-02.csv', 'inflammation-04.csv', 'inflammation-01.csv']
 ~~~
 {: .output}
 
@@ -49,7 +49,7 @@ If we want to start by analyzing just the first three files in alphabetical orde
 import numpy
 import matplotlib.pyplot
 
-filenames = sorted(glob.glob('data/inflammation*.csv'))
+filenames = sorted(glob.glob('inflammation*.csv'))
 filenames = filenames[0:3]
 for f in filenames:
     print(f)
@@ -115,7 +115,7 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > > import numpy
 > > import matplotlib.pyplot
 > >
-> > filenames = glob.glob('data/inflammation*.csv')
+> > filenames = glob.glob('inflammation*.csv')
 > >
 > > data0 = numpy.loadtxt(fname=filenames[0], delimiter=',')
 > > data1 = numpy.loadtxt(fname=filenames[1], delimiter=',')
@@ -137,7 +137,7 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > Use each of the files once to generate a dataset containing values averaged over all patients:
 >
 > ~~~
-> filenames = glob.glob('data/inflammation*.csv')
+> filenames = glob.glob('inflammation*.csv')
 > composite_data = numpy.zeros((60,40))
 > for f in filenames:
 >     # sum each new file's data into as it's read
