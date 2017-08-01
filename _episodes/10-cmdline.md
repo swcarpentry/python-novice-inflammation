@@ -36,7 +36,7 @@ This program does exactly what we want - it prints the average inflammation per 
 for a given file.
 
 ~~~
-$ python code/readings_04.py --mean data/inflammation-01.csv
+$ python ../code/readings_04.py --mean inflammation-01.csv
 5.45
 5.425
 6.1
@@ -50,14 +50,14 @@ $ python code/readings_04.py --mean data/inflammation-01.csv
 We might also want to look at the minimum of the first four lines
 
 ~~~
-$ head -4 data/inflammation-01.csv | python code/readings_04.py --min
+$ head -4 inflammation-01.csv | python ../code/readings_04.py --min
 ~~~
 {: .bash}
 
 or the maximum inflammations in several files one after another:
 
 ~~~
-$ python code/readings_04.py --max data/inflammation-*.csv
+$ python ../code/readings_04.py --max inflammation-*.csv
 ~~~
 {: .bash}
 
@@ -149,7 +149,7 @@ By convention this function is usually called `main`,
 though we can call it whatever we want:
 
 ~~~
-$ cat readings_01.py
+$ cat ../code/readings_01.py
 ~~~
 {: .bash}
 
@@ -172,7 +172,7 @@ and the name of the file to process from `sys.argv[1]`.
 Here's a simple test:
 
 ~~~
-$ python readings_01.py inflammation-01.csv
+$ python ../code/readings_01.py inflammation-01.csv
 ~~~
 {: .bash}
 
@@ -181,7 +181,7 @@ but haven't actually called it.
 Let's add a call to `main`:
 
 ~~~
-$ cat readings_02.py
+$ cat ../code/readings_02.py
 ~~~
 {: .bash}
 
@@ -204,7 +204,7 @@ if __name__ == '__main__':
 and run that:
 
 ~~~
-$ python readings_02.py inflammation-01.csv
+$ python ../code/readings_02.py inflammation-01.csv
 ~~~
 {: .bash}
 
@@ -342,7 +342,7 @@ $ cat small-01.csv
 {: .output}
 
 ~~~
-$ python readings_02.py small-01.csv
+$ python ../code/readings_02.py small-01.csv
 ~~~
 {: .bash}
 
@@ -380,7 +380,7 @@ Here's our changed program
 `readings_03.py`:
 
 ~~~
-$ cat readings_03.py
+$ cat ../code/readings_03.py
 ~~~
 {: .bash}
 
@@ -403,7 +403,7 @@ if __name__ == '__main__':
 and here it is in action:
 
 ~~~
-$ python readings_03.py small-01.csv small-02.csv
+$ python ../code/readings_03.py small-01.csv small-02.csv
 ~~~
 {: .bash}
 
@@ -436,7 +436,7 @@ These always appear before the names of the files,
 so we could just do this:
 
 ~~~
-$ cat readings_04.py
+$ cat ../code/readings_04.py
 ~~~
 {: .bash}
 
@@ -470,7 +470,7 @@ if __name__ == '__main__':
 This works:
 
 ~~~
-$ python readings_04.py --max small-01.csv
+$ python ../code/readings_04.py --max small-01.csv
 ~~~
 {: .bash}
 
@@ -499,7 +499,7 @@ before doing any processing,
 so that the program fails fast:
 
 ~~~
-$ cat readings_05.py
+$ cat ../code/readings_05.py
 ~~~
 {: .bash}
 
@@ -546,7 +546,7 @@ and so on.
 Let's experiment in another script called `count_stdin.py`:
 
 ~~~
-$ cat count_stdin.py
+$ cat ../code/count_stdin.py
 ~~~
 {: .bash}
 
@@ -569,7 +569,7 @@ but we can do almost anything with it that we could do to a regular file.
 Let's try running it as if it were a regular command-line program:
 
 ~~~
-$ python count_stdin.py < small-01.csv
+$ python ../code/count_stdin.py < small-01.csv
 ~~~
 {: .bash}
 
@@ -581,7 +581,7 @@ $ python count_stdin.py < small-01.csv
 A common mistake is to try to run something that reads from standard input like this:
 
 ~~~
-$ python count_stdin.py small-01.csv
+$ python ../code/count_stdin.py small-01.csv
 ~~~
 {: .bash}
 
@@ -600,7 +600,7 @@ so we don't actually need to change `process`.
 Only `main` changes:
 
 ~~~
-$ cat readings_06.py
+$ cat ../code/readings_06.py
 ~~~
 {: .bash}
 
@@ -641,7 +641,7 @@ if __name__ == '__main__':
 Let's try it out:
 
 ~~~
-$ python readings_06.py --mean < small-01.csv
+$ python ../code/readings_06.py --mean < small-01.csv
 ~~~
 {: .bash}
 
