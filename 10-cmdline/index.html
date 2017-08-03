@@ -1,0 +1,1246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2017-08-04 00:20:27 +0200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="/swc-releases/2017.08/python-novice-inflammation">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Programming with Python: Command-Line Programs</title>
+  </head>
+  <body>
+    <div class="container">
+      
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="../setup/">Setup</a></li>
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-numpy/">Analyzing Patient Data</a></li>
+            
+            <li><a href="../02-loop/">Repeating Actions with Loops</a></li>
+            
+            <li><a href="../03-lists/">Storing Multiple Values in Lists</a></li>
+            
+            <li><a href="../04-files/">Analyzing Data from Multiple Files</a></li>
+            
+            <li><a href="../05-cond/">Making Choices</a></li>
+            
+            <li><a href="../06-func/">Creating Functions</a></li>
+            
+            <li><a href="../07-errors/">Errors and Exceptions</a></li>
+            
+            <li><a href="../08-defensive/">Defensive Programming</a></li>
+            
+            <li><a href="../09-debugging/">Debugging</a></li>
+            
+            <li><a href="../10-cmdline/">Command-Line Programs</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio/">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference/">Reference</a></li>
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../license/">License</a></li>
+	
+	<li><a href="/edit/gh-pages/_episodes/10-cmdline.md">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../09-debugging/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+    <h3 class="maintitle"><a href="../">Programming with Python</a></h3>
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="sr-only">lesson home</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Command-Line Programs</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 30 min
+      <br/>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How can I write Python programs that will work like Unix command-line tools?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Use the values of command-line arguments in a program.</p>
+</li>
+	
+	<li><p>Handle flags and files separately in a command-line program.</p>
+</li>
+	
+	<li><p>Read data from standard input in a program so that it can be used in a pipeline.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>The Jupyter Notebook and other interactive tools are great for prototyping code and exploring data,
+but sooner or later we will want to use our program in a pipeline
+or run it in a shell script to process thousands of data files.
+In order to do that,
+we need to make our programs work like other Unix command-line tools.
+For example,
+we may want a program that reads a dataset
+and prints the average inflammation per patient.</p>
+
+<blockquote class="callout">
+  <h2 id="switching-to-shell-commands">Switching to Shell Commands</h2>
+
+  <p>In this lesson we are switching from typing commands in a Python interpreter to typing
+commands in a shell terminal window (such as bash). When you see a <code class="highlighter-rouge">$</code> in front of a
+command that tells you to run that command in the shell rather than the Python interpreter.</p>
+</blockquote>
+
+<p>This program does exactly what we want - it prints the average inflammation per patient
+for a given file.</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python ../code/readings_04.py --mean inflammation-01.csv
+5.45
+5.425
+6.1
+...
+6.4
+7.05
+5.9
+</code></pre>
+</div>
+
+<p>We might also want to look at the minimum of the first four lines</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ head -4 inflammation-01.csv | python ../code/readings_04.py --min
+</code></pre>
+</div>
+
+<p>or the maximum inflammations in several files one after another:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python ../code/readings_04.py --max inflammation-*.csv
+</code></pre>
+</div>
+
+<p>Our scripts should do the following:</p>
+
+<ol>
+  <li>If no filename is given on the command line, read data from <a href="../reference/#standard-input">standard input</a>.</li>
+  <li>If one or more filenames are given, read data from them and report statistics for each file separately.</li>
+  <li>Use the <code class="highlighter-rouge">--min</code>, <code class="highlighter-rouge">--mean</code>, or <code class="highlighter-rouge">--max</code> flag to determine what statistic to print.</li>
+</ol>
+
+<p>To make this work,
+we need to know how to handle command-line arguments in a program,
+and how to get at standard input.
+We’ll tackle these questions in turn below.</p>
+
+<h2 id="command-line-arguments">Command-Line Arguments</h2>
+
+<p>Using the text editor of your choice,
+save the following in a text file called <code class="highlighter-rouge">sys_version.py</code>:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+print('version is', sys.version)
+</code></pre>
+</div>
+
+<p>The first line imports a library called <code class="highlighter-rouge">sys</code>,
+which is short for “system”.
+It defines values such as <code class="highlighter-rouge">sys.version</code>,
+which describes which version of Python we are running.
+We can run this script from the command line like this:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python sys_version.py
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>version is 3.4.3+ (default, Jul 28 2015, 13:17:50)
+[GCC 4.9.3]
+</code></pre>
+</div>
+
+<p>Create another file called <code class="highlighter-rouge">argv_list.py</code> and save the following text to it.</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+print('sys.argv is', sys.argv)
+</code></pre>
+</div>
+
+<p>The strange name <code class="highlighter-rouge">argv</code> stands for “argument values”.
+Whenever Python runs a program,
+it takes all of the values given on the command line
+and puts them in the list <code class="highlighter-rouge">sys.argv</code>
+so that the program can determine what they were.
+If we run this program with no arguments:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python argv_list.py
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>sys.argv is ['argv_list.py']
+</code></pre>
+</div>
+
+<p>the only thing in the list is the full path to our script,
+which is always <code class="highlighter-rouge">sys.argv[0]</code>.
+If we run it with a few arguments, however:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python argv_list.py first second third
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>sys.argv is ['argv_list.py', 'first', 'second', 'third']
+</code></pre>
+</div>
+
+<p>then Python adds each of those arguments to that magic list.</p>
+
+<p>With this in hand,
+let’s build a version of <code class="highlighter-rouge">readings.py</code> that always prints the per-patient mean of a single data file.
+The first step is to write a function that outlines our implementation,
+and a placeholder for the function that does the actual work.
+By convention this function is usually called <code class="highlighter-rouge">main</code>,
+though we can call it whatever we want:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ cat ../code/readings_01.py
+</code></pre>
+</div>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+import numpy
+
+def main():
+    script = sys.argv[0]
+    filename = sys.argv[1]
+    data = numpy.loadtxt(filename, delimiter=',')
+    for m in numpy.mean(data, axis=1):
+        print(m)
+</code></pre>
+</div>
+
+<p>This function gets the name of the script from <code class="highlighter-rouge">sys.argv[0]</code>,
+because that’s where it’s always put,
+and the name of the file to process from <code class="highlighter-rouge">sys.argv[1]</code>.
+Here’s a simple test:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python ../code/readings_01.py inflammation-01.csv
+</code></pre>
+</div>
+
+<p>There is no output because we have defined a function,
+but haven’t actually called it.
+Let’s add a call to <code class="highlighter-rouge">main</code>:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ cat ../code/readings_02.py
+</code></pre>
+</div>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+import numpy
+
+def main():
+    script = sys.argv[0]
+    filename = sys.argv[1]
+    data = numpy.loadtxt(filename, delimiter=',')
+    for m in numpy.mean(data, axis=1):
+        print(m)
+
+if __name__ == '__main__':
+   main()
+</code></pre>
+</div>
+
+<p>and run that:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python ../code/readings_02.py inflammation-01.csv
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>5.45
+5.425
+6.1
+5.9
+5.55
+6.225
+5.975
+6.65
+6.625
+6.525
+6.775
+5.8
+6.225
+5.75
+5.225
+6.3
+6.55
+5.7
+5.85
+6.55
+5.775
+5.825
+6.175
+6.1
+5.8
+6.425
+6.05
+6.025
+6.175
+6.55
+6.175
+6.35
+6.725
+6.125
+7.075
+5.725
+5.925
+6.15
+6.075
+5.75
+5.975
+5.725
+6.3
+5.9
+6.75
+5.925
+7.225
+6.15
+5.95
+6.275
+5.7
+6.1
+6.825
+5.975
+6.725
+5.7
+6.25
+6.4
+7.05
+5.9
+</code></pre>
+</div>
+
+<blockquote class="callout">
+  <h2 id="running-versus-importing">Running Versus Importing</h2>
+
+  <p>Running a Python script in bash is very similar to
+importing that file in Python.
+The biggest difference is that we don’t expect anything
+to happen when we import a file,
+whereas when running a script, we expect to see some
+output printed to the console.</p>
+
+  <p>In order for a Python script to work as expected
+when imported or when run as a script,
+we typically put the part of the script
+that produces output in the following if statement:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>if __name__ == '__main__':
+    main()  # Or whatever function produces output
+</code></pre>
+  </div>
+
+  <p>When you import a Python file, <code class="highlighter-rouge">__name__</code> is the name
+of that file (e.g., when importing <code class="highlighter-rouge">readings.py</code>,
+<code class="highlighter-rouge">__name__</code> is <code class="highlighter-rouge">'readings'</code>). However, when running a
+script in bash, <code class="highlighter-rouge">__name__</code> is always set to <code class="highlighter-rouge">'__main__'</code>
+in that script so that you can determine if the file
+is being imported or run as a script.</p>
+</blockquote>
+
+<blockquote class="callout">
+  <h2 id="the-right-way-to-do-it">The Right Way to Do It</h2>
+
+  <p>If our programs can take complex parameters or multiple filenames,
+we shouldn’t handle <code class="highlighter-rouge">sys.argv</code> directly.
+Instead,
+we should use Python’s <code class="highlighter-rouge">argparse</code> library,
+which handles common cases in a systematic way,
+and also makes it easy for us to provide sensible error messages for our users.
+We will not cover this module in this lesson
+but you can go to Tshepang Lekhonkhobe’s <a href="http://docs.python.org/dev/howto/argparse.html">Argparse tutorial</a>
+that is part of Python’s Official Documentation.</p>
+</blockquote>
+
+<h2 id="handling-multiple-files">Handling Multiple Files</h2>
+
+<p>The next step is to teach our program how to handle multiple files.
+Since 60 lines of output per file is a lot to page through,
+we’ll start by using three smaller files,
+each of which has three days of data for two patients:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ ls small-*.csv
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>small-01.csv small-02.csv small-03.csv
+</code></pre>
+</div>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ cat small-01.csv
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>0,0,1
+0,1,2
+</code></pre>
+</div>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python ../code/readings_02.py small-01.csv
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>0.333333333333
+1.0
+</code></pre>
+</div>
+
+<p>Using small data files as input also allows us to check our results more easily:
+here,
+for example,
+we can see that our program is calculating the mean correctly for each line,
+whereas we were really taking it on faith before.
+This is yet another rule of programming:
+<em>test the simple things first</em>.</p>
+
+<p>We want our program to process each file separately,
+so we need a loop that executes once for each filename.
+If we specify the files on the command line,
+the filenames will be in <code class="highlighter-rouge">sys.argv</code>,
+but we need to be careful:
+<code class="highlighter-rouge">sys.argv[0]</code> will always be the name of our script,
+rather than the name of a file.
+We also need to handle an unknown number of filenames,
+since our program could be run for any number of files.</p>
+
+<p>The solution to both problems is to loop over the contents of <code class="highlighter-rouge">sys.argv[1:]</code>.
+The ‘1’ tells Python to start the slice at location 1,
+so the program’s name isn’t included;
+since we’ve left off the upper bound,
+the slice runs to the end of the list,
+and includes all the filenames.
+Here’s our changed program
+<code class="highlighter-rouge">readings_03.py</code>:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ cat ../code/readings_03.py
+</code></pre>
+</div>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+import numpy
+
+def main():
+    script = sys.argv[0]
+    for filename in sys.argv[1:]:
+        data = numpy.loadtxt(filename, delimiter=',')
+        for m in numpy.mean(data, axis=1):
+            print(m)
+
+if __name__ == '__main__':
+   main()
+</code></pre>
+</div>
+
+<p>and here it is in action:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python ../code/readings_03.py small-01.csv small-02.csv
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>0.333333333333
+1.0
+13.6666666667
+11.0
+</code></pre>
+</div>
+
+<blockquote class="callout">
+  <h2 id="the-right-way-to-do-it-1">The Right Way to Do It</h2>
+
+  <p>At this point,
+we have created three versions of our script called <code class="highlighter-rouge">readings_01.py</code>,
+<code class="highlighter-rouge">readings_02.py</code>, and <code class="highlighter-rouge">readings_03.py</code>.
+We wouldn’t do this in real life:
+instead,
+we would have one file called <code class="highlighter-rouge">readings.py</code> that we committed to version control
+every time we got an enhancement working.
+For teaching,
+though,
+we need all the successive versions side by side.</p>
+</blockquote>
+
+<h2 id="handling-command-line-flags">Handling Command-Line Flags</h2>
+
+<p>The next step is to teach our program to pay attention to the <code class="highlighter-rouge">--min</code>, <code class="highlighter-rouge">--mean</code>, and <code class="highlighter-rouge">--max</code> flags.
+These always appear before the names of the files,
+so we could just do this:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ cat ../code/readings_04.py
+</code></pre>
+</div>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+import numpy
+
+def main():
+    script = sys.argv[0]
+    action = sys.argv[1]
+    filenames = sys.argv[2:]
+
+    for f in filenames:
+        data = numpy.loadtxt(f, delimiter=',')
+
+        if action == '--min':
+            values = numpy.min(data, axis=1)
+        elif action == '--mean':
+            values = numpy.mean(data, axis=1)
+        elif action == '--max':
+            values = numpy.max(data, axis=1)
+
+        for m in values:
+            print(m)
+
+if __name__ == '__main__':
+   main()
+</code></pre>
+</div>
+
+<p>This works:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python ../code/readings_04.py --max small-01.csv
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>1.0
+2.0
+</code></pre>
+</div>
+
+<p>but there are several things wrong with it:</p>
+
+<ol>
+  <li>
+    <p><code class="highlighter-rouge">main</code> is too large to read comfortably.</p>
+  </li>
+  <li>
+    <p>If we do not specify at least two additional arguments on the
+command-line, one for the <strong>flag</strong> and one for the <strong>filename</strong>, but only
+one, the program will not throw an exception but will run. It assumes that the file
+list is empty, as <code class="highlighter-rouge">sys.argv[1]</code> will be considered the <code class="highlighter-rouge">action</code>, even if it
+is a filename. <a href="../reference/#silence-failure">Silent failures</a>  like this
+are always hard to debug.</p>
+  </li>
+  <li>
+    <p>The program should check if the submitted <code class="highlighter-rouge">action</code> is one of the three recognized flags.</p>
+  </li>
+</ol>
+
+<p>This version pulls the processing of each file out of the loop into a function of its own.
+It also checks that <code class="highlighter-rouge">action</code> is one of the allowed flags
+before doing any processing,
+so that the program fails fast:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ cat ../code/readings_05.py
+</code></pre>
+</div>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+import numpy
+
+def main():
+    script = sys.argv[0]
+    action = sys.argv[1]
+    filenames = sys.argv[2:]
+    assert action in ['--min', '--mean', '--max'], \
+           'Action is not one of --min, --mean, or --max: ' + action
+    for f in filenames:
+        process(f, action)
+
+def process(filename, action):
+    data = numpy.loadtxt(filename, delimiter=',')
+
+    if action == '--min':
+        values = numpy.min(data, axis=1)
+    elif action == '--mean':
+        values = numpy.mean(data, axis=1)
+    elif action == '--max':
+        values = numpy.max(data, axis=1)
+
+    for m in values:
+        print(m)
+
+if __name__ == '__main__':
+   main()
+</code></pre>
+</div>
+
+<p>This is four lines longer than its predecessor,
+but broken into more digestible chunks of 8 and 12 lines.</p>
+
+<h2 id="handling-standard-input">Handling Standard Input</h2>
+
+<p>The next thing our program has to do is read data from standard input if no filenames are given
+so that we can put it in a pipeline,
+redirect input to it,
+and so on.
+Let’s experiment in another script called <code class="highlighter-rouge">count_stdin.py</code>:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ cat ../code/count_stdin.py
+</code></pre>
+</div>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+
+count = 0
+for line in sys.stdin:
+    count += 1
+
+print(count, 'lines in standard input')
+</code></pre>
+</div>
+
+<p>This little program reads lines from a special “file” called <code class="highlighter-rouge">sys.stdin</code>,
+which is automatically connected to the program’s standard input.
+We don’t have to open it — Python and the operating system
+take care of that when the program starts up —
+but we can do almost anything with it that we could do to a regular file.
+Let’s try running it as if it were a regular command-line program:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python ../code/count_stdin.py &lt; small-01.csv
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>2 lines in standard input
+</code></pre>
+</div>
+
+<p>A common mistake is to try to run something that reads from standard input like this:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python ../code/count_stdin.py small-01.csv
+</code></pre>
+</div>
+
+<p>i.e., to forget the <code class="highlighter-rouge">&lt;</code> character that redirects the file to standard input.
+In this case,
+there’s nothing in standard input,
+so the program waits at the start of the loop for someone to type something on the keyboard.
+Since there’s no way for us to do this,
+our program is stuck,
+and we have to halt it using the <code class="highlighter-rouge">Interrupt</code> option from the <code class="highlighter-rouge">Kernel</code> menu in the Notebook.</p>
+
+<p>We now need to rewrite the program so that it loads data from <code class="highlighter-rouge">sys.stdin</code> if no filenames are provided.
+Luckily,
+<code class="highlighter-rouge">numpy.loadtxt</code> can handle either a filename or an open file as its first parameter,
+so we don’t actually need to change <code class="highlighter-rouge">process</code>.
+Only <code class="highlighter-rouge">main</code> changes:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ cat ../code/readings_06.py
+</code></pre>
+</div>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+import numpy
+
+def main():
+    script = sys.argv[0]
+    action = sys.argv[1]
+    filenames = sys.argv[2:]
+    assert action in ['--min', '--mean', '--max'], \
+           'Action is not one of --min, --mean, or --max: ' + action
+    if len(filenames) == 0:
+        process(sys.stdin, action)
+    else:
+        for f in filenames:
+            process(f, action)
+
+def process(filename, action):
+    data = numpy.loadtxt(filename, delimiter=',')
+
+    if action == '--min':
+        values = numpy.min(data, axis=1)
+    elif action == '--mean':
+        values = numpy.mean(data, axis=1)
+    elif action == '--max':
+        values = numpy.max(data, axis=1)
+
+    for m in values:
+        print(m)
+
+if __name__ == '__main__':
+   main()
+</code></pre>
+</div>
+
+<p>Let’s try it out:</p>
+
+<div class="bash highlighter-rouge"><pre class="highlight"><code>$ python ../code/readings_06.py --mean &lt; small-01.csv
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>0.333333333333
+1.0
+</code></pre>
+</div>
+
+<p>That’s better.
+In fact,
+that’s done:
+the program now does everything we set out to do.</p>
+
+<blockquote class="challenge">
+  <h2 id="arithmetic-on-the-command-line">Arithmetic on the Command Line</h2>
+
+  <p>Write a command-line program that does addition and subtraction:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>$ python arith.py add 1 2
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>3
+</code></pre>
+  </div>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>$ python arith.py subtract 3 4
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>-1
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+
+def main():
+    assert len(sys.argv) == 4, 'Need exactly 3 arguments'
+
+    operator = sys.argv[1]
+    assert operator in ['add', 'subtract', 'multiply', 'divide'], \
+        'Operator is not one of add, subtract, multiply, or divide: bailing out'
+    try:
+        operand1, operand2 = float(sys.argv[2]), float(sys.argv[3])
+    except ValueError:
+        print('cannot convert input to a number: bailing out')
+        return
+
+    do_arithmetic(operand1, operator, operand2)
+
+def do_arithmetic(operand1, operator, operand2):
+
+    if operator == 'add':
+        value = operand1 + operand2
+    elif operator == 'subtract':
+        value = operand1 - operand2
+    elif operator == 'multiply':
+        value = operand1 * operand2
+    elif operator == 'divide':
+        value = operand1 / operand2
+    print(value)
+
+main()
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="finding-particular-files">Finding Particular Files</h2>
+
+  <p>Using the <code class="highlighter-rouge">glob</code> module introduced <a href="../04-files/">earlier</a>,
+write a simple version of <code class="highlighter-rouge">ls</code> that shows files in the current directory with a particular suffix.
+A call to this script should look like this:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>$ python my_ls.py py
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>left.py
+right.py
+zero.py
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+import glob
+
+def main():
+    '''prints names of all files with sys.argv as suffix'''
+    assert len(sys.argv) &gt;= 2, 'Argument list cannot be empty'
+    suffix = sys.argv[1] # NB: behaviour is not as you'd expect if sys.argv[1] is *
+    glob_input = '*.' + suffix # construct the input
+    glob_output = sorted(glob.glob(glob_input)) # call the glob function
+    for item in glob_output: # print the output
+        print(item)
+    return
+
+main()
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="changing-flags">Changing Flags</h2>
+
+  <p>Rewrite <code class="highlighter-rouge">readings.py</code> so that it uses <code class="highlighter-rouge">-n</code>, <code class="highlighter-rouge">-m</code>, and <code class="highlighter-rouge">-x</code> instead of <code class="highlighter-rouge">--min</code>, <code class="highlighter-rouge">--mean</code>, and <code class="highlighter-rouge">--max</code> respectively.
+Is the code easier to read?
+Is the program easier to understand?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+import numpy
+
+def main():
+    script = sys.argv[0]
+    action = sys.argv[1]
+    filenames = sys.argv[2:]
+    assert action in ['-n', '-m', '-x'], \
+           'Action is not one of -n, -m, or -x: ' + action
+    if len(filenames) == 0:
+        process(sys.stdin, action)
+    else:
+        for f in filenames:
+            process(f, action)
+
+def process(filename, action):
+    data = numpy.loadtxt(filename, delimiter=',')
+
+    if action == '-n':
+        values = numpy.min(data, axis=1)
+    elif action == '-m':
+        values = numpy.mean(data, axis=1)
+    elif action == '-x':
+        values = numpy.max(data, axis=1)
+
+    for m in values:
+        print(m)
+
+main()
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="adding-a-help-message">Adding a Help Message</h2>
+
+  <p>Separately,
+modify <code class="highlighter-rouge">readings.py</code> so that if no parameters are given
+(i.e., no action is specified and no filenames are given),
+it prints a message explaining how it should be used.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code># this is code/readings_08.py
+import sys
+import numpy
+
+def main():
+    script = sys.argv[0]
+    if len(sys.argv) == 1: # no arguments, so print help message
+        print("""Usage: python readings_08.py action filenames
+              action must be one of --min --mean --max
+              if filenames is blank, input is taken from stdin;
+              otherwise, each filename in the list of arguments is processed in turn""")
+        return
+
+    action = sys.argv[1]
+    filenames = sys.argv[2:]
+    assert action in ['--min', '--mean', '--max'], \
+           'Action is not one of --min, --mean, or --max: ' + action
+    if len(filenames) == 0:
+        process(sys.stdin, action)
+    else:
+        for f in filenames:
+            process(f, action)
+
+def process(filename, action):
+    data = numpy.loadtxt(filename, delimiter=',')
+
+    if action == '--min':
+        values = numpy.min(data, axis=1)
+    elif action == '--mean':
+        values = numpy.mean(data, axis=1)
+    elif action == '--max':
+        values = numpy.max(data, axis=1)
+
+    for m in values:
+        print(m)
+
+main()
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="adding-a-default-action">Adding a Default Action</h2>
+
+  <p>Separately,
+modify <code class="highlighter-rouge">readings.py</code> so that if no action is given
+it displays the means of the data.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-4">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+import numpy
+
+def main():
+    script = sys.argv[0]
+    action = sys.argv[1]
+    if action not in ['--min', '--mean', '--max']: # if no action given
+        action = '--mean'    # set a default action, that being mean
+        filenames = sys.argv[1:] # start the filenames one place earlier in the argv list
+    else:
+        filenames = sys.argv[2:]
+
+    if len(filenames) == 0:
+        process(sys.stdin, action)
+    else:
+        for f in filenames:
+            process(f, action)
+
+def process(filename, action):
+    data = numpy.loadtxt(filename, delimiter=',')
+
+    if action == '--min':
+        values = numpy.min(data, axis=1)
+    elif action == '--mean':
+        values = numpy.mean(data, axis=1)
+    elif action == '--max':
+        values = numpy.max(data, axis=1)
+
+    for m in values:
+        print(m)
+
+main()
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="a-file-checker">A File-Checker</h2>
+
+  <p>Write a program called <code class="highlighter-rouge">check.py</code> that takes the names of one or more inflammation data files as arguments
+and checks that all the files have the same number of rows and columns.
+What is the best way to test your program?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-5">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+import numpy
+
+def main():
+    script = sys.argv[0]
+    filenames = sys.argv[1:]
+    if len(filenames) &lt;=1: #nothing to check
+        print('Only 1 file specified on input')
+    else:
+        nrow0, ncol0 = row_col_count(filenames[0])
+        print('First file %s: %d rows and %d columns' % (filenames[0], nrow0, ncol0))
+        for f in filenames[1:]:
+            nrow, ncol = row_col_count(f)
+            if nrow != nrow0 or ncol != ncol0:
+                print('File %s does not check: %d rows and %d columns' % (f, nrow, ncol))
+            else:
+                print('File %s checks' % f)
+        return
+
+def row_col_count(filename):
+    try:
+        nrow, ncol = numpy.loadtxt(filename, delimiter=',').shape
+    except ValueError: #get this if file doesn't have same number of rows and columns, or if it has non-numeric content
+        nrow, ncol = (0, 0)
+    return nrow, ncol
+
+main()
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="counting-lines">Counting Lines</h2>
+
+  <p>Write a program called <code class="highlighter-rouge">line_count.py</code> that works like the Unix <code class="highlighter-rouge">wc</code> command:</p>
+
+  <ul>
+    <li>If no filenames are given, it reports the number of lines in standard input.</li>
+    <li>If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.</li>
+  </ul>
+
+  <blockquote class="solution">
+    <h2 id="solution-6">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>import sys
+
+def main():
+    '''print each input filename and the number of lines in it,
+       and print the sum of the number of lines'''
+    filenames = sys.argv[1:]
+    sum_nlines = 0 #initialize counting variable
+
+    if len(filenames) == 0: # no filenames, just stdin
+        sum_nlines = count_file_like(sys.stdin)
+        print('stdin: %d' % sum_nlines)
+    else:
+        for f in filenames:
+            n = count_file(f)
+            print('%s %d' % (f, n))
+            sum_nlines += n
+        print('total: %d' % sum_nlines)
+
+def count_file(filename):
+    '''count the number of lines in a file'''
+    f = open(filename,'r')
+    nlines = len(f.readlines())
+    f.close()
+    return(nlines)
+
+def count_file_like(file_like):
+    '''count the number of lines in a file-like object (eg stdin)'''
+    n = 0
+    for line in file_like:
+        n = n+1
+    return n
+
+main()
+
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="generate-an-error-message">Generate an Error Message</h2>
+
+  <p>Write a program called <code class="highlighter-rouge">check_arguments.py</code> that prints usage
+then exits the program if no arguments are provided.
+(Hint: You can use <code class="highlighter-rouge">sys.exit()</code> to exit the program.)</p>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ python check_arguments.py
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>usage: python check_argument.py filename.txt
+</code></pre>
+  </div>
+
+  <div class="bash highlighter-rouge"><pre class="highlight"><code>$ python check_arguments.py filename.txt
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>Thanks for specifying arguments!
+</code></pre>
+  </div>
+</blockquote>
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>The <code class="highlighter-rouge">sys</code> library connects a Python program to the system it is running on.</p>
+</li>
+    
+    <li><p>The list <code class="highlighter-rouge">sys.argv</code> contains the command-line arguments that a program was run with.</p>
+</li>
+    
+    <li><p>Avoid silent failures.</p>
+</li>
+    
+    <li><p>The pseudo-file <code class="highlighter-rouge">sys.stdin</code> connects to a program’s standard input.</p>
+</li>
+    
+    <li><p>The pseudo-file <code class="highlighter-rouge">sys.stdout</code> connects to a program’s standard output.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../09-debugging/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="sr-only">lesson home</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+<footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016–2017
+	
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	
+	<a href="/edit/gh-pages/_episodes/10-cmdline.md">Edit on GitHub</a>
+	
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CITATION">Cite</a>
+	/
+	<a href="">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

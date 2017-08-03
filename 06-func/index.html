@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2017-08-04 00:20:27 +0200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="/swc-releases/2017.08/python-novice-inflammation">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon-swc.ico" />
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Programming with Python: Creating Functions</title>
+  </head>
+  <body>
+    <div class="container">
+      
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../conduct/">Code of Conduct</a></li>
+
+	
+        
+        <li><a href="../setup/">Setup</a></li>
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-numpy/">Analyzing Patient Data</a></li>
+            
+            <li><a href="../02-loop/">Repeating Actions with Loops</a></li>
+            
+            <li><a href="../03-lists/">Storing Multiple Values in Lists</a></li>
+            
+            <li><a href="../04-files/">Analyzing Data from Multiple Files</a></li>
+            
+            <li><a href="../05-cond/">Making Choices</a></li>
+            
+            <li><a href="../06-func/">Creating Functions</a></li>
+            
+            <li><a href="../07-errors/">Errors and Exceptions</a></li>
+            
+            <li><a href="../08-defensive/">Defensive Programming</a></li>
+            
+            <li><a href="../09-debugging/">Debugging</a></li>
+            
+            <li><a href="../10-cmdline/">Command-Line Programs</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio/">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference/">Reference</a></li>
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../license/">License</a></li>
+	
+	<li><a href="/edit/gh-pages/_episodes/06-func.md">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../05-cond/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+    <h3 class="maintitle"><a href="../">Programming with Python</a></h3>
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../07-errors/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Creating Functions</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 30 min
+      <br/>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How can I define new functions?</p>
+</li>
+	
+	<li><p>What’s the difference between defining and calling a function?</p>
+</li>
+	
+	<li><p>What happens when I call a function?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Define a function that takes parameters.</p>
+</li>
+	
+	<li><p>Return a value from a function.</p>
+</li>
+	
+	<li><p>Test and debug a function.</p>
+</li>
+	
+	<li><p>Set default values for function parameters.</p>
+</li>
+	
+	<li><p>Explain why we should divide programs into small, single-purpose functions.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>At this point,
+we’ve written code to draw some interesting features in our inflammation data,
+loop over all our data files to quickly draw these plots for each of them,
+and have Python make decisions based on what it sees in our data.
+But, our code is getting pretty long and complicated;
+what if we had thousands of datasets,
+and didn’t want to generate a figure for every single one?
+Commenting out the figure-drawing code is a nuisance.
+Also, what if we want to use that code again,
+on a different dataset or at a different point in our program?
+Cutting and pasting it is going to make our code get very long and very repetitive,
+very quickly.
+We’d like a way to package our code so that it is easier to reuse,
+and Python provides for this by letting us define things called ‘functions’ —
+a shorthand way of re-executing longer pieces of code.</p>
+
+<p>Let’s start by defining a function <code class="highlighter-rouge">fahr_to_kelvin</code> that converts temperatures from Fahrenheit to Kelvin:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def fahr_to_kelvin(temp):
+    return ((temp - 32) * (5/9)) + 273.15
+</code></pre>
+</div>
+
+<p><img src="../fig/python-function.svg" alt="The Blueprint for a Python Function" /></p>
+
+<!--- see https://gist.github.com/wd15/2b4ffbe5ce0d0ddb8a5b to
+regenerate the above figure --->
+
+<p>The function definition opens with the keyword <code class="highlighter-rouge">def</code> followed by the
+name of the function and a parenthesized list of parameter names. The
+<a href="../reference/#function-body">body</a> of the function — the
+statements that are executed when it runs — is indented below the
+definition line.</p>
+
+<p>When we call the function,
+the values we pass to it are assigned to those variables
+so that we can use them inside the function.
+Inside the function,
+we use a <a href="../reference/#return-statement">return statement</a> to send a result back to whoever asked for it.</p>
+
+<p>Let’s try running our function.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fahr_to_kelvin(32)
+</code></pre>
+</div>
+
+<p>This command should call our function, using “32” as the input and return the function value.</p>
+
+<p>In fact, calling our own function is no different from calling any other function:</p>
+<div class="python highlighter-rouge"><pre class="highlight"><code>print('freezing point of water:', fahr_to_kelvin(32))
+print('boiling point of water:', fahr_to_kelvin(212))
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>freezing point of water: 273.15
+boiling point of water: 373.15
+</code></pre>
+</div>
+
+<p>We’ve successfully called the function that we defined,
+and we have access to the value that we returned.</p>
+
+<blockquote class="callout">
+  <h2 id="integer-division">Integer Division</h2>
+
+  <p>We are using Python 3, where division always returns a floating point number:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>$ python3 -c "print(5/9)"
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>0.5555555555555556
+</code></pre>
+  </div>
+
+  <p>Unfortunately, this wasn’t the case in Python 2:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>5/9
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>0
+</code></pre>
+  </div>
+
+  <p>If you are using Python 2 and want to keep the fractional part of division
+you need to convert one or the other number to floating point:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>float(5)/9
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>0.555555555556
+</code></pre>
+  </div>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>5/float(9)
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>0.555555555556
+</code></pre>
+  </div>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>5.0/9
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>0.555555555556
+</code></pre>
+  </div>
+  <div class="python highlighter-rouge"><pre class="highlight"><code>5/9.0
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>0.555555555556
+</code></pre>
+  </div>
+
+  <p>And if you want an integer result from division in Python 3,
+use a double-slash:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>4//2
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>2
+</code></pre>
+  </div>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>3//2
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>1
+</code></pre>
+  </div>
+</blockquote>
+
+<h2 id="composing-functions">Composing Functions</h2>
+
+<p>Now that we’ve seen how to turn Fahrenheit into Kelvin,
+it’s easy to turn Kelvin into Celsius:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def kelvin_to_celsius(temp_k):
+    return temp_k - 273.15
+
+print('absolute zero in Celsius:', kelvin_to_celsius(0.0))
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>absolute zero in Celsius: -273.15
+</code></pre>
+</div>
+
+<p>What about converting Fahrenheit to Celsius?
+We could write out the formula,
+but we don’t need to.
+Instead,
+we can <a href="../reference/#compose">compose</a> the two functions we have already created:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def fahr_to_celsius(temp_f):
+    temp_k = fahr_to_kelvin(temp_f)
+    result = kelvin_to_celsius(temp_k)
+    return result
+
+print('freezing point of water in Celsius:', fahr_to_celsius(32.0))
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>freezing point of water in Celsius: 0.0
+</code></pre>
+</div>
+
+<p>This is our first taste of how larger programs are built:
+we define basic operations,
+then combine them in ever-large chunks to get the effect we want.
+Real-life functions will usually be larger than the ones shown here — typically half a dozen to a few dozen lines — but
+they shouldn’t ever be much longer than that,
+or the next person who reads it won’t be able to understand what’s going on.</p>
+
+<h2 id="tidying-up">Tidying up</h2>
+
+<p>Now that we know how to wrap bits of code up in functions,
+we can make our inflammation analysis easier to read and easier to reuse.
+First, let’s make an <code class="highlighter-rouge">analyze</code> function that generates our plots:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def analyze(filename):
+
+    data = numpy.loadtxt(fname=filename, delimiter=',')
+
+    fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+
+    axes1 = fig.add_subplot(1, 3, 1)
+    axes2 = fig.add_subplot(1, 3, 2)
+    axes3 = fig.add_subplot(1, 3, 3)
+
+    axes1.set_ylabel('average')
+    axes1.plot(numpy.mean(data, axis=0))
+
+    axes2.set_ylabel('max')
+    axes2.plot(numpy.max(data, axis=0))
+
+    axes3.set_ylabel('min')
+    axes3.plot(numpy.min(data, axis=0))
+
+    fig.tight_layout()
+    matplotlib.pyplot.show()
+</code></pre>
+</div>
+
+<p>and another function called <code class="highlighter-rouge">detect_problems</code> that checks for those systematics
+we noticed:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def detect_problems(filename):
+
+    data = numpy.loadtxt(fname=filename, delimiter=',')
+
+    if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+        print('Suspicious looking maxima!')
+    elif numpy.sum(numpy.min(data, axis=0)) == 0:
+        print('Minima add up to zero!')
+    else:
+        print('Seems OK!')
+</code></pre>
+</div>
+
+<p>Notice that rather than jumbling this code together in one giant <code class="highlighter-rouge">for</code> loop,
+we can now read and reuse both ideas separately.
+We can reproduce the previous analysis with a much simpler <code class="highlighter-rouge">for</code> loop:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>for f in filenames[:3]:
+    print(f)
+    analyze(f)
+    detect_problems(f)
+</code></pre>
+</div>
+
+<p>By giving our functions human-readable names,
+we can more easily read and understand what is happening in the <code class="highlighter-rouge">for</code> loop.
+Even better, if at some later date we want to use either of those pieces of code again,
+we can do so in a single line.</p>
+
+<h2 id="testing-and-documenting">Testing and Documenting</h2>
+
+<p>Once we start putting things in functions so that we can re-use them,
+we need to start testing that those functions are working correctly.
+To see how to do this,
+let’s write a function to center a dataset around a particular value:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def center(data, desired):
+    return (data - numpy.mean(data)) + desired
+</code></pre>
+</div>
+
+<p>We could test this on our actual data,
+but since we don’t know what the values ought to be,
+it will be hard to tell if the result was correct.
+Instead,
+let’s use NumPy to create a matrix of 0’s
+and then center that around 3:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>z = numpy.zeros((2,2))
+print(center(z, 3))
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>[[ 3.  3.]
+ [ 3.  3.]]
+</code></pre>
+</div>
+
+<p>That looks right,
+so let’s try <code class="highlighter-rouge">center</code> on our real data:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+print(center(data, 0))
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>[[-6.14875 -6.14875 -5.14875 ..., -3.14875 -6.14875 -6.14875]
+ [-6.14875 -5.14875 -4.14875 ..., -5.14875 -6.14875 -5.14875]
+ [-6.14875 -5.14875 -5.14875 ..., -4.14875 -5.14875 -5.14875]
+ ...,
+ [-6.14875 -5.14875 -5.14875 ..., -5.14875 -5.14875 -5.14875]
+ [-6.14875 -6.14875 -6.14875 ..., -6.14875 -4.14875 -6.14875]
+ [-6.14875 -6.14875 -5.14875 ..., -5.14875 -5.14875 -6.14875]]
+</code></pre>
+</div>
+
+<p>It’s hard to tell from the default output whether the result is correct,
+but there are a few simple tests that will reassure us:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>print('original min, mean, and max are:', numpy.min(data), numpy.mean(data), numpy.max(data))
+centered = center(data, 0)
+print('min, mean, and max of centered data are:', numpy.min(centered), numpy.mean(centered), numpy.max(centered))
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>original min, mean, and max are: 0.0 6.14875 20.0
+min, mean, and and max of centered data are: -6.14875 2.84217094304e-16 13.85125
+</code></pre>
+</div>
+
+<p>That seems almost right:
+the original mean was about 6.1,
+so the lower bound from zero is now about -6.1.
+The mean of the centered data isn’t quite zero — we’ll explore why not in the challenges — but it’s pretty close.
+We can even go further and check that the standard deviation hasn’t changed:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>print('std dev before and after:', numpy.std(data), numpy.std(centered))
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>std dev before and after: 4.61383319712 4.61383319712
+</code></pre>
+</div>
+
+<p>Those values look the same,
+but we probably wouldn’t notice if they were different in the sixth decimal place.
+Let’s do this instead:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>print('difference in standard deviations before and after:', numpy.std(data) - numpy.std(centered))
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>difference in standard deviations before and after: -3.5527136788e-15
+</code></pre>
+</div>
+
+<p>Again,
+the difference is very small.
+It’s still possible that our function is wrong,
+but it seems unlikely enough that we should probably get back to doing our analysis.
+We have one more task first, though:
+we should write some <a href="../reference/#documentation">documentation</a> for our function
+to remind ourselves later what it’s for and how to use it.</p>
+
+<p>The usual way to put documentation in software is to add <a href="../reference/#comment">comments</a> like this:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code># center(data, desired): return a new array containing the original data centered around the desired value.
+def center(data, desired):
+    return (data - numpy.mean(data)) + desired
+</code></pre>
+</div>
+
+<p>There’s a better way, though.
+If the first thing in a function is a string that isn’t assigned to a variable,
+that string is attached to the function as its documentation:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def center(data, desired):
+    '''Return a new array containing the original data centered around the desired value.'''
+    return (data - numpy.mean(data)) + desired
+</code></pre>
+</div>
+
+<p>This is better because we can now ask Python’s built-in help system to show us the documentation for the function:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>help(center)
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Help on function center in module __main__:
+
+center(data, desired)
+    Return a new array containing the original data centered around the desired value.
+</code></pre>
+</div>
+
+<p>A string like this is called a <a href="../reference/#docstring">docstring</a>.
+We don’t need to use triple quotes when we write one,
+but if we do,
+we can break the string across multiple lines:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def center(data, desired):
+    '''Return a new array containing the original data centered around the desired value.
+    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]'''
+    return (data - numpy.mean(data)) + desired
+
+help(center)
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Help on function center in module __main__:
+
+center(data, desired)
+    Return a new array containing the original data centered around the desired value.
+    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]
+</code></pre>
+</div>
+
+<h2 id="defining-defaults">Defining Defaults</h2>
+
+<p>We have passed parameters to functions in two ways:
+directly, as in <code class="highlighter-rouge">type(data)</code>,
+and by name, as in <code class="highlighter-rouge">numpy.loadtxt(fname='something.csv', delimiter=',')</code>.
+In fact,
+we can pass the filename to <code class="highlighter-rouge">loadtxt</code> without the <code class="highlighter-rouge">fname=</code>:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>numpy.loadtxt('inflammation-01.csv', delimiter=',')
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
+       [ 0.,  1.,  2., ...,  1.,  0.,  1.],
+       [ 0.,  1.,  1., ...,  2.,  1.,  1.],
+       ...,
+       [ 0.,  1.,  1., ...,  1.,  1.,  1.],
+       [ 0.,  0.,  0., ...,  0.,  2.,  0.],
+       [ 0.,  0.,  1., ...,  1.,  1.,  0.]])
+</code></pre>
+</div>
+
+<p>but we still need to say <code class="highlighter-rouge">delimiter=</code>:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>numpy.loadtxt('inflammation-01.csv', ',')
+</code></pre>
+</div>
+
+<div class="error highlighter-rouge"><pre class="highlight"><code>---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-26-e3bc6cf4fd6a&gt; in &lt;module&gt;()
+----&gt; 1 numpy.loadtxt('inflammation-01.csv', ',')
+
+/Users/gwilson/anaconda/lib/python2.7/site-packages/numpy/lib/npyio.pyc in loadtxt(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin)
+    775     try:
+    776         # Make sure we're dealing with a proper dtype
+--&gt; 777         dtype = np.dtype(dtype)
+    778         defconv = _getconv(dtype)
+    779
+
+TypeError: data type "," not understood
+</code></pre>
+</div>
+
+<p>To understand what’s going on,
+and make our own functions easier to use,
+let’s re-define our <code class="highlighter-rouge">center</code> function like this:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def center(data, desired=0.0):
+    '''Return a new array containing the original data centered around the desired value (0 by default).
+    Example: center([1, 2, 3], 0) =&gt; [-1, 0, 1]'''
+    return (data - numpy.mean(data)) + desired
+</code></pre>
+</div>
+
+<p>The key change is that the second parameter is now written <code class="highlighter-rouge">desired=0.0</code> instead of just <code class="highlighter-rouge">desired</code>.
+If we call the function with two arguments,
+it works as it did before:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>test_data = numpy.zeros((2, 2))
+print(center(test_data, 3))
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>[[ 3.  3.]
+ [ 3.  3.]]
+</code></pre>
+</div>
+
+<p>But we can also now call it with just one parameter,
+in which case <code class="highlighter-rouge">desired</code> is automatically assigned the <a href="../reference/#default-value">default value</a> of 0.0:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>more_data = 5 + numpy.zeros((2, 2))
+print('data before centering:')
+print(more_data)
+print('centered data:')
+print(center(more_data))
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>data before centering:
+[[ 5.  5.]
+ [ 5.  5.]]
+centered data:
+[[ 0.  0.]
+ [ 0.  0.]]
+</code></pre>
+</div>
+
+<p>This is handy:
+if we usually want a function to work one way,
+but occasionally need it to do something else,
+we can allow people to pass a parameter when they need to
+but provide a default to make the normal case easier.
+The example below shows how Python matches values to parameters:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def display(a=1, b=2, c=3):
+    print('a:', a, 'b:', b, 'c:', c)
+
+print('no parameters:')
+display()
+print('one parameter:')
+display(55)
+print('two parameters:')
+display(55, 66)
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>no parameters:
+a: 1 b: 2 c: 3
+one parameter:
+a: 55 b: 2 c: 3
+two parameters:
+a: 55 b: 66 c: 3
+</code></pre>
+</div>
+
+<p>As this example shows,
+parameters are matched up from left to right,
+and any that haven’t been given a value explicitly get their default value.
+We can override this behavior by naming the value as we pass it in:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>print('only setting the value of c')
+display(c=77)
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>only setting the value of c
+a: 1 b: 2 c: 77
+</code></pre>
+</div>
+
+<p>With that in hand,
+let’s look at the help for <code class="highlighter-rouge">numpy.loadtxt</code>:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>help(numpy.loadtxt)
+</code></pre>
+</div>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>Help on function loadtxt in module numpy.lib.npyio:
+
+loadtxt(fname, dtype=&lt;class 'float'&gt;, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
+    Load data from a text file.
+
+    Each row in the text file must have the same number of values.
+
+    Parameters
+    ----------
+    fname : file or str
+        File, filename, or generator to read.  If the filename extension is
+        ``.gz`` or ``.bz2``, the file is first decompressed. Note that
+        generators should return byte strings for Python 3k.
+    dtype : data-type, optional
+        Data-type of the resulting array; default: float.  If this is a
+        record data-type, the resulting array will be 1-dimensional, and
+        each row will be interpreted as an element of the array.  In this
+        case, the number of columns used must match the number of fields in
+        the data-type.
+    comments : str, optional
+        The character used to indicate the start of a comment;
+        default: '#'.
+    delimiter : str, optional
+        The string used to separate values.  By default, this is any
+        whitespace.
+    converters : dict, optional
+        A dictionary mapping column number to a function that will convert
+        that column to a float.  E.g., if column 0 is a date string:
+        ``converters = {0: datestr2num}``.  Converters can also be used to
+        provide a default value for missing data (but see also `genfromtxt`):
+        ``converters = {3: lambda s: float(s.strip() or 0)}``.  Default: None.
+    skiprows : int, optional
+        Skip the first `skiprows` lines; default: 0.
+    usecols : sequence, optional
+        Which columns to read, with 0 being the first.  For example,
+        ``usecols = (1,4,5)`` will extract the 2nd, 5th and 6th columns.
+        The default, None, results in all columns being read.
+    unpack : bool, optional
+        If True, the returned array is transposed, so that arguments may be
+        unpacked using ``x, y, z = loadtxt(...)``.  When used with a record
+        data-type, arrays are returned for each field.  Default is False.
+    ndmin : int, optional
+        The returned array will have at least `ndmin` dimensions.
+        Otherwise mono-dimensional axes will be squeezed.
+        Legal values: 0 (default), 1 or 2.
+        .. versionadded:: 1.6.0
+
+    Returns
+    -------
+    out : ndarray
+        Data read from the text file.
+
+    See Also
+    --------
+    load, fromstring, fromregex
+    genfromtxt : Load data with missing values handled as specified.
+    scipy.io.loadmat : reads MATLAB data files
+
+    Notes
+    -----
+    This function aims to be a fast reader for simply formatted files.  The
+    `genfromtxt` function provides more sophisticated handling of, e.g.,
+    lines with missing values.
+
+    Examples
+    --------
+    &gt;&gt;&gt; from StringIO import StringIO   # StringIO behaves like a file object
+    &gt;&gt;&gt; c = StringIO("0 1\n2 3")
+    &gt;&gt;&gt; np.loadtxt(c)
+    array([[ 0.,  1.],
+           [ 2.,  3.]])
+
+    &gt;&gt;&gt; d = StringIO("M 21 72\nF 35 58")
+    &gt;&gt;&gt; np.loadtxt(d, dtype={'names': ('gender', 'age', 'weight'),
+    ...                      'formats': ('S1', 'i4', 'f4')})
+    array([('M', 21, 72.0), ('F', 35, 58.0)],
+          dtype=[('gender', '|S1'), ('age', '&lt;i4'), ('weight', '&lt;f4')])
+
+    &gt;&gt;&gt; c = StringIO("1,0,2\n3,0,4")
+    &gt;&gt;&gt; x, y = np.loadtxt(c, delimiter=',', usecols=(0, 2), unpack=True)
+    &gt;&gt;&gt; x
+    array([ 1.,  3.])
+    &gt;&gt;&gt; y
+    array([ 2.,  4.])
+</code></pre>
+</div>
+
+<p>There’s a lot of information here,
+but the most important part is the first couple of lines:</p>
+
+<div class="output highlighter-rouge"><pre class="highlight"><code>loadtxt(fname, dtype=&lt;type 'float'&gt;, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None,
+        unpack=False, ndmin=0)
+</code></pre>
+</div>
+
+<p>This tells us that <code class="highlighter-rouge">loadtxt</code> has one parameter called <code class="highlighter-rouge">fname</code> that doesn’t have a default value,
+and eight others that do.
+If we call the function like this:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>numpy.loadtxt('inflammation-01.csv', ',')
+</code></pre>
+</div>
+
+<p>then the filename is assigned to <code class="highlighter-rouge">fname</code> (which is what we want),
+but the delimiter string <code class="highlighter-rouge">','</code> is assigned to <code class="highlighter-rouge">dtype</code> rather than <code class="highlighter-rouge">delimiter</code>,
+because <code class="highlighter-rouge">dtype</code> is the second parameter in the list. However <code class="highlighter-rouge">','</code> isn’t a known <code class="highlighter-rouge">dtype</code> so
+our code produced an error message when we tried to run it.
+When we call <code class="highlighter-rouge">loadtxt</code> we don’t have to provide <code class="highlighter-rouge">fname=</code> for the filename because it’s the
+first item in the list, but if we want the <code class="highlighter-rouge">','</code> to be assigned to the variable <code class="highlighter-rouge">delimiter</code>,
+we <em>do</em> have to provide <code class="highlighter-rouge">delimiter=</code> for the second parameter since <code class="highlighter-rouge">delimiter</code> is not
+the second parameter in the list.</p>
+
+<h2 id="readable-functions">Readable functions</h2>
+
+<p>Consider these two functions:</p>
+
+<div class="python highlighter-rouge"><pre class="highlight"><code>def s(p):
+    a = 0
+    for v in p:
+        a += v
+    m = a / len(p)
+    d = 0
+    for v in p:
+        d += (v - m) * (v - m)
+    return numpy.sqrt(d / (len(p) - 1))
+
+def std_dev(sample):
+    sample_sum = 0
+    for value in sample:
+        sample_sum += value
+
+    sample_mean = sample_sum / len(sample)
+
+    sum_squared_devs = 0
+    for value in sample:
+        sum_squared_devs += (value - sample_mean) * (value - sample_mean)
+
+    return numpy.sqrt(sum_squared_devs / (len(sample) - 1))
+</code></pre>
+</div>
+
+<p>The functions <code class="highlighter-rouge">s</code> and <code class="highlighter-rouge">std_dev</code> are computationally equivalent (they
+both calculate the sample standard deviation), but to a human reader,
+they look very different. You probably found <code class="highlighter-rouge">std_dev</code> much easier to
+read and understand than <code class="highlighter-rouge">s</code>.</p>
+
+<p>As this example illustrates, both documentation and a programmer’s
+<em>coding style</em> combine to determine how easy it is for others to read
+and understand the programmer’s code. Choosing meaningful variable
+names and using blank spaces to break the code into logical “chunks”
+are helpful techniques for producing <em>readable code</em>. This is useful
+not only for sharing code with others, but also for the original
+programmer. If you need to revisit code that you wrote months ago and
+haven’t thought about since then, you will appreciate the value of
+readable code!</p>
+
+<blockquote class="challenge">
+  <h2 id="combining-strings">Combining Strings</h2>
+
+  <p>“Adding” two strings produces their concatenation:
+<code class="highlighter-rouge">'a' + 'b'</code> is <code class="highlighter-rouge">'ab'</code>.
+Write a function called <code class="highlighter-rouge">fence</code> that takes two parameters called <code class="highlighter-rouge">original</code> and <code class="highlighter-rouge">wrapper</code>
+and returns a new string that has the wrapper character at the beginning and end of the original.
+A call to your function should look like this:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>print(fence('name', '*'))
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>*name*
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>def fence(original, wrapper):
+    return wrapper + original + wrapper
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="selecting-characters-from-strings">Selecting Characters From Strings</h2>
+
+  <p>If the variable <code class="highlighter-rouge">s</code> refers to a string,
+then <code class="highlighter-rouge">s[0]</code> is the string’s first character
+and <code class="highlighter-rouge">s[-1]</code> is its last.
+Write a function called <code class="highlighter-rouge">outer</code>
+that returns a string made up of just the first and last characters of its input.
+A call to your function should look like this:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>print(outer('helium'))
+</code></pre>
+  </div>
+
+  <div class="output highlighter-rouge"><pre class="highlight"><code>hm
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>def outer(input_string):
+    return input_string[0] + input_string[-1]
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="rescaling-an-array">Rescaling an Array</h2>
+
+  <p>Write a function <code class="highlighter-rouge">rescale</code> that takes an array as input
+and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
+(Hint: If <code class="highlighter-rouge">L</code> and <code class="highlighter-rouge">H</code> are the lowest and highest values in the original array,
+then the replacement for a value <code class="highlighter-rouge">v</code> should be <code class="highlighter-rouge">(v-L) / (H-L)</code>.)</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>def rescale(input_array):
+    L = numpy.min(input_array)
+    H = numpy.max(input_array)
+    output_array = (input_array - L) / (H - L)
+    return output_array
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="testing-and-documenting-your-function">Testing and Documenting Your Function</h2>
+
+  <p>Run the commands <code class="highlighter-rouge">help(numpy.arange)</code> and <code class="highlighter-rouge">help(numpy.linspace)</code>
+to see how to use these functions to generate regularly-spaced values,
+then use those values to test your <code class="highlighter-rouge">rescale</code> function.
+Once you’ve successfully tested your function,
+add a docstring that explains what it does.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>'''Takes an array as input, and returns a corresponding array scaled so
+that 0 corresponds to the minimum and 1 to the maximum value of the input array.
+
+Examples:
+&gt;&gt;&gt; rescale(numpy.arange(10.0))
+array([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,
+       0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])
+&gt;&gt;&gt; rescale(numpy.linspace(0, 100, 5))
+array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
+'''
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="defining-defaults-1">Defining Defaults</h2>
+
+  <p>Rewrite the <code class="highlighter-rouge">rescale</code> function so that it scales data to lie between <code class="highlighter-rouge">0.0</code> and <code class="highlighter-rouge">1.0</code> by default,
+but will allow the caller to specify lower and upper bounds if they want.
+Compare your implementation to your neighbor’s:
+do the two functions always behave the same way?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-4">Solution</h2>
+    <div class="python highlighter-rouge"><pre class="highlight"><code>def rescale(input_array, low_val=0.0, high_val=1.0):
+    '''rescales input array values to lie between low_val and high_val'''
+    L = numpy.min(input_array)
+    H = numpy.max(input_array)
+    intermed_array = (input_array - L) / (H - L)
+    output_array = intermed_array * (high_val - low_val) + low_val
+    return output_array
+</code></pre>
+    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="variables-inside-and-outside-functions">Variables Inside and Outside Functions</h2>
+
+  <p>What does the following piece of code display when run — and why?</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>f = 0
+k = 0
+
+def f2k(f):
+  k = ((f-32)*(5.0/9.0)) + 273.15
+  return k
+
+f2k(8)
+f2k(41)
+f2k(32)
+
+print(k)
+</code></pre>
+  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-5">Solution</h2>
+
+    <div class="output highlighter-rouge"><pre class="highlight"><code>259.81666666666666
+287.15
+273.15
+0
+</code></pre>
+    </div>
+    <p><code class="highlighter-rouge">k</code> is 0 because the <code class="highlighter-rouge">k</code> inside the function <code class="highlighter-rouge">f2k</code> doesn’t know about the <code class="highlighter-rouge">k</code> defined outside the function.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="mixing-default-and-non-default-parameters">Mixing Default and Non-Default Parameters</h2>
+
+  <p>Given the following code:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>def numbers(one, two=2, three, four=4):
+    n = str(one) + str(two) + str(three) + str(four)
+    return n
+
+print(numbers(1, three=3))
+</code></pre>
+  </div>
+
+  <p>what do you expect will be printed?  What is actually printed?
+What rule do you think Python is following?</p>
+
+  <ol>
+    <li><code class="highlighter-rouge">1234</code></li>
+    <li><code class="highlighter-rouge">one2three4</code></li>
+    <li><code class="highlighter-rouge">1239</code></li>
+    <li><code class="highlighter-rouge">SyntaxError</code></li>
+  </ol>
+
+  <p>Given that, what does the following piece of code display when run?</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>def func(a, b=3, c=6):
+  print('a: ', a, 'b: ', b, 'c:', c)
+
+func(-1, 2)
+</code></pre>
+  </div>
+
+  <ol>
+    <li><code class="highlighter-rouge">a: b: 3 c: 6</code></li>
+    <li><code class="highlighter-rouge">a: -1 b: 3 c: 6</code></li>
+    <li><code class="highlighter-rouge">a: -1 b: 2 c: 6</code></li>
+    <li><code class="highlighter-rouge">a: b: -1 c: 2</code></li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-6">Solution</h2>
+    <p>Attempting to define the <code class="highlighter-rouge">numbers</code> function results in <code class="highlighter-rouge">4. SyntaxError</code>.
+The defined parameters <code class="highlighter-rouge">two</code> and <code class="highlighter-rouge">four</code> are given default values. Because
+<code class="highlighter-rouge">one</code> and <code class="highlighter-rouge">three</code> are not given default values, they are required to be 
+included as arguments when the function is called and must be placed
+before any parameters that have default values in the function definition.</p>
+
+    <p>The given call to <code class="highlighter-rouge">func</code> displays <code class="highlighter-rouge">a: -1 b: 2 c: 6</code>. -1 is assigned to
+the first parameter <code class="highlighter-rouge">a</code>, 2 is assigned to the next parameter <code class="highlighter-rouge">b</code>, and <code class="highlighter-rouge">c</code> is
+not passed a value, so it uses its default value 6.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="the-old-switcheroo">The Old Switcheroo</h2>
+
+  <p>Consider this code:</p>
+
+  <div class="python highlighter-rouge"><pre class="highlight"><code>a = 3
+b = 7
+
+def swap(a, b):
+    temp = a
+    a = b
+    b = temp
+
+swap(a, b)
+
+print(a, b)
+</code></pre>
+  </div>
+
+  <p>Which of the following would be printed if you were to run this code? Why did you pick this answer?</p>
+
+  <ol>
+    <li><code class="highlighter-rouge">7 3</code></li>
+    <li><code class="highlighter-rouge">3 7</code></li>
+    <li><code class="highlighter-rouge">3 3</code></li>
+    <li><code class="highlighter-rouge">7 7</code></li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-7">Solution</h2>
+    <p><code class="highlighter-rouge">3, 7</code> is correct. Initially <code class="highlighter-rouge">a</code> has a value of 3 and <code class="highlighter-rouge">b</code> has a value of 7.
+When the swap function is called, it creates local variables (also called
+<code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code> in this case) and trades their values. The function does not
+return any values and does not alter <code class="highlighter-rouge">a</code> or <code class="highlighter-rouge">b</code> outside of its local copy.
+Therefore the original values of <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code> remain unchanged.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="readable-code">Readable Code</h2>
+
+  <p>Revise a function you wrote for one of the previous exercises to try to make
+the code more readable. Then, collaborate with one of your neighbors
+to critique each other’s functions and discuss how your function implementations
+could be further improved to make them more readable.</p>
+</blockquote>
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>Define a function using <code class="highlighter-rouge">def name(...params...)</code>.</p>
+</li>
+    
+    <li><p>The body of a function must be indented.</p>
+</li>
+    
+    <li><p>Call a function using <code class="highlighter-rouge">name(...values...)</code>.</p>
+</li>
+    
+    <li><p>Numbers are stored as integers or floating-point numbers.</p>
+</li>
+    
+    <li><p>Integer division produces the whole part of the answer (not the fractional part).</p>
+</li>
+    
+    <li><p>Each time a function is called, a new stack frame is created on the <strong>call stack</strong> to hold its parameters and local variables.</p>
+</li>
+    
+    <li><p>Python looks for variables in the current stack frame before looking for them at the top level.</p>
+</li>
+    
+    <li><p>Use <code class="highlighter-rouge">help(thing)</code> to view help for something.</p>
+</li>
+    
+    <li><p>Put docstrings in functions to provide help for that function.</p>
+</li>
+    
+    <li><p>Specify default values for parameters when defining a function using <code class="highlighter-rouge">name=value</code> in the parameter list.</p>
+</li>
+    
+    <li><p>Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+<div class="row">
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../05-cond/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-md-10">
+    
+  </div>
+  <div class="col-md-1">
+    <h3>
+      
+      <a href="../07-errors/"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+<footer>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016–2017
+	
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+	
+	<a href="/edit/gh-pages/_episodes/06-func.md">Edit on GitHub</a>
+	
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CITATION">Cite</a>
+	/
+	<a href="">Contact</a>
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
