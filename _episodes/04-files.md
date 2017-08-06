@@ -54,7 +54,7 @@ filenames = filenames[0:3]
 for f in filenames:
     print(f)
 
-    data = numpy.loadtxt(fname=f, delimiter=',')
+    data = numpy.genfromtxt(fname=f, delimiter=',')
 
     fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
@@ -117,8 +117,8 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > >
 > > filenames = glob.glob('inflammation*.csv')
 > >
-> > data0 = numpy.loadtxt(fname=filenames[0], delimiter=',')
-> > data1 = numpy.loadtxt(fname=filenames[1], delimiter=',')
+> > data0 = numpy.genfromtxt(fname=filenames[0], delimiter=',')
+> > data1 = numpy.genfromtxt(fname=filenames[1], delimiter=',')
 > >
 > > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 > >
@@ -159,7 +159,7 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > > composite_data = numpy.zeros((60,40))
 > >
 > > for f in filenames:
-> >     data = numpy.loadtxt(fname = f, delimiter=',')
+> >     data = numpy.genfromtxt(fname = f, delimiter=',')
 > >     composite_data += data
 > >
 > > composite_data/=len(filenames)

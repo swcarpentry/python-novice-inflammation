@@ -160,7 +160,7 @@ import numpy
 def main():
     script = sys.argv[0]
     filename = sys.argv[1]
-    data = numpy.loadtxt(filename, delimiter=',')
+    data = numpy.genfromtxt(filename, delimiter=',')
     for m in numpy.mean(data, axis=1):
         print(m)
 ~~~
@@ -192,7 +192,7 @@ import numpy
 def main():
     script = sys.argv[0]
     filename = sys.argv[1]
-    data = numpy.loadtxt(filename, delimiter=',')
+    data = numpy.genfromtxt(filename, delimiter=',')
     for m in numpy.mean(data, axis=1):
         print(m)
 
@@ -391,7 +391,7 @@ import numpy
 def main():
     script = sys.argv[0]
     for filename in sys.argv[1:]:
-        data = numpy.loadtxt(filename, delimiter=',')
+        data = numpy.genfromtxt(filename, delimiter=',')
         for m in numpy.mean(data, axis=1):
             print(m)
 
@@ -450,7 +450,7 @@ def main():
     filenames = sys.argv[2:]
 
     for f in filenames:
-        data = numpy.loadtxt(f, delimiter=',')
+        data = numpy.genfromtxt(f, delimiter=',')
 
         if action == '--min':
             values = numpy.min(data, axis=1)
@@ -517,7 +517,7 @@ def main():
         process(f, action)
 
 def process(filename, action):
-    data = numpy.loadtxt(filename, delimiter=',')
+    data = numpy.genfromtxt(filename, delimiter=',')
 
     if action == '--min':
         values = numpy.min(data, axis=1)
@@ -595,7 +595,7 @@ and we have to halt it using the `Interrupt` option from the `Kernel` menu in th
 
 We now need to rewrite the program so that it loads data from `sys.stdin` if no filenames are provided.
 Luckily,
-`numpy.loadtxt` can handle either a filename or an open file as its first parameter,
+`numpy.genfromtxt` can handle either a filename or an open file as its first parameter,
 so we don't actually need to change `process`.
 Only `main` changes:
 
@@ -615,13 +615,13 @@ def main():
     assert action in ['--min', '--mean', '--max'], \
            'Action is not one of --min, --mean, or --max: ' + action
     if len(filenames) == 0:
-        process(sys.stdin, action)
+        process(sys.stdin.buffer, action)
     else:
         for f in filenames:
             process(f, action)
 
 def process(filename, action):
-    data = numpy.loadtxt(filename, delimiter=',')
+    data = numpy.genfromtxt(filename, delimiter=',')
 
     if action == '--min':
         values = numpy.min(data, axis=1)
@@ -773,13 +773,13 @@ the program now does everything we set out to do.
 > >     assert action in ['-n', '-m', '-x'], \
 > >            'Action is not one of -n, -m, or -x: ' + action
 > >     if len(filenames) == 0:
-> >         process(sys.stdin, action)
+> >         process(sys.stdin.buffer, action)
 > >     else:
 > >         for f in filenames:
 > >             process(f, action)
 > >
 > > def process(filename, action):
-> >     data = numpy.loadtxt(filename, delimiter=',')
+> >     data = numpy.genfromtxt(filename, delimiter=',')
 > >
 > >     if action == '-n':
 > >         values = numpy.min(data, axis=1)
@@ -824,13 +824,13 @@ the program now does everything we set out to do.
 > >     assert action in ['--min', '--mean', '--max'], \
 > >            'Action is not one of --min, --mean, or --max: ' + action
 > >     if len(filenames) == 0:
-> >         process(sys.stdin, action)
+> >         process(sys.stdin.buffer, action)
 > >     else:
 > >         for f in filenames:
 > >             process(f, action)
 > >
 > > def process(filename, action):
-> >     data = numpy.loadtxt(filename, delimiter=',')
+> >     data = numpy.genfromtxt(filename, delimiter=',')
 > >
 > >     if action == '--min':
 > >         values = numpy.min(data, axis=1)
@@ -869,13 +869,13 @@ the program now does everything we set out to do.
 > >         filenames = sys.argv[2:]
 > >
 > >     if len(filenames) == 0:
-> >         process(sys.stdin, action)
+> >         process(sys.stdin.buffer, action)
 > >     else:
 > >         for f in filenames:
 > >             process(f, action)
 > >
 > > def process(filename, action):
-> >     data = numpy.loadtxt(filename, delimiter=',')
+> >     data = numpy.genfromtxt(filename, delimiter=',')
 > >
 > >     if action == '--min':
 > >         values = numpy.min(data, axis=1)
@@ -922,7 +922,7 @@ the program now does everything we set out to do.
 > >
 > > def row_col_count(filename):
 > >     try:
-> >         nrow, ncol = numpy.loadtxt(filename, delimiter=',').shape
+> >         nrow, ncol = numpy.genfromtxt(filename, delimiter=',').shape
 > >     except ValueError: #get this if file doesn't have same number of rows and columns, or if it has non-numeric content
 > >         nrow, ncol = (0, 0)
 > >     return nrow, ncol

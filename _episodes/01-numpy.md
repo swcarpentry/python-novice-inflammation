@@ -174,7 +174,7 @@ Once we've imported the library,
 we can ask the library to read our data file for us:
 
 ~~~
-numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+numpy.genfromtxt(fname='inflammation-01.csv', delimiter=',')
 ~~~
 {: .python}
 
@@ -189,12 +189,12 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 ~~~
 {: .output}
 
-The expression `numpy.loadtxt(...)` is a [function call](reference.html#function-call)
-that asks Python to run the [function](reference.html#function) `loadtxt` which belongs to the `numpy` library.
+The expression `numpy.genfromtxt(...)` is a [function call](reference.html#function-call)
+that asks Python to run the [function](reference.html#function) `genfromtxt` which belongs to the `numpy` library.
 This [dotted notation](reference.html#dotted-notation) is used everywhere in Python
 to refer to the parts of things as `thing.component`.
 
-`numpy.loadtxt` has two [parameters](reference.html#parameter):
+`numpy.genfromtxt` has two [parameters](reference.html#parameter):
 the name of the file we want to read,
 and the [delimiter](reference.html#delimiter) that separates values on a line.
 These both need to be character strings (or [strings](reference.html#string) for short),
@@ -211,14 +211,14 @@ To save space,
 Python displays numbers as `1.` instead of `1.0`
 when there's nothing interesting after the decimal point.
 
-Our call to `numpy.loadtxt` read our file,
+Our call to `numpy.genfromtxt` read our file,
 but didn't save the data in memory.
 To do that,
 we need to assign the array to a variable. Just as we can assign a single value to a variable, we can also assign an array of values
-to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its result:
+to a variable using the same syntax.  Let's re-run `numpy.genfromtxt` and save its result:
 
 ~~~
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.genfromtxt(fname='inflammation-01.csv', delimiter=',')
 ~~~
 {: .python}
 
@@ -766,7 +766,7 @@ Here are our three plots side by side:
 import numpy
 import matplotlib.pyplot
 
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.genfromtxt(fname='inflammation-01.csv', delimiter=',')
 
 fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
@@ -791,7 +791,7 @@ matplotlib.pyplot.show()
 
 ![The Previous Plots as Subplots](../fig/01-numpy_80_0.png)
 
-The [call]({{ page.root }}/reference/#function-call) to `loadtxt` reads our data,
+The [call]({{ page.root }}/reference/#function-call) to `genfromtxt` reads our data,
 and the rest of the program tells the plotting library
 how large we want the figure to be,
 that we're creating three subplots,
@@ -808,7 +808,7 @@ the graphs will actually be squeezed together more closely.)
 > [often suggested](http://www.scipy.org/getting-started.html#an-example-script)
 > to make a shortcut like so: `import numpy as np`.
 > If you ever see Python code online using a NumPy function with `np`
-> (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
+> (for example, `np.genfromtxt(...)`), it's because they've used this shortcut.
 > When working with other people, it is important to agree on a convention of how common libraries are imported.
 {: .callout}
 > ## Check Your Understanding
@@ -968,7 +968,7 @@ the graphs will actually be squeezed together more closely.)
 > > import numpy
 > > import matplotlib.pyplot
 > >
-> > data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+> > data = numpy.genfromtxt(fname='inflammation-01.csv', delimiter=',')
 > >
 > > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 > >
@@ -1018,7 +1018,7 @@ the graphs will actually be squeezed together more closely.)
 > > import numpy
 > > import matplotlib.pyplot
 > >
-> > data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
+> > data = numpy.genfromtxt(fname='data/inflammation-01.csv', delimiter=',')
 > >
 > > # change figsize (swap width and height)
 > > fig = matplotlib.pyplot.figure(figsize=(3.0, 10.0))
