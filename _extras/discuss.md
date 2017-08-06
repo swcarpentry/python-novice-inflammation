@@ -120,7 +120,7 @@ def span(a):
     diff = numpy.max(a) - numpy.min(a)
     return diff
 
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.genfromtxt(fname='inflammation-01.csv', delimiter=',')
 print('span of data:', span(data))
 ~~~
 {: .python}
@@ -134,7 +134,7 @@ Notice that `span` assigns a value to a variable called `diff`.
 We might very well use a variable with the same name to hold data:
 
 ~~~
-diff = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+diff = numpy.genfromtxt(fname='inflammation-01.csv', delimiter=',')
 print('span of data:', span(diff))
 ~~~
 {: .python}
