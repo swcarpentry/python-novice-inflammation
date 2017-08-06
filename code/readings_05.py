@@ -11,7 +11,7 @@ def main():
         process(f, action)
 
 def process(filename, action):
-    data = numpy.loadtxt(filename, delimiter=',')
+    data = numpy.genfromtxt(filename, delimiter=',')
 
     if action == '--min':
         values = data.min(axis=1)

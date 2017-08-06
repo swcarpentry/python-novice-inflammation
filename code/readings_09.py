@@ -11,13 +11,13 @@ def main():
         filenames = sys.argv[2:]
 
     if len(filenames) == 0:
-        process(sys.stdin, action)
+        process(sys.stdin.buffer, action)
     else:
         for f in filenames:
             process(f, action)
 
 def process(filename, action):
-    data = numpy.loadtxt(filename, delimiter=',')
+    data = numpy.genfromtxt(filename, delimiter=',')
 
     if action == '--min':
         values = data.min(axis=1)

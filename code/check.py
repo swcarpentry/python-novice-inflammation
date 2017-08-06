@@ -19,7 +19,7 @@ def main():
 
 def row_col_count(filename):
     try:
-        nrow, ncol = numpy.loadtxt(filename, delimiter=',').shape
+        nrow, ncol = numpy.genfromtxt(filename, delimiter=',').shape
     except ValueError: #get this if file doesn't have same number of rows and columns, or if it has non-numeric content
         nrow, ncol = (0, 0)
     return nrow, ncol
