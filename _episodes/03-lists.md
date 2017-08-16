@@ -496,7 +496,7 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > Compare it to:
 >
 > ~~~
-> left, right = [right, left]
+> left, right = right, left
 > ~~~
 > {: .python}
 >
@@ -516,7 +516,7 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > > ~~~
 > > {: .output}
 > >
-> >In the first case we used a temporary variable `temp` to keep the value of `left` before we overwrite it with the value of `right`. In the second case, `right` and `left` are packed into a list and then unpacked into `left` and `right`.
+> >In the first case we used a temporary variable `temp` to keep the value of `left` before we overwrite it with the value of `right`. In the second case, `right` and `left` are packed into a tuple and then unpacked into `left` and `right`.
 > {: .solution}
 {: .challenge}
 
