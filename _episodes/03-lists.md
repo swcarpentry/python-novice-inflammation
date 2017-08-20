@@ -7,6 +7,10 @@ questions:
 objectives:
 - "Explain what a list is."
 - "Create and index lists of simple values."
+- "Change the values of individual elements"
+- "Append values to an existing list"
+- "Reorder and slice list elements"
+- "Create and manipulate nested lists"
 keypoints:
 - "`[value1, value2, value3, ...]` creates a list."
 - "Lists are indexed and sliced in the same way as strings and arrays."
