@@ -21,7 +21,7 @@ $ cd Desktop/python-novice-inflammation/data
 
 If you will be using the Jupyter (IPython) notebook for the lesson,
 you should have already
-[installed Anaconda](http://swcarpentry.github.io/workshop-template/#setup)
+[installed Anaconda](http://swcarpentry.github.io/workshop-template/#python)
 which includes the notebook.
 
 To start the notebook, open a terminal or git bash and type the command:
