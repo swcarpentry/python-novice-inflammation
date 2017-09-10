@@ -238,7 +238,7 @@ First, let's make an `analyze` function that generates our plots:
 ~~~
 def analyze(filename):
 
-    data = numpy.loadtxt(fname=filename, delimiter=',')
+    data = numpy.genfromtxt(fname=filename, delimiter=',')
 
     fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
@@ -266,7 +266,7 @@ we noticed:
 ~~~
 def detect_problems(filename):
 
-    data = numpy.loadtxt(fname=filename, delimiter=',')
+    data = numpy.genfromtxt(fname=filename, delimiter=',')
 
     if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
         print('Suspicious looking maxima!')
@@ -330,7 +330,7 @@ That looks right,
 so let's try `center` on our real data:
 
 ~~~
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.genfromtxt(fname='inflammation-01.csv', delimiter=',')
 print(center(data, 0))
 ~~~
 {: .python}
@@ -463,12 +463,12 @@ center(data, desired)
 
 We have passed parameters to functions in two ways:
 directly, as in `type(data)`,
-and by name, as in `numpy.loadtxt(fname='something.csv', delimiter=',')`.
+and by name, as in `numpy.genfromtxt(fname='something.csv', delimiter=',')`.
 In fact,
-we can pass the filename to `loadtxt` without the `fname=`:
+we can pass the filename to `genfromtxt` without the `fname=`:
 
 ~~~
-numpy.loadtxt('inflammation-01.csv', delimiter=',')
+numpy.genfromtxt('inflammation-01.csv', delimiter=',')
 ~~~
 {: .python}
 
@@ -486,7 +486,7 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 but we still need to say `delimiter=`:
 
 ~~~
-numpy.loadtxt('inflammation-01.csv', ',')
+numpy.genfromtxt('inflammation-01.csv', ',')
 ~~~
 {: .python}
 
@@ -494,9 +494,9 @@ numpy.loadtxt('inflammation-01.csv', ',')
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-26-e3bc6cf4fd6a> in <module>()
-----> 1 numpy.loadtxt('inflammation-01.csv', ',')
+----> 1 numpy.genfromtxt('inflammation-01.csv', ',')
 
-/Users/gwilson/anaconda/lib/python2.7/site-packages/numpy/lib/npyio.pyc in loadtxt(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin)
+/Users/gwilson/anaconda/lib/python2.7/site-packages/numpy/lib/npyio.pyc in genfromtxt(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin)
     775     try:
     776         # Make sure we're dealing with a proper dtype
 --> 777         dtype = np.dtype(dtype)
@@ -605,98 +605,168 @@ a: 1 b: 2 c: 77
 {: .output}
 
 With that in hand,
-let's look at the help for `numpy.loadtxt`:
+let's look at the help for `numpy.genfromtxt`:
 
 ~~~
-help(numpy.loadtxt)
+help(numpy.genfromtxt)
 ~~~
 {: .python}
 
 ~~~
-Help on function loadtxt in module numpy.lib.npyio:
+Help on function genfromtxt in module numpy.lib.npyio:
 
-loadtxt(fname, dtype=<class 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
-    Load data from a text file.
-
-    Each row in the text file must have the same number of values.
-
+genfromtxt(fname, dtype=<class 'float'>, comments='#', delimiter=None, skip_header=0, skip_footer=0, converters=None, missing_values=None, filling_values=None, usecols=None, names=None, excludelist=None, deletechars=None, replace_space='_', autostrip=False, case_sensitive=True, defaultfmt='f%i', unpack=None, usemask=False, loose=True, invalid_raise=True, max_rows=None)
+    Load data from a text file, with missing values handled as specified.
+    
+    Each line past the first `skip_header` lines is split at the `delimiter`
+    character, and characters following the `comments` character are discarded.
+    
     Parameters
     ----------
-    fname : file or str
-        File, filename, or generator to read.  If the filename extension is
-        ``.gz`` or ``.bz2``, the file is first decompressed. Note that
-        generators should return byte strings for Python 3k.
-    dtype : data-type, optional
-        Data-type of the resulting array; default: float.  If this is a
-        record data-type, the resulting array will be 1-dimensional, and
-        each row will be interpreted as an element of the array.  In this
-        case, the number of columns used must match the number of fields in
-        the data-type.
+    fname : file, str, pathlib.Path, list of str, generator
+        File, filename, list, or generator to read.  If the filename
+        extension is `.gz` or `.bz2`, the file is first decompressed. Note
+        that generators must return byte strings in Python 3k.  The strings
+        in a list or produced by a generator are treated as lines.
+    dtype : dtype, optional
+        Data type of the resulting array.
+        If None, the dtypes will be determined by the contents of each
+        column, individually.
     comments : str, optional
-        The character used to indicate the start of a comment;
-        default: '#'.
-    delimiter : str, optional
-        The string used to separate values.  By default, this is any
-        whitespace.
-    converters : dict, optional
-        A dictionary mapping column number to a function that will convert
-        that column to a float.  E.g., if column 0 is a date string:
-        ``converters = {0: datestr2num}``.  Converters can also be used to
-        provide a default value for missing data (but see also `genfromtxt`):
-        ``converters = {3: lambda s: float(s.strip() or 0)}``.  Default: None.
+        The character used to indicate the start of a comment.
+        All the characters occurring on a line after a comment are discarded
+    delimiter : str, int, or sequence, optional
+        The string used to separate values.  By default, any consecutive
+        whitespaces act as delimiter.  An integer or sequence of integers
+        can also be provided as width(s) of each field.
     skiprows : int, optional
-        Skip the first `skiprows` lines; default: 0.
+        `skiprows` was removed in numpy 1.10. Please use `skip_header` instead.
+    skip_header : int, optional
+        The number of lines to skip at the beginning of the file.
+    skip_footer : int, optional
+        The number of lines to skip at the end of the file.
+    converters : variable, optional
+        The set of functions that convert the data of a column to a value.
+        The converters can also be used to provide a default value
+        for missing data: ``converters = {3: lambda s: float(s or 0)}``.
+    missing : variable, optional
+        `missing` was removed in numpy 1.10. Please use `missing_values`
+        instead.
+    missing_values : variable, optional
+        The set of strings corresponding to missing data.
+    filling_values : variable, optional
+        The set of values to be used as default when the data are missing.
     usecols : sequence, optional
         Which columns to read, with 0 being the first.  For example,
-        ``usecols = (1,4,5)`` will extract the 2nd, 5th and 6th columns.
-        The default, None, results in all columns being read.
+        ``usecols = (1, 4, 5)`` will extract the 2nd, 5th and 6th columns.
+    names : {None, True, str, sequence}, optional
+        If `names` is True, the field names are read from the first valid line
+        after the first `skip_header` lines.
+        If `names` is a sequence or a single-string of comma-separated names,
+        the names will be used to define the field names in a structured dtype.
+        If `names` is None, the names of the dtype fields will be used, if any.
+    excludelist : sequence, optional
+        A list of names to exclude. This list is appended to the default list
+        ['return','file','print']. Excluded names are appended an underscore:
+        for example, `file` would become `file_`.
+    deletechars : str, optional
+        A string combining invalid characters that must be deleted from the
+        names.
+    defaultfmt : str, optional
+        A format used to define default field names, such as "f%i" or "f_%02i".
+    autostrip : bool, optional
+        Whether to automatically strip white spaces from the variables.
+    replace_space : char, optional
+        Character(s) used in replacement of white spaces in the variables
+        names. By default, use a '_'.
+    case_sensitive : {True, False, 'upper', 'lower'}, optional
+        If True, field names are case sensitive.
+        If False or 'upper', field names are converted to upper case.
+        If 'lower', field names are converted to lower case.
     unpack : bool, optional
         If True, the returned array is transposed, so that arguments may be
-        unpacked using ``x, y, z = loadtxt(...)``.  When used with a record
-        data-type, arrays are returned for each field.  Default is False.
-    ndmin : int, optional
-        The returned array will have at least `ndmin` dimensions.
-        Otherwise mono-dimensional axes will be squeezed.
-        Legal values: 0 (default), 1 or 2.
-        .. versionadded:: 1.6.0
-
+        unpacked using ``x, y, z = loadtxt(...)``
+    usemask : bool, optional
+        If True, return a masked array.
+        If False, return a regular array.
+    loose : bool, optional
+        If True, do not raise errors for invalid values.
+    invalid_raise : bool, optional
+        If True, an exception is raised if an inconsistency is detected in the
+        number of columns.
+        If False, a warning is emitted and the offending lines are skipped.
+    max_rows : int,  optional
+        The maximum number of rows to read. Must not be used with skip_footer
+        at the same time.  If given, the value must be at least 1. Default is
+        to read the entire file.
+    
+        .. versionadded:: 1.10.0
+    
     Returns
     -------
     out : ndarray
-        Data read from the text file.
-
+        Data read from the text file. If `usemask` is True, this is a
+        masked array.
+    
     See Also
     --------
-    load, fromstring, fromregex
-    genfromtxt : Load data with missing values handled as specified.
-    scipy.io.loadmat : reads MATLAB data files
-
+    numpy.loadtxt : equivalent function when no data is missing.
+    
     Notes
     -----
-    This function aims to be a fast reader for simply formatted files.  The
-    `genfromtxt` function provides more sophisticated handling of, e.g.,
-    lines with missing values.
-
+    * When spaces are used as delimiters, or when no delimiter has been given
+      as input, there should not be any missing data between two fields.
+    * When the variables are named (either by a flexible dtype or with `names`,
+      there must not be any header in the file (else a ValueError
+      exception is raised).
+    * Individual values are not stripped of spaces by default.
+      When using a custom converter, make sure the function does remove spaces.
+    
+    References
+    ----------
+    .. [1] NumPy User Guide, section `I/O with NumPy
+           <http://docs.scipy.org/doc/numpy/user/basics.io.genfromtxt.html>`_.
+    
     Examples
-    --------
-    >>> from StringIO import StringIO   # StringIO behaves like a file object
-    >>> c = StringIO("0 1\n2 3")
-    >>> np.loadtxt(c)
-    array([[ 0.,  1.],
-           [ 2.,  3.]])
-
-    >>> d = StringIO("M 21 72\nF 35 58")
-    >>> np.loadtxt(d, dtype={'names': ('gender', 'age', 'weight'),
-    ...                      'formats': ('S1', 'i4', 'f4')})
-    array([('M', 21, 72.0), ('F', 35, 58.0)],
-          dtype=[('gender', '|S1'), ('age', '<i4'), ('weight', '<f4')])
-
-    >>> c = StringIO("1,0,2\n3,0,4")
-    >>> x, y = np.loadtxt(c, delimiter=',', usecols=(0, 2), unpack=True)
-    >>> x
-    array([ 1.,  3.])
-    >>> y
-    array([ 2.,  4.])
+    ---------
+    >>> from io import StringIO
+    >>> import numpy as np
+    
+    Comma delimited file with mixed dtype
+    
+    >>> s = StringIO("1,1.3,abcde")
+    >>> data = np.genfromtxt(s, dtype=[('myint','i8'),('myfloat','f8'),
+    ... ('mystring','S5')], delimiter=",")
+    >>> data
+    array((1, 1.3, 'abcde'),
+          dtype=[('myint', '<i8'), ('myfloat', '<f8'), ('mystring', '|S5')])
+    
+    Using dtype = None
+    
+    >>> s.seek(0) # needed for StringIO example only
+    >>> data = np.genfromtxt(s, dtype=None,
+    ... names = ['myint','myfloat','mystring'], delimiter=",")
+    >>> data
+    array((1, 1.3, 'abcde'),
+          dtype=[('myint', '<i8'), ('myfloat', '<f8'), ('mystring', '|S5')])
+    
+    Specifying dtype and names
+    
+    >>> s.seek(0)
+    >>> data = np.genfromtxt(s, dtype="i8,f8,S5",
+    ... names=['myint','myfloat','mystring'], delimiter=",")
+    >>> data
+    array((1, 1.3, 'abcde'),
+          dtype=[('myint', '<i8'), ('myfloat', '<f8'), ('mystring', '|S5')])
+    
+    An example with fixed-width columns
+    
+    >>> s = StringIO("11.3abcde")
+    >>> data = np.genfromtxt(s, dtype=None, names=['intvar','fltvar','strvar'],
+    ...     delimiter=[1,3,5])
+    >>> data
+    array((1, 1.3, 'abcde'),
+          dtype=[('intvar', '<i8'), ('fltvar', '<f8'), ('strvar', '|S5')])
 ~~~
 {: .output}
 
@@ -704,17 +774,20 @@ There's a lot of information here,
 but the most important part is the first couple of lines:
 
 ~~~
-loadtxt(fname, dtype=<type 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None,
-        unpack=False, ndmin=0)
+genfromtxt(fname, dtype=<class 'float'>, comments='#', delimiter=None, skip_header=0,
+           skip_footer=0, converters=None, missing_values=None, filling_values=None, 
+           usecols=None, names=None, excludelist=None, deletechars=None, replace_space='_',
+           autostrip=False, case_sensitive=True, defaultfmt='f%i', unpack=None,
+           usemask=Fa lse, loose=True, invalid_raise=True, max_rows=None)
 ~~~
 {: .output}
 
-This tells us that `loadtxt` has one parameter called `fname` that doesn't have a default value,
-and eight others that do.
+This tells us that `genfromtxt` has one parameter called `fname` that doesn't have a default value,
+and 21 others that do.
 If we call the function like this:
 
 ~~~
-numpy.loadtxt('inflammation-01.csv', ',')
+numpy.genfromtxt('inflammation-01.csv', ',')
 ~~~
 {: .python}
 
@@ -722,7 +795,7 @@ then the filename is assigned to `fname` (which is what we want),
 but the delimiter string `','` is assigned to `dtype` rather than `delimiter`,
 because `dtype` is the second parameter in the list. However `','` isn't a known `dtype` so
 our code produced an error message when we tried to run it.
-When we call `loadtxt` we don't have to provide `fname=` for the filename because it's the
+When we call `genfromtxt` we don't have to provide `fname=` for the filename because it's the
 first item in the list, but if we want the `','` to be assigned to the variable `delimiter`,
 we *do* have to provide `delimiter=` for the second parameter since `delimiter` is not
 the second parameter in the list.

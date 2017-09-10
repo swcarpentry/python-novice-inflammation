@@ -7,7 +7,7 @@ def main():
     filenames = sys.argv[2:]
 
     for f in filenames:
-        data = numpy.loadtxt(f, delimiter=',')
+        data = numpy.genfromtxt(f, delimiter=',')
 
         if action == '--min':
             values = data.min(axis=1)
