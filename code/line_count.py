@@ -8,13 +8,13 @@ def main():
 
     if len(filenames) == 0: # no filenames, just stdin
         sum_nlines = count_file_like(sys.stdin)
-        print 'stdin: %d' % sum_nlines
+        print ('stdin: %d' % sum_nlines)
     else:
         for f in filenames:
             n = count_file(f)
-            print '%s %d' % (f, n)
+            print ('%s %d' % (f, n))
             sum_nlines += n
-        print 'total: %d' % sum_nlines
+        print ('total: %d' % sum_nlines)
 
 def count_file(filename):
     '''count the number of lines in a file'''
