@@ -9,7 +9,7 @@ def main():
     try:
         operand1, operand2 = float(sys.argv[2]), float(sys.argv[3])
     except ValueError:
-        print 'cannot convert input to a number: bailing out'
+        print ('cannot convert input to a number: bailing out')
         return
 
     do_arithmetic(operand1, operator, operand2)
@@ -24,7 +24,7 @@ def do_arithmetic(operand1, operator, operand2):
         value = operand1 * operand2
     elif operator == 'divide':
         value = operand1 / operand2
-    print value
+    print (value)
 
 if __name__ == '__main__':
     main()
