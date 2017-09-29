@@ -1,6 +1,7 @@
 import sys
 import numpy
 
+
 def main():
     script = sys.argv[0]
     filename = sys.argv[1]

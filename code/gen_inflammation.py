@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
-'''Generate pseudo-random patient inflammation data for use in Python lessons.'''
+"""
+Generate pseudo-random patient inflammation data for use in Python lessons.
+"""
 
-import sys
 import random
 
 n_patients = 60

@@ -1,6 +1,7 @@
 import sys
 import numpy
 
+
 def main():
     script = sys.argv[0]
     action = sys.argv[1]
@@ -18,6 +19,7 @@ def main():
 
         for m in values:
             print(m)
+
 
 if __name__ == '__main__':
     main()
