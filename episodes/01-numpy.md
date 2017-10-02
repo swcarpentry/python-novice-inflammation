@@ -140,7 +140,6 @@ This is different from the way spreadsheets work.
 > ~~~
 > Variable    Type       Data/Info
 > --------------------------------
-> numpy       module     <module 'numpy' from '/Us<...>kages/numpy/__init__.py'>
 > weight_kg   float      100.0
 > weight_lb   float      126.5
 > ~~~
