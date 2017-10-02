@@ -208,6 +208,8 @@ freeing us from having to manually examine every plot for features we've seen be
 >     print('B')
 > elif 4 < 5:
 >     print('C')
+> elif 4 <= 5:
+>     print('D')
 > ~~~
 > {: .python}
 >
@@ -217,7 +219,8 @@ freeing us from having to manually examine every plot for features we've seen be
 > 1.  A
 > 2.  B
 > 3.  C
-> 4.  B and C
+> 4.  D
+> 5.  C and D
 >
 > > ## Solution
 > > C gets printed because the first two conditions, `4 > 5` and `4 == 5`, are not true,
