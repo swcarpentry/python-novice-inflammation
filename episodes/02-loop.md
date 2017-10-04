@@ -160,16 +160,19 @@ command to signify the end of the loop body (e.g. `end for`); what is indented a
 > In the example above, the loop variable was given the name `char` as a mnemonic; it is short for 'character'. 'Char' is not a keyword in Python that pulls the characters from words or strings. In fact when a similar loop is run over a list rather than a word, the output would be each member of that list printed in order, rather than the characters.
 >
 > ~~~
-> elements = ['oxygen', 'nitrogen', 'argon']
-> for char in elements:
+> word = 'oxygen'
+> for char in word:
 >    print(char)
 > ~~~
 > {: .python}
 >
 > ~~~
-> oxygen
-> nitrogen
-> argon
+> o
+> x
+> y
+> g
+> e
+> n
 > ~~~
 > {: .output}
 >
