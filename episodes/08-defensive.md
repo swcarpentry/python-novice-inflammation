@@ -109,7 +109,9 @@ but checks that its input is correctly formatted and that its result makes sense
 
 ~~~
 def normalize_rectangle(rect):
-    '''Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.'''
+    '''Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.
+    Input should be of the format (x0, y0, x1, y1). 
+    (x0, y0) and (x1, y1) define the lower left and upper right corners of the rectangle, respectively.'''
     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
     x0, y0, x1, y1 = rect
     assert x0 < x1, 'Invalid X coordinates'
