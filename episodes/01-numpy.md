@@ -1000,7 +1000,7 @@ the graphs will actually be squeezed together more closely.)
 >
 > > ## Solution
 > > ~~~
-> > max_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
+> > std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
 > > matplotlib.pyplot.show()
 > > ~~~
 > > {: .python}
