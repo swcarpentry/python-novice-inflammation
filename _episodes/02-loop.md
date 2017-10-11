@@ -146,7 +146,7 @@ Using the oxygen example above, the loop might look like this:
 ![loop_image](../fig/loops_image.png)
 
 where each character (`char`) in the variable `word` is looped through and printed one character after another.
-The numbers in the diagram denote which loop cycle the character was printed in (1 being the first loop, and 6 being the final loop).
+The numbers in the diagram denote which loop cycle the character was printed in (0 being the first loop, and 5 being the final loop).
 
 We can call the [loop variable]({{ page.root }}/reference/#loop-variable) anything we like,
 but there must be a colon at the end of the line starting the loop,
@@ -157,7 +157,7 @@ command to signify the end of the loop body (e.g. `end for`); what is indented a
 > ## What's in a name?
 >
 >
-> In the example above, the loop variable was given the name `char` as a mnemonic; it is short for 'character'. 
+> In the example above, the loop variable was given the name `char` as a mnemonic; it is short for 'character'.
 > We can choose any name we want for variables. We might just as easily have chosen the name `banana` for the loop variable, as long as we use the same name when we invoke the variable inside the loop:
 >
 > ~~~
