@@ -123,7 +123,8 @@ is a powerful tool for two reasons. First, it is a powerful programming *languag
 the Python community has developed a large number of powerful [libraries]({{ page.root }}/reference/#library)
 for Python. Before learning more about Python as a programming language, in this lesson we will learn how
 to manipulate the inflammation data using a library called
-[NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").
+[NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation"). We hope this appraoch to teaching
+Python will both demonstrate how powerful Python is as well as motivate the value in learning it.
 
 In order to load our inflammation data,
 we need to access ([import]({{ page.root }}/reference/#import) in Python terminology)
