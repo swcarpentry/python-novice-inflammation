@@ -344,7 +344,7 @@ so we should always use it when we can.
 > ~~~
 > {: .python}
 >
-> The loop above assigns the index to `i` and the value to `x`.
+> The code above loops through `xs`, assigning the index to `i` and the value to `x`.
 >
 > Suppose you have encoded a polynomial as a list of coefficients in
 > the following way: the first element is the constant term, the
