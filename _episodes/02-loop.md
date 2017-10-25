@@ -303,7 +303,9 @@ so we should always use it when we can.
 >D. 6 
 >
 >> ## Solution
+>>~~~
 >> 6
+>>~~~
 > {: .solution}
 {: .challenge}
 
