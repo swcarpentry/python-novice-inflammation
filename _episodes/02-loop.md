@@ -290,17 +290,20 @@ so we should always use it when we can.
 
 > ## Understanding the number of loops
 >
->word = 'oxygen'
+> ~~~
+> word = 'oxygen'
 >for char in word:
 >    print(char)
->In the above code, how many times is the loop repeated . 
+> ~~~
+> {: .python}
+>In the above code, how many times is the loop repeated ? 
 >A. 3 
 >B. 4 
 >C. 5
 >D. 6 
 >
-> ## Solution
-> 6
+>> ## Solution
+>> 6
 > {: .solution}
 {: .challenge}
 
