@@ -192,12 +192,11 @@ it *always* means that there is a problem with how your code is indented.
 > the first two lines are using a tab for indentation,
 > while the third line uses four spaces:
 >
-> ~~~
-> def some_function():
->     msg = "hello, world!"
->     print(msg)
->     return msg
-> ~~~
+> <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def some_function():
+>         msg = "hello, world!"
+>         print(msg)
+>&#009;return msg
+></code></pre></div>  </div>
 > {: .python}
 >
 > ~~~
