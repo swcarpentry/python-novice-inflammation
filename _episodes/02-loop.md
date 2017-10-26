@@ -137,8 +137,8 @@ to repeat an operation---in this case, printing---once for each thing in a seque
 The general form of a loop is:
 
 ~~~
-for element in variable:
-    do things with element
+for variable in collection:
+    do things with variable
 ~~~
 
 Using the oxygen example above, the loop might look like this:
