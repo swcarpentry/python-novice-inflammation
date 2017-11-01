@@ -13,9 +13,9 @@ objectives:
 - "Set default values for function parameters."
 - "Explain why we should divide programs into small, single-purpose functions."
 keypoints:
-- "Define a function using `def name(...params...)`."
+- "Define a function using `def function_name(parameter)`."
 - "The body of a function must be indented."
-- "Call a function using `name(...values...)`."
+- "Call a function using `function_name(value)`."
 - "Numbers are stored as integers or floating-point numbers."
 - "Integer division produces the whole part of the answer (not the fractional part)."
 - "Each time a function is called, a new stack frame is created on the **call stack** to hold its parameters and local variables."
