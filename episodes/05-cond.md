@@ -14,8 +14,6 @@ keypoints:
 - "`X and Y` is only true if both `X` and `Y` are true."
 - "`X or Y` is true if either `X` or `Y`, or both, are true."
 - "Zero, the empty string, and the empty list are considered false; all other numbers, strings, and lists are considered true."
-- "Nest loops to operate on multi-dimensional data."
-- "Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior."
 ---
 
 In our last lesson, we discovered something suspicious was going on
