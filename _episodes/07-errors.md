@@ -51,14 +51,14 @@ favorite_ice_cream()
 IndexError                                Traceback (most recent call last)
 <ipython-input-1-70bd89baa4df> in <module>()
       6     print(ice_creams[3])
-      7 
+      7
 ----> 8 favorite_ice_cream()
 
 <ipython-input-1-70bd89baa4df> in favorite_ice_cream()
       4         "vanilla",                                                                    "strawberry"
       5     ]
 ----> 6     print(ice_creams[3])
-      7 
+      7
       8 favorite_ice_cream()
 
 IndexError: list index out of range
@@ -181,36 +181,31 @@ it *always* means that there is a problem with how your code is indented.
 
 > ## Tabs and Spaces
 >
-> A quick note on indentation errors:
-> they can sometimes be insidious,
-> especially if you are mixing spaces and tabs.
-> Because they are both [whitespace]({{ page.root }}/reference/#whitespace),
-> it is difficult to visually tell the difference.
+> Some indentation errors are harder to spot than others.
+> In particular, mixing spaces and tabs can be difficult to spot
+> because they are both [whitespace]({{ page.root }}/reference/#whitespace).
 > The Jupyter notebook actually gives us a bit of a hint,
 > but not all Python editors will do that.
 > In the following example,
 > the first two lines are using a tab for indentation,
-> while the third line uses four spaces:
+> while the third line uses eight spaces:
 >
 > <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def some_function():
->         msg = "hello, world!"
->         print(msg)
->&#009;return msg
-></code></pre></div>  </div>
-> {: .python}
+> &#009;msg = "hello, world!"
+> &#009;print(msg)
+>         return msg
+> </code></pre></div></div>
+>
+> Visually it is impossible to spot the error.
+> Fortunately, Python does not allow you to mix tabs and spaces.
 >
 > ~~~
 >   File "<ipython-input-5-653b36fbcd41>", line 4
 >     return msg
 >               ^
-> IndentationError: unindent does not match any outer indentation level
+> TabError: inconsistent use of tabs and spaces in indentation
 > ~~~
 > {: .error}
->
-> By default, one tab is equivalent to eight spaces,
-> so the only way to mix tabs and spaces is to make it look like this.
-> In general, it is better to just never use tabs and always use spaces,
-> because it can make things very confusing.
 {: .callout}
 
 ## Variable Name Errors
