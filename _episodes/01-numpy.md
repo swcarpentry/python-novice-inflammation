@@ -60,7 +60,10 @@ print(weight_kg)
 and do arithmetic with it:
 
 ~~~
-print('weight in pounds:', 2.2 * weight_kg)
+weight_lb = 2.2 * weight_kg
+weight_lb = format(weight_lb, '.2f')
+
+print('weight in pounds:', weight_lb)
 ~~~
 {: .python}
 
