@@ -28,7 +28,45 @@ keypoints:
 - "Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis."
 - "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
 ---
-In this lesson we will learn how to manipulate the inflammation dataset with Python. But before we discuss how to deal with many data points, we will show how to store a single value on the computer.
+In this lesson we will learn how to manipulate the inflammation dataset with Python. But before we discuss how to deal with many data points, we will show how to use a Jupyter Notebook and then show how to store a single value on the computer.
+
+## Python programs are plain text files.
+
+*   They have the `.py` extension to let everyone (including the operating system) 
+    know it is a Python program.
+    *   This is convention, not a requirement.
+*   It's common to write them using a text editor but we are going to use
+    the [Jupyter Notebook][jupyter].
+*   The bit of extra setup is well worth it because the Notebook provides code completion 
+    and other helpful features.
+*   Notebook files have the extension `.ipynb` to distinguish them from plain-text Python programs.
+    *   Can export as "pure Python" to run from the command line.
+
+## Use the Jupyter Notebook for editing and running Python.
+
+*   The [Anaconda package manager][anaconda] is an automated way to install the Jupyter notebook.
+    *   See [the setup instructions]({{ page.root }}/setup/) for Anaconda installation instructions.
+*   It also installs all the extra libraries it needs to run.
+*   Once you have installed Python and the Jupyter Notebook requirements, open a shell and type:
+
+    ~~~
+    $ jupyter notebook
+    ~~~
+    {: .python}
+
+*   This will start a Jupyter Notebook server and open your default web browser. 
+*   The server runs locally on your machine only and does not use an internet connection.
+*   The server sends messages to your browser.
+*   The server does the work and the web browser renders the notebook.
+*   You can type code into the browser and see the result when the web page talks to the server.
+*   This has several advantages:
+    *   You can easily type, edit, and copy and paste blocks of code.
+    *   Tab complete allows you to easily access the names of things you are using
+        and learn more about them.
+    *   It allows you to annotate your code with links, different sized text, bullets, etc.
+        to make it more accessible to you and your collaborators.
+    *   It allows you to display figures next to the code that produces them
+        to tell a complete story of the analysis.
 
 
 The line below [assigns]({{ page.root }}/reference/#assignment) the value `55` to a [variable]({{ page.root }}/reference/#variable) `weight_kg`:
