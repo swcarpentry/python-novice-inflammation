@@ -69,6 +69,8 @@ In this lesson we will learn how to manipulate the inflammation dataset with Pyt
         to tell a complete story of the analysis.
 
 
+## Storing values as variables.
+
 The line below [assigns]({{ page.root }}/reference/#assignment) the value `55` to a [variable]({{ page.root }}/reference/#variable) `weight_kg`:
 
 ~~~
