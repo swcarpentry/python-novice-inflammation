@@ -155,7 +155,7 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > > import numpy
 > > import matplotlib.pyplot
 > >
-> > filenames = glob.glob('data/inflammation*.csv')
+> > filenames = glob.glob('inflammation*.csv')
 > > composite_data = numpy.zeros((60,40))
 > >
 > > for f in filenames:
