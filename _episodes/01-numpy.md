@@ -45,7 +45,7 @@ We can create a new variable by assigning a value to it using `=`.
 When we are finished typing and press Shift+Enter,
 the notebook runs our command.
 
-Once a variable has a value, we can print it to the screen:
+Once a variable has a value, we can print it to the screen. We do this using a function, 'print', which can take variables containing both text or numeric data:
 
 ~~~
 print(weight_kg)
