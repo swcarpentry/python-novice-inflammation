@@ -18,8 +18,7 @@ keypoints:
 - "Call a function using `name(...values...)`."
 - "Numbers are stored as integers or floating-point numbers."
 - "Integer division produces the whole part of the answer (not the fractional part)."
-- "Each time a function is called, a new stack frame is created on the **call stack** to hold its parameters and local variables."
-- "Python looks for variables in the current stack frame before looking for them at the top level."
+- "Variables defined within a function can only be seen and used within the body of the function."
 - "Use `help(thing)` to view help for something."
 - "Put docstrings in functions to provide help for that function."
 - "Specify default values for parameters when defining a function using `name=value` in the parameter list."
@@ -964,10 +963,10 @@ readable code!
 > > ## Solution
 > > Attempting to define the `numbers` function results in `4. SyntaxError`.
 > > The defined parameters `two` and `four` are given default values. Because
-> > `one` and `three` are not given default values, they are required to be 
+> > `one` and `three` are not given default values, they are required to be
 > > included as arguments when the function is called and must be placed
 > > before any parameters that have default values in the function definition.
-> > 
+> >
 > > The given call to `func` displays `a: -1 b: 2 c: 6`. -1 is assigned to
 > > the first parameter `a`, 2 is assigned to the next parameter `b`, and `c` is
 > > not passed a value, so it uses its default value 6.
