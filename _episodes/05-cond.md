@@ -14,6 +14,7 @@ keypoints:
 - "`X and Y` is only true if both `X` and `Y` are true."
 - "`X or Y` is true if either `X` or `Y`, or both, are true."
 - "Zero, the empty string, and the empty list are considered false; all other numbers, strings, and lists are considered true."
+- "`True` and `False` represent truth values."
 ---
 
 In our last lesson, we discovered something suspicious was going on
@@ -125,6 +126,12 @@ at least one test is true
 ~~~
 {: .output}
 
+> ## `True` and `False`
+> `True` and `False` are special words in Python called `booleans`,
+> which represent truth values. A statement such as `1 < 0` returns 
+> the value `False`, while `-1 < 0` returns the value `True`.
+{: .callout}
+
 ## Checking our Data
 
 Now that we've seen how conditionals work,
@@ -225,9 +232,7 @@ freeing us from having to manually examine every plot for features we've seen be
 
 > ## What Is Truth?
 >
-> `True` and `False` are special words in Python called `booleans`
-> which represent true and false statements.
-> However, they aren't the only values in Python that are true and false.
+> `True` and `False` booleans are not the only values in Python that are true and false.
 > In fact, *any* value can be used in an `if` or `elif`.
 > After reading and running the code below,
 > explain what the rule is for which values are considered true and which are considered false.
