@@ -24,6 +24,7 @@ keypoints:
 - "Put docstrings in functions to provide help for that function."
 - "Specify default values for parameters when defining a function using `name=value` in the parameter list."
 - "Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used)."
+- "Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior."
 ---
 
 At this point,
