@@ -251,6 +251,9 @@ type of error
     an `IOError` to problems with file input/output.
     See also: [syntax error](#syntax-error).
 
+variable
+:   A value that has a name associated with it.
+
 while loop
 :   A loop that keeps executing as long as some condition is true.
     See also: [for loop](#for-loop).
