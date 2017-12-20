@@ -606,7 +606,7 @@ next diagram on the left), or the average for each day (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
-![Operations Across Axes](../fig/python-operations-across-axes.png)
+![Operations Across Axes](../fig/python-operations-across-axes.svg)
 
 To support this,
 most array functions allow us to specify the axis we want to work on.
