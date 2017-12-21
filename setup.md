@@ -39,5 +39,8 @@ $ python
 ~~~
 {: .source}
 
+If you are using Windows and do not have the Unix shell installed, you can enter the commands above in the `cmd` (Command Prompt) program. 
+The easiest way to start it is by pressing `Windows Logo Key` + `R` (run dialog) and entering `cmd`.
+
 [zipfile1]: {{ page.root }}/data/python-novice-inflammation-data.zip
 [zipfile2]: {{ page.root }}/code/python-novice-inflammation-code.zip
