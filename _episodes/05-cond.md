@@ -136,6 +136,11 @@ at least one test is true
 
 Now that we've seen how conditionals work,
 we can use them to check for the suspicious features we saw in our inflammation data.
+Since we are going to be working with data, let's import the numpy library:
+~~~
+import numpy
+~~~
+
 In the first couple of plots, the maximum inflammation per day
 seemed to rise like a straight line, one unit per day.
 We can check for this inside the `for` loop we wrote with the following conditional:
