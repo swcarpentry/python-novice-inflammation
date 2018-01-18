@@ -330,8 +330,8 @@ middle value in data: 13.0
 ~~~
 {: .output}
 
-The expression `data[30, 20]` may not surprise you,
-but `data[0, 0]` might.
+The expression `data[30, 20]` accesses the element at row 30, column 20. While this expression may not surprise you,
+ `data[0, 0]` might.
 Programming languages like Fortran, MATLAB and R start counting at 1,
 because that's what human beings have done for thousands of years.
 Languages in the C family (including C++, Java, Perl, and Python) count from 0
