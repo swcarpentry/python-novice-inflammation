@@ -73,7 +73,7 @@ but we cannot change individual characters in a string.
 For example:
 
 ~~~
-names = ['Newton', 'Darwing', 'Turing'] # typo in Darwin's name
+names = ['Curie', 'Darwing', 'Turing'] # typo in Darwin's name
 print('names is originally:', names)
 names[1] = 'Darwin' # correct the name
 print('final value of names:', names)
@@ -81,8 +81,8 @@ print('final value of names:', names)
 {: .python}
 
 ~~~
-names is originally: ['Newton', 'Darwing', 'Turing']
-final value of names: ['Newton', 'Darwin', 'Turing']
+names is originally: ['Curie', 'Darwing', 'Turing']
+final value of names: ['Curie', 'Darwin', 'Turing']
 ~~~
 {: .output}
 
