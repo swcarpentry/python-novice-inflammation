@@ -14,8 +14,7 @@ keypoints:
 - "`X and Y` is only true if both `X` and `Y` are true."
 - "`X or Y` is true if either `X` or `Y`, or both, are true."
 - "Zero, the empty string, and the empty list are considered false; all other numbers, strings, and lists are considered true."
-- "Nest loops to operate on multi-dimensional data."
-- "Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior."
+- "`True` and `False` represent truth values."
 ---
 
 In our last lesson, we discovered something suspicious was going on
@@ -127,10 +126,21 @@ at least one test is true
 ~~~
 {: .output}
 
+> ## `True` and `False`
+> `True` and `False` are special words in Python called `booleans`,
+> which represent truth values. A statement such as `1 < 0` returns 
+> the value `False`, while `-1 < 0` returns the value `True`.
+{: .callout}
+
 ## Checking our Data
 
 Now that we've seen how conditionals work,
 we can use them to check for the suspicious features we saw in our inflammation data.
+Since we are going to be working with data, let's import the numpy library:
+~~~
+import numpy
+~~~
+
 In the first couple of plots, the maximum inflammation per day
 seemed to rise like a straight line, one unit per day.
 We can check for this inside the `for` loop we wrote with the following conditional:
@@ -227,9 +237,7 @@ freeing us from having to manually examine every plot for features we've seen be
 
 > ## What Is Truth?
 >
-> `True` and `False` are special words in Python called `booleans`
-> which represent true and false statements.
-> However, they aren't the only values in Python that are true and false.
+> `True` and `False` booleans are not the only values in Python that are true and false.
 > In fact, *any* value can be used in an `if` or `elif`.
 > After reading and running the code below,
 > explain what the rule is for which values are considered true and which are considered false.
@@ -348,7 +356,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > ## Sorting a List Into Buckets
 >
 > The folder containing our data files has large data sets whose names start with
-> "inflammation-", small ones whose names with "small-", and possibly other files
+> "inflammation-", small ones whose names start with "small-", and possibly other files
 > whose sizes we don't know.  Our goal is to sort those files into three lists
 > called `large_files`, `small_files`, and `other_files` respectively.  Add code
 > to the template below to do this.  Note that the string method

@@ -13,7 +13,9 @@ objectives:
 - "Create and manipulate nested lists"
 keypoints:
 - "`[value1, value2, value3, ...]` creates a list."
-- "Lists are indexed and sliced in the same way as strings and arrays."
+- "Lists can contain any Python object, including lists (i.e., list of lists)."
+- "Lists are indexed and sliced with square brackets (e.g., list[0] and
+list[2:9]), in the same way as strings and arrays."
 - "Lists are mutable (i.e., their values can be changed in place)."
 - "Strings are immutable (i.e., the characters in them cannot be changed)."
 ---
@@ -71,7 +73,7 @@ but we cannot change individual characters in a string.
 For example:
 
 ~~~
-names = ['Newton', 'Darwing', 'Turing'] # typo in Darwin's name
+names = ['Curie', 'Darwing', 'Turing'] # typo in Darwin's name
 print('names is originally:', names)
 names[1] = 'Darwin' # correct the name
 print('final value of names:', names)
@@ -79,8 +81,8 @@ print('final value of names:', names)
 {: .python}
 
 ~~~
-names is originally: ['Newton', 'Darwing', 'Turing']
-final value of names: ['Newton', 'Darwin', 'Turing']
+names is originally: ['Curie', 'Darwing', 'Turing']
+final value of names: ['Curie', 'Darwin', 'Turing']
 ~~~
 {: .output}
 
