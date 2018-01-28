@@ -19,6 +19,7 @@ keypoints:
 - "Numbers are stored as integers or floating-point numbers."
 - "Integer division produces the whole part of the answer (not the fractional part)."
 - "Variables defined within a function can only be seen and used within the body of the function."
+- "If a variable is not defined within the function it is used, Python looks for a definition before the function call"
 - "Use `help(thing)` to view help for something."
 - "Put docstrings in functions to provide help for that function."
 - "Specify default values for parameters when defining a function using `name=value` in the parameter list."
