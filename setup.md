@@ -32,10 +32,18 @@ $ jupyter notebook
 ~~~
 {: .source}
 
-To start the Python interpreter without the notebook, open a terminal or git bash and type the command:
+To start the Python interpreter without the notebook, open a terminal
+or command prompt and type the command:
 
 ~~~
 $ python
+~~~
+{: .source}
+
+Note: If using Git Bash on Windows, we need to call Python via `winpty`:
+
+~~~
+$ winpty python
 ~~~
 {: .source}
 
