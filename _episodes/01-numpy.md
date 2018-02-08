@@ -812,7 +812,8 @@ the graphs will actually be squeezed together more closely.)
 {: .callout}
 > ## Check Your Understanding
 >
-> Draw diagrams showing what variables refer to what values after each statement in the following program:
+> What values do the variables `mass` and `age` have after each statement in the following program? 
+> You can test your answers by typing the commands.
 >
 > ~~~
 > mass = 47.5
