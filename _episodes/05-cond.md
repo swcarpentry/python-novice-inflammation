@@ -390,9 +390,9 @@ freeing us from having to manually examine every plot for features we've seen be
 > > ## Solution
 > > ~~~
 > > for file in files:
-> >     if 'inflammation-' in file:
+> >     if file.startswith('inflamation-'):
 > >         large_files.append(file)
-> >     elif 'small-' in file:
+> >     elif file.startswith('small-'):
 > >         small_files.append(file)
 > >     else:
 > >         other_files.append(file)
