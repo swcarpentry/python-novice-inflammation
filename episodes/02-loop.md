@@ -31,7 +31,7 @@ word on a line of its own.
 ~~~
 word = 'lead'
 ~~~
-{: .python}
+{: .language-python}
 
 We can access a character in a string using its index. For example, we can get the first
 character of the word `'lead'`, by using `word[0]`. One way to print each character is to use
@@ -43,7 +43,7 @@ print(word[1])
 print(word[2])
 print(word[3])
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 l
@@ -73,7 +73,7 @@ print(word[2])
 print(word[3])
 
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 t
@@ -102,7 +102,7 @@ for char in word:
     print(char)
 
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 l
@@ -120,7 +120,7 @@ word = 'oxygen'
 for char in word:
     print(char)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 o
@@ -165,7 +165,7 @@ command to signify the end of the loop body (e.g. `end for`); what is indented a
 > for banana in word:
 >     print(banana)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > o
@@ -188,7 +188,7 @@ for vowel in 'aeiou':
     length = length + 1
 print('There are', length, 'vowels')
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 There are 5 vowels
@@ -223,7 +223,7 @@ for letter in 'abc':
     print(letter)
 print('after the loop, letter is', letter)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 a
@@ -239,7 +239,7 @@ that Python actually has a built-in function to do it called `len`:
 ~~~
 print(len('aeiou'))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 5
@@ -274,14 +274,14 @@ so we should always use it when we can.
 > 2
 > 3
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > > ~~~
 > > for i in range(1, 4):
 > >    print(i)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -292,7 +292,7 @@ so we should always use it when we can.
 > ~~~
 > print(5 ** 3)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 125
@@ -309,7 +309,7 @@ so we should always use it when we can.
 > >    result = result * 5
 > > print(result)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -328,7 +328,7 @@ so we should always use it when we can.
 > >    newstring = char + newstring
 > > print(newstring)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -342,7 +342,7 @@ so we should always use it when we can.
 > for i, x in enumerate(xs):
 >     # Do something with i and x
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > The code above loops through `xs`, assigning the index to `i` and the value to `x`.
 >
@@ -355,7 +355,7 @@ so we should always use it when we can.
 > x = 5
 > cc = [2, 4, 3]
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > y = cc[0] * x**0 + cc[1] * x**1 + cc[2] * x**2
@@ -372,6 +372,6 @@ so we should always use it when we can.
 > > for i, c in enumerate(cc):
 > >     y = y + x**i * c
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}

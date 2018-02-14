@@ -44,7 +44,7 @@ def favorite_ice_cream():
 
 favorite_ice_cream()
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -140,7 +140,7 @@ def some_function()
     print(msg)
      return msg
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
   File "<ipython-input-3-6bb841ea1423>", line 1
@@ -165,7 +165,7 @@ def some_function():
     print(msg)
      return msg
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
   File "<ipython-input-4-ae290e7659cb>", line 4
@@ -217,7 +217,7 @@ For example:
 ~~~
 print(a)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -242,7 +242,7 @@ The first is that you meant to use a [string]({{ page.root }}/reference/#string)
 ~~~
 print(hello)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -263,7 +263,7 @@ for number in range(10):
     count = count + number
 print("The count is:", count)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -289,7 +289,7 @@ for number in range(10):
     count = count + number
 print("The count is:", count)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -322,7 +322,7 @@ print("Letter #2 is", letters[1])
 print("Letter #3 is", letters[2])
 print("Letter #4 is", letters[3])
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 Letter #1 is a
@@ -361,7 +361,7 @@ More generally, problems with input and output manifest as
 ~~~
 file_handle = open('myfile.txt', 'r')
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -395,7 +395,7 @@ telling you that the file was not opened for reading:
 file_handle = open('myfile.txt', 'w')
 file_handle.read()
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -444,7 +444,7 @@ often reveals common reasons why you might get that error.
 >
 > print_friday_message()
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > ---------------------------------------------------------------------------
@@ -494,7 +494,7 @@ often reveals common reasons why you might get that error.
 >    print("But at least python tells us about them!")
 >   print("So they are usually not too hard to fix.")
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > > `SyntaxError` for missing `():` at end of first line,
@@ -507,7 +507,7 @@ often reveals common reasons why you might get that error.
 > >     print("But at least python tells us about them!")
 > >     print("So they are usually not too hard to fix.")
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -531,7 +531,7 @@ often reveals common reasons why you might get that error.
 >         message = message + "b"
 > print(message)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > > 3 `NameError`s for `number` being misspelled, for `message` not defined, and for `a` not being in quotes.
@@ -548,7 +548,7 @@ often reveals common reasons why you might get that error.
 > >         message = message + "b"
 > > print(message)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -562,7 +562,7 @@ often reveals common reasons why you might get that error.
 > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > print('My favorite season is ', seasons[4])
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > > `IndexError`; the last entry is `seasons[3]`, so `seasons[4]` doesn't make sense.
@@ -572,6 +572,6 @@ often reveals common reasons why you might get that error.
 > > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > > print('My favorite season is ', seasons[-1])
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
