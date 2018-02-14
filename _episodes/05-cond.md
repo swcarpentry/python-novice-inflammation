@@ -61,7 +61,7 @@ Python simply does nothing if the test is false:
 num = 53
 print('before conditional...')
 if num > 100:
-    print('53 is greater than 100')
+    print(num,' is greater than 100')
 print('...after conditional')
 ~~~
 {: .language-python}
@@ -80,11 +80,11 @@ The following Python code uses `elif` to print the sign of a number.
 num = -3
 
 if num > 0:
-    print(num, "is positive")
+    print(num, 'is positive')
 elif num == 0:
-    print(num, "is zero")
+    print(num, 'is zero')
 else:
-    print(num, "is negative")
+    print(num, 'is negative')
 ~~~
 {: .language-python}
 
