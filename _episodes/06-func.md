@@ -49,7 +49,7 @@ Let's start by defining a function `fahr_to_kelvin` that converts temperatures f
 def fahr_to_kelvin(temp):
     return ((temp - 32) * (5/9)) + 273.15
 ~~~
-{: .python}
+{: .language-python}
 
 ![The Blueprint for a Python Function](../fig/python-function.svg)
 
@@ -81,7 +81,7 @@ In fact, calling our own function is no different from calling any other functio
 print('freezing point of water:', fahr_to_kelvin(32))
 print('boiling point of water:', fahr_to_kelvin(212))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 freezing point of water: 273.15
@@ -99,7 +99,7 @@ and we have access to the value that we returned.
 > ~~~
 > $ python3 -c "print(5/9)"
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 0.5555555555555556
@@ -111,7 +111,7 @@ and we have access to the value that we returned.
 > ~~~
 > 5/9
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 0
@@ -124,7 +124,7 @@ and we have access to the value that we returned.
 > ~~~
 > float(5)/9
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 0.555555555556
@@ -134,7 +134,7 @@ and we have access to the value that we returned.
 > ~~~
 > 5/float(9)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 0.555555555556
@@ -144,7 +144,7 @@ and we have access to the value that we returned.
 > ~~~
 > 5.0/9
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 0.555555555556
@@ -153,7 +153,7 @@ and we have access to the value that we returned.
 > ~~~
 > 5/9.0
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 0.555555555556
@@ -166,7 +166,7 @@ and we have access to the value that we returned.
 > ~~~
 > 4//2
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 2
@@ -176,7 +176,7 @@ and we have access to the value that we returned.
 > ~~~
 > 3//2
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 1
@@ -195,7 +195,7 @@ def kelvin_to_celsius(temp_k):
 
 print('absolute zero in Celsius:', kelvin_to_celsius(0.0))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 absolute zero in Celsius: -273.15
@@ -216,7 +216,7 @@ def fahr_to_celsius(temp_f):
 
 print('freezing point of water in Celsius:', fahr_to_celsius(32.0))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 freezing point of water in Celsius: 0.0
@@ -259,7 +259,7 @@ def analyze(filename):
     fig.tight_layout()
     matplotlib.pyplot.show()
 ~~~
-{: .python}
+{: .language-python}
 
 and another function called `detect_problems` that checks for those systematics
 we noticed:
@@ -276,7 +276,7 @@ def detect_problems(filename):
     else:
         print('Seems OK!')
 ~~~
-{: .python}
+{: .language-python}
 
 Notice that rather than jumbling this code together in one giant `for` loop,
 we can now read and reuse both ideas separately.
@@ -288,7 +288,7 @@ for f in filenames[:3]:
     analyze(f)
     detect_problems(f)
 ~~~
-{: .python}
+{: .language-python}
 
 By giving our functions human-readable names,
 we can more easily read and understand what is happening in the `for` loop.
@@ -306,7 +306,7 @@ let's write a function to center a dataset around a particular value:
 def center(data, desired):
     return (data - numpy.mean(data)) + desired
 ~~~
-{: .python}
+{: .language-python}
 
 We could test this on our actual data,
 but since we don't know what the values ought to be,
@@ -319,7 +319,7 @@ and then center that around 3:
 z = numpy.zeros((2,2))
 print(center(z, 3))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 [[ 3.  3.]
@@ -334,7 +334,7 @@ so let's try `center` on our real data:
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 print(center(data, 0))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 [[-6.14875 -6.14875 -5.14875 ..., -3.14875 -6.14875 -6.14875]
@@ -355,7 +355,7 @@ print('original min, mean, and max are:', numpy.min(data), numpy.mean(data), num
 centered = center(data, 0)
 print('min, mean, and max of centered data are:', numpy.min(centered), numpy.mean(centered), numpy.max(centered))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 original min, mean, and max are: 0.0 6.14875 20.0
@@ -372,7 +372,7 @@ We can even go further and check that the standard deviation hasn't changed:
 ~~~
 print('std dev before and after:', numpy.std(data), numpy.std(centered))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 std dev before and after: 4.61383319712 4.61383319712
@@ -386,7 +386,7 @@ Let's do this instead:
 ~~~
 print('difference in standard deviations before and after:', numpy.std(data) - numpy.std(centered))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 difference in standard deviations before and after: -3.5527136788e-15
@@ -408,7 +408,7 @@ The usual way to put documentation in software is to add [comments]({{ page.root
 def center(data, desired):
     return (data - numpy.mean(data)) + desired
 ~~~
-{: .python}
+{: .language-python}
 
 There's a better way, though.
 If the first thing in a function is a string that isn't assigned to a variable,
@@ -419,14 +419,14 @@ def center(data, desired):
     '''Return a new array containing the original data centered around the desired value.'''
     return (data - numpy.mean(data)) + desired
 ~~~
-{: .python}
+{: .language-python}
 
 This is better because we can now ask Python's built-in help system to show us the documentation for the function:
 
 ~~~
 help(center)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 Help on function center in module __main__:
@@ -449,7 +449,7 @@ def center(data, desired):
 
 help(center)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 Help on function center in module __main__:
@@ -471,7 +471,7 @@ we can pass the filename to `loadtxt` without the `fname=`:
 ~~~
 numpy.loadtxt('inflammation-01.csv', delimiter=',')
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
@@ -489,7 +489,7 @@ but we still need to say `delimiter=`:
 ~~~
 numpy.loadtxt('inflammation-01.csv', ',')
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -518,7 +518,7 @@ def center(data, desired=0.0):
     Example: center([1, 2, 3], 0) => [-1, 0, 1]'''
     return (data - numpy.mean(data)) + desired
 ~~~
-{: .python}
+{: .language-python}
 
 The key change is that the second parameter is now written `desired=0.0` instead of just `desired`.
 If we call the function with two arguments,
@@ -528,7 +528,7 @@ it works as it did before:
 test_data = numpy.zeros((2, 2))
 print(center(test_data, 3))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 [[ 3.  3.]
@@ -546,7 +546,7 @@ print(more_data)
 print('centered data:')
 print(center(more_data))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 data before centering:
@@ -576,7 +576,7 @@ display(55)
 print('two parameters:')
 display(55, 66)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 no parameters:
@@ -597,7 +597,7 @@ We can override this behavior by naming the value as we pass it in:
 print('only setting the value of c')
 display(c=77)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 only setting the value of c
@@ -611,7 +611,7 @@ let's look at the help for `numpy.loadtxt`:
 ~~~
 help(numpy.loadtxt)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 Help on function loadtxt in module numpy.lib.npyio:
@@ -717,7 +717,7 @@ If we call the function like this:
 ~~~
 numpy.loadtxt('inflammation-01.csv', ',')
 ~~~
-{: .python}
+{: .language-python}
 
 then the filename is assigned to `fname` (which is what we want),
 but the delimiter string `','` is assigned to `dtype` rather than `delimiter`,
@@ -756,7 +756,7 @@ def std_dev(sample):
 
     return numpy.sqrt(sum_squared_devs / (len(sample) - 1))
 ~~~
-{: .python}
+{: .language-python}
 
 The functions `s` and `std_dev` are computationally equivalent (they
 both calculate the sample standard deviation), but to a human reader,
@@ -784,7 +784,7 @@ readable code!
 > ~~~
 > print(fence('name', '*'))
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > *name*
@@ -796,7 +796,7 @@ readable code!
 > > def fence(original, wrapper):
 > >     return wrapper + original + wrapper
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -812,7 +812,7 @@ readable code!
 > ~~~
 > print(outer('helium'))
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > hm
@@ -824,7 +824,7 @@ readable code!
 > > def outer(input_string):
 > >     return input_string[0] + input_string[-1]
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -843,7 +843,7 @@ readable code!
 > >     output_array = (input_array - L) / (H - L)
 > >     return output_array
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -868,7 +868,7 @@ readable code!
 > > array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
 > > '''
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -889,7 +889,7 @@ readable code!
 > >     output_array = intermed_array * (high_val - low_val) + low_val
 > >     return output_array
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -911,7 +911,7 @@ readable code!
 >
 > print(k)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > >
@@ -937,7 +937,7 @@ readable code!
 >
 > print(numbers(1, three=3))
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > what do you expect will be printed?  What is actually printed?
 > What rule do you think Python is following?
@@ -955,7 +955,7 @@ readable code!
 >
 > func(-1, 2)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > 1. `a: b: 3 c: 6`
 > 2. `a: -1 b: 3 c: 6`
@@ -992,7 +992,7 @@ readable code!
 >
 > print(a, b)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
 >

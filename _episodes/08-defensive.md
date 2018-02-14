@@ -70,7 +70,7 @@ for n in numbers:
     total += n
 print('total is:', total)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -110,7 +110,7 @@ but checks that its input is correctly formatted and that its result makes sense
 ~~~
 def normalize_rectangle(rect):
     '''Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.
-    Input should be of the format (x0, y0, x1, y1). 
+    Input should be of the format (x0, y0, x1, y1).
     (x0, y0) and (x1, y1) define the lower left and upper right corners of the rectangle, respectively.'''
     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
     x0, y0, x1, y1 = rect
@@ -131,14 +131,14 @@ def normalize_rectangle(rect):
 
     return (0, 0, upper_x, upper_y)
 ~~~
-{: .python}
+{: .language-python}
 
 The preconditions on lines 3, 5, and 6 catch invalid inputs:
 
 ~~~
 print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -160,7 +160,7 @@ AssertionError: Rectangles must contain 4 coordinates
 ~~~
 print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -186,7 +186,7 @@ if we normalize a rectangle that is taller than it is wide everything seems OK:
 ~~~
 print(normalize_rectangle( (0.0, 0.0, 1.0, 5.0) ))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 (0, 0, 0.2, 1.0)
@@ -199,7 +199,7 @@ the assertion is triggered:
 ~~~
 print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -298,7 +298,7 @@ assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
 assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
 assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -329,7 +329,7 @@ We don't have any tests for the case where the ranges don't overlap at all:
 ~~~
 assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == ???
 ~~~
-{: .python}
+{: .language-python}
 
 What should `range_overlap` do in this case:
 fail with an error message,
@@ -345,7 +345,7 @@ And what about this case?
 ~~~
 assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == ???
 ~~~
-{: .python}
+{: .language-python}
 
 Do two segments that touch at their endpoints overlap or not?
 Mathematicians usually say "yes",
@@ -372,7 +372,7 @@ we can finish writing our last two tests:
 assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
 assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -399,7 +399,7 @@ def range_overlap(ranges):
         highest = min(highest, high)
     return (lowest, highest)
 ~~~
-{: .python}
+{: .language-python}
 
 (Take a moment to think about why we use `max` to raise `lowest`
 and `min` to lower `highest`).
@@ -416,14 +416,14 @@ def test_range_overlap():
     assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
     assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
 ~~~
-{: .python}
+{: .language-python}
 
 We can now test `range_overlap` with a single function call:
 
 ~~~
 test_range_overlap()
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -468,7 +468,7 @@ This violates another important rule of programming:
 > > # a possible post-condition:
 > > assert numpy.min(input_list) <= average <= numpy.max(input_list), 'Average should be between min and max of input values (inclusive)'
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -480,7 +480,7 @@ This violates another important rule of programming:
 > ~~~
 > get_total_cars([1, 2, 3, 4])
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 10
@@ -490,7 +490,7 @@ This violates another important rule of programming:
 > ~~~
 > get_total_cars(['a', 'b', 'c'])
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > ValueError: invalid literal for int() with base 10: 'a'
@@ -511,7 +511,7 @@ This violates another important rule of programming:
 >     assert total > 0
 >     return total
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > > *   The first assertion checks that the input sequence `values` is not empty.
@@ -545,6 +545,6 @@ This violates another important rule of programming:
 > >     else:
 > >         return (lowest, highest)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
