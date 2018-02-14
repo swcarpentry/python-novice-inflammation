@@ -31,7 +31,7 @@ We create a list by putting values inside square brackets and separating the val
 odds = [1, 3, 5, 7]
 print('odds are:', odds)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 odds are: [1, 3, 5, 7]
@@ -43,7 +43,7 @@ We select individual elements from lists by indexing them:
 ~~~
 print('first and last:', odds[0], odds[-1])
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 first and last: 1 7
@@ -57,7 +57,7 @@ the loop variable is assigned elements one at a time:
 for number in odds:
     print(number)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 1
@@ -78,7 +78,7 @@ print('names is originally:', names)
 names[1] = 'Darwin' # correct the name
 print('final value of names:', names)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 names is originally: ['Curie', 'Darwing', 'Turing']
@@ -92,7 +92,7 @@ works, but:
 name = 'Darwin'
 name[0] = 'd'
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -129,7 +129,7 @@ does not.
 > salsa[0] = 'hot peppers'
 > print('Ingredients in my salsa:', mySalsa)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > Ingredients in my salsa: ['hot peppers', 'onions', 'cilantro', 'tomatoes']
@@ -145,7 +145,7 @@ does not.
 > salsa[0] = 'hot peppers'
 > print('Ingredients in my salsa:', mySalsa)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > Ingredients in my salsa: ['peppers', 'onions', 'cilantro', 'tomatoes']
@@ -167,7 +167,7 @@ does not.
 >      ['cabbage', 'lettuce', 'garlic'],
 >      ['apple', 'pear', 'banana']]
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > Here is a visual example of how indexing a list of lists `x` works:
 >
@@ -180,7 +180,7 @@ does not.
 > ~~~
 > print([x[0]])
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > [['pepper', 'zucchini', 'onion']]
@@ -190,7 +190,7 @@ does not.
 > ~~~
 > print(x[0])
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > ['pepper', 'zucchini', 'onion']
@@ -200,7 +200,7 @@ does not.
 > ~~~
 > print(x[0][0])
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 'pepper'
@@ -218,7 +218,7 @@ individual elements:
 odds.append(11)
 print('odds after adding a value:', odds)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 odds after adding a value: [1, 3, 5, 7, 11]
@@ -229,7 +229,7 @@ odds after adding a value: [1, 3, 5, 7, 11]
 del odds[0]
 print('odds after removing the first element:', odds)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 odds after removing the first element: [3, 5, 7, 11]
@@ -240,7 +240,7 @@ odds after removing the first element: [3, 5, 7, 11]
 odds.reverse()
 print('odds after reversing:', odds)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 odds after reversing: [11, 7, 5, 3]
@@ -258,7 +258,7 @@ primes.append(2)
 print('primes:', primes)
 print('odds:', odds)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 primes: [1, 3, 5, 7, 2]
@@ -276,7 +276,7 @@ primes.append(2)
 print('primes:', primes)
 print('odds:', odds)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 primes: [1, 3, 5, 7, 2]
@@ -293,14 +293,14 @@ This is different from how variables worked in lesson 1, and more similar to how
 > ~~~
 > ["h", "e", "l", "l", "o"]
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > Hint: You can create an empty list like this:
 >
 > ~~~
 > my_list = []
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > > ~~~
@@ -309,7 +309,7 @@ This is different from how variables worked in lesson 1, and more similar to how
 > >     my_list.append(char)
 > > print(my_list)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -332,7 +332,7 @@ print("autosomes:", autosomes)
 last = chromosomes[-1]
 print("last:", last)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 group: Drosophila
@@ -350,7 +350,7 @@ last: 4
 > string_for_slicing = "Observation date: 02-Feb-2013"
 > list_for_slicing = [["fluorine", "F"], ["chlorine", "Cl"], ["bromine", "Br"], ["iodine", "I"], ["astatine", "At"]]
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > "2013"
@@ -370,7 +370,7 @@ last: 4
 > > string_for_slicing[-4:]
 > > list_for_slicing[-4:]
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -390,7 +390,7 @@ last: 4
 > subset = primes[0:12:3]
 > print("subset", subset)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > subset [2, 7, 17, 29]
@@ -407,7 +407,7 @@ last: 4
 > subset = primes[2:12:3]
 > print("subset", subset)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > subset [5, 13, 23, 37]
@@ -421,7 +421,7 @@ last: 4
 > ~~~
 > beatles = "In an octopus's garden in the shade"
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > I notpssgre ntesae
@@ -435,7 +435,7 @@ last: 4
 > > ~~~
 > > beatles[0:35:2]
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > You can also leave out the beginning and end of the slice to take the whole string
 > > and provide only the step argument to go every second
@@ -444,7 +444,7 @@ last: 4
 > > ~~~
 > > beatles[::2]
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -457,7 +457,7 @@ print("Using 0 to begin range:", day)
 day = date[:6]
 print("Omitting beginning index:", day)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 Using 0 to begin range: Monday
@@ -476,7 +476,7 @@ print("Using len() to get last entry:", sond)
 sond = months[8:]
 print("Omitting ending index:", sond)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 With known last position: ["sep", "oct", "nov", "dec"]
@@ -497,14 +497,14 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > left = right
 > right = temp
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > Compare it to:
 >
 > ~~~
 > left, right = [right, left]
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > Do they always do the same thing?
 > Which do you find easier to read?
@@ -515,7 +515,7 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > > ~~~
 > > print(left, right)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > ~~~
 > > R L
@@ -537,7 +537,7 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > repeats = counts * 2
 > print(repeats)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > 1.  `[2, 4, 6, 8, 10, 2, 4, 6, 8, 10]`
 > 2.  `[4, 8, 12, 16, 20]`
@@ -562,6 +562,6 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > > ~~~
 > > counts + counts
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
