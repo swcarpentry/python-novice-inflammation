@@ -36,7 +36,7 @@ The line below [assigns]({{ page.root }}/reference/#assign) the value `55` to a 
 ~~~
 weight_kg = 55
 ~~~
-{: .python}
+{: .language-python}
 
 A variable is just a name for a value,
 such as `x_val`, `current_temperature`, or `subject_id`.
@@ -50,7 +50,7 @@ Once a variable has a value, we can print it to the screen:
 ~~~
 print(weight_kg)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 55
@@ -62,7 +62,7 @@ and do arithmetic with it:
 ~~~
 print('weight in pounds:', 2.2 * weight_kg)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 weight in pounds: 121.0
@@ -78,7 +78,7 @@ We can also change a variable's value by assigning it a new one:
 weight_kg = 57.5
 print('weight in kilograms is now:', weight_kg)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 weight in kilograms is now: 57.5
@@ -98,7 +98,7 @@ let's store the subject's weight in pounds in a variable:
 weight_lb = 2.2 * weight_kg
 print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 weight in kilograms: 57.5 and in pounds: 126.5
@@ -113,7 +113,7 @@ and then change `weight_kg`:
 weight_kg = 100.0
 print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 weight in kilograms is now: 100.0 and weight in pounds is still: 126.5
@@ -135,7 +135,7 @@ This is different from the way spreadsheets work.
 > ~~~
 > %whos
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > Variable    Type       Data/Info
@@ -163,7 +163,7 @@ We can import NumPy using:
 ~~~
 import numpy
 ~~~
-{: .python}
+{: .language-python}
 
 Importing a library is like getting a piece of lab equipment out of a storage locker and setting it up on the bench.
 Libraries provide additional functionality to the basic Python package,
@@ -175,7 +175,7 @@ we can ask the library to read our data file for us:
 ~~~
 numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
@@ -219,7 +219,7 @@ to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its 
 ~~~
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ~~~
-{: .python}
+{: .language-python}
 
 This statement doesn't produce any output because assignment doesn't display anything.
 If we want to check that our data has been loaded,
@@ -228,7 +228,7 @@ we can print the variable's value:
 ~~~
 print(data)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 [[ 0.  0.  1. ...,  3.  0.  0.]
@@ -249,7 +249,7 @@ let's ask what [type]({{ page.root }}/reference/#type) of thing `data` refers to
 ~~~
 print(type(data))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 <class 'numpy.ndarray'>
@@ -273,7 +273,7 @@ are their daily inflammation measurements.
 > ~~~
 > print(data.dtype)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > dtype('float64')
@@ -289,7 +289,7 @@ With this command we can see the array's [shape]({{ page.root }}/reference/#shap
 ~~~
 print(data.shape)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 (60, 40)
@@ -313,7 +313,7 @@ just as we do in math when referring to an element of a matrix.  Our inflammatio
 ~~~
 print('first value in data:', data[0, 0])
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 first value in data: 0.0
@@ -323,7 +323,7 @@ first value in data: 0.0
 ~~~
 print('middle value in data:', data[30, 20])
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 middle value in data: 13.0
@@ -370,7 +370,7 @@ for the first four patients (rows) like this:
 ~~~
 print(data[0:4, 0:10])
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 [[ 0.  0.  1.  3.  1.  2.  4.  7.  8.  3.]
@@ -391,7 +391,7 @@ We don't have to start slices at 0:
 ~~~
 print(data[5:10, 0:10])
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 [[ 0.  0.  1.  2.  2.  4.  2.  1.  6.  4.]
@@ -416,7 +416,7 @@ small = data[:3, 36:]
 print('small is:')
 print(small)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 small is:
@@ -436,7 +436,7 @@ Thus:
 ~~~
 doubledata = data * 2.0
 ~~~
-{: .python}
+{: .language-python}
 
 will create a new array `doubledata`
 whose elements have the value of two times the value of the corresponding elements in `data`:
@@ -447,7 +447,7 @@ print(data[:3, 36:])
 print('doubledata:')
 print(doubledata[:3, 36:])
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 original:
@@ -470,7 +470,7 @@ Thus:
 ~~~
 tripledata = doubledata + data
 ~~~
-{: .python}
+{: .language-python}
 
 will give you an array where `tripledata[0,0]` will equal `doubledata[0,0]` plus `data[0,0]`,
 and so on for all other elements of the arrays.
@@ -479,7 +479,7 @@ and so on for all other elements of the arrays.
 print('tripledata:')
 print(tripledata[:3, 36:])
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 tripledata:
@@ -498,7 +498,7 @@ we can ask NumPy to compute `data`'s mean value:
 ~~~
 print(numpy.mean(data))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 6.14875
@@ -521,7 +521,7 @@ they do things with variables.
 > import time
 > print(time.ctime())
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 'Sat Mar 26 13:07:33 2016'
@@ -545,7 +545,7 @@ print('maximum inflammation:', maxval)
 print('minimum inflammation:', minval)
 print('standard deviation:', stdval)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 maximum inflammation: 20.0
@@ -576,7 +576,7 @@ then ask it to do the calculation:
 patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)
 print('maximum inflammation for patient 0:', patient_0.max())
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 maximum inflammation for patient 0: 18.0
@@ -594,7 +594,7 @@ Instead, we can combine the selection and the function call:
 ~~~
 print('maximum inflammation for patient 2:', numpy.max(data[2, :]))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 maximum inflammation for patient 2: 19.0
@@ -616,7 +616,7 @@ we get:
 ~~~
 print(numpy.mean(data, axis=0))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 [  0.           0.45         1.11666667   1.75         2.43333333   3.15
@@ -636,7 +636,7 @@ we can ask this array what its shape is:
 ~~~
 print(numpy.mean(data, axis=0).shape)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 (40,)
@@ -650,7 +650,7 @@ If we average across axis 1 (columns in our 2D example), we get:
 ~~~
 print(numpy.mean(data, axis=1))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 [ 5.45   5.425  6.1    5.9    5.55   6.225  5.975  6.65   6.625  6.525
@@ -680,7 +680,7 @@ import matplotlib.pyplot
 image = matplotlib.pyplot.imshow(data)
 matplotlib.pyplot.show()
 ~~~
-{: .python}
+{: .language-python}
 
 ![Heatmap of the Data](../fig/01-numpy_71_0.png)
 
@@ -698,7 +698,7 @@ inflammation rises and falls over a 40-day period.
 > ~~~
 > %matplotlib inline
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > The `%` indicates an IPython magic function -
 > a function that is only valid within the notebook environment.
@@ -712,7 +712,7 @@ ave_inflammation = numpy.mean(data, axis=0)
 ave_plot = matplotlib.pyplot.plot(ave_inflammation)
 matplotlib.pyplot.show()
 ~~~
-{: .python}
+{: .language-python}
 
 ![Average Inflammation Over Time](../fig/01-numpy_73_0.png)
 
@@ -729,7 +729,7 @@ Let's have a look at two other statistics:
 max_plot = matplotlib.pyplot.plot(numpy.max(data, axis=0))
 matplotlib.pyplot.show()
 ~~~
-{: .python}
+{: .language-python}
 
 ![Maximum Value Along The First Axis](../fig/01-numpy_75_1.png)
 
@@ -737,7 +737,7 @@ matplotlib.pyplot.show()
 min_plot = matplotlib.pyplot.plot(numpy.min(data, axis=0))
 matplotlib.pyplot.show()
 ~~~
-{: .python}
+{: .language-python}
 
 ![Minimum Value Along The First Axis](../fig/01-numpy_75_3.png)
 
@@ -786,7 +786,7 @@ fig.tight_layout()
 
 matplotlib.pyplot.show()
 ~~~
-{: .python}
+{: .language-python}
 
 ![The Previous Plots as Subplots](../fig/01-numpy_80_0.png)
 
@@ -820,7 +820,7 @@ the graphs will actually be squeezed together more closely.)
 > mass = mass * 2.0
 > age = age - 20
 > ~~~
-> {: .python}
+> {: .language-python}
 {: .challenge}
 
 > ## Sorting Out References
@@ -832,7 +832,7 @@ the graphs will actually be squeezed together more closely.)
 > third, fourth = second, first
 > print(third, fourth)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > > ~~~
@@ -852,7 +852,7 @@ the graphs will actually be squeezed together more closely.)
 > print('first three characters:', element[0:3])
 > print('last three characters:', element[3:6])
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > first three characters: oxy
@@ -925,7 +925,7 @@ the graphs will actually be squeezed together more closely.)
 > ~~~
 > axes3.set_ylim(0,6)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > Update your plotting code to automatically set a more appropriate scale.
 > (Hint: you can make use of the `max` and `min` methods to help.)
@@ -937,7 +937,7 @@ the graphs will actually be squeezed together more closely.)
 > > axes3.plot(numpy.min(data, axis=0))
 > > axes3.set_ylim(0,6)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 >
 > > ## Solution
@@ -948,7 +948,7 @@ the graphs will actually be squeezed together more closely.)
 > > axes3.plot(min_data)
 > > axes3.set_ylim(numpy.min(min_data), numpy.max(min_data) * 1.1)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -988,7 +988,7 @@ the graphs will actually be squeezed together more closely.)
 > >
 > > matplotlib.pyplot.show()
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > ![Plot with step lines](../fig/01-numpy_exercise_0.png)
 > {: .solution}
 {: .challenge}
@@ -1003,7 +1003,7 @@ the graphs will actually be squeezed together more closely.)
 > > std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
 > > matplotlib.pyplot.show()
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -1040,7 +1040,7 @@ the graphs will actually be squeezed together more closely.)
 > >
 > > matplotlib.pyplot.show()
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -1064,7 +1064,7 @@ the graphs will actually be squeezed together more closely.)
 > print('C = ')
 > print(C)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > A =
@@ -1103,7 +1103,7 @@ the graphs will actually be squeezed together more closely.)
 > > print('D = ')
 > > print(D)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > ~~~
 > > D =
@@ -1124,7 +1124,7 @@ the graphs will actually be squeezed together more closely.)
 > > print('D = ')
 > > print(D)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > ~~~
 > > D =
@@ -1156,7 +1156,7 @@ the graphs will actually be squeezed together more closely.)
 > > ~~~
 > > numpy.diff(data, axis=1)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 >
 >If the shape of an individual data file is `(60, 40)` (60 rows and 40
@@ -1178,7 +1178,7 @@ the graphs will actually be squeezed together more closely.)
 > > ~~~
 > > numpy.max(numpy.diff(data, axis=1), axis=1)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > ~~~
 > > array([  7.,  12.,  11.,  10.,  11.,  13.,  10.,   8.,  10.,  10.,   7.,
@@ -1188,7 +1188,7 @@ the graphs will actually be squeezed together more closely.)
 > >         12.,   8.,   8.,  10.,  10.,   9.,   8.,  13.,  10.,   7.,  10.,
 > >          8.,  12.,  10.,   7.,  12.])
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > If a difference is a *decrease*, then the difference will be negative. If
 > > you are interested in the **magnitude** of the change and not just the
@@ -1200,7 +1200,7 @@ the graphs will actually be squeezed together more closely.)
 > > ~~~
 > > numpy.max(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > ~~~
 > > array([ 12.,  14.,  11.,  13.,  11.,  13.,  10.,  12.,  10.,  10.,  10.,
@@ -1210,7 +1210,7 @@ the graphs will actually be squeezed together more closely.)
 > >         13.,  10.,   9.,  10.,  10.,   9.,   9.,  13.,  10.,   9.,  10.,
 > >         11.,  13.,  10.,  10.,  12.])
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > {: .solution}
 {: .challenge}

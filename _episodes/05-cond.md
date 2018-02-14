@@ -35,7 +35,7 @@ else:
     print('not greater')
 print('done')
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 not greater
@@ -64,7 +64,7 @@ if num > 100:
     print('53 is greater than 100')
 print('...after conditional')
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 before conditional...
@@ -86,7 +86,7 @@ elif num == 0:
 else:
     print(num, "is negative")
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 "-3 is negative"
@@ -106,7 +106,7 @@ if (1 > 0) and (-1 > 0):
 else:
     print('at least one part is false')
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 at least one part is false
@@ -119,7 +119,7 @@ while `or` is true if at least one part is true:
 if (1 < 0) or (-1 < 0):
     print('at least one test is true')
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 at least one test is true
@@ -128,7 +128,7 @@ at least one test is true
 
 > ## `True` and `False`
 > `True` and `False` are special words in Python called `booleans`,
-> which represent truth values. A statement such as `1 < 0` returns 
+> which represent truth values. A statement such as `1 < 0` returns
 > the value `False`, while `-1 < 0` returns the value `True`.
 {: .callout}
 
@@ -177,7 +177,7 @@ elif numpy.sum(numpy.min(data, axis=0)) == 0:
 else:
     print('Seems OK!')
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 Suspicious looking maxima!
@@ -193,7 +193,7 @@ elif numpy.sum(numpy.min(data, axis=0)) == 0:
 else:
     print('Seems OK!')
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 Minima add up to zero!
@@ -219,7 +219,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > elif 4 < 5:
 >     print('C')
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > Which of the following would be printed if you were to run this code?
 > Why did you pick this answer?
@@ -256,7 +256,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > if 1:
 >     print('one is true')
 > ~~~
-> {: .python}
+> {: .language-python}
 {: .challenge}
 
 > ## That's Not Not What I Meant
@@ -275,7 +275,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > if not not True:
 >     print('not not True is true')
 > ~~~
-> {: .python}
+> {: .language-python}
 {: .challenge}
 
 > ## Close Enough
@@ -295,14 +295,14 @@ freeing us from having to manually examine every plot for features we've seen be
 > > else:
 > >     print('False')
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 >
 > > ## Solution 2
 > > ~~~
 > > print(abs(a - b) < 0.1 * abs(b))
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > This works because the Booleans `True` and `False`
 > > have string representations which can be printed.
@@ -320,7 +320,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > x *= 3 # multiply x by 3
 > print(x)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 6
@@ -345,7 +345,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > >         negative_sum += num
 > > print(positive_sum, negative_sum)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > Here `pass` means "don't do anything".
 > In this particular case, it's not actually needed, since if `num == 0` neither
@@ -370,7 +370,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > small_files = []
 > other_files = []
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > Your solution should:
 >
@@ -385,7 +385,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > small_files = ['small-01.csv', 'small-02.csv']
 > other_files = ['myscript.py']
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > > ~~~
@@ -401,7 +401,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > > print(small_files)
 > > print(other_files)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -424,6 +424,6 @@ freeing us from having to manually examine every plot for features we've seen be
 > >         
 > > print("The number of vowels in this string is " + str(count))
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}

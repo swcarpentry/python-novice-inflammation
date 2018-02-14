@@ -265,7 +265,7 @@ not more.
 >     bmi = calculate_bmi(height, weight)
 >     print("Patient's BMI is: %f" % bmi)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > Patient's BMI is: 0.000367
