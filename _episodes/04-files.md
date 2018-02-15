@@ -115,7 +115,7 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > > import numpy
 > > import matplotlib.pyplot
 > >
-> > filenames = glob.glob('inflammation*.csv')
+> > filenames = sorted(glob.glob('inflammation*.csv'))
 > >
 > > data0 = numpy.loadtxt(fname=filenames[0], delimiter=',')
 > > data1 = numpy.loadtxt(fname=filenames[1], delimiter=',')
