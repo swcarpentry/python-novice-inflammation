@@ -314,7 +314,7 @@ This is different from how variables worked in lesson 1, and more similar to how
 {: .challenge}
 
 Subsets of lists and strings can be accessed by specifying ranges of values in brackets,
-similar to how we accessed ranges of positions in a Numpy array.
+similar to how we accessed ranges of positions in a NumPy array.
 This is commonly referred to as "slicing" the list/string.
 
 ~~~
