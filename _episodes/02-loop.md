@@ -112,7 +112,7 @@ d
 ~~~
 {: .output}
 
-This is shorter---certainly shorter than something that prints every character in a hundred-letter string---and
+This is shorter --- certainly shorter than something that prints every character in a hundred-letter string --- and
 more robust as well:
 
 ~~~
@@ -133,7 +133,7 @@ n
 {: .output}
 
 The improved version uses a [for loop]({{ page.root }}/reference/#for-loop)
-to repeat an operation---in this case, printing---once for each thing in a sequence.
+to repeat an operation --- in this case, printing --- once for each thing in a sequence.
 The general form of a loop is:
 
 ~~~
