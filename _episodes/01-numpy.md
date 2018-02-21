@@ -684,7 +684,7 @@ matplotlib.pyplot.show()
 
 ![Heatmap of the Data](../fig/01-numpy_71_0.png)
 
-Blue regions in this heat map are low values, while red shows high values.
+Blue regions in this heat map are low values, while yellow shows high values.
 As we can see,
 inflammation rises and falls over a 40-day period.
 
