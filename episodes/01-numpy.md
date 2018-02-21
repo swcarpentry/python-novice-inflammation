@@ -1139,18 +1139,42 @@ the graphs will actually be squeezed together more closely.)
 >## Change In Inflammation
 >
 >This patient data is _longitudinal_ in the sense that each row represents a
->series of observations relating to one individual. This means that change
->inflammation is a meaningful concept.
+>series of observations relating to one individual.  This means that
+>the change in inflammation over time is a meaningful concept.
 >
 >The `numpy.diff()` function takes a NumPy array and returns the
->difference along a specified axis.
+>differences between two successive values along a specified axis.  For
+>example, a NumPy array that looks like this:
+>
+> ~~~
+> npdiff = array([ 0,  2,  5,  9, 14])
+> ~~~
+> {: .language-python}
+>
+>Calling `numpy.diff(npdiff)` would do the following calculations and
+>put the answers in another array.
+>
+> ~~~
+> [ 2 - 0, 5 - 2, 9 - 5, 14 - 9 ]
+> ~~~
+> {: .language-python}
+
+> ~~~
+> numpy.diff(npdiff)
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> array([2, 3, 4, 5])
+> ~~~
+> {: .language-python}
 >
 >Which axis would it make sense to use this function along?
 >
 > > ## Solution
 > > Since the row axis (0) is patients, it does not make sense to get the
 > > difference between two arbitrary patients. The column axis (1) is in
-> > days, so the differnce is the change in inflammation -- a meaningful
+> > days, so the difference is the change in inflammation -- a meaningful
 > > concept.
 > >
 > > ~~~
