@@ -5,7 +5,7 @@ exercises: 0
 questions:
 - "How can I process tabular data files in Python?"
 objectives:
-- "Explain what a library is, and what libraries are used for."
+- "Explain what a library is and what libraries are used for."
 - "Import a Python library and use the functions it contains."
 - "Read tabular data from a file into a program."
 - "Assign values to variables."
@@ -28,7 +28,7 @@ keypoints:
 - "Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis."
 - "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
 ---
-In this lesson we will learn how to manipulate the inflammation dataset with Python. But before we discuss how to deal with many data points, we will show how to store a single value on the computer.
+In this lesson, we will learn how to manipulate the inflammation dataset with Python, but before we discuss how to deal with many data points, we will show how to store a single value on the computer.
 
 
 The line below [assigns]({{ page.root }}/reference/#assign) the value `55` to a [variable]({{ page.root }}/reference/#variable) `weight_kg`:
@@ -60,6 +60,7 @@ print(weight_kg)
 and do arithmetic with it:
 
 ~~~
+#There are 2.2 pounds per kilogram.
 print('weight in pounds:', 2.2 * weight_kg)
 ~~~
 {: .language-python}
@@ -95,6 +96,7 @@ For example,
 let's store the subject's weight in pounds in a variable:
 
 ~~~
+#There are 2.2 pounds per kilogram.
 weight_lb = 2.2 * weight_kg
 print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
 ~~~
@@ -122,7 +124,7 @@ weight in kilograms is now: 100.0 and weight in pounds is still: 126.5
 
 ![Updating a Variable](../fig/python-sticky-note-variables-03.svg)
 
-Since `weight_lb` doesn't "remember" where its value came from,
+Since `weight_lb` doesn't remember where its value came from,
 it isn't automatically updated when `weight_kg` changes.
 This is different from the way spreadsheets work.
 
@@ -190,8 +192,11 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 
 The expression `numpy.loadtxt(...)` is a [function call]({{ page.root }}/reference/#function-call)
 that asks Python to run the [function]({{ page.root }}/reference/#function) `loadtxt` which belongs to the `numpy` library.
-This [dotted notation]({{ page.root }}/reference/#dotted-notation) is used everywhere in Python
-to refer to the parts of things as `thing.component`.
+This [dotted notation]({{ page.root }}/reference/#dotted-notation) is used everywhere in Python:
+the thing that appears before the dot contains the thing that appears after. 
+As an example, John Smith is the John that belongs to the Smith family,
+We could use the dot notation to write his name `smith.john`, 
+just as `loadtxt` is a function that belongs to the `numpy` library.
 
 `numpy.loadtxt` has two [parameters]({{ page.root }}/reference/#parameter):
 the name of the file we want to read,
