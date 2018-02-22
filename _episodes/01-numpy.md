@@ -1147,7 +1147,7 @@ the graphs will actually be squeezed together more closely.)
 >example, a NumPy array that looks like this:
 >
 > ~~~
-> npdiff = array([ 0,  2,  5,  9, 14])
+> npdiff = numpy.array([ 0,  2,  5,  9, 14])
 > ~~~
 > {: .language-python}
 >
