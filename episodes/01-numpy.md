@@ -689,7 +689,7 @@ matplotlib.pyplot.show()
 
 ![Heatmap of the Data](../fig/01-numpy_71_0.png)
 
-Blue pixels in this heat map represent low values, while red pixels represent high values.
+Blue pixels in this heat map represent low values, while yellow pixels represent high values.
 As we can see,
 inflammation rises and falls over a 40-day period.
 
