@@ -28,9 +28,14 @@ keypoints:
 - "Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis."
 - "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
 ---
-In this lesson we will learn how to manipulate the inflammation dataset with Python. But before we discuss how to deal with many data points, we will show how to store a single value on the computer.
+In this lesson we will learn how to manipulate the inflammation dataset with Python. Before we discuss how to deal with many data points, we will show how to store a single value on the computer.
 
-
+You can get output from python by typing math into the console:
+~~~
+3+5
+12/7
+~~~
+However to do anything useful and/or interesting we need to assign values to _variables_ (or link _objects_ to names/variables).
 The line below [assigns]({{ page.root }}/reference/#assign) the value `55` to a [variable]({{ page.root }}/reference/#variable) `weight_kg`:
 
 ~~~
@@ -38,7 +43,7 @@ weight_kg = 55
 ~~~
 {: .language-python}
 
-A variable is just a name for a value,
+A variable is a name for a value,
 such as `x_val`, `current_temperature`, or `subject_id`.
 Python's variables must begin with a letter and are [case sensitive]({{ page.root }}/reference/#case-sensitive).
 We can create a new variable by assigning a value to it using `=`.
