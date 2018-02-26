@@ -283,6 +283,8 @@ we can now read and reuse both ideas separately.
 We can reproduce the previous analysis with a much simpler `for` loop:
 
 ~~~
+filenames = sorted(glob.glob('inflammation*.csv'))
+
 for f in filenames[:3]:
     print(f)
     analyze(f)
