@@ -125,9 +125,9 @@ does not.
 >
 > ~~~
 > salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
-> mySalsa = salsa        # <-- mySalsa and salsa point to the *same* list data in memory
+> my_salsa = salsa        # <-- my_salsa and salsa point to the *same* list data in memory
 > salsa[0] = 'hot peppers'
-> print('Ingredients in my salsa:', mySalsa)
+> print('Ingredients in my salsa:', my_salsa)
 > ~~~
 > {: .language-python}
 >
@@ -141,9 +141,9 @@ does not.
 >
 > ~~~
 > salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
-> mySalsa = list(salsa)        # <-- makes a *copy* of the list
+> my_salsa = list(salsa)        # <-- makes a *copy* of the list
 > salsa[0] = 'hot peppers'
-> print('Ingredients in my salsa:', mySalsa)
+> print('Ingredients in my salsa:', my_salsa)
 > ~~~
 > {: .language-python}
 >
