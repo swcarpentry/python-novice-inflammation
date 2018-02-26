@@ -28,9 +28,15 @@ keypoints:
 - "Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis."
 - "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
 ---
-In this lesson, we will learn how to manipulate the inflammation dataset with Python, but before we discuss how to deal with many data points, we will show how to store a single value on the computer.
 
+In this lesson we will learn how to manipulate the inflammation dataset with Python. Before we discuss how to deal with many data points, we will show how to store a single value on the computer.
 
+You can get output from python by typing math into the console:
+~~~
+3+5
+12/7
+~~~
+However to do anything useful and/or interesting we need to assign values to _variables_ (or link _objects_ to names/variables).
 The line below [assigns]({{ page.root }}/reference/#assign) the value `55` to a [variable]({{ page.root }}/reference/#variable) `weight_kg`:
 
 ~~~
@@ -38,7 +44,7 @@ weight_kg = 55
 ~~~
 {: .language-python}
 
-A variable is just a name for a value,
+A variable is a name for a value,
 such as `x_val`, `current_temperature`, or `subject_id`.
 Python's variables must begin with a letter and are [case sensitive]({{ page.root }}/reference/#case-sensitive).
 We can create a new variable by assigning a value to it using `=`.
@@ -1142,18 +1148,43 @@ the graphs will actually be squeezed together more closely.)
 >## Change In Inflammation
 >
 >This patient data is _longitudinal_ in the sense that each row represents a
->series of observations relating to one individual, and so a change in
->one patient's inflammation level may be important.
+>series of observations relating to one individual.  This means that
+>the change in inflammation over time is a meaningful concept.
 >
 >The `numpy.diff()` function takes a NumPy array and returns the
->difference from element to the next along a specified axis.
+>differences between two successive values along a specified axis.  For
+>example, a NumPy array that looks like this:
+>
+> ~~~
+> npdiff = numpy.array([ 0,  2,  5,  9, 14])
+> ~~~
+> {: .language-python}
+>
+>Calling `numpy.diff(npdiff)` would do the following calculations and
+>put the answers in another array.
+>
+> ~~~
+> [ 2 - 0, 5 - 2, 9 - 5, 14 - 9 ]
+> ~~~
+> {: .language-python}
+
+> ~~~
+> numpy.diff(npdiff)
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> array([2, 3, 4, 5])
+> ~~~
+> {: .language-python}
 >
 >Which axis would it make sense to use this function along?
 >
 > > ## Solution
-> > Since the row axis (0) is patients, it might not make sense to get the
-> > difference between two patients. The column axis (1) is in
-> > days, so the differnce is the change in time for inflammation values. 
+> > Since the row axis (0) is patients, it does not make sense to get the
+> > difference between two arbitrary patients. The column axis (1) is in
+> > days, so the difference is the change in inflammation -- a meaningful
+> > concept.
 > >
 > > ~~~
 > > numpy.diff(data, axis=1)
