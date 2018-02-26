@@ -5,7 +5,7 @@ exercises: 0
 questions:
 - "How can I process tabular data files in Python?"
 objectives:
-- "Explain what a library is, and what libraries are used for."
+- "Explain what a library is and what libraries are used for."
 - "Import a Python library and use the functions it contains."
 - "Read tabular data from a file into a program."
 - "Assign values to variables."
@@ -28,6 +28,7 @@ keypoints:
 - "Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis."
 - "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
 ---
+
 In this lesson we will learn how to manipulate the inflammation dataset with Python. Before we discuss how to deal with many data points, we will show how to store a single value on the computer.
 
 You can get output from python by typing math into the console:
@@ -62,7 +63,7 @@ print(weight_kg)
 ~~~
 {: .output}
 
-and do arithmetic with it:
+and do arithmetic with it (remember, there are 2.2 pounds per kilogram):
 
 ~~~
 print('weight in pounds:', 2.2 * weight_kg)
@@ -100,6 +101,7 @@ For example,
 let's store the subject's weight in pounds in a variable:
 
 ~~~
+#There are 2.2 pounds per kilogram.
 weight_lb = 2.2 * weight_kg
 print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
 ~~~
@@ -127,7 +129,7 @@ weight in kilograms is now: 100.0 and weight in pounds is still: 126.5
 
 ![Updating a Variable](../fig/python-sticky-note-variables-03.svg)
 
-Since `weight_lb` doesn't "remember" where its value came from,
+Since `weight_lb` doesn't remember where its value came from,
 it isn't automatically updated when `weight_kg` changes.
 This is different from the way spreadsheets work.
 
@@ -195,11 +197,15 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 
 The expression `numpy.loadtxt(...)` is a [function call]({{ page.root }}/reference/#function-call)
 that asks Python to run the [function]({{ page.root }}/reference/#function) `loadtxt` which belongs to the `numpy` library.
-This [dotted notation]({{ page.root }}/reference/#dotted-notation) is used everywhere in Python
-to refer to the parts of things as `thing.component`.
+This [dotted notation]({{ page.root }}/reference/#dotted-notation) is used everywhere in Python:
+the thing that appears before the dot contains the thing that appears after. 
+
+As an example, John Smith is the John that belongs to the Smith family,
+We could use the dot notation to write his name `smith.john`, 
+just as `loadtxt` is a function that belongs to the `numpy` library.
 
 `numpy.loadtxt` has two [parameters]({{ page.root }}/reference/#parameter):
-the name of the file we want to read,
+the name of the file we want to read
 and the [delimiter]({{ page.root }}/reference/#delimiter) that separates values on a line.
 These both need to be character strings (or [strings]({{ page.root }}/reference/#string) for short),
 so we put them in quotes.
@@ -215,19 +221,19 @@ To save space,
 Python displays numbers as `1.` instead of `1.0`
 when there's nothing interesting after the decimal point.
 
-Our call to `numpy.loadtxt` read our file,
+Our call to `numpy.loadtxt` read our file
 but didn't save the data in memory.
 To do that,
 we need to assign the array to a variable. Just as we can assign a single value to a variable, we can also assign an array of values
-to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its result:
+to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save the returned data:
 
 ~~~
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ~~~
 {: .language-python}
 
-This statement doesn't produce any output because assignment doesn't display anything.
-If we want to check that our data has been loaded,
+This statement doesn't produce any output because we've assigned the output to the variable `data`. 
+If we want to check that the data have been loaded,
 we can print the variable's value:
 
 ~~~
@@ -246,8 +252,8 @@ print(data)
 ~~~
 {: .output}
 
-Now that our data is in memory,
-we can start doing things with it.
+Now that the data are in memory,
+we can manipulate them.
 First,
 let's ask what [type]({{ page.root }}/reference/#type) of thing `data` refers to:
 
@@ -262,17 +268,18 @@ print(type(data))
 {: .output}
 
 The output tells us that `data` currently refers to
-an N-dimensional array created by the NumPy library.
+an N-dimensional array, the functionality for which is provided by the NumPy library.
 These data correspond to arthritis patients' inflammation.
-The rows are the individual patients and the columns
+The rows are the individual patients, and the columns
 are their daily inflammation measurements.
 
 > ## Data Type
 >
 > A Numpy array contains one or more elements
-> of the same type. `type` will only tell you that
-> a variable is a NumPy array.
-> We can also find out the type
+> of the same type. The `type` function will only tell you that
+> a variable is a NumPy array but won't tell you the type of
+> thing inside the array.
+> We can find out the type
 > of the data contained in the NumPy array.
 >
 > ~~~
@@ -289,7 +296,7 @@ are their daily inflammation measurements.
 > [floating-point numbers]({{ page.root }}/reference/#floating-point number).
 {: .callout}
 
-With this command we can see the array's [shape]({{ page.root }}/reference/#shape):
+With the following command, we can see the array's [shape]({{ page.root }}/reference/#shape):
 
 ~~~
 print(data.shape)
@@ -301,19 +308,19 @@ print(data.shape)
 ~~~
 {: .output}
 
-This tells us that `data` has 60 rows and 40 columns. When we created the
-variable `data` to store our arthritis data, we didn't just create the array, we also
+The output tells us that the `data` array variable contains 60 rows and 40 columns. When we created the
+variable `data` to store our arthritis data, we didn't just create the array; we also
 created information about the array, called [members]({{ page.root }}/reference/#member) or
 attributes. This extra information describes `data` in
 the same way an adjective describes a noun.
-`data.shape` is an attribute  of `data` which describes the dimensions of `data`.
+`data.shape` is an attribute of `data` which describes the dimensions of `data`.
 We use the same dotted notation for the attributes of variables
 that we use for the functions in libraries
 because they have the same part-and-whole relationship.
 
 If we want to get a single number from the array,
-we must provide an [index]({{ page.root }}/reference/#index) in square brackets,
-just as we do in math when referring to an element of a matrix.  Our inflammation data has two dimensions, so we will need to use two indices to refer to a value:
+we must provide an [index]({{ page.root }}/reference/#index) in square brackets after the variable name,
+just as we do in math when referring to an element of a matrix.  Our inflammation data has two dimensions, so we will need to use two indices to refer to one specific value:
 
 ~~~
 print('first value in data:', data[0, 0])
@@ -337,7 +344,7 @@ middle value in data: 13.0
 
 The expression `data[30, 20]` accesses the element at row 30, column 20. While this expression may not surprise you,
  `data[0, 0]` might.
-Programming languages like Fortran, MATLAB and R start counting at 1,
+Programming languages like Fortran, MATLAB and R start counting at 1
 because that's what human beings have done for thousands of years.
 Languages in the C family (including C++, Java, Perl, and Python) count from 0
 because it represents an offset from the first value in the array (the second
@@ -360,7 +367,7 @@ the index is how many steps we have to take from the start to get the item we wa
 > What may also surprise you is that when Python displays an array,
 > it shows the element with index `[0, 0]` in the upper left corner
 > rather than the lower left.
-> This is consistent with the way mathematicians draw matrices,
+> This is consistent with the way mathematicians draw matrices
 > but different from the Cartesian coordinates.
 > The indices are (row, column) instead of (column, row) for the same reason,
 > which can be confusing when plotting data.
@@ -422,6 +429,7 @@ print('small is:')
 print(small)
 ~~~
 {: .language-python}
+The above example selects rows 0 through 2 and columns 36 through to the end of the array.
 
 ~~~
 small is:
@@ -433,9 +441,9 @@ small is:
 
 Arrays also know how to perform common mathematical operations on their values.
 The simplest operations with data are arithmetic:
-add, subtract, multiply, and divide.
+addition, subtraction, multiplication, and division.
  When you do such operations on arrays,
-the operation is done on each individual element of the array.
+the operation is done element-by-element.
 Thus:
 
 ~~~
@@ -444,7 +452,7 @@ doubledata = data * 2.0
 {: .language-python}
 
 will create a new array `doubledata`
-whose elements have the value of two times the value of the corresponding elements in `data`:
+each elements of which is twice the value of the corresponding element in `data`:
 
 ~~~
 print('original:')
@@ -467,7 +475,7 @@ doubledata:
 {: .output}
 
 If,
-instead of taking an array and doing arithmetic with a single value (as above)
+instead of taking an array and doing arithmetic with a single value (as above),
 you did the arithmetic operation with another array of the same shape,
 the operation will be done on corresponding elements of the two arrays.
 Thus:
@@ -494,8 +502,8 @@ tripledata:
 ~~~
 {: .output}
 
-Often, we want to do more than add, subtract, multiply, and divide values of data.
-NumPy knows how to do more complex operations on arrays.
+Often, we want to do more than add, subtract, multiply, and divide array elements.
+NumPy knows how to do more complex operations, too.
 If we want to find the average inflammation for all patients on all days,
 for example,
 we can ask NumPy to compute `data`'s mean value:
@@ -512,8 +520,6 @@ print(numpy.mean(data))
 
 `mean` is a [function]({{ page.root }}/reference/#function) that takes
 an array as an [argument]({{ page.root }}/reference/#argument).
-If variables are nouns, functions are verbs:
-they do things with variables.
 
 > ## Not All Functions Have Input
 >
@@ -551,7 +557,7 @@ print('minimum inflammation:', minval)
 print('standard deviation:', stdval)
 ~~~
 {: .language-python}
-
+Here we've assigned the return value from `numpy.max(data)` to the variable `maxval`, the value from `numpy.min(data)` to `minval`, and so on.
 ~~~
 maximum inflammation: 20.0
 minimum inflammation: 0.0
@@ -562,18 +568,18 @@ standard deviation: 4.61383319712
 > ## Mystery Functions in IPython
 >
 > How did we know what functions NumPy has and how to use them?
-> If you are working in the IPython/Jupyter Notebook there is an easy way to find out.
+> If you are working in the IPython/Jupyter Notebook, there is an easy way to find out.
 > If you type the name of something followed by a dot, then you can use tab completion
 > (e.g. type `numpy.` and then press tab)
-> to see a list of all functions and attributes that you can use. After selecting one you
-> can also add a question mark (e.g. `numpy.cumprod?`) and IPython will return an
+> to see a list of all functions and attributes that you can use. After selecting one, you
+> can also add a question mark (e.g. `numpy.cumprod?`), and IPython will return an
 > explanation of the method! This is the same as doing `help(numpy.cumprod)`.
 {: .callout}
 
 When analyzing data, though,
-we often want to look at partial statistics,
-such as the maximum value per patient
-or the average value per day.
+we often want to look at variations in statistical values,
+such as the maximum inflammation per patient
+or the average inflammation per day.
 One way to do this is to create a new temporary array of the data we want,
 then ask it to do the calculation:
 
@@ -607,13 +613,13 @@ maximum inflammation for patient 2: 19.0
 {: .output}
 
 What if we need the maximum inflammation for each patient over all days (as in the
-next diagram on the left), or the average for each day (as in the
+next diagram on the left) or the average for each day (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
 ![Operations Across Axes](../fig/python-operations-across-axes.png)
 
-To support this,
+To support this functionality,
 most array functions allow us to specify the axis we want to work on.
 If we ask for the average across axis 0 (rows in our 2D example),
 we get:
@@ -672,10 +678,10 @@ which is the average inflammation per patient across all days.
 The mathematician Richard Hamming once said,
 "The purpose of computing is insight, not numbers,"
 and the best way to develop insight is often to visualize data.
-Visualization deserves an entire lecture (of course) of its own,
+Visualization deserves an entire lecture of its own,
 but we can explore a few features of Python's `matplotlib` library here.
-While there is no "official" plotting library,
-this package is the de facto standard.
+While there is no official plotting library,
+`matplotlib` is the de facto standard.
 First,
 we will import the `pyplot` module from `matplotlib`
 and use two of its functions to create and display a heat map of our data:
@@ -689,7 +695,7 @@ matplotlib.pyplot.show()
 
 ![Heatmap of the Data](../fig/01-numpy_71_0.png)
 
-Blue regions in this heat map are low values, while red shows high values.
+Blue pixels in this heat map represent low values, while yellow pixels represent high values.
 As we can see,
 inflammation rises and falls over a 40-day period.
 
@@ -724,10 +730,9 @@ matplotlib.pyplot.show()
 Here,
 we have put the average per day across all patients in the variable `ave_inflammation`,
 then asked `matplotlib.pyplot` to create and display a line graph of those values.
-The result is roughly a linear rise and fall,
+The result is a roughly linear rise and fall,
 which is suspicious:
-based on other studies,
-we expect a sharper rise and slower fall.
+we might instead expect a sharper rise and slower fall.
 Let's have a look at two other statistics:
 
 ~~~
@@ -746,13 +751,13 @@ matplotlib.pyplot.show()
 
 ![Minimum Value Along The First Axis](../fig/01-numpy_75_3.png)
 
-The maximum value rises and falls perfectly smoothly,
+The maximum value rises and falls smoothly,
 while the minimum seems to be a step function.
-Neither result seems particularly likely,
+Neither trend seems particularly likely,
 so either there's a mistake in our calculations
 or something is wrong with our data.
 This insight would have been difficult to reach by
-examining the data without visualization tools.
+examining the numbers themselves without visualization tools.
 
 You can group similar plots in a single figure using subplots.
 This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
@@ -801,8 +806,7 @@ how large we want the figure to be,
 that we're creating three subplots,
 what to draw for each one,
 and that we want a tight layout.
-(Perversely,
-if we leave out that call to `fig.tight_layout()`,
+(If we leave out that call to `fig.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
 
 > ## Scientists Dislike Typing
@@ -959,7 +963,7 @@ the graphs will actually be squeezed together more closely.)
 
 > ## Drawing Straight Lines
 >
-> In the center and right subplots above, we  expect all lines to look like step functions, because
+> In the center and right subplots above, we expect all lines to look like step functions because
 > non-integer value are not realistic for the minimum and maximum values. However, you can see
 > that the lines are not always vertical or horizontal, and in particular the step function
 > in the subplot on the right looks slanted. Why is this?
@@ -1219,8 +1223,9 @@ the graphs will actually be squeezed together more closely.)
 > > ~~~
 > > {: .language-python}
 > >
-> > If a difference is a *decrease*, then the difference will be negative. If
-> > you are interested in the **magnitude** of the change and not just the
+> > If inflammation values *decrease* along an axis, then the difference from 
+> > one element to the next will be negative. If
+> > you are interested in the **magnitude** of the change and not the
 > > direction, the `numpy.absolute()` function will provide that.
 > >
 > > Notice the difference if you get the largest _absolute_ difference
