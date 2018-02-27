@@ -29,7 +29,26 @@ they become much easier to fix.
 
 Errors in Python have a very specific form,
 called a [traceback]({{ page.root }}/reference/#traceback).
-Let's examine one:
+A traceback can contain a lot of information, so the following
+schematic highlights the main sections of a traceback.
+
+![Schematic of a Python Traceback](../fig/traceback_schematic.svg)
+
+In this diagram the green box in the top left indicates the type of
+error that occurred. The blue shaded regions below are optionally
+printed depending on how many function calls there are between the
+Python program or interpreter and the location where the error
+occurred. For each function described, the line number and
+corresponding line of code affected by the error is shown.
+
+The most recently executed section of code containing the error is
+shown highlighted in green at the bottom together with a final line
+indicating the nature of the error in this section. This is often the
+best place to start when debugging a traceback because many times
+errors result from either improper code in this section or improper
+inputs to this function.
+
+Let's examine an example of a real traceback:
 
 ~~~
 # This code has an intentional error. You can type it directly or
