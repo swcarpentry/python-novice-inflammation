@@ -18,7 +18,7 @@ The only thing that's missing is a library with a rather unpleasant name:
 ~~~
 import glob
 ~~~
-{: .python}
+{: .language-python}
 
 The `glob` library contains a function, also called `glob`,
 that finds files and directories whose names match a pattern.
@@ -30,7 +30,7 @@ We can use this to get the names of all the CSV files in the current directory:
 ~~~
 print(glob.glob('inflammation*.csv'))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ['inflammation-05.csv', 'inflammation-11.csv', 'inflammation-12.csv', 'inflammation-08.csv', 'inflammation-03.csv', 'inflammation-06.csv', 'inflammation-09.csv', 'inflammation-07.csv', 'inflammation-10.csv', 'inflammation-02.csv', 'inflammation-04.csv', 'inflammation-01.csv']
@@ -74,7 +74,7 @@ for f in filenames:
     fig.tight_layout()
     matplotlib.pyplot.show()
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 inflammation-01.csv
@@ -115,7 +115,7 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > > import numpy
 > > import matplotlib.pyplot
 > >
-> > filenames = glob.glob('inflammation*.csv')
+> > filenames = sorted(glob.glob('inflammation*.csv'))
 > >
 > > data0 = numpy.loadtxt(fname=filenames[0], delimiter=',')
 > > data1 = numpy.loadtxt(fname=filenames[1], delimiter=',')
@@ -128,7 +128,7 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > > fig.tight_layout()
 > > matplotlib.pyplot.show()
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -140,12 +140,12 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > filenames = glob.glob('inflammation*.csv')
 > composite_data = numpy.zeros((60,40))
 > for f in filenames:
->     # sum each new file's data into as it's read
+>     # sum each new file's data into composite_data as it's read
 >     #
 > # and then divide the composite_data by number of samples
 > composite_data /= len(filenames)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > Then use pyplot to generate average, max, and min for all patients.
 >
@@ -183,6 +183,6 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > >
 > > matplotlib.pyplot.show()
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 >{: .solution}
 {: .challenge}

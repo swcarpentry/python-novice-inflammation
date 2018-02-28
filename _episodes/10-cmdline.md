@@ -45,21 +45,21 @@ $ python ../code/readings_04.py --mean inflammation-01.csv
 7.05
 5.9
 ~~~
-{: .bash}
+{: .language-bash}
 
 We might also want to look at the minimum of the first four lines
 
 ~~~
 $ head -4 inflammation-01.csv | python ../code/readings_04.py --min
 ~~~
-{: .bash}
+{: .language-bash}
 
 or the maximum inflammations in several files one after another:
 
 ~~~
 $ python ../code/readings_04.py --max inflammation-*.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 Our scripts should do the following:
 
@@ -81,7 +81,7 @@ save the following in a text file called `sys_version.py`:
 import sys
 print('version is', sys.version)
 ~~~
-{: .python}
+{: .language-python}
 
 The first line imports a library called `sys`,
 which is short for "system".
@@ -92,7 +92,7 @@ We can run this script from the command line like this:
 ~~~
 $ python sys_version.py
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 version is 3.4.3+ (default, Jul 28 2015, 13:17:50)
@@ -106,7 +106,7 @@ Create another file called `argv_list.py` and save the following text to it.
 import sys
 print('sys.argv is', sys.argv)
 ~~~
-{: .python}
+{: .language-python}
 
 The strange name `argv` stands for "argument values".
 Whenever Python runs a program,
@@ -118,7 +118,7 @@ If we run this program with no arguments:
 ~~~
 $ python argv_list.py
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 sys.argv is ['argv_list.py']
@@ -132,7 +132,7 @@ If we run it with a few arguments, however:
 ~~~
 $ python argv_list.py first second third
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 sys.argv is ['argv_list.py', 'first', 'second', 'third']
@@ -151,7 +151,7 @@ though we can call it whatever we want:
 ~~~
 $ cat ../code/readings_01.py
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 import sys
@@ -164,7 +164,7 @@ def main():
     for m in numpy.mean(data, axis=1):
         print(m)
 ~~~
-{: .python}
+{: .language-python}
 
 This function gets the name of the script from `sys.argv[0]`,
 because that's where it's always put,
@@ -174,7 +174,7 @@ Here's a simple test:
 ~~~
 $ python ../code/readings_01.py inflammation-01.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 There is no output because we have defined a function,
 but haven't actually called it.
@@ -183,7 +183,7 @@ Let's add a call to `main`:
 ~~~
 $ cat ../code/readings_02.py
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 import sys
@@ -199,14 +199,14 @@ def main():
 if __name__ == '__main__':
    main()
 ~~~
-{: .python}
+{: .language-python}
 
 and run that:
 
 ~~~
 $ python ../code/readings_02.py inflammation-01.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 5.45
@@ -290,7 +290,7 @@ $ python ../code/readings_02.py inflammation-01.csv
 > if __name__ == '__main__':
 >     main()  # Or whatever function produces output
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > When you import a Python file, `__name__` is the name
 > of that file (e.g., when importing `readings.py`,
@@ -323,7 +323,7 @@ each of which has three days of data for two patients:
 ~~~
 $ ls small-*.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 small-01.csv small-02.csv small-03.csv
@@ -333,7 +333,7 @@ small-01.csv small-02.csv small-03.csv
 ~~~
 $ cat small-01.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 0,0,1
@@ -344,7 +344,7 @@ $ cat small-01.csv
 ~~~
 $ python ../code/readings_02.py small-01.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 0.333333333333
@@ -382,7 +382,7 @@ Here's our changed program
 ~~~
 $ cat ../code/readings_03.py
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 import sys
@@ -398,14 +398,14 @@ def main():
 if __name__ == '__main__':
    main()
 ~~~
-{: .python}
+{: .language-python}
 
 and here it is in action:
 
 ~~~
 $ python ../code/readings_03.py small-01.csv small-02.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 0.333333333333
@@ -438,7 +438,7 @@ so we could just do this:
 ~~~
 $ cat ../code/readings_04.py
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 import sys
@@ -465,14 +465,14 @@ def main():
 if __name__ == '__main__':
    main()
 ~~~
-{: .python}
+{: .language-python}
 
 This works:
 
 ~~~
 $ python ../code/readings_04.py --max small-01.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 1.0
@@ -501,7 +501,7 @@ so that the program fails fast:
 ~~~
 $ cat ../code/readings_05.py
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 import sys
@@ -532,7 +532,7 @@ def process(filename, action):
 if __name__ == '__main__':
    main()
 ~~~
-{: .python}
+{: .language-python}
 
 This is four lines longer than its predecessor,
 but broken into more digestible chunks of 8 and 12 lines.
@@ -548,7 +548,7 @@ Let's experiment in another script called `count_stdin.py`:
 ~~~
 $ cat ../code/count_stdin.py
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 import sys
@@ -559,7 +559,7 @@ for line in sys.stdin:
 
 print(count, 'lines in standard input')
 ~~~
-{: .python}
+{: .language-python}
 
 This little program reads lines from a special "file" called `sys.stdin`,
 which is automatically connected to the program's standard input.
@@ -571,7 +571,7 @@ Let's try running it as if it were a regular command-line program:
 ~~~
 $ python ../code/count_stdin.py < small-01.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 2 lines in standard input
@@ -583,7 +583,7 @@ A common mistake is to try to run something that reads from standard input like 
 ~~~
 $ python ../code/count_stdin.py small-01.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 i.e., to forget the `<` character that redirects the file to standard input.
 In this case,
@@ -602,7 +602,7 @@ Only `main` changes:
 ~~~
 $ cat ../code/readings_06.py
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 import sys
@@ -636,14 +636,14 @@ def process(filename, action):
 if __name__ == '__main__':
    main()
 ~~~
-{: .python}
+{: .language-python}
 
 Let's try it out:
 
 ~~~
 $ python ../code/readings_06.py --mean < small-01.csv
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 0.333333333333
@@ -663,7 +663,7 @@ the program now does everything we set out to do.
 > ~~~
 > $ python arith.py add 1 2
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 3
@@ -673,7 +673,7 @@ the program now does everything we set out to do.
 > ~~~
 > $ python arith.py subtract 3 4
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > -1
@@ -712,7 +712,7 @@ the program now does everything we set out to do.
 > >
 > > main()
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -725,7 +725,7 @@ the program now does everything we set out to do.
 > ~~~
 > $ python my_ls.py py
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > left.py
@@ -751,7 +751,7 @@ the program now does everything we set out to do.
 > >
 > > main()
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -793,7 +793,7 @@ the program now does everything we set out to do.
 > >
 > > main()
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -844,7 +844,7 @@ the program now does everything we set out to do.
 > >
 > > main()
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -889,7 +889,7 @@ the program now does everything we set out to do.
 > >
 > > main()
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -929,7 +929,7 @@ the program now does everything we set out to do.
 > >
 > > main()
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -977,7 +977,7 @@ the program now does everything we set out to do.
 > > main()
 > >
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -990,7 +990,7 @@ the program now does everything we set out to do.
 > ~~~
 > $ python check_arguments.py
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ~~~
 > usage: python check_argument.py filename.txt
@@ -1000,7 +1000,7 @@ the program now does everything we set out to do.
 > ~~~
 > $ python check_arguments.py filename.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ~~~
 > Thanks for specifying arguments!
