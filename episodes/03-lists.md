@@ -73,9 +73,9 @@ but we cannot change individual characters in a string.
 For example:
 
 ~~~
-names = ['Curie', 'Darwing', 'Turing'] # typo in Darwin's name
+names = ['Curie', 'Darwing', 'Turing']  # typo in Darwin's name
 print('names is originally:', names)
-names[1] = 'Darwin' # correct the name
+names[1] = 'Darwin'  # correct the name
 print('final value of names:', names)
 ~~~
 {: .language-python}
