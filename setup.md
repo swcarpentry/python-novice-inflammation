@@ -44,7 +44,7 @@ $ python
 ~~~
 {: .source}
 
-Note: If using Git Bash on Windows, we need to call Python via `winpty`:
+Note: If using Git Bash on Windows, you need to call Python via `winpty`:
 
 ~~~
 $ winpty python
