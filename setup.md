@@ -25,7 +25,7 @@ you should have already
 [installed Anaconda](http://swcarpentry.github.io/workshop-template/#python)
 which includes the notebook.
 
-To start the notebook server, open a terminal or git bash and type the command:
+To start the notebook server, open a terminal or git bash and execute the command:
 
 ~~~
 $ jupyter notebook
@@ -44,7 +44,7 @@ $ python
 ~~~
 {: .source}
 
-Note: If using Git Bash on Windows, you need to call Python via `winpty`:
+Note: If using Git Bash on Windows, you have to call Python via `winpty`:
 
 ~~~
 $ winpty python
