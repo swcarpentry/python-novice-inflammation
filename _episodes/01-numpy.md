@@ -813,7 +813,7 @@ the graphs will actually be squeezed together more closely.)
 > ## Check Your Understanding
 >
 > What values do the variables `mass` and `age` have after each statement in the following program? 
-> You can test your answers by typing the commands.
+> Test your answers by executing the commands.
 >
 > ~~~
 > mass = 47.5
