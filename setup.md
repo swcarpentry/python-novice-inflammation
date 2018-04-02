@@ -37,7 +37,7 @@ Then create a new notebook using the drop-down menu on the right to select 'Pyth
 ![](../fig/new-notebook.png)
 
 To start the Python interpreter without the notebook, open a terminal
-or command prompt and type the command:
+or command prompt and execute the command:
 
 ~~~
 $ python
