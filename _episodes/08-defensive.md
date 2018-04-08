@@ -87,8 +87,8 @@ AssertionError: Data should only contain positive values
 {: .error}
 
 Programs like the Firefox browser are full of assertions:
-10–20% of the code they contain
-are there to check that the other 80-90% are working correctly.
+10-20% of the code they contain
+are there to check that the other 80–90% are working correctly.
 Broadly speaking,
 assertions fall into three categories:
 
