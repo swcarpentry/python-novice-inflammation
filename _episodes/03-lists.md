@@ -73,9 +73,9 @@ but we cannot change individual characters in a string.
 For example:
 
 ~~~
-names = ['Curie', 'Darwing', 'Turing'] # typo in Darwin's name
+names = ['Curie', 'Darwing', 'Turing']  # typo in Darwin's name
 print('names is originally:', names)
-names[1] = 'Darwin' # correct the name
+names[1] = 'Darwin'  # correct the name
 print('final value of names:', names)
 ~~~
 {: .language-python}
@@ -125,9 +125,9 @@ does not.
 >
 > ~~~
 > salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
-> mySalsa = salsa        # <-- mySalsa and salsa point to the *same* list data in memory
+> my_salsa = salsa        # <-- my_salsa and salsa point to the *same* list data in memory
 > salsa[0] = 'hot peppers'
-> print('Ingredients in my salsa:', mySalsa)
+> print('Ingredients in my salsa:', my_salsa)
 > ~~~
 > {: .language-python}
 >
@@ -141,9 +141,9 @@ does not.
 >
 > ~~~
 > salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
-> mySalsa = list(salsa)        # <-- makes a *copy* of the list
+> my_salsa = list(salsa)        # <-- makes a *copy* of the list
 > salsa[0] = 'hot peppers'
-> print('Ingredients in my salsa:', mySalsa)
+> print('Ingredients in my salsa:', my_salsa)
 > ~~~
 > {: .language-python}
 >
@@ -314,7 +314,7 @@ This is different from how variables worked in lesson 1, and more similar to how
 {: .challenge}
 
 Subsets of lists and strings can be accessed by specifying ranges of values in brackets,
-similar to how we accessed ranges of positions in a Numpy array.
+similar to how we accessed ranges of positions in a NumPy array.
 This is commonly referred to as "slicing" the list/string.
 
 ~~~

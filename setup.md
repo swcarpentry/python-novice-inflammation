@@ -25,17 +25,29 @@ you should have already
 [installed Anaconda](http://swcarpentry.github.io/workshop-template/#python)
 which includes the notebook.
 
-To start the notebook, open a terminal or git bash and type the command:
+To start the notebook server, open a terminal or git bash and execute the command:
 
 ~~~
 $ jupyter notebook
 ~~~
 {: .source}
 
-To start the Python interpreter without the notebook, open a terminal or git bash and type the command:
+Then create a new notebook using the drop-down menu on the right to select 'Python 3 notebook':
+
+![](../fig/new-notebook.png)
+
+To start the Python interpreter without the notebook, open a terminal
+or command prompt and execute the command:
 
 ~~~
 $ python
+~~~
+{: .source}
+
+Note: If using Git Bash on Windows, you have to call Python via `winpty`:
+
+~~~
+$ winpty python
 ~~~
 {: .source}
 
