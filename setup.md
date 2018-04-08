@@ -20,6 +20,15 @@ $ cd Desktop/python-novice-inflammation/data
 ~~~
 {: .source}
 
+If you are using Windows, you can use the `cmd` (Command Prompt) program instead of the Unix shell.
+The easiest way to start it is by pressing `Windows Logo Key` + `R` (run dialog) and entering `cmd`.In Windows, the commands above to access the folder in your Desktop become:
+
+~~~
+$ cd /D %userprofile%\Desktop\python-novice-inflammation\data
+~~~
+{: .source}
+
+
 If you will be using the Jupyter (IPython) notebook for the lesson,
 you should have already
 [installed Anaconda](http://swcarpentry.github.io/workshop-template/#python)
