@@ -71,21 +71,21 @@ we use a [return statement]({{ page.root }}/reference/#return-statement) to send
 Let's try running our function.
 
 ~~~
-fahr_to_kelvin(32)
+fahr_to_celsius(32)
 ~~~
 
 This command should call our function, using "32" as the input and return the function value.
 
 In fact, calling our own function is no different from calling any other function:
 ~~~
-print('freezing point of water:', fahr_to_kelvin(32))
-print('boiling point of water:', fahr_to_kelvin(212))
+print('freezing point of water:', fahr_to_celsius(32), 'C')
+print('boiling point of water:', fahr_to_celsius(212), 'C')
 ~~~
 {: .language-python}
 
 ~~~
-freezing point of water: 0.0
-boiling point of water: 100.0
+freezing point of water: 0.0 C
+boiling point of water: 100.0 C
 ~~~
 {: .output}
 
