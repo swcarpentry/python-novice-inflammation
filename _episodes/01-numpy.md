@@ -40,7 +40,7 @@ However to do anything useful and/or interesting we need to assign values to _va
 The line below [assigns]({{ page.root }}/reference/#assign) the value `55` to a [variable]({{ page.root }}/reference/#variable) `weight_kg`:
 
 ~~~
-weight_kg = 55
+weight_kg = 60
 ~~~
 {: .language-python}
 
@@ -66,7 +66,9 @@ print(weight_kg)
 and do arithmetic with it (remember, there are 2.2 pounds per kilogram):
 
 ~~~
-print('weight in pounds:', 2.2 * weight_kg)
+weight_lb = 2.2 * weight_kg
+
+print('weight in pounds:', weight_lb)
 ~~~
 {: .language-python}
 
