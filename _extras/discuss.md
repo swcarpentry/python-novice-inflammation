@@ -29,7 +29,7 @@ and store the final result in one as well:
 original = 32.0
 final = fahr_to_celsius(original)
 ~~~
-{: .python}
+{: .language-python}
 
 The diagram below shows what memory looks like after the first line has been executed:
 
@@ -91,7 +91,7 @@ Python tells us that there's no such thing:
 ~~~
 print('final value of temp after all function calls:', temp)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -123,7 +123,7 @@ def span(a):
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 print('span of data:', span(data))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 span of data: 20.0
@@ -137,7 +137,7 @@ We might very well use a variable with the same name to hold data:
 diff = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 print('span of data:', span(diff))
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 span of data: 20.0
@@ -171,7 +171,7 @@ which quickly overloads our short-term memory.
 > ~~~
 > print(outer(fence('carbon', '+')))
 > ~~~
-> {: .python}
+> {: .language-python}
 {: .challenge}
 
 ## Image Grids
@@ -183,7 +183,7 @@ The first step is to create our own "image":
 ~~~
 from ipythonblocks import ImageGrid
 ~~~
-{: .python}
+{: .language-python}
 
 Unlike the `import` statements we have seen earlier,
 this one doesn't load the entire `ipythonblocks` library.
@@ -198,7 +198,7 @@ we can use it to create a very simple grid of colored cells:
 grid = ImageGrid(5, 3)
 grid.show()
 ~~~
-{: .python}
+{: .language-python}
 
 ![](../fig/grid-01.png)
 
@@ -210,7 +210,7 @@ print('grid width:', grid.width)
 print('grid height:', grid.height)
 print('grid lines on:', grid.lines_on)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 grid width: 5
@@ -242,7 +242,7 @@ print('position is:', position)
 color = (10, 20, 30)
 print('color is:', color)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 position is: (12.3, 45.6)
@@ -256,7 +256,7 @@ just as we do with lists and arrays:
 ~~~
 print('first element of color is:', color[0])
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 first element of color is: 10
@@ -272,7 +272,7 @@ they are [immutable]({{ page.root }}/reference/#immutable):
 color[0] = 40
 print('first element of color after change:', color[0])
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -308,7 +308,7 @@ row[6, 0] = (255, 0, 255) # red and blue
 row[7, 0] = (0, 255, 255) # green and blue
 row.show()
 ~~~
-{: .python}
+{: .language-python}
 
 ![](../fig/grid-02.png)
 
@@ -321,7 +321,7 @@ To help us,
 from ipythonblocks import show_color
 show_color(214, 90, 127)
 ~~~
-{: .python}
+{: .language-python}
 
 ![](../fig/ipythonblocks_show_color_example.png)
 
@@ -338,7 +338,7 @@ c[2, 0] = colors['LimeGreen']
 c[2, 1] = colors['HotPink']
 c.show()
 ~~~
-{: .python}
+{: .language-python}
 
 ![](../fig/grid-03.png)
 
@@ -352,7 +352,7 @@ c.show()
 >     bar[x, 0] = (0, 0, ____)
 > bar.show()
 > ~~~
-> {: .python}
+> {: .language-python}
 {: .challenge}
 
 > ## Why RGB?
