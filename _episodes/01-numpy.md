@@ -34,7 +34,7 @@ In this lesson we will learn how to manipulate the inflammation dataset with Pyt
 The line below [assigns]({{ page.root }}/reference/#assignment) the value `55` to a [variable]({{ page.root }}/reference/#variable) `weight_kg`:
 
 ~~~
-weight_kg = 55
+weight_kg = 60
 ~~~
 {: .python}
 
@@ -61,7 +61,6 @@ and do arithmetic with it:
 
 ~~~
 weight_lb = 2.2 * weight_kg
-weight_lb = format(weight_lb, '.2f')
 
 print('weight in pounds:', weight_lb)
 ~~~
