@@ -149,6 +149,10 @@ method
     Each of an object's methods typically implements one of the things it can do,
     or one of the questions it can answer.
 
+mutable
+:   Changeable. The value of mutable data can be altered after it has been
+    created. See [immutable](#immutable)."
+
 object
 :   A collection of conceptually related variables ([members](#member)) and
     functions using those variables ([methods](#method)).
