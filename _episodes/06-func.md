@@ -302,12 +302,12 @@ we can do so in a single line.
 Once we start putting things in functions so that we can re-use them,
 we need to start testing that those functions are working correctly.
 To see how to do this,
-let's write a function to offset a dataset so that it's mean value 
+let's write a function to offset a dataset so that it's mean value
 shifts to a user-defined value:
 
 ~~~
-def offset_mean(data, desired):
-    return (data - numpy.mean(data)) + desired
+def offset_mean(data, target_mean_value):
+    return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
@@ -316,7 +316,7 @@ but since we don't know what the values ought to be,
 it will be hard to tell if the result was correct.
 Instead,
 let's use NumPy to create a matrix of 0's
-and then offset it to have a mean value of 3:
+and then offset its values to have a mean value of 3:
 
 ~~~
 z = numpy.zeros((2,2))
@@ -407,9 +407,9 @@ to remind ourselves later what it's for and how to use it.
 The usual way to put documentation in software is to add [comments]({{ page.root }}/reference/#comment) like this:
 
 ~~~
-# offset_mean(data, desired): return a new array containing the original data with its mean offset to match the desired value.
-def offset_mean(data, desired):
-    return (data - numpy.mean(data)) + desired
+# offset_mean(data, target_mean_value): return a new array containing the original data with its mean offset to match the desired value.
+def offset_mean(data, target_mean_value):
+    return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
@@ -418,9 +418,9 @@ If the first thing in a function is a string that isn't assigned to a variable,
 that string is attached to the function as its documentation:
 
 ~~~
-def offset_mean(data, desired):
+def offset_mean(data, target_mean_value):
     '''Return a new array containing the original data with its mean offset to match the desired value.'''
-    return (data - numpy.mean(data)) + desired
+    return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
@@ -434,7 +434,7 @@ help(offset_mean)
 ~~~
 Help on function offset_mean in module __main__:
 
-offset_mean(data, desired)
+offset_mean(data, target_mean_value)
     Return a new array containing the original data with its mean offset to match the desired value.
 ~~~
 {: .output}
@@ -445,10 +445,10 @@ but if we do,
 we can break the string across multiple lines:
 
 ~~~
-def offset_mean(data, desired):
+def offset_mean(data, target_mean_value):
     '''Return a new array containing the original data with its mean offset to match the desired value.
     Example: offset_mean([1, 2, 3], 0) => [-1, 0, 1]'''
-    return (data - numpy.mean(data)) + desired
+    return (data - numpy.mean(data)) + target_mean_value
 
 help(offset_mean)
 ~~~
@@ -457,7 +457,7 @@ help(offset_mean)
 ~~~
 Help on function center in module __main__:
 
-offset_mean(data, desired)
+offset_mean(data, target_mean_value)
     Return a new array containing the original data with its mean offset to match the desired value.
     Example: offset_mean([1, 2, 3], 0) => [-1, 0, 1]
 ~~~
@@ -516,14 +516,14 @@ and make our own functions easier to use,
 let's re-define our `offset_mean` function like this:
 
 ~~~
-def offset_mean(data, desired=0.0):
+def offset_mean(data, target_mean_value=0.0):
     '''Return a new array containing the original data with its mean offset to match the desired value (0 by default).
     Example: offset_mean([1, 2, 3], 0) => [-1, 0, 1]'''
-    return (data - numpy.mean(data)) + desired
+    return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
-The key change is that the second parameter is now written `desired=0.0` instead of just `desired`.
+The key change is that the second parameter is now written `target_mean_value=0.0` instead of just `target_mean_value`.
 If we call the function with two arguments,
 it works as it did before:
 
@@ -540,7 +540,7 @@ print(offset_mean(test_data, 3))
 {: .output}
 
 But we can also now call it with just one parameter,
-in which case `desired` is automatically assigned the [default value]({{ page.root }}/reference/#default-value) of 0.0:
+in which case `target_mean_value` is automatically assigned the [default value]({{ page.root }}/reference/#default-value) of 0.0:
 
 ~~~
 more_data = 5 + numpy.zeros((2, 2))
