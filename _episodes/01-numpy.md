@@ -71,18 +71,30 @@ print('weight in pounds:', 2.2 * weight_kg)
 {: .language-python}
 
 ~~~
-weight in pounds: 121.0
+('weight in pounds:', 121.00000000000001)
 ~~~
 {: .output}
 
 As the example above shows,
 we can print several things at once by separating them with commas.
 
+For a more readable output, one can use the format function:
+
+~~~
+print('weight in pounds: {}'.format(2.2 * weight_kg))
+~~~
+{: .python}
+
+~~~
+weight in pounds: 121.0
+~~~
+{: .output}
+
 We can also change a variable's value by assigning it a new one:
 
 ~~~
 weight_kg = 57.5
-print('weight in kilograms is now:', weight_kg)
+print('weight in kilograms is now: {}'.format(weight_kg))
 ~~~
 {: .language-python}
 
@@ -103,7 +115,7 @@ let's store the subject's weight in pounds in a variable:
 ~~~
 #There are 2.2 pounds per kilogram.
 weight_lb = 2.2 * weight_kg
-print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
+print('weight in kilograms: {} and in pounds: {}'.format(weight_kg, weight_lb))
 ~~~
 {: .language-python}
 
@@ -118,7 +130,7 @@ and then change `weight_kg`:
 
 ~~~
 weight_kg = 100.0
-print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
+print('weight in kilograms is now: {} and weight in pounds is still: {}'.format(weight_kg, weight_lb))
 ~~~
 {: .language-python}
 
