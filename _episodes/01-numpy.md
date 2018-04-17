@@ -67,7 +67,7 @@ print('weight in pounds:', weight_lb)
 {: .python}
 
 ~~~
-weight in pounds: 120.0
+weight in pounds: 132.0
 ~~~
 {: .output}
 
