@@ -81,13 +81,13 @@ we can print several things at once by separating them with commas.
 We can also change a variable's value by assigning it a new one:
 
 ~~~
-weight_kg = 57.5
+weight_kg = 65.0
 print('weight in kilograms is now:', weight_kg)
 ~~~
 {: .language-python}
 
 ~~~
-weight in kilograms is now: 57.5
+weight in kilograms is now: 65.0
 ~~~
 {: .output}
 
@@ -101,14 +101,14 @@ For example,
 let's store the subject's weight in pounds in a variable:
 
 ~~~
-#There are 2.2 pounds per kilogram.
+# There are 2.2 pounds per kilogram
 weight_lb = 2.2 * weight_kg
 print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
 ~~~
 {: .language-python}
 
 ~~~
-weight in kilograms: 57.5 and in pounds: 126.5
+weight in kilograms: 65.0 and in pounds: 143.0
 ~~~
 {: .output}
 
@@ -123,7 +123,7 @@ print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:'
 {: .language-python}
 
 ~~~
-weight in kilograms is now: 100.0 and weight in pounds is still: 126.5
+weight in kilograms is now: 100.0 and weight in pounds is still: 143.0
 ~~~
 {: .output}
 
@@ -148,7 +148,7 @@ This is different from the way spreadsheets work.
 > Variable    Type       Data/Info
 > --------------------------------
 > weight_kg   float      100.0
-> weight_lb   float      126.5
+> weight_lb   float      143.0
 > ~~~
 > {: .output}
 {: .callout}
@@ -198,10 +198,10 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 The expression `numpy.loadtxt(...)` is a [function call]({{ page.root }}/reference/#function-call)
 that asks Python to run the [function]({{ page.root }}/reference/#function) `loadtxt` which belongs to the `numpy` library.
 This [dotted notation]({{ page.root }}/reference/#dotted-notation) is used everywhere in Python:
-the thing that appears before the dot contains the thing that appears after. 
+the thing that appears before the dot contains the thing that appears after.
 
 As an example, John Smith is the John that belongs to the Smith family,
-We could use the dot notation to write his name `smith.john`, 
+We could use the dot notation to write his name `smith.john`,
 just as `loadtxt` is a function that belongs to the `numpy` library.
 
 `numpy.loadtxt` has two [parameters]({{ page.root }}/reference/#parameter):
@@ -232,7 +232,7 @@ data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ~~~
 {: .language-python}
 
-This statement doesn't produce any output because we've assigned the output to the variable `data`. 
+This statement doesn't produce any output because we've assigned the output to the variable `data`.
 If we want to check that the data have been loaded,
 we can print the variable's value:
 
@@ -821,7 +821,7 @@ the graphs will actually be squeezed together more closely.)
 {: .callout}
 > ## Check Your Understanding
 >
-> What values do the variables `mass` and `age` have after each statement in the following program? 
+> What values do the variables `mass` and `age` have after each statement in the following program?
 > Test your answers by executing the commands.
 >
 > ~~~
@@ -1224,7 +1224,7 @@ the graphs will actually be squeezed together more closely.)
 > > ~~~
 > > {: .language-python}
 > >
-> > If inflammation values *decrease* along an axis, then the difference from 
+> > If inflammation values *decrease* along an axis, then the difference from
 > > one element to the next will be negative. If
 > > you are interested in the **magnitude** of the change and not the
 > > direction, the `numpy.absolute()` function will provide that.
