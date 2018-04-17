@@ -37,10 +37,10 @@ You can get output from python by typing math into the console:
 12/7
 ~~~
 However to do anything useful and/or interesting we need to assign values to _variables_ (or link _objects_ to names/variables).
-The line below [assigns]({{ page.root }}/reference/#assign) the value `55` to a [variable]({{ page.root }}/reference/#variable) `weight_kg`:
+The line below [assigns]({{ page.root }}/reference/#assign) the value `60` to a [variable]({{ page.root }}/reference/#variable) `weight_kg`:
 
 ~~~
-weight_kg = 55
+weight_kg = 60
 ~~~
 {: .language-python}
 
@@ -59,7 +59,7 @@ print(weight_kg)
 {: .language-python}
 
 ~~~
-55
+60
 ~~~
 {: .output}
 
@@ -71,7 +71,7 @@ print('weight in pounds:', 2.2 * weight_kg)
 {: .language-python}
 
 ~~~
-weight in pounds: 121.0
+weight in pounds: 132.0
 ~~~
 {: .output}
 
