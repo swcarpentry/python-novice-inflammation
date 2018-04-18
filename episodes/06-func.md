@@ -73,6 +73,7 @@ Let's try running our function.
 ~~~
 fahr_to_celsius(32)
 ~~~
+{: .language-python}
 
 This command should call our function, using "32" as the input and return the function value.
 
