@@ -432,3 +432,5 @@ freeing us from having to manually examine every plot for features we've seen be
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
+
+{% include links.md %}

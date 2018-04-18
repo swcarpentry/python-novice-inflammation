@@ -1249,3 +1249,5 @@ the graphs will actually be squeezed together more closely.)
 > >
 > {: .solution}
 {: .challenge}
+
+{% include links.md %}

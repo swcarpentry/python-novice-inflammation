@@ -186,3 +186,5 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > > {: .language-python}
 >{: .solution}
 {: .challenge}
+
+{% include links.md %}

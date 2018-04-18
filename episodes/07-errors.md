@@ -575,3 +575,5 @@ often reveals common reasons why you might get that error.
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
+
+{% include links.md %}

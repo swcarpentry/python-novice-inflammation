@@ -548,3 +548,5 @@ This violates another important rule of programming:
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
+
+{% include links.md %}

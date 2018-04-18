@@ -1007,3 +1007,5 @@ the program now does everything we set out to do.
 > ~~~
 > {: .output}
 {: .challenge}
+
+{% include links.md %}

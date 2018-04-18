@@ -1021,3 +1021,5 @@ readable code!
 > to critique each other's functions and discuss how your function implementations
 > could be further improved to make them more readable.
 {: .challenge}
+
+{% include links.md %}
