@@ -1146,29 +1146,29 @@ the graphs will actually be squeezed together more closely.)
 > {: .solution}
 {: .challenge}
 
->## Change In Inflammation
+> ## Change In Inflammation
 >
->This patient data is _longitudinal_ in the sense that each row represents a
->series of observations relating to one individual.  This means that
->the change in inflammation over time is a meaningful concept.
+> This patient data is _longitudinal_ in the sense that each row represents a
+> series of observations relating to one individual.  This means that
+> the change in inflammation over time is a meaningful concept.
 >
->The `numpy.diff()` function takes a NumPy array and returns the
->differences between two successive values along a specified axis.  For
->example, a NumPy array that looks like this:
+> The `numpy.diff()` function takes a NumPy array and returns the
+> differences between two successive values along a specified axis.  For
+> example, a NumPy array that looks like this:
 >
 > ~~~
 > npdiff = numpy.array([ 0,  2,  5,  9, 14])
 > ~~~
 > {: .language-python}
 >
->Calling `numpy.diff(npdiff)` would do the following calculations and
->put the answers in another array.
+> Calling `numpy.diff(npdiff)` would do the following calculations and
+> put the answers in another array.
 >
 > ~~~
 > [ 2 - 0, 5 - 2, 9 - 5, 14 - 9 ]
 > ~~~
 > {: .language-python}
-
+>
 > ~~~
 > numpy.diff(npdiff)
 > ~~~
@@ -1179,7 +1179,7 @@ the graphs will actually be squeezed together more closely.)
 > ~~~
 > {: .language-python}
 >
->Which axis would it make sense to use this function along?
+> Which axis would it make sense to use this function along?
 >
 > > ## Solution
 > > Since the row axis (0) is patients, it does not make sense to get the
@@ -1193,17 +1193,17 @@ the graphs will actually be squeezed together more closely.)
 > > {: .language-python}
 > {: .solution}
 >
->If the shape of an individual data file is `(60, 40)` (60 rows and 40
->columns), what would the shape of the array be after you run the `diff()`
->function and why?
+> If the shape of an individual data file is `(60, 40)` (60 rows and 40
+> columns), what would the shape of the array be after you run the `diff()`
+> function and why?
 >
 > > ## Solution
 > > The shape will be `(60, 39)` because there is one fewer difference between
 > > columns than there are columns in the data.
 > {: .solution}
 >
->How would you find the largest change in inflammation for each patient? Does
->it matter if the change in inflammation is an increase or a decrease?
+> How would you find the largest change in inflammation for each patient? Does
+> it matter if the change in inflammation is an increase or a decrease?
 >
 > > ## Solution
 > > By using the `numpy.max()` function after you apply the `numpy.diff()`
