@@ -375,3 +375,5 @@ so we should always use it when we can.
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
+
+{% include links.md %}

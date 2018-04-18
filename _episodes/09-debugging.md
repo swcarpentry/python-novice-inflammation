@@ -282,3 +282,5 @@ not more.
 > >   `calculate_bmi(...)`, the correct BMIs are 21.604938, 22.160665 and 51.903114.
 > {: .solution}
 {: .challenge}
+
+{% include links.md %}
