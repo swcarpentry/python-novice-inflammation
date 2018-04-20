@@ -5,36 +5,56 @@ permalink: /setup/
 root: ..
 ---
 
-In preparation for this lesson, you will need to download two zipped files and place them in the specified folder:
+## Get the data
 
-1. Make a new folder in your Desktop called `python-novice-inflammation`.
-2. Download [python-novice-inflammation-data.zip][zipfile1] and move the file to this folder.
-3. Also download [python-novice-inflammation-code.zip][zipfile2] and move it to the same folder.
-4. If the files aren't unzipped yet, double-click to unzip them. You should end up with
-two new folders called `data` and `code`.
-5. To get started, go into the `data` folder from the Unix shell with:
+To download materials used in this lesson, please follow these 4 steps:
+
+1. Download [python-novice-inflammation-data.zip][zipfile1] and [python-novice-inflammation-code.zip][zipfile2].
+2. Create a folder called `python-novice-inflammation` on your Desktop and move downloaded files into it.
+3. Unzip the files. You should end up with two new folders called `data` and `code`.
+4. Navigate to the `data` folder. The way you can do this is different on different platforms. 
+
+In a Unix shell (Terminal app in macOS, Console or Terminal in Linux) or [Git Bash](https://gitforwindows.org/) (Windows):
 
 ~~~
-$ cd
-$ cd Desktop/python-novice-inflammation/data
+$ cd ~/Desktop/python-novice-inflammation/data
 ~~~
 {: .source}
 
-If you are using Windows, you can use the `cmd` (Command Prompt) program instead of the Unix shell.
-The easiest way to start it is by pressing `Windows Logo Key` + `R` (run dialog) and entering `cmd`.In Windows, the commands above to access the folder in your Desktop become:
+If you are using Windows, you can also use its Command Prompt program.
+The easiest way to start using it is by pressing <kbd>Windows Logo Key</kbd>+<kbd>R</kbd> (run dialog), 
+entering `cmd`, and hitting <kbd>Enter</kbd>. In the Command Prompt, use the following command
+to navigate to the `data` folder:
 
 ~~~
 $ cd /D %userprofile%\Desktop\python-novice-inflammation\data
 ~~~
 {: .source}
 
+## Launch Python interpreter
 
-If you will be using the Jupyter (IPython) notebook for the lesson,
-you should have already
-[installed Anaconda](http://swcarpentry.github.io/workshop-template/#python)
-which includes the notebook.
+To start working with Python, we need to launch a program that will interpret and execute
+our Python code. To do that, simply execute the following command:
 
-To start the notebook server, open a terminal or git bash and execute the command:
+~~~
+$ python
+~~~
+{: .source}
+
+If using Git Bash, you have to call Python _via_ `winpty`:
+
+~~~
+$ winpty python
+~~~
+{: .source}
+
+## Optional: Jupyter Notebook
+
+Jupyter Notebooks provide a browser-based interface for working with Python.
+If you would like to use them during the lesson, make sure to install
+[Anaconda Distribution](http://swcarpentry.github.io/workshop-template/#python).
+
+To start the notebook, execute the following command:
 
 ~~~
 $ jupyter notebook
@@ -44,21 +64,6 @@ $ jupyter notebook
 Then create a new notebook using the drop-down menu on the right to select 'Python 3 notebook':
 
 ![](../fig/new-notebook.png)
-
-To start the Python interpreter without the notebook, open a terminal
-or command prompt and execute the command:
-
-~~~
-$ python
-~~~
-{: .source}
-
-Note: If using Git Bash on Windows, you have to call Python via `winpty`:
-
-~~~
-$ winpty python
-~~~
-{: .source}
 
 [zipfile1]: {{ page.root }}/data/python-novice-inflammation-data.zip
 [zipfile2]: {{ page.root }}/code/python-novice-inflammation-code.zip
