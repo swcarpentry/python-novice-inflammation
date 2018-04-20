@@ -48,7 +48,7 @@ $ winpty python
 ~~~
 {: .source}
 
-## Optional: Jupyter Notebook
+## Jupyter Notebook
 
 Jupyter Notebooks provide a browser-based interface for working with Python.
 If you would like to use them during the lesson, make sure to install
