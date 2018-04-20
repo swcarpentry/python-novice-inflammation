@@ -71,7 +71,6 @@ print(word[0])
 print(word[1])
 print(word[2])
 print(word[3])
-
 ~~~
 {: .language-python}
 
@@ -140,6 +139,7 @@ The general form of a loop is:
 for variable in collection:
     do things with variable
 ~~~
+{: .language-python}
 
 Using the oxygen example above, the loop might look like this:
 
@@ -375,3 +375,5 @@ so we should always use it when we can.
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
+
+{% include links.md %}

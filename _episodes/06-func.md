@@ -73,6 +73,7 @@ Let's try running our function.
 ~~~
 fahr_to_celsius(32)
 ~~~
+{: .language-python}
 
 This command should call our function, using "32" as the input and return the function value.
 
@@ -302,11 +303,12 @@ we can do so in a single line.
 Once we start putting things in functions so that we can re-use them,
 we need to start testing that those functions are working correctly.
 To see how to do this,
-let's write a function to center a dataset around a particular value:
+let's write a function to offset a dataset so that it's mean value
+shifts to a user-defined value:
 
 ~~~
-def center(data, desired):
-    return (data - numpy.mean(data)) + desired
+def offset_mean(data, target_mean_value):
+    return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
@@ -315,11 +317,11 @@ but since we don't know what the values ought to be,
 it will be hard to tell if the result was correct.
 Instead,
 let's use NumPy to create a matrix of 0's
-and then center that around 3:
+and then offset its values to have a mean value of 3:
 
 ~~~
 z = numpy.zeros((2,2))
-print(center(z, 3))
+print(offset_mean(z, 3))
 ~~~
 {: .language-python}
 
@@ -330,11 +332,11 @@ print(center(z, 3))
 {: .output}
 
 That looks right,
-so let's try `center` on our real data:
+so let's try `offset_mean` on our real data:
 
 ~~~
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-print(center(data, 0))
+print(offset_mean(data, 0))
 ~~~
 {: .language-python}
 
@@ -354,25 +356,25 @@ but there are a few simple tests that will reassure us:
 
 ~~~
 print('original min, mean, and max are:', numpy.min(data), numpy.mean(data), numpy.max(data))
-centered = center(data, 0)
-print('min, mean, and max of centered data are:', numpy.min(centered), numpy.mean(centered), numpy.max(centered))
+offset_data = offset_mean(data, 0)
+print('min, mean, and max of offset data are:', numpy.min(offset_data), numpy.mean(offset_data), numpy.max(offset_data))
 ~~~
 {: .language-python}
 
 ~~~
 original min, mean, and max are: 0.0 6.14875 20.0
-min, mean, and and max of centered data are: -6.14875 2.84217094304e-16 13.85125
+min, mean, and and max of offset data are: -6.14875 2.84217094304e-16 13.85125
 ~~~
 {: .output}
 
 That seems almost right:
 the original mean was about 6.1,
 so the lower bound from zero is now about -6.1.
-The mean of the centered data isn't quite zero --- we'll explore why not in the challenges --- but it's pretty close.
+The mean of the offset data isn't quite zero --- we'll explore why not in the challenges --- but it's pretty close.
 We can even go further and check that the standard deviation hasn't changed:
 
 ~~~
-print('std dev before and after:', numpy.std(data), numpy.std(centered))
+print('std dev before and after:', numpy.std(data), numpy.std(offset_data))
 ~~~
 {: .language-python}
 
@@ -386,7 +388,7 @@ but we probably wouldn't notice if they were different in the sixth decimal plac
 Let's do this instead:
 
 ~~~
-print('difference in standard deviations before and after:', numpy.std(data) - numpy.std(centered))
+print('difference in standard deviations before and after:', numpy.std(data) - numpy.std(offset_data))
 ~~~
 {: .language-python}
 
@@ -406,9 +408,9 @@ to remind ourselves later what it's for and how to use it.
 The usual way to put documentation in software is to add [comments]({{ page.root }}/reference/#comment) like this:
 
 ~~~
-# center(data, desired): return a new array containing the original data centered around the desired value.
-def center(data, desired):
-    return (data - numpy.mean(data)) + desired
+# offset_mean(data, target_mean_value): return a new array containing the original data with its mean offset to match the desired value.
+def offset_mean(data, target_mean_value):
+    return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
@@ -417,24 +419,24 @@ If the first thing in a function is a string that isn't assigned to a variable,
 that string is attached to the function as its documentation:
 
 ~~~
-def center(data, desired):
-    '''Return a new array containing the original data centered around the desired value.'''
-    return (data - numpy.mean(data)) + desired
+def offset_mean(data, target_mean_value):
+    '''Return a new array containing the original data with its mean offset to match the desired value.'''
+    return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
 This is better because we can now ask Python's built-in help system to show us the documentation for the function:
 
 ~~~
-help(center)
+help(offset_mean)
 ~~~
 {: .language-python}
 
 ~~~
-Help on function center in module __main__:
+Help on function offset_mean in module __main__:
 
-center(data, desired)
-    Return a new array containing the original data centered around the desired value.
+offset_mean(data, target_mean_value)
+    Return a new array containing the original data with its mean offset to match the desired value.
 ~~~
 {: .output}
 
@@ -444,21 +446,21 @@ but if we do,
 we can break the string across multiple lines:
 
 ~~~
-def center(data, desired):
-    '''Return a new array containing the original data centered around the desired value.
-    Example: center([1, 2, 3], 0) => [-1, 0, 1]'''
-    return (data - numpy.mean(data)) + desired
+def offset_mean(data, target_mean_value):
+    '''Return a new array containing the original data with its mean offset to match the desired value.
+    Example: offset_mean([1, 2, 3], 0) => [-1, 0, 1]'''
+    return (data - numpy.mean(data)) + target_mean_value
 
-help(center)
+help(offset_mean)
 ~~~
 {: .language-python}
 
 ~~~
 Help on function center in module __main__:
 
-center(data, desired)
-    Return a new array containing the original data centered around the desired value.
-    Example: center([1, 2, 3], 0) => [-1, 0, 1]
+offset_mean(data, target_mean_value)
+    Return a new array containing the original data with its mean offset to match the desired value.
+    Example: offset_mean([1, 2, 3], 0) => [-1, 0, 1]
 ~~~
 {: .output}
 
@@ -512,23 +514,23 @@ TypeError: data type "," not understood
 
 To understand what's going on,
 and make our own functions easier to use,
-let's re-define our `center` function like this:
+let's re-define our `offset_mean` function like this:
 
 ~~~
-def center(data, desired=0.0):
-    '''Return a new array containing the original data centered around the desired value (0 by default).
-    Example: center([1, 2, 3], 0) => [-1, 0, 1]'''
-    return (data - numpy.mean(data)) + desired
+def offset_mean(data, target_mean_value=0.0):
+    '''Return a new array containing the original data with its mean offset to match the desired value (0 by default).
+    Example: offset_mean([1, 2, 3], 0) => [-1, 0, 1]'''
+    return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
-The key change is that the second parameter is now written `desired=0.0` instead of just `desired`.
+The key change is that the second parameter is now written `target_mean_value=0.0` instead of just `target_mean_value`.
 If we call the function with two arguments,
 it works as it did before:
 
 ~~~
 test_data = numpy.zeros((2, 2))
-print(center(test_data, 3))
+print(offset_mean(test_data, 3))
 ~~~
 {: .language-python}
 
@@ -539,22 +541,22 @@ print(center(test_data, 3))
 {: .output}
 
 But we can also now call it with just one parameter,
-in which case `desired` is automatically assigned the [default value]({{ page.root }}/reference/#default-value) of 0.0:
+in which case `target_mean_value` is automatically assigned the [default value]({{ page.root }}/reference/#default-value) of 0.0:
 
 ~~~
 more_data = 5 + numpy.zeros((2, 2))
-print('data before centering:')
+print('data before mean offset:')
 print(more_data)
-print('centered data:')
-print(center(more_data))
+print('offset data:')
+print(offset_mean(more_data))
 ~~~
 {: .language-python}
 
 ~~~
-data before centering:
+data before mean offset:
 [[ 5.  5.]
  [ 5.  5.]]
-centered data:
+offset data:
 [[ 0.  0.]
  [ 0.  0.]]
 ~~~
@@ -1019,3 +1021,5 @@ readable code!
 > to critique each other's functions and discuss how your function implementations
 > could be further improved to make them more readable.
 {: .challenge}
+
+{% include links.md %}

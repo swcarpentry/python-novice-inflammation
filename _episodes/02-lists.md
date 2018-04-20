@@ -565,3 +565,5 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
+
+{% include links.md %}
