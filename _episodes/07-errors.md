@@ -186,7 +186,7 @@ it *always* means that there is a problem with how your code is indented.
 > because they are both [whitespace]({{ page.root }}/reference/#whitespace).
 > The Jupyter notebook actually gives us a bit of a hint,
 > but not all Python editors will do that.
-> In the following example,
+> Copy and paste the following example, where
 > the first two lines are using a tab for indentation,
 > while the third line uses eight spaces:
 >
