@@ -186,9 +186,10 @@ it *always* means that there is a problem with how your code is indented.
 > because they are both [whitespace]({{ page.root }}/reference/#whitespace).
 > The Jupyter notebook actually gives us a bit of a hint,
 > but not all Python editors will do that.
-> In the following example,
+> In the following example, 
 > the first two lines are using a tab for indentation,
-> while the third line uses eight spaces:
+> while the third line uses eight spaces. (Be sure to copy and paste the example
+> into your interpreter to preserve tabs, instead of typing it in.):
 >
 > <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def some_function():
 > &#009;msg = "hello, world!"
