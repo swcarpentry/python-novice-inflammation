@@ -184,18 +184,19 @@ it *always* means that there is a problem with how your code is indented.
 > Some indentation errors are harder to spot than others.
 > In particular, mixing spaces and tabs can be difficult to spot
 > because they are both [whitespace]({{ page.root }}/reference/#whitespace).
-> The Jupyter notebook actually gives us a bit of a hint,
-> but not all Python editors will do that.
-> In the following example, 
-> the first two lines are using a tab for indentation,
-> while the third line uses eight spaces. (Be sure to copy and paste the example
-> into your interpreter to preserve tabs, instead of typing it in.):
+> In the example below, the first two lines in the body of the function
+> `some_function` are indented with tabs, while the third line &mdash; with spaces.
+> If you're working in a Jupyter notebook, be sure to copy and paste this example
+> rather than trying to type it in manually because Jupyter automatically replaces
+> tabs with spaces.
 >
-> <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def some_function():
-> &#009;msg = "hello, world!"
-> &#009;print(msg)
+> ~~~
+> def some_function():
+> 	msg = "hello, world!"
+> 	print(msg)
 >         return msg
-> </code></pre></div></div>
+> ~~~
+> {: .language-python}
 >
 > Visually it is impossible to spot the error.
 > Fortunately, Python does not allow you to mix tabs and spaces.
