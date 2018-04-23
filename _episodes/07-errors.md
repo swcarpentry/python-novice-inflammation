@@ -184,9 +184,9 @@ it *always* means that there is a problem with how your code is indented.
 > Some indentation errors are harder to spot than others.
 > In particular, mixing spaces and tabs can be difficult to spot
 > because they are both [whitespace]({{ page.root }}/reference/#whitespace).
-> In the example below, the first two lines in the body of the function 
-> `some_function` are indented with tabs, while the third line &mdash; with spaces. 
-> If you're working in a Jupyter notebook, be sure to copy and paste this example 
+> In the example below, the first two lines in the body of the function
+> `some_function` are indented with tabs, while the third line &mdash; with spaces.
+> If you're working in a Jupyter notebook, be sure to copy and paste this example
 > rather than trying to type it in manually because Jupyter automatically replaces
 > tabs with spaces.
 >
