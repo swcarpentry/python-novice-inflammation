@@ -1,5 +1,9 @@
 language: python
 python: 2.7
+branches:
+  only:
+  - gh-pages
+  - /.*/
 before_install:
   - rvm default
   - gem install json kramdown
