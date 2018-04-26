@@ -248,7 +248,7 @@ not more.
 > Body Mass Index (BMI) of patients.  The researcher is concerned because
 > all patients seemingly have unusual and identical BMIs, despite having different
 > physiques.  BMI is calculated as **weight in kilograms**
-> divided by the the square of **height in metres**.
+> divided by the square of **height in metres**.
 >
 > Use the debugging principles in this exercise and locate problems
 > with the code. What suggestions would you give the researcher for
