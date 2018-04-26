@@ -16,9 +16,7 @@ We'd like to ask you to familiarize yourself with our [Contribution Guide](CONTR
 
 ## Maintainers
 
-Current maintainers of the lesson are [Anne Fouilloux][anne_fouilloux], [Maxim Belkin][maxim_belkin], and [Mike Trizna][mike_trizna]
-
-Former maintainers include [Trevor Bekolay][bekolay_trevor], [Valentina Staneva][staneva_valentina], and creator of Software Carpentry: [Greg Wilson][greg_wilson]
+Lesson maintainers are [Trevor Bekolay][trevor_bekolay], [Maxim Belkin][maxim_belkin], [Anne Fouilloux][anne_fouilloux], [Valentina Staneva][valentina_staneva], [Mike Trizna][mike_trizna], and creator of Software Carpentry: [Greg Wilson][greg_wilson]
 
 ## Authors
 A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
@@ -30,6 +28,6 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [anne_fouilloux]: https://github.com/annefou
 [maxim_belkin]: https://github.com/maxim-belkin
 [mike_trizna]: https://github.com/MikeTrizna
-[bekolay_trevor]: http://software-carpentry.org/team/#bekolay_trevor
-[staneva_valentina]: http://software-carpentry.org/team/#staneva_valentina
+[trevor_bekolay]: http://software-carpentry.org/team/#bekolay_trevor
+[valentina_staneva]: http://software-carpentry.org/team/#staneva_valentina
 [greg_wilson]: https://github.com/gvwilson
