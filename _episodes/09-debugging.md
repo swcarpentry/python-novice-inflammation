@@ -137,7 +137,7 @@ and so that they don't waste time repeating the same experiments.
 ## Be Humble
 
 And speaking of help:
-if we can't find a bug in 10 minutes,
+if we can't find a bug in 30 minutes,
 we should *be humble* and ask for help.
 Just explaining the problem aloud is often useful,
 since hearing what we're thinking helps us spot inconsistencies and hidden assumptions.
