@@ -17,7 +17,7 @@ keypoints:
 ---
 
 Once testing has uncovered problems,
-the next step is to fix them.
+the next step is to fix them. This is called *debugging*.
 Many novices do this by making more-or-less random changes to their code
 until it seems to produce the right answer,
 but that's very inefficient
@@ -84,7 +84,7 @@ scientists tend to do the following:
     If "new" patients start appearing out of nowhere as we move through our pipeline,
     it's probably a sign that something is wrong.
 
-5.  *Visualize.*
+5.  *Visualize your data.*
     Data analysts frequently use simple visualizations to check both
     the science they're doing
     and the correctness of their code
@@ -93,102 +93,37 @@ scientists tend to do the following:
     though,
     since it's very hard to compare two visualizations automatically.
 
-## Make It Fail Every Time
+## Make it fail
 
-We can only debug something when it fails,
-so the second step is always to find a test case that
-*makes it fail every time*.
-The "every time" part is important because
-few things are more frustrating than debugging an intermittent problem:
-if we have to call a function a dozen times to get a single failure,
-the odds are good that we'll scroll past the failure when it actually occurs.
-
-As part of this,
-it's always important to check that our code is "plugged in",
-i.e.,
-that we're actually exercising the problem that we think we are.
-Every programmer has spent hours chasing a bug,
-only to realize that they were actually calling their code on the wrong data set
-or with the wrong configuration parameters,
-or are using the wrong version of the software entirely.
-Mistakes like these are particularly likely to happen when we're tired,
-frustrated,
-and up against a deadline,
-which is one of the reasons late-night (or overnight) coding sessions
-are almost never worthwhile.
-
-## Make It Fail Fast
-
-If it takes 20 minutes for the bug to surface,
-we can only do three experiments an hour.
-That doesn't just mean we'll get less data in more time:
-we're also more likely to be distracted by other things as we wait for our program to fail,
-which means the time we *are* spending on the problem is less focused.
-It's therefore critical to *make it fail fast*.
-
-As well as making the program fail fast in time,
-we want to make it fail fast in space,
-i.e.,
-we want to localize the failure to the smallest possible region of code:
-
-1.  The smaller the gap between cause and effect,
-    the easier the connection is to find.
-    Many programmers therefore use a divide and conquer strategy to find bugs,
-    i.e.,
-    if the output of a function is wrong,
-    they check whether things are OK in the middle,
-    then concentrate on either the first or second half,
-    and so on.
-
-2.  N things can interact in N<sup>2</sup> different ways,
+1. **every time**
+    * We can only debug if it fails, so we need the program *to fail every time*
+    * emphasis on *every time*, so we can actually understand the problem and we don't accidentally pass by it during testing
+2. **fast**
+    * You don't want to wait 20 minutest until the bug occurs as this would let you make only 3 tests per hour.
+    * You are likely to get distracted and not actually working on the real problem.
+3. **localized**
+    * The Code should fail within the smalles possible region of the code.
+    * The smaller the connection between cause and effect, the quicker we find the bug.
+    * "Every line that is not run is one line less to worry about."
+    * N things can interact in N<sup>2</sup> different ways,
     so every line of code that *isn't* run as part of a test
     means more than one thing we don't need to worry about.
 
-## Change One Thing at a Time, For a Reason
+## Change
 
-Replacing random chunks of code is unlikely to do much good.
+1. **one thing at a time** and **for a reason**
+    * Replacing random chunks of code is unlikely to do much good.
 (After all,
 if you got it wrong the first time,
 you'll probably get it wrong the second and third as well.)
-Good programmers therefore
-*change one thing at a time, for a reason*.
-They are either trying to gather more information
-("is the bug still there if we change the order of the loops?")
-or test a fix
-("can we make the bug go away by sorting our data before processing it?").
-
-Every time we make a change,
-however small,
-we should re-run our tests immediately,
-because the more things we change at once,
-the harder it is to know what's responsible for what
-(those N<sup>2</sup> interactions again).
-And we should re-run *all* of our tests:
-more than half of fixes made to code introduce (or re-introduce) bugs,
-so re-running all of our tests tells us whether we have regressed.
-
-## Keep Track of What You've Done
-
-Good scientists keep track of what they've done
+    * Change only one thing at a time in order to
+        1. gather more information, or
+        2. test a fix.
+    * After every change (however small) always rerun the tests.
+2. **keep track of the changes**
+    * Good scientists keep track of what they've done
 so that they can reproduce their work,
-and so that they don't waste time repeating the same experiments
-or running ones whose results won't be interesting.
-Similarly,
-debugging works best when we
-*keep track of what we've done*
-and how well it worked.
-If we find ourselves asking,
-"Did left followed by right with an odd number of lines cause the crash?
-Or was it right followed by left?
-Or was I using an even number of lines?"
-then it's time to step away from the computer,
-take a deep breath,
-and start working more systematically.
-
-Records are particularly useful when the time comes to ask for help.
-People are more likely to listen to us
-when we can explain clearly what we did,
-and we're better able to give them the information they need to be useful.
+and so that they don't waste time repeating the same experiments.
 
 > ## Version Control Revisited
 >
