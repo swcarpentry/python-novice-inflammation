@@ -33,7 +33,9 @@ print(glob.glob('inflammation*.csv'))
 {: .language-python}
 
 ~~~
-['inflammation-05.csv', 'inflammation-11.csv', 'inflammation-12.csv', 'inflammation-08.csv', 'inflammation-03.csv', 'inflammation-06.csv', 'inflammation-09.csv', 'inflammation-07.csv', 'inflammation-10.csv', 'inflammation-02.csv', 'inflammation-04.csv', 'inflammation-01.csv']
+['inflammation-05.csv', 'inflammation-11.csv', 'inflammation-12.csv', 'inflammation-08.csv',
+'inflammation-03.csv', 'inflammation-06.csv', 'inflammation-09.csv', 'inflammation-07.csv',
+'inflammation-10.csv', 'inflammation-02.csv', 'inflammation-04.csv', 'inflammation-01.csv']
 ~~~
 {: .output}
 
@@ -43,7 +45,8 @@ This means we can loop over it
 to do something with each filename in turn.
 In our case,
 the "something" we want to do is generate a set of plots for each file in our inflammation dataset.
-If we want to start by analyzing just the first three files in alphabetical order, we can use the `sorted` built-in function to generate a new sorted list from the `glob.glob` output:
+If we want to start by analyzing just the first three files in alphabetical order, we can use the
+`sorted` built-in function to generate a new sorted list from the `glob.glob` output:
 
 ~~~
 import numpy
