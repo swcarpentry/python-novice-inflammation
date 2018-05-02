@@ -141,6 +141,14 @@ for variable in collection:
 ~~~
 {: .language-python}
 
+> ## What is the ":" for?
+>
+> One thing you may have noticed is that our `for` statement ends with a `:`. You actually will see the `:` regularly in Python, and
+> it actually can serve two functions. The first is indexing, which you became familiar with in the last lesson. The second, as is
+> the case in `for` loops, is the opening of a "block". A block is one or more lines of code that are indented from their parent and
+> will be run together. To leave a block, you just need to leave the indent!
+{: .callout}
+
 Using the oxygen example above, the loop might look like this:
 
 ![loop_image](../fig/loops_image.png)
