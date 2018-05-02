@@ -5,7 +5,8 @@ permalink: /setup/
 root: ..
 ---
 
-In preparation for this lesson, you will need to download two zipped files and place them in the specified folder:
+In preparation for this lesson, you will need to download two zipped files and place them in 
+the specified folder:
 
 1. Make a new folder in your Desktop called `python-novice-inflammation`.
 2. Download [python-novice-inflammation-data.zip][zipfile1] and move the file to this folder.
@@ -21,7 +22,8 @@ $ cd Desktop/python-novice-inflammation/data
 {: .source}
 
 If you are using Windows, you can use the `cmd` (Command Prompt) program instead of the Unix shell.
-The easiest way to start it is by pressing `Windows Logo Key` + `R` (run dialog) and entering `cmd`.In Windows, the commands above to access the folder in your Desktop become:
+The easiest way to start it is by pressing `Windows Logo Key` + `R` (run dialog) and 
+entering `cmd`. In Windows, the commands above to access the folder in your Desktop become:
 
 ~~~
 $ cd /D %userprofile%\Desktop\python-novice-inflammation\data
