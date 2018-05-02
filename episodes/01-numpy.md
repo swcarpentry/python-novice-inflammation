@@ -38,7 +38,7 @@ You can get output from python by typing math into the console:
 12/7
 ~~~
 
-However to do anything useful and/or interesting we need to assign values to _variables_
+However, to do anything useful and/or interesting we need to assign values to _variables_
 (or link _objects_ to names/variables).
 The line below [assigns]({{ page.root }}/reference/#assign) the value `60` to a
 [variable]({{ page.root }}/reference/#variable) `weight_kg`:
@@ -53,7 +53,7 @@ such as `x_val`, `current_temperature`, or `subject_id`.
 Python's variables must begin with a letter and are
 [case sensitive]({{ page.root }}/reference/#case-sensitive).
 We can create a new variable by assigning a value to it using `=`.
-When we are finished typing and press Shift+Enter,
+When we are finished typing and press <kbd>Shift</kbd>+<kbd>Return</kbd>,
 the notebook runs our command.
 
 Once a variable has a value, we can print it to the screen:
