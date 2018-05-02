@@ -29,15 +29,19 @@ keypoints:
 - "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
 ---
 
-In this lesson we will learn how to manipulate the inflammation dataset with Python. Before we discuss how to deal with many data points, we will show how to store a single value on the computer.
+In this lesson we will learn how to manipulate the inflammation dataset with Python. Before we
+discuss how to deal with many data points, we will show how to store a single value on the computer.
 
 You can get output from python by typing math into the console:
 ~~~
 3+5
 12/7
 ~~~
-However to do anything useful and/or interesting we need to assign values to _variables_ (or link _objects_ to names/variables).
-The line below [assigns]({{ page.root }}/reference/#assign) the value `60` to a [variable]({{ page.root }}/reference/#variable) `weight_kg`:
+
+However to do anything useful and/or interesting we need to assign values to _variables_
+(or link _objects_ to names/variables).
+The line below [assigns]({{ page.root }}/reference/#assign) the value `60` to a
+[variable]({{ page.root }}/reference/#variable) `weight_kg`:
 
 ~~~
 weight_kg = 60
@@ -46,7 +50,8 @@ weight_kg = 60
 
 A variable is a name for a value,
 such as `x_val`, `current_temperature`, or `subject_id`.
-Python's variables must begin with a letter and are [case sensitive]({{ page.root }}/reference/#case-sensitive).
+Python's variables must begin with a letter and are
+[case sensitive]({{ page.root }}/reference/#case-sensitive).
 We can create a new variable by assigning a value to it using `=`.
 When we are finished typing and press Shift+Enter,
 the notebook runs our command.
@@ -137,7 +142,8 @@ This is different from the way spreadsheets work.
 >
 > You can use the `%whos` command at any time to see what
 > variables you have created and what modules you have loaded into the computer's memory.
-> As this is an IPython command, it will only work if you are in an IPython terminal or the Jupyter Notebook.
+> As this is an IPython command, it will only work if you are in an IPython terminal or the
+> Jupyter Notebook.
 >
 > ~~~
 > %whos
@@ -153,11 +159,10 @@ This is different from the way spreadsheets work.
 > {: .output}
 {: .callout}
 
-Words are useful,
-but what's more useful are the sentences and stories we build with them.
-Similarly,
-while a lot of powerful, general tools are built into languages like Python,
-specialized tools built up from these basic units live in [libraries]({{ page.root }}/reference/#library)
+Words are useful, but what's more useful are the sentences and stories we build with them.
+Similarly, while a lot of powerful, general tools are built into languages like Python,
+specialized tools built up from these basic units live in
+[libraries]({{ page.root }}/reference/#library)
 that can be called upon when needed.
 
 In order to load our inflammation data,
@@ -172,12 +177,12 @@ import numpy
 ~~~
 {: .language-python}
 
-Importing a library is like getting a piece of lab equipment out of a storage locker and setting it up on the bench.
-Libraries provide additional functionality to the basic Python package,
-much like a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too many libraries
-can sometimes complicate and slow down your programs - so we only import what we need for each program.
-Once we've imported the library,
-we can ask the library to read our data file for us:
+Importing a library is like getting a piece of lab equipment out of a storage locker and setting it
+up on the bench. Libraries provide additional functionality to the basic Python package, much like
+a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too
+many libraries can sometimes complicate and slow down your programs - so we only import what we
+need for each program. Once we've imported the library, we can ask the library to read our data
+file for us:
 
 ~~~
 numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
@@ -196,19 +201,19 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 {: .output}
 
 The expression `numpy.loadtxt(...)` is a [function call]({{ page.root }}/reference/#function-call)
-that asks Python to run the [function]({{ page.root }}/reference/#function) `loadtxt` which belongs to the `numpy` library.
-This [dotted notation]({{ page.root }}/reference/#dotted-notation) is used everywhere in Python:
-the thing that appears before the dot contains the thing that appears after.
+that asks Python to run the [function]({{ page.root }}/reference/#function) `loadtxt` which
+belongs to the `numpy` library. This [dotted notation]({{ page.root }}/reference/#dotted-notation)
+is used everywhere in Python: the thing that appears before the dot contains the thing that
+appears after.
 
 As an example, John Smith is the John that belongs to the Smith family,
 We could use the dot notation to write his name `smith.john`,
 just as `loadtxt` is a function that belongs to the `numpy` library.
 
-`numpy.loadtxt` has two [parameters]({{ page.root }}/reference/#parameter):
-the name of the file we want to read
-and the [delimiter]({{ page.root }}/reference/#delimiter) that separates values on a line.
-These both need to be character strings (or [strings]({{ page.root }}/reference/#string) for short),
-so we put them in quotes.
+`numpy.loadtxt` has two [parameters]({{ page.root }}/reference/#parameter): the name of the file
+we want to read and the [delimiter]({{ page.root }}/reference/#delimiter) that separates values on
+a line. These both need to be character strings (or [strings]({{ page.root }}/reference/#string)
+for short), so we put them in quotes.
 
 Since we haven't told it to do anything else with the function's output,
 the notebook displays it.
@@ -224,8 +229,9 @@ when there's nothing interesting after the decimal point.
 Our call to `numpy.loadtxt` read our file
 but didn't save the data in memory.
 To do that,
-we need to assign the array to a variable. Just as we can assign a single value to a variable, we can also assign an array of values
-to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save the returned data:
+we need to assign the array to a variable. Just as we can assign a single value to a variable, we
+can also assign an array of values to a variable using the same syntax.  Let's re-run
+`numpy.loadtxt` and save the returned data:
 
 ~~~
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
@@ -308,19 +314,18 @@ print(data.shape)
 ~~~
 {: .output}
 
-The output tells us that the `data` array variable contains 60 rows and 40 columns. When we created the
-variable `data` to store our arthritis data, we didn't just create the array; we also
+The output tells us that the `data` array variable contains 60 rows and 40 columns. When we
+created the variable `data` to store our arthritis data, we didn't just create the array; we also
 created information about the array, called [members]({{ page.root }}/reference/#member) or
-attributes. This extra information describes `data` in
-the same way an adjective describes a noun.
-`data.shape` is an attribute of `data` which describes the dimensions of `data`.
-We use the same dotted notation for the attributes of variables
-that we use for the functions in libraries
-because they have the same part-and-whole relationship.
+attributes. This extra information describes `data` in the same way an adjective describes a noun.
+`data.shape` is an attribute of `data` which describes the dimensions of `data`. We use the same
+dotted notation for the attributes of variables that we use for the functions in libraries because
+they have the same part-and-whole relationship.
 
-If we want to get a single number from the array,
-we must provide an [index]({{ page.root }}/reference/#index) in square brackets after the variable name,
-just as we do in math when referring to an element of a matrix.  Our inflammation data has two dimensions, so we will need to use two indices to refer to one specific value:
+If we want to get a single number from the array, we must provide an
+[index]({{ page.root }}/reference/#index) in square brackets after the variable name, just as we
+do in math when referring to an element of a matrix.  Our inflammation data has two dimensions, so
+we will need to use two indices to refer to one specific value:
 
 ~~~
 print('first value in data:', data[0, 0])
@@ -342,7 +347,8 @@ middle value in data: 13.0
 ~~~
 {: .output}
 
-The expression `data[30, 20]` accesses the element at row 30, column 20. While this expression may not surprise you,
+The expression `data[30, 20]` accesses the element at row 30, column 20. While this expression may
+not surprise you,
  `data[0, 0]` might.
 Programming languages like Fortran, MATLAB and R start counting at 1
 because that's what human beings have done for thousands of years.
@@ -392,11 +398,9 @@ print(data[0:4, 0:10])
 ~~~
 {: .output}
 
-The [slice]({{ page.root }}/reference/#slice) `0:4` means,
-"Start at index 0 and go up to, but not including, index 4."
-Again,
-the up-to-but-not-including takes a bit of getting used to,
-but the rule is that the difference between the upper and lower bounds is the number of values in the slice.
+The [slice]({{ page.root }}/reference/#slice) `0:4` means, "Start at index 0 and go up to, but not
+including, index 4."Again, the up-to-but-not-including takes a bit of getting used to, but the
+rule is that the difference between the upper and lower bounds is the number of values in the slice.
 
 We don't have to start slices at 0:
 
@@ -557,7 +561,10 @@ print('minimum inflammation:', minval)
 print('standard deviation:', stdval)
 ~~~
 {: .language-python}
-Here we've assigned the return value from `numpy.max(data)` to the variable `maxval`, the value from `numpy.min(data)` to `minval`, and so on.
+
+Here we've assigned the return value from `numpy.max(data)` to the variable `maxval`, the value
+from `numpy.min(data)` to `minval`, and so on.
+
 ~~~
 maximum inflammation: 20.0
 minimum inflammation: 0.0
@@ -763,9 +770,9 @@ You can group similar plots in a single figure using subplots.
 This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
 creates a space into which we will place all of our plots. The parameter `figsize`
 tells Python how big to make this space. Each subplot is placed into the figure using
-its `add_subplot` [method]({{ page.root }}/reference/#method). The `add_subplot` method takes 3 parameters. The first denotes
-how many total rows of subplots there are, the second parameter refers to the
-total number of subplot columns, and the final parameter denotes which subplot
+its `add_subplot` [method]({{ page.root }}/reference/#method). The `add_subplot` method takes 3
+parameters. The first denotes how many total rows of subplots there are, the second parameter
+refers to the total number of subplot columns, and the final parameter denotes which subplot
 your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a
 different variable (`axes1`, `axes2`, `axes3`). Once a subplot is created, the axes can
 be titled using the `set_xlabel()` command (or `set_ylabel()`).
@@ -817,8 +824,10 @@ the graphs will actually be squeezed together more closely.)
 > to make a shortcut like so: `import numpy as np`.
 > If you ever see Python code online using a NumPy function with `np`
 > (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
-> When working with other people, it is important to agree on a convention of how common libraries are imported.
+> When working with other people, it is important to agree on a convention of how common libraries
+> are imported.
 {: .callout}
+
 > ## Check Your Understanding
 >
 > What values do the variables `mass` and `age` have after each statement in the following program?
