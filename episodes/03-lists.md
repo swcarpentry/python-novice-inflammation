@@ -111,17 +111,17 @@ does not.
 >
 > Data which can be modified in place is called [mutable]({{ page.root }}/reference/#mutable),
 > while data which cannot be modified is called [immutable]({{ page.root }}/reference/#immutable).
-> Strings and numbers are immutable. This does not mean that variables with string or number values are constants,
-> but when we want to change the value of a string or number variable, we can only replace the old value
-> with a completely new value.
+> Strings and numbers are immutable. This does not mean that variables with string or number values
+> are constants, but when we want to change the value of a string or number variable, we can only
+> replace the old value with a completely new value.
 >
-> Lists and arrays, on the other hand, are mutable: we can modify them after they have been created. We can
-> change individual elements, append new elements, or reorder the whole list.  For some operations, like
-> sorting, we can choose whether to use a function that modifies the data in place or a function that returns a
-> modified copy and leaves the original unchanged.
+> Lists and arrays, on the other hand, are mutable: we can modify them after they have been
+> created. We can change individual elements, append new elements, or reorder the whole list.  For
+> some operations, like sorting, we can choose whether to use a function that modifies the data in
+> place or a function that returns a modified copy and leaves the original unchanged.
 >
-> Be careful when modifying data in place.  If two variables refer to the same list, and you modify the list
-> value, it will change for both variables!
+> Be careful when modifying data in place.  If two variables refer to the same list, and you modify
+> the list value, it will change for both variables!
 >
 > ~~~
 > salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
@@ -152,9 +152,10 @@ does not.
 > ~~~
 > {: .output}
 >
-> Because of pitfalls like this, code which modifies data in place can be more difficult to understand. However,
-> it is often far more efficient to modify a large data structure in place than to create a modified copy for
-> every small change. You should consider both of these aspects when writing your code.
+> Because of pitfalls like this, code which modifies data in place can be more difficult to
+> understand. However, it is often far more efficient to modify a large data structure in place
+> than to create a modified copy for every small change. You should consider both of these aspects
+> when writing your code.
 {: .callout}
 
 > ## Nested Lists
@@ -247,7 +248,8 @@ odds after reversing: [11, 7, 5, 3]
 ~~~
 {: .output}
 
-While modifying in place, it is useful to remember that Python treats lists in a slightly counter-intuitive way.
+While modifying in place, it is useful to remember that Python treats lists in a slightly
+counter-intuitive way.
 
 If we make a list and (attempt to) copy it then modify in place, we can cause all sorts of trouble:
 
@@ -266,8 +268,9 @@ odds: [1, 3, 5, 7, 2]
 ~~~
 {: .output}
 
-This is because Python stores a list in memory, and then can use multiple names to refer to the same list.
-If all we want to do is copy a (simple) list, we can use the `list` function, so we do not modify a list we did not mean to:
+This is because Python stores a list in memory, and then can use multiple names to refer to the
+same list. If all we want to do is copy a (simple) list, we can use the `list` function, so we do
+not modify a list we did not mean to:
 
 ~~~
 odds = [1, 3, 5, 7]
@@ -284,7 +287,8 @@ odds: [1, 3, 5, 7]
 ~~~
 {: .output}
 
-This is different from how variables worked in lesson 1, and more similar to how a spreadsheet works.
+This is different from how variables worked in lesson 1, and more similar to how a spreadsheet
+works.
 
 > ## Turn a String Into a List
 >
@@ -448,7 +452,8 @@ last: 4
 > {: .solution}
 {: .challenge}
 
-If you want to take a slice from the beginning of a sequence, you can omit the first index in the range:
+If you want to take a slice from the beginning of a sequence, you can omit the first index in the
+range:
 
 ~~~
 date = "Monday 4 January 2016"
@@ -465,7 +470,8 @@ Omitting beginning index: Monday
 ~~~
 {: .output}
 
-And similarly, you can omit the ending index in the range to take a slice to the very end of the sequence:
+And similarly, you can omit the ending index in the range to take a slice to the very end of the
+sequence:
 
 ~~~
 months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
@@ -522,7 +528,9 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > > ~~~
 > > {: .output}
 > >
-> >In the first case we used a temporary variable `temp` to keep the value of `left` before we overwrite it with the value of `right`. In the second case, `right` and `left` are packed into a list and then unpacked into `left` and `right`.
+> > In the first case we used a temporary variable `temp` to keep the value of `left` before we
+> > overwrite it with the value of `right`. In the second case, `right` and `left` are packed into a
+> > list and then unpacked into `left` and `right`.
 > {: .solution}
 {: .challenge}
 
@@ -550,7 +558,8 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 >
 > > ## Solution
 > >
-> > The multiplication operator `*` used on a list replicates elements of the list and concatenates them together:
+> > The multiplication operator `*` used on a list replicates elements of the list and concatenates
+> > them together:
 > >
 > > ~~~
 > > [2, 4, 6, 8, 10, 2, 4, 6, 8, 10]
