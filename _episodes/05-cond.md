@@ -93,9 +93,8 @@ else:
 ~~~
 {: .output}
 
-One important thing to notice in the code above is that we use a double equals sign `==` to test for equality
-rather than a single equals sign
-because the latter is used to mean assignment.
+One important thing to notice in the code above is that we use a double equals sign `==` to test for equality.
+We do NOT use a single equals sign because the latter is used to mean assignment.
 
 We can also combine tests using `and` and `or`.
 `and` is only true if both parts are true:
@@ -361,7 +360,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > ## Sorting a List Into Buckets
 >
 > The folder containing our data files has large data sets whose names start with
-> "inflammation-", small ones whose names start with "small-", and possibly other files
+> "inflammation-". But also small ones whose names start with "small-", and possibly other files
 > whose sizes we don't know.  Our goal is to sort those files into three lists
 > called `large_files`, `small_files`, and `other_files` respectively.  Add code
 > to the template below to do this.  Note that the string method
