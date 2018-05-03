@@ -93,9 +93,8 @@ else:
 ~~~
 {: .output}
 
-One important thing to notice in the code above is that we use a double equals sign `==` to test for equality
-rather than a single equals sign
-because the latter is used to mean assignment.
+Note that to test for equality we use a double equals sign `==`
+rather than a single equals sign `=` which is used to assign values.
 
 We can also combine tests using `and` and `or`.
 `and` is only true if both parts are true:
@@ -316,7 +315,8 @@ freeing us from having to manually examine every plot for features we've seen be
 
 > ## In-Place Operators
 >
-> Python (and most other languages in the C family) provides [in-place operators]({{ page.root }}/reference/#in-place-operators)
+> Python (and most other languages in the C family) provides
+> [in-place operators]({{ page.root }}/reference/#in-place-operators)
 > that work like this:
 >
 > ~~~
@@ -360,15 +360,35 @@ freeing us from having to manually examine every plot for features we've seen be
 
 > ## Sorting a List Into Buckets
 >
-> The folder containing our data files has large data sets whose names start with
-> "inflammation-", small ones whose names start with "small-", and possibly other files
-> whose sizes we don't know.  Our goal is to sort those files into three lists
-> called `large_files`, `small_files`, and `other_files` respectively.  Add code
-> to the template below to do this.  Note that the string method
+> In our `data` folder, large data sets are stored in files whose names start with
+> "inflammation-" and small data sets -- in files whose names start with "small-". We
+> also have some other files that we do not care about at this point. We'd like to break all
+> these files into three lists called `large_files`, `small_files`, and `other_files`,
+> respectively.
+>
+> Add code to the template below to do this. Note that the string method
 > [`startswith`](https://docs.python.org/3.5/library/stdtypes.html#str.startswith)
 > returns `True` if and only if the string it is called on starts with the string
-> passed as an argument.
+> passed as an argument, that is:
 >
+> ~~~
+> "String".startswith("Str")
+> ~~~
+> {: .language-python}
+> ~~~
+> True
+> ~~~
+> {: .output}
+> But
+> ~~~
+> "String".startswith("str")
+> ~~~
+> {: .language-python}
+> ~~~
+> False
+> ~~~
+> {: .output}
+>Use the following Python code as your starting point:
 > ~~~
 > files = ['inflammation-01.csv', 'myscript.py', 'inflammation-02.csv', 'small-01.csv', 'small-02.csv']
 > large_files = []
@@ -412,7 +432,7 @@ freeing us from having to manually examine every plot for features we've seen be
 
 > ## Counting Vowels
 >
-> 1.  Write a loop that counts the number of vowels in a character string.
+> 1. Write a loop that counts the number of vowels in a character string.
 > 2. Test it on a few individual words and full sentences.
 > 3. Once you are done, compare your solution to your neighbor's.
 >    Did you make the same decisions about how to handle the letter 'y'
@@ -426,7 +446,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > > for char in sentence:
 > >     if char in vowels:
 > >         count += 1
-> >         
+> >
 > > print("The number of vowels in this string is " + str(count))
 > > ~~~
 > > {: .language-python}
