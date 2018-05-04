@@ -6,6 +6,7 @@ questions:
 - "How can I do the same operations on many different values?"
 objectives:
 - "Explain what a `for` loop does."
+- "Use `range`, `len`, and `enumerate` to control number of times looped."
 - "Correctly write `for` loops to repeat simple calculations."
 - "Trace changes to a loop variable as the loop runs."
 - "Trace changes to other variables as they are updated by a `for` loop."
