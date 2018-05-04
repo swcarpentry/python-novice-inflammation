@@ -111,8 +111,8 @@ d
 ~~~
 {: .output}
 
-This is shorter --- certainly shorter than something that prints every character in a hundred-letter string --- and
-more robust as well:
+This is shorter --- certainly shorter than something that prints every character in a
+hundred-letter string --- and more robust as well:
 
 ~~~
 word = 'oxygen'
@@ -145,20 +145,24 @@ Using the oxygen example above, the loop might look like this:
 
 ![loop_image](../fig/loops_image.png)
 
-where each character (`char`) in the variable `word` is looped through and printed one character after another.
-The numbers in the diagram denote which loop cycle the character was printed in (1 being the first loop, and 6 being the final loop).
+where each character (`char`) in the variable `word` is looped through and printed one character
+after another. The numbers in the diagram denote which loop cycle the character was printed in (1
+being the first loop, and 6 being the final loop).
 
-We can call the [loop variable]({{ page.root }}/reference/#loop-variable) anything we like,
-but there must be a colon at the end of the line starting the loop,
-and we must indent anything we want to run inside the loop. Unlike many other languages, there is no
-command to signify the end of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop.
+We can call the [loop variable]({{ page.root }}/reference/#loop-variable) anything we like, but
+there must be a colon at the end of the line starting the loop, and we must indent anything we
+want to run inside the loop. Unlike many other languages, there is no command to signify the end
+of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop.
 
 
 > ## What's in a name?
 >
 >
-> In the example above, the loop variable was given the name `char` as a mnemonic; it is short for 'character'. 
-> We can choose any name we want for variables. We might just as easily have chosen the name `banana` for the loop variable, as long as we use the same name when we invoke the variable inside the loop:
+> In the example above, the loop variable was given the name `char` as a mnemonic;
+> it is short for 'character'.
+> We can choose any name we want for variables. We might just as easily have chosen the name
+> `banana` for the loop variable, as long as we use the same name when we invoke the variable inside
+> the loop:
 >
 > ~~~
 > word = 'oxygen'
@@ -177,7 +181,8 @@ command to signify the end of the loop body (e.g. `end for`); what is indented a
 > ~~~
 > {: .output}
 >
-> It is a good idea to choose variable names that are meaningful, otherwise it would be more difficult to understand what the loop is doing.
+> It is a good idea to choose variable names that are meaningful, otherwise it would be more
+> difficult to understand what the loop is doing.
 {: .callout}
 
 Here's another loop that repeatedly updates a variable:
