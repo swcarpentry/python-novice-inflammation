@@ -149,10 +149,12 @@ where each character (`char`) in the variable `word` is looped through and print
 The numbers in the diagram denote which loop cycle the character was printed in (1 being the first loop, and 6 being the final loop).
 
 We can call the [loop variable]({{ page.root }}/reference/#loop-variable) anything we like,
-but there must be a colon at the end of the line starting the loop,
-and we must indent anything we want to run inside the loop. Unlike many other languages, there is no
-command to signify the end of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop.
-
+but to open the block we can't forget to put a colon (`:`) at the end of the line starting the loop,
+then indent the code we want to run inside the loop. The colon identifies the beginning of a list of instructions, and the
+instruction before it tells us how to handle the list, in this case meaning it is a set of instructions we will loop over.
+Unlike many other languages, there is no
+command to signify the end of the loop body (e.g. `end for`); the code block (i.e. indented section) 
+after the `for` statement belongs to the loop -- you can also nest these!
 
 > ## What's in a name?
 >
