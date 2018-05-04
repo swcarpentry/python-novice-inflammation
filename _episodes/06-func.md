@@ -804,6 +804,41 @@ readable code!
 > {: .solution}
 {: .challenge}
 
+> ## Return versus print
+>
+> Note that `return` and `print` are not interchangeable.
+> `print` is a Python function that *prints* data to the screen.
+> It enables us, *users*, see the data.
+> `return` statement, on the other hand, makes data visible to the program.
+> Let's have a look at the following function:
+>
+> ~~~
+> def add(a, b):
+>     print(a + b)
+> ~~~
+> {: .language-python}
+>
+> **Question**: What will we see if we execute the following commands?
+> ~~~
+> A = add(7, 3)
+> print(A)
+> ~~~
+> {: .language-python}
+>
+> > ## Solution
+> > Python will first execute the function `add` with `a = 7` and `b = 3`,
+> > and, therefore, print `10`. However, because function `add` does not have a
+> > line that starts with `return` (no `return` "statement"), it will, by default, return
+> > nothing which, in Python world, is called `None`. Therefore, `A` will be assigned to `None`
+> > and the last line (`print(A)`) will print `None`. As a result, we will see:
+> > ~~~
+> > 10
+> > None
+> > ~~~
+> > {: .output}
+> {: .solution}
+{: .challenge}
+
 > ## Selecting Characters From Strings
 >
 > If the variable `s` refers to a string,
