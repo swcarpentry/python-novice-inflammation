@@ -63,7 +63,7 @@ IndexError                                Traceback (most recent call last)
 
 IndexError: list index out of range
 ~~~
-{: .error}
+{: .error .language-python}
 
 This particular traceback has two levels.
 You can determine the number of levels by looking for the number of arrows on the left hand side.
@@ -148,7 +148,7 @@ def some_function()
                        ^
 SyntaxError: invalid syntax
 ~~~
-{: .error}
+{: .error .language-python}
 
 Here, Python tells us that there is a `SyntaxError` on line 1,
 and even puts a little arrow in the place where there is an issue.
@@ -173,7 +173,7 @@ def some_function():
     ^
 IndentationError: unexpected indent
 ~~~
-{: .error}
+{: .error .language-python}
 
 Both `SyntaxError` and `IndentationError` indicate a problem with the syntax of your program,
 but an `IndentationError` is more specific:
@@ -207,7 +207,7 @@ it *always* means that there is a problem with how your code is indented.
 >               ^
 > TabError: inconsistent use of tabs and spaces in indentation
 > ~~~
-> {: .error}
+> {: .error .language-python}
 {: .callout}
 
 ## Variable Name Errors
@@ -229,7 +229,7 @@ NameError                                 Traceback (most recent call last)
 
 NameError: name 'a' is not defined
 ~~~
-{: .error}
+{: .error .language-python}
 
 Variable name errors come with some of the most informative error messages,
 which are usually of the form "name 'the_variable_name' is not defined".
@@ -254,7 +254,7 @@ NameError                                 Traceback (most recent call last)
 
 NameError: name 'hello' is not defined
 ~~~
-{: .error}
+{: .error .language-python}
 
 The second is that you just forgot to create the variable before using it.
 In the following example,
@@ -277,7 +277,7 @@ NameError                                 Traceback (most recent call last)
 
 NameError: name 'count' is not defined
 ~~~
-{: .error}
+{: .error .language-python}
 
 Finally, the third possibility is that you made a typo when you were writing your code.
 Let's say we fixed the error above by adding the line `Count = 0` before the for loop.
@@ -304,7 +304,7 @@ NameError                                 Traceback (most recent call last)
 
 NameError: name 'count' is not defined
 ~~~
-{: .error}
+{: .error .language-python}
 
 ## Index Errors
 
@@ -331,7 +331,7 @@ Letter #1 is a
 Letter #2 is b
 Letter #3 is c
 ~~~
-{: .output}
+{: .output .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
@@ -343,7 +343,7 @@ IndexError                                Traceback (most recent call last)
 
 IndexError: list index out of range
 ~~~
-{: .error}
+{: .error .language-python}
 
 Here,
 Python is telling us that there is an `IndexError` in our code,
@@ -373,7 +373,7 @@ FileNotFoundError                         Traceback (most recent call last)
 
 FileNotFoundError: [Errno 2] No such file or directory: 'myfile.txt'
 ~~~
-{: .error}
+{: .error .language-python}
 
 One reason for receiving this error is that you specified an incorrect path to the file.
 For example,
@@ -408,7 +408,7 @@ UnsupportedOperation                      Traceback (most recent call last)
 
 UnsupportedOperation: not readable
 ~~~
-{: .error}
+{: .error .language-python}
 
 These are the most common errors with files,
 though many others exist.
@@ -472,7 +472,7 @@ often reveals common reasons why you might get that error.
 >
 > KeyError: 'Friday'
 > ~~~
-> {: .error}
+> {: .error .language-python}
 >
 > > ## Solution
 > > 1. 3 levels
