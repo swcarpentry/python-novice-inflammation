@@ -491,49 +491,6 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 ~~~
 {: .output}
 
-> ## Swapping the contents of variables
->
-> Explain what the overall effect of this code is:
->
-> ~~~
-> left = 'L'
-> right = 'R'
->
-> temp = left
-> left = right
-> right = temp
-> ~~~
-> {: .language-python}
->
-> Compare it to:
->
-> ~~~
-> left, right = [right, left]
-> ~~~
-> {: .language-python}
->
-> Do they always do the same thing?
-> Which do you find easier to read?
->
-> > ## Solution
-> > Both examples exchange the values of `left` and `right`:
-> >
-> > ~~~
-> > print(left, right)
-> > ~~~
-> > {: .language-python}
-> >
-> > ~~~
-> > R L
-> > ~~~
-> > {: .output}
-> >
-> > In the first case we used a temporary variable `temp` to keep the value of `left` before we
-> > overwrite it with the value of `right`. In the second case, `right` and `left` are packed into a
-> > list and then unpacked into `left` and `right`.
-> {: .solution}
-{: .challenge}
-
 > ## Overloading
 >
 > `+` usually means addition, but when used on strings or lists, it means "concatenate".
