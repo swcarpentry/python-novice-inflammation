@@ -8,7 +8,7 @@ Check lesson files and their contents.
 import os
 import glob
 import re
-from optparse import OptionParser
+from argparse import ArgumentParser
 
 from util import (Reporter, read_markdown, load_yaml, check_unwanted_files,
                   require)
@@ -125,36 +125,36 @@ def main():
 def parse_args():
     """Parse command-line arguments."""
 
-    parser = OptionParser()
-    parser.add_option('-l', '--linelen',
-                      default=False,
-                      action="store_true",
-                      dest='line_lengths',
-                      help='Check line lengths')
-    parser.add_option('-p', '--parser',
-                      default=None,
-                      dest='parser',
-                      help='path to Markdown parser')
-    parser.add_option('-r', '--references',
-                      default=None,
-                      dest='reference_path',
-                      help='path to Markdown file of external references')
-    parser.add_option('-s', '--source',
-                      default=os.curdir,
-                      dest='source_dir',
-                      help='source directory')
-    parser.add_option('-w', '--whitespace',
-                      default=False,
-                      action="store_true",
-                      dest='trailing_whitespace',
-                      help='Check for trailing whitespace')
-    parser.add_option('--permissive',
-                      default=False,
-                      action="store_true",
-                      dest='permissive',
-                      help='Do not raise an error even if issues are detected')
+    parser = ArgumentParser(description="""Check episode files in a lesson.""")
+    parser.add_argument('-l', '--linelen',
+                        default=False,
+                        action="store_true",
+                        dest='line_lengths',
+                        help='Check line lengths')
+    parser.add_argument('-p', '--parser',
+                        default=None,
+                        dest='parser',
+                        help='path to Markdown parser')
+    parser.add_argument('-r', '--references',
+                        default=None,
+                        dest='reference_path',
+                        help='path to Markdown file of external references')
+    parser.add_argument('-s', '--source',
+                        default=os.curdir,
+                        dest='source_dir',
+                        help='source directory')
+    parser.add_argument('-w', '--whitespace',
+                        default=False,
+                        action="store_true",
+                        dest='trailing_whitespace',
+                        help='Check for trailing whitespace')
+    parser.add_argument('--permissive',
+                        default=False,
+                        action="store_true",
+                        dest='permissive',
+                        help='Do not raise an error even if issues are detected')
 
-    args, extras = parser.parse_args()
+    args, extras = parser.parse_known_args()
     require(args.parser is not None,
             'Path to Markdown parser not provided')
     require(not extras,
@@ -279,7 +279,6 @@ class CheckBase(object):
     def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
         """Cache arguments for checking."""
 
-        super(CheckBase, self).__init__()
         self.args = args
         self.reporter = self.args.reporter  # for convenience
         self.filename = filename
@@ -421,10 +420,6 @@ class CheckBase(object):
 class CheckNonJekyll(CheckBase):
     """Check a file that isn't translated by Jekyll."""
 
-    def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
-        super(CheckNonJekyll, self).__init__(
-            args, filename, metadata, metadata_len, text, lines, doc)
-
     def check_metadata(self):
         self.reporter.check(self.metadata is None,
                             self.filename,
@@ -435,12 +430,11 @@ class CheckIndex(CheckBase):
     """Check the main index page."""
 
     def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
-        super(CheckIndex, self).__init__(args, filename,
-                                         metadata, metadata_len, text, lines, doc)
+        super().__init__(args, filename, metadata, metadata_len, text, lines, doc)
         self.layout = 'lesson'
 
     def check_metadata(self):
-        super(CheckIndex, self).check_metadata()
+        super().check_metadata()
         self.reporter.check(self.metadata.get('root', '') == '.',
                             self.filename,
                             'Root not set to "."')
@@ -449,18 +443,14 @@ class CheckIndex(CheckBase):
 class CheckEpisode(CheckBase):
     """Check an episode page."""
 
-    def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
-        super(CheckEpisode, self).__init__(args, filename,
-                                           metadata, metadata_len, text, lines, doc)
-
     def check(self):
         """Run extra tests."""
 
-        super(CheckEpisode, self).check()
+        super().check()
         self.check_reference_inclusion()
 
     def check_metadata(self):
-        super(CheckEpisode, self).check_metadata()
+        super().check_metadata()
         if self.metadata:
             if 'layout' in self.metadata:
                 if self.metadata['layout'] == 'break':
@@ -473,6 +463,7 @@ class CheckEpisode(CheckBase):
                 self.check_metadata_fields(TEACHING_METADATA_FIELDS)
 
     def check_metadata_fields(self, expected):
+        """Check metadata fields."""
         for (name, type_) in expected:
             if name not in self.metadata:
                 self.reporter.add(self.filename,
@@ -507,8 +498,7 @@ class CheckReference(CheckBase):
     """Check the reference page."""
 
     def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
-        super(CheckReference, self).__init__(
-            args, filename, metadata, metadata_len, text, lines, doc)
+        super().__init__(args, filename, metadata, metadata_len, text, lines, doc)
         self.layout = 'reference'
 
 
@@ -516,8 +506,7 @@ class CheckGeneric(CheckBase):
     """Check a generic page."""
 
     def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
-        super(CheckGeneric, self).__init__(args, filename,
-                                           metadata, metadata_len, text, lines, doc)
+        super().__init__(args, filename, metadata, metadata_len, text, lines, doc)
         self.layout = 'page'
 
 
