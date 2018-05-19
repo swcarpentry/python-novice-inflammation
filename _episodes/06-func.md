@@ -17,7 +17,6 @@ keypoints:
 - "The body of a function must be indented."
 - "Call a function using `function_name(value)`."
 - "Numbers are stored as integers or floating-point numbers."
-- "Integer division produces the whole part of the answer (not the fractional part)."
 - "Variables defined within a function can only be seen and used within the body of the function."
 - "If a variable is not defined within the function it is used, Python looks for a definition before the function call"
 - "Use `help(thing)` to view help for something."
@@ -93,97 +92,6 @@ boiling point of water: 100.0 C
 We've successfully called the function that we defined,
 and we have access to the value that we returned.
 
-> ## Integer Division
->
-> We are using Python 3, where division always returns a floating point number:
->
-> ~~~
-> $ python3 -c "print(5/9)"
-> ~~~
-> {: .language-python}
->
-> ~~~
-> 0.5555555555555556
-> ~~~
-> {: .output}
->
-> Unfortunately, this wasn't the case in Python 2:
->
-> ~~~
-> 5/9
-> ~~~
-> {: .language-python}
->
-> ~~~
-> 0
-> ~~~
-> {: .output}
->
-> If you are using Python 2 and want to keep the fractional part of division
-> you need to convert one or the other number to floating point:
->
-> ~~~
-> float(5)/9
-> ~~~
-> {: .language-python}
->
-> ~~~
-> 0.555555555556
-> ~~~
-> {: .output}
->
-> ~~~
-> 5/float(9)
-> ~~~
-> {: .language-python}
->
-> ~~~
-> 0.555555555556
-> ~~~
-> {: .output}
->
-> ~~~
-> 5.0/9
-> ~~~
-> {: .language-python}
->
-> ~~~
-> 0.555555555556
-> ~~~
-> {: .output}
-> ~~~
-> 5/9.0
-> ~~~
-> {: .language-python}
->
-> ~~~
-> 0.555555555556
-> ~~~
-> {: .output}
->
-> And if you want an integer result from division in Python 3,
-> use a double-slash:
->
-> ~~~
-> 4//2
-> ~~~
-> {: .language-python}
->
-> ~~~
-> 2
-> ~~~
-> {: .output}
->
-> ~~~
-> 3//2
-> ~~~
-> {: .language-python}
->
-> ~~~
-> 1
-> ~~~
-> {: .output}
-{: .callout}
 
 ## Composing Functions
 
@@ -801,6 +709,41 @@ readable code!
 > >     return wrapper + original + wrapper
 > > ~~~
 > > {: .language-python}
+> {: .solution}
+{: .challenge}
+
+> ## Return versus print
+>
+> Note that `return` and `print` are not interchangeable.
+> `print` is a Python function that *prints* data to the screen.
+> It enables us, *users*, see the data.
+> `return` statement, on the other hand, makes data visible to the program.
+> Let's have a look at the following function:
+>
+> ~~~
+> def add(a, b):
+>     print(a + b)
+> ~~~
+> {: .language-python}
+>
+> **Question**: What will we see if we execute the following commands?
+> ~~~
+> A = add(7, 3)
+> print(A)
+> ~~~
+> {: .language-python}
+>
+> > ## Solution
+> > Python will first execute the function `add` with `a = 7` and `b = 3`,
+> > and, therefore, print `10`. However, because function `add` does not have a
+> > line that starts with `return` (no `return` "statement"), it will, by default, return
+> > nothing which, in Python world, is called `None`. Therefore, `A` will be assigned to `None`
+> > and the last line (`print(A)`) will print `None`. As a result, we will see:
+> > ~~~
+> > 10
+> > None
+> > ~~~
+> > {: .output}
 > {: .solution}
 {: .challenge}
 
