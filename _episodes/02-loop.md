@@ -337,45 +337,51 @@ so we should always use it when we can.
 > {: .solution}
 {: .challenge}
 
-> ## Computing the Value of a Polynomial
+> ## Making a List of Chemical Elements
 >
 > The built-in function `enumerate` takes a sequence (e.g. a list) and generates a
 > new sequence of the same length. Each element of the new sequence is a pair composed of the index
-> (0, 1, 2,...) and the value from the original sequence:
->
+> (0, 1, 2,...) and the value from the original sequence. For example:
+> 
 > ~~~
-> for i, x in enumerate(xs):
->     # Do something with i and x
+> for index, item in enumerate(mylist, start=1):
+>     # Do something with index and item
 > ~~~
 > {: .language-python}
 >
-> The code above loops through `xs`, assigning the index to `i` and the value to `x`.
->
-> Suppose you have encoded a polynomial as a list of coefficients in
-> the following way: the first element is the constant term, the
-> second element is the coefficient of the linear term, the third is the
-> coefficient of the quadratic term, etc.
+> The code above loops through `mylist`, assigning the index to `index` and the value to `item`.
+> Adding a `start` parameter changes what number is used to start the sequence.
 >
 > ~~~
-> x = 5
-> cc = [2, 4, 3]
+> scores = [98, 75, 87, 94, 68]
+> for score in enumerate(scores):
+>     print(score)
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> y = cc[0] * x**0 + cc[1] * x**1 + cc[2] * x**2
-> y = 97
+> (0, 98)
+> (1, 75)
+> (2, 87)
+> (3, 94)
+> (4, 68)
 > ~~~
 > {: .output}
+> 
+> Suppose you have a list of chemical elements and you want to print them out, each one on a line
+> and numbered by their atomic number. 
 >
-> Write a loop using `enumerate(cc)` which computes the value `y` of any
-> polynomial, given `x` and `cc`.
+> ~~~
+> elements = ['hydrogen', 'helium', 'lithium', 'beryllium', 'boron', 'carbon', 'nitrogen', 'oxygen', 'fluorine', 'neon']
+> ~~~
+> {: .language-python}
+>
+> Write a loop using `enumerate(elements)` which prints a list of elements, the first one with the number 1. 
 >
 > > ## Solution
 > > ~~~
-> > y = 0
-> > for i, c in enumerate(cc):
-> >     y = y + x**i * c
+> > for number, element in enumerate(elements, start=1):
+> >     print(number, ' ', element)
 > > ~~~
 > > {: .language-python}
 > {: .solution}
