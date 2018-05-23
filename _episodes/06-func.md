@@ -41,7 +41,7 @@ very quickly.
 We'd like a way to package our code so that it is easier to reuse,
 and Python provides for this by letting us define things called 'functions' ---
 a shorthand way of re-executing longer pieces of code.
-Let's start by defining a function `fahr_to_celsius` that converts temperatures 
+Let's start by defining a function `fahr_to_celsius` that converts temperatures
 from Fahrenheit to Celsius:
 
 ~~~
@@ -65,7 +65,7 @@ When we call the function,
 the values we pass to it are assigned to those variables
 so that we can use them inside the function.
 Inside the function,
-we use a [return statement]({{ page.root }}/reference/#return-statement) to send a result 
+we use a [return statement]({{ page.root }}/reference/#return-statement) to send a result
 back to whoever asked for it.
 
 Let's try running our function.
@@ -136,7 +136,7 @@ boiling point of water in Kelvin: 373.15
 This is our first taste of how larger programs are built:
 we define basic operations,
 then combine them in ever-large chunks to get the effect we want.
-Real-life functions will usually be larger than the ones shown here --- typically half a dozen 
+Real-life functions will usually be larger than the ones shown here --- typically half a dozen
 to a few dozen lines --- but they shouldn't ever be much longer than that,
 or the next person who reads it won't be able to understand what's going on.
 
@@ -267,9 +267,9 @@ but there are a few simple tests that will reassure us:
 print('original min, mean, and max are:', numpy.min(data), numpy.mean(data), numpy.max(data))
 offset_data = offset_mean(data, 0)
 print('min, mean, and max of offset data are:', 
-        numpy.min(offset_data), 
-        numpy.mean(offset_data), 
-        numpy.max(offset_data))
+      numpy.min(offset_data), 
+      numpy.mean(offset_data), 
+      numpy.max(offset_data))
 ~~~
 {: .language-python}
 
@@ -282,7 +282,7 @@ min, mean, and and max of offset data are: -6.14875 2.84217094304e-16 13.85125
 That seems almost right:
 the original mean was about 6.1,
 so the lower bound from zero is now about -6.1.
-The mean of the offset data isn't quite zero --- we'll explore why not in the challenges --- but 
+The mean of the offset data isn't quite zero --- we'll explore why not in the challenges --- but
 it's pretty close.
 We can even go further and check that the standard deviation hasn't changed:
 
@@ -302,7 +302,7 @@ Let's do this instead:
 
 ~~~
 print('difference in standard deviations before and after:', 
-    numpy.std(data) - numpy.std(offset_data))
+      numpy.std(data) - numpy.std(offset_data))
 ~~~
 {: .language-python}
 
@@ -319,12 +319,12 @@ We have one more task first, though:
 we should write some [documentation]({{ page.root }}/reference/#documentation) for our function
 to remind ourselves later what it's for and how to use it.
 
-The usual way to put documentation in software is 
+The usual way to put documentation in software is
 to add [comments]({{ page.root }}/reference/#comment) like this:
 
 ~~~
-# offset_mean(data, target_mean_value): return a new array containing the original data 
-with its mean offset to match the desired value.
+# offset_mean(data, target_mean_value): 
+# return a new array containing the original data with its mean offset to match the desired value.
 def offset_mean(data, target_mean_value):
     return (data - numpy.mean(data)) + target_mean_value
 ~~~
@@ -336,13 +336,13 @@ that string is attached to the function as its documentation:
 
 ~~~
 def offset_mean(data, target_mean_value):
-    '''Return a new array containing the original data with its mean offset 
-    to match the desired value.'''
+    '''Return a new array containing the original data
+       with its mean offset to match the desired value.'''
     return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
-This is better because we can now ask Python's built-in help system to show us 
+This is better because we can now ask Python's built-in help system to show us
 the documentation for the function:
 
 ~~~
@@ -365,8 +365,8 @@ we can break the string across multiple lines:
 
 ~~~
 def offset_mean(data, target_mean_value):
-    '''Return a new array containing the original data with its mean offset 
-    to match the desired value.
+    '''Return a new array containing the original data
+       with its mean offset to match the desired value.
     Example: offset_mean([1, 2, 3], 0) => [-1, 0, 1]'''
     return (data - numpy.mean(data)) + target_mean_value
 
@@ -420,8 +420,7 @@ TypeError                                 Traceback (most recent call last)
 <ipython-input-26-e3bc6cf4fd6a> in <module>()
 ----> 1 numpy.loadtxt('inflammation-01.csv', ',')
 
-/Users/gwilson/anaconda/lib/python2.7/site-packages/numpy/lib/npyio.pyc 
-in loadtxt(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin)
+/Users/gwilson/anaconda/lib/python2.7/site-packages/numpy/lib/npyio.pyc in loadtxt(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin)
     775     try:
     776         # Make sure we're dealing with a proper dtype
 --> 777         dtype = np.dtype(dtype)
@@ -438,14 +437,14 @@ let's re-define our `offset_mean` function like this:
 
 ~~~
 def offset_mean(data, target_mean_value=0.0):
-    '''Return a new array containing the original data with its mean offset to match the 
-    desired value (0 by default).
+    '''Return a new array containing the original data with its mean offset to match the
+       desired value (0 by default).
     Example: offset_mean([1, 2, 3], 0) => [-1, 0, 1]'''
     return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
-The key change is that the second parameter is now written `target_mean_value=0.0` 
+The key change is that the second parameter is now written `target_mean_value=0.0`
 instead of just `target_mean_value`.
 If we call the function with two arguments,
 it works as it did before:
@@ -463,7 +462,7 @@ print(offset_mean(test_data, 3))
 {: .output}
 
 But we can also now call it with just one parameter,
-in which case `target_mean_value` is automatically assigned 
+in which case `target_mean_value` is automatically assigned
 the [default value]({{ page.root }}/reference/#default-value) of 0.0:
 
 ~~~
@@ -543,15 +542,7 @@ help(numpy.loadtxt)
 ~~~
 Help on function loadtxt in module numpy.lib.npyio:
 
-loadtxt(fname, 
-        dtype=<class 'float'>, 
-        comments='#', 
-        delimiter=None, 
-        converters=None, 
-        skiprows=0, 
-        usecols=None, 
-        unpack=False, 
-        ndmin=0)
+loadtxt(fname, dtype=<class 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
 
     Load data from a text file.
 
@@ -641,15 +632,7 @@ There's a lot of information here,
 but the most important part is the first couple of lines:
 
 ~~~
-loadtxt(fname, 
-        dtype=<type 'float'>, 
-        comments='#', 
-        delimiter=None, 
-        converters=None, 
-        skiprows=0, 
-        usecols=None,
-        unpack=False, 
-        ndmin=0)
+loadtxt(fname, dtype=<type 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
 ~~~
 {: .output}
 
@@ -900,7 +883,7 @@ readable code!
 > > 0
 > > ~~~
 > > {: .output}
-> > `k` is 0 because the `k` inside the function `f2k` doesn't know 
+> > `k` is 0 because the `k` inside the function `f2k` doesn't know
 > > about the `k` defined outside the function.
 > {: .solution}
 {: .challenge}
