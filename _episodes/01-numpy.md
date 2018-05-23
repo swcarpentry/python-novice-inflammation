@@ -29,34 +29,68 @@ keypoints:
 - "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
 ---
 
-In this lesson we will learn how to manipulate the inflammation dataset with Python. Before we
-discuss how to deal with many data points, we will show how to store a single value on the computer.
+In this lesson we will learn how to work with arthritis inflammation datasets in Python. However,
+before we discuss how to deal with many data points, let's learn how to work with single data values.
 
-You can get output from python by typing math into the console:
-~~~
-3+5
-12/7
-~~~
+## Variables
 
-However, to do anything useful and/or interesting we need to assign values to _variables_
-(or link _objects_ to names/variables).
-The line below [assigns]({{ page.root }}/reference/#assign) the value `60` to a
-[variable]({{ page.root }}/reference/#variable) `weight_kg`:
+Any Python interpreter can be used as a calculator:
+~~~
+3 + 5 * 4
+~~~
+{: .language-python}
+~~~
+23
+~~~
+{: .output}
+
+This is great but not very interesting.
+To do anything useful with data, we need to assign its value to a _variable_.
+In Python, we can [assign]({{ page.root }}/reference/#assign) a value to a
+[variable]({{ page.root }}/reference/#variable), using the equals sign `=`.
+For example, to assign value `60` to a variable `weight_kg`, we would execute:
 
 ~~~
 weight_kg = 60
 ~~~
 {: .language-python}
 
-A variable is a name for a value,
-such as `x_val`, `current_temperature`, or `subject_id`.
-Python's variables must begin with a letter and are
-[case sensitive]({{ page.root }}/reference/#case-sensitive).
-We can create a new variable by assigning a value to it using `=`.
-When we are finished typing and press <kbd>Shift</kbd>+<kbd>Return</kbd>,
-the notebook runs our command.
+From now on, whenever we use `weight_kg`, Python will substitute the value we assigned to
+it. In essence, **a variable is just a name for a value**.
 
-Once a variable has a value, we can print it to the screen:
+In Python, variable names:
+
+ - must begin with a letter, and
+ - are [case sensitive]({{ page.root }}/reference/#case-sensitive).
+
+This means that, for example:
+ - `weight0` is a valid variable name, whereas `0weight` is not
+ - `weight` and `Weight` are different variables
+
+## Types of data
+Python knows various types of data. The most common ones are:
+
+* integer numbers
+* floating point numbers, and
+* strings.
+
+In the example above, variabe `weight_kg` has an integer value of `60`.
+To create a variable with a floating point value, we can execute:
+
+~~~
+weight_kg = 60.0
+~~~
+{: .language-python}
+
+And to create a string we simply have to add single or double quotes around some text, for example:
+
+~~~
+weight_kg_text = 'weight in kilograms:'
+~~~
+{: .language-python}
+
+## Using Variables in Python
+To display the value of a variable to the screen in Python, we can use `print` function:
 
 ~~~
 print(weight_kg)
@@ -68,7 +102,18 @@ print(weight_kg)
 ~~~
 {: .output}
 
-and do arithmetic with it (remember, there are 2.2 pounds per kilogram):
+We can display multiple things at once using only one `print` command:
+
+~~~
+print(weight_kg_text, weight_kg)
+~~~
+{: .language-python}
+~~~
+weight in kilograms: 60
+~~~
+{: .output}
+
+Moreover, we can do arithmetics with variables right inside the `print` function:
 
 ~~~
 print('weight in pounds:', 2.2 * weight_kg)
@@ -80,10 +125,18 @@ weight in pounds: 132.0
 ~~~
 {: .output}
 
-As the example above shows,
-we can print several things at once by separating them with commas.
+The above command, however, did not change the value of `weight_kg`:
+~~~
+print(weight_kg)
+~~~
+{: .language-python}
 
-We can also change a variable's value by assigning it a new one:
+~~~
+60
+~~~
+{: .output}
+
+To change variable's value, we have to assign it a new one:
 
 ~~~
 weight_kg = 65.0
@@ -96,19 +149,18 @@ weight in kilograms is now: 65.0
 ~~~
 {: .output}
 
-If we imagine the variable as a sticky note with a name written on it,
-assignment is like putting the sticky note on a particular value:
+A variable is analoguous to a sticky note with a name written on it:
+assigning value to a variable is like putting that sticky note on a particular value.
 
 ![Variables as Sticky Notes](../fig/python-sticky-note-variables-01.svg)
 
-This means that assigning a value to one variable does *not* change the values of other variables.
-For example,
-let's store the subject's weight in pounds in a variable:
+This means that assigning a value to one variable does **not** change the values of other variables.
+For example, let's store the subject's weight in pounds in its own variable:
 
 ~~~
 # There are 2.2 pounds per kilogram
 weight_lb = 2.2 * weight_kg
-print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
+print(weight_kg_text, weight_kg, 'and in pounds:', weight_lb)
 ~~~
 {: .language-python}
 
@@ -119,7 +171,7 @@ weight in kilograms: 65.0 and in pounds: 143.0
 
 ![Creating Another Variable](../fig/python-sticky-note-variables-02.svg)
 
-and then change `weight_kg`:
+Let's now change `weight_kg`:
 
 ~~~
 weight_kg = 100.0
@@ -136,28 +188,8 @@ weight in kilograms is now: 100.0 and weight in pounds is still: 143.0
 
 Since `weight_lb` doesn't remember where its value came from,
 it isn't automatically updated when `weight_kg` changes.
-This is different from the way spreadsheets work.
 
-> ## Who's Who in Memory
->
-> You can use the `%whos` command at any time to see what
-> variables you have created and what modules you have loaded into the computer's memory.
-> As this is an IPython command, it will only work if you are in an IPython terminal or the
-> Jupyter Notebook.
->
-> ~~~
-> %whos
-> ~~~
-> {: .language-python}
->
-> ~~~
-> Variable    Type       Data/Info
-> --------------------------------
-> weight_kg   float      100.0
-> weight_lb   float      143.0
-> ~~~
-> {: .output}
-{: .callout}
+
 
 Words are useful, but what's more useful are the sentences and stories we build with them.
 Similarly, while a lot of powerful, general tools are built into languages like Python,
@@ -165,12 +197,12 @@ specialized tools built up from these basic units live in
 [libraries]({{ page.root }}/reference/#library)
 that can be called upon when needed.
 
-In order to load our inflammation data,
-we need to access ([import]({{ page.root }}/reference/#import) in Python terminology)
-a library called [NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").
-In general you should use this library if you want to do fancy things with numbers,
-especially if you have matrices or arrays.
-We can import NumPy using:
+## Loading data into Python
+In order to load our inflammation data, we need to access
+([import]({{ page.root }}/reference/#import) in Python terminology) a library called
+[NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").  In general you should use this
+library if you want to do fancy things with numbers, especially if you have matrices or arrays.  We
+can import NumPy using:
 
 ~~~
 import numpy
