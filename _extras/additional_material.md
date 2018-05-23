@@ -5,6 +5,28 @@ permalink: /extra_material/
 ---
 A collection of facts about Python that do not fit into the main lesson either due to the scope or time constraints of the main lesson.
 
+
+## Jupyter Notebook/IPython: Who's Who in Memory
+
+You can use the `%whos` command at any time to see what
+variables you have created and what modules you have loaded into the computer's memory.
+As this is an IPython command, it will only work if you are in an IPython terminal or the
+Jupyter Notebook.
+
+~~~
+%whos
+~~~
+{: .language-python}
+
+~~~
+Variable    Type       Data/Info
+--------------------------------
+weight_kg   float      100.0
+weight_lb   float      143.0
+~~~
+{: .output}
+
+
 <br />
 ## Integer Division
 
