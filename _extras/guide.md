@@ -3,6 +3,18 @@ layout: page
 title: "Instructor Notes"
 permalink: /guide/
 ---
+
+## About the lesson
+
+Our real goal isn't to teach workshop attendees Python as a programming language,
+but to teach them the basic concepts that all programming depends on.
+We use Python in our lessons because:
+
+1.  It is free and open-source software.
+2.  It is well-documented and runs on all platforms.
+3.  It has a large and constantly growing user-base which includes scientists.
+4.  It is easier for novices to pick up than most other languages.
+
 ## Legend
 
 We are using a dataset with records on inflammation from patients following an
