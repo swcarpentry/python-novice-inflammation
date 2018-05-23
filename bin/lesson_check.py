@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 Check lesson files and their contents.
@@ -273,7 +273,7 @@ def create_checker(args, filename, info):
             return cls(args, filename, **info)
     return NotImplemented
 
-class CheckBase(object):
+class CheckBase:
     """Base class for checking Markdown files."""
 
     def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
