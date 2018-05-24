@@ -411,6 +411,7 @@ the index is how many steps we have to take from the start to get the item we wa
 > which can be confusing when plotting data.
 {: .callout}
 
+## Slicing data
 An index like `[30, 20]` selects a single element of an array,
 but we can select whole sections as well.
 For example,
@@ -450,14 +451,10 @@ print(data[5:10, 0:10])
 ~~~
 {: .output}
 
-We also don't have to include the upper and lower bound on the slice.
-If we don't include the lower bound,
-Python uses 0 by default;
-if we don't include the upper,
-the slice runs to the end of the axis,
-and if we don't include either
-(i.e., if we just use ':' on its own),
-the slice includes everything:
+We also don't have to include the upper and lower bound on the slice.  If we don't include the lower
+bound, Python uses 0 by default; if we don't include the upper, the slice runs to the end of the
+axis, and if we don't include either (i.e., if we just use ':' on its own), the slice includes
+everything:
 
 ~~~
 small = data[:3, 36:]
@@ -475,12 +472,9 @@ small is:
 ~~~
 {: .output}
 
-Arrays also know how to perform common mathematical operations on their values.
-The simplest operations with data are arithmetic:
-addition, subtraction, multiplication, and division.
- When you do such operations on arrays,
-the operation is done element-by-element.
-Thus:
+Arrays also know how to perform common mathematical operations on their values.  The simplest
+operations with data are arithmetic: addition, subtraction, multiplication, and division.  When you
+do such operations on arrays, the operation is done element-by-element.  Thus:
 
 ~~~
 doubledata = data * 2.0
@@ -510,11 +504,9 @@ doubledata:
 ~~~
 {: .output}
 
-If,
-instead of taking an array and doing arithmetic with a single value (as above),
-you did the arithmetic operation with another array of the same shape,
-the operation will be done on corresponding elements of the two arrays.
-Thus:
+If, instead of taking an array and doing arithmetic with a single value (as above), you did the
+arithmetic operation with another array of the same shape, the operation will be done on
+corresponding elements of the two arrays.  Thus:
 
 ~~~
 tripledata = doubledata + data
@@ -538,11 +530,9 @@ tripledata:
 ~~~
 {: .output}
 
-Often, we want to do more than add, subtract, multiply, and divide array elements.
-NumPy knows how to do more complex operations, too.
-If we want to find the average inflammation for all patients on all days,
-for example,
-we can ask NumPy to compute `data`'s mean value:
+Often, we want to do more than add, subtract, multiply, and divide array elements.  NumPy knows how
+to do more complex operations, too.  If we want to find the average inflammation for all patients on
+all days, for example, we can ask NumPy to compute `data`'s mean value:
 
 ~~~
 print(numpy.mean(data))
@@ -714,16 +704,13 @@ print(numpy.mean(data, axis=1))
 
 which is the average inflammation per patient across all days.
 
-The mathematician Richard Hamming once said,
-"The purpose of computing is insight, not numbers,"
-and the best way to develop insight is often to visualize data.
-Visualization deserves an entire lecture of its own,
-but we can explore a few features of Python's `matplotlib` library here.
-While there is no official plotting library,
-`matplotlib` is the de facto standard.
-First,
-we will import the `pyplot` module from `matplotlib`
-and use two of its functions to create and display a heat map of our data:
+## Visualizing data
+The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers," and
+the best way to develop insight is often to visualize data.  Visualization deserves an entire
+lecture of its own, but we can explore a few features of Python's `matplotlib` library here.  While
+there is no official plotting library, `matplotlib` is the _de facto_ the standard.  First, we will
+import the `pyplot` module from `matplotlib` and use two of its functions to create and display a
+heat map of our data:
 
 ~~~
 import matplotlib.pyplot
@@ -734,9 +721,8 @@ matplotlib.pyplot.show()
 
 ![Heatmap of the Data](../fig/01-numpy_71_0.png)
 
-Blue pixels in this heat map represent low values, while yellow pixels represent high values.
-As we can see,
-inflammation rises and falls over a 40-day period.
+Blue pixels in this heat map represent low values, while yellow pixels represent high values.  As we
+can see, inflammation rises and falls over a 40-day period.
 
 > ## Some IPython Magic
 >
@@ -766,13 +752,10 @@ matplotlib.pyplot.show()
 
 ![Average Inflammation Over Time](../fig/01-numpy_73_0.png)
 
-Here,
-we have put the average per day across all patients in the variable `ave_inflammation`,
-then asked `matplotlib.pyplot` to create and display a line graph of those values.
-The result is a roughly linear rise and fall,
-which is suspicious:
-we might instead expect a sharper rise and slower fall.
-Let's have a look at two other statistics:
+Here, we have put the average per day across all patients in the variable `ave_inflammation`, then
+asked `matplotlib.pyplot` to create and display a line graph of those values.  The result is a
+roughly linear rise and fall, which is suspicious: we might instead expect a sharper rise and slower
+fall.  Let's have a look at two other statistics:
 
 ~~~
 max_plot = matplotlib.pyplot.plot(numpy.max(data, axis=0))
@@ -790,14 +773,12 @@ matplotlib.pyplot.show()
 
 ![Minimum Value Along The First Axis](../fig/01-numpy_75_3.png)
 
-The maximum value rises and falls smoothly,
-while the minimum seems to be a step function.
-Neither trend seems particularly likely,
-so either there's a mistake in our calculations
-or something is wrong with our data.
-This insight would have been difficult to reach by
-examining the numbers themselves without visualization tools.
+The maximum value rises and falls smoothly, while the minimum seems to be a step function.  Neither
+trend seems particularly likely, so either there's a mistake in our calculations or something is
+wrong with our data.  This insight would have been difficult to reach by examining the numbers
+themselves without visualization tools.
 
+### Grouping plots
 You can group similar plots in a single figure using subplots.
 This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
 creates a space into which we will place all of our plots. The parameter `figsize`
