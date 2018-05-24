@@ -12,3 +12,4 @@ install:
 script:
   - make lesson-check
   - make lesson-check-all
+  - make site
