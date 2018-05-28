@@ -60,7 +60,7 @@ it. In essence, **a variable is just a name for a value**.
 
 In Python, variable names:
 
- - variable names can include upper and lowercase letters, digits, and underscores, but cannot
+ - variable names can include letters, digits, and underscores, but cannot
    start with a digit
  - are [case sensitive]({{ page.root }}/reference/#case-sensitive).
 
