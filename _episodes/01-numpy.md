@@ -217,7 +217,7 @@ need for each program. Once we've imported the library, we can ask the library t
 file for us:
 
 ~~~
-numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+numpy.loadtxt('inflammation-01.csv', delimiter=',')
 ~~~
 {: .language-python}
 
@@ -232,31 +232,29 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 ~~~
 {: .output}
 
+### The dot notation
 The expression `numpy.loadtxt(...)` is a [function call]({{ page.root }}/reference/#function-call)
 that asks Python to run the [function]({{ page.root }}/reference/#function) `loadtxt` which
-belongs to the `numpy` library. This [dotted notation]({{ page.root }}/reference/#dotted-notation)
+belongs to the `numpy` library. This is an example of the
+[**dotted notation**]({{ page.root }}/reference/#dotted-notation) and it
 is used everywhere in Python: the thing that appears before the dot contains the thing that
 appears after.
 
-As an example, John Smith is the John that belongs to the Smith family,
-We could use the dot notation to write his name `smith.john`,
-just as `loadtxt` is a function that belongs to the `numpy` library.
+> ## Dotted notation explained
+> **John Smith** is the **John** that belongs to the **Smith** family.
+> Using the dotted notation, we would write his name as `Smith.John`.
+{: .callout}
 
 `numpy.loadtxt` has two [parameters]({{ page.root }}/reference/#parameter): the name of the file
 we want to read and the [delimiter]({{ page.root }}/reference/#delimiter) that separates values on
-a line. These both need to be character strings (or [strings]({{ page.root }}/reference/#string)
-for short), so we put them in quotes.
+a line. These both need to be [strings]({{ page.root }}/reference/#string),
+so we put them in quotes.
 
-Since we haven't told it to do anything else with the function's output,
-the notebook displays it.
-In this case,
-that output is the data we just loaded.
-By default,
-only a few rows and columns are shown
-(with `...` to omit elements when displaying big arrays).
-To save space,
-Python displays numbers as `1.` instead of `1.0`
-when there's nothing interesting after the decimal point.
+Since we haven't told it to do anything else with the function's output, the Python outputs it to we
+screen so that we can examine it.  In this case, that output is the data we just loaded.  By
+default, only a few rows and columns are shown (with `...` to omit elements when displaying big
+arrays).  To save space, Python displays numbers as `1.` instead of `1.0` when there's nothing
+interesting after the decimal point.
 
 Our call to `numpy.loadtxt` read our file
 but didn't save the data in memory.
@@ -266,7 +264,7 @@ can also assign an array of values to a variable using the same syntax.  Let's r
 `numpy.loadtxt` and save the returned data:
 
 ~~~
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.loadtxt('inflammation-01.csv', delimiter=',')
 ~~~
 {: .language-python}
 
@@ -795,7 +793,7 @@ Here are our three plots side by side:
 import numpy
 import matplotlib.pyplot
 
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.loadtxt('inflammation-01.csv', delimiter=',')
 
 fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
@@ -999,7 +997,7 @@ the graphs will actually be squeezed together more closely.)
 > > import numpy
 > > import matplotlib.pyplot
 > >
-> > data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+> > data = numpy.loadtxt('inflammation-01.csv', delimiter=',')
 > >
 > > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 > >
@@ -1049,7 +1047,7 @@ the graphs will actually be squeezed together more closely.)
 > > import numpy
 > > import matplotlib.pyplot
 > >
-> > data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+> > data = numpy.loadtxt('inflammation-01.csv', delimiter=',')
 > >
 > > # change figsize (swap width and height)
 > > fig = matplotlib.pyplot.figure(figsize=(3.0, 10.0))
