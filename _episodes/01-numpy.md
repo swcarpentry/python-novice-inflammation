@@ -137,7 +137,8 @@ print(weight_kg)
 ~~~
 {: .output}
 
-To change value of the `weight_kg` variable, we have to assign it a new one:
+To change the value of the `weight_kg` variable, we have to
+**assign** `weight_kg` a new value using the equals `=` sign:
 
 ~~~
 weight_kg = 65.0
