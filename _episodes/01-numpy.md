@@ -30,7 +30,8 @@ keypoints:
 ---
 
 In this lesson we will learn how to work with arthritis inflammation datasets in Python. However,
-before we discuss how to deal with many data points, let's learn how to work with single data values.
+before we discuss how to deal with many data points, let's learn how to work with
+single data values.
 
 ## Variables
 
@@ -60,7 +61,8 @@ it. In essence, **a variable is just a name for a value**.
 
 In Python, variable names:
 
- - must begin with a letter, and
+ - can include letters, digits, and underscores
+ - cannot start with a digit
  - are [case sensitive]({{ page.root }}/reference/#case-sensitive).
 
 This means that, for example:
@@ -68,13 +70,13 @@ This means that, for example:
  - `weight` and `Weight` are different variables
 
 ## Types of data
-Python knows various types of data. The most common ones are:
+Python knows various types of data. Three common ones are:
 
 * integer numbers
 * floating point numbers, and
 * strings.
 
-In the example above, variabe `weight_kg` has an integer value of `60`.
+In the example above, variable `weight_kg` has an integer value of `60`.
 To create a variable with a floating point value, we can execute:
 
 ~~~
@@ -90,7 +92,7 @@ weight_kg_text = 'weight in kilograms:'
 {: .language-python}
 
 ## Using Variables in Python
-To display the value of a variable to the screen in Python, we can use `print` function:
+To display the value of a variable to the screen in Python, we can use the `print` function:
 
 ~~~
 print(weight_kg)
@@ -136,7 +138,8 @@ print(weight_kg)
 ~~~
 {: .output}
 
-To change variable's value, we have to assign it a new one:
+To change the value of the `weight_kg` variable, we have to
+**assign** `weight_kg` a new value using the equals `=` sign:
 
 ~~~
 weight_kg = 65.0
@@ -149,8 +152,8 @@ weight in kilograms is now: 65.0
 ~~~
 {: .output}
 
-A variable is analoguous to a sticky note with a name written on it:
-assigning value to a variable is like putting that sticky note on a particular value.
+A variable is analogous to a sticky note with a name written on it:
+assigning a value to a variable is like putting that sticky note on a particular value.
 
 ![Variables as Sticky Notes](../fig/python-sticky-note-variables-01.svg)
 
