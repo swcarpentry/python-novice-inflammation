@@ -685,6 +685,8 @@ programmer. If you need to revisit code that you wrote months ago and
 haven't thought about since then, you will appreciate the value of
 readable code!
 
+The operator `+=` performs the addition while modifying the variable and is equivalent to `a = a + v`.  This combination of arithmetic operator and assignment is applicable to all arithmetic operations and makes for readable code.
+
 > ## Combining Strings
 >
 > "Adding" two strings produces their concatenation:
