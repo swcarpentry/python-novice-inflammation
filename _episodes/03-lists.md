@@ -212,6 +212,13 @@ does not.
 > for the image above.
 {: .callout}
 
+> ## Heterogeneous Lists
+> Lists in Python can contain elements of different types. Example:
+> ~~~ 
+> sample_ages = [10, 12.5, 'Unknown']
+> ~~~
+{: .callout}
+
 There are many ways to change the contents of lists besides assigning new values to
 individual elements:
 
