@@ -59,7 +59,7 @@ $ winpty python
 
 Jupyter notebooks provide a browser-based interface for working with Python.  If you would like to
 use a notebook during the lesson, make sure to install [Anaconda
-Distribution](http://swcarpentry.github.io/workshop-template/#python).
+Distribution](http://carpentries.github.io/workshop-template/#python).
 
 To start a Jupyter server, execute:
 ~~~
@@ -79,7 +79,7 @@ drop-down menu:
 IPython is an alternative solution situated somewhere in between the plain vanilla Python
 interpreter and Jupyter notebooks.  It provides an interactive command-line based interpreter with
 various convenience features and commands.  You should have IPython on your system if you installed
-[Anaconda Distribution](http://swcarpentry.github.io/workshop-template/#python).
+[Anaconda Distribution](http://carpentries.github.io/workshop-template/#python).
 
 To start using IPython, execute:
 ~~~
