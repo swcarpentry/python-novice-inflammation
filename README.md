@@ -24,7 +24,7 @@ A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
 ## Citation
 To cite this lesson, please consult with [CITATION](CITATION)
 
-[lesson-example]: https://swcarpentry.github.io/lesson-example
+[lesson-example]: https://carpentries.github.io/lesson-example
 [anne_fouilloux]: https://github.com/annefou
 [maxim_belkin]: https://github.com/maxim-belkin
 [mike_trizna]: https://github.com/MikeTrizna
