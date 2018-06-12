@@ -685,7 +685,24 @@ programmer. If you need to revisit code that you wrote months ago and
 haven't thought about since then, you will appreciate the value of
 readable code!
 
-The operator `+=` performs the addition while modifying the variable and is equivalent to `a = a + v`.  This combination of arithmetic operator and assignment is applicable to all arithmetic operations and makes for readable code.
+Python (and most other languages in the C family) provides
+[in-place operators]({{ page.root }}/reference/#in-place-operators)
+that work like this:
+>
+> ~~~
+> x = 1  # original value
+> x += 1 # add one to x, assigning result back to x
+> x *= 3 # multiply x by 3
+> print(x)
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> 6
+> ~~~
+> {: .output}
+
+
 
 > ## Combining Strings
 >
