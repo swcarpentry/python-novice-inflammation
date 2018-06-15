@@ -50,6 +50,18 @@ first and last: 1 7
 ~~~
 {: .output}
 
+~~~
+print('The first, second and third value of odds:', odds[0], odds[1], odds[2])
+~~~
+{: .language-python}
+
+~~~
+The first, second and third value of odds: 1 3 5
+~~~
+{: .output}
+
+![Values and their index in the list odds](../fig/03_lists_oddslistindex.svg)
+
 and if we loop over a list,
 the loop variable is assigned elements one at a time:
 
