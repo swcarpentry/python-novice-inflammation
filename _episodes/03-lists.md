@@ -60,7 +60,7 @@ The first, second and third value of odds: 1 3 5
 ~~~
 {: .output}
 
-![Values and their index in the list odds](../fig/03_lists_oddslistindex.svg)
+![Values and their index in the list odds](../fig/03_lists_oddsindex.svg)
 
 and if we loop over a list,
 the loop variable is assigned elements one at a time:
