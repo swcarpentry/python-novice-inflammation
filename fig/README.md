@@ -54,10 +54,37 @@ editor and follow these steps:
 Ubuntu font can be downloaded for free from here:
   <https://design.ubuntu.com/font/>
 
+
 ## Not an SVG expert
 
 Please don't be discouraged by the guidelines above. If you can't follow
 them, please submit your contribution "as is" and mention that you could not
-follow the guidelines for SVG. Maintainers will be happy to help you. Be sure,
-however, that you allow maintainers to commit to the branch you used to submit
+follow the guidelines for SVG. Maintainers will be happy to help you. Make sure,
+however, that maintainers can commit to the branch you used to submit
 your contribution.
+
+## "Cleaning up" SVG files
+
+If you used an application like LibreOffice or OpenOffice to create your SVG artwork,
+consider cleaning up produced files following these three steps:
+
+1. Clean the file with [svgcleaner](https://github.com/RazrFalcon/svgcleaner):
+
+   ```
+   svgcleaner your-file.svg cleaned-01.svg
+   ```
+
+2. Clean the file with [svgo](https://github.com/svg/svgo):
+
+   ```
+   svgo -i cleaned-01.svg -o cleaned-02.svg
+   ```
+
+3. Clean/format the file with [scour](https://www.codedread.com/scour/):
+
+   ```
+   scour cleaned-02.svg cleaned-03.svg
+   ```
+
+Should any changes be necessary, it will by much easier for maintainers to work with "cleaned" SVG files.
+
