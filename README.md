@@ -1,9 +1,31 @@
 # Programming with Python
+
 [![GitHub release](https://img.shields.io/github/release/swcarpentry/python-novice-inflammation.svg)](https://github.com/swcarpentry/python-novice-inflammation/releases)
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
 [![Slack Status](https://img.shields.io/badge/Slack_Channel-swc--py--inflammation-E01563.svg)](https://swcarpentry.slack.com/messages/C9Y0L6MF0)
 
 An introduction to Python for non-programmers using inflammation data.
+
+Current maintainers:
+
+* [Trevor Bekolay][trevor_bekolay]
+* [Maxim Belkin][maxim_belkin]
+* [Anne Fouilloux][anne_fouilloux]
+* [Valentina Staneva][valentina_staneva]
+* [Mike Trizna][mike_trizna]
+* [Greg Wilson][greg_wilson], creator of [Software Carpentry][swc_history]
+
+The goal of this lesson is to teach novice programmers to write modular code to
+perform a data analysis. Python is used to teach these skills because it is a
+commonly used programming language in many scientific disciplines. However, the
+emphasis is not on teaching every aspect of Python, but instead on
+language agnostic principles like automation with loops and encapsulation with
+functions (see [Best Practices for Scientific Computing][best-practices] to
+learn more). This lesson is also available in [R][R]
+and [MATLAB][MATLAB].
+
+The example used in this lesson analyzes a set of 12 data files with
+inflammation data collected from a trial for a new treatment for arthritis (the data was simulated). Learners are shown how it is better to create a function and apply it to each of the 12 files using a loop instead of using copy-paste to analyze the 12 files individually.
 
 Rendered version of the lesson: <https://swcarpentry.github.io/python-novice-inflammation/>
 
@@ -39,3 +61,6 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [valentina_staneva]: http://software-carpentry.org/team/#staneva_valentina
 [greg_wilson]: https://github.com/gvwilson
 [swc_history]: https://software-carpentry.org/scf/history/
+[best-practices]: http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745
+[R]: https://github.com/swcarpentry/r-novice-inflammation
+[MATLAB]: https://github.com/swcarpentry/matlab-novice-inflammation
