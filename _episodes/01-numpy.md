@@ -152,45 +152,48 @@ weight in kilograms is now: 65.0
 ~~~
 {: .output}
 
-A variable is analogous to a sticky note with a name written on it:
-assigning a value to a variable is like putting that sticky note on a particular value.
-
-![Variables as Sticky Notes](../fig/python-sticky-note-variables-01.svg)
-
-This means that assigning a value to one variable does **not** change the values of other variables.
-For example, let's store the subject's weight in pounds in its own variable:
-
-~~~
-# There are 2.2 pounds per kilogram
-weight_lb = 2.2 * weight_kg
-print(weight_kg_text, weight_kg, 'and in pounds:', weight_lb)
-~~~
-{: .language-python}
-
-~~~
-weight in kilograms: 65.0 and in pounds: 143.0
-~~~
-{: .output}
-
-![Creating Another Variable](../fig/python-sticky-note-variables-02.svg)
-
-Let's now change `weight_kg`:
-
-~~~
-weight_kg = 100.0
-print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
-~~~
-{: .language-python}
-
-~~~
-weight in kilograms is now: 100.0 and weight in pounds is still: 143.0
-~~~
-{: .output}
-
-![Updating a Variable](../fig/python-sticky-note-variables-03.svg)
-
-Since `weight_lb` doesn't remember where its value came from,
-it isn't automatically updated when `weight_kg` changes.
+> ## Variables as Sticky Notes
+>
+> A variable is analogous to a sticky note with a name written on it:
+> assigning a value to a variable is like putting that sticky note on a particular value.
+>
+> ![Variables as Sticky Notes](../fig/python-sticky-note-variables-01.svg)
+>
+> This means that assigning a value to one variable does **not** change the values of other variables.
+> For example, let's store the subject's weight in pounds in its own variable:
+>
+> ~~~
+> # There are 2.2 pounds per kilogram
+> weight_lb = 2.2 * weight_kg
+> print(weight_kg_text, weight_kg, 'and in pounds:', weight_lb)
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> weight in kilograms: 65.0 and in pounds: 143.0
+> ~~~
+> {: .output}
+>
+> ![Creating Another Variable](../fig/python-sticky-note-variables-02.svg)
+>
+> Let's now change `weight_kg`:
+>
+> ~~~
+> weight_kg = 100.0
+> print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> weight in kilograms is now: 100.0 and weight in pounds is still: 143.0
+> ~~~
+> {: .output}
+>
+> ![Updating a Variable](../fig/python-sticky-note-variables-03.svg)
+>
+> Since `weight_lb` doesn't remember where its value came from,
+> it isn't automatically updated when `weight_kg` changes.
+{: .callout}
 
 
 
