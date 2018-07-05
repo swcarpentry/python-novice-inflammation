@@ -147,7 +147,9 @@ seemed to rise like a straight line, one unit per day.
 We can check for this inside the `for` loop we wrote with the following conditional:
 
 ~~~
-if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+max1 = numpy.max(data, axis=0)[0]
+max2 = numpy.max(data, axis=0)[20]
+if max1 == 0 and max2 == 20:
     print('Suspicious looking maxima!')
 ~~~
 {: .language-python}
@@ -174,7 +176,9 @@ Let's test that out:
 
 ~~~
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+max1 = numpy.max(data, axis=0)[0]
+max2 = numpy.max(data, axis=0)[20]
+if max1 == 0 and max2 == 20:
     print('Suspicious looking maxima!')
 elif numpy.sum(numpy.min(data, axis=0)) == 0:
     print('Minima add up to zero!')
@@ -190,7 +194,9 @@ Suspicious looking maxima!
 
 ~~~
 data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
-if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+max1 = numpy.max(data, axis=0)[0]
+max2 = numpy.max(data, axis=0)[20]
+if max1 == 0 and max2 == 20:
     print('Suspicious looking maxima!')
 elif numpy.sum(numpy.min(data, axis=0)) == 0:
     print('Minima add up to zero!')
