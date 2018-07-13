@@ -143,13 +143,16 @@ import numpy
 {: .language-python}
 
 In the first couple of plots, the maximum inflammation per day
-seemed to rise like a straight line, one unit per day.
-We can check for this inside the `for` loop we wrote with the following conditional:
+seemed to rise like a straight line,
+ one unit per day which is suspicious.
+We can check for this inside the `for` loop we wrote in the previous episode by doing a quick check.
+The below is checking if the maximum on day 0 and day 20 is equal to the day number, 0 and 20 respectively.
+This is a simplified check, only checking day 0 and day 20 but will alert us to suspicious data.
 
 ~~~
-max1 = numpy.max(data, axis=0)[0]
-max2 = numpy.max(data, axis=0)[20]
-if max1 == 0 and max2 == 20:
+max_day_0 = numpy.max(data, axis=0)[0]
+max_day_20 = numpy.max(data, axis=0)[20]
+if max_day_0 == 0 and max_day_20 == 20:
     print('Suspicious looking maxima!')
 ~~~
 {: .language-python}
@@ -176,9 +179,9 @@ Let's test that out:
 
 ~~~
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-max1 = numpy.max(data, axis=0)[0]
-max2 = numpy.max(data, axis=0)[20]
-if max1 == 0 and max2 == 20:
+max_day_0 = numpy.max(data, axis=0)[0]
+max_day_20 = numpy.max(data, axis=0)[20]
+if max_day_0 == 0 and max_day_20 == 20:
     print('Suspicious looking maxima!')
 elif numpy.sum(numpy.min(data, axis=0)) == 0:
     print('Minima add up to zero!')
@@ -194,9 +197,9 @@ Suspicious looking maxima!
 
 ~~~
 data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
-max1 = numpy.max(data, axis=0)[0]
-max2 = numpy.max(data, axis=0)[20]
-if max1 == 0 and max2 == 20:
+max_day_0 = numpy.max(data, axis=0)[0]
+max_day_20 = numpy.max(data, axis=0)[20]
+if max_day_0 == 0 and max_day_20 == 20:
     print('Suspicious looking maxima!')
 elif numpy.sum(numpy.min(data, axis=0)) == 0:
     print('Minima add up to zero!')
