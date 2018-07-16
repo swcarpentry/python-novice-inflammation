@@ -135,6 +135,14 @@ at least one test is true
 
 Now that we've seen how conditionals work,
 we can use them to check for the suspicious features we saw in our inflammation data.
+We are about to use functions provided by the `numpy` module again.
+Therefore, if you're working in a new Python session, make sure to load the 
+module with:
+
+~~~
+import numpy
+~~~
+{: .language-python}
 
 In the first couple of plots, the maximum inflammation per day
 seemed to rise like a straight line, one unit per day.
