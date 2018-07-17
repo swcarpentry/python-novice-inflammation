@@ -111,17 +111,19 @@ does not.
 >
 > Data which can be modified in place is called [mutable]({{ page.root }}/reference/#mutable),
 > while data which cannot be modified is called [immutable]({{ page.root }}/reference/#immutable).
-> Strings and numbers are immutable. This does not mean that variables with string or number values
-> are constants, but when we want to change the value of a string or number variable, we can only
+> Strings and numbers are immutable.
+> This does not mean that variables with string or number values are constants,
+> but when we want to change the value of a string or number variable, we can only
 > replace the old value with a completely new value.
 >
-> Lists and arrays, on the other hand, are mutable: we can modify them after they have been
-> created. We can change individual elements, append new elements, or reorder the whole list.  For
-> some operations, like sorting, we can choose whether to use a function that modifies the data in
-> place or a function that returns a modified copy and leaves the original unchanged.
+> Lists and arrays, on the other hand, are mutable: we can modify them after they have been created.
+> We can change individual elements, append new elements, or reorder the whole list.
+> For some operations, like sorting, we can choose whether to use a function that modifies the data
+> in-place or a function that returns a modified copy and leaves the original unchanged.
 >
-> Be careful when modifying data in place.  If two variables refer to the same list, and you modify
-> the list value, it will change for both variables!
+> Be careful when modifying data in-place.
+> If two variables refer to the same list, and you modify the list value,
+> it will change for both variables!
 >
 > ~~~
 > salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
@@ -173,7 +175,8 @@ does not.
 > Here is a visual example of how indexing a list of lists `x` works:
 >
 > <a href='https://twitter.com/hadleywickham/status/643381054758363136'>
-> ![The first element of a list. Adapted from @hadleywickham's tweet about R lists.](../fig/indexing_lists_python.png)</a>
+> ![The first element of a list. Adapted from @hadleywickham.](../fig/indexing_lists_python.png)
+> </a>
 >
 > Using the previously declared list `x`, these would be the results of the
 > index operations shown in the image:
@@ -214,7 +217,7 @@ does not.
 
 > ## Heterogeneous Lists
 > Lists in Python can contain elements of different types. Example:
-> ~~~ 
+> ~~~
 > sample_ages = [10, 12.5, 'Unknown']
 > ~~~
 {: .callout}
