@@ -158,9 +158,10 @@ of the loop body (e.g. `end for`); what is indented after the `for` statement be
 > ## What's in a name?
 >
 >
-> In the example above, the loop variable was given the name `letter` as a descriptive variable chosen to make the code easily understandable.  However,
-> we can choose any name we want for variables. We might just as easily have chosen the name
-> `banana` for the loop variable, as long as we use the same name when we invoke the variable inside
+> In the example above, the loop variable was given a descriptive 
+name `letter`, making it easy to understand the code.  However,
+> we might just as easily have chosen any other name, such as `char`, `c`, or 
+> even `banana` as long as we use the same name inside
 > the loop:
 >
 > ~~~
