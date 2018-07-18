@@ -97,8 +97,8 @@ Here's a better approach:
 
 ~~~
 word = 'lead'
-for char in word:
-    print(char)
+for letter in word:
+    print(letter)
 
 ~~~
 {: .language-python}
@@ -116,8 +116,8 @@ hundred-letter string --- and more robust as well:
 
 ~~~
 word = 'oxygen'
-for char in word:
-    print(char)
+for letter in word:
+    print(letter)
 ~~~
 {: .language-python}
 
@@ -145,7 +145,7 @@ Using the oxygen example above, the loop might look like this:
 
 ![loop_image](../fig/loops_image.png)
 
-where each character (`char`) in the variable `word` is looped through and printed one character
+where each character (`letter`) in the variable `word` is looped through and printed one character
 after another. The numbers in the diagram denote which loop cycle the character was printed in (1
 being the first loop, and 6 being the final loop).
 
@@ -158,8 +158,7 @@ of the loop body (e.g. `end for`); what is indented after the `for` statement be
 > ## What's in a name?
 >
 >
-> In the example above, the loop variable was given the name `char` as a mnemonic;
-> it is short for 'character'.
+> In the example above, the loop variable was given the name `letter` as a mnemonic;
 > We can choose any name we want for variables. We might just as easily have chosen the name
 > `banana` for the loop variable, as long as we use the same name when we invoke the variable inside
 > the loop:
