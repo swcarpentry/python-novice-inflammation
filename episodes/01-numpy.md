@@ -100,7 +100,7 @@ print(weight_kg)
 {: .language-python}
 
 ~~~
-60
+60.0
 ~~~
 {: .output}
 
@@ -111,7 +111,7 @@ print(weight_kg_text, weight_kg)
 ~~~
 {: .language-python}
 ~~~
-weight in kilograms: 60
+weight in kilograms: 60.0
 ~~~
 {: .output}
 
@@ -134,7 +134,7 @@ print(weight_kg)
 {: .language-python}
 
 ~~~
-60
+60.0
 ~~~
 {: .output}
 
@@ -241,7 +241,7 @@ belongs to the `numpy` library. This [dotted notation]({{ page.root }}/reference
 is used everywhere in Python: the thing that appears before the dot contains the thing that
 appears after.
 
-As an example, John Smith is the John that belongs to the Smith family,
+As an example, John Smith is the John that belongs to the Smith family.
 We could use the dot notation to write his name `smith.john`,
 just as `loadtxt` is a function that belongs to the `numpy` library.
 
@@ -485,7 +485,7 @@ doubledata = data * 2.0
 {: .language-python}
 
 will create a new array `doubledata`
-each elements of which is twice the value of the corresponding element in `data`:
+each element of which is twice the value of the corresponding element in `data`:
 
 ~~~
 print('original:')
@@ -711,7 +711,7 @@ which is the average inflammation per patient across all days.
 The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers," and
 the best way to develop insight is often to visualize data.  Visualization deserves an entire
 lecture of its own, but we can explore a few features of Python's `matplotlib` library here.  While
-there is no official plotting library, `matplotlib` is the _de facto_ the standard.  First, we will
+there is no official plotting library, `matplotlib` is the _de facto_ standard.  First, we will
 import the `pyplot` module from `matplotlib` and use two of its functions to create and display a
 heat map of our data:
 
