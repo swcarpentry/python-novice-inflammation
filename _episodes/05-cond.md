@@ -142,17 +142,19 @@ import numpy
 ~~~
 {: .language-python}
 
-From the first couple of plots we saw that maximum daily inflammation exhibits
-a suspicious behavior and raises one unit a day.
-Let's check for such behavior and report it as suspicious.
-However, let's not check the entire study but instead do a simplified test
-and check if maximum inflammation in the beginning and in the middle of the study were equal to the day number.
+From the first couple of plots, we saw that maximum daily inflammation exhibits
+a strange behavior and raises one unit a day.
+Wouldn't it be a good idea to detect such behavior and report it as suspicious?
+Let's do that! 
+However, instead of checking every single day of the study, let's merely check
+if maximum inflammation in the beginning (day 0) and in the middle (day 20) of 
+the study are equal to the corresponding day numbers.
 
 ~~~
-max_day_0 = numpy.max(data, axis=0)[0]
-max_day_20 = numpy.max(data, axis=0)[20]
+max_inflammation_0 = numpy.max(data, axis=0)[0]
+max_inflammation_20 = numpy.max(data, axis=0)[20]
 
-if max_day_0 == 0 and max_day_20 == 20:
+if max_inflammation_0 == 0 and max_inflammation_20 == 20:
     print('Suspicious looking maxima!')
 ~~~
 {: .language-python}
@@ -180,10 +182,10 @@ Let's test that out:
 ~~~
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
-max_day_0 = numpy.max(data, axis=0)[0]
-max_day_20 = numpy.max(data, axis=0)[20]
+max_inflammation_0 = numpy.max(data, axis=0)[0]
+max_inflammation_20 = numpy.max(data, axis=0)[20]
 
-if max_day_0 == 0 and max_day_20 == 20:
+if max_inflammation_0 == 0 and max_inflammation_20 == 20:
     print('Suspicious looking maxima!')
 elif numpy.sum(numpy.min(data, axis=0)) == 0:
     print('Minima add up to zero!')
@@ -200,10 +202,10 @@ Suspicious looking maxima!
 ~~~
 data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
 
-max_day_0 = numpy.max(data, axis=0)[0]
-max_day_20 = numpy.max(data, axis=0)[20]
+max_inflammation_0 = numpy.max(data, axis=0)[0]
+max_inflammation_20 = numpy.max(data, axis=0)[20]
 
-if max_day_0 == 0 and max_day_20 == 20:
+if max_inflammation_0 == 0 and max_inflammation_20 == 20:
     print('Suspicious looking maxima!')
 elif numpy.sum(numpy.min(data, axis=0)) == 0:
     print('Minima add up to zero!')
