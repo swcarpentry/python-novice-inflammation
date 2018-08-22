@@ -29,10 +29,10 @@ $color-testimonial: #fc8dc1 !default;
 //----------------------------------------
 
 @mixin cdSetup($color) {
-  color: $color;
-  border-left: solid 5px $color;
-  margin-bottom: 0px;
-  border-radius: 4px 0 0 4px;
+    color: $color;
+    border-left: solid 5px $color;
+    margin: 15px;
+    border-radius: 4px 0 0 4px;
 }
 
 .error  { @include cdSetup($color-error); }
@@ -81,7 +81,10 @@ $codeblock-padding: 5px !default;
   padding-right: 0;
   border: 1px solid;
   border-color: $color;
+  border-radius: 4px;
   padding-bottom: $codeblock-padding;
+
+  margin: 15px;
 
   h2 {
     padding-top: $codeblock-padding;
@@ -126,6 +129,10 @@ $codeblock-padding: 5px !default;
 font-size: 18px;
 }
 
+blockquote p {
+    margin: 5px;
+}
+
 //----------------------------------------
 // Override Bootstrap settings.
 //----------------------------------------
@@ -137,9 +144,20 @@ code {
   background-color: #e7e7e7;
 }
 
-img {
-  max-width: 100%;
+article img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
 }
+
+article h2 {
+  margin: 48px 0 16px;
+  border-bottom: solid 1px #eaecef;
+  padding-bottom: 0.3em;
+  line-height: 1.25;
+}
+
+article h3 { margin: 40px 0 16px; }
 
 //----------------------------------------
 // Miscellaneous.
@@ -156,7 +174,7 @@ img {
 footer .copyright,
 footer .help-links
 {
-    font-size: 18px;
+    font-size: inherit;
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: 500;
@@ -181,6 +199,37 @@ ol {
 span.fold-unfold {
   margin-left: 1em;
   opacity: 0.5;
+}
+
+
+//----------------------------------------
+// Life cycle box
+//----------------------------------------
+
+div.life-cycle {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: -1px;
+    border-radius: 0;
+}
+
+.pre-alpha {
+    color: #a94442;
+    background: #f2dede;
+}
+
+.alpha {
+    color: #8a6d3b;
+    background: #fcf8e3;
+}
+
+.beta {
+    color: #31708f;
+    background: #d9edf7;
 }
 
 
