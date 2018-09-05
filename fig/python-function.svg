@@ -1,218 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   height="130"
-   width="340">
+<svg height="130" width="340" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
-    <marker
-       style="overflow:visible"
-       id="Arrow2Mend"
-       refX="0"
-       refY="0"
-       orient="auto">
-      <path
-         transform="scale(-0.6)"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
-         id="path1012" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="Arrow1Send"
-       refX="0"
-       refY="0"
-       orient="auto">
-      <path
-         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
-         d="M 0,0 5,-5 -12.5,0 5,5 Z"
-         id="path1000" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="Arrow1Lend"
-       refX="0"
-       refY="0"
-       orient="auto">
-      <path
-         transform="matrix(-0.8,0,0,-0.8,-10,0)"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
-         d="M 0,0 5,-5 -12.5,0 5,5 Z"
-         id="path988" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="Arrow2Mend-6"
-       refX="0"
-       refY="0"
-       orient="auto">
-      <path
-         transform="scale(-0.6)"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
-         id="path1012-0" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="Arrow2Mend-0"
-       refX="0"
-       refY="0"
-       orient="auto">
-      <path
-         transform="scale(-0.6)"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
-         id="path1012-2" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="Arrow2Mend-4"
-       refX="0"
-       refY="0"
-       orient="auto">
-      <path
-         transform="scale(-0.6)"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
-         id="path1012-3" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="Arrow2Mend-7"
-       refX="0"
-       refY="0"
-       orient="auto">
-      <path
-         transform="scale(-0.6)"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
-         id="path1012-4" />
+    <marker id="arrowhead" orient="auto" overflow="visible" refX="0" refY="0">
+      <path d="m8.7 4-10.9-4 10.9-4c-1.7 2.4-1.7 5.6 0 8z" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".6" transform="scale(-.6)"/>
     </marker>
   </defs>
-  <text
-     id="text924"
-     y="115.12674"
-     x="273.94073"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.29999995;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-     xml:space="preserve"><tspan
-       id="tspan926"
-       y="151.12674"
-       x="273.94073" /></text>
-  <text
-     id="text944"
-     y="56.334358"
-     x="34.196289"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.79999995;font-family:monospace;-inkscape-font-specification:monospace;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-     xml:space="preserve"><tspan
-       style="line-height:1.79999995;text-align:start;text-anchor:start"
-       y="56.334358"
-       x="34.196289"
-       id="tspan942"><tspan
-   id="tspan950"
-   style="font-weight:bold;fill:#008000;fill-opacity:1">def</tspan> <tspan
-   id="tspan958"
-   style="fill:#0000ff;fill-opacity:1">fahr_to_celsius</tspan><tspan
-   id="tspan960"
-   style="fill:#6e5494;fill-opacity:1">(temp):</tspan></tspan><tspan
-       style="line-height:1.79999995;text-align:start;text-anchor:start"
-       id="tspan946"
-       y="85.134361"
-       x="34.196289">    <tspan
-   id="tspan954"
-   style="font-weight:bold;fill:#008000;fill-opacity:1">return</tspan> <tspan
-   id="tspan962"
-   style="fill:#6e5494;fill-opacity:1">((temp - 32) * (5/9))</tspan></tspan></text>
-  <path
-     d="m 66.125657,14.744737 -14.73,21.73"
-     stroke-miterlimit="10"
-     pointer-events="none"
-     id="path12-2"
-     style="fill:none;stroke:#000000;stroke-miterlimit:10;marker-end:url(#Arrow2Mend)" />
-  <path
-     d="m 153.7847,14.744737 -14.73,21.73"
-     stroke-miterlimit="10"
-     pointer-events="none"
-     id="path12-2-5"
-     style="fill:none;stroke:#000000;stroke-miterlimit:10;marker-end:url(#Arrow2Mend-6)" />
-  <path
-     d="m 263.92241,14.744737 -14.73,21.73"
-     stroke-miterlimit="10"
-     pointer-events="none"
-     id="path12-2-9"
-     style="fill:none;stroke:#000000;stroke-miterlimit:10;marker-end:url(#Arrow2Mend-0)" />
-  <path
-     d="m 220.18818,116.47262 14.73,-21.729993"
-     stroke-miterlimit="10"
-     pointer-events="none"
-     id="path12-2-51"
-     style="fill:none;stroke:#000000;stroke-miterlimit:10;marker-end:url(#Arrow2Mend-4)" />
-  <path
-     d="M 86.141567,116.47263 100.87157,94.742627"
-     stroke-miterlimit="10"
-     pointer-events="none"
-     id="path12-2-3"
-     style="fill:none;stroke:#000000;stroke-miterlimit:10;marker-end:url(#Arrow2Mend-7)" />
-  <text
-     id="text2016"
-     y="10.556816"
-     x="58.321716"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.29999995;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-     xml:space="preserve"><tspan
-       style="font-size:12px"
-       y="10.556816"
-       x="58.321716"
-       id="tspan2014">def statement</tspan></text>
-  <text
-     id="text2020"
-     y="10.556816"
-     x="153.93976"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.29999995;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-     xml:space="preserve"><tspan
-       y="10.556816"
-       x="153.93976"
-       id="tspan2018">name</tspan></text>
-  <text
-     id="text2024"
-     y="10.556816"
-     x="256.05402"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.29999995;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-     xml:space="preserve"><tspan
-       y="10.556816"
-       x="256.05402"
-       id="tspan2022">parameter names</tspan></text>
-  <text
-     id="text2028"
-     y="128.04475"
-     x="93.362488"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.29999995;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-     xml:space="preserve"><tspan
-       y="128.04475"
-       x="93.362488"
-       id="tspan2026">return statement</tspan></text>
-  <text
-     id="text2032"
-     y="128.39046"
-     x="227.582"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.29999995;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-     xml:space="preserve"><tspan
-       y="128.39046"
-       x="227.582"
-       id="tspan2030">return value</tspan></text>
-  <path
-     id="rect2034"
-     d="m 48.900417,61.936447 h -13.71825 v 34.49153 h 13.71825"
-     style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
-  <text
-     id="text2039"
-     y="82.49276"
-     x="14.870117"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.29999995;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-     xml:space="preserve"><tspan
-       y="82.49276"
-       x="14.870117"
-       id="tspan2037">body</tspan></text>
+  <text font-family="monospace" font-size="16" text-anchor="middle" x="34.2" xml:space="preserve" y="56.3"><tspan text-anchor="start" x="34.2" y="56.3"><tspan fill="#008000" font-weight="bold">def</tspan> <tspan fill="#00f">fahr_to_celsius</tspan><tspan fill="#6e5494">(temp):</tspan></tspan><tspan text-anchor="start" x="34.2" y="85.1">    <tspan fill="#008000" font-weight="bold">return</tspan> <tspan fill="#6e5494">((temp - 32) * (5/9))</tspan></tspan></text>
+  <g fill="none" marker-end="url(#arrowhead)" pointer-events="none" stroke="#000" stroke-miterlimit="10">
+    <path d="m66.1 14.7-14.7 21.7"/>
+    <path d="m153.8 14.7-14.7 21.7"/>
+    <path d="m263.9 14.7-14.7 21.7"/>
+    <path d="m220.2 116.5 14.7-21.7"/>
+    <path d="m86.1 116.5 14.8-21.8"/>
+  </g>
+  <g font-size="12" font-family="sans-serif" text-anchor="middle">
+    <text x="58.3" y="10.6">def statement</text>
+    <text x="153.9" y="10.6">name</text>
+    <text x="256.1" y="10.6">parameter names</text>
+    <text x="14.9" y="82.5">body</text>
+    <text x="93.4" y="128">return statement</text>
+    <text x="227.6" y="128.4">return value</text>
+  </g>
+  <path d="m48.9 61.9h-13.7v34.5h13.7" fill="none" stroke="#000"/>
 </svg>
