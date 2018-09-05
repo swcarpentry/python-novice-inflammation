@@ -37,6 +37,10 @@ for a given file.
 
 ~~~
 $ python ../code/readings_04.py --mean inflammation-01.csv
+~~~
+{: .language-bash}
+
+~~~
 5.45
 5.425
 6.1
@@ -45,12 +49,12 @@ $ python ../code/readings_04.py --mean inflammation-01.csv
 7.05
 5.9
 ~~~
-{: .language-bash}
+{: .output}
 
 We might also want to look at the minimum of the first four lines
 
 ~~~
-$ head -4 inflammation-01.csv | python ../code/readings_04.py --min
+$ head -4 inflammation-01.csv | python ../code/readings_06.py --min
 ~~~
 {: .language-bash}
 
@@ -63,8 +67,10 @@ $ python ../code/readings_04.py --max inflammation-*.csv
 
 Our scripts should do the following:
 
-1. If no filename is given on the command line, read data from [standard input]({{ page.root }}/reference/#standard-input).
-2. If one or more filenames are given, read data from them and report statistics for each file separately.
+1. If no filename is given on the command line, read data from
+[standard input]({{ page.root }}/reference/#standard-input).
+2. If one or more filenames are given, read data from them and report statistics for each file
+separately.
 3. Use the `--min`, `--mean`, or `--max` flag to determine what statistic to print.
 
 To make this work,
@@ -141,8 +147,8 @@ sys.argv is ['argv_list.py', 'first', 'second', 'third']
 
 then Python adds each of those arguments to that magic list.
 
-With this in hand,
-let's build a version of `readings.py` that always prints the per-patient mean of a single data file.
+With this in hand, let's build a version of `readings.py` that always prints
+the per-patient mean of a single data file.
 The first step is to write a function that outlines our implementation,
 and a placeholder for the function that does the actual work.
 By convention this function is usually called `main`,
@@ -309,7 +315,8 @@ $ python ../code/readings_02.py inflammation-01.csv
 > which handles common cases in a systematic way,
 > and also makes it easy for us to provide sensible error messages for our users.
 > We will not cover this module in this lesson
-> but you can go to Tshepang Lekhonkhobe's [Argparse tutorial](http://docs.python.org/dev/howto/argparse.html)
+> but you can go to Tshepang Lekhonkhobe's
+> [Argparse tutorial](http://docs.python.org/dev/howto/argparse.html)
 > that is part of Python's Official Documentation.
 {: .callout}
 
@@ -593,7 +600,8 @@ Since there's no way for us to do this,
 our program is stuck,
 and we have to halt it using the `Interrupt` option from the `Kernel` menu in the Notebook.
 
-We now need to rewrite the program so that it loads data from `sys.stdin` if no filenames are provided.
+We now need to rewrite the program so that it loads data from `sys.stdin`
+if no filenames are provided.
 Luckily,
 `numpy.loadtxt` can handle either a filename or an open file as its first parameter,
 so we don't actually need to change `process`.
@@ -719,7 +727,8 @@ the program now does everything we set out to do.
 > ## Finding Particular Files
 >
 > Using the `glob` module introduced [earlier]({{ page.root }}/04-files/),
-> write a simple version of `ls` that shows files in the current directory with a particular suffix.
+> write a simple version of `ls` that shows files in the current directory
+> with a particular suffix.
 > A call to this script should look like this:
 >
 > ~~~
@@ -757,7 +766,8 @@ the program now does everything we set out to do.
 
 > ## Changing Flags
 >
-> Rewrite `readings.py` so that it uses `-n`, `-m`, and `-x` instead of `--min`, `--mean`, and `--max` respectively.
+> Rewrite `readings.py` so that it uses `-n`, `-m`, and `-x`
+> instead of `--min`, `--mean`, and `--max` respectively.
 > Is the code easier to read?
 > Is the program easier to understand?
 >
@@ -895,7 +905,8 @@ the program now does everything we set out to do.
 
 > ## A File-Checker
 >
-> Write a program called `check.py` that takes the names of one or more inflammation data files as arguments
+> Write a program called `check.py` that takes the names of one or more
+> inflammation data files as arguments
 > and checks that all the files have the same number of rows and columns.
 > What is the best way to test your program?
 >
@@ -923,7 +934,10 @@ the program now does everything we set out to do.
 > > def row_col_count(filename):
 > >     try:
 > >         nrow, ncol = numpy.loadtxt(filename, delimiter=',').shape
-> >     except ValueError: #get this if file doesn't have same number of rows and columns, or if it has non-numeric content
+> >     except ValueError:
+> >         # 'ValueError' error is raised when numpy encounters lines that
+> >         # have different number of data elements in them than the rest of the lines,
+> >         # or when lines have non-numeric elements
 > >         nrow, ncol = (0, 0)
 > >     return nrow, ncol
 > >
@@ -938,7 +952,8 @@ the program now does everything we set out to do.
 > Write a program called `line_count.py` that works like the Unix `wc` command:
 >
 > *   If no filenames are given, it reports the number of lines in standard input.
-> *   If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.
+> *   If one or more filenames are given, it reports the number of lines in each,
+>     followed by the total number of lines.
 >
 > > ## Solution
 > > ~~~
