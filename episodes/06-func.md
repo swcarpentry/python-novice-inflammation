@@ -52,8 +52,6 @@ def fahr_to_celsius(temp):
 
 ![The Blueprint for a Python Function](../fig/python-function.svg)
 
-<!--- see https://gist.github.com/wd15/2b4ffbe5ce0d0ddb8a5b to
-regenerate the above figure --->
 
 The function definition opens with the keyword `def` followed by the
 name of the function (`fahr_to_celsius`) and a parenthesized list of parameter names (`temp`). The
@@ -266,9 +264,9 @@ but there are a few simple tests that will reassure us:
 ~~~
 print('original min, mean, and max are:', numpy.min(data), numpy.mean(data), numpy.max(data))
 offset_data = offset_mean(data, 0)
-print('min, mean, and max of offset data are:', 
-      numpy.min(offset_data), 
-      numpy.mean(offset_data), 
+print('min, mean, and max of offset data are:',
+      numpy.min(offset_data),
+      numpy.mean(offset_data),
       numpy.max(offset_data))
 ~~~
 {: .language-python}
@@ -301,7 +299,7 @@ but we probably wouldn't notice if they were different in the sixth decimal plac
 Let's do this instead:
 
 ~~~
-print('difference in standard deviations before and after:', 
+print('difference in standard deviations before and after:',
       numpy.std(data) - numpy.std(offset_data))
 ~~~
 {: .language-python}
@@ -323,7 +321,7 @@ The usual way to put documentation in software is
 to add [comments]({{ page.root }}/reference/#comment) like this:
 
 ~~~
-# offset_mean(data, target_mean_value): 
+# offset_mean(data, target_mean_value):
 # return a new array containing the original data with its mean offset to match the desired value.
 def offset_mean(data, target_mean_value):
     return (data - numpy.mean(data)) + target_mean_value
