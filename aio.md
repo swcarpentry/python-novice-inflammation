@@ -1,5 +1,8 @@
 ---
 ---
+
+{% include base_path.html %}
+
 <script>
   window.onload = function() {
     var lesson_episodes = [
@@ -20,7 +23,7 @@
         article_here.innerHTML = htmlDocArticle.innerHTML;
         }
       }
-      episode_url = "{{ page.root }}" + lesson_episodes[i];
+      episode_url = "{{ relative_root_path }}" + lesson_episodes[i];
       xmlHttp[i].open("GET", episode_url);
       xmlHttp[i].send(null);
     }
