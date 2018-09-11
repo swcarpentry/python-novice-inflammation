@@ -1,6 +1,9 @@
 ---
 title: Figures
 ---
+
+{% include base_path.html %}
+
 <script>
   window.onload = function() {
     var lesson_episodes = [
@@ -39,9 +42,7 @@ title: Figures
               title.innerHTML = "<strong>Figure " + image_num + ".</strong> " + image.alt;
               article_here.appendChild(title);
 
-              var img = document.createElement('img');
-              img.src = image.src;
-              article_here.appendChild(img);
+              article_here.appendChild(image.cloneNode(false));
 
               if (image_num < images.length) {
                 var hr = document.createElement('hr');
@@ -51,7 +52,7 @@ title: Figures
           }
         }
       }
-      episode_url = "{{ page.root }}" + lesson_episodes[i];
+      episode_url = "{{ relative_root_path }}" + lesson_episodes[i];
       xmlHttp[i].open("GET", episode_url);
       xmlHttp[i].send(null);
     }
