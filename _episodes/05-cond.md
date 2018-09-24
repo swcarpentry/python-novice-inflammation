@@ -89,7 +89,7 @@ else:
 {: .language-python}
 
 ~~~
-"-3 is negative"
+-3 is negative
 ~~~
 {: .output}
 
