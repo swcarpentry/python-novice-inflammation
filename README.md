@@ -4,8 +4,12 @@
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
 [![Slack Status](https://img.shields.io/badge/Slack_Channel-swc--py--inflammation-E01563.svg)](https://swcarpentry.slack.com/messages/C9Y0L6MF0)
 
+
+## About the Lesson
+
 An introduction to Python for non-programmers using inflammation data.
 
+<<<<<<< HEAD
 Current maintainers:
 
 * [Trevor Bekolay][trevor_bekolay]
@@ -15,19 +19,15 @@ Current maintainers:
 * [Mike Trizna][mike_trizna]
 * [Greg Wilson][greg_wilson], creator of [Software Carpentry][swc_history]
 
-The goal of this lesson is to teach novice programmers to write modular code to
-perform a data analysis. Python is used to teach these skills because it is a
-commonly used programming language in many scientific disciplines. However, the
-emphasis is not on teaching every aspect of Python, but instead on
-language agnostic principles like automation with loops and encapsulation with
-functions (see [Best Practices for Scientific Computing][best-practices] to
-learn more). This lesson is also available in [R][R]
-and [MATLAB][MATLAB].
+This lesson teaches novice programmers to write modular code to perform data analysis using Python. However, the emphasis is on teaching language-agnostic principles such as automation with loops and encapsulation with functions (see [Good enough practices in scientific computing][good-enough-practices] to
+learn more).
 
-The example used in this lesson analyzes a set of 12 data files with
-inflammation data collected from a trial for a new treatment for arthritis (the data was simulated). Learners are shown how it is better to create a function and apply it to each of the 12 files using a loop instead of using copy-paste to analyze the 12 files individually.
+The example used in this lesson analyses a set of 12 data files with inflammation data collected from a trial for a new treatment for arthritis (the data was simulated). Learners are shown how it is better to create a function and apply it to each of the 12 files using a loop instead of using copy-paste to analyse the 12 files individually.
 
 Rendered version of the lesson: <https://swcarpentry.github.io/python-novice-inflammation/>
+
+This lesson is also available in [R][R] and [MATLAB][MATLAB].
+
 
 ## Contributing
 [![Travis Build Status](https://travis-ci.org/swcarpentry/python-novice-inflammation.svg?branch=gh-pages)](https://travis-ci.org/swcarpentry/python-novice-inflammation)
@@ -61,6 +61,10 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [valentina_staneva]: http://software-carpentry.org/team/#staneva_valentina
 [greg_wilson]: https://github.com/gvwilson
 [swc_history]: https://software-carpentry.org/scf/history/
+<<<<<<< HEAD
 [best-practices]: http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745
+=======
+[good-enough-practices]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
+>>>>>>> - added "About the Lesson" section.
 [R]: https://github.com/swcarpentry/r-novice-inflammation
 [MATLAB]: https://github.com/swcarpentry/matlab-novice-inflammation
