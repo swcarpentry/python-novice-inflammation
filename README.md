@@ -9,10 +9,9 @@
 
 An introduction to Python for non-programmers using inflammation data.
 
-This lesson teaches novice programmers to write modular code to perform data analysis using Python. However, the emphasis is on teaching language-agnostic principles such as automation with loops and encapsulation with functions (see [Good enough practices in scientific computing][good-enough-practices] to
-learn more).
+This lesson teaches novice programmers to write modular code to perform data analysis using Python. The emphasis however is on teaching language-agnostic principles of programming such as automation with loops and encapsulation with functions (see [Good enough practices in scientific computing][good-enough-practices] to learn more).
 
-The example used in this lesson analyses a set of 12 data files with inflammation data collected from a trial for a new treatment for arthritis (the data was simulated). Learners are shown how it is better to create a function and apply it to each of the 12 files using a loop instead of using copy-paste to analyse the 12 files individually.
+The example used in this lesson analyses a set of 12 data files with simulated inflammation data collected from a trial for a new treatment for arthritis. Learners are shown how it is better to create a function and automate analysis instead of repeating each step manually.
 
 Rendered version of the lesson: <https://swcarpentry.github.io/python-novice-inflammation/>
 
@@ -51,14 +50,7 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [valentina_staneva]: http://software-carpentry.org/team/#staneva_valentina
 [greg_wilson]: https://github.com/gvwilson
 [swc_history]: https://software-carpentry.org/scf/history/
-<<<<<<< HEAD
-<<<<<<< HEAD
 [best-practices]: http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745
-=======
 [good-enough-practices]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
->>>>>>> - added "About the Lesson" section.
-=======
-[good-enough-practices]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
->>>>>>> - Cleaned up formatting
 [R]: https://github.com/swcarpentry/r-novice-inflammation
 [MATLAB]: https://github.com/swcarpentry/matlab-novice-inflammation
