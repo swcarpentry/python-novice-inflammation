@@ -20,7 +20,8 @@ assertion
     Programmers typically put assertions in their code to check for errors;
     if the assertion fails (i.e., if the expression evaluates as false),
     the program halts and produces an error message.
-    See also: [invariant](#invariant), [precondition](#precondition), [postcondition](#postcondition).
+    See also: [invariant](#invariant), [precondition](#precondition), 
+    [postcondition](#postcondition).
 
 assign
 :   To give a value a name by associating a variable with it.
@@ -42,7 +43,8 @@ case-sensitive
 comment
 :   A remark in a program that is intended to help human readers understand what is going on,
     but is ignored by the computer.
-    Comments in Python, R, and the Unix shell start with a `#` character and run to the end of the line;
+    Comments in Python, R, and the Unix shell start with a `#` character and
+    run to the end of the line;
     comments in SQL start with `--`,
     and other languages have other conventions.
 
@@ -61,7 +63,8 @@ default value
 :   A value to use for a [parameter](#parameter) if nothing is specified explicitly.
 
 defensive programming
-:   The practice of writing programs that check their own operation to catch errors as early as possible.
+:   The practice of writing programs that check their own operation
+    to catch errors as early as possible.
 
 delimiter
 :   A character or characters used to separate individual values,
@@ -162,7 +165,8 @@ outer loop
     See also: [inner loop](#inner-loop).
 
 parameter
-:   A variable named in the function's declaration that is used to hold a value passed into the call.
+:   A variable named in the function's declaration that is used to
+    hold a value passed into the call.
     The term is often used interchangeably (and inconsistently) with [argument](#argument).
 
 pipe
@@ -175,13 +179,15 @@ postcondition
     Postconditions are often represented using [assertions](#assertion).
 
 precondition
-:   A condition that must be true in order for a function (or other block of code) to run correctly.
+:   A condition that must be true in order for a function (or other block of code)
+    to run correctly.
 
 regression
 :   To re-introduce a bug that was once fixed.
 
 return statement
-:   A statement that causes a function to stop executing and return a value to its caller immediately.
+:   A statement that causes a function to stop executing and return a value 
+    to its caller immediately.
 
 RGB
 :   An [additive model](#additive-color-model)
@@ -248,7 +254,8 @@ tuple
 
 type
 :   The classification of something in a program (for example, the contents of a variable)
-    as a kind of number (e.g. [floating-point](#float), [integer](#integer)), [string](#string), or something else.
+    as a kind of number (e.g. [floating-point](#float), [integer](#integer)), 
+    [string](#string), or something else.
 
 type of error
 :   Indicates the nature of an error in a program. For example, in Python,
