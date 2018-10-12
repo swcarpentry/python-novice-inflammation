@@ -7,13 +7,23 @@ questions:
 - "How can I handle errors in Python programs?"
 objectives:
 - "To be able to read a traceback, and determine where the error took place and what type it is."
-- "To be able to describe the types of situations in which syntax errors, indentation errors, name errors, index errors, and missing file errors occur."
+- "To be able to describe the types of situations in which syntax errors,
+   indentation errors, name errors, index errors, and missing file errors occur."
 keypoints:
-- "Tracebacks can look intimidating, but they give us a lot of useful information about what went wrong in our program, including where the error occurred and what type of error it was."
-- "An error having to do with the 'grammar' or syntax of the program is called a `SyntaxError`. If the issue has to do with how the code is indented, then it will be called an `IndentationError`."
-- "A `NameError` will occur if you use a variable that has not been defined, either because you meant to use quotes around a string, you forgot to define the variable, or you just made a typo."
-- "Containers like lists and strings will generate errors if you try to access items in them that do not exist. This type of error is called an `IndexError`."
-- "Trying to read a file that does not exist will give you an `FileNotFoundError`. Trying to read a file that is open for writing, or writing to a file that is open for reading, will give you an `IOError`."
+- "Tracebacks can look intimidating, but they give us a lot of useful information about
+   what went wrong in our program, including where the error occurred and
+   what type of error it was."
+- "An error having to do with the 'grammar' or syntax of the program is called a `SyntaxError`.
+   If the issue has to do with how the code is indented,
+   then it will be called an `IndentationError`."
+- "A `NameError` will occur if you use a variable that has not been defined,
+   either because you meant to use quotes around a string, you forgot to define the variable,
+   or you just made a typo."
+- "Containers like lists and strings will generate errors if you try to access items
+   in them that do not exist. This type of error is called an `IndexError`."
+- "Trying to read a file that does not exist will give you an `FileNotFoundError`.
+   Trying to read a file that is open for writing, or writing to a file that is open for reading,
+   will give you an `IOError`."
 ---
 
 Every programmer encounters errors,
@@ -77,13 +87,15 @@ In this case:
 
 The last level is the actual place where the error occurred.
 The other level(s) show what function the program executed to get to the next level down.
-So, in this case, the program first performed a [function call]({{ page.root }}/reference/#function-call) to the function `favorite_ice_cream`.
+So, in this case, the program first performed a
+[function call]({{ page.root }}/reference/#function-call) to the function `favorite_ice_cream`.
 Inside this function,
 the program encountered an error on Line 6, when it tried to run the code `print(ice_creams[3])`.
 
 > ## Long Tracebacks
 >
-> Sometimes, you might see a traceback that is very long -- sometimes they might even be 20 levels deep!
+> Sometimes, you might see a traceback that is very long
+> -- sometimes they might even be 20 levels deep!
 > This can make it seem like something horrible happened,
 > but really it just means that your program called many functions before it ran into the error.
 > Most of the time,
@@ -107,7 +119,8 @@ sometimes just knowing *where* the error occurred is enough to fix it,
 even if you don't entirely understand the message.
 
 If you do encounter an error you don't recognize,
-try looking at the [official documentation on errors](http://docs.python.org/3/library/exceptions.html).
+try looking at the
+[official documentation on errors](http://docs.python.org/3/library/exceptions.html).
 However,
 note that you may not always be able to find the error there,
 as it is possible to create custom errors.
@@ -239,7 +252,8 @@ That's a harder question to answer,
 because it depends on what your code is supposed to do.
 However,
 there are a few very common reasons why you might have an undefined variable.
-The first is that you meant to use a [string]({{ page.root }}/reference/#string), but forgot to put quotes around it:
+The first is that you meant to use a
+[string]({{ page.root }}/reference/#string), but forgot to put quotes around it:
 
 ~~~
 print(hello)
@@ -283,7 +297,8 @@ Finally, the third possibility is that you made a typo when you were writing you
 Let's say we fixed the error above by adding the line `Count = 0` before the for loop.
 Frustratingly, this actually does not fix the error.
 Remember that variables are [case-sensitive]({{ page.root }}/reference/#case-sensitive),
-so the variable `count` is different from `Count`. We still get the same error, because we still have not defined `count`:
+so the variable `count` is different from `Count`. We still get the same error,
+because we still have not defined `count`:
 
 ~~~
 Count = 0
@@ -385,7 +400,8 @@ The correct path would be `writing/myfile.txt`.
 It is also possible (like with `NameError`) that you just made a typo.
 
 A related issue can occur if you use the "read" flag instead of the "write" flag.
-Python will not give you an error if you try to open a file for writing when the file does not exist.
+Python will not give you an error if you try to open a file for writing
+when the file does not exist.
 However,
 if you meant to open a file for reading,
 but accidentally opened it for writing,
@@ -536,7 +552,8 @@ often reveals common reasons why you might get that error.
 > {: .language-python}
 >
 > > ## Solution
-> > 3 `NameError`s for `number` being misspelled, for `message` not defined, and for `a` not being in quotes.
+> > 3 `NameError`s for `number` being misspelled, for `message` not defined, 
+> > and for `a` not being in quotes.
 > >
 > > Fixed version:
 > >
