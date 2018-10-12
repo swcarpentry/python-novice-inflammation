@@ -9,13 +9,17 @@ objectives:
 - "Add assertions that check the program's state is correct."
 - "Correctly add precondition and postcondition assertions to functions."
 - "Explain what test-driven development is, and use it when creating new functions."
-- "Explain why variables should be initialized using actual data values rather than arbitrary constants."
+- "Explain why variables should be initialized using actual data values
+   rather than arbitrary constants."
 keypoints:
-- "Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do."
-- "Put assertions in programs to check their state as they run, and to help readers understand how those programs are supposed to work."
+- "Program defensively, i.e., assume that errors are going to arise,
+   and write code to detect them when they do."
+- "Put assertions in programs to check their state as they run,
+   and to help readers understand how those programs are supposed to work."
 - "Use preconditions to check that the inputs to a function are safe to use."
 - "Use postconditions to check that the output from a function is safe to use."
-- "Write tests before writing code in order to help determine exactly what that code is supposed to do."
+- "Write tests before writing code in order to help determine exactly
+   what that code is supposed to do."
 ---
 
 Our previous lessons have introduced the basic tools of programming:
@@ -49,7 +53,8 @@ The first step toward getting the right answers from our programs
 is to assume that mistakes *will* happen
 and to guard against them.
 This is called [defensive programming]({{ page.root }}/reference/#defensive-programming),
-and the most common way to do it is to add [assertions]({{ page.root }}/reference/#assertion) to our code
+and the most common way to do it is to add
+[assertions]({{ page.root }}/reference/#assertion) to our code
 so that it checks itself as it runs.
 An assertion is simply a statement that something must be true at a certain point in a program.
 When Python sees one,
@@ -92,14 +97,18 @@ are there to check that the other 80–90% are working correctly.
 Broadly speaking,
 assertions fall into three categories:
 
-*   A [precondition]({{ page.root }}/reference/#precondition) is something that must be true at the start of a function in order for it to work correctly.
+*   A [precondition]({{ page.root }}/reference/#precondition)
+    is something that must be true at the start of a function in order for it to work correctly.
 
-*   A [postcondition]({{ page.root }}/reference/#postcondition) is something that the function guarantees is true when it finishes.
+*   A [postcondition]({{ page.root }}/reference/#postcondition)
+    is something that the function guarantees is true when it finishes.
 
-*   An [invariant]({{ page.root }}/reference/#invariant) is something that is always true at a particular point inside a piece of code.
+*   An [invariant]({{ page.root }}/reference/#invariant)
+    is something that is always true at a particular point inside a piece of code.
 
 For example,
-suppose we are representing rectangles using a [tuple]({{ page.root }}/reference/#tuple) of four coordinates `(x0, y0, x1, y1)`,
+suppose we are representing rectangles using a [tuple]({{ page.root }}/reference/#tuple)
+of four coordinates `(x0, y0, x1, y1)`,
 representing the lower left and upper right corners of the rectangle.
 In order to do some calculations,
 we need to normalize the rectangle so that the lower left corner is at the origin
@@ -111,7 +120,8 @@ but checks that its input is correctly formatted and that its result makes sense
 def normalize_rectangle(rect):
     '''Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.
     Input should be of the format (x0, y0, x1, y1).
-    (x0, y0) and (x1, y1) define the lower left and upper right corners of the rectangle, respectively.'''
+    (x0, y0) and (x1, y1) define the lower left and upper right corners
+    of the rectangle, respectively.'''
     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
     x0, y0, x1, y1 = rect
     assert x0 < x1, 'Invalid X coordinates'
@@ -147,11 +157,11 @@ AssertionError                            Traceback (most recent call last)
 ----> 1 print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
 
 <ipython-input-20-408dc39f3915> in normalize_rectangle(rect)
-      1 def normalize_rectangle(rect):
-      2     '''Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.'''
-----> 3     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
-      4     x0, y0, x1, y1 = rect
-      5     assert x0 < x1, 'Invalid X coordinates'
+      4     (x0, y0) and (x1, y1) define the lower left and upper right corners
+      5     of the rectangle, respectively.'''
+----> 6     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
+      7     x0, y0, x1, y1 = rect
+      8     assert x0 < x1, 'Invalid X coordinates'
 
 AssertionError: Rectangles must contain 4 coordinates
 ~~~
@@ -179,7 +189,8 @@ AssertionError: Invalid X coordinates
 ~~~
 {: .error}
 
-The post-conditions on lines 17 and 18 help us catch bugs by telling us when our calculations cannot have been correct.
+The post-conditions on lines 17 and 18 help us catch bugs by telling us when our
+calculations cannot have been correct.
 For example,
 if we normalize a rectangle that is taller than it is wide everything seems OK:
 
@@ -456,7 +467,8 @@ This violates another important rule of programming:
 
 > ## Pre- and Post-Conditions
 >
-> Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
+> Suppose you are writing a function called `average` that calculates
+> the average of the numbers in a list.
 > What pre-conditions and post-conditions would you write for it?
 > Compare your answer to your neighbor's:
 > can you think of a function that will pass your tests but not his/hers or vice versa?
@@ -466,7 +478,8 @@ This violates another important rule of programming:
 > > # a possible pre-condition:
 > > assert len(input_list) > 0, 'List length must be non-zero'
 > > # a possible post-condition:
-> > assert numpy.min(input_list) <= average <= numpy.max(input_list), 'Average should be between min and max of input values (inclusive)'
+> > assert numpy.min(input_list) <= average <= numpy.max(input_list),
+> > 'Average should be between min and max of input values (inclusive)'
 > > ~~~
 > > {: .language-python}
 > {: .solution}
