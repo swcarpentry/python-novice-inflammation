@@ -8,12 +8,14 @@ objectives:
 - "Write conditional statements including `if`, `elif`, and `else` branches."
 - "Correctly evaluate expressions containing `and` and `or`."
 keypoints:
-- "Use `if condition` to start a conditional statement, `elif condition` to provide additional tests, and `else` to provide a default."
+- "Use `if condition` to start a conditional statement, `elif condition` to 
+   provide additional tests, and `else` to provide a default."
 - "The bodies of the branches of conditional statements must be indented."
 - "Use `==` to test for equality."
 - "`X and Y` is only true if both `X` and `Y` are true."
 - "`X or Y` is true if either `X` or `Y`, or both, are true."
-- "Zero, the empty string, and the empty list are considered false; all other numbers, strings, and lists are considered true."
+- "Zero, the empty string, and the empty list are considered false; 
+   all other numbers, strings, and lists are considered true."
 - "`True` and `False` represent truth values."
 ---
 
@@ -351,7 +353,8 @@ freeing us from having to manually examine every plot for features we've seen be
 >
 > Write some code that sums the positive and negative numbers in a list separately,
 > using in-place operators.
-> Do you think the result is more or less readable than writing the same without in-place operators?
+> Do you think the result is more or less readable 
+> than writing the same without in-place operators?
 >
 > > ## Solution
 > > ~~~
@@ -407,7 +410,11 @@ freeing us from having to manually examine every plot for features we've seen be
 > {: .output}
 >Use the following Python code as your starting point:
 > ~~~
-> files = ['inflammation-01.csv', 'myscript.py', 'inflammation-02.csv', 'small-01.csv', 'small-02.csv']
+> files = ['inflammation-01.csv', 
+>          'myscript.py', 
+>          'inflammation-02.csv', 
+>          'small-01.csv', 
+>          'small-02.csv']
 > large_files = []
 > small_files = []
 > other_files = []
