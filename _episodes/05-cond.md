@@ -9,13 +9,13 @@ objectives:
 - "Correctly evaluate expressions containing `and` and `or`."
 keypoints:
 - "Use `if condition` to start a conditional statement, `elif condition` to 
-provide additional tests, and `else` to provide a default."
+   provide additional tests, and `else` to provide a default."
 - "The bodies of the branches of conditional statements must be indented."
 - "Use `==` to test for equality."
 - "`X and Y` is only true if both `X` and `Y` are true."
 - "`X or Y` is true if either `X` or `Y`, or both, are true."
 - "Zero, the empty string, and the empty list are considered false; 
-all other numbers, strings, and lists are considered true."
+   all other numbers, strings, and lists are considered true."
 - "`True` and `False` represent truth values."
 ---
 
