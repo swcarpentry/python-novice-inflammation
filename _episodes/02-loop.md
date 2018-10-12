@@ -137,7 +137,7 @@ The general form of a loop is:
 
 ~~~
 for variable in collection:
-    do things with variable
+    do things using variable
 ~~~
 {: .language-python}
 
@@ -345,7 +345,7 @@ so we should always use it when we can.
 >
 > ~~~
 > for i, x in enumerate(xs):
->     # Do something with i and x
+>     # Do something using i and x
 > ~~~
 > {: .language-python}
 >
