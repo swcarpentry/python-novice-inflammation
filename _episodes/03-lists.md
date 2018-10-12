@@ -359,7 +359,11 @@ last: 4
 >
 > ~~~
 > string_for_slicing = "Observation date: 02-Feb-2013"
-> list_for_slicing = [["fluorine", "F"], ["chlorine", "Cl"], ["bromine", "Br"], ["iodine", "I"], ["astatine", "At"]]
+> list_for_slicing = [["fluorine", "F"], 
+>                     ["chlorine", "Cl"], 
+>                     ["bromine", "Br"], 
+>                     ["iodine", "I"], 
+>                     ["astatine", "At"]]
 > ~~~
 > {: .language-python}
 >
