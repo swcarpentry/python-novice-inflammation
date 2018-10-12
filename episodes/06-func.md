@@ -18,12 +18,16 @@ keypoints:
 - "Call a function using `function_name(value)`."
 - "Numbers are stored as integers or floating-point numbers."
 - "Variables defined within a function can only be seen and used within the body of the function."
-- "If a variable is not defined within the function it is used, Python looks for a definition before the function call"
+- "If a variable is not defined within the function it is used, 
+   Python looks for a definition before the function call"
 - "Use `help(thing)` to view help for something."
 - "Put docstrings in functions to provide help for that function."
-- "Specify default values for parameters when defining a function using `name=value` in the parameter list."
-- "Parameters can be passed by matching based on name, by position, or by omitting them (in which case the default value is used)."
-- "Put code whose parameters change frequently in a function, then call it with different parameter values to customize its behavior."
+- "Specify default values for parameters when defining a function using `name=value` 
+   in the parameter list."
+- "Parameters can be passed by matching based on name, by position, 
+   or by omitting them (in which case the default value is used)."
+- "Put code whose parameters change frequently in a function, 
+   then call it with different parameter values to customize its behavior."
 ---
 
 At this point,
