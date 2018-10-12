@@ -1,8 +1,8 @@
 # Programming with Python
 
-[![GitHub release](https://img.shields.io/github/release/swcarpentry/python-novice-inflammation.svg)](https://github.com/swcarpentry/python-novice-inflammation/releases)
-[![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
-[![Slack Status](https://img.shields.io/badge/Slack_Channel-swc--py--inflammation-E01563.svg)](https://swcarpentry.slack.com/messages/C9Y0L6MF0)
+[![GitHub release][shields_release]][swc_py_releases]
+[![Create a Slack Account with us][create_slack_svg]][slack_heroky_invite]
+[![Slack Status][slack_channel_status]][slack_channel_url]
 
 An introduction to Python for non-programmers using inflammation data.
 
@@ -19,13 +19,14 @@ data collected from a trial for a new treatment for arthritis. Learners are show
 how it is better to automate analysis using functions instead of repeating analysis
 steps manually.
 
-The rendered version of the lesson: <https://swcarpentry.github.io/python-novice-inflammation/>
+The rendered version of the lesson is available at:
+<https://swcarpentry.github.io/python-novice-inflammation/>
 
 This lesson is also available in [R][R] and [MATLAB][MATLAB].
 
 
 ## Contributing
-[![Travis Build Status](https://travis-ci.org/swcarpentry/python-novice-inflammation.svg?branch=gh-pages)](https://travis-ci.org/swcarpentry/python-novice-inflammation)
+[![Travis Build Status][travis_status_svg]][travis_status_url]
 
 We welcome all contributions to improve the lesson!
 Maintainers will do their best to help you if you have any questions, concerns,
@@ -60,3 +61,11 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [good-enough-practices]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 [R]: https://github.com/swcarpentry/r-novice-inflammation
 [MATLAB]: https://github.com/swcarpentry/matlab-novice-inflammation
+[shields_release]: https://img.shields.io/github/release/swcarpentry/python-novice-inflammation.svg
+[swc_py_releases]: https://github.com/swcarpentry/python-novice-inflammation/releases
+[create_slack_svg]: https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg
+[slack_heroky_invite]: https://swc-slack-invite.herokuapp.com
+[slack_channel_status]: https://img.shields.io/badge/Slack_Channel-swc--py--inflammation-E01563.svg
+[slack_channel_url]: https://swcarpentry.slack.com/messages/C9Y0L6MF0
+[travis_status_svg]: https://travis-ci.org/swcarpentry/python-novice-inflammation.svg?branch=gh-pages
+[travis_status_url]: https://travis-ci.org/swcarpentry/python-novice-inflammation
