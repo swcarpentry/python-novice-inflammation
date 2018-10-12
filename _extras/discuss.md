@@ -54,12 +54,14 @@ It does this because there are now two variables in play called `temp`:
 the parameter to `fahr_to_celsius`,
 and the parameter to `fahr_to_kelvin`.
 Having two variables with the same name in the same part of the program would be ambiguous,
-so Python (and every other modern programming language) creates a new stack frame for each function call
+so Python (and every other modern programming language) creates
+a new stack frame for each function call
 to keep that function's variables separate from those defined by other functions.
 
 When the call to `fahr_to_kelvin` returns a value,
 Python throws away `fahr_to_kelvin`'s stack frame
-and creates a new variable in the stack frame for `fahr_to_celsius` to hold the temperature in Kelvin:
+and creates a new variable in the stack frame for `fahr_to_celsius`
+to hold the temperature in Kelvin:
 
 ![Call Stack After Return From First Nested Function Call](../fig/python-call-stack-04.svg)
 
@@ -145,7 +147,8 @@ span of data: 20.0
 {: .output}
 
 We don't expect `diff` to have the value 20.0 after this function call,
-so the name `diff` cannot refer to the same thing inside `span` as it does in the main body of our program.
+so the name `diff` cannot refer to the same thing inside `span` 
+as it does in the main body of our program.
 And yes,
 we could probably choose a different name than `diff` in our main program in this case,
 but we don't want to have to read every line of NumPy to see what variable names its functions use
