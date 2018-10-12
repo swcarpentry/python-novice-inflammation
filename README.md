@@ -26,7 +26,7 @@ This lesson is also available in [R][R] and [MATLAB][MATLAB].
 
 
 ## Contributing
-[![Travis Build Status][travis_status_svg]][travis_status_url]
+[![Travis Build Status][travis_svg]][travis_url]
 
 We welcome all contributions to improve the lesson!
 Maintainers will do their best to help you if you have any questions, concerns,
@@ -67,5 +67,5 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [slack_heroky_invite]: https://swc-slack-invite.herokuapp.com
 [slack_channel_status]: https://img.shields.io/badge/Slack_Channel-swc--py--inflammation-E01563.svg
 [slack_channel_url]: https://swcarpentry.slack.com/messages/C9Y0L6MF0
-[travis_status_svg]: https://travis-ci.org/swcarpentry/python-novice-inflammation.svg?branch=gh-pages
-[travis_status_url]: https://travis-ci.org/swcarpentry/python-novice-inflammation
+[travis_svg]: https://travis-ci.org/swcarpentry/python-novice-inflammation.svg?branch=gh-pages
+[travis_url]: https://travis-ci.org/swcarpentry/python-novice-inflammation
