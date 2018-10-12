@@ -159,7 +159,8 @@ weight in kilograms is now: 65.0
 >
 > ![Variables as Sticky Notes](../fig/python-sticky-note-variables-01.svg)
 >
-> This means that assigning a value to one variable does **not** change the values of other variables.
+> This means that assigning a value to one variable does **not** change
+> values of other variables.
 > For example, let's store the subject's weight in pounds in its own variable:
 >
 > ~~~
