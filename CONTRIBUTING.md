@@ -110,14 +110,14 @@ To use the web interface for contributing to a lesson:
 
 1.  Fork the originating repository to your GitHub profile.
 2.  Within your version of the forked repository, move to the `gh-pages` branch and
-create a new branch for each significant change being made.
+    create a new branch for each significant change being made.
 3.  Navigate to the file(s) you wish to change within the new branches and
-make revisions as required.
+    make revisions as required.
 4.  Commit all changed files within the appropriate branches.
 5.  Create individual pull requests from each of your changed branches
-to the `gh-pages` branch within the originating repository.
+    to the `gh-pages` branch within the originating repository.
 6.  If you receive feedback, make changes using your issue-specific branches of the forked
-repository and the pull requests will update automatically.
+    repository and the pull requests will update automatically.
 7.  Repeat as needed until all feedback has been addressed.
 
 When starting work, please make sure your clone of the originating `gh-pages` branch is up-to-date
