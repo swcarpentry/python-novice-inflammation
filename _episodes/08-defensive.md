@@ -157,12 +157,11 @@ AssertionError                            Traceback (most recent call last)
 ----> 1 print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
 
 <ipython-input-20-408dc39f3915> in normalize_rectangle(rect)
-      1 def normalize_rectangle(rect):
-      2     '''Normalizes a rectangle so that it is at the origin and 1.0 units long 
-      on its longest axis.'''
-----> 3     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
-      4     x0, y0, x1, y1 = rect
-      5     assert x0 < x1, 'Invalid X coordinates'
+      4     (x0, y0) and (x1, y1) define the lower left and upper right corners
+      5     of the rectangle, respectively.'''
+----> 6     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
+      7     x0, y0, x1, y1 = rect
+      8     assert x0 < x1, 'Invalid X coordinates'
 
 AssertionError: Rectangles must contain 4 coordinates
 ~~~
