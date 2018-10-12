@@ -192,7 +192,7 @@ return statement
 RGB
 :   An [additive model](#additive-color-model)
     that represents colors as combinations of red, green, and blue.
-    Each color's value is typically in the range 0-255
+    Each color's value is typically in the range 0..255
     (i.e., a one-byte integer).
 
 sequence
