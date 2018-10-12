@@ -54,13 +54,13 @@ It does this because there are now two variables in play called `temp`:
 the parameter to `fahr_to_celsius`,
 and the parameter to `fahr_to_kelvin`.
 Having two variables with the same name in the same part of the program would be ambiguous,
-so Python (and every other modern programming language) creates 
+so Python (and every other modern programming language) creates
 a new stack frame for each function call
 to keep that function's variables separate from those defined by other functions.
 
 When the call to `fahr_to_kelvin` returns a value,
 Python throws away `fahr_to_kelvin`'s stack frame
-and creates a new variable in the stack frame for `fahr_to_celsius` 
+and creates a new variable in the stack frame for `fahr_to_celsius`
 to hold the temperature in Kelvin:
 
 ![Call Stack After Return From First Nested Function Call](../fig/python-call-stack-04.svg)

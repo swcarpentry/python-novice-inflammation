@@ -43,7 +43,7 @@ case-sensitive
 comment
 :   A remark in a program that is intended to help human readers understand what is going on,
     but is ignored by the computer.
-    Comments in Python, R, and the Unix shell start with a `#` character and 
+    Comments in Python, R, and the Unix shell start with a `#` character and
     run to the end of the line;
     comments in SQL start with `--`,
     and other languages have other conventions.
@@ -63,7 +63,7 @@ default value
 :   A value to use for a [parameter](#parameter) if nothing is specified explicitly.
 
 defensive programming
-:   The practice of writing programs that check their own operation 
+:   The practice of writing programs that check their own operation
     to catch errors as early as possible.
 
 delimiter
@@ -165,7 +165,8 @@ outer loop
     See also: [inner loop](#inner-loop).
 
 parameter
-:   A variable named in the function's declaration that is used to hold a value passed into the call.
+:   A variable named in the function's declaration that is used to
+    hold a value passed into the call.
     The term is often used interchangeably (and inconsistently) with [argument](#argument).
 
 pipe
@@ -178,7 +179,7 @@ postcondition
     Postconditions are often represented using [assertions](#assertion).
 
 precondition
-:   A condition that must be true in order for a function (or other block of code) 
+:   A condition that must be true in order for a function (or other block of code)
     to run correctly.
 
 regression
@@ -191,7 +192,7 @@ return statement
 RGB
 :   An [additive model](#additive-color-model)
     that represents colors as combinations of red, green, and blue.
-    Each color's value is typically in the range 0..255
+    Each color's value is typically in the range 0-255
     (i.e., a one-byte integer).
 
 sequence
