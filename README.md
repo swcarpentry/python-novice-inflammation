@@ -12,7 +12,7 @@ This lesson teaches novice programmers to write modular code to perform data ana
 using Python. The emphasis, however, is on teaching language-agnostic principles of
 programming such as automation with loops and encapsulation with functions,
 see [Best Practices for Scientific Computing][best-practices] and
-[Good enough practices in scientific computing][good-enough-practices] to learn more.
+[Good enough practices in scientific computing][good-practices] to learn more.
 
 The example used in this lesson analyses a set of 12 files with simulated inflammation
 data collected from a trial for a new treatment for arthritis. Learners are shown
@@ -58,7 +58,7 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [greg_wilson]: https://github.com/gvwilson
 [swc_history]: https://software-carpentry.org/scf/history/
 [best-practices]: http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745
-[good-enough-practices]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
+[good-practices]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 [R]: https://github.com/swcarpentry/r-novice-inflammation
 [MATLAB]: https://github.com/swcarpentry/matlab-novice-inflammation
 [shields_release]: https://img.shields.io/github/release/swcarpentry/python-novice-inflammation.svg
