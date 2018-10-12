@@ -3,7 +3,8 @@ layout: page
 title: "Additional material"
 permalink: /extra_material/
 ---
-A collection of facts about Python that do not fit into the main lesson either due to the scope or time constraints of the main lesson.
+A collection of facts about Python that do not fit into the main lesson 
+either due to the scope or time constraints of the main lesson.
 
 
 ## Jupyter Notebook/IPython: Who's Who in Memory
