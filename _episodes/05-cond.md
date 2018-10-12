@@ -411,10 +411,10 @@ freeing us from having to manually examine every plot for features we've seen be
 >Use the following Python code as your starting point:
 > ~~~
 > files = ['inflammation-01.csv', 
->           'myscript.py', 
->           'inflammation-02.csv', 
->           'small-01.csv', 
->           'small-02.csv']
+>          'myscript.py', 
+>          'inflammation-02.csv', 
+>          'small-01.csv', 
+>          'small-02.csv']
 > large_files = []
 > small_files = []
 > other_files = []
