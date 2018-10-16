@@ -1,22 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="344" height="153" viewBox="0 0 9721 4325" font-size="388">
-  <text x="739" y="576" text-anchor="end">&#8722;3.0</text>
-  <path fill="none" stroke="black" stroke-width="50" d="M921 300v300h8000V300"/>
-  <text x="9099" y="577"> 5.0</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="344" height="153" font-size="14px">
+  <text x="31" y="22" stroke-width=".5" text-anchor="end">&#8722;3.0</text>
+  <path fill="none" stroke="#000" stroke-width="1" d="m38 13v11h279v-11"/>
+  <text x="323" y="22" stroke-width=".5">5.0</text>
 
-  <text x="3739" y="1576" text-anchor="end">0.0</text>
-  <path fill="none" stroke="black" stroke-width="50" d="M8421 1300v300H3921v-300"/>
-  <text x="8610" y="1577"> 4.5</text>
+  <text x="136" y="57" stroke-width=".5" text-anchor="end">0.0</text>
+  <path d="m299 47v10h-157v-10" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="306" y="57" stroke-width=".5">4.5</text>
 
-  <text x="2247" y="2576" text-anchor="end">&#8722;1.5</text>
-  <path fill="none" stroke="black" stroke-width="50" d="M5921 2300v300H2421v-300"/>
-  <text x="6101" y="2577"> 2.0</text>
+  <text x="84" y="92" stroke-width=".5" text-anchor="end">&#8722;1.5</text>
+  <path d="m212 82v10h-122v-10" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="218" y="92" stroke-width=".5">2.0</text>
 
-  <line stroke-dasharray="51, 51" x1="3921" x2="3921" y1="0" y2="4284" stroke="silver" stroke-width="50" />
-  <line stroke-dasharray="51, 51" x1="5921" x2="5921" y1="0" y2="4284" stroke="silver" stroke-width="50" />
+  <line x1="142" x2="142" y1="2" y2="152" stroke="#c0c0c0" stroke-dasharray="6, 6" stroke-width="1"/>
+  <line x1="212" x2="212" y1="2" y2="152" stroke="#c0c0c0" stroke-dasharray="6, 6" stroke-width="1"/>
 
-  <text x="3739" y="4277" text-anchor="end">0.0</text>
-  <path fill="none" stroke="black" stroke-width="50" d="M5921 4001v300l-2000-1v-300"/>
-  <text x="6101" y="4278"> 2.0</text>
+  <text x="136" y="151" stroke-width=".5" text-anchor="end">0.0</text>
+  <path d="m212 142v10l-70 0v-10" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="218" y="151" stroke-width=".5">2.0</text>
 
-  <line stroke-dasharray="51, 51" x1="521" x2="9701" y1="3400" y2="3400" stroke="silver" stroke-width="50" />
+  <line x1="24" x2="344" y1="121" y2="121" stroke="#c0c0c0" stroke-dasharray="6, 6" stroke-width="1"/>
 </svg>
