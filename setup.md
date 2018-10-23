@@ -7,14 +7,11 @@ root: ..
 
 ### Obtain lesson materials
 
-1. Download [python-novice-inflammation-data.zip][zipfile1]
-        and [python-novice-inflammation-code.zip][zipfile2].
-2. Create a folder called `swc-python` on your Desktop.
-3. Move downloaded files into this newly created folder.
-4. Unzip the files.
+1. Download [swc-python.zip][zipfile1].
+2. Unzip the files.
 
-You should now see two new folders called `data` and `code` in your `swc-python` directory on your
-Desktop.
+You should now see the `swc-python` directory on your
+Desktop containing two new folders called `data` and `code`.
 
 &nbsp; <!-- vertical spacer -->
 
@@ -87,5 +84,4 @@ $ ipython
 ~~~
 {: .source}
 
-[zipfile1]: {{ page.root }}/data/python-novice-inflammation-data.zip
-[zipfile2]: {{ page.root }}/code/python-novice-inflammation-code.zip
+[zipfile1]: {{ page.root }}/files/swc-python.zip
