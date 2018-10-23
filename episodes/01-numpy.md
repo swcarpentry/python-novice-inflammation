@@ -192,14 +192,12 @@ weight in kilograms is now: 65.0
 >
 > ![Updating a Variable](../fig/python-sticky-note-variables-03.svg)
 >
-> Since `weight_lb` doesn't remember where its value came from,
-> it isn't automatically updated when `weight_kg` changes.
+> Since `weight_lb` doesn't "remember" where its value comes from,
+> it is not updated when we change `weight_kg`.
 {: .callout}
 
-
-
 Words are useful, but what's more useful are the sentences and stories we build with them.
-Similarly, while a lot of powerful, general tools are built into languages like Python,
+Similarly, while a lot of powerful, general tools are built into Python,
 specialized tools built up from these basic units live in
 [libraries]({{ page.root }}/reference/#library)
 that can be called upon when needed.
