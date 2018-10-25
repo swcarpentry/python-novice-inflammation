@@ -53,13 +53,18 @@ d
 ~~~
 {: .output}
 
-This is a bad approach for two reasons:
+This is a bad approach for three reasons:
 
-1.  It doesn't scale:
-    if we want to print the characters in a string that's hundreds of letters long,
+1.  Scalability: 
+    It does not scale. If we want to print the characters in a string that's hundreds of letters long,
     we'd be better off just typing them in.
-
-1.  It's fragile:
+2.  Maintenance:
+    Another reason why this is a bad approach is for maintenance. 
+    If we wanted to print each letter followed by a comma, for example, 
+    we would have to change four lines of code. 
+    If we have a for loop, with a single print(word[I]) 
+    then we need only change one line of code.
+3.  Fragility:
     if we give it a longer string,
     it only prints part of the data,
     and if we give it a shorter one,
