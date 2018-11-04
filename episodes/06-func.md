@@ -791,8 +791,8 @@ readable code!
 > k = 0
 >
 > def f2k(f):
->   k = ((f-32)*(5.0/9.0)) + 273.15
->   return k
+>     k = ((f-32)*(5.0/9.0)) + 273.15
+>     return k
 >
 > f2k(8)
 > f2k(41)
@@ -841,7 +841,7 @@ readable code!
 >
 > ~~~
 > def func(a, b=3, c=6):
->   print('a: ', a, 'b: ', b, 'c:', c)
+>     print('a: ', a, 'b: ', b, 'c:', c)
 >
 > func(-1, 2)
 > ~~~
