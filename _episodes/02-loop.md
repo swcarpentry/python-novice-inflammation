@@ -284,7 +284,7 @@ so we should always use it when we can.
 > > ## Solution
 > > ~~~
 > > for i in range(1, 4):
-> >    print(i)
+> >     print(i)
 > > ~~~
 > > {: .language-python}
 > {: .solution}
@@ -311,7 +311,7 @@ so we should always use it when we can.
 > > ~~~
 > > result = 1
 > > for i in range(0, 3):
-> >    result = result * 5
+> >     result = result * 5
 > > print(result)
 > > ~~~
 > > {: .language-python}
@@ -330,7 +330,7 @@ so we should always use it when we can.
 > > newstring = ''
 > > oldstring = 'Newton'
 > > for char in oldstring:
-> >    newstring = char + newstring
+> >     newstring = char + newstring
 > > print(newstring)
 > > ~~~
 > > {: .language-python}
