@@ -893,8 +893,8 @@ readable code!
 > 4. `7 7`
 >
 > > ## Solution
-> > `3, 7` is correct. Initially `a` has a value of 3 and `b` has a value of 7.
-> > When the swap function is called, it creates local variables (also called
+> > `3 7` is the correct answer. Initially, `a` has a value of 3 and `b` has a value of 7.
+> > When the `swap` function is called, it creates local variables (also called
 > > `a` and `b` in this case) and trades their values. The function does not
 > > return any values and does not alter `a` or `b` outside of its local copy.
 > > Therefore the original values of `a` and `b` remain unchanged.
