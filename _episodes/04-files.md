@@ -126,7 +126,7 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 > >
 > > matplotlib.pyplot.ylabel('Difference in average')
-> > matplotlib.pyplot.plot(numpy.mean(data0, axis=0) - numpy.mean(data1 ,axis=0))
+> > matplotlib.pyplot.plot(numpy.mean(data0, axis=0) - numpy.mean(data1, axis=0))
 > >
 > > fig.tight_layout()
 > > matplotlib.pyplot.show()
