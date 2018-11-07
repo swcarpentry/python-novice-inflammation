@@ -50,7 +50,7 @@ from Fahrenheit to Celsius:
 
 ~~~
 def fahr_to_celsius(temp):
-    return ((temp - 32) * (5/9))
+    return ((temp - 32.0) * (5.0/9.0))
 ~~~
 {: .language-python}
 
@@ -73,16 +73,16 @@ back to whoever asked for it.
 Let's try running our function.
 
 ~~~
-fahr_to_celsius(32)
+fahr_to_celsius(32.0)
 ~~~
 {: .language-python}
 
-This command should call our function, using "32" as the input and return the function value.
+This command should call our function, using "32.0" as the input and return the function value.
 
 In fact, calling our own function is no different from calling any other function:
 ~~~
-print('freezing point of water:', fahr_to_celsius(32), 'C')
-print('boiling point of water:', fahr_to_celsius(212), 'C')
+print('freezing point of water:', fahr_to_celsius(32.0), 'C')
+print('boiling point of water:', fahr_to_celsius(212.0), 'C')
 ~~~
 {: .language-python}
 
@@ -791,12 +791,12 @@ readable code!
 > k = 0
 >
 > def f2k(f):
->     k = ((f-32)*(5.0/9.0)) + 273.15
+>     k = ((f - 32.0)*(5.0/9.0)) + 273.15
 >     return k
 >
-> f2k(8)
-> f2k(41)
-> f2k(32)
+> f2k(8.0)
+> f2k(41.0)
+> f2k(32.0)
 >
 > print(k)
 > ~~~
