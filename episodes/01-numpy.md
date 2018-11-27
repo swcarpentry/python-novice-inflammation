@@ -619,7 +619,7 @@ then ask it to do the calculation:
 
 ~~~
 patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)
-print('maximum inflammation for patient 0:', patient_0.max())
+print('maximum inflammation for patient 0:', numpy.max(patient_0))
 ~~~
 {: .language-python}
 
