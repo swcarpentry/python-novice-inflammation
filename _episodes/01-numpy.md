@@ -29,7 +29,7 @@ keypoints:
 - "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
 ---
 
-In this lesson we will learn how to work with arthritis inflammation datasets in Python. However,
+In this episode we will learn how to work with arthritis inflammation datasets in Python. However,
 before we discuss how to deal with many data points, let's learn how to work with
 single data values.
 
