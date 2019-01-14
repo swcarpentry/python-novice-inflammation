@@ -862,7 +862,7 @@ the graphs will actually be squeezed together more closely.)
 >
 > > ## Solution
 > > ~~~
-> > 95 102
+> > 95.0 102
 > > ~~~
 > > {: .output}
 > {: .solution}
