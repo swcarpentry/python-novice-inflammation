@@ -280,6 +280,10 @@ freeing us from having to manually examine every plot for features we've seen be
 >     print('one is true')
 > ~~~
 > {: .language-python}
+> > ## Solution
+> > A non-empty string, non-empty list and 1 are considered true.
+> > An empty string, an empty list and 0 are considered false.
+> {: .solution}
 {: .challenge}
 
 > ## That's Not Not What I Meant
@@ -299,6 +303,10 @@ freeing us from having to manually examine every plot for features we've seen be
 >     print('not not True is true')
 > ~~~
 > {: .language-python}
+> > ## Solution
+> > Again, empty string is not true, and non-empty string is true.
+> > Not (not true, i.e. false) is true. 
+> {: .solution}
 {: .challenge}
 
 > ## Close Enough
