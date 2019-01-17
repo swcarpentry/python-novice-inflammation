@@ -111,7 +111,7 @@ does not.
 >
 > Data which can be modified in place is called [mutable]({{ page.root }}/reference/#mutable),
 > while data which cannot be modified is called [immutable]({{ page.root }}/reference/#immutable).
-> Strings and numbers are immutable. This does not mean that variables with string or number values
+> Strings, numbers and tuples (similar to lists and array) are immutable. This does not mean that variables with string or number values
 > are constants, but when we want to change the value of a string or number variable, we can only
 > replace the old value with a completely new value.
 >
