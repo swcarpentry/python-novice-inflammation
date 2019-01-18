@@ -856,8 +856,16 @@ the graphs will actually be squeezed together more closely.)
 > age = 122
 > mass = mass * 2.0
 > age = age - 20
+> print(mass, age)
 > ~~~
 > {: .language-python}
+>
+> > ## Solution
+> > ~~~
+> > 95.0 102
+> > ~~~
+> > {: .output}
+> {: .solution}
 {: .challenge}
 
 > ## Sorting Out References
