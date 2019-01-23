@@ -316,7 +316,7 @@ $ python ../code/readings_02.py inflammation-01.csv
 > and also makes it easy for us to provide sensible error messages for our users.
 > We will not cover this module in this lesson
 > but you can go to Tshepang Lekhonkhobe's
-> [Argparse tutorial](http://docs.python.org/dev/howto/argparse.html)
+> [Argparse tutorial](http://docs.python.org/3/howto/argparse.html)
 > that is part of Python's Official Documentation.
 {: .callout}
 
