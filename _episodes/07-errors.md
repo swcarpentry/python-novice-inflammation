@@ -434,7 +434,7 @@ often reveals common reasons why you might get that error.
 
 > ## Reading Error Messages
 >
-> Read the python code and the resulting traceback below, and answer the following questions:
+> Read the Python code and the resulting traceback below, and answer the following questions:
 >
 > 1.  How many levels does the traceback have?
 > 2.  What is the function name where the error occurred?
@@ -509,7 +509,7 @@ often reveals common reasons why you might get that error.
 > ~~~
 > def another_function
 >   print("Syntax errors are annoying.")
->    print("But at least python tells us about them!")
+>    print("But at least Python tells us about them!")
 >   print("So they are usually not too hard to fix.")
 > ~~~
 > {: .language-python}
@@ -522,7 +522,7 @@ often reveals common reasons why you might get that error.
 > > ~~~
 > > def another_function():
 > >     print("Syntax errors are annoying.")
-> >     print("But at least python tells us about them!")
+> >     print("But at least Python tells us about them!")
 > >     print("So they are usually not too hard to fix.")
 > > ~~~
 > > {: .language-python}
