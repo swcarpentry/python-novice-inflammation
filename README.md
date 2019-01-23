@@ -4,7 +4,7 @@
 [![Create a Slack Account with us][create_slack_svg]][slack_heroky_invite]
 [![Slack Status][slack_channel_status]][slack_channel_url]
 
-An introduction to Python for non-programmers using inflammation data.
+[Software Carpentry](https://software-carpentry.org/) is a volunteer project dedicated to teaching basic computing skills to researchers. "Programming with Python" is one of our core lessons typically taught as part of a Software Carpentry workshop, and aims to introduce non-programmers to Python by analysing a real world data set.
 
 ## About the Lesson
 
@@ -20,10 +20,25 @@ how it is better to automate analysis using functions instead of repeating analy
 steps manually.
 
 The rendered version of the lesson is available at:
-<https://swcarpentry.github.io/python-novice-inflammation/>
+<https://swcarpentry.github.io/python-novice-inflammation/>.
+Instructor notes can be accessed via [http://swcarpentry.github.io/python-novice-inflammation/guide/](http://swcarpentry.github.io/python-novice-inflammation/guide/).
 
 This lesson is also available in [R][R] and [MATLAB][MATLAB].
 
+## Episodes
+
+| Title | Question(s) |	Site |
+|---------|-------------|------|
+| Analyzing Patient Data	| How can I process tabular data files in Python? | [🔗](http://swcarpentry.github.io/python-novice-inflammation/01-numpy/index.html) |
+| Repeating Actions with Loops |	How can I do the same operations on many different values? | [🔗](http://swcarpentry.github.io/python-novice-inflammation/02-loop/index.html) |
+| Storing Multiple Values in Lists	| How can I store many values together? | [🔗](http://swcarpentry.github.io/python-novice-inflammation/03-lists/index.html) |
+| Analyzing Data from Multiple Files	| How can I do the same operations on many different files? | [🔗](http://swcarpentry.github.io/python-novice-inflammation/04-files/index.html) |
+| Making Choices	| How can my programs do different things based on data values? | [🔗](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html) |
+| Creating Functions	| How can I define new functions? What’s the difference between defining and calling a function? What happens when I call a function? | [🔗](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) |
+| Errors and Exceptions |	How does Python report errors? How can I handle errors in Python programs? | [🔗](http://swcarpentry.github.io/python-novice-inflammation/07-errors/index.html) |
+| Defensive Programming	| How can I make my programs more reliable? | [🔗](http://swcarpentry.github.io/python-novice-inflammation/08-defensive/index.html) |
+| Debugging	| How can I debug my program? | [🔗](http://swcarpentry.github.io/python-novice-inflammation/09-debugging/index.html) |
+| Command-Line Programs | How can I write Python programs that will work like Unix command-line tools? | [🔗](http://swcarpentry.github.io/python-novice-inflammation/10-cmdline/index.html) |
 
 ## Contributing
 [![Travis Build Status][travis_svg]][travis_url]
@@ -45,6 +60,10 @@ Lesson maintainers are [Trevor Bekolay][trevor_bekolay], [Maxim Belkin][maxim_be
 
 ## Authors
 A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
+
+## License
+Instructional material from this lesson is made available under the Creative Commons Attribution (CC BY 4.0) license. Except where otherwise noted, example programs and software included as part of this lesson are made available under the MIT license. For more information, see [LICENSE.md](LICENSE.md).
+
 
 ## Citation
 To cite this lesson, please consult with [CITATION](CITATION)
