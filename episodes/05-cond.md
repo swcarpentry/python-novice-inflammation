@@ -8,13 +8,13 @@ objectives:
 - "Write conditional statements including `if`, `elif`, and `else` branches."
 - "Correctly evaluate expressions containing `and` and `or`."
 keypoints:
-- "Use `if condition` to start a conditional statement, `elif condition` to 
+- "Use `if condition` to start a conditional statement, `elif condition` to
    provide additional tests, and `else` to provide a default."
 - "The bodies of the branches of conditional statements must be indented."
 - "Use `==` to test for equality."
 - "`X and Y` is only true if both `X` and `Y` are true."
 - "`X or Y` is true if either `X` or `Y`, or both, are true."
-- "Zero, the empty string, and the empty list are considered false; 
+- "Zero, the empty string, and the empty list are considered false;
    all other numbers, strings, and lists are considered true."
 - "`True` and `False` represent truth values."
 ---
@@ -138,7 +138,7 @@ at least one test is true
 Now that we've seen how conditionals work,
 we can use them to check for the suspicious features we saw in our inflammation data.
 We are about to use functions provided by the `numpy` module again.
-Therefore, if you're working in a new Python session, make sure to load the 
+Therefore, if you're working in a new Python session, make sure to load the
 module with:
 
 ~~~
@@ -149,9 +149,9 @@ import numpy
 From the first couple of plots, we saw that maximum daily inflammation exhibits
 a strange behavior and raises one unit a day.
 Wouldn't it be a good idea to detect such behavior and report it as suspicious?
-Let's do that! 
+Let's do that!
 However, instead of checking every single day of the study, let's merely check
-if maximum inflammation in the beginning (day 0) and in the middle (day 20) of 
+if maximum inflammation in the beginning (day 0) and in the middle (day 20) of
 the study are equal to the corresponding day numbers.
 
 ~~~
@@ -353,7 +353,7 @@ freeing us from having to manually examine every plot for features we've seen be
 >
 > Write some code that sums the positive and negative numbers in a list separately,
 > using in-place operators.
-> Do you think the result is more or less readable 
+> Do you think the result is more or less readable
 > than writing the same without in-place operators?
 >
 > > ## Solution
@@ -387,7 +387,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > respectively.
 >
 > Add code to the template below to do this. Note that the string method
-> [`startswith`](https://docs.python.org/3.5/library/stdtypes.html#str.startswith)
+> [`startswith`](https://docs.python.org/3/library/stdtypes.html#str.startswith)
 > returns `True` if and only if the string it is called on starts with the string
 > passed as an argument, that is:
 >
@@ -410,10 +410,10 @@ freeing us from having to manually examine every plot for features we've seen be
 > {: .output}
 >Use the following Python code as your starting point:
 > ~~~
-> files = ['inflammation-01.csv', 
->          'myscript.py', 
->          'inflammation-02.csv', 
->          'small-01.csv', 
+> files = ['inflammation-01.csv',
+>          'myscript.py',
+>          'inflammation-02.csv',
+>          'small-01.csv',
 >          'small-02.csv']
 > large_files = []
 > small_files = []
