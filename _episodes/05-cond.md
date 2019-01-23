@@ -399,6 +399,16 @@ freeing us from having to manually examine every plot for features we've seen be
 > True
 > ~~~
 > {: .output}
+> Alternatively, we can use the [`list slicing`](http://swcarpentry.github.io/python-novice-inflammation/03-lists/index.html)
+> syntax that we saw earlier to check the start of a string:
+> ~~~
+> "String"[:3] == "Str"
+> ~~~
+> {: .language-python}
+> ~~~
+> True
+> ~~~
+> {: .output}
 > But
 > ~~~
 > "String".startswith("str")
