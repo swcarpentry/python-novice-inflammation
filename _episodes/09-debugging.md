@@ -195,8 +195,10 @@ and we're better able to give them the information they need to be useful.
 > Version control is often used to reset software to a known state during debugging,
 > and to explore recent changes to code that might be responsible for bugs.
 > In particular,
-> most version control systems have a `blame` command
-> that will show who last changed particular lines of code...
+> most version control systems (e.g. git, Mercurial) have:
+> 1. a `blame` command that shows who last changed each line of a file;
+> 2. a `bisect` command that helps with finding the commit that introduced an
+>    issue.
 {: .callout}
 
 ## Be Humble
