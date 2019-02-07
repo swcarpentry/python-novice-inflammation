@@ -53,17 +53,20 @@ d
 ~~~
 {: .output}
 
-This is a bad approach for two reasons:
+This is a bad approach for three reasons:
 
-1.  It doesn't scale:
-    if we want to print the characters in a string that's hundreds of letters long,
-    we'd be better off just typing them in.
+1.  **Not scalable**. Imagine you need to print characters of a string that is hundreds
+    of letters long.  It might be easier just to type them in manually.
 
-1.  It's fragile:
-    if we give it a longer string,
-    it only prints part of the data,
-    and if we give it a shorter one,
-    it produces an error because we're asking for characters that don't exist.
+2.  **Difficult to maintain**. If we want to decorate each printed character with an
+    asterix or any other character, we would have to change four lines of code. While
+    this might not be a problem for short strings, it would definitely be a problem for
+    longer ones.
+
+3.  **Fragile**. If we use it with a word that has more characters than what we initially
+    envisioned, it will only display part of the word's characters. A shorter string, on
+    the other hand, will cause an error because it will be trying to display part of the
+    string that don't exist.
 
 ~~~
 word = 'tin'
