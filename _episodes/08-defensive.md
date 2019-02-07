@@ -402,18 +402,19 @@ but we're now ready to do so:
 
 ~~~
 def range_overlap(ranges):
-    '''Return common overlap among a set of [low, high] ranges.'''
-    lowest = 0.0
-    highest = 1.0
-    for (low, high) in ranges:
-        lowest = max(lowest, low)
-        highest = min(highest, high)
-    return (lowest, highest)
+    '''Return common overlap among a set of [left, right] ranges.'''
+    max_left = 0.0
+    min_right = 1.0
+    for (left, right) in ranges:
+        max_left = max(max_left, left)
+        min_right = min(min_right, right)
+    return (max_left, min_right)
 ~~~
 {: .language-python}
 
-(Take a moment to think about why we use `max` to raise `lowest`
-and `min` to lower `highest`).
+Take a moment to think about why we calculate the left endpoint of the overlap as
+the maximum of the input left endpoints, and the overlap right endpoint as the minimum
+of the input right endpoints.
 We'd now like to re-run our tests,
 but they're scattered across three different cells.
 To make running them easier,
@@ -426,6 +427,7 @@ def test_range_overlap():
     assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
     assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
     assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
+    assert range_overlap([]) == None
 ~~~
 {: .language-python}
 
@@ -460,7 +462,7 @@ because Python halted the program as soon as it spotted the first error.
 Still,
 some information is better than none,
 and if we trace the behavior of the function with that input,
-we realize that we're initializing `lowest` and `highest` to 0.0 and 1.0 respectively,
+we realize that we're initializing `max_left` and `min_right` to 0.0 and 1.0 respectively,
 regardless of the input values.
 This violates another important rule of programming:
 *always initialize from data*.
@@ -542,21 +544,18 @@ This violates another important rule of programming:
 >
 > > ## Solution
 > > ~~~
-> > import numpy
-> >
 > > def range_overlap(ranges):
-> >     '''Return common overlap among a set of [low, high] ranges.'''
+> >     '''Return common overlap among a set of [left, right] ranges.'''
 > >     if not ranges:
 > >         # ranges is None or an empty list
 > >         return None
-> >     lowest, highest = ranges[0]
-> >     for (low, high) in ranges[1:]:
-> >         lowest = max(lowest, low)
-> >         highest = min(highest, high)
-> >     if lowest >= highest:  # no overlap
+> >     max_left, min_right = ranges[0]
+> >     for (left, right) in ranges[1:]:
+> >         max_left = max(max_left, left)
+> >         min_right = min(min_right, right)
+> >     if max_left >= min_right:  # no overlap
 > >         return None
-> >     else:
-> >         return (lowest, highest)
+> >     return (max_left, min_right)
 > > ~~~
 > > {: .language-python}
 > {: .solution}
