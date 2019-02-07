@@ -55,11 +55,11 @@ d
 
 This is a bad approach for three reasons:
 
-1.  **Not scalabile**. Imagine you need to print characters of a string that is hundreds
+1.  **Not scalable**. Imagine you need to print characters of a string that is hundreds
     of letters long.  It might be easier just to type them in manually.
 
 2.  **Difficult to maintain**. If we want to decorate each printed character with an
-    ansterix or any other character, we would have to change four lines of code. While
+    asterix or any other character, we would have to change four lines of code. While
     this might not be a problem for short strings, it would definitely be a problem for
     longer ones.
 
