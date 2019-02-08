@@ -24,6 +24,21 @@ The rendered version of the lesson is available at:
 
 This lesson is also available in [R][R] and [MATLAB][MATLAB].
 
+## Episodes
+
+| # |  Episode | Question(s) |
+|--:|:---------|:------------|
+| 1 | [Analyzing Patient Data](http://swcarpentry.github.io/python-novice-inflammation/01-numpy/index.html) | How can I process tabular data files in Python? |
+| 2 | [Repeating Actions with Loops](http://swcarpentry.github.io/python-novice-inflammation/02-loop/index.html) | How can I do the same operations on many different values? |
+| 3 | [Storing Multiple Values in Lists](http://swcarpentry.github.io/python-novice-inflammation/03-lists/index.html) | How can I store many values together? |
+| 4 | [Analyzing Data from Multiple Files](http://swcarpentry.github.io/python-novice-inflammation/04-files/index.html) | How can I do the same operations on many different files? |
+| 5 | [Making Choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html) | How can my programs do different things based on data values? |
+| 6 | [Creating Functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) | How can I define new functions?<br>What’s the difference between defining and calling a function?<br>What happens when I call a function? |
+| 7 | [Errors and Exceptions](http://swcarpentry.github.io/python-novice-inflammation/07-errors/index.html) | How does Python report errors?<br>How can I handle errors in Python programs? |
+| 8 | [Defensive Programming](http://swcarpentry.github.io/python-novice-inflammation/08-defensive/index.html) | How can I make my programs more reliable? |
+| 9 | [Debugging](http://swcarpentry.github.io/python-novice-inflammation/09-debugging/index.html) | How can I debug my program? |
+|10 | [Command-Line Programs](http://swcarpentry.github.io/python-novice-inflammation/10-cmdline/index.html) | How can I write Python programs that will work like Unix command-line tools? |
+
 
 ## Contributing
 [![Travis Build Status][travis_svg]][travis_url]
