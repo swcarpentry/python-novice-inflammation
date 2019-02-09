@@ -20,7 +20,7 @@ how it is better to automate analysis using functions instead of repeating analy
 steps manually.
 
 The rendered version of the lesson is available at:
-<https://swcarpentry.github.io/python-novice-inflammation/>
+<https://swcarpentry.github.io/python-novice-inflammation/>.
 
 This lesson is also available in [R][R] and [MATLAB][MATLAB].
 
@@ -60,6 +60,12 @@ Lesson maintainers are [Trevor Bekolay][trevor_bekolay], [Maxim Belkin][maxim_be
 
 ## Authors
 A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
+
+## License
+Instructional material from this lesson is made available under the Creative
+Commons Attribution (CC BY 4.0) license. Except where otherwise noted, example
+programs and software included as part of this lesson are made available under
+the MIT license. For more information, see [LICENSE.md](LICENSE.md).
 
 ## Citation
 To cite this lesson, please consult with [CITATION](CITATION)
