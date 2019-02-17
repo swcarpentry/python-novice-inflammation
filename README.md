@@ -26,18 +26,18 @@ This lesson is also available in [R][R] and [MATLAB][MATLAB].
 
 ## Episodes
 
-| # |  Episode | Question(s) |
-|--:|:---------|:------------|
-| 1 | [Analyzing Patient Data][episode01] | How can I process tabular data files in Python? |
-| 2 | [Repeating Actions with Loops][episode02] | How can I do the same operations on many different values? |
-| 3 | [Storing Multiple Values in Lists][episode03] | How can I store many values together? |
-| 4 | [Analyzing Data from Multiple Files][episode04] | How can I do the same operations on many different files? |
-| 5 | [Making Choices][episode05] | How can my programs do different things based on data values? |
-| 6 | [Creating Functions][episode06] | How can I define new functions?<br>What’s the difference between defining and calling a function?<br>What happens when I call a function? |
-| 7 | [Errors and Exceptions][episode07] | How does Python report errors?<br>How can I handle errors in Python programs? |
-| 8 | [Defensive Programming][episode08] | How can I make my programs more reliable? |
-| 9 | [Debugging][episode09] | How can I debug my program? |
-|10 | [Command-Line Programs][episode10] | How can I write Python programs that will work like Unix command-line tools? |
+| # |  Episode | Time | Question(s) |
+|--:|:---------|:----:|:------------|
+| 1 | [Analyzing Patient Data][episode01] | 90 | How can I process tabular data files in Python? |
+| 2 | [Repeating Actions with Loops][episode02] | 30 | How can I do the same operations on many different values? |
+| 3 | [Storing Multiple Values in Lists][episode03] | 30 | How can I store many values together? |
+| 4 | [Analyzing Data from Multiple Files][episode04] | 20 | How can I do the same operations on many different files? |
+| 5 | [Making Choices][episode05] | 30 | How can my programs do different things based on data values? |
+| 6 | [Creating Functions][episode06] | 30 | How can I define new functions?<br>What’s the difference between defining and calling a function?<br>What happens when I call a function? |
+| 7 | [Errors and Exceptions][episode07] | 30 | How does Python report errors?<br>How can I handle errors in Python programs? |
+| 8 | [Defensive Programming][episode08] | 30 | How can I make my programs more reliable? |
+| 9 | [Debugging][episode09] | 30 | How can I debug my program? |
+|10 | [Command-Line Programs][episode10] | 30 | How can I write Python programs that will work like Unix command-line tools? |
 
 
 ## Contributing
