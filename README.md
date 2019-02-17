@@ -28,7 +28,7 @@ This lesson is also available in [R][R] and [MATLAB][MATLAB].
 
 | # |  Episode | Time | Question(s) |
 |--:|:---------|:----:|:------------|
-| 1 | [Analyzing Patient Data][episode01] | 60/30 | How can I process tabular data files in Python? |
+| 1 | [Analyzing Patient Data][episode01] | 90 | How can I process tabular data files in Python? |
 | 2 | [Repeating Actions with Loops][episode02] | 30 | How can I do the same operations on many different values? |
 | 3 | [Storing Multiple Values in Lists][episode03] | 30 | How can I store many values together? |
 | 4 | [Analyzing Data from Multiple Files][episode04] | 20 | How can I do the same operations on many different files? |
