@@ -1,45 +1,43 @@
 ## Why SVG?
 
-SVG stands for Scalable Vector Graphics. Images in SVG format have a number of advantages over the
-standard raster graphics formats, such as JPG, PNG, etc. The most important one is that SVG images
-can be scaled up or down without any loss of visual clarity. This means that these images look the
-same on a phone, a laptop computer, or a 70-inch TV.
+The SVG format (for "Scalable Vector Graphics") has a number of advantages over standard "raster"
+graphics formats such as JPG, PNG, etc. Most importantly, as the name suggests, SVG images scale
+up or down without loss of visual clarity: they look equally good on a phone, a laptop computer,
+or a 70-inch screen, and don't blur when scaled up.
 
-The other advantage is that SVG images are, in fact, text-based files (in an XML format, but this
-is an unnecessary detail). This means that SVG images are readable (by trained maintaners) and
-maintainable: version control systems (VCS) such as Git can easily track changes in them.
-Images in raster formats, on the other hand, are binary files, and, as all binary files,
-are treated by VCSs as whole objects. This means that even a small change to an image in a binary
-format forces VCS to update the entire file.
-
+Additionally, SVG is a text-based format (based on XML, if you care). As text files, SVG images
+are thus human-readable (a trained eye makes sense of them) and maintainable: easy to manually
+edit, and efficiently tracked by version control systems (VCSs) such as Git. By contrast, images
+in raster formats, being binary files, are versioned as whole objects -- the slightest change
+results in updating the entire file.
 
 ## Working with SVG figures
 
-There is a number of third-party tools that can be used to create new of modify existing SVG images
--- feel free use any of them!  Many (if not all) of them, however, insert additional
-information into the files they produce. While this information might be practical for
-these tools, it is superfluous and unnecessary in our case due to the highly-collaborative nature of
-the lesson development process.
+A number of tools can create or modify SVG images -- pick one you like!
 
-Below, we provide some tips on how to remove that unnecessary information from the generated SVG
-files in preparation for submitting them to our repository.
+Many tools, however, delete comments they don't deem useful, and insert extra information useful
+to them, but unneeded for us, and unsuited to our highly collaborative lesson development process.
+
+Below are some tips on keeping the information we need and removing the information we don't need
+in SVG files before submitting them to our repository.
 
 ### Comments
 
-If you're modifying an existing figure, inspect it with a text editor making note of all comments.
-Comments in SVG files are eclosed between `<!--` and `-->`.  Be sure to add them back in (with
-appropriate changes) after you finish editing the figure if the tool that you use removes them.
+Before modifying an existing figure, inspect it with a text editor, making note of all comments,
+which in SVG files are enclosed between `<!--` and `-->`.  Be sure to add them back in (with
+appropriate changes) after editing the figure, if the tool you use removed them.
 
 ### General tips
 
-When using any third-party editor, please make sure to:
+When using any SVG editor, please make sure to:
 
 - save the figure as "plain" SVG rather than editor-specific SVG.
-- don't group elements (`<g>`) unless necessary or beneficial
-- don't embed other SVG images using `<image>`
+- not group elements (`<g>`) unless necessary or beneficial
+- not embed other SVG images using `<image>`
 
-Once you finish editing the figure, clean up the figure using the tool called
-[svgcleaner](https://github.com/RazrFalcon/svgcleaner):
+After editing the figure, clean it up using the command-line tool
+[svgcleaner](https://github.com/RazrFalcon/svgcleaner), by running the following in a terminal
+(replace `SVG_figure` by the name of the SVG figure):
 
 ```
 svgcleaner \
@@ -66,7 +64,6 @@ and follow these steps:
   <text x="42" y="36" font-family="sans-serif" font-size="19px" font-weight="bold" text-anchor="middle">65.0</text>
   ```
   to this:
-
   ```xml
      <text x="42" y="36"
            font-family="sans-serif"
@@ -75,7 +72,7 @@ and follow these steps:
            text-anchor="middle">65.0</text>
   ```
 
-- Comment about the nature of each element using `<!--` and `-->`, where applicable and when
+- Comment on the nature of each element, using `<!--` and `-->`, where applicable and when
   feasible. For example:
 
   ```xml
@@ -94,14 +91,11 @@ and follow these steps:
 - Avoid using "special" fonts.
 - Consider using: Ubuntu, Ubuntu Mono, sans-serif
 
-Ubuntu font can be downloaded for free from:
+The Ubuntu font can be downloaded for free from:
   <https://design.ubuntu.com/font/>
-
 
 ## Not an SVG expert
 
-Please don't be discouraged by the guidelines above. If you can't follow
-them, please submit your contribution "as is" and mention that you could not
-follow the guidelines for SVG. Maintainers will be happy to help you. Make sure,
-however, that maintainers can commit to the branch you used to submit
-your contribution.
+Don't let the above guidelines discourage you. If needed, submit your contribution "as is" and
+mention which steps you skipped. Maintainers will happily help -- make sure they can commit to the
+branch you use to submit your contribution.
