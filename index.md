@@ -1,6 +1,7 @@
 ---
 layout: lesson
 root: .
+permalink: index.html
 ---
 
 The best way to learn how to program is to do something useful,
