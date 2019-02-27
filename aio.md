@@ -23,14 +23,14 @@
         article_here.innerHTML = htmlDocArticle.innerHTML;
         }
       }
-      episode_url = "{{ relative_root_path }}" + lesson_episodes[i];
+      var episode_url = "{{ relative_root_path }}" + lesson_episodes[i];
       xmlHttp[i].open("GET", episode_url);
       xmlHttp[i].send(null);
     }
   }
 </script>
 {% comment %}
-Create anchor for each one of the episodes.
+Create an anchor for every episode.
 {% endcomment %}
 {% for episode in site.episodes %}
 <article id="{{ episode.url }}"></article>
