@@ -38,7 +38,10 @@ odds are: [1, 3, 5, 7]
 ~~~
 {: .output}
 
-We select individual elements from lists by indexing them:
+We select individual elements from lists by indexing them.
+Indexing allows us to access individual elements inside a container (such as list or string).
+Previously, we used indexing to count elements starting from the beginning, but we can also count from the end of the container using negative indices.
+We will discuss this further when we come to the topic of "slicing":
 
 ~~~
 print('first and last:', odds[0], odds[-1])
@@ -359,10 +362,10 @@ last: 4
 >
 > ~~~
 > string_for_slicing = "Observation date: 02-Feb-2013"
-> list_for_slicing = [["fluorine", "F"], 
->                     ["chlorine", "Cl"], 
->                     ["bromine", "Br"], 
->                     ["iodine", "I"], 
+> list_for_slicing = [["fluorine", "F"],
+>                     ["chlorine", "Cl"],
+>                     ["bromine", "Br"],
+>                     ["iodine", "I"],
 >                     ["astatine", "At"]]
 > ~~~
 > {: .language-python}
@@ -377,6 +380,8 @@ last: 4
 > the length of the string or list
 > (e.g. if you wanted to apply the solution to a set of lists of different lengths)?
 > If not, try to change your approach to make it more robust.
+>
+> Hint: Remember that indices can be negative as well as positive
 >
 > > ## Solution
 > > Use negative indices to count elements from the end of a container (such as list or string):
