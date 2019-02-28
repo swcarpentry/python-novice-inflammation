@@ -15,7 +15,7 @@ keypoints:
 - "Use `len(thing)` to determine the length of something that contains other values."
 ---
 
-In the last episode, we wrote Python code that plots values of interest from our first
+In the first episode, we wrote Python code that plots values of interest from our first
 inflammation dataset (`inflammation-01.csv`), which revealed some suspicious features in it.
 
 ![Line graphs showing average, maximum and minimum inflammation across all patients over a 40-day period.](../fig/03-loop_2_0.png)
@@ -24,64 +24,65 @@ We have a dozen data sets right now, though, and more on the way.
 We want to create plots for all of our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
-An example task that we might want to repeat is printing each character in a
-word on a line of its own.
+An example task that we might want to repeat is accessing numbers in a list,
+which we
+will do by printing each number on a line of its own.
 
 ~~~
-word = 'lead'
+odds = [1, 3, 5, 7]
 ~~~
 {: .language-python}
 
-In Python, a string is basically an ordered collection of characters, and every
-character has a unique number associated with it -- its index. This means that
-we can access characters in a string using their indices.
-For example, we can get the first character of the word `'lead'`, by using
-`word[0]`. One way to print each character is to use four `print` statements:
+In Python, a list is basically an ordered collection of elements, and every
+element has a unique number associated with it -- its index. This means that
+we can access elements in a list using their indices.
+For example, we can get the first number in the list `odds`,
+by using `odds[0]`. One way to print each number is to use four `print` statements:
 
 ~~~
-print(word[0])
-print(word[1])
-print(word[2])
-print(word[3])
+print(odds[0])
+print(odds[1])
+print(odds[2])
+print(odds[3])
 ~~~
 {: .language-python}
 
 ~~~
-l
-e
-a
-d
+1
+3
+5
+7
 ~~~
 {: .output}
 
 This is a bad approach for three reasons:
 
-1.  **Not scalable**. Imagine you need to print characters of a string that is hundreds
-    of letters long.  It might be easier to type them in manually.
+1.  **Not scalable**. Imagine you need to print a list that has hundreds
+    of elements.  It might be easier to type them in manually.
 
-2.  **Difficult to maintain**. If we want to decorate each printed character with an
+2.  **Difficult to maintain**. If we want to decorate each printed element with an
     asterisk or any other character, we would have to change four lines of code. While
-    this might not be a problem for short strings, it would definitely be a problem for
+    this might not be a problem for small lists, it would definitely be a problem for
     longer ones.
 
-3.  **Fragile**. If we use it with a word that has more characters than what we initially
-    envisioned, it will only display part of the word's characters. A shorter string, on
-    the other hand, will cause an error because it will be trying to display part of the
-    string that doesn't exist.
+3.  **Fragile**. If we use it with a list that has more elements than what we initially
+    envisioned, it will only display part of the list's elements. A shorter list, on
+    the other hand, will cause an error because it will be trying to display elements of the
+    list that don't exist.
 
 ~~~
-word = 'tin'
-print(word[0])
-print(word[1])
-print(word[2])
-print(word[3])
+odds = [1, 3, 5]
+print(odds[0])
+print(odds[1])
+print(odds[2])
+print(odds[3])
 ~~~
 {: .language-python}
 
 ~~~
-t
-i
-n
+1
+3
+5
 ~~~
 {: .output}
 
@@ -89,49 +90,48 @@ n
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-3-7974b6cdaf14> in <module>()
-      3 print(word[1])
-      4 print(word[2])
-----> 5 print(word[3])
+      3 print(odds[1])
+      4 print(odds[2])
+----> 5 print(odds[3])
 
-IndexError: string index out of range
+IndexError: list index out of range
 ~~~
 {: .error}
 
 Here's a better approach:
 
 ~~~
-word = 'lead'
-for char in word:
-    print(char)
-
+odds = [1, 3, 5, 7]
+for num in odds:
+    print(num)
 ~~~
 {: .language-python}
 
 ~~~
-l
-e
-a
-d
+1
+3
+5
+7
 ~~~
 {: .output}
 
-This is shorter --- certainly shorter than something that prints every character in a
-hundred-letter string --- and more robust as well:
+This is shorter --- certainly shorter than something that prints every number in a
+hundred-letter list --- and more robust as well:
 
 ~~~
-word = 'oxygen'
-for char in word:
-    print(char)
+odds = [1, 3, 5, 7, 9, 11]
+for num in odds:
+    print(num)
 ~~~
 {: .language-python}
 
 ~~~
-o
-x
-y
-g
-e
-n
+1
+3
+5
+7
+9
+11
 ~~~
 {: .output}
 
@@ -145,13 +145,13 @@ for variable in collection:
 ~~~
 {: .language-python}
 
-Using the oxygen example above, the loop might look like this:
+Using the example example above, the loop might look like this:
 
-![Loop variable 'char' being assigned the value of each character in the word 'oxygen' in turn and then being printed](../fig/loops_image.png)
+![Loop variable 'num' being assigned the value of each element in the list `odds` in turn and then being printed](../fig/05-loops_image_num.png)
 
-where each character (`char`) in the variable `word` is looped through and printed one character
-after another. The numbers in the diagram denote which loop cycle the character was printed in (1
-being the first loop, and 6 being the final loop).
+where each number (`num`) in the variable `odds` is looped through and printed one number after
+another. The other numbers in the diagram denote which loop cycle the number was printed in (1
+being the first loop cycle, and 6 being the final loop cycle).
 
 We can call the [loop variable]({{ page.root }}/reference.html#loop-variable) anything we like, but
 there must be a colon at the end of the line starting the loop, and we must indent anything we
@@ -162,24 +162,26 @@ of the loop body (e.g. `end for`); what is indented after the `for` statement be
 > ## What's in a name?
 >
 >
-> In the example above, the loop variable was given the name `char` as a mnemonic;
-> it is short for 'character'.  We can choose any name we want for variables.
-> We can even call our loop variable `banana`, as long as we use this name consistently:
+> In the example above, the loop variable was given the name `num` as a mnemonic;
+> it is short for 'number'.
+> We can choose any name we want for variables.  We might just as easily have chosen the name
+> `banana` for the loop variable, as long as we use the same name when we invoke the variable inside
+> the loop:
 >
 > ~~~
-> word = 'oxygen'
-> for banana in word:
+> odds = [1, 3, 5, 7, 9, 11]
+> for banana in odds:
 >     print(banana)
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> o
-> x
-> y
-> g
-> e
-> n
+> 1
+> 3
+> 5
+> 7
+> 9
+> 11
 > ~~~
 > {: .output}
 >
