@@ -1,6 +1,7 @@
 ---
-layout: page
 title: Setup
-root: .
 ---
 FIXME
+
+
+{% include links.md %}

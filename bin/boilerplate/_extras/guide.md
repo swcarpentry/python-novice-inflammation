@@ -1,5 +1,6 @@
 ---
-layout: page
 title: "Instructor Notes"
 ---
 FIXME
+
+{% include links.md %}

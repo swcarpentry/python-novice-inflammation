@@ -1,7 +1,7 @@
 ---
 title: Analyzing Patient Data
-teaching: 30
-exercises: 0
+teaching: 60
+exercises: 30
 questions:
 - "How can I process tabular data files in Python?"
 objectives:
@@ -29,34 +29,70 @@ keypoints:
 - "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
 ---
 
-In this lesson we will learn how to manipulate the inflammation dataset with Python. Before we
-discuss how to deal with many data points, we will show how to store a single value on the computer.
+In this episode we will learn how to work with arthritis inflammation datasets in Python. However,
+before we discuss how to deal with many data points, let's learn how to work with
+single data values.
 
-You can get output from python by typing math into the console:
-~~~
-3+5
-12/7
-~~~
+## Variables
 
-However, to do anything useful and/or interesting we need to assign values to _variables_
-(or link _objects_ to names/variables).
-The line below [assigns]({{ page.root }}/reference/#assign) the value `60` to a
-[variable]({{ page.root }}/reference/#variable) `weight_kg`:
+Any Python interpreter can be used as a calculator:
+~~~
+3 + 5 * 4
+~~~
+{: .language-python}
+~~~
+23
+~~~
+{: .output}
+
+This is great but not very interesting.
+To do anything useful with data, we need to assign its value to a _variable_.
+In Python, we can [assign]({{ page.root }}/reference/#assign) a value to a
+[variable]({{ page.root }}/reference/#variable), using the equals sign `=`.
+For example, to assign value `60` to a variable `weight_kg`, we would execute:
 
 ~~~
 weight_kg = 60
 ~~~
 {: .language-python}
 
-A variable is a name for a value,
-such as `x_val`, `current_temperature`, or `subject_id`.
-Python's variables must begin with a letter and are
-[case sensitive]({{ page.root }}/reference/#case-sensitive).
-We can create a new variable by assigning a value to it using `=`.
-When we are finished typing and press <kbd>Shift</kbd>+<kbd>Return</kbd>,
-the notebook runs our command.
+From now on, whenever we use `weight_kg`, Python will substitute the value we assigned to
+it. In essence, **a variable is just a name for a value**.
 
-Once a variable has a value, we can print it to the screen:
+In Python, variable names:
+
+ - can include letters, digits, and underscores
+ - cannot start with a digit
+ - are [case sensitive]({{ page.root }}/reference/#case-sensitive).
+
+This means that, for example:
+ - `weight0` is a valid variable name, whereas `0weight` is not
+ - `weight` and `Weight` are different variables
+
+## Types of data
+Python knows various types of data. Three common ones are:
+
+* integer numbers
+* floating point numbers, and
+* strings.
+
+In the example above, variable `weight_kg` has an integer value of `60`.
+To create a variable with a floating point value, we can execute:
+
+~~~
+weight_kg = 60.0
+~~~
+{: .language-python}
+
+And to create a string we simply have to add single or double quotes around some text, for example:
+
+~~~
+weight_kg_text = 'weight in kilograms:'
+~~~
+{: .language-python}
+
+## Using Variables in Python
+To display the value of a variable to the screen in Python, we can use the `print` function:
 
 ~~~
 print(weight_kg)
@@ -64,11 +100,22 @@ print(weight_kg)
 {: .language-python}
 
 ~~~
-60
+60.0
 ~~~
 {: .output}
 
-and do arithmetic with it (remember, there are 2.2 pounds per kilogram):
+We can display multiple things at once using only one `print` command:
+
+~~~
+print(weight_kg_text, weight_kg)
+~~~
+{: .language-python}
+~~~
+weight in kilograms: 60.0
+~~~
+{: .output}
+
+Moreover, we can do arithmetics with variables right inside the `print` function:
 
 ~~~
 print('weight in pounds:', 2.2 * weight_kg)
@@ -80,10 +127,19 @@ weight in pounds: 132.0
 ~~~
 {: .output}
 
-As the example above shows,
-we can print several things at once by separating them with commas.
+The above command, however, did not change the value of `weight_kg`:
+~~~
+print(weight_kg)
+~~~
+{: .language-python}
 
-We can also change a variable's value by assigning it a new one:
+~~~
+60.0
+~~~
+{: .output}
+
+To change the value of the `weight_kg` variable, we have to
+**assign** `weight_kg` a new value using the equals `=` sign:
 
 ~~~
 weight_kg = 65.0
@@ -96,81 +152,62 @@ weight in kilograms is now: 65.0
 ~~~
 {: .output}
 
-If we imagine the variable as a sticky note with a name written on it,
-assignment is like putting the sticky note on a particular value:
-
-![Variables as Sticky Notes](../fig/python-sticky-note-variables-01.svg)
-
-This means that assigning a value to one variable does *not* change the values of other variables.
-For example,
-let's store the subject's weight in pounds in a variable:
-
-~~~
-# There are 2.2 pounds per kilogram
-weight_lb = 2.2 * weight_kg
-print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
-~~~
-{: .language-python}
-
-~~~
-weight in kilograms: 65.0 and in pounds: 143.0
-~~~
-{: .output}
-
-![Creating Another Variable](../fig/python-sticky-note-variables-02.svg)
-
-and then change `weight_kg`:
-
-~~~
-weight_kg = 100.0
-print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
-~~~
-{: .language-python}
-
-~~~
-weight in kilograms is now: 100.0 and weight in pounds is still: 143.0
-~~~
-{: .output}
-
-![Updating a Variable](../fig/python-sticky-note-variables-03.svg)
-
-Since `weight_lb` doesn't remember where its value came from,
-it isn't automatically updated when `weight_kg` changes.
-This is different from the way spreadsheets work.
-
-> ## Who's Who in Memory
+> ## Variables as Sticky Notes
 >
-> You can use the `%whos` command at any time to see what
-> variables you have created and what modules you have loaded into the computer's memory.
-> As this is an IPython command, it will only work if you are in an IPython terminal or the
-> Jupyter Notebook.
+> A variable is analogous to a sticky note with a name written on it:
+> assigning a value to a variable is like putting that sticky note on a particular value.
+>
+> ![Variables as Sticky Notes](../fig/python-sticky-note-variables-01.svg)
+>
+> This means that assigning a value to one variable does **not** change
+> values of other variables.
+> For example, let's store the subject's weight in pounds in its own variable:
 >
 > ~~~
-> %whos
+> # There are 2.2 pounds per kilogram
+> weight_lb = 2.2 * weight_kg
+> print(weight_kg_text, weight_kg, 'and in pounds:', weight_lb)
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> Variable    Type       Data/Info
-> --------------------------------
-> weight_kg   float      100.0
-> weight_lb   float      143.0
+> weight in kilograms: 65.0 and in pounds: 143.0
 > ~~~
 > {: .output}
+>
+> ![Creating Another Variable](../fig/python-sticky-note-variables-02.svg)
+>
+> Let's now change `weight_kg`:
+>
+> ~~~
+> weight_kg = 100.0
+> print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> weight in kilograms is now: 100.0 and weight in pounds is still: 143.0
+> ~~~
+> {: .output}
+>
+> ![Updating a Variable](../fig/python-sticky-note-variables-03.svg)
+>
+> Since `weight_lb` doesn't "remember" where its value comes from,
+> it is not updated when we change `weight_kg`.
 {: .callout}
 
 Words are useful, but what's more useful are the sentences and stories we build with them.
-Similarly, while a lot of powerful, general tools are built into languages like Python,
+Similarly, while a lot of powerful, general tools are built into Python,
 specialized tools built up from these basic units live in
 [libraries]({{ page.root }}/reference/#library)
 that can be called upon when needed.
 
-In order to load our inflammation data,
-we need to access ([import]({{ page.root }}/reference/#import) in Python terminology)
-a library called [NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").
-In general you should use this library if you want to do fancy things with numbers,
-especially if you have matrices or arrays.
-We can import NumPy using:
+## Loading data into Python
+In order to load our inflammation data, we need to access
+([import]({{ page.root }}/reference/#import) in Python terminology) a library called
+[NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").  In general you should use this
+library if you want to do fancy things with numbers, especially if you have matrices or arrays.  We
+can import NumPy using:
 
 ~~~
 import numpy
@@ -206,7 +243,7 @@ belongs to the `numpy` library. This [dotted notation]({{ page.root }}/reference
 is used everywhere in Python: the thing that appears before the dot contains the thing that
 appears after.
 
-As an example, John Smith is the John that belongs to the Smith family,
+As an example, John Smith is the John that belongs to the Smith family.
 We could use the dot notation to write his name `smith.john`,
 just as `loadtxt` is a function that belongs to the `numpy` library.
 
@@ -379,6 +416,7 @@ the index is how many steps we have to take from the start to get the item we wa
 > which can be confusing when plotting data.
 {: .callout}
 
+## Slicing data
 An index like `[30, 20]` selects a single element of an array,
 but we can select whole sections as well.
 For example,
@@ -418,14 +456,10 @@ print(data[5:10, 0:10])
 ~~~
 {: .output}
 
-We also don't have to include the upper and lower bound on the slice.
-If we don't include the lower bound,
-Python uses 0 by default;
-if we don't include the upper,
-the slice runs to the end of the axis,
-and if we don't include either
-(i.e., if we just use ':' on its own),
-the slice includes everything:
+We also don't have to include the upper and lower bound on the slice.  If we don't include the lower
+bound, Python uses 0 by default; if we don't include the upper, the slice runs to the end of the
+axis, and if we don't include either (i.e., if we just use ':' on its own), the slice includes
+everything:
 
 ~~~
 small = data[:3, 36:]
@@ -443,12 +477,9 @@ small is:
 ~~~
 {: .output}
 
-Arrays also know how to perform common mathematical operations on their values.
-The simplest operations with data are arithmetic:
-addition, subtraction, multiplication, and division.
- When you do such operations on arrays,
-the operation is done element-by-element.
-Thus:
+Arrays also know how to perform common mathematical operations on their values.  The simplest
+operations with data are arithmetic: addition, subtraction, multiplication, and division.  When you
+do such operations on arrays, the operation is done element-by-element.  Thus:
 
 ~~~
 doubledata = data * 2.0
@@ -456,7 +487,7 @@ doubledata = data * 2.0
 {: .language-python}
 
 will create a new array `doubledata`
-each elements of which is twice the value of the corresponding element in `data`:
+each element of which is twice the value of the corresponding element in `data`:
 
 ~~~
 print('original:')
@@ -478,11 +509,9 @@ doubledata:
 ~~~
 {: .output}
 
-If,
-instead of taking an array and doing arithmetic with a single value (as above),
-you did the arithmetic operation with another array of the same shape,
-the operation will be done on corresponding elements of the two arrays.
-Thus:
+If, instead of taking an array and doing arithmetic with a single value (as above), you did the
+arithmetic operation with another array of the same shape, the operation will be done on
+corresponding elements of the two arrays.  Thus:
 
 ~~~
 tripledata = doubledata + data
@@ -506,11 +535,9 @@ tripledata:
 ~~~
 {: .output}
 
-Often, we want to do more than add, subtract, multiply, and divide array elements.
-NumPy knows how to do more complex operations, too.
-If we want to find the average inflammation for all patients on all days,
-for example,
-we can ask NumPy to compute `data`'s mean value:
+Often, we want to do more than add, subtract, multiply, and divide array elements.  NumPy knows how
+to do more complex operations, too.  If we want to find the average inflammation for all patients on
+all days, for example, we can ask NumPy to compute `data`'s mean value:
 
 ~~~
 print(numpy.mean(data))
@@ -575,7 +602,7 @@ standard deviation: 4.61383319712
 > ## Mystery Functions in IPython
 >
 > How did we know what functions NumPy has and how to use them?
-> If you are working in the IPython/Jupyter Notebook, there is an easy way to find out.
+> If you are working in IPython or in a Jupyter Notebook, there is an easy way to find out.
 > If you type the name of something followed by a dot, then you can use tab completion
 > (e.g. type `numpy.` and then press tab)
 > to see a list of all functions and attributes that you can use. After selecting one, you
@@ -592,7 +619,7 @@ then ask it to do the calculation:
 
 ~~~
 patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)
-print('maximum inflammation for patient 0:', patient_0.max())
+print('maximum inflammation for patient 0:', numpy.max(patient_0))
 ~~~
 {: .language-python}
 
@@ -682,16 +709,13 @@ print(numpy.mean(data, axis=1))
 
 which is the average inflammation per patient across all days.
 
-The mathematician Richard Hamming once said,
-"The purpose of computing is insight, not numbers,"
-and the best way to develop insight is often to visualize data.
-Visualization deserves an entire lecture of its own,
-but we can explore a few features of Python's `matplotlib` library here.
-While there is no official plotting library,
-`matplotlib` is the de facto standard.
-First,
-we will import the `pyplot` module from `matplotlib`
-and use two of its functions to create and display a heat map of our data:
+## Visualizing data
+The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers," and
+the best way to develop insight is often to visualize data.  Visualization deserves an entire
+lecture of its own, but we can explore a few features of Python's `matplotlib` library here.  While
+there is no official plotting library, `matplotlib` is the _de facto_ standard.  First, we will
+import the `pyplot` module from `matplotlib` and use two of its functions to create and display a
+heat map of our data:
 
 ~~~
 import matplotlib.pyplot
@@ -702,13 +726,12 @@ matplotlib.pyplot.show()
 
 ![Heatmap of the Data](../fig/01-numpy_71_0.png)
 
-Blue pixels in this heat map represent low values, while yellow pixels represent high values.
-As we can see,
-inflammation rises and falls over a 40-day period.
+Blue pixels in this heat map represent low values, while yellow pixels represent high values.  As we
+can see, inflammation rises and falls over a 40-day period.
 
 > ## Some IPython Magic
 >
-> If you're using an IPython / Jupyter notebook,
+> If you're using a Jupyter notebook,
 > you'll need to execute the following command
 > in order for your matplotlib images to appear
 > in the notebook when `show()` is called:
@@ -734,13 +757,10 @@ matplotlib.pyplot.show()
 
 ![Average Inflammation Over Time](../fig/01-numpy_73_0.png)
 
-Here,
-we have put the average per day across all patients in the variable `ave_inflammation`,
-then asked `matplotlib.pyplot` to create and display a line graph of those values.
-The result is a roughly linear rise and fall,
-which is suspicious:
-we might instead expect a sharper rise and slower fall.
-Let's have a look at two other statistics:
+Here, we have put the average per day across all patients in the variable `ave_inflammation`, then
+asked `matplotlib.pyplot` to create and display a line graph of those values.  The result is a
+roughly linear rise and fall, which is suspicious: we might instead expect a sharper rise and slower
+fall.  Let's have a look at two other statistics:
 
 ~~~
 max_plot = matplotlib.pyplot.plot(numpy.max(data, axis=0))
@@ -758,14 +778,12 @@ matplotlib.pyplot.show()
 
 ![Minimum Value Along The First Axis](../fig/01-numpy_75_3.png)
 
-The maximum value rises and falls smoothly,
-while the minimum seems to be a step function.
-Neither trend seems particularly likely,
-so either there's a mistake in our calculations
-or something is wrong with our data.
-This insight would have been difficult to reach by
-examining the numbers themselves without visualization tools.
+The maximum value rises and falls smoothly, while the minimum seems to be a step function.  Neither
+trend seems particularly likely, so either there's a mistake in our calculations or something is
+wrong with our data.  This insight would have been difficult to reach by examining the numbers
+themselves without visualization tools.
 
+### Grouping plots
 You can group similar plots in a single figure using subplots.
 This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
 creates a space into which we will place all of our plots. The parameter `figsize`
@@ -838,8 +856,16 @@ the graphs will actually be squeezed together more closely.)
 > age = 122
 > mass = mass * 2.0
 > age = age - 20
+> print(mass, age)
 > ~~~
 > {: .language-python}
+>
+> > ## Solution
+> > ~~~
+> > 95.0 102
+> > ~~~
+> > {: .output}
+> {: .solution}
 {: .challenge}
 
 > ## Sorting Out References

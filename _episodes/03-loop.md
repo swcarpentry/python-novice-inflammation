@@ -15,7 +15,7 @@ keypoints:
 - "Use `len(thing)` to determine the length of something that contains other values."
 ---
 
-In the last lesson,
+In the last episode,
 we wrote some code that plots some values of interest from our first inflammation dataset,
 and reveals some suspicious features in it, such as from `inflammation-01.csv`
 
@@ -53,17 +53,20 @@ d
 ~~~
 {: .output}
 
-This is a bad approach for two reasons:
+This is a bad approach for three reasons:
 
-1.  It doesn't scale:
-    if we want to print the characters in a string that's hundreds of letters long,
-    we'd be better off just typing them in.
+1.  **Not scalable**. Imagine you need to print characters of a string that is hundreds
+    of letters long.  It might be easier just to type them in manually.
 
-1.  It's fragile:
-    if we give it a longer string,
-    it only prints part of the data,
-    and if we give it a shorter one,
-    it produces an error because we're asking for characters that don't exist.
+2.  **Difficult to maintain**. If we want to decorate each printed character with an
+    asterix or any other character, we would have to change four lines of code. While
+    this might not be a problem for short strings, it would definitely be a problem for
+    longer ones.
+
+3.  **Fragile**. If we use it with a word that has more characters than what we initially
+    envisioned, it will only display part of the word's characters. A shorter string, on
+    the other hand, will cause an error because it will be trying to display part of the
+    string that don't exist.
 
 ~~~
 word = 'tin'
@@ -137,7 +140,7 @@ The general form of a loop is:
 
 ~~~
 for variable in collection:
-    do things with variable
+    do things using variable
 ~~~
 {: .language-python}
 
@@ -284,7 +287,7 @@ so we should always use it when we can.
 > > ## Solution
 > > ~~~
 > > for i in range(1, 4):
-> >    print(i)
+> >     print(i)
 > > ~~~
 > > {: .language-python}
 > {: .solution}
@@ -311,7 +314,7 @@ so we should always use it when we can.
 > > ~~~
 > > result = 1
 > > for i in range(0, 3):
-> >    result = result * 5
+> >     result = result * 5
 > > print(result)
 > > ~~~
 > > {: .language-python}
@@ -330,7 +333,7 @@ so we should always use it when we can.
 > > newstring = ''
 > > oldstring = 'Newton'
 > > for char in oldstring:
-> >    newstring = char + newstring
+> >     newstring = char + newstring
 > > print(newstring)
 > > ~~~
 > > {: .language-python}
@@ -345,7 +348,7 @@ so we should always use it when we can.
 >
 > ~~~
 > for i, x in enumerate(xs):
->     # Do something with i and x
+>     # Do something using i and x
 > ~~~
 > {: .language-python}
 >

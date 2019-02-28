@@ -8,12 +8,14 @@ objectives:
 - "Write conditional statements including `if`, `elif`, and `else` branches."
 - "Correctly evaluate expressions containing `and` and `or`."
 keypoints:
-- "Use `if condition` to start a conditional statement, `elif condition` to provide additional tests, and `else` to provide a default."
+- "Use `if condition` to start a conditional statement, `elif condition` to
+   provide additional tests, and `else` to provide a default."
 - "The bodies of the branches of conditional statements must be indented."
 - "Use `==` to test for equality."
 - "`X and Y` is only true if both `X` and `Y` are true."
 - "`X or Y` is true if either `X` or `Y`, or both, are true."
-- "Zero, the empty string, and the empty list are considered false; all other numbers, strings, and lists are considered true."
+- "Zero, the empty string, and the empty list are considered false;
+   all other numbers, strings, and lists are considered true."
 - "`True` and `False` represent truth values."
 ---
 
@@ -89,7 +91,7 @@ else:
 {: .language-python}
 
 ~~~
-"-3 is negative"
+-3 is negative
 ~~~
 {: .output}
 
@@ -135,19 +137,28 @@ at least one test is true
 
 Now that we've seen how conditionals work,
 we can use them to check for the suspicious features we saw in our inflammation data.
-Since we are going to be working with data, let's import the numpy library:
+We are about to use functions provided by the `numpy` module again.
+Therefore, if you're working in a new Python session, make sure to load the
+module with:
 
 ~~~
 import numpy
 ~~~
 {: .language-python}
 
-In the first couple of plots, the maximum inflammation per day
-seemed to rise like a straight line, one unit per day.
-We can check for this inside the `for` loop we wrote with the following conditional:
+From the first couple of plots, we saw that maximum daily inflammation exhibits
+a strange behavior and raises one unit a day.
+Wouldn't it be a good idea to detect such behavior and report it as suspicious?
+Let's do that!
+However, instead of checking every single day of the study, let's merely check
+if maximum inflammation in the beginning (day 0) and in the middle (day 20) of
+the study are equal to the corresponding day numbers.
 
 ~~~
-if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+max_inflammation_0 = numpy.max(data, axis=0)[0]
+max_inflammation_20 = numpy.max(data, axis=0)[20]
+
+if max_inflammation_0 == 0 and max_inflammation_20 == 20:
     print('Suspicious looking maxima!')
 ~~~
 {: .language-python}
@@ -174,7 +185,11 @@ Let's test that out:
 
 ~~~
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+
+max_inflammation_0 = numpy.max(data, axis=0)[0]
+max_inflammation_20 = numpy.max(data, axis=0)[20]
+
+if max_inflammation_0 == 0 and max_inflammation_20 == 20:
     print('Suspicious looking maxima!')
 elif numpy.sum(numpy.min(data, axis=0)) == 0:
     print('Minima add up to zero!')
@@ -190,7 +205,11 @@ Suspicious looking maxima!
 
 ~~~
 data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
-if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+
+max_inflammation_0 = numpy.max(data, axis=0)[0]
+max_inflammation_20 = numpy.max(data, axis=0)[20]
+
+if max_inflammation_0 == 0 and max_inflammation_20 == 20:
     print('Suspicious looking maxima!')
 elif numpy.sum(numpy.min(data, axis=0)) == 0:
     print('Minima add up to zero!')
@@ -334,7 +353,8 @@ freeing us from having to manually examine every plot for features we've seen be
 >
 > Write some code that sums the positive and negative numbers in a list separately,
 > using in-place operators.
-> Do you think the result is more or less readable than writing the same without in-place operators?
+> Do you think the result is more or less readable
+> than writing the same without in-place operators?
 >
 > > ## Solution
 > > ~~~
@@ -367,7 +387,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > respectively.
 >
 > Add code to the template below to do this. Note that the string method
-> [`startswith`](https://docs.python.org/3.5/library/stdtypes.html#str.startswith)
+> [`startswith`](https://docs.python.org/3/library/stdtypes.html#str.startswith)
 > returns `True` if and only if the string it is called on starts with the string
 > passed as an argument, that is:
 >
@@ -390,7 +410,11 @@ freeing us from having to manually examine every plot for features we've seen be
 > {: .output}
 >Use the following Python code as your starting point:
 > ~~~
-> files = ['inflammation-01.csv', 'myscript.py', 'inflammation-02.csv', 'small-01.csv', 'small-02.csv']
+> files = ['inflammation-01.csv',
+>          'myscript.py',
+>          'inflammation-02.csv',
+>          'small-01.csv',
+>          'small-02.csv']
 > large_files = []
 > small_files = []
 > other_files = []

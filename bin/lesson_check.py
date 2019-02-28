@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 Check lesson files and their contents.
@@ -18,6 +18,9 @@ __version__ = '0.3'
 # Where to look for source Markdown files.
 SOURCE_DIRS = ['', '_episodes', '_extras']
 
+# Where to look for source Rmd files.
+SOURCE_RMD_DIRS = ['_episodes_rmd']
+
 # Required files: each entry is ('path': YAML_required).
 # FIXME: We do not yet validate whether any files have the required
 #   YAML headers, but should in the future.
@@ -26,7 +29,7 @@ SOURCE_DIRS = ['', '_episodes', '_extras']
 # specially. This list must include all the Markdown files listed in the
 # 'bin/initialize' script.
 REQUIRED_FILES = {
-    '%/CONDUCT.md': True,
+    '%/CODE_OF_CONDUCT.md': True,
     '%/CONTRIBUTING.md': False,
     '%/LICENSE.md': True,
     '%/README.md': False,
@@ -99,6 +102,7 @@ BREAK_METADATA_FIELDS = {
 }
 
 # How long are lines allowed to be?
+# Please keep this in sync with .editorconfig!
 MAX_LINE_LEN = 100
 
 
@@ -108,6 +112,7 @@ def main():
     args = parse_args()
     args.reporter = Reporter()
     check_config(args.reporter, args.source_dir)
+    check_source_rmd(args.reporter, args.source_dir, args.parser)
     args.references = read_references(args.reporter, args.reference_path)
 
     docs = read_all_markdown(args.source_dir, args.parser)
@@ -171,14 +176,32 @@ def check_config(reporter, source_dir):
     reporter.check_field(config_file, 'configuration',
                          config, 'kind', 'lesson')
     reporter.check_field(config_file, 'configuration',
-                         config, 'carpentry', ('swc', 'dc', 'lc'))
+                         config, 'carpentry', ('swc', 'dc', 'lc', 'cp'))
     reporter.check_field(config_file, 'configuration', config, 'title')
     reporter.check_field(config_file, 'configuration', config, 'email')
 
-    reporter.check({'values': {'root': '..'}} in config.get('defaults', []),
+    for defaults in [
+            {'values': {'root': '.', 'layout': 'page'}},
+            {'values': {'root': '..', 'layout': 'episode'}, 'scope': {'type': 'episodes', 'path': ''}},
+            {'values': {'root': '..', 'layout': 'page'}, 'scope': {'type': 'extras', 'path': ''}}
+            ]:
+        reporter.check(defaults in config.get('defaults', []),
                    'configuration',
-                   '"root" not set to ".." in configuration')
+                   '"root" not set to "." in configuration')
 
+def check_source_rmd(reporter, source_dir, parser):
+    """Check that Rmd episode files include `source: Rmd`"""
+
+    episode_rmd_dir = [os.path.join(source_dir, d) for d in SOURCE_RMD_DIRS]
+    episode_rmd_files = [os.path.join(d, '*.Rmd') for d in episode_rmd_dir]
+    results = {}
+    for pat in episode_rmd_files:
+        for f in glob.glob(pat):
+            data = read_markdown(parser, f)
+            dy = data['metadata']
+            if dy:
+                reporter.check_field(f, 'episode_rmd',
+                                     dy, 'source', 'Rmd')
 
 def read_references(reporter, ref_path):
     """Read shared file of reference links, returning dictionary of valid references
@@ -273,7 +296,7 @@ def create_checker(args, filename, info):
             return cls(args, filename, **info)
     return NotImplemented
 
-class CheckBase(object):
+class CheckBase:
     """Base class for checking Markdown files."""
 
     def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
@@ -508,7 +531,6 @@ class CheckGeneric(CheckBase):
 
     def __init__(self, args, filename, metadata, metadata_len, text, lines, doc):
         super().__init__(args, filename, metadata, metadata_len, text, lines, doc)
-        self.layout = 'page'
 
 
 CHECKERS = [
@@ -517,6 +539,7 @@ CHECKERS = [
     (re.compile(r'index\.md'), CheckIndex),
     (re.compile(r'reference\.md'), CheckReference),
     (re.compile(r'_episodes/.*\.md'), CheckEpisode),
+    (re.compile(r'aio\.md'), CheckNonJekyll),
     (re.compile(r'.*\.md'), CheckGeneric)
 ]
 

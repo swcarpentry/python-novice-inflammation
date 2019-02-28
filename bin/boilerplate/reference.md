@@ -1,8 +1,9 @@
 ---
 layout: reference
-root: .
 ---
 
 ## Glossary
 
 FIXME
+
+{% include links.md %}

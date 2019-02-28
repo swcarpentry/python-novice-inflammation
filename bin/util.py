@@ -1,4 +1,3 @@
-
 import sys
 import os
 import json
@@ -30,13 +29,11 @@ UNWANTED_FILES = [
 REPORTER_NOT_SET = []
 
 
-class Reporter(object):
+class Reporter:
     """Collect and report errors."""
 
     def __init__(self):
         """Constructor."""
-
-        super(Reporter, self).__init__()
         self.messages = []
 
     def check_field(self, filename, name, values, key, expected=REPORTER_NOT_SET):
@@ -74,8 +71,9 @@ class Reporter(object):
             return location + ': ' + message
         elif isinstance(location, tuple):
             return '{0}:{1}: '.format(*location) + message
-        else:
-            assert False, 'Unknown item "{0}"'.format(item)
+
+        print('Unknown item "{0}"'.format(item), file=sys.stderr)
+        return NotImplemented
 
     @staticmethod
     def key(item):
@@ -86,8 +84,9 @@ class Reporter(object):
             return (location, -1, message)
         elif isinstance(location, tuple):
             return (location[0], location[1], message)
-        else:
-            assert False, 'Unknown item "{0}"'.format(item)
+
+        print('Unknown item "{0}"'.format(item), file=sys.stderr)
+        return NotImplemented
 
     def report(self, stream=sys.stdout):
         """Report all messages in order."""
