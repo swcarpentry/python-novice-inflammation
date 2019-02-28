@@ -20,8 +20,7 @@ list[2:9]), in the same way as strings and arrays."
 - "Strings are immutable (i.e., the characters in them cannot be changed)."
 ---
 
-In the previous episode, we analyzed only one file. We still have eleven more 
-to be analyzed...
+In the previous episode, we analyzed only one file. But we still have eleven more!
 
 Our goal with this Python lesson is to automate our analysis.
 Simply, we will write one code that will analyze all files,
