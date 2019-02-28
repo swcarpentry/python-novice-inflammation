@@ -38,23 +38,23 @@ odds are: [1, 3, 5, 7]
 ~~~
 {: .output}
 
-We select individual elements from lists by indexing them.
+We can select individual elements from lists by indexing them.
 Indexing allows us to access individual elements inside a container (such as list or string).
-Previously, we used indexing to count elements starting from the beginning, but we can also count from the end of the container using negative indices.
-We will discuss this further when we come to the topic of "slicing":
 
 ~~~
-print('first and last:', odds[0], odds[-1])
+print('first and last:', odds[0], odds[3], odds[-1])
 ~~~
 {: .language-python}
 
 ~~~
-first and last: 1 7
+first and last: 1 7 7
 ~~~
 {: .output}
 
-and if we loop over a list,
-the loop variable is assigned elements one at a time:
+We already saw how to use indexing to count elements starting from the beginning of the container, but we can also use negative indices to count backwards from the end.
+Because of this, `odds[3]` and `odds[-1]` point to the same element here.
+
+If we loop over a list, the loop variable is assigned elements one at a time:
 
 ~~~
 for number in odds:
