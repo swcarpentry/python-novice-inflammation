@@ -98,7 +98,7 @@ IndexError: list index out of range
 ~~~
 {: .error}
 
-Here's a better approach:
+Here's a better approach: a [for loop]({{ page.root }}/reference/#for-loop)
 
 ~~~
 odds = [1, 3, 5, 7]
