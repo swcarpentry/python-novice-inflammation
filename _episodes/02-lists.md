@@ -20,11 +20,19 @@ list[2:9]), in the same way as strings and arrays."
 - "Strings are immutable (i.e., the characters in them cannot be changed)."
 ---
 
-Just as a `for` loop is a way to do operations many times,
-a list is a way to store many values.
+In the previous episode, we analyzed a single file with inflammation data. Our goal, however, is to
+process all inflammation data we've got, which means that we still have eleven more files to go! 
+
+The natural first step is to collect the names of all the files that we have to process. In Python,
+a list is a way to store multiple values together. In this episode, we will learn how to store
+multiple values in a list as well as how to work with lists.
+
+## Python lists
+
 Unlike NumPy arrays,
-lists are built into the language (so we don't have to load a library
-to use them).
+lists are built into the language so we don't have to load a library
+to use them.
+
 We create a list by putting values inside square brackets and separating the values with commas:
 
 ~~~
@@ -47,23 +55,6 @@ print('first and last:', odds[0], odds[-1])
 
 ~~~
 first and last: 1 7
-~~~
-{: .output}
-
-and if we loop over a list,
-the loop variable is assigned elements one at a time:
-
-~~~
-for number in odds:
-    print(number)
-~~~
-{: .language-python}
-
-~~~
-1
-3
-5
-7
 ~~~
 {: .output}
 
@@ -296,33 +287,6 @@ odds: [1, 3, 5, 7]
 
 This is different from how variables worked in lesson 1, and more similar to how a spreadsheet
 works.
-
-> ## Turn a String Into a List
->
-> Use a for-loop to convert the string "hello" into a list of letters:
->
-> ~~~
-> ["h", "e", "l", "l", "o"]
-> ~~~
-> {: .language-python}
->
-> Hint: You can create an empty list like this:
->
-> ~~~
-> my_list = []
-> ~~~
-> {: .language-python}
->
-> > ## Solution
-> > ~~~
-> > my_list = []
-> > for char in "hello":
-> >     my_list.append(char)
-> > print(my_list)
-> > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
 
 Subsets of lists and strings can be accessed by specifying ranges of values in brackets,
 similar to how we accessed ranges of positions in a NumPy array.

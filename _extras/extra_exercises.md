@@ -49,3 +49,30 @@ or not (yet) added to the main lesson.
 > > list and then unpacked into `left` and `right`.
 > {: .solution}
 {: .challenge}
+> 
+> ## Turn a String into a List
+>
+> Use a for-loop to convert the string "hello" into a list of letters:
+>
+> ~~~
+> ["h", "e", "l", "l", "o"]
+> ~~~
+> {: .language-python}
+>
+> Hint: You can create an empty list like this:
+>
+> ~~~
+> my_list = []
+> ~~~
+> {: .language-python}
+>
+> > ## Solution
+> > ~~~
+> > my_list = []
+> > for char in "hello":
+> > 	my_list.append(char)
+> > print(my_list)
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
