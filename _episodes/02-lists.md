@@ -20,24 +20,18 @@ list[2:9]), in the same way as strings and arrays."
 - "Strings are immutable (i.e., the characters in them cannot be changed)."
 ---
 
-In the previous episode, we analyzed only one file. But we still have eleven more!
+In the previous episode, we analyzed a single file with inflammation data. Our goal, however, is to
+process all inflammation data we've got, which means that we still have eleven more files to go! 
 
-Our goal with this Python lesson is to automate our analysis.
-Simply, we will write one code that will analyze all files,
-instead of changing the file name and running the code eleven more times. 
+The natural first step is to collect the names of all the files that we have to process. In Python,
+a list is a way to store multiple values together. In this episode, we will learn how to store
+multiple values in a list as well as how to work with lists.
 
-Our first step in building the automated code is to store the name 
-of all the files together. Our automated code will iterate through 
-each file name, and perform the analysis. In Python, a list is a way 
-to store many values. Ultimately, we will store all our file names
-into a list to be used in our automated code. 
-
-In this episode, we will learn how to store multiple values in a lists,
-and how to manipulate items inside a list.
+## Python lists
 
 Unlike NumPy arrays,
-lists are built into the language (so we don't have to load a library
-to use them).
+lists are built into the language so we don't have to load a library
+to use them.
 
 We create a list by putting values inside square brackets and separating the values with commas:
 
