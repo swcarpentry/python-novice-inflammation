@@ -217,6 +217,7 @@ does not.
 > ~~~
 > sample_ages = [10, 12.5, 'Unknown']
 > ~~~
+> {: .language-python}
 {: .callout}
 
 There are many ways to change the contents of lists besides assigning new values to
@@ -359,10 +360,10 @@ last: 4
 >
 > ~~~
 > string_for_slicing = "Observation date: 02-Feb-2013"
-> list_for_slicing = [["fluorine", "F"], 
->                     ["chlorine", "Cl"], 
->                     ["bromine", "Br"], 
->                     ["iodine", "I"], 
+> list_for_slicing = [["fluorine", "F"],
+>                     ["chlorine", "Cl"],
+>                     ["bromine", "Br"],
+>                     ["iodine", "I"],
 >                     ["astatine", "At"]]
 > ~~~
 > {: .language-python}
