@@ -42,12 +42,16 @@ We can access elements of a list using indices -- numbered positions of elements
 These positions are numbered starting at 0, so the first element has an index of 0.
 
 ~~~
-print('first and last:', odds[0], odds[3], odds[-1])
+print('first element:', odd[0])
+print('last element:', odd[3])
+print('"-1" element:', odd[-1])
 ~~~
 {: .language-python}
 
 ~~~
-first and last: 1 7 7
+first element: 1
+last element: 7
+"-1" element: 7
 ~~~
 {: .output}
 
