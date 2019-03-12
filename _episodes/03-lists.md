@@ -38,8 +38,8 @@ odds are: [1, 3, 5, 7]
 ~~~
 {: .output}
 
-We can select individual elements from lists by indexing them.
-Indexing allows us to access individual elements inside a container (such as list or string).
+We can access elements of a list using indices -- numbered positions of elements in the list.
+These positions are numbered starting at 0, so the first element has an index of 0.
 
 ~~~
 print('first and last:', odds[0], odds[3], odds[-1])
@@ -51,7 +51,7 @@ first and last: 1 7 7
 ~~~
 {: .output}
 
-We already saw how to use indexing to count elements starting from the beginning of the container, but we can also use negative indices to count backwards from the end.
+We already saw how to use indexing to count elements starting from the beginning of the list, but we can also use negative indices to count backwards from the end.
 Because of this, `odds[3]` and `odds[-1]` point to the same element here.
 
 If we loop over a list, the loop variable is assigned elements one at a time:
