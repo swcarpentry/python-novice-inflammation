@@ -671,7 +671,7 @@ the program now does everything we set out to do.
 > ~~~
 > $ python arith.py add 1 2
 > ~~~
-> {: .language-python}
+> {: .language-bash}
 >
 > ~~~
 > 3
@@ -681,7 +681,7 @@ the program now does everything we set out to do.
 > ~~~
 > $ python arith.py subtract 3 4
 > ~~~
-> {: .language-python}
+> {: .language-bash}
 >
 > ~~~
 > -1
@@ -734,7 +734,7 @@ the program now does everything we set out to do.
 > ~~~
 > $ python my_ls.py py
 > ~~~
-> {: .language-python}
+> {: .language-bash}
 >
 > ~~~
 > left.py
