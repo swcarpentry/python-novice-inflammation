@@ -55,7 +55,7 @@ last element: 7
 ~~~
 {: .output}
 
-We already saw how to use indexing to count elements starting from the beginning of the list, but we can also use negative indices to count backwards from the end.
+Yes, we can use negative numbers as indices in Python. When we do so, the index `-1` gives us the last element in the list, `-2` the second to last, and so on.
 Because of this, `odds[3]` and `odds[-1]` point to the same element here.
 
 If we loop over a list, the loop variable is assigned elements one at a time:
