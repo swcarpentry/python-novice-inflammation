@@ -38,20 +38,28 @@ odds are: [1, 3, 5, 7]
 ~~~
 {: .output}
 
-We select individual elements from lists by indexing them:
+We can access elements of a list using indices -- numbered positions of elements in the list.
+These positions are numbered starting at 0, so the first element has an index of 0.
 
 ~~~
-print('first and last:', odds[0], odds[-1])
+print('first element:', odd[0])
+print('last element:', odd[3])
+print('"-1" element:', odd[-1])
 ~~~
 {: .language-python}
 
 ~~~
-first and last: 1 7
+first element: 1
+last element: 7
+"-1" element: 7
 ~~~
 {: .output}
 
-and if we loop over a list,
-the loop variable is assigned elements one at a time:
+Yes, we can use negative numbers as indices in Python. When we do so, the index `-1` gives us the
+last element in the list, `-2` the second to last, and so on.
+Because of this, `odds[3]` and `odds[-1]` point to the same element here.
+
+If we loop over a list, the loop variable is assigned elements one at a time:
 
 ~~~
 for number in odds:
@@ -378,6 +386,8 @@ last: 4
 > the length of the string or list
 > (e.g. if you wanted to apply the solution to a set of lists of different lengths)?
 > If not, try to change your approach to make it more robust.
+>
+> Hint: Remember that indices can be negative as well as positive
 >
 > > ## Solution
 > > Use negative indices to count elements from the end of a container (such as list or string):
