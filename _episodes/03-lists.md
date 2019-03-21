@@ -55,7 +55,8 @@ last element: 7
 ~~~
 {: .output}
 
-Yes, we can use negative numbers as indices in Python. When we do so, the index `-1` gives us the last element in the list, `-2` the second to last, and so on.
+Yes, we can use negative numbers as indices in Python. When we do so, the index `-1` gives us the
+last element in the list, `-2` the second to last, and so on.
 Because of this, `odds[3]` and `odds[-1]` point to the same element here.
 
 If we loop over a list, the loop variable is assigned elements one at a time:
