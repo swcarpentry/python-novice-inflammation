@@ -6,7 +6,7 @@
 
      <!-- Rectangle around the "65.0" value -->
      <rect x="5" y="14" width="75" height="30"
-           fill="none" stroke="#000" />
+           fill="#fff" stroke="#000" />
 
      <!-- Rectangle around the "weight_kg" label -->
      <rect x="48" y="4" width="65" height="17"
