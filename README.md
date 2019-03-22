@@ -1,7 +1,7 @@
 # Programming with Python
 
 [![GitHub release][shields_release]][swc_py_releases]
-[![Create a Slack Account with us][create_slack_svg]][slack_heroky_invite]
+[![Create a Slack Account with us][create_slack_svg]][slack_heroku_invite]
 [![Slack Status][slack_channel_status]][slack_channel_url]
 
 An introduction to Python for non-programmers using inflammation data.
@@ -85,7 +85,7 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [shields_release]: https://img.shields.io/github/release/swcarpentry/python-novice-inflammation.svg
 [swc_py_releases]: https://github.com/swcarpentry/python-novice-inflammation/releases
 [create_slack_svg]: https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg
-[slack_heroky_invite]: https://swc-slack-invite.herokuapp.com
+[slack_heroku_invite]: https://swc-slack-invite.herokuapp.com
 [slack_channel_status]: https://img.shields.io/badge/Slack_Channel-swc--py--inflammation-E01563.svg
 [slack_channel_url]: https://swcarpentry.slack.com/messages/C9Y0L6MF0
 [travis_svg]: https://travis-ci.org/swcarpentry/python-novice-inflammation.svg?branch=gh-pages
