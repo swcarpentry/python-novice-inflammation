@@ -35,7 +35,7 @@ odds = [1, 3, 5, 7]
 
 We can access a number in the list using its index. For example,
 we can get the first
-number in the list `'odds'`,
+number in the list `odds`,
 by using `odds[0]`. One way to print each number is to use
 four `print` statements:
 
@@ -192,8 +192,8 @@ of the loop body (e.g. `end for`); what is indented after the `for` statement be
 Here's another loop that repeatedly updates a variable:
 
 ~~~
-names = ['Curie', 'Darwin', 'Turing']
 length = 0
+names = ['Curie', 'Darwin', 'Turing']
 for value in names:
     length = length + 1
 print('There are', length, 'names in the list.')
@@ -207,7 +207,7 @@ There are 3 names in the list.
 
 It's worth tracing the execution of this little program step by step.
 Since there are three names in `names`,
-the statement on line 3 will be executed three times.
+the statement on line 4 will be executed three times.
 The first time around,
 `length` is zero (the value assigned to it on line 1)
 and `value` is `Curie`.
@@ -221,7 +221,7 @@ After one more update,
 `length` is 3;
 since there is nothing left in `names` for Python to process,
 the loop finishes
-and the `print` statement on line 4 tells us our final answer.
+and the `print` statement on line 5 tells us our final answer.
 
 Note that a loop variable is just a variable that's being used to record progress in a loop.
 It still exists after the loop is over,
@@ -239,7 +239,7 @@ print('after the loop, name is', name)
 Curie
 Darwin
 Turing
-after the loop, name is 'Turing'
+after the loop, name is Turing
 ~~~
 {: .output}
 
