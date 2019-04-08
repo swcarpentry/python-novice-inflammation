@@ -201,7 +201,7 @@ print('There are', length, 'names in the list.')
 {: .language-python}
 
 ~~~
-There are 3 elements in the list.
+There are 3 names in the list.
 ~~~
 {: .output}
 
