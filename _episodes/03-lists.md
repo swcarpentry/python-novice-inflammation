@@ -42,9 +42,9 @@ We can access elements of a list using indices -- numbered positions of elements
 These positions are numbered starting at 0, so the first element has an index of 0.
 
 ~~~
-print('first element:', odd[0])
-print('last element:', odd[3])
-print('"-1" element:', odd[-1])
+print('first element:', odds[0])
+print('last element:', odds[3])
+print('"-1" element:', odds[-1])
 ~~~
 {: .language-python}
 
