@@ -296,25 +296,27 @@ so we should always use it when we can.
 
 
 
-> ## Understanding the number of loops
+> ## Understanding the loops
 >
+> Given the following loop:
 > ~~~
 > word = 'oxygen'
->for char in word:
->    print(char)
+> for char in word:
+>     print(char)
 > ~~~
 > {: .python}
->In the above code, how many times is the loop repeated? 
-> ~~~
->A. 3 
->B. 4 
->C. 5
->D. 6 
-> ~~~
->> ## Solution
->>~~~
->> 6
->>~~~
+>
+> How many times is the body of the loop executed?
+>
+> * 3 times
+> * 4 times
+> * 5 times
+> * 6 times
+>
+> > ## Solution
+> >
+> > The body of the loop is executed 6 times.
+> >
 > {: .solution}
 {: .challenge}
 
