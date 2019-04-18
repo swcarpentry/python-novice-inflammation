@@ -296,7 +296,7 @@ so we should always use it when we can.
 >    print(char)
 > ~~~
 > {: .python}
->In the above code, how many times is the loop repeated ? 
+>In the above code, how many times is the loop repeated? 
 > ~~~
 >A. 3 
 >B. 4 
