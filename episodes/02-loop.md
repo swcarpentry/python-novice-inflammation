@@ -261,10 +261,10 @@ so we should always use it when we can.
 
 > ## From 1 to N
 >
-> Python has a built-in function called `range` that creates a sequence of numbers. `range` can
+> Python has a built-in function called `range` that generates a sequence of numbers. `range` can
 > accept 1, 2, or 3 parameters.
 >
-> * If one parameter is given, `range` creates an array of that length,
+> * If one parameter is given, `range` generates a sequence of that length,
 >   starting at zero and incrementing by 1.
 >   For example, `range(3)` produces the numbers `0, 1, 2`.
 > * If two parameters are given, `range` starts at
