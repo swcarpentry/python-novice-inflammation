@@ -293,6 +293,33 @@ so we should always use it when we can.
 > {: .solution}
 {: .challenge}
 
+
+
+
+> ## Understanding the number of loops
+>
+> ~~~
+> word = 'oxygen'
+>for char in word:
+>    print(char)
+> ~~~
+> {: .python}
+>In the above code, how many times is the loop repeated? 
+> ~~~
+>A. 3 
+>B. 4 
+>C. 5
+>D. 6 
+> ~~~
+>> ## Solution
+>>~~~
+>> 6
+>>~~~
+> {: .solution}
+{: .challenge}
+
+
+
 > ## Computing Powers With Loops
 >
 > Exponentiation is built into Python:
