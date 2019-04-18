@@ -948,8 +948,8 @@ the graphs will actually be squeezed together more closely.)
 >
 > > ## Solution
 > > ~~~
-> > []
-> > []
+> > array([], shape=(0, 0), dtype=float64)
+> > array([], shape=(0, 40), dtype=float64)
 > > ~~~
 > > {: .output}
 > {: .solution}
