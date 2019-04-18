@@ -23,6 +23,9 @@ The first three rows of our first file look like this:
 0,1,1,3,3,2,6,2,5,9,5,7,4,5,4,15,5,11,9,10,19,14,12,17,7,12,11,7,4,2,10,5,4,2,2,3,2,2,1,1
 ~~~
 {: .source}
+Each number represents the number of inflammation bouts that a particular patient experienced on a
+given day. For example, value "6" at row 3 column 7 of the data set above means that the third
+patient was experiencing inflammation six times on the seventh day of the clinical study.
 
 So, we want to:
 
