@@ -272,7 +272,7 @@ so we should always use it when we can.
 >   For example, `range(2, 5)` produces `2, 3, 4`.
 > * If `range` is given 3 parameters,
 >   it starts at the first one, ends just before the second one, and increments by the third one.
->   For exmaple `range(3, 10, 2)` produces `3, 5, 7, 9`.
+>   For example, `range(3, 10, 2)` produces `3, 5, 7, 9`.
 >
 > Using `range`,
 > write a loop that uses `range` to print the first 3 natural numbers:
