@@ -63,13 +63,33 @@ name of the function (`fahr_to_celsius`) and a parenthesized list of parameter n
 statements that are executed when it runs --- is indented below the
 definition line.  The body concludes with a `return` keyword followed by the return value.
 
+return vs print statements in python functions?
+def maximum(x, y):
+    if x > y:
+        print(x)
+    elif x == y:
+        print('The numbers are equal')
+    else:
+        return(y)
+       ############### 
+        def maximum(x, y):
+    if x > y:
+        print(x)
+    elif x == y:
+        print('The numbers are equal')
+    else:
+        print(y)
+        
+print and return would display thesame values       
+return keyword prints/display's the answer of the mathematical expression in the above method in its original datatype e.g int
+print keyword would always return a value as a string.
+
 When we call the function,
 the values we pass to it are assigned to those variables
 so that we can use them inside the function.
 Inside the function,
 we use a [return statement]({{ page.root }}/reference/#return-statement) to send a result
-back to whoever asked for it.
-
+back to whoever asked for it. 
 Let's try running our function.
 
 ~~~
