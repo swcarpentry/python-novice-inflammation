@@ -140,7 +140,7 @@ The general form of a loop is:
 
 ~~~
 for variable in collection:
-    do things using variable
+    # do things using variable, such as print
 ~~~
 {: .language-python}
 
