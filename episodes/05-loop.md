@@ -193,65 +193,66 @@ Here's another loop that repeatedly updates a variable:
 
 ~~~
 length = 0
-for vowel in 'aeiou':
+names = ['Curie', 'Darwin', 'Turing']
+for value in names:
     length = length + 1
-print('There are', length, 'vowels')
+print('There are', length, 'names in the list.')
 ~~~
 {: .language-python}
 
 ~~~
-There are 5 vowels
+There are 3 names in the list.
 ~~~
 {: .output}
 
 It's worth tracing the execution of this little program step by step.
-Since there are five characters in `'aeiou'`,
-the statement on line 3 will be executed five times.
+Since there are three names in `names`,
+the statement on line 4 will be executed three times.
 The first time around,
 `length` is zero (the value assigned to it on line 1)
-and `vowel` is `'a'`.
+and `value` is `Curie`.
 The statement adds 1 to the old value of `length`,
 producing 1,
 and updates `length` to refer to that new value.
 The next time around,
-`vowel` is `'e'` and `length` is 1,
++`value` is `Darwin` and `length` is 1,
 so `length` is updated to be 2.
-After three more updates,
-`length` is 5;
-since there is nothing left in `'aeiou'` for Python to process,
+After one more update,
+`length` is 3;
+since there is nothing left in `names` for Python to process,
 the loop finishes
-and the `print` statement on line 4 tells us our final answer.
+and the `print` function on line 5 tells us our final answer.
 
 Note that a loop variable is a variable that's being used to record progress in a loop.
 It still exists after the loop is over,
 and we can re-use variables previously defined as loop variables as well:
 
 ~~~
-letter = 'z'
-for letter in 'abc':
-    print(letter)
-print('after the loop, letter is', letter)
+name = 'Rosalind'
+for name in ['Curie', 'Darwin', 'Turing']:
+    print(name)
+print('after the loop, name is', name)
 ~~~
 {: .language-python}
 
 ~~~
-a
-b
-c
-after the loop, letter is c
+Curie
+Darwin
+Turing
+after the loop, name is Turing
 ~~~
 {: .output}
 
-Note also that finding the length of a string is such a common operation
+Note also that finding the length of an object is such a common operation
 that Python actually has a built-in function to do it called `len`:
 
 ~~~
-print(len('aeiou'))
+print(len([0, 1, 2, 3]))
 ~~~
 {: .language-python}
 
 ~~~
-5
+4
 ~~~
 {: .output}
 
@@ -351,20 +352,19 @@ so we should always use it when we can.
 > {: .solution}
 {: .challenge}
 
-> ## Reverse a String
+> ## Summing a list
 >
-> Knowing that two strings can be concatenated using the `+` operator,
-> write a loop that takes a string
-> and produces a new string with the characters in reverse order,
-> so `'Newton'` becomes `'notweN'`.
+> Write a loop that calculates the sum of elements in a list
+> by adding each element and printing the final value,
+> so `[124, 402, 36]` prints 562
 >
 > > ## Solution
 > > ~~~
-> > newstring = ''
-> > oldstring = 'Newton'
-> > for char in oldstring:
-> >     newstring = char + newstring
-> > print(newstring)
+> > numbers = [124, 402, 36]
+> > summed = 0
+> > for num in numbers:
+> >     summed = summed + num
+> > print(summed)
 > > ~~~
 > > {: .language-python}
 > {: .solution}
