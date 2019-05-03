@@ -560,8 +560,29 @@ This violates another important rule of programming:
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
-An afternote: asserts are for debugging only
-Assertions are an excellent way to check program input during development, and this lesson has shown you how to use them to double check you expectations as a program runs. However, they are not designed for checking input from users in critical situations. This is because they can be turned off when you run python in optimised mode:
+
+> ## An after-note: asserts are for debugging only
+> Assertions are an excellent way to check a program during development, and this lesson has shown you
+> how to use them to double check you expectations as a program runs. However, they are not designed for checking input 
+> from users. This is because they can be easily turned off when you run python in optimised mode:
+> 
+> ~~~
+> python -O my_script.py # no asserts will be used 
+> ~~~
+> {: .language-bash}
+>
+> therefore in these cases you should replace each assert with an if statement and an Exception
+> 
+> ~~~
+> from math import sqrt
+>
+> def checked_sqrt(val):
+>    if val < 0.0:
+>       raise Exception("I can't take the square root of %i it's negative" % val)
+>    return sqrt(val)
+> ~~~
+> {: .language-python}
 {: .callout}
-{: .callout}
+
+
 {% include links.md %}
