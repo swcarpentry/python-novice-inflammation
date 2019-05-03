@@ -76,6 +76,25 @@ or not (yet) added to the main lesson.
 > {: .solution}
 {: .challenge}
 
+> ## Reverse a String
+>
+> Knowing that two strings can be concatenated using the `+` operator,
+> write a loop that takes a string
+> and produces a new string with the characters in reverse order,
+> so `'Newton'` becomes `'notweN'`.
+>
+> > ## Solution
+> > ~~~
+> > newstring = ''
+> > oldstring = 'Newton'
+> > for char in oldstring:
+> >     newstring = char + newstring
+> > print(newstring)
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
 > ## Fixing and Testing
 > From: "Defensive Programming"
 >
