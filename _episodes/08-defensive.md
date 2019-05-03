@@ -560,5 +560,8 @@ This violates another important rule of programming:
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
-
+An afternote: asserts are for debugging only
+Assertions are an excellent way to check program input during development, and this lesson has shown you how to use them to double check you expectations as a program runs. However, they are not designed for checking input from users in critical situations. This is because they can be turned off when you run python in optimised mode:
+{: .callout}
+{: .callout}
 {% include links.md %}
