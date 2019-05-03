@@ -49,7 +49,7 @@ or not (yet) added to the main lesson.
 > > list and then unpacked into `left` and `right`.
 > {: .solution}
 {: .challenge}
-> 
+
 > ## Turn a String into a List
 >
 > Use a for-loop to convert the string "hello" into a list of letters:
@@ -72,6 +72,25 @@ or not (yet) added to the main lesson.
 > > for char in "hello":
 > > 	my_list.append(char)
 > > print(my_list)
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
+> ## Reverse a String
+>
+> Knowing that two strings can be concatenated using the `+` operator,
+> write a loop that takes a string
+> and produces a new string with the characters in reverse order,
+> so `'Newton'` becomes `'notweN'`.
+>
+> > ## Solution
+> > ~~~
+> > newstring = ''
+> > oldstring = 'Newton'
+> > for char in oldstring:
+> >     newstring = char + newstring
+> > print(newstring)
 > > ~~~
 > > {: .language-python}
 > {: .solution}
