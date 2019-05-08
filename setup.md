@@ -1,9 +1,18 @@
 ---
 layout: page
 title: Setup
-permalink: /setup/
+permalink: /setup/index.html
 root: ..
 ---
+
+### Install Python
+
+In this lesson we will be using Python 3 with some of its scientific libraries.
+Although one can install a "plain vanilla" Python 3 and all required libraries "by hand",
+we recommend installing [Anaconda][workshop-template-python-instructions], a Python distribution
+that comes with everything we need for the lesson.
+
+&nbsp; <!-- vertical spacer -->
 
 ### Obtain lesson materials
 
@@ -89,3 +98,4 @@ $ ipython
 
 [zipfile1]: {{ page.root }}/data/python-novice-inflammation-data.zip
 [zipfile2]: {{ page.root }}/code/python-novice-inflammation-code.zip
+[workshop-template-python-instructions]: https://carpentries.github.io/workshop-template/#python
