@@ -279,8 +279,8 @@ print('odds:', odds)
 {: .language-python}
 
 ~~~
-primes: [1, 3, 5, 7, 2]
-odds: [1, 3, 5, 7, 2]
+primes: [2, 3, 5, 7]
+odds: [2, 3, 5, 7]
 ~~~
 {: .output}
 
@@ -298,7 +298,7 @@ print('odds:', odds)
 {: .language-python}
 
 ~~~
-primes: [1, 3, 5, 7, 2]
+primes: [2, 3, 5, 7]
 odds: [1, 3, 5, 7]
 ~~~
 {: .output}
