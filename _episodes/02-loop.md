@@ -146,9 +146,11 @@ for variable in collection:
 ~~~
 {: .language-python}
 
-Using the oxygen example above, the loop might look like this:
+We can visualise how the for loop works using a tool from pythontutor:
+http://www.pythontutor.com/visualize.html#mode=display
 
-![loop_image](../fig/loops_image.png)
+Using the oxygen example above, the loop might look like this:
+![loop_image](../fig/forloop_example.gif)
 
 where each character (`char`) in the variable `word` is looped through and printed one character
 after another. The numbers in the diagram denote which loop cycle the character was printed in (1
