@@ -177,7 +177,7 @@ weight in kilograms is now: 65.0
 >
 > ![Creating Another Variable](../fig/python-sticky-note-variables-02.svg)
 >
-> Let's now change `weight_kg`:
+> Let's change now `weight_kg`:
 >
 > ~~~
 > weight_kg = 100.0
@@ -204,7 +204,7 @@ that can be called upon when needed.
 
 ## Loading data into Python
 In order to load our inflammation data, we need to access
-([import]({{ page.root }}/reference/#import) in Python terminology) a library called
+([import]({{ page.root }}/reference/#import) in Python terminology) a library called Numerical Python or 
 [NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").  In general you should use this
 library if you want to do fancy things with numbers, especially if you have matrices or arrays.  We
 can import NumPy using:
@@ -276,7 +276,7 @@ data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 {: .language-python}
 
 This statement doesn't produce any output because we've assigned the output to the variable `data`.
-If we want to check that the data have been loaded,
+If we want to check that if the data have been loaded,
 we can print the variable's value:
 
 ~~~
@@ -437,7 +437,7 @@ print(data[0:4, 0:10])
 {: .output}
 
 The [slice]({{ page.root }}/reference/#slice) `0:4` means, "Start at index 0 and go up to, but not
-including, index 4."Again, the up-to-but-not-including takes a bit of getting used to, but the
+including, index 4". Again, the up-to-but-not-including takes a bit of getting used to, but the
 rule is that the difference between the upper and lower bounds is the number of values in the slice.
 
 We don't have to start slices at 0:
@@ -477,9 +477,9 @@ small is:
 ~~~
 {: .output}
 
-Arrays also know how to perform common mathematical operations on their values.  The simplest
+Arrays also know how to perform common mathematical operations on their values. The simplest
 operations with data are arithmetic: addition, subtraction, multiplication, and division.  When you
-do such operations on arrays, the operation is done element-by-element.  Thus:
+do such operations on arrays, the operation is done element-by-element. Thus:
 
 ~~~
 doubledata = data * 2.0
@@ -791,7 +791,7 @@ tells Python how big to make this space. Each subplot is placed into the figure 
 its `add_subplot` [method]({{ page.root }}/reference/#method). The `add_subplot` method takes 3
 parameters. The first denotes how many total rows of subplots there are, the second parameter
 refers to the total number of subplot columns, and the final parameter denotes which subplot
-your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a
+your variable is referencing to (left-to-right, top-to-bottom). Each subplot is stored in a
 different variable (`axes1`, `axes2`, `axes3`). Once a subplot is created, the axes can
 be titled using the `set_xlabel()` command (or `set_ylabel()`).
 Here are our three plots side by side:
@@ -1000,7 +1000,7 @@ the graphs will actually be squeezed together more closely.)
 > ## Drawing Straight Lines
 >
 > In the center and right subplots above, we expect all lines to look like step functions because
-> non-integer value are not realistic for the minimum and maximum values. However, you can see
+> non-integer values are not realistic for the minimum and maximum values. However, you can see
 > that the lines are not always vertical or horizontal, and in particular the step function
 > in the subplot on the right looks slanted. Why is this?
 >
