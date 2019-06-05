@@ -18,7 +18,7 @@ keypoints:
    then it will be called an `IndentationError`."
 - "A `NameError` will occur if you use a variable that has not been defined,
    either because you meant to use quotes around a string, you forgot to define the variable,
-   or you just made a typo."
+   or you made a typo."
 - "Containers like lists and strings will generate errors if you try to access items
    in them that do not exist. This type of error is called an `IndexError`."
 - "Trying to read a file that does not exist will give you an `FileNotFoundError`.
@@ -97,9 +97,9 @@ the program encountered an error on Line 6, when it tried to run the code `print
 > Sometimes, you might see a traceback that is very long
 > -- sometimes they might even be 20 levels deep!
 > This can make it seem like something horrible happened,
-> but really it just means that your program called many functions before it ran into the error.
+> but really it means that your program called many functions before it ran into the error.
 > Most of the time,
-> you can just pay attention to the bottom-most level,
+> you can pay attention to the bottom-most level,
 > which is the actual place where the error occurred.
 {: .callout}
 
@@ -115,7 +115,7 @@ if you fix the error,
 but encounter a new one,
 you can tell that the error changed.
 Additionally,
-sometimes just knowing *where* the error occurred is enough to fix it,
+sometimes knowing *where* the error occurred is enough to fix it,
 even if you don't entirely understand the message.
 
 If you do encounter an error you don't recognize,
@@ -144,7 +144,7 @@ to some extent it might be ambiguous if there should be a sentence break or not
 People can typically figure out what is meant by text with no punctuation,
 but people are much smarter than computers.
 If Python doesn't know how to read the program,
-it will just give up and inform you with an error.
+it will give up and inform you with an error.
 For example:
 
 ~~~
@@ -270,7 +270,7 @@ NameError: name 'hello' is not defined
 ~~~
 {: .error}
 
-The second is that you just forgot to create the variable before using it.
+The second is that you forgot to create the variable before using it.
 In the following example,
 `count` should have been defined (e.g., with `count = 0`) before the for loop:
 
@@ -394,10 +394,10 @@ One reason for receiving this error is that you specified an incorrect path to t
 For example,
 if I am currently in a folder called `myproject`,
 and I have a file in `myproject/writing/myfile.txt`,
-but I try to just open `myfile.txt`,
+but I try to open `myfile.txt`,
 this will fail.
 The correct path would be `writing/myfile.txt`.
-It is also possible (like with `NameError`) that you just made a typo.
+It is also possible (like with `NameError`) that you made a typo.
 
 A related issue can occur if you use the "read" flag instead of the "write" flag.
 Python will not give you an error if you try to open a file for writing

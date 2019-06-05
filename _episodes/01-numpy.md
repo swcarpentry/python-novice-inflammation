@@ -57,7 +57,7 @@ weight_kg = 60
 {: .language-python}
 
 From now on, whenever we use `weight_kg`, Python will substitute the value we assigned to
-it. In essence, **a variable is just a name for a value**.
+it. In essence, **a variable is a name for a value**.
 
 In Python, variable names:
 
@@ -352,7 +352,7 @@ print(data.shape)
 {: .output}
 
 The output tells us that the `data` array variable contains 60 rows and 40 columns. When we
-created the variable `data` to store our arthritis data, we didn't just create the array; we also
+created the variable `data` to store our arthritis data, we didn't only create the array; we also
 created information about the array, called [members]({{ page.root }}/reference/#member) or
 attributes. This extra information describes `data` in the same way an adjective describes a noun.
 `data.shape` is an attribute of `data` which describes the dimensions of `data`. We use the same
@@ -458,7 +458,7 @@ print(data[5:10, 0:10])
 
 We also don't have to include the upper and lower bound on the slice.  If we don't include the lower
 bound, Python uses 0 by default; if we don't include the upper, the slice runs to the end of the
-axis, and if we don't include either (i.e., if we just use ':' on its own), the slice includes
+axis, and if we don't include either (i.e., if we use ':' on its own), the slice includes
 everything:
 
 ~~~

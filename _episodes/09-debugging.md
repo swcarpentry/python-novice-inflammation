@@ -121,7 +121,7 @@ are almost never worthwhile.
 
 If it takes 20 minutes for the bug to surface,
 we can only do three experiments an hour.
-That doesn't just mean we'll get less data in more time:
+That doesn't mean we'll get less data in more time:
 we're also more likely to be distracted by other things as we wait for our program to fail,
 which means the time we *are* spending on the problem is less focused.
 It's therefore critical to *make it fail fast*.
@@ -206,7 +206,7 @@ and we're better able to give them the information they need to be useful.
 And speaking of help:
 if we can't find a bug in 10 minutes,
 we should *be humble* and ask for help.
-Just explaining the problem aloud is often useful,
+Explaining the problem aloud is often useful,
 since hearing what we're thinking helps us spot inconsistencies and hidden assumptions.
 
 Asking for help also helps alleviate confirmation bias.
