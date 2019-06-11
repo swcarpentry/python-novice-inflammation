@@ -155,8 +155,8 @@ if maximum inflammation in the beginning (day 0) and in the middle (day 20) of
 the study are equal to the corresponding day numbers.
 
 ~~~
-max_inflammation_0 = numpy.max(data, axis=0)[0]
-max_inflammation_20 = numpy.max(data, axis=0)[20]
+max_inflammation_0 = numpy.max(inflamation, axis=0)[0]
+max_inflammation_20 = numpy.max(inflamation, axis=0)[20]
 
 if max_inflammation_0 == 0 and max_inflammation_20 == 20:
     print('Suspicious looking maxima!')
@@ -168,7 +168,7 @@ the minima per day were all zero (looks like a healthy person snuck into our stu
 We can also check for this with an `elif` condition:
 
 ~~~
-elif numpy.sum(numpy.min(data, axis=0)) == 0:
+elif numpy.sum(numpy.min(inflamation, axis=0)) == 0:
     print('Minima add up to zero!')
 ~~~
 {: .language-python}
@@ -184,14 +184,14 @@ else:
 Let's test that out:
 
 ~~~
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+inflamation = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
-max_inflammation_0 = numpy.max(data, axis=0)[0]
-max_inflammation_20 = numpy.max(data, axis=0)[20]
+max_inflammation_0 = numpy.max(inflamation, axis=0)[0]
+max_inflammation_20 = numpy.max(inflamation, axis=0)[20]
 
 if max_inflammation_0 == 0 and max_inflammation_20 == 20:
     print('Suspicious looking maxima!')
-elif numpy.sum(numpy.min(data, axis=0)) == 0:
+elif numpy.sum(numpy.min(inflamation, axis=0)) == 0:
     print('Minima add up to zero!')
 else:
     print('Seems OK!')
@@ -204,14 +204,14 @@ Suspicious looking maxima!
 {: .output}
 
 ~~~
-data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
+inflamation = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
 
-max_inflammation_0 = numpy.max(data, axis=0)[0]
-max_inflammation_20 = numpy.max(data, axis=0)[20]
+max_inflammation_0 = numpy.max(inflamation, axis=0)[0]
+max_inflammation_20 = numpy.max(inflamation, axis=0)[20]
 
 if max_inflammation_0 == 0 and max_inflammation_20 == 20:
     print('Suspicious looking maxima!')
-elif numpy.sum(numpy.min(data, axis=0)) == 0:
+elif numpy.sum(numpy.min(inflamation, axis=0)) == 0:
     print('Minima add up to zero!')
 else:
     print('Seems OK!')

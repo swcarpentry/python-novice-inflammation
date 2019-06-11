@@ -271,16 +271,16 @@ can also assign an array of values to a variable using the same syntax.  Let's r
 `numpy.loadtxt` and save the returned data:
 
 ~~~
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+inflamation = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ~~~
 {: .language-python}
 
-This statement doesn't produce any output because we've assigned the output to the variable `data`.
+This statement doesn't produce any output because we've assigned the output to the variable named `inflamation`.
 If we want to check that the data have been loaded,
 we can print the variable's value:
 
 ~~~
-print(data)
+print(inflamation)
 ~~~
 {: .language-python}
 
@@ -298,10 +298,10 @@ print(data)
 Now that the data are in memory,
 we can manipulate them.
 First,
-let's ask what [type]({{ page.root }}/reference/#type) of thing `data` refers to:
+let's ask what [type]({{ page.root }}/reference/#type) of thing `inflamation` refers to:
 
 ~~~
-print(type(data))
+print(type(inflamation))
 ~~~
 {: .language-python}
 
@@ -310,7 +310,7 @@ print(type(data))
 ~~~
 {: .output}
 
-The output tells us that `data` currently refers to
+The output tells us that `inflamation` currently refers to
 an N-dimensional array, the functionality for which is provided by the NumPy library.
 These data correspond to arthritis patients' inflammation.
 The rows are the individual patients, and the columns
@@ -326,7 +326,7 @@ are their daily inflammation measurements.
 > of the data contained in the NumPy array.
 >
 > ~~~
-> print(data.dtype)
+> print(inflamation.dtype)
 > ~~~
 > {: .language-python}
 >
@@ -342,7 +342,7 @@ are their daily inflammation measurements.
 With the following command, we can see the array's [shape]({{ page.root }}/reference/#shape):
 
 ~~~
-print(data.shape)
+print(inflamation.shape)
 ~~~
 {: .language-python}
 
@@ -351,42 +351,42 @@ print(data.shape)
 ~~~
 {: .output}
 
-The output tells us that the `data` array variable contains 60 rows and 40 columns. When we
-created the variable `data` to store our arthritis data, we didn't only create the array; we also
+The output tells us that the `inflamation` array variable contains 60 rows and 40 columns. When we
+created the variable `inflamation` to store our arthritis data, we didn't only create the array; we also
 created information about the array, called [members]({{ page.root }}/reference/#member) or
-attributes. This extra information describes `data` in the same way an adjective describes a noun.
-`data.shape` is an attribute of `data` which describes the dimensions of `data`. We use the same
+attributes. This extra information describes `inflamation` in the same way an adjective describes a noun.
+`inflamation.shape` is an attribute of `inflamation` which describes the dimensions of `inflamation`. We use the same
 dotted notation for the attributes of variables that we use for the functions in libraries because
 they have the same part-and-whole relationship.
 
 If we want to get a single number from the array, we must provide an
-[index]({{ page.root }}/reference/#index) in square brackets after the variable name, just as we
+[index]({{ page.root }}/reference/#index) in square brackets after the variable name, as we
 do in math when referring to an element of a matrix.  Our inflammation data has two dimensions, so
 we will need to use two indices to refer to one specific value:
 
 ~~~
-print('first value in data:', data[0, 0])
+print('first value in inflamation:', inflamation[0, 0])
 ~~~
 {: .language-python}
 
 ~~~
-first value in data: 0.0
+first value in inflamation: 0.0
 ~~~
 {: .output}
 
 ~~~
-print('middle value in data:', data[30, 20])
+print('middle value in inflamation:', inflamation[30, 20])
 ~~~
 {: .language-python}
 
 ~~~
-middle value in data: 13.0
+middle value in inflamation: 13.0
 ~~~
 {: .output}
 
-The expression `data[30, 20]` accesses the element at row 30, column 20. While this expression may
+The expression `inflamation[30, 20]` accesses the element at row 30, column 20. While this expression may
 not surprise you,
- `data[0, 0]` might.
+ `inflamation[0, 0]` might.
 Programming languages like Fortran, MATLAB and R start counting at 1
 because that's what human beings have done for thousands of years.
 Languages in the C family (including C++, Java, Perl, and Python) count from 0
@@ -424,7 +424,7 @@ we can select the first ten days (columns) of values
 for the first four patients (rows) like this:
 
 ~~~
-print(data[0:4, 0:10])
+print(inflamation[0:4, 0:10])
 ~~~
 {: .language-python}
 
@@ -443,7 +443,7 @@ rule is that the difference between the upper and lower bounds is the number of 
 We don't have to start slices at 0:
 
 ~~~
-print(data[5:10, 0:10])
+print(inflamation[5:10, 0:10])
 ~~~
 {: .language-python}
 
@@ -462,7 +462,7 @@ axis, and if we don't include either (i.e., if we use ':' on its own), the slice
 everything:
 
 ~~~
-small = data[:3, 36:]
+small = inflamation[:3, 36:]
 print('small is:')
 print(small)
 ~~~
@@ -482,16 +482,16 @@ operations with data are arithmetic: addition, subtraction, multiplication, and 
 do such operations on arrays, the operation is done element-by-element.  Thus:
 
 ~~~
-doubledata = data * 2.0
+doubledata = inflamation * 2.0
 ~~~
 {: .language-python}
 
 will create a new array `doubledata`
-each element of which is twice the value of the corresponding element in `data`:
+each element of which is twice the value of the corresponding element in `inflamation`:
 
 ~~~
 print('original:')
-print(data[:3, 36:])
+print(inflamation[:3, 36:])
 print('doubledata:')
 print(doubledata[:3, 36:])
 ~~~
@@ -514,11 +514,11 @@ arithmetic operation with another array of the same shape, the operation will be
 corresponding elements of the two arrays.  Thus:
 
 ~~~
-tripledata = doubledata + data
+tripledata = doubledata + inflamation
 ~~~
 {: .language-python}
 
-will give you an array where `tripledata[0,0]` will equal `doubledata[0,0]` plus `data[0,0]`,
+will give you an array where `tripledata[0,0]` will equal `doubledata[0,0]` plus `inflamation[0,0]`,
 and so on for all other elements of the arrays.
 
 ~~~
@@ -537,10 +537,10 @@ tripledata:
 
 Often, we want to do more than add, subtract, multiply, and divide array elements.  NumPy knows how
 to do more complex operations, too.  If we want to find the average inflammation for all patients on
-all days, for example, we can ask NumPy to compute `data`'s mean value:
+all days, for example, we can ask NumPy to compute `inflamation`'s mean value:
 
 ~~~
-print(numpy.mean(data))
+print(numpy.mean(inflamation))
 ~~~
 {: .language-python}
 
@@ -581,7 +581,7 @@ We'll also use multiple assignment,
 a convenient Python feature that will enable us to do this all in one line.
 
 ~~~
-maxval, minval, stdval = numpy.max(data), numpy.min(data), numpy.std(data)
+maxval, minval, stdval = numpy.max(inflamation), numpy.min(inflamation), numpy.std(inflamation)
 
 print('maximum inflammation:', maxval)
 print('minimum inflammation:', minval)
@@ -589,8 +589,8 @@ print('standard deviation:', stdval)
 ~~~
 {: .language-python}
 
-Here we've assigned the return value from `numpy.max(data)` to the variable `maxval`, the value
-from `numpy.min(data)` to `minval`, and so on.
+Here we've assigned the return value from `numpy.max(inflamation)` to the variable `maxval`, the value
+from `numpy.min(inflamation)` to `minval`, and so on.
 
 ~~~
 maximum inflammation: 20.0
@@ -618,7 +618,7 @@ One way to do this is to create a new temporary array of the data we want,
 then ask it to do the calculation:
 
 ~~~
-patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)
+patient_0 = inflamation[0, :] # 0 on the first axis (rows), everything on the second (columns)
 print('maximum inflammation for patient 0:', numpy.max(patient_0))
 ~~~
 {: .language-python}
@@ -637,7 +637,7 @@ We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the function call:
 
 ~~~
-print('maximum inflammation for patient 2:', numpy.max(data[2, :]))
+print('maximum inflammation for patient 2:', numpy.max(inflamation[2, :]))
 ~~~
 {: .language-python}
 
@@ -651,6 +651,7 @@ next diagram on the left) or the average for each day (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
+<!-- TODO: fix image to replace 'data' with 'inflamation' -->
 ![Operations Across Axes](../fig/python-operations-across-axes.png)
 
 To support this functionality,
@@ -659,7 +660,7 @@ If we ask for the average across axis 0 (rows in our 2D example),
 we get:
 
 ~~~
-print(numpy.mean(data, axis=0))
+print(numpy.mean(inflamation, axis=0))
 ~~~
 {: .language-python}
 
@@ -679,7 +680,7 @@ As a quick check,
 we can ask this array what its shape is:
 
 ~~~
-print(numpy.mean(data, axis=0).shape)
+print(numpy.mean(inflamation, axis=0).shape)
 ~~~
 {: .language-python}
 
@@ -693,7 +694,7 @@ so this is the average inflammation per day for all patients.
 If we average across axis 1 (columns in our 2D example), we get:
 
 ~~~
-print(numpy.mean(data, axis=1))
+print(numpy.mean(inflamation, axis=1))
 ~~~
 {: .language-python}
 
@@ -719,7 +720,7 @@ heat map of our data:
 
 ~~~
 import matplotlib.pyplot
-image = matplotlib.pyplot.imshow(data)
+image = matplotlib.pyplot.imshow(inflamation)
 matplotlib.pyplot.show()
 ~~~
 {: .language-python}
@@ -729,6 +730,7 @@ matplotlib.pyplot.show()
 Blue pixels in this heat map represent low values, while yellow pixels represent high values.  As we
 can see, inflammation rises and falls over a 40-day period.
 
+<!-- TODO: Is this a for Juptyer or IPython? Title "Some Jupyter Magic"?? -->
 > ## Some IPython Magic
 >
 > If you're using a Jupyter notebook,
@@ -749,7 +751,7 @@ can see, inflammation rises and falls over a 40-day period.
 Let's take a look at the average inflammation over time:
 
 ~~~
-ave_inflammation = numpy.mean(data, axis=0)
+ave_inflammation = numpy.mean(inflamation, axis=0)
 ave_plot = matplotlib.pyplot.plot(ave_inflammation)
 matplotlib.pyplot.show()
 ~~~
@@ -763,7 +765,7 @@ roughly linear rise and fall, which is suspicious: we might instead expect a sha
 fall.  Let's have a look at two other statistics:
 
 ~~~
-max_plot = matplotlib.pyplot.plot(numpy.max(data, axis=0))
+max_plot = matplotlib.pyplot.plot(numpy.max(inflamation, axis=0))
 matplotlib.pyplot.show()
 ~~~
 {: .language-python}
@@ -771,7 +773,7 @@ matplotlib.pyplot.show()
 ![Maximum Value Along The First Axis](../fig/01-numpy_75_1.png)
 
 ~~~
-min_plot = matplotlib.pyplot.plot(numpy.min(data, axis=0))
+min_plot = matplotlib.pyplot.plot(numpy.min(inflamation, axis=0))
 matplotlib.pyplot.show()
 ~~~
 {: .language-python}
@@ -800,7 +802,7 @@ Here are our three plots side by side:
 import numpy
 import matplotlib.pyplot
 
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+inflamation = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
 fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
@@ -809,13 +811,13 @@ axes2 = fig.add_subplot(1, 3, 2)
 axes3 = fig.add_subplot(1, 3, 3)
 
 axes1.set_ylabel('average')
-axes1.plot(numpy.mean(data, axis=0))
+axes1.plot(numpy.mean(inflamation, axis=0))
 
 axes2.set_ylabel('max')
-axes2.plot(numpy.max(data, axis=0))
+axes2.plot(numpy.max(inflamation, axis=0))
 
 axes3.set_ylabel('min')
-axes3.plot(numpy.min(data, axis=0))
+axes3.plot(numpy.min(inflamation, axis=0))
 
 fig.tight_layout()
 
@@ -942,9 +944,9 @@ the graphs will actually be squeezed together more closely.)
 >
 > The expression `element[3:3]` produces an [empty string]({{ page.root }}/reference/#empty-string),
 > i.e., a string that contains no characters.
-> If `data` holds our array of patient data,
-> what does `data[3:3, 4:4]` produce?
-> What about `data[3:3, :]`?
+> If `inflamation` holds our array of patient data,
+> what does `inflamation[3:3, 4:4]` produce?
+> What about `inflamation[3:3, :]`?
 >
 > > ## Solution
 > > ~~~
@@ -979,7 +981,7 @@ the graphs will actually be squeezed together more closely.)
 > > ~~~
 > > # One method
 > > axes3.set_ylabel('min')
-> > axes3.plot(numpy.min(data, axis=0))
+> > axes3.plot(numpy.min(inflamation, axis=0))
 > > axes3.set_ylim(0,6)
 > > ~~~
 > > {: .language-python}
@@ -988,10 +990,10 @@ the graphs will actually be squeezed together more closely.)
 > > ## Solution
 > > ~~~
 > > # A more automated approach
-> > min_data = numpy.min(data, axis=0)
+> > min_inflamation = numpy.min(inflamation, axis=0)
 > > axes3.set_ylabel('min')
-> > axes3.plot(min_data)
-> > axes3.set_ylim(numpy.min(min_data), numpy.max(min_data) * 1.1)
+> > axes3.plot(min_inflamation)
+> > axes3.set_ylim(numpy.min(min_inflamation), numpy.max(min_inflamation) * 1.1)
 > > ~~~
 > > {: .language-python}
 > {: .solution}
@@ -1012,7 +1014,7 @@ the graphs will actually be squeezed together more closely.)
 > > import numpy
 > > import matplotlib.pyplot
 > >
-> > data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+> > inflamation = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 > >
 > > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 > >
@@ -1021,13 +1023,13 @@ the graphs will actually be squeezed together more closely.)
 > > axes3 = fig.add_subplot(1, 3, 3)
 > >
 > > axes1.set_ylabel('average')
-> > axes1.plot(numpy.mean(data, axis=0), drawstyle='steps-mid')
+> > axes1.plot(numpy.mean(inflamation, axis=0), drawstyle='steps-mid')
 > >
 > > axes2.set_ylabel('max')
-> > axes2.plot(numpy.max(data, axis=0), drawstyle='steps-mid')
+> > axes2.plot(numpy.max(inflamation, axis=0), drawstyle='steps-mid')
 > >
 > > axes3.set_ylabel('min')
-> > axes3.plot(numpy.min(data, axis=0), drawstyle='steps-mid')
+> > axes3.plot(numpy.min(inflamation, axis=0), drawstyle='steps-mid')
 > >
 > > fig.tight_layout()
 > >
@@ -1045,7 +1047,7 @@ the graphs will actually be squeezed together more closely.)
 >
 > > ## Solution
 > > ~~~
-> > std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
+> > std_plot = matplotlib.pyplot.plot(numpy.std(inflamation, axis=0))
 > > matplotlib.pyplot.show()
 > > ~~~
 > > {: .language-python}
@@ -1062,7 +1064,7 @@ the graphs will actually be squeezed together more closely.)
 > > import numpy
 > > import matplotlib.pyplot
 > >
-> > data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+> > inflamation = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 > >
 > > # change figsize (swap width and height)
 > > fig = matplotlib.pyplot.figure(figsize=(3.0, 10.0))
@@ -1073,13 +1075,13 @@ the graphs will actually be squeezed together more closely.)
 > > axes3 = fig.add_subplot(3, 1, 3)
 > >
 > > axes1.set_ylabel('average')
-> > axes1.plot(numpy.mean(data, axis=0))
+> > axes1.plot(numpy.mean(inflamation, axis=0))
 > >
 > > axes2.set_ylabel('max')
-> > axes2.plot(numpy.max(data, axis=0))
+> > axes2.plot(numpy.max(inflamation, axis=0))
 > >
 > > axes3.set_ylabel('min')
-> > axes3.plot(numpy.min(data, axis=0))
+> > axes3.plot(numpy.min(inflamation, axis=0))
 > >
 > > fig.tight_layout()
 > >
@@ -1223,7 +1225,7 @@ the graphs will actually be squeezed together more closely.)
 > > concept.
 > >
 > > ~~~
-> > numpy.diff(data, axis=1)
+> > numpy.diff(inflamation, axis=1)
 > > ~~~
 > > {: .language-python}
 > {: .solution}
@@ -1245,7 +1247,7 @@ the graphs will actually be squeezed together more closely.)
 > > function, you will get the largest difference between days.
 > >
 > > ~~~
-> > numpy.max(numpy.diff(data, axis=1), axis=1)
+> > numpy.max(numpy.diff(inflamation, axis=1), axis=1)
 > > ~~~
 > > {: .language-python}
 > >
@@ -1268,7 +1270,7 @@ the graphs will actually be squeezed together more closely.)
 > > between readings.
 > >
 > > ~~~
-> > numpy.max(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
+> > numpy.max(numpy.absolute(numpy.diff(inflamation, axis=1)), axis=1)
 > > ~~~
 > > {: .language-python}
 > >
