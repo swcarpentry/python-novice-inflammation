@@ -84,7 +84,7 @@ weight_kg = 60.0
 ~~~
 {: .language-python}
 
-And to create a string we simply have to add single or double quotes around some text, for example:
+And to create a string we have to add single or double quotes around some text, for example:
 
 ~~~
 weight_kg_text = 'weight in kilograms:'
@@ -266,7 +266,7 @@ when there's nothing interesting after the decimal point.
 Our call to `numpy.loadtxt` read our file
 but didn't save the data in memory.
 To do that,
-we need to assign the array to a variable. Just as we can assign a single value to a variable, we
+we need to assign the array to a variable. In a similar manner to how we assign a single value to a variable, we
 can also assign an array of values to a variable using the same syntax.  Let's re-run
 `numpy.loadtxt` and save the returned data:
 
