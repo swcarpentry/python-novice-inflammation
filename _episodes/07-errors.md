@@ -448,7 +448,7 @@ often reveals common reasons why you might get that error.
 > def print_message(day):
 >     messages = {
 >         "monday": "Hello, world!",
->         "tuesday": "Today is tuesday!",
+>         "tuesday": "Today is Tuesday!",
 >         "wednesday": "It is the middle of the week.",
 >         "thursday": "Today is Donnerstag in German!",
 >         "friday": "Last day of the week!",
