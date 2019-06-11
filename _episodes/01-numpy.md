@@ -352,7 +352,7 @@ print(inflamation.shape)
 {: .output}
 
 The output tells us that the `inflamation` array variable contains 60 rows and 40 columns. When we
-created the variable `inflamation` to store our arthritis data, we didn't only create the array; we also
+created the variable `inflamation` to store our arthritis data, we did not only create the array; we also
 created information about the array, called [members]({{ page.root }}/reference/#member) or
 attributes. This extra information describes `inflamation` in the same way an adjective describes a noun.
 `inflamation.shape` is an attribute of `inflamation` which describes the dimensions of `inflamation`. We use the same

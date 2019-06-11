@@ -33,7 +33,7 @@ word = 'lead'
 ~~~
 {: .language-python}
 
-In Python, a string is an ordered collection of characters, so every
+In Python, a string is an ordered collection of characters and every
 character has a unique number associated with it -- its index. This means that
 we can access characters in a string using their indices.
 For example, we can get the first character of the word `'lead'`, by using
@@ -164,10 +164,8 @@ of the loop body (e.g. `end for`); what is indented after the `for` statement be
 >
 >
 > In the example above, the loop variable was given the name `char` as a mnemonic;
-> it is short for 'character'.
-> We can choose any name we want for variables. We might as easily have chosen the name
-> `banana` for the loop variable, as long as we use the same name when we invoke the variable inside
-> the loop:
+> it is short for 'character'.  We can choose any name we want for variables.
+> We can even call our loop variable `banana`, as long as we use this name consistently:
 >
 > ~~~
 > word = 'oxygen'
