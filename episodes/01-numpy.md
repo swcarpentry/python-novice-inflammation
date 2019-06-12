@@ -204,10 +204,10 @@ that can be called upon when needed.
 
 ## Loading data into Python
 In order to load our inflammation data, we need to access
-([import]({{ page.root }}/reference/#import) in Python terminology) a library called
-[NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation").  In general you should use this
-library if you want to do fancy things with numbers, especially if you have matrices or arrays.  We
-can import NumPy using:
+([import]({{ page.root }}/reference/#import) in Python terminology) a library called 
+[NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation") which stands for Numerical Python. 
+In general you should use this library if you want to do fancy things with numbers, 
+especially if you have matrices or arrays. We can import NumPy using:
 
 ~~~
 import numpy
