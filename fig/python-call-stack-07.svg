@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="1500">
+<svg xmlns="http://www.w3.org/2000/svg" width="705" height="375">
   <defs>
       <style type="text/css"><![CDATA[
       .gray { fill: rgb(220,220,220); stroke-width:0; }
@@ -24,14 +24,13 @@
   <text x="150" y="360" class="text">variables</text>
   <text x="550" y="360" class="text">values</text>
   <!-- dashed lines -->
-  <line x1="5" y1="290" x2="710" y2="290" stroke="black"
+  <line x1="5" y1="290" x2="705" y2="290" stroke="black"
      stroke-dasharray="4" />
   <line x1="350" y1="5" x2="350" y2="370" stroke="black"
     stroke-dasharray="4" />
   <!-- arrowhead lines -->
-  <line x1="310" y1="55" x2="365" y2="55" stroke="#000"
+  <line x1="310" y1="55" x2="375" y2="55" stroke="#000"
             stroke-width="2" marker-end="url(#arrowhead)"/>
-  <line x1="310" y1="200" x2="365" y2="200" stroke="#000"
+  <line x1="310" y1="200" x2="375" y2="200" stroke="#000"
             stroke-width="2" marker-end="url(#arrowhead)"/>
 </svg>
-
