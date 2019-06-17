@@ -70,11 +70,12 @@ This means that, for example:
  - `weight` and `Weight` are different variables
 
 ## Types of data
-Python knows various types of data. Three common ones are:
+Python knows various types of data. Four common ones are:
 
 * integer numbers
-* floating point numbers, and
-* strings.
+* floating point numbers
+* strings
+* lists
 
 In the example above, variable `weight_kg` has an integer value of `60`.
 To create a variable with a floating point value, we can execute:
@@ -84,10 +85,17 @@ weight_kg = 60.0
 ~~~
 {: .language-python}
 
-And to create a string we simply have to add single or double quotes around some text, for example:
+To create a string we simply have to add single or double quotes around some text, for example:
 
 ~~~
 weight_kg_text = 'weight in kilograms:'
+~~~
+{: .language-python}
+
+Multiple items can be contained inside lists. Enclosed in brackets, lists can be made up of a variety of variable types (integers, floating points, strings, etc). Lists of lists are called arrays.
+
+~~~
+weight_kg_list = [60.0, 39.5, 45.6]
 ~~~
 {: .language-python}
 
