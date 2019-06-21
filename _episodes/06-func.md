@@ -151,7 +151,7 @@ First, let's make an `analyze` function that generates our plots:
 ~~~
 def analyze(filename):
 
-    inflamation = numpy.loadtxt(fname=filename, delimiter=',')
+    data = numpy.loadtxt(fname=filename, delimiter=',')
 
     fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
@@ -160,13 +160,13 @@ def analyze(filename):
     axes3 = fig.add_subplot(1, 3, 3)
 
     axes1.set_ylabel('average')
-    axes1.plot(numpy.mean(inflamation, axis=0))
+    axes1.plot(numpy.mean(data, axis=0))
 
     axes2.set_ylabel('max')
-    axes2.plot(numpy.max(inflamation, axis=0))
+    axes2.plot(numpy.max(data, axis=0))
 
     axes3.set_ylabel('min')
-    axes3.plot(numpy.min(inflamation, axis=0))
+    axes3.plot(numpy.min(data, axis=0))
 
     fig.tight_layout()
     matplotlib.pyplot.show()
@@ -179,11 +179,11 @@ we noticed:
 ~~~
 def detect_problems(filename):
 
-    inflamation = numpy.loadtxt(fname=filename, delimiter=',')
+    data = numpy.loadtxt(fname=filename, delimiter=',')
 
-    if numpy.max(inflamation, axis=0)[0] == 0 and numpy.max(inflamation, axis=0)[20] == 20:
+    if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
         print('Suspicious looking maxima!')
-    elif numpy.sum(numpy.min(inflamation, axis=0)) == 0:
+    elif numpy.sum(numpy.min(data, axis=0)) == 0:
         print('Minima add up to zero!')
     else:
         print('Seems OK!')
@@ -246,8 +246,8 @@ That looks right,
 so let's try `offset_mean` on our real data:
 
 ~~~
-inflamation = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-print(offset_mean(inflamation, 0))
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+print(offset_mean(data, 0))
 ~~~
 {: .language-python}
 
@@ -266,8 +266,8 @@ It's hard to tell from the default output whether the result is correct,
 but there are a few simple tests that will reassure us:
 
 ~~~
-print('original min, mean, and max are:', numpy.min(inflamation), numpy.mean(inflamation), numpy.max(inflamation))
-offset_data = offset_mean(inflamation, 0)
+print('original min, mean, and max are:', numpy.min(data), numpy.mean(data), numpy.max(data))
+offset_data = offset_mean(data, 0)
 print('min, mean, and max of offset data are:',
       numpy.min(offset_data),
       numpy.mean(offset_data),
@@ -289,7 +289,7 @@ it's pretty close.
 We can even go further and check that the standard deviation hasn't changed:
 
 ~~~
-print('std dev before and after:', numpy.std(inflamation), numpy.std(offset_data))
+print('std dev before and after:', numpy.std(data), numpy.std(offset_data))
 ~~~
 {: .language-python}
 
@@ -304,7 +304,7 @@ Let's do this instead:
 
 ~~~
 print('difference in standard deviations before and after:',
-      numpy.std(inflamation) - numpy.std(offset_data))
+      numpy.std(data) - numpy.std(offset_data))
 ~~~
 {: .language-python}
 
@@ -388,7 +388,7 @@ offset_mean(data, target_mean_value)
 ## Defining Defaults
 
 We have passed parameters to functions in two ways:
-directly, as in `type(inflamation)`,
+directly, as in `type(data)`,
 and by name, as in `numpy.loadtxt(fname='something.csv', delimiter=',')`.
 In fact,
 we can pass the filename to `loadtxt` without the `fname=`:

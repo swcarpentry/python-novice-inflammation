@@ -57,7 +57,7 @@ filenames = filenames[0:3]
 for f in filenames:
     print(f)
 
-    inflamation = numpy.loadtxt(fname=f, delimiter=',')
+    data = numpy.loadtxt(fname=f, delimiter=',')
 
     fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
@@ -66,13 +66,13 @@ for f in filenames:
     axes3 = fig.add_subplot(1, 3, 3)
 
     axes1.set_ylabel('average')
-    axes1.plot(numpy.mean(inflamation, axis=0))
+    axes1.plot(numpy.mean(data, axis=0))
 
     axes2.set_ylabel('max')
-    axes2.plot(numpy.max(inflamation, axis=0))
+    axes2.plot(numpy.max(data, axis=0))
 
     axes3.set_ylabel('min')
-    axes3.plot(numpy.min(inflamation, axis=0))
+    axes3.plot(numpy.min(data, axis=0))
 
     fig.tight_layout()
     matplotlib.pyplot.show()
@@ -120,13 +120,13 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > >
 > > filenames = sorted(glob.glob('inflammation*.csv'))
 > >
-> > inflamation0 = numpy.loadtxt(fname=filenames[0], delimiter=',')
-> > inflamation1 = numpy.loadtxt(fname=filenames[1], delimiter=',')
+> > data0 = numpy.loadtxt(fname=filenames[0], delimiter=',')
+> > data1 = numpy.loadtxt(fname=filenames[1], delimiter=',')
 > >
 > > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 > >
 > > matplotlib.pyplot.ylabel('Difference in average')
-> > matplotlib.pyplot.plot(numpy.mean(inflamation0, axis=0) - numpy.mean(inflamation1, axis=0))
+> > matplotlib.pyplot.plot(numpy.mean(data0, axis=0) - numpy.mean(data1, axis=0))
 > >
 > > fig.tight_layout()
 > > matplotlib.pyplot.show()
@@ -162,10 +162,10 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > > composite_data = numpy.zeros((60,40))
 > >
 > > for f in filenames:
-> >     inflamation = numpy.loadtxt(fname = f, delimiter=',')
-> >     composite_data += inflamation
+> >     data = numpy.loadtxt(fname = f, delimiter=',')
+> >     composite_data += data
 > >
-> > composite_data /= len(filenames)
+> > composite_data/=len(filenames)
 > >
 > > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 > >
