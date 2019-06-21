@@ -99,7 +99,7 @@ the program encountered an error on Line 6, when it tried to run the code `print
 > This can make it seem like something horrible happened,
 > but all it means is that your program called many functions before it ran into the error.
 > Most of the time, the actual place where the error occurred is at the bottom-most level,
-> so just skip over the traceback down to the bottom line.
+> so skip over the traceback down to the bottom line.
 {: .callout}
 
 So what error did the program actually encounter?
