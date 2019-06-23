@@ -269,7 +269,7 @@ NameError: name 'hello' is not defined
 ~~~
 {: .error}
 
-The second is that you forgot to create the variable before using it.
+The second is that you are trying to use a variable that does not yet exist.
 In the following example,
 `count` should have been defined (e.g., with `count = 0`) before the for loop:
 
