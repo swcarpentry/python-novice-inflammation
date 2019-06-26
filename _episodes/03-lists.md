@@ -179,7 +179,6 @@ does not.
 >
 > Here is a visual example of how indexing a list of lists `x` works:
 >
-<!-- TODO: This diagram does not match the code example -->
 > [![The first element of a list.
 > Adapted from @hadleywickham.](../fig/indexing_lists_python.png)][hadleywickham-tweet]
 >
