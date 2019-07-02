@@ -102,8 +102,9 @@ for loop
     See also: [while loop](#while-loop).
 
 function
-:   A group of instructions (i.e., lines of code) that transform
-    some input [arguments](#argument) to some output.
+:   A group of instructions (i.e., lines of code) that may be executed repeatedly,
+    every time it is [called](#function call). Functions can accept some input
+    [arguments](#argument), and they can [return](#return-statement) some output.
 
 function call
 :   A use of a function in another piece of software.
