@@ -363,7 +363,9 @@ offset_mean(data, target_mean_value)
 A string like this is called a [docstring]({{ page.root }}/reference/#docstring).
 We don't need to use triple quotes when we write one,
 but if we do,
-we can break the string across multiple lines:
+we can break the string across multiple lines. Also, if we use 
+triple quotes within a function, then that 
+text shows up when calling help() (this does not happen if we use # to write the text). 
 
 ~~~
 def offset_mean(data, target_mean_value):
