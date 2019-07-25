@@ -190,7 +190,7 @@ AssertionError: Invalid X coordinates
 {: .error}
 
 The post-conditions on lines 17 and 18 help us catch bugs by telling us when our
-calculations cannot have been correct.
+calculations might have been incorrect.
 For example,
 if we normalize a rectangle that is taller than it is wide everything seems OK:
 
