@@ -104,7 +104,7 @@ for loop
 function
 :   A named group of instructions that is executed when the function's name is used in
     the code. Occurrence of a function name in the code is a [function call](#function-call).
-    Functions may process input [arguments](#argument) and return some value(s). Functions
+    Functions may process input [arguments](#argument) and return the result back. Functions
     may also be used for grouping together logical pieces of code. In such cases, they don't
     need to return any meaningful value and can be written without the return statement completely.
     Such functions return a special value `None`, which is a way of saying "nothing" in Python.
