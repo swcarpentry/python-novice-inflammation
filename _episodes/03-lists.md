@@ -342,7 +342,7 @@ binomial_name = "Drosophila melanogaster"
 group = binomial_name[0:10]
 print("group:", group)
 
-species = binomial_name[11:24]
+species = binomial_name[11:23]
 print("species:", species)
 
 chromosomes = ["X", "Y", "2", "3", "4"]
