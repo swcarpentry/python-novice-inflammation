@@ -75,7 +75,7 @@ separately.
 
 To make this work,
 we need to know how to handle command-line arguments in a program,
-and how to get at standard input.
+and understand how to handle standard input.
 We'll tackle these questions in turn below.
 
 ## Command-Line Arguments
