@@ -16,7 +16,7 @@ keypoints:
 ---
 
 In the last episode, we wrote Python code that plots values of interest from our first 
-inflammation dataset (inflammation-01.csv), which revealed some suspicious features in it.
+inflammation dataset (`inflammation-01.csv`), which revealed some suspicious features in it.
 
 ![Analysis of inflammation-01.csv](../fig/03-loop_2_0.png)
 
