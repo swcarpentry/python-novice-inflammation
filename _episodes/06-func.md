@@ -190,8 +190,10 @@ def detect_problems(filename):
 ~~~
 {: .language-python}
 
-Did we forget the [return statement]({{ page.root }}/reference/#return-statement)?
-We didn't. It's just that not all functions need to send a result back to the caller.
+Wait! Didn't we forget to specify what both of these functions should return? Well, we didn't.
+In Python, functions are not required to return a value. In cases like ours, they are used for
+the sole purpose of grouping together pieces of code that conceptually do one thing. In such cases,
+function names usually describe what they do.
 
 Notice that rather than jumbling this code together in one giant `for` loop,
 we can now read and reuse both ideas separately.

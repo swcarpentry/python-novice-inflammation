@@ -102,9 +102,12 @@ for loop
     See also: [while loop](#while-loop).
 
 function
-:   A group of instructions (i.e., lines of code) that may be executed repeatedly,
-    every time it is [called](#function call). Functions can accept some input
-    [arguments](#argument), and they can [return](#return-statement) some output.
+:   A named group of instructions that is executed when the function's name is used in
+    the code. Occurrence of a function name in the code is a [function call](#function-call).
+    Functions may process input [arguments](#argument) and return some value(s). If functions
+    are used just to group logical pieces of code together, without a [return statement](#return-statement)
+    (or with the `return` keyword not followed by anything), then they return the special
+    value `None`.
 
 function call
 :   A use of a function in another piece of software.
