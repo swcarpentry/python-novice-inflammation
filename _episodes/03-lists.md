@@ -243,13 +243,15 @@ odds after adding a value: [1, 3, 5, 7, 11]
 {: .output}
 
 ~~~
-del odds[0]
+removed_element = odds.pop(0)
 print('odds after removing the first element:', odds)
+print('removed_element:', removed_element)
 ~~~
 {: .language-python}
 
 ~~~
 odds after removing the first element: [3, 5, 7, 11]
+removed_element: 1
 ~~~
 {: .output}
 
