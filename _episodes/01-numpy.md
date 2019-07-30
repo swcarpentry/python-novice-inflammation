@@ -237,6 +237,18 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 ~~~
 {: .output}
 
+> ## Scientists Dislike Typing
+>
+> We will always use the syntax `import numpy` to import NumPy.
+> However, in order to save typing, it is
+> [often suggested](http://www.scipy.org/getting-started.html#an-example-script)
+> to make a shortcut like so: `import numpy as np`.
+> If you ever see Python code online using a NumPy function with `np`
+> (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
+> When working with other people, it is important to agree on a convention of how common libraries
+> are imported.
+{: .callout}
+
 The expression `numpy.loadtxt(...)` is a [function call]({{ page.root }}/reference/#function-call)
 that asks Python to run the [function]({{ page.root }}/reference/#function) `loadtxt` which
 belongs to the `numpy` library. This [dotted notation]({{ page.root }}/reference/#dotted-notation)
@@ -833,18 +845,6 @@ what to draw for each one,
 and that we want a tight layout.
 (If we leave out that call to `fig.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
-
-> ## Scientists Dislike Typing
->
-> We will always use the syntax `import numpy` to import NumPy.
-> However, in order to save typing, it is
-> [often suggested](http://www.scipy.org/getting-started.html#an-example-script)
-> to make a shortcut like so: `import numpy as np`.
-> If you ever see Python code online using a NumPy function with `np`
-> (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
-> When working with other people, it is important to agree on a convention of how common libraries
-> are imported.
-{: .callout}
 
 > ## Check Your Understanding
 >
