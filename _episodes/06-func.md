@@ -191,9 +191,9 @@ def detect_problems(filename):
 {: .language-python}
 
 Wait! Didn't we forget to specify what both of these functions should return? Well, we didn't.
-In Python, functions are not required to return a value. In cases like ours, they are used for
+In Python, functions are not required to include a `return` statement and can be used for
 the sole purpose of grouping together pieces of code that conceptually do one thing. In such cases,
-function names usually describe what they do.
+function names usually describe what they do, _e.g._ `analyze`, `detect_problems`.
 
 Notice that rather than jumbling this code together in one giant `for` loop,
 we can now read and reuse both ideas separately.
