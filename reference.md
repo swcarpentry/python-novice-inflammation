@@ -20,7 +20,7 @@ assertion
     Programmers typically put assertions in their code to check for errors;
     if the assertion fails (i.e., if the expression evaluates as false),
     the program halts and produces an error message.
-    See also: [invariant](#invariant), [precondition](#precondition), 
+    See also: [invariant](#invariant), [precondition](#precondition),
     [postcondition](#postcondition).
 
 assign
@@ -102,8 +102,13 @@ for loop
     See also: [while loop](#while-loop).
 
 function
-:   A group of instructions (i.e., lines of code) that transform
-    some input [arguments](#argument) to some output.
+:   A named group of instructions that is executed when the function's name is used in
+    the code. Occurrence of a function name in the code is a [function call](#function-call).
+    Functions may process input [arguments](#argument) and return the result back. Functions
+    may also be used for logically grouping together pieces of code. In such cases, they don't
+    need to return any meaningful value and can be written without the
+    [`return` statement](#return-statement) completely.
+    Such functions return a special value `None`, which is a way of saying "nothing" in Python.
 
 function call
 :   A use of a function in another piece of software.
@@ -186,7 +191,7 @@ regression
 :   To re-introduce a bug that was once fixed.
 
 return statement
-:   A statement that causes a function to stop executing and return a value 
+:   A statement that causes a function to stop executing and return a value
     to its caller immediately.
 
 RGB
@@ -254,7 +259,7 @@ tuple
 
 type
 :   The classification of something in a program (for example, the contents of a variable)
-    as a kind of number (e.g. [floating-point](#float), [integer](#integer)), 
+    as a kind of number (e.g. [floating-point](#float), [integer](#integer)),
     [string](#string), or something else.
 
 type of error
