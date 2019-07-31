@@ -59,7 +59,7 @@ def fahr_to_celsius(temp):
 
 The function definition opens with the keyword `def` followed by the
 name of the function (`fahr_to_celsius`) and a parenthesized list of parameter names (`temp`). The
-[body]({{ page.root }}/reference/#function-body) of the function --- the
+[body]({{ page.root }}/reference/#body) of the function --- the
 statements that are executed when it runs --- is indented below the
 definition line.  The body concludes with a `return` keyword followed by the return value.
 
@@ -189,6 +189,11 @@ def detect_problems(filename):
         print('Seems OK!')
 ~~~
 {: .language-python}
+
+Wait! Didn't we forget to specify what both of these functions should return? Well, we didn't.
+In Python, functions are not required to include a `return` statement and can be used for
+the sole purpose of grouping together pieces of code that conceptually do one thing. In such cases,
+function names usually describe what they do, _e.g._ `analyze`, `detect_problems`.
 
 Notice that rather than jumbling this code together in one giant `for` loop,
 we can now read and reuse both ideas separately.
