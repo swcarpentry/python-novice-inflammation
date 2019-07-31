@@ -218,8 +218,21 @@ Importing a library is like getting a piece of lab equipment out of a storage lo
 up on the bench. Libraries provide additional functionality to the basic Python package, much like
 a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too
 many libraries can sometimes complicate and slow down your programs - so we only import what we
-need for each program. Once we've imported the library, we can ask the library to read our data
-file for us:
+need for each program. 
+
+> ## Scientists Dislike Typing
+>
+> We will always use the syntax `import numpy` to import NumPy.
+> However, in order to save typing, it is
+> [often suggested](http://www.scipy.org/getting-started.html#an-example-script)
+> to make a shortcut like so: `import numpy as np`.
+> If you ever see Python code online using a NumPy function with `np`
+> (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
+> When working with other people, it is important to agree on a convention of how common libraries
+> are imported.
+{: .callout}
+
+Once we've imported the library, we can ask the library to read our data file for us:
 
 ~~~
 numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
@@ -833,18 +846,6 @@ what to draw for each one,
 and that we want a tight layout.
 (If we leave out that call to `fig.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
-
-> ## Scientists Dislike Typing
->
-> We will always use the syntax `import numpy` to import NumPy.
-> However, in order to save typing, it is
-> [often suggested](http://www.scipy.org/getting-started.html#an-example-script)
-> to make a shortcut like so: `import numpy as np`.
-> If you ever see Python code online using a NumPy function with `np`
-> (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
-> When working with other people, it is important to agree on a convention of how common libraries
-> are imported.
-{: .callout}
 
 > ## Check Your Understanding
 >
