@@ -222,12 +222,9 @@ need for each program.
 
 > ## Scientists Dislike Typing
 >
-> We will always use the syntax `import numpy` to import NumPy.
-> However, in order to save typing, it is
-> [often suggested](http://www.scipy.org/getting-started.html#an-example-script)
-> to make a shortcut like so: `import numpy as np`.
-> If you ever see Python code online using a NumPy function with `np`
-> (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
+> We will always use the `import numpy` syntax to import NumPy.
+> However, to save typing, shortcuts such as `import numpy as np` are frequently used.
+> If you ever see Python code online using a NumPy function with `np`, it's because they've used this shortcut.
 > When working with other people, it is important to agree on a convention of how common libraries
 > are imported.
 {: .callout}
