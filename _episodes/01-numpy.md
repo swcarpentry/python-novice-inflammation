@@ -222,7 +222,7 @@ need for each program.
 
 > ## Scientists Dislike Typing
 >
-> We will always use the `import numpy` syntax to import NumPy.
+> We will always use the `import numpy` [syntax]({{ page.root }}/reference/#syntax) to import NumPy.
 > However, to save typing, shortcuts such as `import numpy as np` are frequently used.
 > If you ever see Python code online using a NumPy function with `np`, it's because they've used this shortcut.
 > When working with other people, it is important to agree on a convention of how common libraries
