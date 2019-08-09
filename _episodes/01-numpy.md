@@ -218,16 +218,7 @@ Importing a library is like getting a piece of lab equipment out of a storage lo
 up on the bench. Libraries provide additional functionality to the basic Python package, much like
 a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too
 many libraries can sometimes complicate and slow down your programs - so we only import what we
-need for each program. 
-
-> ## Scientists Dislike Typing
->
-> We will always use the `import numpy` [syntax]({{ page.root }}/reference/#syntax) to import NumPy.
-> However, to save typing, shortcuts such as `import numpy as np` are frequently used.
-> If you ever see Python code online using a NumPy function with `np`, it's because they've used this shortcut.
-> When working with other people, it is important to agree on a convention of how common libraries
-> are imported.
-{: .callout}
+need for each program.
 
 Once we've imported the library, we can ask the library to read our data file for us:
 
@@ -272,6 +263,15 @@ only a few rows and columns are shown
 To save space,
 Python displays numbers as `1.` instead of `1.0`
 when there's nothing interesting after the decimal point.
+
+> ## Scientists Dislike Typing
+>
+> We will always use the `import numpy` [syntax]({{ page.root }}/reference/#syntax) to import NumPy.
+> However, to save typing, shortcuts such as `import numpy as np` are frequently used.
+> If you ever see Python code online using a NumPy function with `np`, it's because they've used this shortcut.
+> When working with other people, it is important to agree on a convention of how common libraries
+> are imported.
+{: .callout}
 
 Our call to `numpy.loadtxt` read our file
 but didn't save the data in memory.
