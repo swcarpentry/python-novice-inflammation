@@ -264,13 +264,16 @@ To save space,
 Python displays numbers as `1.` instead of `1.0`
 when there's nothing interesting after the decimal point.
 
-> ## Scientists Dislike Typing
+> ## Importing libraries with shortcuts
 >
-> We will always use the `import numpy` [syntax]({{ page.root }}/reference/#syntax) to import NumPy.
-> However, to save typing, shortcuts such as `import numpy as np` are frequently used.
-> If you ever see Python code online using a NumPy function with `np`, it's because they've used this shortcut.
-> When working with other people, it is important to agree on a convention of how common libraries
-> are imported.
+> In this lesson we use the `import numpy` [syntax]({{ page.root }}/reference/#syntax) to import NumPy.
+> However, shortcuts such as `import numpy as np` are frequently used.  Importing NumPy this way means that after the
+> inital import, rather than writing `numpy.loadtxt(...)`, you can now write `np.loadtxt(...)`. Some
+> people prefer this as it is quicker to type and results in shorter lines of code - especially for libraries
+> with long names! You will frequently see Python code online using a NumPy function with `np`, and it's 
+> because they've used this shortcut. It makes no difference which approach you choose to take, but you must be
+> consistent as if you use `import numpy as np` then `numpy.loadtxt(...)` will not work, and you must use `np.loadtxt(...)`
+> instead. Because of this, when working with other people it is important you agree on how libraries are imported.
 {: .callout}
 
 Our call to `numpy.loadtxt` read our file
