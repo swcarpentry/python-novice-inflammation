@@ -520,7 +520,7 @@ This violates another important rule of programming:
 > def get_total(values):
 >     assert len(values) > 0
 >     for element in values:
->         assert int(element)
+>         assert isinstance(element, int)
 >     values = [int(element) for element in values]
 >     total = sum(values)
 >     assert total > 0
@@ -531,8 +531,8 @@ This violates another important rule of programming:
 > > ## Solution
 > > *   The first assertion checks that the input sequence `values` is not empty.
 > >     An empty sequence such as `[]` will make it fail.
-> > *   The second assertion checks that each value in the list can be turned into an integer.
-> >     Input such as `[1, 2,'c', 3]` will make it fail.
+> > *   The second assertion checks that each value in the list is an integer.
+> >     Input such as `[1, 2,'c', 3]` or `[1, 2, 2.2, 3]` will make it fail.
 > > *   The third assertion checks that the total of the list is greater than 0.
 > >     Input such as `[-10, 2, 3]` will make it fail.
 > {: .solution}
