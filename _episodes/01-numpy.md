@@ -703,7 +703,7 @@ print(numpy.mean(data, axis=0).shape)
 
 The expression `(40,)` tells us we have an N×1 vector,
 so this is the average inflammation per day for all patients.
-If we average across axis 1 (columns in our 2D example), we get:
+If we average across axis 1 (across each row for all columns in that row, as shown by the arrows in the figure in our 2D example), we get:
 
 ~~~
 print(numpy.mean(data, axis=1))
