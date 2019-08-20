@@ -668,7 +668,7 @@ operation across an axis:
 
 To support this functionality,
 most array functions allow us to specify the axis we want to work on.
-If we ask for the average across axis 0 (down each column for all rows, as shown by the arrows in the figure for our 2D example),
+If we ask for the average across axis 0 (down each column for all rows in that column, as shown by the arrows in the figure for our 2D example),
 we get:
 
 ~~~
