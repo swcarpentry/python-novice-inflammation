@@ -579,7 +579,7 @@ an array as an [argument]({{ page.root }}/reference/#argument).
 > {: .language-python}
 >
 > ~~~
-> 'Sat Mar 26 13:07:33 2016'
+> Sat Mar 26 13:07:33 2016
 > ~~~
 > {: .output}
 >
