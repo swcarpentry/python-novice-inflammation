@@ -140,7 +140,7 @@ we want to localize the failure to the smallest possible region of code:
     then concentrate on either the first or second half,
     and so on.
 
-2.  N things can interact in N<sup>2</sup> different ways,
+2.  N things can interact in N! different ways,
     so every line of code that *isn't* run as part of a test
     means more than one thing we don't need to worry about.
 
