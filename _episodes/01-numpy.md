@@ -668,8 +668,7 @@ operation across an axis:
 
 To support this functionality,
 most array functions allow us to specify the axis we want to work on.
-If we ask for the average across axis 0 (down each column for all rows in that column, as shown by the arrows in the figure for our 2D example),
-we get:
+If we ask for the average across axis 0 (for each column, down all rows, in our 2D example), we get:
 
 ~~~
 print(numpy.mean(data, axis=0))
@@ -703,7 +702,7 @@ print(numpy.mean(data, axis=0).shape)
 
 The expression `(40,)` tells us we have an N×1 vector,
 so this is the average inflammation per day for all patients.
-If we average across axis 1 (across each row for all columns in that row, as shown by the arrows in the figure in our 2D example), we get:
+If we average across axis 1 (for each row, across all columns, in our 2D example), we get:
 
 ~~~
 print(numpy.mean(data, axis=1))
