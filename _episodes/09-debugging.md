@@ -162,7 +162,7 @@ however small,
 we should re-run our tests immediately,
 because the more things we change at once,
 the harder it is to know what's responsible for what
-(those N<sup>2</sup> interactions again).
+(those N! interactions again).
 And we should re-run *all* of our tests:
 more than half of fixes made to code introduce (or re-introduce) bugs,
 so re-running all of our tests tells us whether we have regressed.
