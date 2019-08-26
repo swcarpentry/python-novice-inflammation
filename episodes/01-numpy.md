@@ -344,7 +344,7 @@ are their daily inflammation measurements.
 > {: .language-python}
 >
 > ~~~
-> dtype('float64')
+> float64
 > ~~~
 > {: .output}
 >
