@@ -230,7 +230,7 @@ AssertionError: Calculated upper Y coordinate invalid
 {: .error}
 
 Re-reading our function,
-we realize that line 11 should divide `dy` by `dx` rather than `dx` by `dy`.
+we realize that line 14 should divide `dy` by `dx` rather than `dx` by `dy`.
 (You can display line numbers by typing Ctrl-M, then L.)
 If we had left out the assertion at the end of the function,
 we would have created and returned something that had the right shape as a valid answer,
