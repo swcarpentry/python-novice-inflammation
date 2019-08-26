@@ -240,6 +240,9 @@ string
 :   Short for "character string",
     a [sequence](#sequence) of zero or more characters.
 
+syntax
+:   The rules that define how code must be written for a computer to understand.
+    
 syntax error
 :   A programming error that occurs when statements are in an order or contain characters
     not expected by the programming language.

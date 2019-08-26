@@ -218,19 +218,7 @@ Importing a library is like getting a piece of lab equipment out of a storage lo
 up on the bench. Libraries provide additional functionality to the basic Python package, much like
 a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too
 many libraries can sometimes complicate and slow down your programs - so we only import what we
-need for each program. 
-
-> ## Scientists Dislike Typing
->
-> We will always use the syntax `import numpy` to import NumPy.
-> However, in order to save typing, it is
-> [often suggested](http://www.scipy.org/getting-started.html#an-example-script)
-> to make a shortcut like so: `import numpy as np`.
-> If you ever see Python code online using a NumPy function with `np`
-> (for example, `np.loadtxt(...)`), it's because they've used this shortcut.
-> When working with other people, it is important to agree on a convention of how common libraries
-> are imported.
-{: .callout}
+need for each program.
 
 Once we've imported the library, we can ask the library to read our data file for us:
 
@@ -275,6 +263,18 @@ only a few rows and columns are shown
 To save space,
 Python displays numbers as `1.` instead of `1.0`
 when there's nothing interesting after the decimal point.
+
+> ## Importing libraries with shortcuts
+>
+> In this lesson we use the `import numpy` [syntax]({{ page.root }}/reference/#syntax) to import NumPy.
+> However, shortcuts such as `import numpy as np` are frequently used.  Importing NumPy this way means that after the
+> inital import, rather than writing `numpy.loadtxt(...)`, you can now write `np.loadtxt(...)`. Some
+> people prefer this as it is quicker to type and results in shorter lines of code - especially for libraries
+> with long names! You will frequently see Python code online using a NumPy function with `np`, and it's 
+> because they've used this shortcut. It makes no difference which approach you choose to take, but you must be
+> consistent as if you use `import numpy as np` then `numpy.loadtxt(...)` will not work, and you must use `np.loadtxt(...)`
+> instead. Because of this, when working with other people it is important you agree on how libraries are imported.
+{: .callout}
 
 Our call to `numpy.loadtxt` read our file
 but didn't save the data in memory.
