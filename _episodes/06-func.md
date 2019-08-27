@@ -149,7 +149,7 @@ we can make our inflammation analysis easier to read and easier to reuse.
 First, let's make an `analyze` function that generates our plots:
 
 ~~~
-def analyze(filename):
+def visualise(filename):
 
     data = numpy.loadtxt(fname=filename, delimiter=',')
 
