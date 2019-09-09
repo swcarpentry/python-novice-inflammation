@@ -38,7 +38,7 @@ $ cd ~/Desktop/swc-python/data
 {: .source}
 
 On Windows, you can use its native Command Prompt program.  The easiest way to start it up is by
-pressing <kbd>Windows Logo Key</kbd>+<kbd>R</kbd>, entering `cmd`, and hitting <kbd>Enter</kbd>. In
+pressing <kbd>Windows Logo Key</kbd>+<kbd>R</kbd>, entering `cmd`, and hitting <kbd>Return</kbd>. In
 the Command Prompt, use the following command to navigate to the `data` folder:
 ~~~
 $ cd /D %userprofile%\Desktop\swc-python\data
