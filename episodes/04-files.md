@@ -108,9 +108,9 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 
 > ## Plotting Differences
 >
-> Plot the difference between the average of the first dataset
-> and the average of the second dataset,
-> i.e., the difference between the leftmost plot of the first two figures.
+> Plot the difference between the average inflammations reported in the first and second datasets
+> (stored in `inflammation-01.csv` and `inflammation-02.csv`, correspondingly),
+> i.e., the difference between the leftmost plots of the first two figures.
 >
 > > ## Solution
 > > ~~~
