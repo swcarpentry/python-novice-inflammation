@@ -231,7 +231,8 @@ AssertionError: Calculated upper Y coordinate invalid
 
 Re-reading our function,
 we realize that line 14 should divide `dy` by `dx` rather than `dx` by `dy`.
-(You can display line numbers by typing Ctrl-M, then L.)
+In a Jupyter notebook, you can display line numbers by typing <kbd>Ctrl</kbd>+<kbd>M</kbd>
+followed by <kbd>L</kbd>.
 If we had left out the assertion at the end of the function,
 we would have created and returned something that had the right shape as a valid answer,
 but wasn't.
