@@ -149,7 +149,8 @@ does not.
 >
 > ~~~
 > salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
-> my_salsa = list(salsa)        # <-- makes a *copy* of the list
+> import copy
+> my_salsa = copy.deepcopy(salsa)        # <-- makes a *copy* of the list
 > salsa[0] = 'hot peppers'
 > print('Ingredients in my salsa:', my_salsa)
 > ~~~
