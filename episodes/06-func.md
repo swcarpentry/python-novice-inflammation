@@ -146,10 +146,10 @@ or the next person who reads it won't be able to understand what's going on.
 
 Now that we know how to wrap bits of code up in functions,
 we can make our inflammation analysis easier to read and easier to reuse.
-First, let's make an `analyze` function that generates our plots:
+First, let's make a `visualize` function that generates our plots:
 
 ~~~
-def analyze(filename):
+def visualize(filename):
 
     data = numpy.loadtxt(fname=filename, delimiter=',')
 
@@ -193,7 +193,7 @@ def detect_problems(filename):
 Wait! Didn't we forget to specify what both of these functions should return? Well, we didn't.
 In Python, functions are not required to include a `return` statement and can be used for
 the sole purpose of grouping together pieces of code that conceptually do one thing. In such cases,
-function names usually describe what they do, _e.g._ `analyze`, `detect_problems`.
+function names usually describe what they do, _e.g._ `visualize`, `detect_problems`.
 
 Notice that rather than jumbling this code together in one giant `for` loop,
 we can now read and reuse both ideas separately.
@@ -204,7 +204,7 @@ filenames = sorted(glob.glob('inflammation*.csv'))
 
 for f in filenames[:3]:
     print(f)
-    analyze(f)
+    visualize(f)
     detect_problems(f)
 ~~~
 {: .language-python}
