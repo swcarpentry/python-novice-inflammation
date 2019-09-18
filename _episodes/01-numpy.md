@@ -763,7 +763,7 @@ Let's take a look at the average inflammation over time:
 
 ~~~
 ave_inflammation = numpy.mean(data, axis=0)
-ave_plot = matplotlib.pyplot.plot(ave_inflammation)
+ave_plot = matplotlib.pyplot.plot(ave_inflammation, 'b')
 matplotlib.pyplot.show()
 ~~~
 {: .language-python}
@@ -776,7 +776,7 @@ roughly linear rise and fall, which is suspicious: we might instead expect a sha
 fall.  Let's have a look at two other statistics:
 
 ~~~
-max_plot = matplotlib.pyplot.plot(numpy.max(data, axis=0))
+max_plot = matplotlib.pyplot.plot(numpy.max(data, axis=0), 'b')
 matplotlib.pyplot.show()
 ~~~
 {: .language-python}
@@ -784,7 +784,7 @@ matplotlib.pyplot.show()
 ![Maximum Value Along The First Axis](../fig/01-numpy_75_1.png)
 
 ~~~
-min_plot = matplotlib.pyplot.plot(numpy.min(data, axis=0))
+min_plot = matplotlib.pyplot.plot(numpy.min(data, axis=0), 'b')
 matplotlib.pyplot.show()
 ~~~
 {: .language-python}
@@ -1046,7 +1046,7 @@ the graphs will actually be squeezed together more closely.)
 >
 > > ## Solution
 > > ~~~
-> > std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
+> > std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0), 'b')
 > > matplotlib.pyplot.show()
 > > ~~~
 > > {: .language-python}
