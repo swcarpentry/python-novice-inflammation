@@ -204,9 +204,9 @@ that can be called upon when needed.
 
 ## Loading data into Python
 In order to load our inflammation data, we need to access
-([import]({{ page.root }}/reference/#import) in Python terminology) a library called 
-[NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation") which stands for Numerical Python. 
-In general you should use this library if you want to do fancy things with numbers, 
+([import]({{ page.root }}/reference/#import) in Python terminology) a library called
+[NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation") which stands for Numerical Python.
+In general you should use this library if you want to do fancy things with numbers,
 especially if you have matrices or arrays. We can import NumPy using:
 
 ~~~
@@ -270,7 +270,7 @@ when there's nothing interesting after the decimal point.
 > However, shortcuts such as `import numpy as np` are frequently used.  Importing NumPy this way means that after the
 > inital import, rather than writing `numpy.loadtxt(...)`, you can now write `np.loadtxt(...)`. Some
 > people prefer this as it is quicker to type and results in shorter lines of code - especially for libraries
-> with long names! You will frequently see Python code online using a NumPy function with `np`, and it's 
+> with long names! You will frequently see Python code online using a NumPy function with `np`, and it's
 > because they've used this shortcut. It makes no difference which approach you choose to take, but you must be
 > consistent as if you use `import numpy as np` then `numpy.loadtxt(...)` will not work, and you must use `np.loadtxt(...)`
 > instead. Because of this, when working with other people it is important you agree on how libraries are imported.
@@ -737,7 +737,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Heatmap of the Data](../fig/01-numpy_71_0.png)
+![Heatmap of the Data](../fig/inflammation-01-imshow.svg)
 
 Blue pixels in this heat map represent low values, while yellow pixels represent high values.  As we
 can see, inflammation rises and falls over a 40-day period.
@@ -768,7 +768,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Average Inflammation Over Time](../fig/01-numpy_73_0.png)
+![Average Inflammation Over Time](../fig/inflammation-01-average.svg)
 
 Here, we have put the average per day across all patients in the variable `ave_inflammation`, then
 asked `matplotlib.pyplot` to create and display a line graph of those values.  The result is a
@@ -781,7 +781,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Maximum Value Along The First Axis](../fig/01-numpy_75_1.png)
+![Maximum Value Along The First Axis](../fig/inflammation-01-maximum.svg)
 
 ~~~
 min_plot = matplotlib.pyplot.plot(numpy.min(data, axis=0))
@@ -789,7 +789,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Minimum Value Along The First Axis](../fig/01-numpy_75_3.png)
+![Minimum Value Along The First Axis](../fig/inflammation-01-minimum.svg)
 
 The maximum value rises and falls smoothly, while the minimum seems to be a step function.  Neither
 trend seems particularly likely, so either there's a mistake in our calculations or something is
@@ -836,7 +836,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![The Previous Plots as Subplots](../fig/01-numpy_80_0.png)
+![The Previous Plots as Subplots](../fig/inflammation-01-group-plot.svg)
 
 The [call]({{ page.root }}/reference/#function-call) to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
@@ -1035,7 +1035,7 @@ the graphs will actually be squeezed together more closely.)
 > > matplotlib.pyplot.show()
 > > ~~~
 > > {: .language-python}
-> ![Plot with step lines](../fig/01-numpy_exercise_0.png)
+> ![Plot with step lines](../fig/inflammation-01-line-styles.svg)
 > {: .solution}
 {: .challenge}
 
