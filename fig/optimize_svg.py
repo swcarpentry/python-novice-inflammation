@@ -132,9 +132,8 @@ def optimize_with_scour(files):
 
         try:
             # .start will close the files. Weird flex but ok
-            infile = open(options.infilename, 'rb')
-            outfile = open(options.outfilename, 'wb')
-            scour.start(options, infile, outfile)
+            with open(file, 'rb') as infile, open(options.outfilename, 'wb') as outfile:
+                scour.start(options, infile, outfile)
         except FileNotFoundError:
             # Doing this because we have a list of
             # hard-coded file names
