@@ -49,6 +49,7 @@ If we want to start by analyzing just the first three files in alphabetical orde
 `sorted` built-in function to generate a new sorted list from the `glob.glob` output:
 
 ~~~
+import glob
 import numpy
 import matplotlib.pyplot
 
