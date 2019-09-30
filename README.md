@@ -54,7 +54,7 @@ ways to render the lesson locally, and even how to write new episodes!
 ## Maintainers
 
 Lesson maintainers are [Trevor Bekolay][trevor_bekolay], [Maxim Belkin][maxim_belkin],
-[Anne Fouilloux][anne_fouilloux], [Valentina Staneva][valentina_staneva],
+[Anne Fouilloux][anne_fouilloux], [Lauren Ko][lauren_ko], [Valentina Staneva][valentina_staneva],
 [Mike Trizna][mike_trizna], and [creator][swc_history] of Software Carpentry:
 [Greg Wilson][greg_wilson]
 
@@ -72,6 +72,7 @@ To cite this lesson, please consult with [CITATION](CITATION)
 
 [lesson-example]: https://carpentries.github.io/lesson-example
 [anne_fouilloux]: https://github.com/annefou
+[lauren_ko]: https://github.com/ldko
 [maxim_belkin]: https://github.com/maxim-belkin
 [mike_trizna]: https://github.com/MikeTrizna
 [trevor_bekolay]: http://software-carpentry.org/team/#bekolay_trevor
