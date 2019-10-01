@@ -47,7 +47,7 @@ $ cd /D %userprofile%\Desktop\swc-python\data
 
 &nbsp; <!-- vertical spacer -->
 
-### Option 1: Launch Plain Vanilla Python interpreter
+### Option 1: Launch "plain vanilla" Python interpreter
 
 To start working with Python, we need to launch a program that will interpret and execute our Python
 commands. To launch a "plain vanilla" Python interpreter, execute:
@@ -64,11 +64,11 @@ $ winpty python
 
 &nbsp; <!-- vertical spacer -->
 
-### Option 2: Start Jupyter notebook
+### Option 2: Start Jupyter Notebook
 
-Jupyter notebooks provide a browser-based interface for working with Python.  If you would like to
-use a notebook during the lesson, make sure to install [Anaconda
-Distribution](http://carpentries.github.io/workshop-template/#python).
+Jupyter Notebook provides a browser-based interface for working with Python. If you would like to
+use a notebook during the lesson, make sure to install [Anaconda](http://carpentries.github.io/workshop-template/#python)
+distribution.
 
 To start a Jupyter server, execute:
 ~~~
@@ -86,9 +86,9 @@ drop-down menu:
 ### Option 3: Start IPython interpreter
 
 IPython is an alternative solution situated somewhere in between the plain vanilla Python
-interpreter and Jupyter notebooks.  It provides an interactive command-line based interpreter with
+interpreter and Jupyter Notebook. It provides an interactive command-line based interpreter with
 various convenience features and commands.  You should have IPython on your system if you installed
-[Anaconda Distribution](http://carpentries.github.io/workshop-template/#python).
+[Anaconda](http://carpentries.github.io/workshop-template/#python) distribution.
 
 To start using IPython, execute:
 ~~~
