@@ -33,7 +33,7 @@ word = 'lead'
 ~~~
 {: .language-python}
 
-In Python, a string is an ordered collection of characters and every
+In Python, a string is basically an ordered collection of characters, and every
 character has a unique number associated with it -- its index. This means that
 we can access characters in a string using their indices.
 For example, we can get the first character of the word `'lead'`, by using

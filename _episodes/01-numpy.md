@@ -57,7 +57,7 @@ weight_kg = 60
 {: .language-python}
 
 From now on, whenever we use `weight_kg`, Python will substitute the value we assigned to
-it. In essence, **a variable is a name for a value**.
+it. In layman's terms, **a variable is a name for a value**.
 
 In Python, variable names:
 
@@ -84,7 +84,7 @@ weight_kg = 60.0
 ~~~
 {: .language-python}
 
-And to create a string we have to add single or double quotes around some text, for example:
+And to create a string, we add single or double quotes around some text, for example:
 
 ~~~
 weight_kg_text = 'weight in kilograms:'
@@ -266,9 +266,9 @@ when there's nothing interesting after the decimal point.
 Our call to `numpy.loadtxt` read our file
 but didn't save the data in memory.
 To do that,
-we need to assign the array to a variable. In a similar manner to how we assign a single value to a variable, we
-can also assign an array of values to a variable using the same syntax.  Let's re-run
-`numpy.loadtxt` and save the returned data:
+we need to assign the array to a variable. In a similar manner to how we assign a single
+value to a variable, we can also assign an array of values to a variable using the same syntax.
+Let's re-run `numpy.loadtxt` and save the returned data:
 
 ~~~
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
@@ -352,7 +352,7 @@ print(data.shape)
 {: .output}
 
 The output tells us that the `data` array variable contains 60 rows and 40 columns. When we
-created the variable `data` to store our arthritis data, we didn't only create the array; we also
+created the variable `data` to store our arthritis data, we did not only create the array; we also
 created information about the array, called [members]({{ page.root }}/reference/#member) or
 attributes. This extra information describes `data` in the same way an adjective describes a noun.
 `data.shape` is an attribute of `data` which describes the dimensions of `data`. We use the same

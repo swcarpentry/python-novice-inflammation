@@ -208,7 +208,7 @@ if we can't find a bug in 10 minutes,
 we should *be humble* and ask for help.
 Explaining the problem to someone else is often useful,
 since hearing what we're thinking helps us spot inconsistencies and hidden assumptions.
-If you don't have someone nearby to shared your problem description with, get a
+If you don't have someone nearby to share your problem description with, get a
 [rubber duck](https://en.wikipedia.org/wiki/Rubber_duck_debugging)!
 
 Asking for help also helps alleviate confirmation bias.
