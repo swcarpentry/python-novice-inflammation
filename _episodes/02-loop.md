@@ -15,12 +15,12 @@ keypoints:
 - "Use `len(thing)` to determine the length of something that contains other values."
 ---
 
-In the last episode, we wrote Python code that plots values of interest from our first 
+As you recall from the first episode, 'Analyzing Patient Data', we wrote Python code that plots values of interest from our first 
 inflammation dataset (`inflammation-01.csv`), which revealed some suspicious features in it.
 
 ![Analysis of inflammation-01.csv](../fig/03-loop_2_0.png)
 
-We have a dozen data sets right now, though, and more on the way.
+We have a dozen data sets right now, though, and more on the way.  We could call up these data sets using the following commands. [Insert commands]. 
 We want to create plots for all of our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
