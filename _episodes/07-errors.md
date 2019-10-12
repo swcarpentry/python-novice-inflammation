@@ -16,9 +16,9 @@ keypoints:
 - "An error having to do with the 'grammar' or syntax of the program is called a `SyntaxError`.
    If the issue has to do with how the code is indented,
    then it will be called an `IndentationError`."
-- "A `NameError` will occur if, for example, you use a variable that has not been defined,
-   because you meant to use quotes around a string, you forgot to define the variable,
-   or you may have misspelled or used different capitalization of the variable name."
+- "A `NameError` will occur when trying to use a variable that does not exist. Possible causes are
+  that a variable definition is missing, a variable reference differs from its definition
+  in spelling or capitalization, or the code contains a string that is missing quotes around it."
 - "Containers like lists and strings will generate errors if you try to access items
    in them that do not exist. This type of error is called an `IndexError`."
 - "Trying to read a file that does not exist will give you an `FileNotFoundError`.
@@ -97,9 +97,10 @@ the program encountered an error on Line 6, when it tried to run the code `print
 > Sometimes, you might see a traceback that is very long
 > -- sometimes they might even be 20 levels deep!
 > This can make it seem like something horrible happened,
-> but all it means is that your program called many functions before it ran into the error.
+> but the length does not reflect severity, rather,
+> it indicates that your program called many functions before it encountered the error.
 > Most of the time, the actual place where the error occurred is at the bottom-most level,
-> so skip over the traceback down to the bottom line.
+> so you can skip down the traceback to the bottom.
 {: .callout}
 
 So what error did the program actually encounter?
@@ -396,7 +397,7 @@ and I have a file in `myproject/writing/myfile.txt`,
 but I try to open `myfile.txt`,
 this will fail.
 The correct path would be `writing/myfile.txt`.
-It is also possible (like with `NameError`) that you misspelled the file name.
+It is also possible (like with `NameError`) that the file path contains a typo.
 
 A related issue can occur if you use the "read" flag instead of the "write" flag.
 Python will not give you an error if you try to open a file for writing
