@@ -32,7 +32,7 @@ word = 'lead'
 ~~~
 {: .language-python}
 
-In Python, a string is just an ordered collection of characters, so every
+In Python, a string is basically an ordered collection of characters, and every
 character has a unique number associated with it -- its index. This means that
 we can access characters in a string using their indices.
 For example, we can get the first character of the word `'lead'`, by using
@@ -57,7 +57,7 @@ d
 This is a bad approach for three reasons:
 
 1.  **Not scalable**. Imagine you need to print characters of a string that is hundreds
-    of letters long.  It might be easier just to type them in manually.
+    of letters long.  It might be easier to type them in manually.
 
 2.  **Difficult to maintain**. If we want to decorate each printed character with an
     asterix or any other character, we would have to change four lines of code. While
@@ -163,10 +163,8 @@ of the loop body (e.g. `end for`); what is indented after the `for` statement be
 >
 >
 > In the example above, the loop variable was given the name `char` as a mnemonic;
-> it is short for 'character'.
-> We can choose any name we want for variables. We might just as easily have chosen the name
-> `banana` for the loop variable, as long as we use the same name when we invoke the variable inside
-> the loop:
+> it is short for 'character'.  We can choose any name we want for variables.
+> We can even call our loop variable `banana`, as long as we use this name consistently:
 >
 > ~~~
 > word = 'oxygen'
@@ -222,7 +220,7 @@ since there is nothing left in `'aeiou'` for Python to process,
 the loop finishes
 and the `print` statement on line 4 tells us our final answer.
 
-Note that a loop variable is just a variable that's being used to record progress in a loop.
+Note that a loop variable is a variable that's being used to record progress in a loop.
 It still exists after the loop is over,
 and we can re-use variables previously defined as loop variables as well:
 

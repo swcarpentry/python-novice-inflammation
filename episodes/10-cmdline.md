@@ -440,7 +440,7 @@ $ python ../code/readings_03.py small-01.csv small-02.csv
 
 The next step is to teach our program to pay attention to the `--min`, `--mean`, and `--max` flags.
 These always appear before the names of the files,
-so we could just do this:
+so we could do this:
 
 ~~~
 $ cat ../code/readings_04.py
