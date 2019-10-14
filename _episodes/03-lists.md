@@ -20,8 +20,7 @@ list[2:9]), in the same way as strings and arrays."
 - "Strings are immutable (i.e., the characters in them cannot be changed)."
 ---
 
-Just as a `for` loop is a way to do operations many times,
-a list is a way to store many values.
+Similar to a string that can contain many characters, a list is a container that can store many values.
 Unlike NumPy arrays,
 lists are built into the language (so we don't have to load a library
 to use them).
@@ -167,7 +166,7 @@ does not.
 {: .callout}
 
 > ## Nested Lists
-> Since lists can contain any Python variable, it can even contain other lists.
+> Since a list can contain any Python variables, it can even contain other lists.
 >
 > For example, we could represent the products in the shelves of a small grocery shop:
 >
@@ -304,9 +303,6 @@ primes: [1, 3, 5, 7, 2]
 odds: [1, 3, 5, 7]
 ~~~
 {: .output}
-
-This is different from how variables worked in lesson 1, and more similar to how a spreadsheet
-works.
 
 > ## Turn a String Into a List
 >
