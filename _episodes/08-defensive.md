@@ -561,4 +561,42 @@ This violates another important rule of programming:
 > {: .solution}
 {: .challenge}
 
+
+> ## Testing data type within a function with `isinstance()`
+>
+> `isinstance()` examines the type of an object.
+> We can use `isinstance()` to test if the object that is entered as an argument
+> in a function is allowed for this specific function.
+> For example, testing if 3.14 is float:
+> ~~~
+> isinstance(3.14, float)
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> True
+> ~~~
+> {: .output}
+>
+> Write a function that prints a word given as an argument in a string format.
+> Make sure it tests whether the argument is indeed a string (e.g. `isinstance(x, str)`).
+> Make your function to print out 'Argument is not string' for any other data type.
+>
+> > ## Solution
+> > ~~~
+> > def print_out(word):
+> >   if (isinstance(word, str)): # another way is: if (isinstance(word, str) == True):
+> >     print(word)
+> >   else:
+> >     print("Argument is not string")
+> >
+> > # try it:
+> > print_out('my name')
+> > print_out(1)
+> >
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
 {% include links.md %}
