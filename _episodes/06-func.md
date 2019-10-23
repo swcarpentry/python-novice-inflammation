@@ -374,19 +374,58 @@ we can break the string across multiple lines:
 def offset_mean(data, target_mean_value):
     '''Return a new array containing the original data
        with its mean offset to match the desired value.
-    Example: offset_mean([1, 2, 3], 0) => [-1, 0, 1]'''
+
+    Parameters
+    ----------
+    data : numpy array, or list
+        The data we want to correct the average
+    target_mean_value: float or int
+        The target mean value we want for our new array
+
+    Returns
+    -------
+    numpy array: 
+        Same dimension as `data`, with mean value `target_mean_value`
+
+    Examples
+    --------
+    >>> offset_mean([1, 2, 3], 0)
+    array([-1.,  0.,  1.])
+    '''
     return (data - numpy.mean(data)) + target_mean_value
 
 help(offset_mean)
 ~~~
 {: .language-python}
 
+We're also the [numpy docstring
+standard](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard),
+which is common across the scientific Python ecosystem and understood by many
+tools. 
+
 ~~~
-Help on function center in module __main__:
+Help on function offset_mean in module __main__:
 
 offset_mean(data, target_mean_value)
-    Return a new array containing the original data with its mean offset to match the desired value.
-    Example: offset_mean([1, 2, 3], 0) => [-1, 0, 1]
+    Return a new array containing the original data
+       with its mean offset to match the desired value.
+
+    Parameters
+    ----------
+    data : numpy array, or list
+        The data we want to correct the average
+    target_mean_value: float or int
+        The target mean value we want for our new array
+
+    Returns
+    -------
+    numpy array:
+        Same dimension as `data`, with mean value `target_mean_value`
+
+    Examples
+    --------
+    >>> offset_mean([1, 2, 3], 0)
+    array([-1.,  0.,  1.])
 ~~~
 {: .output}
 
@@ -443,15 +482,32 @@ let's re-define our `offset_mean` function like this:
 
 ~~~
 def offset_mean(data, target_mean_value=0.0):
-    '''Return a new array containing the original data with its mean offset to match the
-       desired value (0 by default).
-    Example: offset_mean([1, 2, 3], 0) => [-1, 0, 1]'''
+    '''Return a new array containing the original data
+       with its mean offset to match the desired value.
+
+    Parameters
+    ----------
+    data : numpy array, or list
+        The data we want to correct the average
+    target_mean_value: float or int, optional
+        The target mean value we want for our new array, default to 0.0
+    Returns
+    -------
+    numpy array: 
+        Same dimension as `data`, with mean value `target_mean_value`
+
+    Examples
+    --------
+    >>> offset_mean([1, 2, 3], 0)
+    array([-1.,  0.,  1.])
+    '''
     return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
 
 The key change is that the second parameter is now written `target_mean_value=0.0`
-instead of just `target_mean_value`.
+instead of just `target_mean_value`,
+and we've updated the docstring to list the default value.
 If we call the function with two arguments,
 it works as it did before:
 
