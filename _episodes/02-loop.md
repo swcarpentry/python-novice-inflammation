@@ -406,7 +406,7 @@ so we should always use it when we can.
 > > ~~~
 > > y = 0
 > > for idx, coef in enumerate(coefs):
-> >     y = y + x**idx * coef
+> >     y = y + coef * x**idx
 > > ~~~
 > > {: .language-python}
 > {: .solution}
