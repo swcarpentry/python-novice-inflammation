@@ -143,7 +143,7 @@ def normalize_rectangle(rect):
 ~~~
 {: .language-python}
 
-The preconditions on lines 3, 5, and 6 catch invalid inputs:
+The preconditions on lines 6, 8, and 9 catch invalid inputs:
 
 ~~~
 print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
@@ -189,7 +189,7 @@ AssertionError: Invalid X coordinates
 ~~~
 {: .error}
 
-The post-conditions on lines 17 and 18 help us catch bugs by telling us when our
+The post-conditions on lines 20 and 21 help us catch bugs by telling us when our
 calculations might have been incorrect.
 For example,
 if we normalize a rectangle that is taller than it is wide everything seems OK:
