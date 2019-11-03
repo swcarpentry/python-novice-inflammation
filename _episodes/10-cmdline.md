@@ -163,12 +163,13 @@ $ cat ../code/readings_01.py
 import sys
 import numpy
 
+
 def main():
     script = sys.argv[0]
     filename = sys.argv[1]
     data = numpy.loadtxt(filename, delimiter=',')
-    for m in numpy.mean(data, axis=1):
-        print(m)
+    for row_mean in data.mean(axis=1):
+        print(row_mean)
 ~~~
 {: .language-python}
 
