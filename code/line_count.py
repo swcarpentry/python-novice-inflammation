@@ -13,10 +13,10 @@ def main():
         sum_nlines = count_file_like(sys.stdin)
         print('stdin: %d' % sum_nlines)
     else:
-        for f in filenames:
-            n = count_file(f)
-            print('%s %d' % (f, n))
-            sum_nlines += n
+        for filename in filenames:
+            nlines = count_file(filename)
+            print('%s %d' % (filename, nlines))
+            sum_nlines += nlines
         print('total: %d' % sum_nlines)
 
 
