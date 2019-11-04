@@ -457,8 +457,8 @@ def main():
     action = sys.argv[1]
     filenames = sys.argv[2:]
 
-    for f in filenames:
-        data = numpy.loadtxt(f, delimiter=',')
+    for filename in filenames:
+        data = numpy.loadtxt(filename, delimiter=',')
 
         if action == '--min':
             values = numpy.min(data, axis=1)
@@ -467,8 +467,8 @@ def main():
         elif action == '--max':
             values = numpy.max(data, axis=1)
 
-        for m in values:
-            print(m)
+        for val in values:
+            print(val)
 
 if __name__ == '__main__':
    main()
