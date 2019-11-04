@@ -774,6 +774,7 @@ the program now does everything we set out to do.
 >
 > > ## Solution
 > > ~~~
+> > # this is code/readings_07.py
 > > import sys
 > > import numpy
 > >
@@ -786,8 +787,8 @@ the program now does everything we set out to do.
 > >     if len(filenames) == 0:
 > >         process(sys.stdin, action)
 > >     else:
-> >         for f in filenames:
-> >             process(f, action)
+> >         for filename in filenames:
+> >             process(filename, action)
 > >
 > > def process(filename, action):
 > >     data = numpy.loadtxt(filename, delimiter=',')
@@ -799,8 +800,8 @@ the program now does everything we set out to do.
 > >     elif action == '-x':
 > >         values = numpy.max(data, axis=1)
 > >
-> >     for m in values:
-> >         print(m)
+> >     for val in values:
+> >         print(val)
 > >
 > > main()
 > > ~~~

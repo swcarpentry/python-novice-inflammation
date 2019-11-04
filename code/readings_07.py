@@ -11,8 +11,8 @@ def main():
     if len(filenames) == 0:
         process(sys.stdin, action)
     else:
-        for f in filenames:
-            process(f, action)
+        for filename in filenames:
+            process(filename, action)
 
 
 def process(filename, action):
@@ -25,8 +25,8 @@ def process(filename, action):
     elif action == '-x':
         values = data.max(axis=1)
 
-    for m in values:
-        print(m)
+    for val in values:
+        print(val)
 
 
 if __name__ == '__main__':
