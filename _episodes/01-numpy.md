@@ -740,26 +740,7 @@ matplotlib.pyplot.show()
 ![Heatmap of the Data](../fig/inflammation-01-imshow.svg)
 
 Blue pixels in this heat map represent low values, while yellow pixels represent high values.  As we
-can see, inflammation rises and falls over a 40-day period.
-
-> ## Some IPython Magic
->
-> If you're using a Jupyter notebook,
-> you'll need to execute the following command
-> in order for your matplotlib images to appear
-> in the notebook when `show()` is called:
->
-> ~~~
-> %matplotlib inline
-> ~~~
-> {: .language-python}
->
-> The `%` indicates an IPython magic function -
-> a function that is only valid within the notebook environment.
-> Note that you only have to execute this function once per notebook.
-{: .callout}
-
-Let's take a look at the average inflammation over time:
+can see, inflammation rises and falls over a 40-day period.  Let's take a look at the average inflammation over time:
 
 ~~~
 ave_inflammation = numpy.mean(data, axis=0)
