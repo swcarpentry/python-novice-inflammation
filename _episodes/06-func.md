@@ -202,10 +202,10 @@ We can reproduce the previous analysis with a much simpler `for` loop:
 ~~~
 filenames = sorted(glob.glob('inflammation*.csv'))
 
-for f in filenames[:3]:
-    print(f)
-    visualize(f)
-    detect_problems(f)
+for filename in filenames[:3]:
+    print(filename)
+    visualize(filename)
+    detect_problems(filename)
 ~~~
 {: .language-python}
 
