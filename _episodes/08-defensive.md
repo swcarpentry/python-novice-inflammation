@@ -70,9 +70,9 @@ this piece of code halts as soon as the loop encounters a value that isn't posit
 ~~~
 numbers = [1.5, 2.3, 0.7, -0.001, 4.4]
 total = 0.0
-for n in numbers:
-    assert n > 0.0, 'Data should only contain positive values'
-    total += n
+for num in numbers:
+    assert num > 0.0, 'Data should only contain positive values'
+    total += num
 print('total is:', total)
 ~~~
 {: .language-python}
@@ -82,9 +82,9 @@ print('total is:', total)
 AssertionError                            Traceback (most recent call last)
 <ipython-input-19-33d87ea29ae4> in <module>()
       2 total = 0.0
-      3 for n in numbers:
-----> 4     assert n > 0.0, 'Data should only contain positive values'
-      5     total += n
+      3 for num in numbers:
+----> 4     assert num > 0.0, 'Data should only contain positive values'
+      5     total += num
       6 print('total is:', total)
 
 AssertionError: Data should only contain positive values
