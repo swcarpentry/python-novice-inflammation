@@ -11,13 +11,13 @@ def main():
         nrow0, ncol0 = row_col_count(filenames[0])
         print('First file %s: %d rows and %d columns' % (
             filenames[0], nrow0, ncol0))
-        for f in filenames[1:]:
-            nrow, ncol = row_col_count(f)
+        for filename in filenames[1:]:
+            nrow, ncol = row_col_count(filename)
             if nrow != nrow0 or ncol != ncol0:
                 print('File %s does not check: %d rows and %d columns'
-                      % (f, nrow, ncol))
+                      % (filename, nrow, ncol))
             else:
-                print('File %s checks' % f)
+                print('File %s checks' % filename)
         return
 
 
