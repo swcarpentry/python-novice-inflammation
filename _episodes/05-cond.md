@@ -410,7 +410,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > {: .output}
 >Use the following Python code as your starting point:
 > ~~~
-> files = ['inflammation-01.csv',
+> filenames = ['inflammation-01.csv',
 >          'myscript.py',
 >          'inflammation-02.csv',
 >          'small-01.csv',
@@ -438,10 +438,10 @@ freeing us from having to manually examine every plot for features we've seen be
 >
 > > ## Solution
 > > ~~~
-> > for file in files:
-> >     if file.startswith('inflammation-'):
+> > for filename in filenames:
+> >     if filename.startswith('inflammation-'):
 > >         large_files.append(file)
-> >     elif file.startswith('small-'):
+> >     elif filename.startswith('small-'):
 > >         small_files.append(file)
 > >     else:
 > >         other_files.append(file)
