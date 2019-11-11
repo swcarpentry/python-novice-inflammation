@@ -382,7 +382,7 @@ help(offset_mean)
 {: .language-python}
 
 ~~~
-Help on function center in module __main__:
+Help on function offset_mean in module __main__:
 
 offset_mean(data, target_mean_value)
     Return a new array containing the original data with its mean offset to match the desired value.
