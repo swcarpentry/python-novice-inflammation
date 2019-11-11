@@ -55,10 +55,10 @@ import matplotlib.pyplot
 
 filenames = sorted(glob.glob('inflammation*.csv'))
 filenames = filenames[0:3]
-for f in filenames:
-    print(f)
+for filename in filenames:
+    print(filename)
 
-    data = numpy.loadtxt(fname=f, delimiter=',')
+    data = numpy.loadtxt(fname=filename, delimiter=',')
 
     fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 
@@ -143,7 +143,7 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > ~~~
 > filenames = glob.glob('inflammation*.csv')
 > composite_data = numpy.zeros((60,40))
-> for f in filenames:
+> for filename in filenames:
 >     # sum each new file's data into composite_data as it's read
 >     #
 > # and then divide the composite_data by number of samples
@@ -162,11 +162,11 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > > filenames = glob.glob('inflammation*.csv')
 > > composite_data = numpy.zeros((60,40))
 > >
-> > for f in filenames:
-> >     data = numpy.loadtxt(fname = f, delimiter=',')
+> > for filename in filenames:
+> >     data = numpy.loadtxt(fname = filename, delimiter=',')
 > >     composite_data += data
 > >
-> > composite_data/=len(filenames)
+> > composite_data /= len(filenames)
 > >
 > > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 > >
