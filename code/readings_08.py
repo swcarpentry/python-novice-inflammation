@@ -1,7 +1,6 @@
 import sys
 import numpy
 
-
 def main():
     script = sys.argv[0]
     if len(sys.argv) == 1:  # no arguments, so print help message
@@ -19,23 +18,21 @@ def main():
     if len(filenames) == 0:
         process(sys.stdin, action)
     else:
-        for f in filenames:
-            process(f, action)
-
+        for filename in filenames:
+            process(filename, action)
 
 def process(filename, action):
     data = numpy.loadtxt(filename, delimiter=',')
 
     if action == '--min':
-        values = data.min(axis=1)
+        values = numpy.min(data, axis=1)
     elif action == '--mean':
-        values = data.mean(axis=1)
+        values = numpy.mean(data, axis=1)
     elif action == '--max':
-        values = data.max(axis=1)
+        values = numpy.max(data, axis=1)
 
-    for m in values:
-        print(m)
-
+    for val in values:
+        print(val)
 
 if __name__ == '__main__':
     main()
