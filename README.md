@@ -28,16 +28,17 @@ This lesson is also available in [R][R] and [MATLAB][MATLAB].
 
 | # |  Episode | Time | Question(s) |
 |--:|:---------|:----:|:------------|
-| 1 | [Analyzing Patient Data][episode01] | 90 | How can I process tabular data files in Python? |
-| 2 | [Repeating Actions with Loops][episode02] | 30 | How can I do the same operations on many different values? |
-| 3 | [Storing Multiple Values in Lists][episode03] | 30 | How can I store many values together? |
-| 4 | [Analyzing Data from Multiple Files][episode04] | 20 | How can I do the same operations on many different files? |
-| 5 | [Making Choices][episode05] | 30 | How can my programs do different things based on data values? |
-| 6 | [Creating Functions][episode06] | 30 | How can I define new functions?<br>What’s the difference between defining and calling a function?<br>What happens when I call a function? |
-| 7 | [Errors and Exceptions][episode07] | 30 | How does Python report errors?<br>How can I handle errors in Python programs? |
-| 8 | [Defensive Programming][episode08] | 30 | How can I make my programs more reliable? |
-| 9 | [Debugging][episode09] | 30 | How can I debug my program? |
-|10 | [Command-Line Programs][episode10] | 30 | How can I write Python programs that will work like Unix command-line tools? |
+| 1 | [Python Fundamentals][episode01] | 30 | What basic data types can I work with in Python?<br>How can I create a new variable in Python?<br>Can I change the value associated with a variable after I create it? |
+| 1 | [Analyzing Patient Data][episode02] | 90 | How can I process tabular data files in Python? |
+| 2 | [Repeating Actions with Loops][episode03] | 30 | How can I do the same operations on many different values? |
+| 3 | [Storing Multiple Values in Lists][episode04] | 30 | How can I store many values together? |
+| 4 | [Analyzing Data from Multiple Files][episode05] | 20 | How can I do the same operations on many different files? |
+| 5 | [Making Choices][episode06] | 30 | How can my programs do different things based on data values? |
+| 6 | [Creating Functions][episode07] | 30 | How can I define new functions?<br>What’s the difference between defining and calling a function?<br>What happens when I call a function? |
+| 7 | [Errors and Exceptions][episode08] | 30 | How does Python report errors?<br>How can I handle errors in Python programs? |
+| 8 | [Defensive Programming][episode09] | 30 | How can I make my programs more reliable? |
+| 9 | [Debugging][episode10] | 30 | How can I debug my program? |
+|10 | [Command-Line Programs][episode11] | 30 | How can I write Python programs that will work like Unix command-line tools? |
 
 
 ## Contributing
@@ -91,13 +92,14 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [slack_channel_url]: https://swcarpentry.slack.com/messages/C9Y0L6MF0
 [travis_svg]: https://travis-ci.org/swcarpentry/python-novice-inflammation.svg?branch=gh-pages
 [travis_url]: https://travis-ci.org/swcarpentry/python-novice-inflammation
-[episode01]: https://swcarpentry.github.io/python-novice-inflammation/01-numpy/index.html
-[episode02]: https://swcarpentry.github.io/python-novice-inflammation/02-loop/index.html
-[episode03]: https://swcarpentry.github.io/python-novice-inflammation/03-lists/index.html
-[episode04]: https://swcarpentry.github.io/python-novice-inflammation/04-files/index.html
-[episode05]: https://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html
-[episode06]: https://swcarpentry.github.io/python-novice-inflammation/06-func/index.html
-[episode07]: https://swcarpentry.github.io/python-novice-inflammation/07-errors/index.html
-[episode08]: https://swcarpentry.github.io/python-novice-inflammation/08-defensive/index.html
-[episode09]: https://swcarpentry.github.io/python-novice-inflammation/09-debugging/index.html
-[episode10]: https://swcarpentry.github.io/python-novice-inflammation/10-cmdline/index.html
+[episode01]: https://swcarpentry.github.io/python-novice-inflammation/01-intro/index.html
+[episode02]: https://swcarpentry.github.io/python-novice-inflammation/02-numpy/index.html
+[episode03]: https://swcarpentry.github.io/python-novice-inflammation/03-loop/index.html
+[episode04]: https://swcarpentry.github.io/python-novice-inflammation/04-lists/index.html
+[episode05]: https://swcarpentry.github.io/python-novice-inflammation/05-files/index.html
+[episode06]: https://swcarpentry.github.io/python-novice-inflammation/06-cond/index.html
+[episode07]: https://swcarpentry.github.io/python-novice-inflammation/07-func/index.html
+[episode08]: https://swcarpentry.github.io/python-novice-inflammation/08-errors/index.html
+[episode09]: https://swcarpentry.github.io/python-novice-inflammation/09-defensive/index.html
+[episode10]: https://swcarpentry.github.io/python-novice-inflammation/10-debugging/index.html
+[episode11]: https://swcarpentry.github.io/python-novice-inflammation/11-cmdline/index.html
