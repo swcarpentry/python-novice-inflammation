@@ -268,7 +268,7 @@ print(offset_mean(data, 0))
 {: .output}
 
 It's hard to tell from the default output whether the result is correct,
-but there are a few simple tests that will reassure us:
+but there are a few tests that we can run to reassure us:
 
 ~~~
 print('original min, mean, and max are:', numpy.min(data), numpy.mean(data), numpy.max(data))
