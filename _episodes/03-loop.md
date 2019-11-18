@@ -390,12 +390,13 @@ so we should always use it when we can.
 > ~~~
 > x = 5
 > coefs = [2, 4, 3]
+> y = coefs[0] * x**0 + coefs[1] * x**1 + coefs[2] * x**2
+> print(y)
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> y = coefs[0] * x**0 + coefs[1] * x**1 + coefs[2] * x**2
-> y = 97
+> 97
 > ~~~
 > {: .output}
 >
