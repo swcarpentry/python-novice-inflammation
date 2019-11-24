@@ -118,7 +118,6 @@ government. More information can be found [here][cp-about].
 [community-initiatives]: https://communityin.org
 [cp-about]: https://carpentries.org/about
 [swc-about]: https://software-carpentry.org/about/
-[swc-lessons]: https://software-carpentry.org/lessons/
 [mit-license]: https://opensource.org/licenses/mit-license.html
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
 [cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
