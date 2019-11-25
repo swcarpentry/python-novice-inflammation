@@ -319,66 +319,10 @@ small is:
 ~~~
 {: .output}
 
-Arrays also know how to perform common mathematical operations on their values.  The simplest
-operations with data are arithmetic: addition, subtraction, multiplication, and division.  When you
-do such operations on arrays, the operation is done element-by-element.  Thus:
+## Analyzing data
 
-~~~
-doubledata = data * 2.0
-~~~
-{: .language-python}
-
-will create a new array `doubledata`
-each element of which is twice the value of the corresponding element in `data`:
-
-~~~
-print('original:')
-print(data[:3, 36:])
-print('doubledata:')
-print(doubledata[:3, 36:])
-~~~
-{: .language-python}
-
-~~~
-original:
-[[ 2.  3.  0.  0.]
- [ 1.  1.  0.  1.]
- [ 2.  2.  1.  1.]]
-doubledata:
-[[ 4.  6.  0.  0.]
- [ 2.  2.  0.  2.]
- [ 4.  4.  2.  2.]]
-~~~
-{: .output}
-
-If, instead of taking an array and doing arithmetic with a single value (as above), you did the
-arithmetic operation with another array of the same shape, the operation will be done on
-corresponding elements of the two arrays.  Thus:
-
-~~~
-tripledata = doubledata + data
-~~~
-{: .language-python}
-
-will give you an array where `tripledata[0,0]` will equal `doubledata[0,0]` plus `data[0,0]`,
-and so on for all other elements of the arrays.
-
-~~~
-print('tripledata:')
-print(tripledata[:3, 36:])
-~~~
-{: .language-python}
-
-~~~
-tripledata:
-[[ 6.  9.  0.  0.]
- [ 3.  3.  0.  3.]
- [ 6.  6.  3.  3.]]
-~~~
-{: .output}
-
-Often, we want to do more than add, subtract, multiply, and divide array elements.  NumPy knows how
-to do more complex operations, too.  If we want to find the average inflammation for all patients on
+NumPy has several useful functions that take an array as input to perform operations on its values.
+If we want to find the average inflammation for all patients on
 all days, for example, we can ask NumPy to compute `data`'s mean value:
 
 ~~~
@@ -417,8 +361,7 @@ an array as an [argument]({{ page.root }}/reference/#argument).
 > to tell Python to go and do something for us.
 {: .callout}
 
-NumPy has lots of useful functions that take an array as input.
-Let's use three of those functions to get some descriptive values about the dataset.
+Let's use three other NumPy functions to get some descriptive values about the dataset.
 We'll also use multiple assignment,
 a convenient Python feature that will enable us to do this all in one line.
 
