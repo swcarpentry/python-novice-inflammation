@@ -57,19 +57,31 @@ ways to render the lesson locally, and even how to write new episodes!
 Lesson maintainers are [Trevor Bekolay][trevor_bekolay], [Maxim Belkin][maxim_belkin],
 [Anne Fouilloux][anne_fouilloux], [Lauren Ko][lauren_ko], [Valentina Staneva][valentina_staneva],
 [Mike Trizna][mike_trizna], and [creator][swc_history] of Software Carpentry:
-[Greg Wilson][greg_wilson]
+[Greg Wilson][greg_wilson].
 
 ## Authors
-A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
+A list of contributors to the lesson can be found in [AUTHORS](AUTHORS).
 
 ## License
-Instructional material from this lesson is made available under the Creative
-Commons Attribution (CC BY 4.0) license. Except where otherwise noted, example
-programs and software included as part of this lesson are made available under
-the MIT license. For more information, see [LICENSE.md](LICENSE.md).
+Instructional material from this lesson is made available under the
+[Creative Commons Attribution][cc-by-human] ([CC BY 4.0][cc-by-legal]) license. Except where
+otherwise noted, example programs and software included as part of this lesson are made available
+under the [MIT license][mit-license]. For more information, see [LICENSE.md](LICENSE.md).
 
 ## Citation
-To cite this lesson, please consult with [CITATION](CITATION)
+To cite this lesson, please consult with [CITATION](CITATION).
+
+## About Software Carpentry
+
+Software Carpentry is a volunteer project that teaches basic computing skills to researchers since
+1998. More information about Software Carpentry can be found [here][swc-about].
+
+## About The Carpentries
+
+The Carpentries is a fiscally sponsored project of [Community Initiatives][community-initiatives], a
+registered 501(c)3 non-profit organisation based in California, USA. We are a global community
+teaching foundational computational and data science skills to researchers in academia, industry and
+government. More information can be found [here][cp-about].
 
 [lesson-example]: https://carpentries.github.io/lesson-example
 [anne_fouilloux]: https://github.com/annefou
@@ -103,3 +115,9 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [episode09]: https://swcarpentry.github.io/python-novice-inflammation/09-defensive/index.html
 [episode10]: https://swcarpentry.github.io/python-novice-inflammation/10-debugging/index.html
 [episode11]: https://swcarpentry.github.io/python-novice-inflammation/11-cmdline/index.html
+[community-initiatives]: https://communityin.org
+[cp-about]: https://carpentries.org/about
+[swc-about]: https://software-carpentry.org/about/
+[mit-license]: https://opensource.org/licenses/mit-license.html
+[cc-by-human]: https://creativecommons.org/licenses/by/4.0/
+[cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
