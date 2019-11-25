@@ -320,6 +320,7 @@ small is:
 {: .output}
 
 ## Analyzing data
+
 NumPy has several useful functions that take an array as input to perform operations on its values.
 If we want to find the average inflammation for all patients on
 all days, for example, we can ask NumPy to compute `data`'s mean value:
