@@ -393,6 +393,9 @@ standard deviation: 4.61383319712
 > to see a list of all functions and attributes that you can use. After selecting one, you
 > can also add a question mark (e.g. `numpy.cumprod?`), and IPython will return an
 > explanation of the method! This is the same as doing `help(numpy.cumprod)`.
+> If you are using the "plain vanilla" Python interpreter, you can type `numpy.` and then 
+> press tab twice to print all the functions contained in the numpy library. Then you can 
+> use the `help(numpy.cumprod)` to see an explanation of the method.
 {: .callout}
 
 When analyzing data, though,
