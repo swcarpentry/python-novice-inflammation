@@ -89,7 +89,7 @@ that output is the data we just loaded.
 By default,
 only a few rows and columns are shown
 (with `...` to omit elements when displaying big arrays).
-To save space on the screen when displaying a NumPy array, numbers are shown as `1.` instead of `1.0` when there's nothing interesting after the decimal point.
+Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros, so "1.0" becomes "1.".
 
 > ## Importing libraries with shortcuts
 >
