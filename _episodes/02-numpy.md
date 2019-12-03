@@ -89,7 +89,7 @@ that output is the data we just loaded.
 By default,
 only a few rows and columns are shown
 (with `...` to omit elements when displaying big arrays).
-Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros, so "1.0" becomes "1.".
+Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros, so `1.0` becomes `1.`.
 
 > ## Importing libraries with shortcuts
 >
