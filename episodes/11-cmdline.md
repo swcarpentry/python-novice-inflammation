@@ -13,7 +13,6 @@ keypoints:
 - "The list `sys.argv` contains the command-line arguments that a program was run with."
 - "Avoid silent failures."
 - "The pseudo-file `sys.stdin` connects to a program's standard input."
-- "The pseudo-file `sys.stdout` connects to a program's standard output."
 ---
 
 The Jupyter Notebook and other interactive tools are great for prototyping code and exploring data,
