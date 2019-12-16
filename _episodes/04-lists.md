@@ -268,7 +268,7 @@ odds after reversing: [11, 7, 5, 3]
 While modifying in place, it is useful to remember that Python treats lists in a slightly
 counter-intuitive way.
 
-If we make a list and (attempt to) copy it then modify in place, we can cause all sorts of trouble:
+As we saw earlier, when we modified the `salsa` list item in-place, if we make a list, (attempt to) copy it and then modify this list, we can cause all sorts of trouble. This also applies to modifying the list using the above functions:
 
 ~~~
 odds = [1, 3, 5, 7]
@@ -286,7 +286,7 @@ odds: [1, 3, 5, 7, 2]
 {: .output}
 
 This is because Python stores a list in memory, and then can use multiple names to refer to the
-same list. If all we want to do is copy a (simple) list, we can use the `list` function, so we do
+same list. If all we want to do is copy a (simple) list, we can again use the `list` function, so we do
 not modify a list we did not mean to:
 
 ~~~
