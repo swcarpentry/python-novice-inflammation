@@ -1,9 +1,9 @@
 ---
-title: Analyzing Patient Data
+title: Visualizing Tabular Data
 teaching: 30
 exercises: 20
 questions:
-- "How can I visualize tabular data files in Python?"
+- "How can I visualize tabular data in Python?"
 - "How can I group several plots together?"
 objectives:
 - "Plot simple graphs from data."
