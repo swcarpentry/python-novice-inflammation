@@ -593,7 +593,7 @@ matplotlib.pyplot.show()
 
 ![The Previous Plots as Subplots](../fig/inflammation-01-group-plot.svg)
 
-When using `jupyter notebook`, all calls from `matplotlib.pyplot.figure()` to `fig.tight_layout()` have to go into a single cell, otherwise it will not work.
+For this to work in e.g. a `jupyter notebook`, all calls from `matplotlib.pyplot.figure()` to `fig.tight_layout()` have to go into a single cell.
 The [call]({{ page.root }}/reference/#function-call) to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
 how large we want the figure to be,
