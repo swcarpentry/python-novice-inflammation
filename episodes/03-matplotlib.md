@@ -9,7 +9,7 @@ objectives:
 - "Plot simple graphs from data."
 - "Group several graphs in a single figure."
 keypoints:
-- "Use the `pyplot` library from `matplotlib` for creating simple visualizations."
+- "Use the `pyplot` module from the `matplotlib` library for creating simple visualizations."
 ---
 
 ## Visualizing data
