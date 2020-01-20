@@ -14,6 +14,9 @@ keypoints:
 - "Variables are created on demand whenever a value is assigned to them."
 - "Use `print(something)` to display the value of `something`."
 ---
+
+## Variables
+
 Any Python interpreter can be used as a calculator:
 ~~~
 3 + 5 * 4
