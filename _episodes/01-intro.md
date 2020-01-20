@@ -3,6 +3,7 @@ title: Python Fundamentals
 teaching: 20
 exercises: 10
 questions:
+- "What is Python?"
 - "What basic data types can I work with in Python?"
 - "How can I create a new variable in Python?"
 - "Can I change the value associated with a variable after I create it?"
@@ -14,7 +15,10 @@ keypoints:
 - "Variables are created on demand whenever a value is assigned to them."
 - "Use `print(something)` to display the value of `something`."
 ---
+## Python
 
+Python is a general purpose interpretted langauge. Code readability and portability are its major stengths and reason 
+for being popular among the experts and novices alike. 
 ## Variables
 
 Any Python interpreter can be used as a calculator:
