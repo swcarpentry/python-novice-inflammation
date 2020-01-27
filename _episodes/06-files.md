@@ -147,7 +147,7 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 >     # sum each new file's data into composite_data as it's read
 >     #
 > # and then divide the composite_data by number of samples
-> composite_data /= len(filenames)
+> composite_data = composite_data / len(filenames)
 > ~~~
 > {: .language-python}
 >
@@ -164,9 +164,9 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > >
 > > for filename in filenames:
 > >     data = numpy.loadtxt(fname = filename, delimiter=',')
-> >     composite_data += data
+> >     composite_data = composite_data + data
 > >
-> > composite_data /= len(filenames)
+> > composite_data = composite_data / len(filenames)
 > >
 > > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
 > >
