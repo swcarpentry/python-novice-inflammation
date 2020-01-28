@@ -8,13 +8,13 @@ root: ..
 ## Overview
 
 This lesson is designed to be run on a personal computer.
-All of the software and data used in this lesson is freely available online and instructions on how
-to obtain it are provided below.
+All of the software and data used in this lesson are freely available online,
+and instructions on how to obtain it are provided below.
 
 ## Install Python
 
-In this lesson we will be using Python 3 with some of its most popular scientific libraries.
-Although one can install a "plain vanilla" Python and all required libraries "by hand",
+In this lesson, we will be using Python 3 with some of its most popular scientific libraries.
+Although one can install a plain-vanilla Python and all required libraries by hand,
 we recommend installing [Anaconda][anaconda-website],
 a Python distribution that comes with everything we need for the lesson.
 Detailed installation instructions for various operating systems can be found
@@ -109,7 +109,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 
 ## Option B: IPython interpreter
 
-IPython is an alternative solution situated somewhere in between the plain vanilla Python
+IPython is an alternative solution situated somewhere in between the plain-vanilla Python
 interpreter and Jupyter Notebook. It provides an interactive command-line based interpreter with
 various convenience features and commands.  You should have IPython on your system if you installed
 [Anaconda][anaconda-instructions].
@@ -122,15 +122,15 @@ ipython
 
 &nbsp; <!-- vertical spacer -->
 
-## Option C: "plain vanilla" Python interpreter
+## Option C: plain-vanilla Python interpreter
 
-To launch a "plain vanilla" Python interpreter, execute:
+To launch a plain-vanilla Python interpreter, execute:
 ~~~
 python
 ~~~
 {: .source}
 
-If you are using Git Bash on Windows, you have to call Python _via_ `winpty`:
+If you are using [Git Bash on Windows][gitbash], you have to call Python _via_ `winpty`:
 ~~~
 winpty python
 ~~~
