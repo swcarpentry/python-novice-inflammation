@@ -656,6 +656,9 @@ which is the average inflammation per patient across all days.
 
 > ## Change In Inflammation
 >
+> The patient data is _longitudinal_ in the sense that each row represents a
+> series of observations relating to one individual.  This means that
+> the change in inflammation over time is a meaningful concept.
 > Let's find out how to calculate changes in the data contained in an array
 > with NumPy.
 >
