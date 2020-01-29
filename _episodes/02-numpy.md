@@ -656,21 +656,20 @@ which is the average inflammation per patient across all days.
 
 > ## Change In Inflammation
 >
-> This patient data is _longitudinal_ in the sense that each row represents a
-> series of observations relating to one individual.  This means that
-> the change in inflammation over time is a meaningful concept.
+> Let's find out how to calculate changes in the data contained in an array
+> with NumPy.
 >
-> The `numpy.diff()` function takes a NumPy array and returns the
-> differences between two successive values along a specified axis. For
-> example, consider a one-dimensional NumPy array of length 5 that looks like
-> this:
+> The `numpy.diff()` function takes an array and returns the differences
+> between two successive values. First we consider a one-dimensional
+> array of length 5. This could be part of some row `i` of our inflammation data,
+> i.e. `row_start = data[i,:5]`.
 >
 > ~~~
-> a = numpy.array([ 0,  2,  5,  9, 14])
+> row_start = numpy.array([ 0,  2,  5,  9, 14])
 > ~~~
 > {: .language-python}
 >
-> Calling `numpy.diff(a)` would do the following calculations
+> Calling `numpy.diff(row_start)` would do the following calculations
 >
 > ~~~
 > [ 2 - 0, 5 - 2, 9 - 5, 14 - 9 ]
@@ -680,7 +679,7 @@ which is the average inflammation per patient across all days.
 > and return the 4 difference values in a new array.
 >
 > ~~~
-> numpy.diff(a)
+> numpy.diff(row_start)
 > ~~~
 > {: .language-python}
 >
@@ -691,7 +690,8 @@ which is the average inflammation per patient across all days.
 >
 > Note that the array of differences is shorter by one element (length 4).
 >
-> Which axis would it make sense to use this function along?
+> When applying `numpy.diff` to our 2D inflammation array `data`, which axis
+> would it make sense to use this function along?
 >
 > > ## Solution
 > > Since the row axis (0) is patients, it does not make sense to get the
