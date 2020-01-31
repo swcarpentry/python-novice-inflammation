@@ -388,9 +388,9 @@ standard deviation: 4.61383319712
 > to see a list of all functions and attributes that you can use. After selecting one, you
 > can also add a question mark (e.g. `numpy.cumprod?`), and IPython will return an
 > explanation of the method! This is the same as doing `help(numpy.cumprod)`.
-> Similarly, if you are using the "plain vanilla" Python interpreter, you can type `numpy.` 
-> and press the <kbd>Tab</kbd> key twice for a listing of what is available. You can then use the 
-> `help()` function to see an explanation of the function you're interested in, 
+> Similarly, if you are using the "plain vanilla" Python interpreter, you can type `numpy.`
+> and press the <kbd>Tab</kbd> key twice for a listing of what is available. You can then use the
+> `help()` function to see an explanation of the function you're interested in,
 > for example: `help(numpy.cumprod)`.
 {: .callout}
 
@@ -656,38 +656,45 @@ which is the average inflammation per patient across all days.
 
 > ## Change In Inflammation
 >
-> This patient data is _longitudinal_ in the sense that each row represents a
+> The patient data is _longitudinal_ in the sense that each row represents a
 > series of observations relating to one individual.  This means that
 > the change in inflammation over time is a meaningful concept.
+> Let's find out how to calculate changes in the data contained in an array
+> with NumPy.
 >
-> The `numpy.diff()` function takes a NumPy array and returns the
-> differences between two successive values along a specified axis.  For
-> example, a NumPy array that looks like this:
+> The `numpy.diff()` function takes an array and returns the differences
+> between two successive values. First we consider a one-dimensional
+> array of length 5. This could be part of some row `i` of our inflammation data,
+> i.e. `row_start = data[i,:5]`.
 >
 > ~~~
-> npdiff = numpy.array([ 0,  2,  5,  9, 14])
+> row_start = numpy.array([ 0,  2,  5,  9, 14])
 > ~~~
 > {: .language-python}
 >
-> Calling `numpy.diff(npdiff)` would do the following calculations and
-> put the answers in another array.
+> Calling `numpy.diff(row_start)` would do the following calculations
 >
 > ~~~
 > [ 2 - 0, 5 - 2, 9 - 5, 14 - 9 ]
 > ~~~
 > {: .language-python}
 >
+> and return the 4 difference values in a new array.
+>
 > ~~~
-> numpy.diff(npdiff)
+> numpy.diff(row_start)
 > ~~~
 > {: .language-python}
 >
 > ~~~
 > array([2, 3, 4, 5])
 > ~~~
-> {: .language-python}
+> {: .output}
 >
-> Which axis would it make sense to use this function along?
+> Note that the array of differences is shorter by one element (length 4).
+>
+> When applying `numpy.diff` to our 2D inflammation array `data`, which axis
+> would it make sense to use this function along?
 >
 > > ## Solution
 > > Since the row axis (0) is patients, it does not make sense to get the
