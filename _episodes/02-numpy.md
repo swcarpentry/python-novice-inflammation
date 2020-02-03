@@ -665,23 +665,22 @@ which is the average inflammation per patient across all days.
 > with NumPy.
 >
 > The `numpy.diff()` function takes an array and returns the differences
-> between two successive values. First we consider a one-dimensional
-> array of length 5. This could be part of some row `i` of our inflammation data,
-> i.e. `row_start = data[i,:5]`.
->
+> between two successive values. We would like to use it to examine the changes
+> each day across the first week of patient 3 from our inflammation dataset.
+> 
 > ~~~
-> row_start = numpy.array([ 0,  2,  5,  9, 14])
+> row_start = data[3, :7] 
 > ~~~
 > {: .language-python}
 >
 > Calling `numpy.diff(row_start)` would do the following calculations
 >
 > ~~~
-> [ 2 - 0, 5 - 2, 9 - 5, 14 - 9 ]
+> [ 0 - 0, 2 - 0, 0 - 2, 4 - 0, 2 - 4, 2 - 2 ]
 > ~~~
 > {: .language-python}
 >
-> and return the 4 difference values in a new array.
+> and return the 6 difference values in a new array.
 >
 > ~~~
 > numpy.diff(row_start)
@@ -689,14 +688,16 @@ which is the average inflammation per patient across all days.
 > {: .language-python}
 >
 > ~~~
-> array([2, 3, 4, 5])
+> array([ 0,  2, -2,  4, -2,  0])
 > ~~~
 > {: .output}
 >
-> Note that the array of differences is shorter by one element (length 4).
+> Note that the array of differences is shorter by one element (length 6).
 >
+> When calling `numpy.diff` with a multi-dimensional array, an `axis` argument may
+> be passed to the function to specify which axis that the function would process.
 > When applying `numpy.diff` to our 2D inflammation array `data`, which axis
-> would it make sense to use this function along?
+> would we specify?
 >
 > > ## Solution
 > > Since the row axis (0) is patients, it does not make sense to get the
