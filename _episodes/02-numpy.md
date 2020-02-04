@@ -665,15 +665,15 @@ which is the average inflammation per patient across all days.
 > with NumPy.
 >
 > The `numpy.diff()` function takes an array and returns the differences
-> between two successive values. We would like to use it to examine the changes
+> between two successive values. Let's use it to examine the changes
 > each day across the first week of patient 3 from our inflammation dataset.
 > 
 > ~~~
-> row_start = data[3, :7] 
+> patient3_week1 = data[3, :7] 
 > ~~~
 > {: .language-python}
 >
-> Calling `numpy.diff(row_start)` would do the following calculations
+> Calling `numpy.diff(patient3_week1)` would do the following calculations
 >
 > ~~~
 > [ 0 - 0, 2 - 0, 0 - 2, 4 - 0, 2 - 4, 2 - 2 ]
@@ -683,7 +683,7 @@ which is the average inflammation per patient across all days.
 > and return the 6 difference values in a new array.
 >
 > ~~~
-> numpy.diff(row_start)
+> numpy.diff(patient3_week1)
 > ~~~
 > {: .language-python}
 >
@@ -695,9 +695,8 @@ which is the average inflammation per patient across all days.
 > Note that the array of differences is shorter by one element (length 6).
 >
 > When calling `numpy.diff` with a multi-dimensional array, an `axis` argument may
-> be passed to the function to specify which axis that the function would process.
-> When applying `numpy.diff` to our 2D inflammation array `data`, which axis
-> would we specify?
+> be passed to the function to specify which axis to process. When applying 
+> `numpy.diff` to our 2D inflammation array `data`, which axis would we specify?
 >
 > > ## Solution
 > > Since the row axis (0) is patients, it does not make sense to get the
