@@ -424,7 +424,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > Your solution should:
 >
 > 1.  loop over the names of the files
-> 2.  figure out which group each filename belongs
+> 2.  figure out which group each filename belongs in
 > 3.  append the filename to that list
 >
 > In the end the three lists should be:
