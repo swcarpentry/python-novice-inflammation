@@ -67,7 +67,7 @@ This is a bad approach for three reasons:
 3.  **Fragile**. If we use it with a word that has more characters than what we initially
     envisioned, it will only display part of the word's characters. A shorter string, on
     the other hand, will cause an error because it will be trying to display part of the
-    string that don't exist.
+    string that doesn't exist.
 
 ~~~
 word = 'tin'
