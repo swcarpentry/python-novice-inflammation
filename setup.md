@@ -62,7 +62,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 
 > ## Command line (Terminal)
 >
-> 1\. Navigate to the `data` directoty:
+> 1\. Navigate to the `data` directory:
 >
 > > ## Unix shell
 > > If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
