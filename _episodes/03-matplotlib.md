@@ -41,7 +41,7 @@ matplotlib.pyplot.show()
 
 ![Average Inflammation Over Time](../fig/inflammation-01-average.svg)
 
-Here, we have put the average per day across all patients in the variable `ave_inflammation`, then
+Here, we have put the average inflammation per day across all patients in the variable `ave_inflammation`, then
 asked `matplotlib.pyplot` to create and display a line graph of those values.  The result is a
 roughly linear rise and fall, which is suspicious: we might instead expect a sharper rise and slower
 fall.  Let's have a look at two other statistics:
