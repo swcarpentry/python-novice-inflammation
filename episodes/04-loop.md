@@ -60,7 +60,7 @@ This is a bad approach for three reasons:
     of letters long.  It might be easier to type them in manually.
 
 2.  **Difficult to maintain**. If we want to decorate each printed character with an
-    asterix or any other character, we would have to change four lines of code. While
+    asterisk or any other character, we would have to change four lines of code. While
     this might not be a problem for short strings, it would definitely be a problem for
     longer ones.
 
