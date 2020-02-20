@@ -688,7 +688,7 @@ which is the average inflammation per patient across all days.
 > {: .language-python}
 >
 > ~~~
-> array([ 0,  2, -2,  4, -2,  0])
+> array([ 0.,  2., -2.,  4., -2.,  0.])
 > ~~~
 > {: .output}
 >
