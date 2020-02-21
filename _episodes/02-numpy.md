@@ -669,9 +669,15 @@ which is the average inflammation per patient across all days.
 > each day across the first week of patient 3 from our inflammation dataset.
 > 
 > ~~~
-> patient3_week1 = data[3, :7] 
+> patient3_week1 = data[3, :7]
+> print(patient3_week1)
 > ~~~
 > {: .language-python}
+>
+> ~~~
+>  [0. 0. 2. 0. 4. 2. 2.]
+> ~~~
+> {: .output}
 >
 > Calling `numpy.diff(patient3_week1)` would do the following calculations
 >
