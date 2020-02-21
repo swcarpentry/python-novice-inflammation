@@ -53,7 +53,8 @@ If the test is false,
 the body of the `else` is executed instead.
 Only one or the other is ever executed:
 
-![Executing a Conditional](../fig/python-flowchart-conditional.png)
+![If-Else flow diagram for num variable testin if it is greather than 100.
+If true it prints 'greater' and 'done', if false it prints 'not greather' and 'done'.](../fig/python-flowchart-conditional.png)
 
 Conditional statements don't have to include an `else`.
 If there isn't one,
