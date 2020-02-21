@@ -242,7 +242,10 @@ It takes a bit of getting used to,
 but one way to remember the rule is that
 the index is how many steps we have to take from the start to get the item we want.
 
-![Zero Index](../fig/python-zero-index.png)
+![data array variable illustrating the 0 based index. For a data array variable equal to 
+data = \[\['A','B','C'\],\['D','E','F'\],\['G','H','I'\]\] data\[0\]\[0\]='A', data\[0\]\[1\]='B', 
+data\[0\]\[2\]='C', data\[1\]\[0\]='D', data\[1\]\[1\]='E', data\[1\]\[2\]='F', 
+data\[2\]\[0\]='G', data\[2\]\[1\]='H', data\[2\]\[2\]='I'](../fig/python-zero-index.png)
 
 > ## In the Corner
 >
@@ -437,7 +440,9 @@ next diagram on the left) or the average for each day (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
-![Operations Across Axes](../fig/python-operations-across-axes.png)
+![Operations Across Axes example. 
+Maximum inflammation for each patient over all days is computed with data.max(axis=1) and takes the values for each row (one row represents a patient).
+The average for each day is computed with data.mean(axis=0) and takes the values for each column (one column represents a day)](../fig/python-operations-across-axes.png)
 
 To support this functionality,
 most array functions allow us to specify the axis we want to work on.
