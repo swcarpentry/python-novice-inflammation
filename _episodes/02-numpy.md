@@ -242,7 +242,10 @@ It takes a bit of getting used to,
 but one way to remember the rule is that
 the index is how many steps we have to take from the start to get the item we want.
 
-![Zero Index](../fig/python-zero-index.png)
+![data array variable illustrating the 0 based index. For a data array variable equal to 
+data = \[\['A','B','C'\],\['D','E','F'\],\['G','H','I'\]\] data\[0\]\[0\]='A', data\[0\]\[1\]='B', 
+data\[0\]\[2\]='C', data\[1\]\[0\]='D', data\[1\]\[1\]='E', data\[1\]\[2\]='F', 
+data\[2\]\[0\]='G', data\[2\]\[1\]='H', data\[2\]\[2\]='I'](../fig/python-zero-index.png)
 
 > ## In the Corner
 >
