@@ -139,7 +139,7 @@ weight in kilograms is now: 65.0
 > A variable is analogous to a sticky note with a name written on it:
 > assigning a value to a variable is like putting that sticky note on a particular value.
 >
-> ![Variables as Sticky Notes](../fig/python-sticky-note-variables-01.svg)
+> ![The number 65.0 has a yellow sticky note labelled weight kg](../fig/python-sticky-note-variables-01.svg)
 >
 > This means that assigning a value to one variable does **not** change
 > values of other variables.
@@ -157,7 +157,7 @@ weight in kilograms is now: 65.0
 > ~~~
 > {: .output}
 >
-> ![Creating Another Variable](../fig/python-sticky-note-variables-02.svg)
+> ![The number 65.0 has a yellow sticky note labelled weight kg.  The number 143.0 has a yellow sticky note labelled weight pounds](../fig/python-sticky-note-variables-02.svg)
 >
 > Let's now change `weight_kg`:
 >
@@ -172,7 +172,7 @@ weight in kilograms is now: 65.0
 > ~~~
 > {: .output}
 >
-> ![Updating a Variable](../fig/python-sticky-note-variables-03.svg)
+> ![The number 100.0 is labelled with weight kg.  The number 143.0 is labelled with weight pounds](../fig/python-sticky-note-variables-03.svg)
 >
 > Since `weight_lb` doesn't "remember" where its value comes from,
 > it is not updated when we change `weight_kg`.
