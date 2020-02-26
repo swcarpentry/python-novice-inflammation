@@ -54,7 +54,7 @@ def fahr_to_celsius(temp):
 ~~~
 {: .language-python}
 
-![The Blueprint for a Python Function](../fig/python-function.svg)
+![The parts of a function are labelled as described in the following text](../fig/python-function.svg)
 
 
 The function definition opens with the keyword `def` followed by the
