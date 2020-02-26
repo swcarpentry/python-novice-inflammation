@@ -27,7 +27,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Heatmap of the Data](../fig/inflammation-01-imshow.svg)
+![The data in the file is presented as a map.  The colour at each point of the map represents the intensity of inflammation.  Time progresses as we moved from left to right across the map.  The far right is labelled 40.  As we proceed from top to bottom we advance through each patient in the dataset](../fig/inflammation-01-imshow.svg)
 
 Blue pixels in this heat map represent low values, while yellow pixels represent high values.  As we
 can see, inflammation rises and falls over a 40-day period.  Let's take a look at the average inflammation over time:
@@ -39,7 +39,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Average Inflammation Over Time](../fig/inflammation-01-average.svg)
+![The average inflammation for all patients is depicted as a jagged triangular shape](../fig/inflammation-01-average.svg)
 
 Here, we have put the average inflammation per day across all patients in the variable `ave_inflammation`, then
 asked `matplotlib.pyplot` to create and display a line graph of those values.  The result is a
@@ -52,7 +52,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Maximum Value Along The First Axis](../fig/inflammation-01-maximum.svg)
+![The maximum inflammation across all patients is a smooth triangular shape](../fig/inflammation-01-maximum.svg)
 
 ~~~
 min_plot = matplotlib.pyplot.plot(numpy.min(data, axis=0))
@@ -60,7 +60,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Minimum Value Along The First Axis](../fig/inflammation-01-minimum.svg)
+![The minimum inflammation across all patients is a jagged triangular shape resembling steps rising to the top and then down again.](../fig/inflammation-01-minimum.svg)
 
 The maximum value rises and falls smoothly, while the minimum seems to be a step function.  Neither
 trend seems particularly likely, so either there's a mistake in our calculations or something is
@@ -107,7 +107,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![The Previous Plots as Subplots](../fig/inflammation-01-group-plot.svg)
+![The previous three plots are prsented together in the one image](../fig/inflammation-01-group-plot.svg)
 
 The [call]({{ page.root }}/reference/#function-call) to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
@@ -198,7 +198,7 @@ the graphs will actually be squeezed together more closely.)
 > > matplotlib.pyplot.show()
 > > ~~~
 > > {: .language-python}
-> ![Plot with step lines](../fig/inflammation-01-line-styles.svg)
+> ![The data are plotted without the straight line interpolation.  They all look like staircased triangles now.](../fig/inflammation-01-line-styles.svg)
 > {: .solution}
 {: .challenge}
 
