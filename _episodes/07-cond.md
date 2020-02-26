@@ -53,7 +53,7 @@ If the test is false,
 the body of the `else` is executed instead.
 Only one or the other is ever executed:
 
-![Executing a Conditional](../fig/python-flowchart-conditional.png)
+![A flowchart shows the operation of an if statement.  The test "num > 100" is represented by a diamond.  The code executed in the body of the "if", and the code executed by the body of "else" are represented by boxes connected by lines drawn to the diamond, and labelled "True" and "False"](../fig/python-flowchart-conditional.png)
 
 Conditional statements don't have to include an `else`.
 If there isn't one,
