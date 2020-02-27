@@ -48,12 +48,12 @@ done
 The second line of this code uses the keyword `if` to tell Python that we want to make a choice.
 If the test that follows the `if` statement is true,
 the body of the `if`
-(i.e., the set of lines indented underneath it) is executed.
+(i.e., the set of lines indented underneath it) is executed, and "greater" is printed.
 If the test is false,
-the body of the `else` is executed instead.
-Only one or the other is ever executed:
+the body of the `else` is executed instead, and "not greater" is printed.
+Only one or the other is ever executed before continuing on with program execution to print "done":
 
-![Executing a Conditional](../fig/python-flowchart-conditional.png)
+![A flowchart diagram of the if-else construct that tests if variable num is greater than 100](../fig/python-flowchart-conditional.png)
 
 Conditional statements don't have to include an `else`.
 If there isn't one,
