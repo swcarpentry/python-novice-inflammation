@@ -99,7 +99,9 @@ inflammation-03.csv
 ~~~
 {: .output}
 
-![Analysis of inflammation-03.csv](../fig/03-loop_49_5.png)
+![The three plots generated from inflammation-03.csv are substantially different to
+the previous two.  The rightmost plot, being the output of min, is consistently zero.
+The other two plots are more spiky than for the other two datasets](../fig/03-loop_49_5.png)
 
 Sure enough,
 the maxima of the first two data sets show exactly the same ramp as the first,
