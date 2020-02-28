@@ -437,7 +437,8 @@ next diagram on the left) or the average for each day (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
-![Operations Across Axes](../fig/python-operations-across-axes.png)
+![Per-patient maximum inflammation is computed row-wise across all columns using numpy.max(data, axis=1).
+Per-day average inflammation is computed column-wise across all rows using numpy.mean(data, axis=0).](../fig/python-operations-across-axes.png)
 
 To support this functionality,
 most array functions allow us to specify the axis we want to work on.
