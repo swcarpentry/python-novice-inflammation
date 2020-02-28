@@ -220,7 +220,6 @@ weight in kilograms is now: 65.0
 > {: .solution}
 {: .challenge}
 
-> ## Seeing Data Types
 >
 > Python can show a variable's data type using type(variable). 
 > What are the data types of the following variables?
