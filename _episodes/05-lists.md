@@ -180,8 +180,8 @@ does not.
 > Here is a visual example of how indexing a list of lists `x` works:
 >
 > [![x is represented as a pepper shaker containing several packets of pepper. [x[0]] is represented
-> as a pepper shaker containing a single packet of . xpepper[0] is represented as a single packet of
-> pepper. x[0][0] is represented as single fragment of pepper spice.  Adapted 
+> as a pepper shaker containing a single packet of pepper. x[0] is represented as a single packet of
+> pepper. x[0][0] is represented as single grain of pepper.  Adapted 
 > from @hadleywickham.](../fig/indexing_lists_python.png)][hadleywickham-tweet]
 >
 > Using the previously declared list `x`, these would be the results of the
