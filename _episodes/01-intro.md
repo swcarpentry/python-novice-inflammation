@@ -157,7 +157,7 @@ weight in kilograms is now: 65.0
 > ~~~
 > {: .output}
 >
-> ![Creating Another Variable](../fig/python-sticky-note-variables-02.svg)
+> ![Value of 65.0 with weight_kg label stuck on it, and value of 143.0 with weight_lb label stuck on it](../fig/python-sticky-note-variables-02.svg)
 >
 > Let's now change `weight_kg`:
 >
