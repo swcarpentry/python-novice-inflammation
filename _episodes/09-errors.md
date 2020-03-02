@@ -127,6 +127,73 @@ as it is possible to create custom errors.
 In that case,
 hopefully the custom error message is informative enough to help you figure out what went wrong.
 
+> ## Reading Error Messages
+>
+> Read the Python code and the resulting traceback below, and answer the following questions:
+>
+> 1.  How many levels does the traceback have?
+> 2.  What is the function name where the error occurred?
+> 3.  On which line number in this function did the error occur?
+> 4.  What is the type of error?
+> 5.  What is the error message?
+>
+> ~~~
+> # This code has an intentional error. Do not type it directly;
+> # use it for reference to understand the error message below.
+> def print_message(day):
+>     messages = {
+>         "monday": "Hello, world!",
+>         "tuesday": "Today is Tuesday!",
+>         "wednesday": "It is the middle of the week.",
+>         "thursday": "Today is Donnerstag in German!",
+>         "friday": "Last day of the week!",
+>         "saturday": "Hooray for the weekend!",
+>         "sunday": "Aw, the weekend is almost over."
+>     }
+>     print(messages[day])
+>
+> def print_friday_message():
+>     print_message("Friday")
+>
+> print_friday_message()
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> ---------------------------------------------------------------------------
+> KeyError                                  Traceback (most recent call last)
+> <ipython-input-1-4be1945adbe2> in <module>()
+>      14     print_message("Friday")
+>      15
+> ---> 16 print_friday_message()
+>
+> <ipython-input-1-4be1945adbe2> in print_friday_message()
+>      12
+>      13 def print_friday_message():
+> ---> 14     print_message("Friday")
+>      15
+>      16 print_friday_message()
+>
+> <ipython-input-1-4be1945adbe2> in print_message(day)
+>       9         "sunday": "Aw, the weekend is almost over."
+>      10     }
+> ---> 11     print(messages[day])
+>      12
+>      13 def print_friday_message():
+>
+> KeyError: 'Friday'
+> ~~~
+> {: .error}
+>
+> > ## Solution
+> > 1. 3 levels
+> > 2. `print_message`
+> > 3. 11
+> > 4. `KeyError`
+> > 5. There isn't really a message; you're supposed to infer that `Friday` is not a key in `messages`.
+> {: .solution}
+{: .challenge}
+
 ## Syntax Errors
 
 When you forget a colon at the end of a line,
@@ -431,73 +498,6 @@ though many others exist.
 If you get an error that you've never seen before,
 searching the Internet for that error type
 often reveals common reasons why you might get that error.
-
-> ## Reading Error Messages
->
-> Read the Python code and the resulting traceback below, and answer the following questions:
->
-> 1.  How many levels does the traceback have?
-> 2.  What is the function name where the error occurred?
-> 3.  On which line number in this function did the error occur?
-> 4.  What is the type of error?
-> 5.  What is the error message?
->
-> ~~~
-> # This code has an intentional error. Do not type it directly;
-> # use it for reference to understand the error message below.
-> def print_message(day):
->     messages = {
->         "monday": "Hello, world!",
->         "tuesday": "Today is Tuesday!",
->         "wednesday": "It is the middle of the week.",
->         "thursday": "Today is Donnerstag in German!",
->         "friday": "Last day of the week!",
->         "saturday": "Hooray for the weekend!",
->         "sunday": "Aw, the weekend is almost over."
->     }
->     print(messages[day])
->
-> def print_friday_message():
->     print_message("Friday")
->
-> print_friday_message()
-> ~~~
-> {: .language-python}
->
-> ~~~
-> ---------------------------------------------------------------------------
-> KeyError                                  Traceback (most recent call last)
-> <ipython-input-1-4be1945adbe2> in <module>()
->      14     print_message("Friday")
->      15
-> ---> 16 print_friday_message()
->
-> <ipython-input-1-4be1945adbe2> in print_friday_message()
->      12
->      13 def print_friday_message():
-> ---> 14     print_message("Friday")
->      15
->      16 print_friday_message()
->
-> <ipython-input-1-4be1945adbe2> in print_message(day)
->       9         "sunday": "Aw, the weekend is almost over."
->      10     }
-> ---> 11     print(messages[day])
->      12
->      13 def print_friday_message():
->
-> KeyError: 'Friday'
-> ~~~
-> {: .error}
->
-> > ## Solution
-> > 1. 3 levels
-> > 2. `print_message`
-> > 3. 11
-> > 4. `KeyError`
-> > 5. There isn't really a message; you're supposed to infer that `Friday` is not a key in `messages`.
-> {: .solution}
-{: .challenge}
 
 > ## Identifying Syntax Errors
 >
