@@ -129,6 +129,17 @@ hopefully the custom error message is informative enough to help you figure out 
 
 > ## Reading Error Messages
 >
+> This exercise introduces a data structure you did not encounter previously: a dictionary.
+> In a dictionary keys are associated to values, so called _key-value pairs_.
+> Values can be of different type (i.e. numbers, lists).
+> Keys must be unique and immutable (i.e. no lists).
+> A dictionary can be created using the following syntax:
+> `a_dictionary = {'key1': value, 'key2': value2}`.
+>
+> Please note, that dictionaries are not ordered.
+> Consequently, we cannot access values using indices, but using their corresponding key.
+> Example: `print(a_dictionary['key1'])`.
+>
 > Read the Python code and the resulting traceback below, and answer the following questions:
 >
 > 1.  How many levels does the traceback have?
