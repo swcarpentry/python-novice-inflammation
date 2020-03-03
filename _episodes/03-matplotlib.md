@@ -27,7 +27,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Heatmap of the Data](../fig/inflammation-01-imshow.svg)
+![Heatmap Of Inflammation Data Created With Matplotlib](../fig/inflammation-01-imshow.svg)
 
 Blue pixels in this heat map represent low values, while yellow pixels represent high values.  As we
 can see, inflammation rises and falls over a 40-day period.  Let's take a look at the average inflammation over time:
