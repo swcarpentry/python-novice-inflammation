@@ -440,11 +440,11 @@ freeing us from having to manually examine every plot for features we've seen be
 > > ~~~
 > > for filename in filenames:
 > >     if filename.startswith('inflammation-'):
-> >         large_files.append(file)
+> >         large_files.append(filename)
 > >     elif filename.startswith('small-'):
-> >         small_files.append(file)
+> >         small_files.append(filename)
 > >     else:
-> >         other_files.append(file)
+> >         other_files.append(filename)
 > >
 > > print('large_files:', large_files)
 > > print('small_files:', small_files)
