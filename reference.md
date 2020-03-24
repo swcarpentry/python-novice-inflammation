@@ -161,6 +161,10 @@ mutable
 :   Changeable. The value of mutable data can be altered after it has been
     created. See [immutable](#immutable)."
 
+notebook
+:   Interactive computational environment in your web browser, in which you can write and execute Python code.
+    Examples are IPython or Jupyter notebooks
+
 object
 :   A collection of conceptually related variables ([members](#member)) and
     functions using those variables ([methods](#method)).
