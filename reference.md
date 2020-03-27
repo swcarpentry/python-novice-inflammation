@@ -162,8 +162,9 @@ mutable
     created. See [immutable](#immutable)."
 
 notebook
-:   Interactive computational environment in your web browser, in which you can write and execute Python code.
-    Examples are IPython or Jupyter notebooks
+:   Interactive computational environment accessed via your web browser, in which you can write and execute Python code and
+    combine it with explanatory text, mathematics and visualizations.
+    Examples are IPython or Jupyter notebooks.
 
 object
 :   A collection of conceptually related variables ([members](#member)) and
