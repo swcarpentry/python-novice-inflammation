@@ -27,6 +27,13 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
+## Differences between libraries and modules
+>
+> Above, we import function 'imshow(data)' from module 'pyplot' instead of from 'matplotlib'. There are many libraries for 
+> Python users, offering various functions to help us perform tasks. Some functions are stored in libraries so we can call 
+> them directly. For example, we use `numpy.loadtxt(...)` in last episode to call function 'loadtxt()' from library 'numpy'. > But some libraries have functions organized in different units called modules. In this case, we have to first import that > library 'matplotlib', and then import the module 'pyplot' and call the functions 'imshow' inside by using the sequential dotted notations as 'matplotlib.pyplot.imshow()'.
+{: .callout}
+
 ![Heatmap of the Data](../fig/inflammation-01-imshow.svg)
 
 Blue pixels in this heat map represent low values, while yellow pixels represent high values.  As we
