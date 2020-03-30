@@ -82,7 +82,7 @@ a line. These both need to be character strings (or [strings]({{ page.root }}/re
 for short), so we put them in quotes.
 
 Since we haven't told it to do anything else with the function's output,
-the notebook displays it.
+the [notebook]({{ page.root }}/reference/#notebook) displays it.
 In this case,
 that output is the data we just loaded.
 By default,
