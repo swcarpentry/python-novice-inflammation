@@ -505,7 +505,8 @@ which is the average inflammation per patient across all days.
 > ~~~
 > element = 'oxygen'
 > print('first three characters:', element[0:3])
-> print('last three characters:', element[3:6])
+> print('the 4th to the 6th characters:', element[3:6])
+> print('last three characters:', element[-3:])
 > ~~~
 > {: .language-python}
 >
