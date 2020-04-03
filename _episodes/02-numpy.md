@@ -546,6 +546,31 @@ which is the average inflammation per patient across all days.
 > > Creates a substring from index 1 up to (not including) the final index,
 > > effectively removing the first and last letters from 'oxygen'
 > {: .solution}
+>
+> How can we rewrite the slice for getting the last three characters of `element`,
+> so that it works even if we assign a different string to `element`?
+> Test your solution with the following strings: `carpentry`, `clone`, `hi`. 
+>
+> > ## Solution
+> > ~~~
+> > element = 'oxygen'
+> > print('last three characters:', element[-3:])
+> > element = 'carpentry'
+> > print('last three characters:', element[-3:])
+> > element = 'clone'
+> > print('last three characters:', element[-3:])
+> > element = 'hi'
+> > print('last three characters:', element[-3:])
+> > ~~~
+> > {: .language-python}
+> > ~~~
+> > last three characters: gen
+> > last three characters: try
+> > last three characters: one
+> > last three characters: hi
+> > ~~~
+> > {: .output}
+> {: .solution}
 {: .challenge}
 
 > ## Thin Slices
