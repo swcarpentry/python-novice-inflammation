@@ -547,14 +547,14 @@ which is the average inflammation per patient across all days.
 > > effectively removing the first and last letters from 'oxygen'
 > {: .solution}
 >
-> How can we rewrite the slice for getting the last three characters of `element` does,
-> so it will work on any character string at least three characters in length.
+> How can we rewrite the slice for getting the last three characters of `element`,
+> so it will work on any character string at least three characters in length?
 >
 > > ## Solution
 > > ~~~
 > > print('last three characters:', element[-3:])
-> ~~~
-> {: .language-python}
+> > ~~~
+> > {: .language-python}
 > > ~~~
 > > gen
 > > ~~~
