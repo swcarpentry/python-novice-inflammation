@@ -505,8 +505,7 @@ which is the average inflammation per patient across all days.
 > ~~~
 > element = 'oxygen'
 > print('first three characters:', element[0:3])
-> print('the 4th to the 6th characters:', element[3:6])
-> print('last three characters:', element[-3:])
+> print('last three characters:', element[3:6])
 > ~~~
 > {: .language-python}
 >
@@ -546,6 +545,20 @@ which is the average inflammation per patient across all days.
 > > ## Solution
 > > Creates a substring from index 1 up to (not including) the final index,
 > > effectively removing the first and last letters from 'oxygen'
+> {: .solution}
+>
+> How can we rewrite the slice for getting the last three characters of `element` does,
+> so it will work on any character string at least three characters in length.
+>
+> > ## Solution
+> > ~~~
+> > print('last three characters:', element[-3:])
+> ~~~
+> {: .language-python}
+> > ~~~
+> > gen
+> > ~~~
+> > {: .output}
 > {: .solution}
 {: .challenge}
 
