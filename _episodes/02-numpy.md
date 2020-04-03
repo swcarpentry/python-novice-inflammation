@@ -564,10 +564,10 @@ which is the average inflammation per patient across all days.
 > > ~~~
 > > {: .language-python}
 > > ~~~
-> > gen
-> > try
-> > one
-> > hi
+> > last three characters: gen
+> > last three characters: try
+> > last three characters: one
+> > last three characters: hi
 > > ~~~
 > > {: .output}
 > {: .solution}
