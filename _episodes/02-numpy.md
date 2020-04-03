@@ -548,15 +548,26 @@ which is the average inflammation per patient across all days.
 > {: .solution}
 >
 > How can we rewrite the slice for getting the last three characters of `element`,
-> so it will work on any character string at least three characters in length?
+> so that it works even if we assign a different string to `element`?
+> Test your solution with the following strings: `carpentry`, `clone`, `hi`. 
 >
 > > ## Solution
 > > ~~~
+> > element = 'oxygen'
+> > print('last three characters:', element[-3:])
+> > element = 'carpentry'
+> > print('last three characters:', element[-3:])
+> > element = 'clone'
+> > print('last three characters:', element[-3:])
+> > element = 'hi'
 > > print('last three characters:', element[-3:])
 > > ~~~
 > > {: .language-python}
 > > ~~~
 > > gen
+> > try
+> > one
+> > hi
 > > ~~~
 > > {: .output}
 > {: .solution}
