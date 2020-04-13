@@ -233,8 +233,11 @@ weight in kilograms is now: 65.0
 >
 > > ## Solution
 > > ~~~
+> > type(planet)
 > > <class 'str'>
+> > type(apples)
 > > <class 'int'>
+> > type(distance)
 > > <class 'float'>
 > > ~~~
 > > {: .output}
