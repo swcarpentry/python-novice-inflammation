@@ -56,8 +56,7 @@ ways to render the lesson locally, and even how to write new episodes!
 ## Maintainers
 
 Lesson maintainers are [Trevor Bekolay][trevor_bekolay], [Maxim Belkin][maxim_belkin],
-[Anne Fouilloux][anne_fouilloux], [Lauren Ko][lauren_ko], [Valentina Staneva][valentina_staneva],
-[Mike Trizna][mike_trizna], and [creator][swc_history] of Software Carpentry:
+[Anne Fouilloux][anne_fouilloux], [Lauren Ko][lauren_ko], [Valentina Staneva][valentina_staneva], and [creator][swc_history] of Software Carpentry:
 [Greg Wilson][greg_wilson].
 
 ## Authors
