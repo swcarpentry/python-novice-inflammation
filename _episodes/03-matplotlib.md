@@ -118,6 +118,22 @@ and that we want a tight layout.
 (If we leave out that call to `fig.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
 
+At this point you might be wondering "how do I learn more about the `add_subplot`
+method, and what do those (1, 3, 1), (1, 3, 2), (1, 3, 3) mean anyway?" As you 
+explore how to use various Python libraries, like `matplotlib`. These details are 
+contained in the "API Documentation" for `matplotlib`. Because `matplotlib` is
+not part of the core Python language, it has its own [documentation web site]
+(https://matplotlib.org/). In particular, if we search, we find the specifics
+for [add_subplot]
+(https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.add_subplot),
+wherein we learn that the `add_subplot` method can take arguments
+`(nrows, ncols, index)`, or equivalently a three digit number of these values,
+which tell `add_subplot` the geometry of the figure (1 row by 3 columns) and 
+which subplot we are creating in that grid (1, 2, or 3, respectively).
+As you do more python programming, you will likely have many occasions to explore
+the various APIs that you use.
+
+
 
 > ## Plot Scaling
 >
