@@ -124,7 +124,7 @@ explore how to use various Python libraries, like `matplotlib`. These details ar
 contained in the "API Documentation" for `matplotlib`. Because `matplotlib` is
 not part of the core Python language, it has its own [documentation web site]
 (https://matplotlib.org/). In particular, if we search, we find the specifics
-for [add_subplot]
+for `add_subplot`
 (https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.add_subplot),
 wherein we learn that the `add_subplot` method can take arguments
 `(nrows, ncols, index)`, or equivalently a three digit number of these values,
