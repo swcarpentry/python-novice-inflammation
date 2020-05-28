@@ -22,7 +22,10 @@ In order to do that,
 we need to make our programs work like other Unix command-line tools.
 For example,
 we may want a program that reads a dataset
-and prints the average inflammation per patient.
+and prints the average inflammation per patient. One of our goals is to produce a program which prints
+the average inflammation per patient in a given file using command line arguments and flags. 
+The second goal is to use shell commands and flags to look at a minimum of the first four lines. 
+A third goal is to find the maximum inflammation in different inflammation files.
 
 > ## Switching to Shell Commands
 >
@@ -79,8 +82,11 @@ We'll tackle these questions in turn below.
 
 ## Command-Line Arguments
 
-Using the text editor of your choice,
-save the following in a text file called `sys_version.py`:
+Using the text editor of your choice, we can
+write a simple script that will tell us what version of
+python we are using. The sys library contains variables and functions
+associated with the interpreter.
+Save the following in a text file called `sys_version.py`:
 
 ~~~
 import sys
@@ -118,6 +124,8 @@ Whenever Python runs a program,
 it takes all of the values given on the command line
 and puts them in the list `sys.argv`
 so that the program can determine what they were.
+Our script name is the first argument after `python` on the
+command line, therefore it is assigned to the variable argv[0].
 If we run this program with no arguments:
 
 ~~~
