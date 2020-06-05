@@ -462,11 +462,32 @@ We *don't* know whether the other tests passed or failed
 because Python halted the program as soon as it spotted the first error.
 Still,
 some information is better than none,
-and if we trace the behavior of the function with that input,
-we realize that we're initializing `max_left` and `min_right` to 0.0 and 1.0 respectively,
+and if we trace the behavior of the function with that input, we realize that there is nothing in the code that could return None (which is our desired behaviour).
+Moreover, not only the first assertion fails. If we try the other assertions we can see that the fourth line produces another AssertionError, and we must realize that we're initializing `max_left` and `min_right` to 0.0 and 1.0 respectively,
 regardless of the input values.
 This violates another important rule of programming:
 *always initialize from data*.
+The last assertion would be thrown too, because we did not specify any behaviour on empty inputs.
+
+The correct *range_overlap* function shall be therefore:
+~~~
+def range_overlap(ranges):
+    '''Return common overlap among a set of [left, right] ranges.'''
+    #set behaviour for empty inputs
+    if not ranges: return None 
+    
+    #initialize from data - we can safely assume that at this point there is at least one element
+    max_left = ranges[0][0]
+    min_right = ranges[0][1]
+    
+    for (left, right) in ranges:
+        max_left = max(max_left, left)
+        min_right = min(min_right, right)
+    #the returned values should change according to the final results: if the left end is greater than the right end then there is no overlap, thus returning None
+    return (max_left, min_right) if max_left < min_right else None
+~~~
+{: .language-python}
+
 
 > ## Pre- and Post-Conditions
 >
