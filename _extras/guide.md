@@ -28,8 +28,11 @@ is included as [`code/gen_inflammation.py`](../code/gen_inflammation.py).
 
 This lesson is written as an introduction to Python,
 but its real purpose is to introduce the single most important idea in programming:
-how to solve problems by building functions,
+how to solve problems that are not ordinarily possible to solve because
+they would require more than life times to solve them.
+We do that by using variables, conditional statements, loops and functions,
 each of which can fit in a programmer's working memory.
+Remind everyone that every software in the world is composed of those basic elements.
 In order to teach that,
 we must teach people a little about
 the mechanics of manipulating data with lists and file I/O
@@ -52,12 +55,14 @@ Explain that we use Python because:
 *   It's free.
 *   It has a lot of scientific libraries, and more are constantly being added.
 *   It has a large scientific user community.
-*   It's easier for novices to learn than most of the mature alternatives.
+*   It's easier for novices to learn than most of the mature alternatives, 
+especially because it reads quite like English.
     (Software Carpentry originally used Perl;
     when we switched,
     we found that we could cover as much material in two days in Python
     as we'd covered in three days in Perl,
     and that retention was higher.)
+*   It can be run not only in Jupyter, but also other popular editors and IDE like Visual Studio Code, PyCharm etc.
 
 We do *not* include instructions on running the Jupyter Notebook in the tutorial
 because we want to focus on the language rather than the tools.
@@ -67,6 +72,8 @@ Instructors should, however, walk learners through some basic operations:
 *   Create a new notebook.
 *   Enter code or data in a cell and execute it.
 *   Explain the difference between `In[#]` and `Out[#]`.
+*   Explain that when a cell on top is modified and run, 
+all the subsequent cells need to be re-run if the programmer is expecting changes.
 
 Watching the instructor grow programs step by step
 is as helpful to learners as anything to do with Python.
