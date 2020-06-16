@@ -441,7 +441,7 @@ last: 4
 > {: .output}
 >
 > Use the step size argument to create a new string
-> that contains only every other character in the string
+> that contains only every other second character in the string
 > "In an octopus's garden in the shade"
 >
 > ~~~
