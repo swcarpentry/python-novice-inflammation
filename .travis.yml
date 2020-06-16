@@ -1,3 +1,4 @@
+# Travis CI is only used to check the lesson and is not involved in its deployment
 language: python
 python: 3.6
 branches:
@@ -6,7 +7,7 @@ branches:
   - /.*/
 before_install:
   - rvm default
-  - gem install json kramdown jekyll
+  - gem install json kramdown jekyll bundler
 install:
   - pip install pyyaml
 script:
