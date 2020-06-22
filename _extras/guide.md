@@ -26,9 +26,13 @@ is included as [`code/gen_inflammation.py`](../code/gen_inflammation.py).
 
 ## Overall
 
-This lesson is written as an introduction to Python,
-but its real purpose is to introduce the single most important idea in programming:
-how to solve problems by building functions,
+This lesson is written as an introduction to Python, 
+and our goal is to explain to the students that all computer software 
+no matter what langauge they are written in is composed of concepts like 
+variables, conditionals, looping and functions.
+We make a special effort to introduce the functions, the single most important idea in programming
+that allows reusability and efficient logical organization of the software.
+We show how to solve problems by building functions,
 each of which can fit in a programmer's working memory.
 In order to teach that,
 we must teach people a little about
@@ -52,7 +56,8 @@ Explain that we use Python because:
 *   It's free.
 *   It has a lot of scientific libraries, and more are constantly being added.
 *   It has a large scientific user community.
-*   It's easier for novices to learn than most of the mature alternatives.
+*   It's easier for novices to learn than most of the mature alternatives, 
+especially due to its syntax that reads like a human language.
     (Software Carpentry originally used Perl;
     when we switched,
     we found that we could cover as much material in two days in Python
@@ -67,6 +72,9 @@ Instructors should, however, walk learners through some basic operations:
 *   Create a new notebook.
 *   Enter code or data in a cell and execute it.
 *   Explain the difference between `In[#]` and `Out[#]`.
+*   Explain that the cells are independent blocks 
+and if we make a change at a top cell we need to run all the subsequent
+cells to make sure the change is reflected across the script.
 
 Watching the instructor grow programs step by step
 is as helpful to learners as anything to do with Python.
