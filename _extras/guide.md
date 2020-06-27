@@ -74,7 +74,7 @@ Instructors should, however, walk learners through some basic operations:
 *   Explain the difference between `In[#]` and `Out[#]`.
 *   Explain that the cells are independent blocks 
 and if we make a change at a top cell we need to run all the subsequent
-cells to make sure the change is reflected across the script.
+* After few episodes show that modifying code in an earlier cell requires re-running any subsequent cells in order for it to reflect the change.
 
 Watching the instructor grow programs step by step
 is as helpful to learners as anything to do with Python.
