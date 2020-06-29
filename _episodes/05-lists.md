@@ -442,13 +442,18 @@ last: 4
 >
 > Use the step size argument to create a new string
 > that contains only every other character in the string
-> "In an octopus's garden in the shade"
+> "In an octopus's garden in the shade". Start with
+> creating a variable to hold the string:
 >
 > ~~~
 > beatles = "In an octopus's garden in the shade"
 > ~~~
 > {: .language-python}
 >
+> What slice of `beatles` will produce the
+> following output (i.e., the first character, third
+> character, and every other character through the end
+> of the string)?
 > ~~~
 > I notpssgre ntesae
 > ~~~
