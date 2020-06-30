@@ -276,7 +276,7 @@ print(data[0:4, 0:10])
 {: .output}
 
 The [slice]({{ page.root }}/reference/#slice) `0:4` means, "Start at index 0 and go up to, but not
-including, index 4."Again, the up-to-but-not-including takes a bit of getting used to, but the
+including, index 4". Again, the up-to-but-not-including takes a bit of getting used to, but the
 rule is that the difference between the upper and lower bounds is the number of values in the slice.
 
 We don't have to start slices at 0:
