@@ -26,18 +26,15 @@ is included as [`code/gen_inflammation.py`](../code/gen_inflammation.py).
 
 ## Overall
 
-This lesson is written as an introduction to Python, 
-and our goal is to explain to the students that all computer software 
-no matter what langauge they are written in is composed of concepts like 
-variables, conditionals, looping and functions.
-We make a special effort to introduce the functions, the single most important idea in programming
-that allows reusability and efficient logical organization of the software.
-We show how to solve problems by building functions,
-each of which can fit in a programmer's working memory.
-In order to teach that,
-we must teach people a little about
-the mechanics of manipulating data with lists and file I/O
-so that their functions can do things they actually care about.
+This lesson is written as an introduction to Python,
+but its wider purpose is to introduce an important idea in programming:
+how to solve problems by building functions, units of code that allow
+reusability and efficient logical organization of software.
+
+So that our functions can do things we actually care about,
+we cover programming concepts such as variables, conditionals,
+loops, lists, and reading data from files.
+
 Our teaching order tries to show practical uses of every idea as soon as it is introduced;
 instructors should resist the temptation to explain
 the "other 90%" of the language
@@ -72,9 +69,7 @@ Instructors should, however, walk learners through some basic operations:
 *   Create a new notebook.
 *   Enter code or data in a cell and execute it.
 *   Explain the difference between `In[#]` and `Out[#]`.
-*   Explain that the cells are independent blocks 
-and if we make a change at a top cell we need to run all the subsequent
-* After few episodes show that modifying code in an earlier cell requires re-running any subsequent cells in order for it to reflect the change.
+*   Show that modifying code in an earlier cell requires re-running any subsequent cells in order for it to reflect the change.
 
 Watching the instructor grow programs step by step
 is as helpful to learners as anything to do with Python.
