@@ -308,8 +308,19 @@ freeing us from having to manually examine every plot for features we've seen be
 > Compare your implementation with your partner's:
 > do you get the same answer for all possible pairs of numbers?
 >
-> Hint: There is a [built-in function `abs`][abs-function] that returns the absolute value of
-> a number.
+> > ## Hint
+> > There is a [built-in function `abs`][abs-function] that returns the absolute value of
+> > a number:
+> > ~~~
+> > print(abs(-12))
+> > ~~~
+> > {: .language-python}
+> > ~~~
+> > 12
+> > ~~~
+> > {: .output}
+> {: .solution}
+>
 > > ## Solution 1
 > > ~~~
 > > a = 5
