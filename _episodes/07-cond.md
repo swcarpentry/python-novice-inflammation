@@ -308,6 +308,8 @@ freeing us from having to manually examine every plot for features we've seen be
 > Compare your implementation with your partner's:
 > do you get the same answer for all possible pairs of numbers?
 >
+> Hint: There is a [built-in function `abs`][abs-function] that returns the absolute value of
+> a number.
 > > ## Solution 1
 > > ~~~
 > > a = 5
@@ -476,5 +478,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
+
+[abs-function]: https://docs.python.org/3/library/functions.html#abs
 
 {% include links.md %}
