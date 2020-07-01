@@ -54,7 +54,7 @@ Explain that we use Python because:
 *   It has a lot of scientific libraries, and more are constantly being added.
 *   It has a large scientific user community.
 *   It's easier for novices to learn than most of the mature alternatives, 
-especially due to its syntax that reads like a human language.
+partly due to its syntax that reads more like a human language.
     (Software Carpentry originally used Perl;
     when we switched,
     we found that we could cover as much material in two days in Python
