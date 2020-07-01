@@ -313,7 +313,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > > a = 5
 > > b = 5.1
 > >
-> > if abs(a - b) < 0.1 * abs(b):
+> > if abs(a - b) <= 0.1 * abs(b):
 > >     print('True')
 > > else:
 > >     print('False')
@@ -323,7 +323,7 @@ freeing us from having to manually examine every plot for features we've seen be
 >
 > > ## Solution 2
 > > ~~~
-> > print(abs(a - b) < 0.1 * abs(b))
+> > print(abs(a - b) <= 0.1 * abs(b))
 > > ~~~
 > > {: .language-python}
 > >
