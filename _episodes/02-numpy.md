@@ -242,7 +242,7 @@ It takes a bit of getting used to,
 but one way to remember the rule is that
 the index is how many steps we have to take from the start to get the item we want.
 
-![Zero Index](../fig/python-zero-index.png)
+!["data" is a 3x3 numpy array, which means the indices for its rows go from 0 to 2, as do the indices for its columns. The element at row 0, column 0, is the A in the upper left hand corner. The element at row 2, column 2, is the I in the bottom right hand corner.](../fig/python-zero-index.png)
 
 > ## In the Corner
 >
