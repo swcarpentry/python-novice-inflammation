@@ -147,7 +147,7 @@ for variable in collection:
 
 Using the oxygen example above, the loop might look like this:
 
-![loop_image](../fig/loops_image.png)
+![A schematic of one possible visualization of how each individual step in a for loop would look, specifically the loop through the letters of the word "oxygen". Each letter takes one turn being stuck to the variable "char", which is printed out.](../fig/loops_image.png)
 
 where each character (`char`) in the variable `word` is looped through and printed one character
 after another. The numbers in the diagram denote which loop cycle the character was printed in (1
