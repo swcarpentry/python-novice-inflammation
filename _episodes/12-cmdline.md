@@ -873,13 +873,17 @@ the program now does everything we set out to do.
 > >
 > > def main():
 > >     script = sys.argv[0]
-> >     action = sys.argv[1]
-> >     if action not in ['--min', '--mean', '--max']: # if no action given
-> >         action = '--mean'    # set a default action, that being mean
-> >         filenames = sys.argv[1:] # start the filenames one place earlier in the argv list
+> >     if len(sys.argv) == 1: # there are no args but there may be a pipe
+> >         action = '--mean'  # set default action to --mean
+> >         filenames = []     # try stdin
 > >     else:
-> >         filenames = sys.argv[2:]
-> >
+> >         action = sys.argv[1] # it's safe now to get action argument
+> >         if action not in ['--min', '--mean', '--max']: # if other action given
+> >             action = '--mean'    # set default action to --mean
+> >             filenames = sys.argv[1:] # start one place earlier in the argv list
+> >         else:
+> >             filenames = sys.argv[2:]
+> > 
 > >     if len(filenames) == 0:
 > >         process(sys.stdin, action)
 > >     else:
