@@ -18,7 +18,7 @@ keypoints:
 In the last episode, we wrote Python code that plots values of interest from our first
 inflammation dataset (`inflammation-01.csv`), which revealed some suspicious features in it.
 
-![Analysis of inflammation-01.csv](../fig/03-loop_2_0.png)
+![Three panels showing different properties of the data in inflammation-01.csv, as uncovered in the last lesson. First panel is the mean of the data over time, second panel is the maximum of the data over time, and the third panel is the minimum of the data over time.](../fig/03-loop_2_0.png)
 
 We have a dozen data sets right now, though, and more on the way.
 We want to create plots for all of our data sets with a single statement.
