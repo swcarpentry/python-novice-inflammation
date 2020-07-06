@@ -69,7 +69,8 @@ Instructors should, however, walk learners through some basic operations:
 *   Create a new notebook.
 *   Enter code or data in a cell and execute it.
 *   Explain the difference between `In[#]` and `Out[#]`.
-*   Show that modifying code in an earlier cell requires re-running any subsequent cells in order for it to reflect the change.
+*   Show that modifying code in an earlier cell requires re-running any subsequent
+    cells in order for them to reflect the change.
 
 Watching the instructor grow programs step by step
 is as helpful to learners as anything to do with Python.
