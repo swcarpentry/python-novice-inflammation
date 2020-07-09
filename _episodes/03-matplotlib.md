@@ -21,9 +21,9 @@ import the `pyplot` module from `matplotlib` and use two of its functions to cre
 heat map of our data:
 
 ~~~
-import matplotlib.pyplot
-image = matplotlib.pyplot.imshow(data)
-matplotlib.pyplot.show()
+from matplotlib import pyplot as plt
+image = plt.imshow(data)
+plt.show()
 ~~~
 {: .language-python}
 
@@ -34,29 +34,29 @@ can see, inflammation rises and falls over a 40-day period.  Let's take a look a
 
 ~~~
 ave_inflammation = numpy.mean(data, axis=0)
-ave_plot = matplotlib.pyplot.plot(ave_inflammation)
-matplotlib.pyplot.show()
+ave_plot = plt.plot(ave_inflammation)
+plt.show()
 ~~~
 {: .language-python}
 
 ![Average Inflammation Over Time](../fig/inflammation-01-average.svg)
 
 Here, we have put the average inflammation per day across all patients in the variable `ave_inflammation`, then
-asked `matplotlib.pyplot` to create and display a line graph of those values.  The result is a
+asked `plt` to create and display a line graph of those values.  The result is a
 roughly linear rise and fall, which is suspicious: we might instead expect a sharper rise and slower
 fall.  Let's have a look at two other statistics:
 
 ~~~
-max_plot = matplotlib.pyplot.plot(numpy.max(data, axis=0))
-matplotlib.pyplot.show()
+max_plot = plt.plot(numpy.max(data, axis=0))
+plt.show()
 ~~~
 {: .language-python}
 
 ![Maximum Value Along The First Axis](../fig/inflammation-01-maximum.svg)
 
 ~~~
-min_plot = matplotlib.pyplot.plot(numpy.min(data, axis=0))
-matplotlib.pyplot.show()
+min_plot = plt.plot(numpy.min(data, axis=0))
+plt.show()
 ~~~
 {: .language-python}
 
@@ -69,7 +69,7 @@ themselves without visualization tools.
 
 ### Grouping plots
 You can group similar plots in a single figure using subplots.
-This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
+This script below uses a number of new commands. The function `plt.figure()`
 creates a space into which we will place all of our plots. The parameter `figsize`
 tells Python how big to make this space. Each subplot is placed into the figure using
 its `add_subplot` [method]({{ page.root }}/reference/#method). The `add_subplot` method takes 3
@@ -82,11 +82,11 @@ Here are our three plots side by side:
 
 ~~~
 import numpy
-import matplotlib.pyplot
+import plt
 
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
-fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+fig = plt.figure(figsize=(10.0, 3.0))
 
 axes1 = fig.add_subplot(1, 3, 1)
 axes2 = fig.add_subplot(1, 3, 2)
@@ -103,7 +103,7 @@ axes3.plot(numpy.min(data, axis=0))
 
 fig.tight_layout()
 
-matplotlib.pyplot.show()
+plt.show()
 ~~~
 {: .language-python}
 
@@ -174,11 +174,11 @@ the graphs will actually be squeezed together more closely.)
 > >
 > > ~~~
 > > import numpy
-> > import matplotlib.pyplot
+> > import plt
 > >
 > > data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 > >
-> > fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+> > fig = plt.figure(figsize=(10.0, 3.0))
 > >
 > > axes1 = fig.add_subplot(1, 3, 1)
 > > axes2 = fig.add_subplot(1, 3, 2)
@@ -195,7 +195,7 @@ the graphs will actually be squeezed together more closely.)
 > >
 > > fig.tight_layout()
 > >
-> > matplotlib.pyplot.show()
+> > plt.show()
 > > ~~~
 > > {: .language-python}
 > ![Plot with step lines](../fig/inflammation-01-line-styles.svg)
@@ -209,8 +209,8 @@ the graphs will actually be squeezed together more closely.)
 >
 > > ## Solution
 > > ~~~
-> > std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
-> > matplotlib.pyplot.show()
+> > std_plot = plt.plot(numpy.std(data, axis=0))
+> > plt.show()
 > > ~~~
 > > {: .language-python}
 > {: .solution}
@@ -224,12 +224,12 @@ the graphs will actually be squeezed together more closely.)
 > > ## Solution
 > > ~~~
 > > import numpy
-> > import matplotlib.pyplot
+> > import plt
 > >
 > > data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 > >
 > > # change figsize (swap width and height)
-> > fig = matplotlib.pyplot.figure(figsize=(3.0, 10.0))
+> > fig = plt.figure(figsize=(3.0, 10.0))
 > >
 > > # change add_subplot (swap first two parameters)
 > > axes1 = fig.add_subplot(3, 1, 1)
@@ -247,7 +247,7 @@ the graphs will actually be squeezed together more closely.)
 > >
 > > fig.tight_layout()
 > >
-> > matplotlib.pyplot.show()
+> > plt.show()
 > > ~~~
 > > {: .language-python}
 > {: .solution}
