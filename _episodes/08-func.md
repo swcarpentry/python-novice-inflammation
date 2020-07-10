@@ -343,8 +343,8 @@ that string is attached to the function as its documentation:
 
 ~~~
 def offset_mean(data, target_mean_value):
-    '''Return a new array containing the original data
-       with its mean offset to match the desired value.'''
+    """Return a new array containing the original data
+       with its mean offset to match the desired value."""
     return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
@@ -372,14 +372,14 @@ we can break the string across multiple lines:
 
 ~~~
 def offset_mean(data, target_mean_value):
-    '''Return a new array containing the original data
+    """Return a new array containing the original data
        with its mean offset to match the desired value.
 
     Examples
     --------
     >>> offset_mean([1, 2, 3], 0)
     array([-1.,  0.,  1.])
-    '''
+    """
     return (data - numpy.mean(data)) + target_mean_value
 
 help(offset_mean)
@@ -453,14 +453,14 @@ let's re-define our `offset_mean` function like this:
 
 ~~~
 def offset_mean(data, target_mean_value=0.0):
-    '''Return a new array containing the original data
+    """Return a new array containing the original data
        with its mean offset to match the desired value, (0 by default).
 
     Examples
     --------
     >>> offset_mean([1, 2, 3])
     array([-1.,  0.,  1.])
-    '''
+    """
     return (data - numpy.mean(data)) + target_mean_value
 ~~~
 {: .language-python}
@@ -766,7 +766,7 @@ readable code!
 >
 > > ## Solution
 > > ~~~
-> > '''Takes an array as input, and returns a corresponding array scaled so
+> > """Takes an array as input, and returns a corresponding array scaled so
 > > that 0 corresponds to the minimum and 1 to the maximum value of the input array.
 > >
 > > Examples:
@@ -775,7 +775,7 @@ readable code!
 > >        0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])
 > > >>> rescale(numpy.linspace(0, 100, 5))
 > > array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
-> > '''
+> > """
 > > ~~~
 > > {: .language-python}
 > {: .solution}
@@ -791,7 +791,7 @@ readable code!
 > > ## Solution
 > > ~~~
 > > def rescale(input_array, low_val=0.0, high_val=1.0):
-> >     '''rescales input array values to lie between low_val and high_val'''
+> >     """rescales input array values to lie between low_val and high_val"""
 > >     L = numpy.min(input_array)
 > >     H = numpy.max(input_array)
 > >     intermed_array = (input_array - L) / (H - L)
