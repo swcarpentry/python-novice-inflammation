@@ -118,10 +118,10 @@ but checks that its input is correctly formatted and that its result makes sense
 
 ~~~
 def normalize_rectangle(rect):
-    '''Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.
+    """Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.
     Input should be of the format (x0, y0, x1, y1).
     (x0, y0) and (x1, y1) define the lower left and upper right corners
-    of the rectangle, respectively.'''
+    of the rectangle, respectively."""
     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
     x0, y0, x1, y1 = rect
     assert x0 < x1, 'Invalid X coordinates'
@@ -158,7 +158,7 @@ AssertionError                            Traceback (most recent call last)
 
 <ipython-input-1-c94cf5b065b9> in normalize_rectangle(rect)
       4     (x0, y0) and (x1, y1) define the lower left and upper right corners
-      5     of the rectangle, respectively.'''
+      5     of the rectangle, respectively."""
 ----> 6     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
       7     x0, y0, x1, y1 = rect
       8     assert x0 < x1, 'Invalid X coordinates'
@@ -403,7 +403,7 @@ but we're now ready to do so:
 
 ~~~
 def range_overlap(ranges):
-    '''Return common overlap among a set of [left, right] ranges.'''
+    """Return common overlap among a set of [left, right] ranges."""
     max_left = 0.0
     min_right = 1.0
     for (left, right) in ranges:
