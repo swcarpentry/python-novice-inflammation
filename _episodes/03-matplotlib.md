@@ -103,6 +103,7 @@ axes3.plot(numpy.min(data, axis=0))
 
 fig.tight_layout()
 
+matplotlib.pyplot.savefig('inflammation.png')
 matplotlib.pyplot.show()
 ~~~
 {: .language-python}
@@ -117,6 +118,13 @@ what to draw for each one,
 and that we want a tight layout.
 (If we leave out that call to `fig.tight_layout()`,
 the graphs will actually be squeezed together more closely.)
+
+The call to `savefig` stores the plot as a graphics file. This can be
+a convenient way to store your plots for use in other documents, web
+pages etc. The graphics format is automatically determined by
+Matplotlib from the file name ending we specify; here PNG from
+'inflammation.png'. Matplotlib supports many different graphics
+formats, including SVG, PDF, and JPEG.
 
 
 > ## Plot Scaling
