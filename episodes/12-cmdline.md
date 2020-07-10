@@ -749,7 +749,7 @@ the program now does everything we set out to do.
 > > import glob
 > >
 > > def main():
-> >     '''prints names of all files with sys.argv as suffix'''
+> >     """prints names of all files with sys.argv as suffix"""
 > >     assert len(sys.argv) >= 2, 'Argument list cannot be empty'
 > >     suffix = sys.argv[1] # NB: behaviour is not as you'd expect if sys.argv[1] is *
 > >     glob_input = '*.' + suffix # construct the input
@@ -962,8 +962,8 @@ the program now does everything we set out to do.
 > > import sys
 > >
 > > def main():
-> >     '''print each input filename and the number of lines in it,
-> >        and print the sum of the number of lines'''
+> >     """print each input filename and the number of lines in it,
+> >        and print the sum of the number of lines"""
 > >     filenames = sys.argv[1:]
 > >     sum_nlines = 0 #initialize counting variable
 > >
@@ -978,14 +978,14 @@ the program now does everything we set out to do.
 > >         print('total: %d' % sum_nlines)
 > >
 > > def count_file(filename):
-> >     '''count the number of lines in a file'''
+> >     """count the number of lines in a file"""
 > >     f = open(filename,'r')
 > >     nlines = len(f.readlines())
 > >     f.close()
 > >     return(nlines)
 > >
 > > def count_file_like(file_like):
-> >     '''count the number of lines in a file-like object (eg stdin)'''
+> >     """count the number of lines in a file-like object (eg stdin)"""
 > >     n = 0
 > >     for line in file_like:
 > >         n = n+1
