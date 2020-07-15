@@ -16,6 +16,7 @@ keypoints:
 ---
 
 ## Variables
+Variables are used to store information to be referenced and manipulated in a computer program. It is helpful to think of variables as containers that hold information. Their sole purpose is to label and store data in memory. This data can then be used throughout your program.
 
 Any Python interpreter can be used as a calculator:
 ~~~
