@@ -377,7 +377,7 @@ last: 4
 > {: .language-python}
 >
 > ~~~
-> 2013
+> '2013'
 > [['chlorine', 'Cl'], ['bromine', 'Br'], ['iodine', 'I'], ['astatine', 'At']]
 > ~~~
 > {: .output}
