@@ -512,7 +512,7 @@ print('Omitting ending index:', sond)
 {: .language-python}
 
 ~~~
-With known last position: ['sep", 'oct', 'nov', 'dec']
+With known last position: ['sep', 'oct', 'nov', 'dec']
 Using len() to get last entry: ['sep', 'oct', 'nov', 'dec']
 Omitting ending index: ['sep', 'oct', 'nov', 'dec']
 ~~~
