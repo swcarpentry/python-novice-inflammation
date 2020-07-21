@@ -405,7 +405,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > passed as an argument, that is:
 >
 > ~~~
-> "String".startswith("Str")
+> 'String'.startswith('Str')
 > ~~~
 > {: .language-python}
 > ~~~
@@ -414,7 +414,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > {: .output}
 > But
 > ~~~
-> "String".startswith("str")
+> 'String'.startswith('str')
 > ~~~
 > {: .language-python}
 > ~~~
@@ -484,7 +484,7 @@ freeing us from having to manually examine every plot for features we've seen be
 > >     if char in vowels:
 > >         count += 1
 > >
-> > print("The number of vowels in this string is " + str(count))
+> > print('The number of vowels in this string is ' + str(count))
 > > ~~~
 > > {: .language-python}
 > {: .solution}
