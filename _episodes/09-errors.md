@@ -46,9 +46,9 @@ Let's examine one:
 # use it for reference to understand the error message below.
 def favorite_ice_cream():
     ice_creams = [
-        "chocolate",
-        "vanilla",
-        "strawberry"
+        'chocolate',
+        'vanilla',
+        'strawberry'
     ]
     print(ice_creams[3])
 
@@ -65,7 +65,7 @@ IndexError                                Traceback (most recent call last)
 ----> 8 favorite_ice_cream()
 
 <ipython-input-1-70bd89baa4df> in favorite_ice_cream()
-      4         "vanilla",                                                                    "strawberry"
+      4         'vanilla',                                                                    'strawberry'
       5     ]
 ----> 6     print(ice_creams[3])
       7
@@ -149,7 +149,7 @@ For example:
 
 ~~~
 def some_function()
-    msg = "hello, world!"
+    msg = 'hello, world!'
     print(msg)
      return msg
 ~~~
@@ -174,7 +174,7 @@ which means that the lines in the function definition do not all have the same i
 
 ~~~
 def some_function():
-    msg = "hello, world!"
+    msg = 'hello, world!'
     print(msg)
      return msg
 ~~~
@@ -205,7 +205,7 @@ it *always* means that there is a problem with how your code is indented.
 >
 > ~~~
 > def some_function():
-> 	msg = "hello, world!"
+> 	msg = 'hello, world!'
 > 	print(msg)
 >         return msg
 > ~~~
@@ -277,7 +277,7 @@ In the following example,
 ~~~
 for number in range(10):
     count = count + number
-print("The count is:", count)
+print('The count is:', count)
 ~~~
 {: .language-python}
 
@@ -287,7 +287,7 @@ NameError                                 Traceback (most recent call last)
 <ipython-input-9-dd6a12d7ca5c> in <module>()
       1 for number in range(10):
 ----> 2     count = count + number
-      3 print("The count is:", count)
+      3 print('The count is:', count)
 
 NameError: name 'count' is not defined
 ~~~
@@ -304,7 +304,7 @@ because we still have not defined `count`:
 Count = 0
 for number in range(10):
     count = count + number
-print("The count is:", count)
+print('The count is:', count)
 ~~~
 {: .language-python}
 
@@ -315,7 +315,7 @@ NameError                                 Traceback (most recent call last)
       1 Count = 0
       2 for number in range(10):
 ----> 3     count = count + number
-      4 print("The count is:", count)
+      4 print('The count is:', count)
 
 NameError: name 'count' is not defined
 ~~~
@@ -334,10 +334,10 @@ Python gets similarly annoyed if you try to ask it for an item that doesn't exis
 
 ~~~
 letters = ['a', 'b', 'c']
-print("Letter #1 is", letters[0])
-print("Letter #2 is", letters[1])
-print("Letter #3 is", letters[2])
-print("Letter #4 is", letters[3])
+print('Letter #1 is', letters[0])
+print('Letter #2 is', letters[1])
+print('Letter #3 is', letters[2])
+print('Letter #4 is', letters[3])
 ~~~
 {: .language-python}
 
@@ -352,9 +352,9 @@ Letter #3 is c
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-11-d817f55b7d6c> in <module>()
-      3 print("Letter #2 is", letters[1])
-      4 print("Letter #3 is", letters[2])
-----> 5 print("Letter #4 is", letters[3])
+      3 print('Letter #2 is', letters[1])
+      4 print('Letter #3 is', letters[2])
+----> 5 print('Letter #4 is', letters[3])
 
 IndexError: list index out of range
 ~~~
@@ -447,18 +447,18 @@ often reveals common reasons why you might get that error.
 > # use it for reference to understand the error message below.
 > def print_message(day):
 >     messages = {
->         "monday": "Hello, world!",
->         "tuesday": "Today is Tuesday!",
->         "wednesday": "It is the middle of the week.",
->         "thursday": "Today is Donnerstag in German!",
->         "friday": "Last day of the week!",
->         "saturday": "Hooray for the weekend!",
->         "sunday": "Aw, the weekend is almost over."
+>         'monday': 'Hello, world!',
+>         'tuesday': 'Today is Tuesday!',
+>         'wednesday': 'It is the middle of the week.',
+>         'thursday': 'Today is Donnerstag in German!',
+>         'friday': 'Last day of the week!',
+>         'saturday': 'Hooray for the weekend!',
+>         'sunday': 'Aw, the weekend is almost over.'
 >     }
 >     print(messages[day])
 >
 > def print_friday_message():
->     print_message("Friday")
+>     print_message('Friday')
 >
 > print_friday_message()
 > ~~~
@@ -468,19 +468,19 @@ often reveals common reasons why you might get that error.
 > ---------------------------------------------------------------------------
 > KeyError                                  Traceback (most recent call last)
 > <ipython-input-1-4be1945adbe2> in <module>()
->      14     print_message("Friday")
+>      14     print_message('Friday')
 >      15
 > ---> 16 print_friday_message()
 >
 > <ipython-input-1-4be1945adbe2> in print_friday_message()
 >      12
 >      13 def print_friday_message():
-> ---> 14     print_message("Friday")
+> ---> 14     print_message('Friday')
 >      15
 >      16 print_friday_message()
 >
 > <ipython-input-1-4be1945adbe2> in print_message(day)
->       9         "sunday": "Aw, the weekend is almost over."
+>       9         'sunday': 'Aw, the weekend is almost over.'
 >      10     }
 > ---> 11     print(messages[day])
 >      12
@@ -508,9 +508,9 @@ often reveals common reasons why you might get that error.
 >
 > ~~~
 > def another_function
->   print("Syntax errors are annoying.")
->    print("But at least Python tells us about them!")
->   print("So they are usually not too hard to fix.")
+>   print('Syntax errors are annoying.')
+>    print('But at least Python tells us about them!')
+>   print('So they are usually not too hard to fix.')
 > ~~~
 > {: .language-python}
 >
@@ -521,9 +521,9 @@ often reveals common reasons why you might get that error.
 > >
 > > ~~~
 > > def another_function():
-> >     print("Syntax errors are annoying.")
-> >     print("But at least Python tells us about them!")
-> >     print("So they are usually not too hard to fix.")
+> >     print('Syntax errors are annoying.')
+> >     print('But at least Python tells us about them!')
+> >     print('So they are usually not too hard to fix.')
 > > ~~~
 > > {: .language-python}
 > {: .solution}
@@ -546,7 +546,7 @@ often reveals common reasons why you might get that error.
 >     if (Number % 3) == 0:
 >         message = message + a
 >     else:
->         message = message + "b"
+>         message = message + 'b'
 > print(message)
 > ~~~
 > {: .language-python}
@@ -558,13 +558,13 @@ often reveals common reasons why you might get that error.
 > > Fixed version:
 > >
 > > ~~~
-> > message = ""
+> > message = ''
 > > for number in range(10):
 > >     # use a if the number is a multiple of 3, otherwise use b
 > >     if (number % 3) == 0:
-> >         message = message + "a"
+> >         message = message + 'a'
 > >     else:
-> >         message = message + "b"
+> >         message = message + 'b'
 > > print(message)
 > > ~~~
 > > {: .language-python}
