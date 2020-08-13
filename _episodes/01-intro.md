@@ -181,8 +181,8 @@ weight in kilograms is now: 65.0
 
 > ## Check Your Understanding
 >
-> What values do the variables `mass` and `age` have after each statement in the following program?
-> Test your answers by executing the commands.
+> What values do the variables `mass` and `age` have after the following statements? 
+> Test your answer by executing the lines.
 >
 > ~~~
 > mass = 47.5
