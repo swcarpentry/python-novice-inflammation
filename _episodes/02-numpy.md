@@ -242,7 +242,7 @@ It takes a bit of getting used to,
 but one way to remember the rule is that
 the index is how many steps we have to take from the start to get the item we want.
 
-![Zero Index](../fig/python-zero-index.png)
+![Zero Index](../fig/python-zero-index.svg)
 
 > ## In the Corner
 >
