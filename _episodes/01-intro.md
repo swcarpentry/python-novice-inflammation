@@ -197,8 +197,8 @@ weight in kilograms is now: 65.0
 > > ~~~
 > > `mass` holds a value of 47.5, `age` does not exist
 > > `mass` still holds a value of 47.5, `age` holds a value of 122
-> > `mass` now has a value of 95, `age`'s value is still 122
-> > `mass` still has a value of 95, `age` now holds 102
+> > `mass` now has a value of 95.0, `age`'s value is still 122
+> > `mass` still has a value of 95.0, `age` now holds 102
 > > ~~~
 > > {: .output}
 > {: .solution}
