@@ -189,7 +189,6 @@ weight in kilograms is now: 65.0
 > age = 122
 > mass = mass * 2.0
 > age = age - 20
-> 
 > ~~~
 > {: .language-python}
 >
