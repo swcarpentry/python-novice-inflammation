@@ -73,6 +73,13 @@ weight_kg_text = 'weight in kilograms:'
 ~~~
 {: .language-python}
 
+To convert the weight from float to an integer we use the int function, the same way we use the print statement, as follows:
+
+~~~
+weight_kg_int = int(weight_kg)
+~~~
+{: .language-python}
+
 ## Using Variables in Python
 To display the value of a variable to the screen in Python, we can use the `print` function:
 
