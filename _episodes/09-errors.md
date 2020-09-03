@@ -60,16 +60,16 @@ favorite_ice_cream()
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-1-70bd89baa4df> in <module>()
-      6     print(ice_creams[3])
-      7
-----> 8 favorite_ice_cream()
+      9     print(ice_creams[3])
+      10
+----> 11 favorite_ice_cream()
 
 <ipython-input-1-70bd89baa4df> in favorite_ice_cream()
-      4         'vanilla',                                                                    'strawberry'
-      5     ]
-----> 6     print(ice_creams[3])
-      7
-      8 favorite_ice_cream()
+      7         'strawberry'
+      8     ]
+----> 9     print(ice_creams[3])
+      10
+      11 favorite_ice_cream()
 
 IndexError: list index out of range
 ~~~
