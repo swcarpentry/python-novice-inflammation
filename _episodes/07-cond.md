@@ -490,6 +490,36 @@ freeing us from having to manually examine every plot for features we've seen be
 > {: .solution}
 {: .challenge}
 
+> ## Math vs Programming
+>
+> We all know that 3>2>1 is True. Lets try (3>2)>1. What happens here?
+>
+> > ## Solution
+> > ~~~
+> > In python anythng that is True always evaluates to 1 and everything that is False evaluates to 0. Python also follows brackets, just like you do in math.
+> > The expression (3>2) will evaluate as True so it will become 1. Afterwards what we are left is 1>1, which will obviously evaluate to False.
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
+> ## Unknown variables
+>
+> We have two unknown variables a and b
+> We know, that a+b = 2
+> a == b is True
+> However str(a) == str(b) is False
+> What are the two unknown variables?
+>
+> > ## Solution
+> > ~~~
+> > This exercise has multiple correct solutions, most of which are based on that in python anythng that is True always evaluates to 1 and everything that is False evaluates to 0. 
+> > In this case if a=1 and b=True, the three statements above are true 
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
 [abs-function]: https://docs.python.org/3/library/functions.html#abs
 
 {% include links.md %}
