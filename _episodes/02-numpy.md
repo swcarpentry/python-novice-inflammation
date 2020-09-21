@@ -17,7 +17,6 @@ keypoints:
 - "Use `array[x, y]` to select a single element from a 2D array."
 - "Array indices start at 0, not 1."
 - "Use `low:high` to specify a `slice` that includes the indices from `low` to `high-1`."
-- "Use `# some kind of explanation` to add comments to programs."
 - "Use `numpy.mean(array)`, `numpy.max(array)`, and `numpy.min(array)` to calculate simple statistics."
 - "Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis."
 ---
@@ -414,10 +413,6 @@ maximum inflammation for patient 0: 18.0
 ~~~
 {: .output}
 
-Everything in a line of code following the '#' symbol is a
-[comment]({{ page.root }}/reference/#comment) that is ignored by Python.
-Comments allow programmers to leave explanatory notes for other
-programmers or their future selves.
 
 We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the function call:
