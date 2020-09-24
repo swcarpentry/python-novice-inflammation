@@ -814,9 +814,9 @@ readable code!
 >     k = ((f-32)*(5.0/9.0)) + 273.15
 >     return k
 >
-> f2k(8)
-> f2k(41)
-> f2k(32)
+> print(f2k(8))
+> print(f2k(41))
+> print(f2k(32))
 >
 > print(k)
 > ~~~
