@@ -52,14 +52,14 @@ This means that, for example:
  - `weight` and `Weight` are different variables
 
 ## Types of data
-Python knows various types of data. Three common ones are:
+Python knows and can automatically recognize various types of data. Three common ones are:
 
 * integer numbers
 * floating point numbers, and
 * strings.
 
 In the example above, variable `weight_kg` has an integer value of `60`.
-To create a variable with a floating point value, we can execute:
+To assign that variable a floating point value, we can execute:
 
 ~~~
 weight_kg = 60.0
