@@ -21,7 +21,10 @@ import the `pyplot` module from `matplotlib` and use two of its functions to cre
 heat map of our data:
 
 ~~~
+import numpy
 import matplotlib.pyplot
+
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 image = matplotlib.pyplot.imshow(data)
 matplotlib.pyplot.show()
 ~~~
