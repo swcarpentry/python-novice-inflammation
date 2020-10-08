@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Discussion
-permalink: /discuss/
 ---
 ## Rules of Debugging
 
@@ -147,7 +145,7 @@ span of data: 20.0
 {: .output}
 
 We don't expect `diff` to have the value 20.0 after this function call,
-so the name `diff` cannot refer to the same thing inside `span` 
+so the name `diff` cannot refer to the same thing inside `span`
 as it does in the main body of our program.
 And yes,
 we could probably choose a different name than `diff` in our main program in this case,

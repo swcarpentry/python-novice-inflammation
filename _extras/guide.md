@@ -1,7 +1,5 @@
 ---
-layout: page
 title: "Instructor Notes"
-permalink: /guide/
 ---
 
 ## About the lesson

@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Setup
-permalink: /setup/index.html
-root: ..
 ---
 
 ## Overview
