@@ -11,7 +11,7 @@ so this introduction to Python is built around a common scientific task:
 ### Arthritis Inflammation
 We are studying **inflammation in patients** who have been given a new treatment for arthritis, and
 need to analyze the first dozen data sets of their daily inflammation. The data sets are stored in
-[comma-separated values]({{ page.root }}/reference/#comma-separated-values) (CSV) format:
+[comma-separated values]({{ page.root }}/reference.html#comma-separated-values) (CSV) format:
 
 - each row holds information for a single patient,
 - columns represent successive days.

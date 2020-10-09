@@ -29,8 +29,8 @@ Any Python interpreter can be used as a calculator:
 
 This is great but not very interesting.
 To do anything useful with data, we need to assign its value to a _variable_.
-In Python, we can [assign]({{ page.root }}/reference/#assign) a value to a
-[variable]({{ page.root }}/reference/#variable), using the equals sign `=`.
+In Python, we can [assign]({{ page.root }}/reference.html#assign) a value to a
+[variable]({{ page.root }}/reference.html#variable), using the equals sign `=`.
 For example, to assign value `60` to a variable `weight_kg`, we would execute:
 
 ~~~
@@ -45,7 +45,7 @@ In Python, variable names:
 
  - can include letters, digits, and underscores
  - cannot start with a digit
- - are [case sensitive]({{ page.root }}/reference/#case-sensitive).
+ - are [case sensitive]({{ page.root }}/reference.html#case-sensitive).
 
 This means that, for example:
  - `weight0` is a valid variable name, whereas `0weight` is not
@@ -181,7 +181,7 @@ weight in kilograms is now: 65.0
 
 > ## Check Your Understanding
 >
-> What values do the variables `mass` and `age` have after each of the following statements? 
+> What values do the variables `mass` and `age` have after each of the following statements?
 > Test your answer by executing the lines.
 >
 > ~~~

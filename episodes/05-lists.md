@@ -116,8 +116,8 @@ does not.
 
 > ## Ch-Ch-Ch-Ch-Changes
 >
-> Data which can be modified in place is called [mutable]({{ page.root }}/reference/#mutable),
-> while data which cannot be modified is called [immutable]({{ page.root }}/reference/#immutable).
+> Data which can be modified in place is called [mutable]({{ page.root }}/reference.html#mutable),
+> while data which cannot be modified is called [immutable]({{ page.root }}/reference.html#immutable).
 > Strings and numbers are immutable. This does not mean that variables with string or number values
 > are constants, but when we want to change the value of a string or number variable, we can only
 > replace the old value with a completely new value.
@@ -181,7 +181,7 @@ does not.
 >
 > [![x is represented as a pepper shaker containing several packets of pepper. [x[0]] is represented
 > as a pepper shaker containing a single packet of pepper. x[0] is represented as a single packet of
-> pepper. x[0][0] is represented as single grain of pepper.  Adapted 
+> pepper. x[0][0] is represented as single grain of pepper.  Adapted
 > from @hadleywickham.](../fig/indexing_lists_python.png)][hadleywickham-tweet]
 >
 > Using the previously declared list `x`, these would be the results of the

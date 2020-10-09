@@ -135,7 +135,7 @@ n
 ~~~
 {: .output}
 
-The improved version uses a [for loop]({{ page.root }}/reference/#for-loop)
+The improved version uses a [for loop]({{ page.root }}/reference.html#for-loop)
 to repeat an operation --- in this case, printing --- once for each thing in a sequence.
 The general form of a loop is:
 
@@ -153,7 +153,7 @@ where each character (`char`) in the variable `word` is looped through and print
 after another. The numbers in the diagram denote which loop cycle the character was printed in (1
 being the first loop, and 6 being the final loop).
 
-We can call the [loop variable]({{ page.root }}/reference/#loop-variable) anything we like, but
+We can call the [loop variable]({{ page.root }}/reference.html#loop-variable) anything we like, but
 there must be a colon at the end of the line starting the loop, and we must indent anything we
 want to run inside the loop. Unlike many other languages, there is no command to signify the end
 of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop.

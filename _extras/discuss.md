@@ -36,7 +36,7 @@ The diagram below shows what memory looks like after the first line has been exe
 When we call `fahr_to_celsius`,
 Python *doesn't* create the variable `temp` right away.
 Instead,
-it creates something called a [stack frame]({{ page.root }}/reference/#stack-frame)
+it creates something called a [stack frame]({{ page.root }}/reference.html#stack-frame)
 to keep track of the variables defined by `fahr_to_kelvin`.
 Initially,
 this stack frame only holds the value of `temp`:
@@ -153,7 +153,7 @@ but we don't want to have to read every line of NumPy to see what variable names
 before calling any of those functions,
 just in case they change the values of our variables.
 
-The big idea here is [encapsulation]({{ page.root }}/reference/#encapsulation),
+The big idea here is [encapsulation]({{ page.root }}/reference.html#encapsulation),
 and it's the key to writing correct, comprehensible programs.
 A function's job is to turn several operations into one
 so that we can think about a single function call
@@ -223,9 +223,9 @@ grid lines on: True
 The obvious thing to do with a grid like this is color in its cells,
 but in order to do that,
 we need to know how computers represent color.
-The most common schemes are [RGB]({{ page.root }}/reference/#rgb),
+The most common schemes are [RGB]({{ page.root }}/reference.html#rgb),
 which is short for "red, green, blue".
-RGB is an [additive color model]({{ page.root }}/reference/#additive-color-model):
+RGB is an [additive color model]({{ page.root }}/reference.html#additive-color-model):
 every shade is some combination of red, green, and blue intensities.
 We can think of these three values as being the axes in a cube:
 
@@ -234,7 +234,7 @@ We can think of these three values as being the axes in a cube:
 An RGB color is an example of a multi-part value:
 like a Cartesian coordinate,
 it is one thing with several parts.
-We can represent such a value in Python using a [tuple]({{ page.root }}/reference/#tuple),
+We can represent such a value in Python using a [tuple]({{ page.root }}/reference.html#tuple),
 which we write using parentheses instead of the square brackets used for a list:
 
 ~~~
@@ -267,7 +267,7 @@ first element of color is: 10
 Unlike lists and arrays,
 though,
 tuples cannot be changed after they are created --- in technical terms,
-they are [immutable]({{ page.root }}/reference/#immutable):
+they are [immutable]({{ page.root }}/reference.html#immutable):
 
 ~~~
 color[0] = 40
