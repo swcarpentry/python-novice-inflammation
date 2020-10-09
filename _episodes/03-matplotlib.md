@@ -72,7 +72,7 @@ You can group similar plots in a single figure using subplots.
 This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
 creates a space into which we will place all of our plots. The parameter `figsize`
 tells Python how big to make this space. Each subplot is placed into the figure using
-its `add_subplot` [method]({{ page.root }}/reference/#method). The `add_subplot` method takes 3
+its `add_subplot` [method]({{ page.root }}/reference.html#method). The `add_subplot` method takes 3
 parameters. The first denotes how many total rows of subplots there are, the second parameter
 refers to the total number of subplot columns, and the final parameter denotes which subplot
 your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a
@@ -110,7 +110,7 @@ matplotlib.pyplot.show()
 
 ![The Previous Plots as Subplots](../fig/inflammation-01-group-plot.svg)
 
-The [call]({{ page.root }}/reference/#function-call) to `loadtxt` reads our data,
+The [call]({{ page.root }}/reference.html#function-call) to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
 how large we want the figure to be,
 that we're creating three subplots,
