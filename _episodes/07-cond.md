@@ -98,6 +98,18 @@ else:
 Note that to test for equality we use a double equals sign `==`
 rather than a single equals sign `=` which is used to assign values.
 
+> ## Comparing in python
+>
+> We've already seen a few of these already, but there are a few more options that you should know about:
+>
+> - `>`: greater than
+> - `<`: less than
+> - `==`: equal to
+> - `!=`: does not equal
+> - `>=`: greater than or equal to
+> - `<=`: less than or equal to
+{: .callout}
+
 We can also combine tests using `and` and `or`.
 `and` is only true if both parts are true:
 
