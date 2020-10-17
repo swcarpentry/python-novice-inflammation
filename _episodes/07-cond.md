@@ -98,9 +98,10 @@ else:
 Note that to test for equality we use a double equals sign `==`
 rather than a single equals sign `=` which is used to assign values.
 
-> ## Comparing in python
+> ## Comparing in Python
 >
-> We've already seen a few of these already, but there are a few more options that you should know about:
+> Along with the `>` and `==` operators we have already used for comparing values in our conditionals, 
+> there are a few more options to know about:
 >
 > - `>`: greater than
 > - `<`: less than
