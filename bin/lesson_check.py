@@ -67,7 +67,8 @@ KNOWN_BLOCKQUOTES = {
     'prereq',
     'quotation',
     'solution',
-    'testimonial'
+    'testimonial',
+    'warning'
 }
 
 # What kinds of code fragments are allowed?
@@ -77,12 +78,16 @@ KNOWN_CODEBLOCKS = {
     'source',
     'language-bash',
     'html',
+    'language-c',
+    'language-cmake',
+    'language-cpp',
     'language-make',
     'language-matlab',
     'language-python',
     'language-r',
     'language-shell',
-    'language-sql'
+    'language-sql',
+    'warning'
 }
 
 # What fields are required in teaching episode metadata?
@@ -215,7 +220,7 @@ def read_references(reporter, ref_path):
     result = {}
     urls_seen = set()
 
-    with open(ref_path, 'r') as reader:
+    with open(ref_path, 'r', encoding='utf-8') as reader:
         for (num, line) in enumerate(reader, 1):
 
             if P_INTERNAL_INCLUDE_LINK.search(line): continue

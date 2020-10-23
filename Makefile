@@ -1,12 +1,9 @@
-# Use /bin/bash instead of /bin/sh
-export SHELL = /bin/bash
-
 ## ========================================
 ## Commands for both workshop and lesson websites.
 
 # Settings
 MAKEFILES=Makefile $(wildcard *.mk)
-JEKYLL=bundle install --path .vendor/bundle && bundle update && bundle exec jekyll
+JEKYLL=bundle config --local set path .vendor/bundle && bundle install && bundle update && bundle exec jekyll
 PARSER=bin/markdown_ast.rb
 DST=_site
 
@@ -96,7 +93,7 @@ workshop-check :
 ## III. Commands specific to lesson websites
 ## =================================================
 
-.PHONY : lesson-check lesson-md lesson-files lesson-fixme
+.PHONY : lesson-check lesson-md lesson-files lesson-fixme install-rmd-deps
 
 # RMarkdown files
 RMD_SRC = $(wildcard _episodes_rmd/??-*.Rmd)
@@ -118,17 +115,22 @@ HTML_DST = \
   ${DST}/conduct/index.html \
   ${DST}/setup/index.html \
   $(patsubst _episodes/%.md,${DST}/%/index.html,$(sort $(wildcard _episodes/*.md))) \
-  ${DST}/reference/index.html \
+  ${DST}/reference.html \
   $(patsubst _extras/%.md,${DST}/%/index.html,$(sort $(wildcard _extras/*.md))) \
   ${DST}/license/index.html
+
+## * install-rmd-deps : Install R packages dependencies to build the RMarkdown lesson
+install-rmd-deps:
+	@${SHELL} bin/install_r_deps.sh
 
 ## * lesson-md        : convert Rmarkdown files to markdown
 lesson-md : ${RMD_DST}
 
-_episodes/%.md: _episodes_rmd/%.Rmd
+_episodes/%.md: _episodes_rmd/%.Rmd install-rmd-deps
+	@mkdir -p _episodes
 	@bin/knit_lessons.sh $< $@
 
-# * lesson-check     : validate lesson Markdown
+## * lesson-check     : validate lesson Markdown
 lesson-check : lesson-fixme
 	@${PYTHON} bin/lesson_check.py -s . -p ${PARSER} -r _includes/links.md
 
@@ -149,7 +151,7 @@ lesson-files :
 
 ## * lesson-fixme     : show FIXME markers embedded in source files
 lesson-fixme :
-	@fgrep -i -n FIXME ${MARKDOWN_SRC} || true
+	@grep --fixed-strings --word-regexp --line-number --no-messages FIXME ${MARKDOWN_SRC} || true
 
 ##
 ## IV. Auxililary (plumbing) commands
