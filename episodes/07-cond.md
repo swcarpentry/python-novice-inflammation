@@ -98,11 +98,24 @@ else:
 Note that to test for equality we use a double equals sign `==`
 rather than a single equals sign `=` which is used to assign values.
 
+> ## Comparing in Python
+>
+> Along with the `>` and `==` operators we have already used for comparing values in our conditionals, 
+> there are a few more options to know about:
+>
+> - `>`: greater than
+> - `<`: less than
+> - `==`: equal to
+> - `!=`: does not equal
+> - `>=`: greater than or equal to
+> - `<=`: less than or equal to
+{: .callout}
+
 We can also combine tests using `and` and `or`.
 `and` is only true if both parts are true:
 
 ~~~
-if (1 > 0) and (-1 > 0):
+if (1 > 0) and (-1 >= 0):
     print('both parts are true')
 else:
     print('at least one part is false')
@@ -117,7 +130,7 @@ at least one part is false
 while `or` is true if at least one part is true:
 
 ~~~
-if (1 < 0) or (-1 < 0):
+if (1 < 0) or (1 >= 0):
     print('at least one test is true')
 ~~~
 {: .language-python}
