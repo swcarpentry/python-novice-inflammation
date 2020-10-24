@@ -115,7 +115,7 @@ We can also combine tests using `and` and `or`.
 `and` is only true if both parts are true:
 
 ~~~
-if (1 > 0) and (-1 > 0):
+if (1 > 0) and (-1 >= 0):
     print('both parts are true')
 else:
     print('at least one part is false')
@@ -130,7 +130,7 @@ at least one part is false
 while `or` is true if at least one part is true:
 
 ~~~
-if (1 < 0) or (-1 < 0):
+if (1 < 0) or (1 >= 0):
     print('at least one test is true')
 ~~~
 {: .language-python}
