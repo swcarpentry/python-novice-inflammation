@@ -80,10 +80,10 @@ You can determine the number of levels by looking for the number of arrows on th
 In this case:
 
 1.  The first shows code from the cell above,
-    with an arrow pointing to Line 8 (which is `favorite_ice_cream()`).
+    with an arrow pointing to Line 11 (which is `favorite_ice_cream()`).
 
 2.  The second shows some code in the function `favorite_ice_cream`,
-    with an arrow pointing to Line 6 (which is `print(ice_creams[3])`).
+    with an arrow pointing to Line 9 (which is `print(ice_creams[3])`).
 
 The last level is the actual place where the error occurred.
 The other level(s) show what function the program executed to get to the next level down.
