@@ -111,6 +111,10 @@ function
 function call
 :   A use of a function in another piece of software.
 
+heat map
+:   A graphical representation of data in two-dimensions,
+    where data values within the matrix are transformed into a color scale.
+
 immutable
 :   Unchangeable.
     The value of immutable data cannot be altered after it has been created.
