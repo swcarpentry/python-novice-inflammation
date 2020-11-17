@@ -112,8 +112,8 @@ function call
 :   A use of a function in another piece of software.
 
 heat map
-:   A graphical representation of data in two-dimensions,
-    where data values within the matrix are transformed into a color scale.
+:   A graphical representation of two-dimensional data in which colors,
+    ranging on a scale of hue or intensity, represent the data values.
 
 immutable
 :   Unchangeable.
