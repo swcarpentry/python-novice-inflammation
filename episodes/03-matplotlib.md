@@ -18,7 +18,7 @@ the best way to develop insight is often to visualize data.  Visualization deser
 lecture of its own, but we can explore a few features of Python's `matplotlib` library here.  While
 there is no official plotting library, `matplotlib` is the _de facto_ standard.  First, we will
 import the `pyplot` module from `matplotlib` and use two of its functions to create and display a
-heat map of our data:
+[heat map]({{ page.root }}/reference.html#heat-map) of our data:
 
 ~~~
 import matplotlib.pyplot
