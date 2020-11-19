@@ -1,15 +1,26 @@
 # Travis CI is only used to check the lesson and is not involved in its deployment
-language: python
-python: 3.6
+dist: bionic
+language: ruby
+rvm:
+  - 2.7.1
+
 branches:
   only:
   - gh-pages
   - /.*/
+
+cache:
+  apt: true
+  bundler: true
+  directories:
+    - /home/travis/.rvm/
+    - $HOME/.cache/pip
+
 before_install:
-  - rvm default
   - gem install json kramdown jekyll bundler
-install:
-  - pip install pyyaml
+  - python3 -m pip install --upgrade pip setuptools wheel
+  - python3 -m pip install --upgrade pip setuptools wheel
+
 script:
   - make lesson-check
   - make lesson-check-all
