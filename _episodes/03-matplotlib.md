@@ -13,15 +13,16 @@ keypoints:
 ---
 
 ## Visualizing data
-The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers," and
+The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers", and
 the best way to develop insight is often to visualize data.  Visualization deserves an entire
 lecture of its own, but we can explore a few features of Python's `matplotlib` library here.  While
 there is no official plotting library, `matplotlib` is the _de facto_ standard.  First, we will
-import the `pyplot` module from `matplotlib` and use two of its functions to create and display a
+import the `pyplot` module from `matplotlib`, and then we will use two of its functions to create and display a
 [heat map]({{ page.root }}/reference.html#heat-map) of our data:
 
 ~~~
 import matplotlib.pyplot
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 image = matplotlib.pyplot.imshow(data)
 matplotlib.pyplot.show()
 ~~~
@@ -62,7 +63,7 @@ matplotlib.pyplot.show()
 
 ![Minimum Value Along The First Axis](../fig/inflammation-01-minimum.svg)
 
-The maximum value rises and falls smoothly, while the minimum seems to be a step function.  Neither
+The maximum value rises and falls smoothly, while the minimum values seems to be a step function.  Neither
 trend seems particularly likely, so either there's a mistake in our calculations or something is
 wrong with our data.  This insight would have been difficult to reach by examining the numbers
 themselves without visualization tools.
