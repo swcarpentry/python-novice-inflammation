@@ -20,15 +20,16 @@ there is no official plotting library, `matplotlib` is the _de facto_ standard. 
 import the `pyplot` module from `matplotlib`, and then we will use two of its functions to create and display a
 [heat map]({{ page.root }}/reference.html#heat-map) of our data:
 
-## Important Note
-
-In the previous lesson we set the `data` variable and imported `numpy`. If you have not completed lesson `2. Analyzing Patient Data`, please run the following commands prior to continuing with the current lesson.
-
-    ~~~
-    import numpy
-    data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-    ~~~
-    {: .language-python}
+> ## Important Note
+>
+> In the previous lesson we set the `data` variable and imported `numpy`. If you have not completed lesson `2. Analyzing Patient Data`,
+> please run the following commands prior to continuing with the current lesson.
+>
+> ~~~
+> import numpy
+> data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+> ~~~
+> {: .language-python}
 {: .callout}
 
 ~~~
