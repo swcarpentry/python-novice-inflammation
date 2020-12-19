@@ -57,22 +57,6 @@ Yes, we can use negative numbers as indices in Python. When we do so, the index 
 last element in the list, `-2` the second to last, and so on.
 Because of this, `odds[3]` and `odds[-1]` point to the same element here.
 
-If we loop over a list, the loop variable is assigned to its elements one at a time:
-
-~~~
-for number in odds:
-    print(number)
-~~~
-{: .language-python}
-
-~~~
-1
-3
-5
-7
-~~~
-{: .output}
-
 There is one important difference between lists and strings:
 we can change the values in a list,
 but we cannot change individual characters in a string.
@@ -307,34 +291,6 @@ primes: [1, 3, 5, 7, 2]
 odds: [1, 3, 5, 7]
 ~~~
 {: .output}
-
-> ## Turn a String Into a List
->
-> Use a for-loop to convert the string "hello" into a list of letters:
->
-> ~~~
-> ['h', 'e', 'l', 'l', 'o']
-> ~~~
-> {: .language-python}
->
-> Hint: You can create an empty list like this:
->
-> ~~~
-> my_list = []
-> ~~~
-> {: .language-python}
->
-> > ## Solution
-> > ~~~
-> > my_list = []
-> > for char in 'hello':
-> >     my_list.append(char)
-> > print(my_list)
-> > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
-
 Subsets of lists and strings can be accessed by specifying ranges of values in brackets,
 similar to how we accessed ranges of positions in a NumPy array.
 This is commonly referred to as "slicing" the list/string.
