@@ -15,7 +15,8 @@ keypoints:
 - "Use `len(thing)` to determine the length of something that contains other values."
 ---
 
-In the last episode, we wrote Python code that plots values of interest from our first
+In the episode "Visualizing Tabular Data", we wrote Python code that plots values of interest
+from our first
 inflammation dataset (`inflammation-01.csv`), which revealed some suspicious features in it.
 
 ![Analysis of inflammation-01.csv](../fig/03-loop_2_0.png)
@@ -24,114 +25,120 @@ We have a dozen data sets right now, though, and more on the way.
 We want to create plots for all of our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
-An example task that we might want to repeat is printing each character in a
-word on a line of its own.
+First, we keep working with our list of odd numbers:
 
 ~~~
-word = 'lead'
-~~~
-{: .language-python}
-
-In Python, a string is basically an ordered collection of characters, and every
-character has a unique number associated with it -- its index. This means that
-we can access characters in a string using their indices.
-For example, we can get the first character of the word `'lead'`, by using
-`word[0]`. One way to print each character is to use four `print` statements:
-
-~~~
-print(word[0])
-print(word[1])
-print(word[2])
-print(word[3])
+odds = [1, 3, 5, 7]
+print('odds are:', odds)
 ~~~
 {: .language-python}
 
 ~~~
-l
-e
-a
-d
+odds are: [1, 3, 5, 7]
+~~~
+{: .output}
+
+An example task that we might want to repeat is printing each item in a
+list on a line of its own.
+
+We could try to do this by printing each item manually.
+For example, we can get the first item of `odds`, by using
+`odds[0]`. One way to print each character is to use four `print` statements:
+
+~~~
+print(odds[0])
+print(odds[1])
+print(odds[2])
+print(odds[3])
+~~~
+{: .language-python}
+
+~~~
+1
+3
+5
+7
 ~~~
 {: .output}
 
 This is a bad approach for three reasons:
 
-1.  **Not scalable**. Imagine you need to print characters of a string that is hundreds
-    of letters long.  It might be easier to type them in manually.
+1.  **Not scalable**. Imagine you need to print items from lists that contain
+    hundreds of elements or more.
 
-2.  **Difficult to maintain**. If we want to decorate each printed character with an
-    asterisk or any other character, we would have to change four lines of code. While
-    this might not be a problem for short strings, it would definitely be a problem for
+2.  **Difficult to maintain**. If we wanted to include some additional text for
+    each list element, we would have to change four lines of code. While
+    this might not be a problem for short lists, it would definitely be a problem for
     longer ones.
 
-3.  **Fragile**. If we use it with a word that has more characters than what we initially
-    envisioned, it will only display part of the word's characters. A shorter string, on
+3.  **Fragile**. If we use it with a list that has more items than what we initially
+    envisioned, it will only display part of the items. A shorter list, on
     the other hand, will cause an error because it will be trying to display part of the
-    string that doesn't exist.
+    list that doesn't exist.
 
 ~~~
-word = 'tin'
-print(word[0])
-print(word[1])
-print(word[2])
-print(word[3])
+odds = [1, 3, 5]
+print(odds[0])
+print(odds[1])
+print(odds[2])
+print(odds[3])
 ~~~
 {: .language-python}
 
 ~~~
-t
-i
-n
+1
+3
+5
 ~~~
 {: .output}
 
 ~~~
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
-<ipython-input-3-7974b6cdaf14> in <module>()
-      3 print(word[1])
-      4 print(word[2])
-----> 5 print(word[3])
+<ipython-input-1-b48c9fadc7bf> in <module>()
+      3 print(odds[1])
+      4 print(odds[2])
+----> 5 print(odds[3])
 
-IndexError: string index out of range
+IndexError: list index out of range
 ~~~
 {: .error}
 
 Here's a better approach:
 
 ~~~
-word = 'lead'
-for char in word:
-    print(char)
+odds = [1, 3, 5, 7]
+for number in odds:
+    print(number)
 
 ~~~
 {: .language-python}
 
 ~~~
-l
-e
-a
-d
+1
+3
+5
+7
 ~~~
 {: .output}
 
-This is shorter --- certainly shorter than something that prints every character in a
-hundred-letter string --- and more robust as well:
+This is shorter --- certainly shorter than something that prints every item in a
+hundred-item list --- and more robust as well:
 
 ~~~
-word = 'oxygen'
-for char in word:
-    print(char)
+odds = [1, 3, 5, 7, 9, 11]
+for number in odds:
+    print(number)
 ~~~
 {: .language-python}
 
 ~~~
-o
-x
-y
-g
-e
-n
+1
+3
+5
+7
+9
+11
 ~~~
 {: .output}
 
@@ -144,6 +151,16 @@ for variable in collection:
     # do things using variable, such as print
 ~~~
 {: .language-python}
+
+We can also loop over the characters in a text:
+
+~~~
+word = 'oxygen'
+for char in word:
+    print(char)
+~~~
+ {: .language-python}
+
 
 Using the oxygen example above, the loop might look like this:
 
@@ -162,24 +179,23 @@ of the loop body (e.g. `end for`); what is indented after the `for` statement be
 > ## What's in a name?
 >
 >
-> In the example above, the loop variable was given the name `char` as a mnemonic;
-> it is short for 'character'.  We can choose any name we want for variables.
+> In the example above, the loop variable was given the name `number` since that
+> describes the list contents.
+> We can choose any name we want for variables.
 > We can even call our loop variable `banana`, as long as we use this name consistently:
 >
 > ~~~
-> word = 'oxygen'
-> for banana in word:
+> odds = [1, 3, 5, 7]
+> for banana in odds:
 >     print(banana)
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> o
-> x
-> y
-> g
-> e
-> n
+> 1
+> 3
+> 5
+> 7
 > ~~~
 > {: .output}
 >
@@ -191,32 +207,33 @@ Here's another loop that repeatedly updates a variable:
 
 ~~~
 length = 0
-for vowel in 'aeiou':
+weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+for day in weekdays:
     length = length + 1
-print('There are', length, 'vowels')
+print('There are', length, 'weekdays')
 ~~~
 {: .language-python}
 
 ~~~
-There are 5 vowels
+There are 5 weekdays
 ~~~
 {: .output}
 
 It's worth tracing the execution of this little program step by step.
-Since there are five characters in `'aeiou'`,
+Since there are five items in `weekdays`,
 the statement on line 3 will be executed five times.
 The first time around,
 `length` is zero (the value assigned to it on line 1)
-and `vowel` is `'a'`.
+and `day` is `Monday`.
 The statement adds 1 to the old value of `length`,
 producing 1,
 and updates `length` to refer to that new value.
 The next time around,
-`vowel` is `'e'` and `length` is 1,
+`day` is `Tuesday` and `length` is 1,
 so `length` is updated to be 2.
 After three more updates,
 `length` is 5;
-since there is nothing left in `'aeiou'` for Python to process,
+since there is nothing left in `weekdays` for Python to process,
 the loop finishes
 and the `print` statement on line 4 tells us our final answer.
 
@@ -226,7 +243,7 @@ and we can re-use variables previously defined as loop variables as well:
 
 ~~~
 letter = 'z'
-for letter in 'abc':
+for letter in ['a', 'b', 'c']:
     print(letter)
 print('after the loop, letter is', letter)
 ~~~
@@ -299,8 +316,8 @@ so we should always use it when we can.
 >
 > Given the following loop:
 > ~~~
-> word = 'oxygen'
-> for char in word:
+> letters = ['o', 'x', 'y', 'g', 'e', 'n']
+> for char in letters:
 >     print(char)
 > ~~~
 > {: .language-python}
