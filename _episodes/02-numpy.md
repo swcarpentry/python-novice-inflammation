@@ -90,7 +90,8 @@ that output is the data we just loaded.
 By default,
 only a few rows and columns are shown
 (with `...` to omit elements when displaying big arrays).
-Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros, so `1.0` becomes `1.`.
+Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros,
+so `1.0` becomes `1.`.
 
 > ## Importing libraries with shortcuts
 >
@@ -98,12 +99,15 @@ Note that, to save space when displaying NumPy arrays, Python does not show us t
 > to import NumPy.
 > However, shortcuts such as `import numpy as np` are frequently used.
 > Importing NumPy this way means that after the
-> inital import, rather than writing `numpy.loadtxt(...)`, you can now write `np.loadtxt(...)`. Some
-> people prefer this as it is quicker to type and results in shorter lines of code - especially for libraries
-> with long names! You will frequently see Python code online using a NumPy function with `np`, and it's
-> because they've used this shortcut. It makes no difference which approach you choose to take, but you must be
-> consistent as if you use `import numpy as np` then `numpy.loadtxt(...)` will not work, and you must use `np.loadtxt(...)`
-> instead. Because of this, when working with other people it is important you agree on how libraries are imported.
+> initial import, rather than writing `numpy.loadtxt(...)`, you can now write `np.loadtxt(...)`.
+> Some people prefer this as it is quicker to type and results in shorter lines of code
+> - especially for libraries
+> with long names! You will frequently see Python code online using a NumPy function with `np`,
+> and it's because they've used this shortcut.
+> It makes no difference which approach you choose to take, but you must be
+> consistent as if you use `import numpy as np` then `numpy.loadtxt(...)` will not work,
+> and you must use `np.loadtxt(...)` instead. Because of this, when working with other people it is
+> important you agree on how libraries are imported.
 {: .callout}
 
 Our call to `numpy.loadtxt` read our file
