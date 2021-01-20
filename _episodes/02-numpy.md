@@ -66,9 +66,11 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 ~~~
 {: .output}
 
-The expression `numpy.loadtxt(...)` is a [function call]({{ page.root }}/reference.html#function-call)
+The expression `numpy.loadtxt(...)` is a
+[function call]({{ page.root }}/reference.html#function-call)
 that asks Python to run the [function]({{ page.root }}/reference.html#function) `loadtxt` which
-belongs to the `numpy` library. This [dotted notation]({{ page.root }}/reference.html#dotted-notation)
+belongs to the `numpy` library.
+This [dotted notation]({{ page.root }}/reference.html#dotted-notation)
 is used everywhere in Python: the thing that appears before the dot contains the thing that
 appears after.
 
@@ -77,9 +79,9 @@ We could use the dot notation to write his name `smith.john`,
 just as `loadtxt` is a function that belongs to the `numpy` library.
 
 `numpy.loadtxt` has two [parameters]({{ page.root }}/reference.html#parameter): the name of the file
-we want to read and the [delimiter]({{ page.root }}/reference.html#delimiter) that separates values on
-a line. These both need to be character strings (or [strings]({{ page.root }}/reference.html#string)
-for short), so we put them in quotes.
+we want to read and the [delimiter]({{ page.root }}/reference.html#delimiter) that separates values
+on a line. These both need to be character strings
+(or [strings]({{ page.root }}/reference.html#string) for short), so we put them in quotes.
 
 Since we haven't told it to do anything else with the function's output,
 the [notebook]({{ page.root }}/reference.html#notebook) displays it.
