@@ -94,8 +94,10 @@ Note that, to save space when displaying NumPy arrays, Python does not show us t
 
 > ## Importing libraries with shortcuts
 >
-> In this lesson we use the `import numpy` [syntax]({{ page.root }}/reference.html#syntax) to import NumPy.
-> However, shortcuts such as `import numpy as np` are frequently used.  Importing NumPy this way means that after the
+> In this lesson we use the `import numpy` [syntax]({{ page.root }}/reference.html#syntax)
+> to import NumPy.
+> However, shortcuts such as `import numpy as np` are frequently used.
+> Importing NumPy this way means that after the
 > inital import, rather than writing `numpy.loadtxt(...)`, you can now write `np.loadtxt(...)`. Some
 > people prefer this as it is quicker to type and results in shorter lines of code - especially for libraries
 > with long names! You will frequently see Python code online using a NumPy function with `np`, and it's
