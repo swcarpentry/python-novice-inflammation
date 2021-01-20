@@ -585,7 +585,8 @@ which is the average inflammation per patient across all days.
 
 > ## Thin Slices
 >
-> The expression `element[3:3]` produces an [empty string]({{ page.root }}/reference.html#empty-string),
+> The expression `element[3:3]` produces an
+> [empty string]({{ page.root }}/reference.html#empty-string),
 > i.e., a string that contains no characters.
 > If `data` holds our array of patient data,
 > what does `data[3:3, 4:4]` produce?
