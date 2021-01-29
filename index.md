@@ -9,8 +9,21 @@ so this introduction to Python is built around a common scientific task:
 **data analysis**.
 
 ### Arthritis Inflammation
-We are studying **inflammation in patients** who have been given a new treatment for arthritis, and
-need to analyze the first dozen data sets of their daily inflammation. The data sets are stored in
+We are studying **inflammation in patients** who have been given a new treatment for arthritis.
+
+There are 60 patients, who had their inflammation levels recorded for 40 days.
+We want to analyze these recordings to study the effect of the new arthritis treatment.
+
+To see how the treatment is affecting the patients in general, we would like to:
+
+1. Calculate the average inflammation per day across all patients.
+2. Plot the result to discuss and share with colleagues.
+
+![](fig/lesson-overview.svg)
+
+
+### Data Format
+The data sets are stored in
 [comma-separated values]({{ page.root }}/reference.html#comma-separated-values) (CSV) format:
 
 - each row holds information for a single patient,
@@ -24,15 +37,12 @@ The first three rows of our first file look like this:
 ~~~
 {: .source}
 Each number represents the number of inflammation bouts that a particular patient experienced on a
-given day. For example, value "6" at row 3 column 7 of the data set above means that the third
+given day.
+
+For example, value "6" at row 3 column 7 of the data set above means that the third
 patient was experiencing inflammation six times on the seventh day of the clinical study.
 
-So, we want to:
-
-1. Calculate the average inflammation per day across all patients.
-2. Plot the result to discuss and share with colleagues.
-
-To do all that, we'll have to learn a little bit about programming.
+In order to analyze this data and report to our colleagues, we'll have to learn a little bit about programming.
 
 > ## Prerequisites
 >
