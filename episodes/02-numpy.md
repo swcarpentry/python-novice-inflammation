@@ -66,9 +66,11 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 ~~~
 {: .output}
 
-The expression `numpy.loadtxt(...)` is a [function call]({{ page.root }}/reference.html#function-call)
+The expression `numpy.loadtxt(...)` is a
+[function call]({{ page.root }}/reference.html#function-call)
 that asks Python to run the [function]({{ page.root }}/reference.html#function) `loadtxt` which
-belongs to the `numpy` library. This [dotted notation]({{ page.root }}/reference.html#dotted-notation)
+belongs to the `numpy` library.
+This [dotted notation]({{ page.root }}/reference.html#dotted-notation)
 is used everywhere in Python: the thing that appears before the dot contains the thing that
 appears after.
 
@@ -77,9 +79,9 @@ We could use the dot notation to write his name `smith.john`,
 just as `loadtxt` is a function that belongs to the `numpy` library.
 
 `numpy.loadtxt` has two [parameters]({{ page.root }}/reference.html#parameter): the name of the file
-we want to read and the [delimiter]({{ page.root }}/reference.html#delimiter) that separates values on
-a line. These both need to be character strings (or [strings]({{ page.root }}/reference.html#string)
-for short), so we put them in quotes.
+we want to read and the [delimiter]({{ page.root }}/reference.html#delimiter) that separates values
+on a line. These both need to be character strings
+(or [strings]({{ page.root }}/reference.html#string) for short), so we put them in quotes.
 
 Since we haven't told it to do anything else with the function's output,
 the [notebook]({{ page.root }}/reference.html#notebook) displays it.
@@ -88,18 +90,21 @@ that output is the data we just loaded.
 By default,
 only a few rows and columns are shown
 (with `...` to omit elements when displaying big arrays).
-Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros, so `1.0` becomes `1.`.
+Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros,
+so `1.0` becomes `1.`.
 
 > ## Importing libraries with shortcuts
 >
-> In this lesson we use the `import numpy` [syntax]({{ page.root }}/reference.html#syntax) to import NumPy.
-> However, shortcuts such as `import numpy as np` are frequently used.  Importing NumPy this way means that after the
-> inital import, rather than writing `numpy.loadtxt(...)`, you can now write `np.loadtxt(...)`. Some
-> people prefer this as it is quicker to type and results in shorter lines of code - especially for libraries
-> with long names! You will frequently see Python code online using a NumPy function with `np`, and it's
-> because they've used this shortcut. It makes no difference which approach you choose to take, but you must be
-> consistent as if you use `import numpy as np` then `numpy.loadtxt(...)` will not work, and you must use `np.loadtxt(...)`
-> instead. Because of this, when working with other people it is important you agree on how libraries are imported.
+> In this lesson we use the `import numpy` [syntax]({{ page.root }}/reference.html#syntax)
+> to import NumPy. However, shortcuts such as `import numpy as np` are frequently used.
+> Importing NumPy this way means that after the initial import, rather than writing
+> `numpy.loadtxt(...)`, you can now write `np.loadtxt(...)`. Some people prefer this as it is
+> quicker to type and results in shorter lines of code - especially for libraries
+> with long names! You will frequently see Python code online using a NumPy function with `np`,
+> and it's because they've used this shortcut. It makes no difference which approach you choose to
+> take, but you must be consistent as if you use `import numpy as np` then `numpy.loadtxt(...)`
+> will not work, and you must use `np.loadtxt(...)` instead. Because of this, when working with
+> other people it is important you agree on how libraries are imported.
 {: .callout}
 
 Our call to `numpy.loadtxt` read our file
@@ -275,9 +280,10 @@ print(data[0:4, 0:10])
 ~~~
 {: .output}
 
-The [slice]({{ page.root }}/reference.html#slice) `0:4` means, "Start at index 0 and go up to, but not
-including, index 4". Again, the up-to-but-not-including takes a bit of getting used to, but the
-rule is that the difference between the upper and lower bounds is the number of values in the slice.
+The [slice]({{ page.root }}/reference.html#slice) `0:4` means, "Start at index 0 and go up to,
+but not including, index 4". Again, the up-to-but-not-including takes a bit of getting used to,
+but the rule is that the difference between the upper and lower bounds is the number of values in
+the slice.
 
 We don't have to start slices at 0:
 
@@ -437,8 +443,9 @@ next diagram on the left) or the average for each day (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
-![Per-patient maximum inflammation is computed row-wise across all columns using numpy.max(data, axis=1).
-Per-day average inflammation is computed column-wise across all rows using numpy.mean(data, axis=0).](../fig/python-operations-across-axes.png)
+![Per-patient maximum inflammation is computed row-wise across all columns using
+numpy.max(data, axis=1). Per-day average inflammation is computed column-wise across all rows using
+numpy.mean(data, axis=0).](../fig/python-operations-across-axes.png)
 
 To support this functionality,
 most array functions allow us to specify the axis we want to work on.
@@ -575,7 +582,8 @@ which is the average inflammation per patient across all days.
 
 > ## Thin Slices
 >
-> The expression `element[3:3]` produces an [empty string]({{ page.root }}/reference.html#empty-string),
+> The expression `element[3:3]` produces an
+> [empty string]({{ page.root }}/reference.html#empty-string),
 > i.e., a string that contains no characters.
 > If `data` holds our array of patient data,
 > what does `data[3:3, 4:4]` produce?
