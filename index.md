@@ -19,7 +19,9 @@ To see how the treatment is affecting the patients in general, we would like to:
 1. Calculate the average inflammation per day across all patients.
 2. Plot the result to discuss and share with colleagues.
 
-![](fig/lesson-overview.svg)
+![Flowchart shows patient inflammation numbers moving to analysis as a heat map
+and concluding at the question, how does the medication affect patients?](
+fig/lesson-overview.svg "Lesson Overview")
 
 
 ### Data Format
@@ -42,7 +44,8 @@ given day.
 For example, value "6" at row 3 column 7 of the data set above means that the third
 patient was experiencing inflammation six times on the seventh day of the clinical study.
 
-In order to analyze this data and report to our colleagues, we'll have to learn a little bit about programming.
+In order to analyze this data and report to our colleagues, we'll have to learn a little bit
+about programming.
 
 > ## Prerequisites
 >
