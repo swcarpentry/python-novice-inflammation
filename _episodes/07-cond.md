@@ -100,8 +100,8 @@ rather than a single equals sign `=` which is used to assign values.
 
 > ## Comparing in Python
 >
-> Along with the `>` and `==` operators we have already used for comparing values in our conditionals, 
-> there are a few more options to know about:
+> Along with the `>` and `==` operators we have already used for comparing values in our
+> conditionals, there are a few more options to know about:
 >
 > - `>`: greater than
 > - `<`: less than
