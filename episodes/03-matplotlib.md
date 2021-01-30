@@ -27,10 +27,12 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Heat map representing the `data` variable. Each cell is colored by value along a color gradient from blue to yellow.](../fig/inflammation-01-imshow.svg)
+![Heat map representing the `data` variable. Each cell is colored by value along a color gradient
+from blue to yellow.](../fig/inflammation-01-imshow.svg)
 
 Blue pixels in this heat map represent low values, while yellow pixels represent high values.  As we
-can see, inflammation rises and falls over a 40-day period.  Let's take a look at the average inflammation over time:
+can see, inflammation rises and falls over a 40-day period.  Let's take a look at the average
+inflammation over time:
 
 ~~~
 ave_inflammation = numpy.mean(data, axis=0)
@@ -41,10 +43,10 @@ matplotlib.pyplot.show()
 
 ![Average Inflammation Over Time](../fig/inflammation-01-average.svg)
 
-Here, we have put the average inflammation per day across all patients in the variable `ave_inflammation`, then
-asked `matplotlib.pyplot` to create and display a line graph of those values.  The result is a
-roughly linear rise and fall, which is suspicious: we might instead expect a sharper rise and slower
-fall.  Let's have a look at two other statistics:
+Here, we have put the average inflammation per day across all patients in the variable
+`ave_inflammation`, then asked `matplotlib.pyplot` to create and display a line graph of those
+values.  The result is a roughly linear rise and fall, which is suspicious: we might instead expect
+a sharper rise and slower fall.  Let's have a look at two other statistics:
 
 ~~~
 max_plot = matplotlib.pyplot.plot(numpy.max(data, axis=0))
