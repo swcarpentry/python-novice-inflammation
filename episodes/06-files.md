@@ -85,7 +85,9 @@ inflammation-01.csv
 ~~~
 {: .output}
 
-![Analysis of inflammation-01.csv](../fig/03-loop_49_1.png)
+![Output from the first iteration of the for loop. Three line graphs showing the daily average,
+maximum and minimum inflammation over a 40-day period for the patients in inflammation-01.csv.](
+../fig/03-loop_49_1.png)
 
 ~~~
 inflammation-02.csv
