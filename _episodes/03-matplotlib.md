@@ -128,6 +128,13 @@ Matplotlib from the file name ending we specify; here PNG from
 'inflammation.png'. Matplotlib supports many different graphics
 formats, including SVG, PDF, and JPEG.
 
+> ## Importing libraries with shortcuts
+>
+> When importing the `pyplot` module of `matplotlib` it is common to use the shortcut
+> `import matplotlib.pyplot as plt`. If we do this we then must write `plt.plot(...)`
+> instead of `matplotlib.pyplot.plot(...)`, for example. This is popular as it saves
+> a lot of typing!
+{: .callout}
 
 > ## Plot Scaling
 >
