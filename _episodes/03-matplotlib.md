@@ -147,7 +147,6 @@ formats, including SVG, PDF, and JPEG.
 > `import matplotlib.pyplot as plt` then `matplotlib.pyplot.plot(...)` will not work, and
 > you must use `plt.plot(...)` instead. Because of this, when working with other people it
 > is important you agree on how libraries are imported.
->
 {: .callout}
 
 > ## Plot Scaling
