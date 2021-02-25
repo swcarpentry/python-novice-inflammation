@@ -147,7 +147,7 @@ for variable in collection:
 
 Using the oxygen example above, the loop might look like this:
 
-![loop_image](../fig/loops_image.png)
+![Loop variable 'char' being assigned the value of each character in the word 'oxygen' in turn and then being printed](../fig/loops_image.png)
 
 where each character (`char`) in the variable `word` is looped through and printed one character
 after another. The numbers in the diagram denote which loop cycle the character was printed in (1
