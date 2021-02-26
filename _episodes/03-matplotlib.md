@@ -135,7 +135,7 @@ formats, including SVG, PDF, and JPEG.
 > `import matplotlib.pyplot as plt` are frequently used.
 > Importing `pyplot` this way means that after the initial import, rather than writing
 > `matplotlib.pyplot.plot(...)`, you can now write `plt.plot(...)`.
-> Another common convention to use the shortcut `import numpy as np` when importing the
+> Another common convention is to use the shortcut `import numpy as np` when importing the
 > NumPy library. We then can write `np.loadtxt(...)` instead of `numpy.loadtxt(...)`,
 > for example.
 > 
