@@ -128,6 +128,26 @@ Matplotlib from the file name ending we specify; here PNG from
 'inflammation.png'. Matplotlib supports many different graphics
 formats, including SVG, PDF, and JPEG.
 
+> ## Importing libraries with shortcuts
+>
+> In this lesson we use the `import matplotlib.pyplot` [syntax]({{ page.root }}/reference.html#syntax)
+> to import the `pyplot` module of `matplotlib`. However, shortcuts such as
+> `import matplotlib.pyplot as plt` are frequently used.
+> Importing `pyplot` this way means that after the initial import, rather than writing
+> `matplotlib.pyplot.plot(...)`, you can now write `plt.plot(...)`.
+> Another common convention is to use the shortcut `import numpy as np` when importing the
+> NumPy library. We then can write `np.loadtxt(...)` instead of `numpy.loadtxt(...)`,
+> for example.
+> 
+> Some people prefer these shortcuts as it is quicker to type and results in shorter
+> lines of code - especially for libraries with long names! You will frequently see
+> Python code online using a `pyplot` function with `plt`, or a NumPy function with
+> `np`, and it's because they've used this shortcut. It makes no difference which
+> approach you choose to take, but you must be consistent as if you use
+> `import matplotlib.pyplot as plt` then `matplotlib.pyplot.plot(...)` will not work, and
+> you must use `plt.plot(...)` instead. Because of this, when working with other people it
+> is important you agree on how libraries are imported.
+{: .callout}
 
 > ## Plot Scaling
 >
