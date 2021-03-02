@@ -495,7 +495,8 @@ often reveals common reasons why you might get that error.
 > > 2. `print_message`
 > > 3. 11
 > > 4. `KeyError`
-> > 5. There isn't really a message; you're supposed to infer that `Friday` is not a key in `messages`.
+> > 5. There isn't really a message; you're supposed
+> > to infer that `Friday` is not a key in `messages`.
 > {: .solution}
 {: .challenge}
 
