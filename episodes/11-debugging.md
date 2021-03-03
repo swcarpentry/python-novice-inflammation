@@ -65,7 +65,8 @@ scientists tend to do the following:
     our first test should hold temperature, precipitation, and other factors constant.
 
 3.  *Compare to an oracle.*
-    A [test oracle]({{ page.root }}/reference.html#test-oracle) is something whose results are trusted,
+    A [test oracle]({{ page.root }}/reference.html#test-oracle)
+    is something whose results are trusted,
     such as experimental data, an older program, or a human expert.
     We use test oracles to determine if our new program produces the correct results.
     If we have a test oracle,
