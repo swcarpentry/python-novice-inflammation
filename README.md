@@ -56,8 +56,8 @@ ways to render the lesson locally, and even how to write new episodes!
 ## Maintainers
 
 Lesson maintainers are [Trevor Bekolay][trevor_bekolay], [Maxim Belkin][maxim_belkin],
-[Anne Fouilloux][anne_fouilloux], [Lauren Ko][lauren_ko], [Valentina Staneva][valentina_staneva], and [creator][swc_history] of Software Carpentry:
-[Greg Wilson][greg_wilson].
+[Anne Fouilloux][anne_fouilloux], [Lauren Ko][lauren_ko], [Valentina Staneva][valentina_staneva],
+and [creator][swc_history] of Software Carpentry: [Greg Wilson][greg_wilson].
 
 ## Authors
 A list of contributors to the lesson can be found in [AUTHORS](AUTHORS).
@@ -78,10 +78,10 @@ Software Carpentry is a volunteer project that teaches basic computing skills to
 
 ## About The Carpentries
 
-The Carpentries is a fiscally sponsored project of [Community Initiatives][community-initiatives], a
-registered 501(c)3 non-profit organisation based in California, USA. We are a global community
-teaching foundational computational and data science skills to researchers in academia, industry and
-government. More information can be found [here][cp-about].
+The Carpentries is a fiscally sponsored project of [Community Initiatives][community-initiatives],
+a registered 501(c)3 non-profit organisation based in California, USA. We are a global community
+teaching foundational computational and data science skills to researchers in academia,
+industry and government. More information can be found [here][cp-about].
 
 [lesson-example]: https://carpentries.github.io/lesson-example
 [anne_fouilloux]: https://github.com/annefou
