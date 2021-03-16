@@ -201,7 +201,7 @@ grid.show()
 ~~~
 {: .language-python}
 
-![](../fig/grid-01.png)
+![Grid of black squares with white outlines, 5 across by 3 down, demonstrating ImageGrid](../fig/grid-01.png)
 
 Just like a NumPy array,
 an `ImageGrid` has some properties that hold information about it:
