@@ -918,6 +918,10 @@ readable code!
 > > `a` and `b` in this case) and trades their values. The function does not
 > > return any values and does not alter `a` or `b` outside of its local copy.
 > > Therefore the original values of `a` and `b` remain unchanged.
+> >
+> > Note that the recommended way of swapping the content of `a` and `b` in Python is
+> > `a, b = b, a`. You can see why this works in the
+> > [Additional Exercises]({{ page.root }}/extra_exercises/index.html).
 > {: .solution}
 {: .challenge}
 
