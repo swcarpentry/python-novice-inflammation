@@ -22,7 +22,7 @@ or not (yet) added to the main lesson.
 > Compare it to:
 >
 > ~~~
-> left, right = [right, left]
+> left, right = right, left
 > ~~~
 > {: .language-python}
 >
