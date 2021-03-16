@@ -377,7 +377,8 @@ standard deviation: 4.61383319712
 >
 > How did we know what functions NumPy has and how to use them?
 > If you are working in IPython or in a Jupyter Notebook, there is an easy way to find out.
-> If you type the name of something followed by a dot, then you can use tab completion
+> If you type the name of something followed by a dot, then you can use
+> [tab completion]({{ page.root }}/reference.html#tab-completion)
 > (e.g. type `numpy.` and then press <kbd>Tab</kbd>)
 > to see a list of all functions and attributes that you can use. After selecting one, you
 > can also add a question mark (e.g. `numpy.cumprod?`), and IPython will return an
