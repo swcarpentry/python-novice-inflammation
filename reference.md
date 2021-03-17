@@ -254,6 +254,10 @@ syntax error
 :   A programming error that occurs when statements are in an order or contain characters
     not expected by the programming language.
 
+tab completion
+:   A feature of command-line interpreters, in which the program automatically fills in partially
+    typed commands upon pressing the <kbd>Tab</kbd> key.
+
 test oracle
 :   A program, device, data set, or human being
     against which the results of a test can be compared.
