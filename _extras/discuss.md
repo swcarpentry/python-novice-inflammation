@@ -311,7 +311,7 @@ row.show()
 ~~~
 {: .language-python}
 
-![Row of 8 colored squares. Black, white, red, green, blue, yellow, purple, light blue](../fig/grid-02.png)
+![Row of 8 squares colored black, white, red, lime green, blue, yellow, fuchsia, and cyan](../fig/grid-02.png)
 
 Simple color values like `(0,255,0)` are easy enough to decipher with a bit of practice,
 but what color is `(214,90,127)`?
