@@ -341,7 +341,7 @@ c.show()
 ~~~
 {: .language-python}
 
-![ 3 by 2 grid of colored squares.Row1: Fuchsia, Salmon, Orchid. Row2: Lavender, LimeGreen, HotPink](../fig/grid-03.png)
+![ 3 by 2 grid of colored squares. Top row: salmon, lavender, hot pink. Bottom row: fuchsia, orchid, lime green](../fig/grid-03.png)
 
 > ## Making a Colorbar
 >
