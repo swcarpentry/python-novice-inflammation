@@ -233,7 +233,7 @@ It takes a bit of getting used to,
 but one way to remember the rule is that
 the index is how many steps we have to take from the start to get the item we want.
 
-![Zero Index](../fig/python-zero-index.svg)
+![Python indices are zero-based. In array-like objects, this can be observed for both the horizontal and vertical axes.](../fig/python-zero-index.svg)
 
 > ## In the Corner
 >
