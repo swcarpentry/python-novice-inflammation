@@ -287,6 +287,8 @@ freeing us from having to manually examine every plot for features we've seen be
 >     print('empty list is true')
 > if [1, 2, 3]:
 >     print('non-empty list is true')
+> if None:
+>     print('none is true')
 > if 0:
 >     print('zero is true')
 > if 1:
