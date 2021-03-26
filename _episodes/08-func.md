@@ -832,7 +832,11 @@ readable code!
 > > ~~~
 > > {: .output}
 > > `k` is 0 because the `k` inside the function `f2k` doesn't know
-> > about the `k` defined outside the function.
+> > about the `k` defined outside the function. When the f2k function is called, 
+> > it creates a [local variable]({{ page.root }}/reference.html#local-variable)
+> > `k`. The function does not return any values 
+> > and does not alter `k` outside of its local copy. 
+> > Therefore the original value of `k` remains unchanged.
 > {: .solution}
 {: .challenge}
 

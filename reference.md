@@ -148,8 +148,12 @@ library
 :   A family of code units (functions, classes, variables) that implement a set of
     related tasks.
 
+local variable
+:   A variable that is defined in a block of code, and that is not accessible outside the
+    block of code in which it is ceated.
+
 loop variable
-:   The variable that keeps track of the progress of the loop.
+:   The variable that keeps track of the progress of the loop. 
 
 member
 :   A variable contained within an [object](#object).
