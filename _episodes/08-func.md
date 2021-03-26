@@ -889,46 +889,6 @@ readable code!
 > {: .solution}
 {: .challenge}
 
-> ## The Old Switcheroo
->
-> Consider this code:
->
-> ~~~
-> a = 3
-> b = 7
->
-> def swap(a, b):
->     temp = a
->     a = b
->     b = temp
->
-> swap(a, b)
->
-> print(a, b)
-> ~~~
-> {: .language-python}
->
-> Which of the following would be printed if you were to run this code?
-> Why did you pick this answer?
->
-> 1. `7 3`
-> 2. `3 7`
-> 3. `3 3`
-> 4. `7 7`
->
-> > ## Solution
-> > `3 7` is the correct answer. Initially, `a` has a value of 3 and `b` has a value of 7.
-> > When the `swap` function is called, it creates local variables (also called
-> > `a` and `b` in this case) and trades their values. The function does not
-> > return any values and does not alter `a` or `b` outside of its local copy.
-> > Therefore the original values of `a` and `b` remain unchanged.
-> >
-> > Note that the recommended way of swapping the content of `a` and `b` in Python is
-> > `a, b = b, a`. You can see why this works in the
-> > [Additional Exercises]({{ page.root }}/extra_exercises/index.html).
-> {: .solution}
-{: .challenge}
-
 > ## Readable Code
 >
 > Revise a function you wrote for one of the previous exercises to try to make
