@@ -228,7 +228,8 @@ formats, including SVG, PDF, and JPEG.
 > > matplotlib.pyplot.show()
 > > ~~~
 > > {: .language-python}
-> ![Three line graphs, with step lines connecting the points, showing the daily average, maximum and minimum inflammation over a 40-day period.](../fig/inflammation-01-line-styles.svg)
+> ![Three line graphs, with step lines connecting the points, showing the daily average, maximum
+ and minimum inflammation over a 40-day period.](../fig/inflammation-01-line-styles.svg)
 > {: .solution}
 {: .challenge}
 
