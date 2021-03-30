@@ -41,7 +41,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Average Inflammation Over Time](../fig/inflammation-01-average.svg)
+![A line graph showing the average inflammation across all patients over a 40-day period.](../fig/inflammation-01-average.svg)
 
 Here, we have put the average inflammation per day across all patients in the variable
 `ave_inflammation`, then asked `matplotlib.pyplot` to create and display a line graph of those
@@ -54,7 +54,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Maximum Value Along The First Axis](../fig/inflammation-01-maximum.svg)
+![A line graph showing the maximum inflammation across all patients over a 40-day period.](../fig/inflammation-01-maximum.svg)
 
 ~~~
 min_plot = matplotlib.pyplot.plot(numpy.min(data, axis=0))
@@ -62,7 +62,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![Minimum Value Along The First Axis](../fig/inflammation-01-minimum.svg)
+![A line graph showing the minimum inflammation across all patients over a 40-day period.](../fig/inflammation-01-minimum.svg)
 
 The maximum value rises and falls smoothly, while the minimum seems to be a step function.  Neither
 trend seems particularly likely, so either there's a mistake in our calculations or something is
@@ -110,7 +110,7 @@ matplotlib.pyplot.show()
 ~~~
 {: .language-python}
 
-![The Previous Plots as Subplots](../fig/inflammation-01-group-plot.svg)
+![Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period.](../fig/inflammation-01-group-plot.svg)
 
 The [call]({{ page.root }}/reference.html#function-call) to `loadtxt` reads our data,
 and the rest of the program tells the plotting library
@@ -229,7 +229,8 @@ formats, including SVG, PDF, and JPEG.
 > > matplotlib.pyplot.show()
 > > ~~~
 > > {: .language-python}
-> ![Plot with step lines](../fig/inflammation-01-line-styles.svg)
+> ![Three line graphs, with step lines connecting the points, showing the daily average, maximum
+ and minimum inflammation over a 40-day period.](../fig/inflammation-01-line-styles.svg)
 > {: .solution}
 {: .challenge}
 
