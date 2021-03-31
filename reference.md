@@ -153,7 +153,7 @@ local variable
     block of code in which it is ceated.
 
 loop variable
-:   The variable that keeps track of the progress of the loop. 
+:   The variable that keeps track of the progress of the loop.
 
 member
 :   A variable contained within an [object](#object).
