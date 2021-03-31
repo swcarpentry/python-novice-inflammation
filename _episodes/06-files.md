@@ -86,7 +86,7 @@ inflammation-01.csv
 {: .output}
 
 ![Output from the first iteration of the for loop. Three line graphs showing the daily average,
-maximum and minimum inflammation over a 40-day period for the patients in inflammation-01.csv.](
+maximum and minimum inflammation over a 40-day period for all patients in the first dataset.](
 ../fig/03-loop_49_1.png)
 
 ~~~
@@ -94,14 +94,18 @@ inflammation-02.csv
 ~~~
 {: .output}
 
-![Analysis of inflammation-02.csv](../fig/03-loop_49_3.png)
+![Output from the second iteration of the for loop. Three line graphs showing the daily average,
+maximum and minimum inflammation over a 40-day period for all patients in the second
+dataset.](../fig/03-loop_49_3.png)
 
 ~~~
 inflammation-03.csv
 ~~~
 {: .output}
 
-![Analysis of inflammation-03.csv](../fig/03-loop_49_5.png)
+![Output from the third iteration of the for loop. Three line graphs showing the daily average,
+maximum and minimum inflammation over a 40-day period for all patients in the third
+dataset.](../fig/03-loop_49_5.png)
 
 Sure enough,
 the maxima of the first two data sets show exactly the same ramp as the first,
