@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import glob
 import sys
 
@@ -11,7 +12,7 @@ def main():
     glob_output = glob.glob(glob_input)  # call the glob function
     for item in glob_output:  # print the output
         print(item)
-    return
+    return None
 
 
 if __name__ == '__main__':

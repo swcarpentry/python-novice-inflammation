@@ -1,2 +1,4 @@
+#!/usr/bin/env python
 import sys
-print('version is', sys.version)
+
+print(f'version is {sys.version}')

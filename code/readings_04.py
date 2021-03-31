@@ -1,14 +1,14 @@
+#!/usr/bin/env python
 import sys
 import numpy
 
 
 def main():
-    script = sys.argv[0]
     action = sys.argv[1]
     filenames = sys.argv[2:]
 
     for filename in filenames:
-        data = numpy.loadtxt(filename, delimiter=',')
+        data = numpy.loadtxt(filename)
 
         if action == '--min':
             values = numpy.min(data, axis=1)
@@ -16,9 +16,15 @@ def main():
             values = numpy.mean(data, axis=1)
         elif action == '--max':
             values = numpy.max(data, axis=1)
+        else:
+            values = None
 
-        for val in values:
-            print(val)
+        if values is None:
+            print('Incorrect flag has been provided, no data is printed.')
+        else:
+            for val in values:
+                print(val)
+    return None
 
 
 if __name__ == '__main__':

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 
 
@@ -9,30 +10,31 @@ def main():
     filenames = sys.argv[1:]
     sum_nlines = 0  # initialize counting variable
 
-    if len(filenames) == 0:  # no filenames, just stdin
+    if not len(filenames):  # no filenames, just stdin
         sum_nlines = count_file_like(sys.stdin)
-        print('stdin: %d' % sum_nlines)
+        print(f'stdin: {sum_nlines}')
     else:
         for filename in filenames:
             nlines = count_file(filename)
-            print('%s %d' % (filename, nlines))
+            print(f'{filename} {nlines}')
             sum_nlines += nlines
-        print('total: %d' % sum_nlines)
+        print(f'total: {sum_nlines}')
+
+    return None
 
 
 def count_file(filename):
     """count the number of lines in a file"""
-    f = open(filename, 'r')
-    nlines = len(f.readlines())
-    f.close()
-    return(nlines)
+    with open(filename, 'r', encoding='utf-8') as input_file:
+        nlines = len(input_file.readlines())
+    return nlines
 
 
 def count_file_like(file_like):
     """count the number of lines in a file-like object (eg stdin)"""
     n = 0
-    for line in file_like:
-        n = n+1
+    for _ in file_like:
+        n += 1
     return n
 
 

@@ -1,2 +1,4 @@
+#!/usr/bin/env python
 import sys
-print('sys.argv is', sys.argv)
+
+print(f'''sys.argv is {sys.argv}''')
