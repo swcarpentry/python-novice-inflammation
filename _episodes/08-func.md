@@ -150,15 +150,15 @@ We refer to these variables as [local variables]({{ page.root }}/reference.html#
 because they no longer exist once the function is done executing.
 If we try to access their values outside of the function, we will encounter an error:
 ~~~
-print('Again, Kelvin was:', temp_k)
+print('Again, temperature in Kelvin was:', temp_k)
 ~~~
 {: .language-python}
 
 ~~~
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-<ipython-input-1-edaa0abe1768> in <module>
-----> 1 print('Again, Kelvin was:', temp_k)
+<ipython-input-1-eed2471d229b> in <module>
+----> 1 print('Again, temperature in Kelvin was:', temp_k)
 
 NameError: name 'temp_k' is not defined
 ~~~
@@ -168,12 +168,12 @@ If you want to reuse the temperature in Kelvin after you have calculated it with
 you can store the result of the function call in a variable:
 ~~~
 temp_kelvin = fahr_to_kelvin(212.0)
-print('Kelvin was:', temp_kelvin)
+print('temperature in Kelvin was:', temp_kelvin)
 ~~~
 {: .language-python}
 
 ~~~
-Kelvin was: 373.15
+temperature in Kelvin was: 373.15
 ~~~
 {: .output}
 
