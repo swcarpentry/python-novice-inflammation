@@ -162,7 +162,7 @@ NameError                                 Traceback (most recent call last)
 
 NameError: name 'temp_k' is not defined
 ~~~
-{: .output}
+{: .error}
 
 If you want to reuse the temperature in Kelvin after you have calculated it with `fahr_to_kelvin`,
 you can store the result of the function call in a variable:
