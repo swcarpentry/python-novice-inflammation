@@ -142,6 +142,41 @@ Real-life functions will usually be larger than the ones shown here --- typicall
 to a few dozen lines --- but they shouldn't ever be much longer than that,
 or the next person who reads it won't be able to understand what's going on.
 
+## Variable Scope
+
+In composing our temperature conversion functions, we created variables inside of those functions,
+`temp`, `temp_c`, `temp_f`, and `temp_k`.
+We refer to these variables as [local variables]({{ page.root }}/reference.html#local-variable)
+because they no longer exist once the function is done executing.
+If we try to access their values outside of the function, we will encounter an error:
+~~~
+print('Again, temperature in Kelvin was:', temp_k)
+~~~
+{: .language-python}
+
+~~~
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-1-eed2471d229b> in <module>
+----> 1 print('Again, temperature in Kelvin was:', temp_k)
+
+NameError: name 'temp_k' is not defined
+~~~
+{: .error}
+
+If you want to reuse the temperature in Kelvin after you have calculated it with `fahr_to_kelvin`,
+you can store the result of the function call in a variable:
+~~~
+temp_kelvin = fahr_to_kelvin(212.0)
+print('temperature in Kelvin was:', temp_kelvin)
+~~~
+{: .language-python}
+
+~~~
+temperature in Kelvin was: 373.15
+~~~
+{: .output}
+
 ## Tidying up
 
 Now that we know how to wrap bits of code up in functions,

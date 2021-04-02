@@ -148,6 +148,10 @@ library
 :   A family of code units (functions, classes, variables) that implement a set of
     related tasks.
 
+local variable
+:   A variable defined inside of a function, that exists only in the scope of that
+    function, meaning it cannot be accessed by code outside of the function.
+
 loop variable
 :   The variable that keeps track of the progress of the loop.
 
