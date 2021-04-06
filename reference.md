@@ -149,8 +149,8 @@ library
     related tasks.
 
 local variable
-:   A variable that is defined in a block of code, and that is not accessible outside the
-    block of code in which it is ceated.
+:   A variable defined inside of a function, that exists only in the scope of that
+    function, meaning it cannot be accessed by code outside of the function.
 
 loop variable
 :   The variable that keeps track of the progress of the loop.
@@ -257,6 +257,10 @@ syntax
 syntax error
 :   A programming error that occurs when statements are in an order or contain characters
     not expected by the programming language.
+
+tab completion
+:   A feature of command-line interpreters, in which the program automatically fills in partially
+    typed commands upon pressing the <kbd>Tab</kbd> key.
 
 test oracle
 :   A program, device, data set, or human being

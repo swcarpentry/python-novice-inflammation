@@ -233,7 +233,11 @@ It takes a bit of getting used to,
 but one way to remember the rule is that
 the index is how many steps we have to take from the start to get the item we want.
 
-![Zero Index](../fig/python-zero-index.svg)
+!["data" is a 3 by 3 numpy array containing row 0: ['A', 'B', 'C'], row 1: ['D', 'E', 'F'], and
+row 2: ['G', 'H', 'I']. Starting in the upper left hand corner, data[0, 0] = 'A', data[0, 1] = 'B',
+data[0, 2] = 'C', data[1, 0] = 'D', data[1, 1] = 'E', data[1, 2] = 'F', data[2, 0] = 'G',
+data[2, 1] = 'H', and data[2, 2] = 'I',
+in the bottom right hand corner.](../fig/python-zero-index.svg)
 
 > ## In the Corner
 >
@@ -377,7 +381,8 @@ standard deviation: 4.61383319712
 >
 > How did we know what functions NumPy has and how to use them?
 > If you are working in IPython or in a Jupyter Notebook, there is an easy way to find out.
-> If you type the name of something followed by a dot, then you can use tab completion
+> If you type the name of something followed by a dot, then you can use
+> [tab completion]({{ page.root }}/reference.html#tab-completion)
 > (e.g. type `numpy.` and then press <kbd>Tab</kbd>)
 > to see a list of all functions and attributes that you can use. After selecting one, you
 > can also add a question mark (e.g. `numpy.cumprod?`), and IPython will return an
