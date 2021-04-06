@@ -867,7 +867,11 @@ readable code!
 > > ~~~
 > > {: .output}
 > > `k` is 0 because the `k` inside the function `f2k` doesn't know
-> > about the `k` defined outside the function.
+> > about the `k` defined outside the function. When the `f2k` function is called, 
+> > it creates a [local variable]({{ page.root }}/reference.html#local-variable)
+> > `k`. The function does not return any values 
+> > and does not alter `k` outside of its local copy. 
+> > Therefore the original value of `k` remains unchanged.
 > {: .solution}
 {: .challenge}
 
@@ -917,42 +921,6 @@ readable code!
 > > The given call to `func` displays `a: -1 b: 2 c: 6`. -1 is assigned to
 > > the first parameter `a`, 2 is assigned to the next parameter `b`, and `c` is
 > > not passed a value, so it uses its default value 6.
-> {: .solution}
-{: .challenge}
-
-> ## The Old Switcheroo
->
-> Consider this code:
->
-> ~~~
-> a = 3
-> b = 7
->
-> def swap(a, b):
->     temp = a
->     a = b
->     b = temp
->
-> swap(a, b)
->
-> print(a, b)
-> ~~~
-> {: .language-python}
->
-> Which of the following would be printed if you were to run this code?
-> Why did you pick this answer?
->
-> 1. `7 3`
-> 2. `3 7`
-> 3. `3 3`
-> 4. `7 7`
->
-> > ## Solution
-> > `3 7` is the correct answer. Initially, `a` has a value of 3 and `b` has a value of 7.
-> > When the `swap` function is called, it creates local variables (also called
-> > `a` and `b` in this case) and trades their values. The function does not
-> > return any values and does not alter `a` or `b` outside of its local copy.
-> > Therefore the original values of `a` and `b` remain unchanged.
 > {: .solution}
 {: .challenge}
 
