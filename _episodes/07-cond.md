@@ -63,7 +63,7 @@ Python simply does nothing if the test is false:
 num = 53
 print('before conditional...')
 if num > 100:
-    print(num,' is greater than 100')
+    print(num, 'is greater than 100')
 print('...after conditional')
 ~~~
 {: .language-python}
