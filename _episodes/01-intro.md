@@ -136,14 +136,14 @@ weight in kilograms is now: 65.0
 
 > ## Variables as Sticky Notes
 >
-> A variable is analogous to a sticky note with a name written on it:
+> A variable in Python is analogous to a sticky note with a name written on it:
 > assigning a value to a variable is like putting that sticky note on a particular value.
 >
 > ![Value of 65.0 with weight_kg label stuck on it](../fig/python-sticky-note-variables-01.svg)
 >
-> This means that assigning a value to one variable does **not** change
-> values of other variables.
-> For example, let's store the subject's weight in pounds in its own variable:
+> Using this analogy, we can investigate how assigning a value to one variable
+> does **not** change values of other, seemingly related, variables.  For
+> example, let's store the subject's weight in pounds in its own variable:
 >
 > ~~~
 > # There are 2.2 pounds per kilogram
@@ -159,6 +159,11 @@ weight in kilograms is now: 65.0
 >
 > ![Value of 65.0 with weight_kg label stuck on it, and value of 143.0 with weight_lb label
 stuck on it](../fig/python-sticky-note-variables-02.svg)
+>
+> Similar to above, the expression `2.2 * weight_kg` is evaluated to `143.0`,
+> and then this value is assigned to the variable `weight_lb` (i.e. the sticky
+> note `weight_lb` is placed on `143.0`). At this point, each variable is
+> "stuck" to completely distinct and unrelated values.
 >
 > Let's now change `weight_kg`:
 >
