@@ -212,7 +212,8 @@ stuck on it](../fig/python-sticky-note-variables-03.svg)
 
 > ## Sorting Out References
 >
-> What does the following program print out?
+> Python allows you to assign multiple values to multiple variables in one line by separating
+> the variables and values with commas. What does the following program print out?
 >
 > ~~~
 > first, second = 'Grace', 'Hopper'
