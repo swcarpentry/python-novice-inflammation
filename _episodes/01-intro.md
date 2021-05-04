@@ -5,6 +5,7 @@ exercises: 10
 questions:
 - "What basic data types can I work with in Python?"
 - "How can I create a new variable in Python?"
+- "How do I call a function?"
 - "Can I change the value associated with a variable after I create it?"
 objectives:
 - "Assign values to variables."
@@ -13,6 +14,7 @@ keypoints:
 - "Use `variable = value` to assign a value to a variable in order to record it in memory."
 - "Variables are created on demand whenever a value is assigned to them."
 - "Use `print(something)` to display the value of `something`."
+- "Built-in functions are always available to use."
 ---
 
 ## Variables
@@ -73,8 +75,9 @@ weight_kg_text = 'weight in kilograms:'
 ~~~
 {: .language-python}
 
-## Using Variables in Python
-To display the value of a variable to the screen in Python, we can use the `print` function:
+## Using Variables and Functions in Python
+To display the value of a variable to the screen in Python, we can use the `print`
+[function]({{ page.root }}/reference.html#function):
 
 ~~~
 print(weight_kg)
@@ -86,7 +89,20 @@ print(weight_kg)
 ~~~
 {: .output}
 
-We can display multiple things at once using only one `print` command:
+> ## Built-ins Are Ready to Call
+>
+> Because displaying information to the screen is commonly done in programming,
+> `print` is a built-in function, meaning it is code that is already written into Python
+> and is always available. When we reference the function name for use,
+> referred to as calling the function, it is followed by parentheses.
+> The parentheses may be empty or contain variables or literal values,
+> referred to as [arguments]({{ page.root }}/reference.html#argument),
+> that are used by the function's underlying code. In the case of `print`,
+> you use the arguments to tell the function what you want written to the screen.
+> We will learn more about how functions work and how to create our own in later episodes.
+{: .callout}
+
+We can display multiple things at once using only one `print` call:
 
 ~~~
 print(weight_kg_text, weight_kg)
@@ -94,6 +110,22 @@ print(weight_kg_text, weight_kg)
 {: .language-python}
 ~~~
 weight in kilograms: 60.0
+~~~
+{: .output}
+
+We can also call a function inside of another
+[function call]({{ page.root }}/reference.html#function-call).
+For example, Python has a built-in function called `type` that tells you a value's data type:
+
+~~~
+print(type(60.0))
+print(type(weight_kg_text))
+~~~
+{: .language-python}
+
+~~~
+<class 'float'>
+<class 'str'>
 ~~~
 {: .output}
 
