@@ -31,8 +31,8 @@ This lesson is also available in [R][R] and [MATLAB][MATLAB].
 | 1 | [Python Fundamentals][episode01] | 30 | What basic data types can I work with in Python?<br>How can I create a new variable in Python?<br>Can I change the value associated with a variable after I create it? |
 | 2 | [Analyzing Patient Data][episode02] | 60 | How can I process tabular data files in Python? |
 | 3 | [Visualizing Tabular Data][episode03] | 50 | How can I visualize tabular data in Python?<br>How can I group several plots together? |
-| 4 | [Repeating Actions with Loops][episode04] | 30 | How can I do the same operations on many different values? |
-| 5 | [Storing Multiple Values in Lists][episode05] | 30 | How can I store many values together? |
+| 4 | [Storing Multiple Values in Lists][episode04] | 30 | How can I store many values together? |
+| 5 | [Repeating Actions with Loops][episode05] | 30 | How can I do the same operations on many different values? |
 | 6 | [Analyzing Data from Multiple Files][episode06] | 20 | How can I do the same operations on many different files? |
 | 7 | [Making Choices][episode07] | 30 | How can my programs do different things based on data values? |
 | 8 | [Creating Functions][episode08] | 30 | How can I define new functions?<br>What’s the difference between defining and calling a function?<br>What happens when I call a function? |
@@ -107,8 +107,8 @@ industry and government. More information can be found [here][cp-about].
 [episode01]: https://swcarpentry.github.io/python-novice-inflammation/01-intro/index.html
 [episode02]: https://swcarpentry.github.io/python-novice-inflammation/02-numpy/index.html
 [episode03]: https://swcarpentry.github.io/python-novice-inflammation/03-matplotlib/index.html
-[episode04]: https://swcarpentry.github.io/python-novice-inflammation/04-loop/index.html
-[episode05]: https://swcarpentry.github.io/python-novice-inflammation/05-lists/index.html
+[episode04]: https://swcarpentry.github.io/python-novice-inflammation/04-lists/index.html
+[episode05]: https://swcarpentry.github.io/python-novice-inflammation/05-loop/index.html
 [episode06]: https://swcarpentry.github.io/python-novice-inflammation/06-files/index.html
 [episode07]: https://swcarpentry.github.io/python-novice-inflammation/07-cond/index.html
 [episode08]: https://swcarpentry.github.io/python-novice-inflammation/08-func/index.html
