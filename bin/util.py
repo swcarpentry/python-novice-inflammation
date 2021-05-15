@@ -11,14 +11,6 @@ except ImportError:
     sys.exit(1)
 
 
-# Things an image file's name can end with.
-IMAGE_FILE_SUFFIX = {
-    '.gif',
-    '.jpg',
-    '.png',
-    '.svg'
-}
-
 # Files that shouldn't be present.
 UNWANTED_FILES = [
     '.nojekyll'
@@ -115,7 +107,7 @@ def read_markdown(parser, path):
              for (i, line) in enumerate(body.split('\n'))]
 
     # Parse Markdown.
-    cmd = 'ruby {0}'.format(parser)
+    cmd = 'bundle exec ruby {0}'.format(parser)
     p = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE,
               close_fds=True, universal_newlines=True, encoding='utf-8')
     stdout_data, stderr_data = p.communicate(body)

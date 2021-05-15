@@ -8,14 +8,16 @@ jobs:
     name: ${{ matrix.lesson-name }} (${{ matrix.os-name }})
     if: github.repository == 'carpentries/styles'
     runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experimental }}
     strategy:
       fail-fast: false
       matrix:
         lesson: [swcarpentry/shell-novice, datacarpentry/r-intro-geospatial, librarycarpentry/lc-git]
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-20.04, macos-latest, windows-latest]
+        experimental: [false]
         include:
-          - os: ubuntu-latest
-            os-name: Ubuntu
+          - os: ubuntu-20.04
+            os-name: Linux
           - os: macos-latest
             os-name: macOS
           - os: windows-latest
@@ -26,16 +28,27 @@ jobs:
             lesson-name: (DC) R Intro Geospatial
           - lesson: librarycarpentry/lc-git
             lesson-name: (LC) Intro to Git
+          - lesson: datacarpentry/astronomy-python
+            lesson-name: (DC) Foundations of Astronomical Data Science
+            experimental: true
+            os: ubuntu-20.04
+            os-name: Linux
+          - lesson: carpentries/lesson-example
+            lesson-name: (CP) Lesson Example
+            experimental: false
+            os: ubuntu-20.04
+            os-name: Linux
     defaults:
       run:
         shell: bash # forces 'Git for Windows' on Windows
     env:
-      RSPM: 'https://packagemanager.rstudio.com/cran/__linux__/bionic/latest'
+      RSPM: 'https://packagemanager.rstudio.com/cran/__linux__/focal/latest'
     steps:
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7'
+          bundler-cache: true
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -44,7 +57,7 @@ jobs:
 
       - name: Install GitHub Pages, Bundler, and kramdown gems
         run: |
-          gem install github-pages bundler kramdown
+          gem install github-pages bundler kramdown kramdown-parser-gfm
 
       - name: Install Python modules
         run: |
@@ -61,25 +74,54 @@ jobs:
           path: lesson
           fetch-depth: 0
 
-      - name: Determine the proper reference to use
-        id: styles-ref
-        run: |
-          if [[ -n "${{ github.event.pull_request.number }}" ]]; then
-            echo "::set-output name=ref::refs/pull/${{ github.event.pull_request.number }}/head"
-          else
-            echo "::set-output name=ref::gh-pages"
-          fi
-
       - name: Sync lesson with carpentries/styles
         working-directory: lesson
         run: |
+          echo "::group::Fetch Styles"
+          if [[ -n "${{ github.event.pull_request.number }}" ]]
+          then
+            ref="refs/pull/${{ github.event.pull_request.number }}/head"
+          else
+            ref="gh-pages"
+          fi
+
           git config --global user.email "team@carpentries.org"
           git config --global user.name "The Carpentries Bot"
+
           git remote add styles https://github.com/carpentries/styles.git
-          git config --local remote.styles.tagOpt --no-tags
-          git fetch styles ${{ steps.styles-ref.outputs.ref }}:styles-ref
-          git merge -s recursive -Xtheirs --no-commit styles-ref
-          git commit -m "Sync lesson with carpentries/styles"
+          git fetch styles $ref:styles-ref
+          echo "::endgroup::"
+          echo "::group::Synchronize Styles"
+          # Sync up only if necessary
+          if [[ $(git rev-list --count HEAD..styles-ref) != 0 ]]
+          then
+
+            # The merge command below might fail for lessons that use remote theme
+            # https://github.com/carpentries/carpentries-theme
+            echo "Testing merge using recursive strategy, accepting upstream changes without committing"
+            if ! git merge -s recursive -Xtheirs --no-commit styles-ref
+            then
+
+              # Remove "deleted by us, unmerged" files from the staging area.
+              # these are the files that were removed from the lesson
+              # but are still present in the carpentries/styles repo
+              echo "Removing previously deleted files"
+              git rm $(git diff --name-only --diff-filter=DU)
+
+              # If there are still "unmerged" files,
+              # let's raise an error and look into this more closely
+              if [[ -n $(git diff --name-only --diff-filter=U) ]]
+              then
+                echo "There were unmerged files in ${{ matrix.lesson-name }}:"
+                echo "$(git diff --compact-summary --diff-filter=U)"
+                exit 1
+              fi
+            fi
+
+            echo "Committing changes"
+            git commit -m "Sync lesson with carpentries/styles"
+          fi
+          echo "::endgroup::"
 
       - name: Look for R-markdown files
         id: check-rmd
@@ -96,7 +138,8 @@ jobs:
       - name: Install needed packages
         if: steps.check-rmd.outputs.count != 0
         run: |
-          install.packages(c('remotes', 'rprojroot', 'renv', 'desc', 'rmarkdown', 'knitr'))
+          packages = setdiff(c('remotes', 'rprojroot', 'renv', 'desc', 'rmarkdown', 'knitr'), rownames(installed.packages()))
+          install.packages(packages, repo="https://cran.rstudio.com/")
         shell: Rscript {0}
 
       - name: Query dependencies
@@ -118,6 +161,11 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
+      - name: Install stringi from source
+        if: runner.os == 'Linux' && steps.check-rmd.outputs.count != 0
+        run: install.packages('stringi', repos='https://cloud.r-project.org')
+        shell: Rscript {0}
+
       - name: Install system dependencies for R packages
         if: runner.os == 'Linux' && steps.check-rmd.outputs.count != 0
         working-directory: lesson
@@ -125,7 +173,10 @@ jobs:
           while read -r cmd
           do
             eval sudo $cmd
-          done < <(Rscript -e 'cat(remotes::system_requirements("ubuntu", "18.04"), sep = "\n")')
+          done < <(Rscript -e 'cat(remotes::system_requirements("ubuntu", "20.04"), sep = "\n")')
 
       - run: make site
+        working-directory: lesson
+
+      - run: make lesson-check-all
         working-directory: lesson

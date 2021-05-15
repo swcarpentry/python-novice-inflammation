@@ -56,9 +56,24 @@ P_INTERNAL_LINK_DEF = re.compile(r'^\[([^\]]+)\]:\s*(.+)')
 # Pattern to match {% include ... %} statements
 P_INTERNAL_INCLUDE_LINK = re.compile(r'^{% include ([^ ]*) %}$')
 
+# Pattern to match image-only and link-only lines
+P_LINK_IMAGE_LINE = re.compile(r'''
+    [> #]*        # any number of '>', '#', and spaces
+    \W{,3}        # up to 3 non-word characters
+    !?            # ! or nothing
+    \[[^]]+\]     # [any text]
+    [([]          # ( or [
+    [^])]+        # 1+ characters that are neither ] nor )
+    [])]          # ] or )
+    (?:{:[^}]+})? # {:any text} or nothing
+    \W{,3}        # up to 3 non-word characters
+    [ ]*          # any number of spaces
+    \\?$          # \ or nothing + end of line''', re.VERBOSE)
+
 # What kinds of blockquotes are allowed?
 KNOWN_BLOCKQUOTES = {
     'callout',
+    'caution',
     'challenge',
     'checklist',
     'discussion',
@@ -72,21 +87,11 @@ KNOWN_BLOCKQUOTES = {
 }
 
 # What kinds of code fragments are allowed?
+# Below we allow all 'language-*' code blocks
 KNOWN_CODEBLOCKS = {
     'error',
     'output',
     'source',
-    'language-bash',
-    'html',
-    'language-c',
-    'language-cmake',
-    'language-cpp',
-    'language-make',
-    'language-matlab',
-    'language-python',
-    'language-r',
-    'language-shell',
-    'language-sql',
     'warning'
 }
 
@@ -117,9 +122,15 @@ def main():
 
     args = parse_args()
     args.reporter = Reporter()
-    check_config(args.reporter, args.source_dir)
+    life_cycle = check_config(args.reporter, args.source_dir)
+    # pre-alpha lessons should report without error
+    if life_cycle == "pre-alpha":
+        args.permissive = True
     check_source_rmd(args.reporter, args.source_dir, args.parser)
-    args.references = read_references(args.reporter, args.reference_path)
+
+    args.references = {}
+    if not using_remote_theme(args.source_dir):
+        args.references = read_references(args.reporter, args.reference_path)
 
     docs = read_all_markdown(args.source_dir, args.parser)
     check_fileset(args.source_dir, args.reporter, list(docs.keys()))
@@ -173,6 +184,10 @@ def parse_args():
 
     return args
 
+def using_remote_theme(source_dir):
+    config_file = os.path.join(source_dir, '_config.yml')
+    config = load_yaml(config_file)
+    return 'remote_theme' in config
 
 def check_config(reporter, source_dir):
     """Check configuration file."""
@@ -182,7 +197,7 @@ def check_config(reporter, source_dir):
     reporter.check_field(config_file, 'configuration',
                          config, 'kind', 'lesson')
     reporter.check_field(config_file, 'configuration',
-                         config, 'carpentry', ('swc', 'dc', 'lc', 'cp'))
+                         config, 'carpentry', ('swc', 'dc', 'lc', 'cp', 'incubator'))
     reporter.check_field(config_file, 'configuration', config, 'title')
     reporter.check_field(config_file, 'configuration', config, 'email')
 
@@ -194,6 +209,9 @@ def check_config(reporter, source_dir):
         reporter.check(defaults in config.get('defaults', []),
                    'configuration',
                    '"root" not set to "." in configuration')
+    if 'life_cycle' not in config:
+        config['life_cycle'] = None
+    return config['life_cycle']
 
 def check_source_rmd(reporter, source_dir, parser):
     """Check that Rmd episode files include `source: Rmd`"""
@@ -223,7 +241,17 @@ def read_references(reporter, ref_path):
     with open(ref_path, 'r', encoding='utf-8') as reader:
         for (num, line) in enumerate(reader, 1):
 
-            if P_INTERNAL_INCLUDE_LINK.search(line): continue
+            # Skip empty lines
+            if len(line.strip()) == 0:
+                continue
+
+            # Skip HTML comments
+            if line.strip().startswith("<!--") and line.strip().endswith("-->"):
+                   continue
+
+            # Skip Liquid's {% include ... %} lines
+            if P_INTERNAL_INCLUDE_LINK.search(line):
+                continue
 
             m = P_INTERNAL_LINK_DEF.search(line)
 
@@ -362,12 +390,19 @@ class CheckBase:
         """Check the raw text of the lesson body."""
 
         if self.args.line_lengths:
-            over = [i for (i, l, n) in self.lines if (
-                n > MAX_LINE_LEN) and (not l.startswith('!'))]
-            self.reporter.check(not over,
+            over_limit = []
+
+            for (i, l, n) in self.lines:
+                # Report lines that are longer than the suggested
+                # line length limit only if they're not
+                # link-only or image-only lines.
+                if n > MAX_LINE_LEN and not P_LINK_IMAGE_LINE.match(l):
+                    over_limit.append(i)
+
+            self.reporter.check(not over_limit,
                                 self.filename,
                                 'Line(s) too long: {0}',
-                                ', '.join([str(i) for i in over]))
+                                ', '.join([str(i) for i in over_limit]))
 
     def check_trailing_whitespace(self):
         """Check for whitespace at the ends of lines."""
@@ -395,7 +430,8 @@ class CheckBase:
 
         for node in self.find_all(self.doc, {'type': 'codeblock'}):
             cls = self.get_val(node, 'attr', 'class')
-            self.reporter.check(cls in KNOWN_CODEBLOCKS,
+            self.reporter.check(cls is not None and (cls in KNOWN_CODEBLOCKS or
+                cls.startswith('language-')),
                                 (self.filename, self.get_loc(node)),
                                 'Unknown or missing code block type {0}',
                                 cls)
@@ -495,7 +531,8 @@ class CheckEpisode(CheckBase):
         """Run extra tests."""
 
         super().check()
-        self.check_reference_inclusion()
+        if not using_remote_theme(args.source_dir):
+            self.check_reference_inclusion()
 
     def check_metadata(self):
         super().check_metadata()
