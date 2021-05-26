@@ -24,6 +24,14 @@ We have a dozen data sets right now, though, and more on the way.
 We want to create plots for all of our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
+Below we will define a function `length` in order to show how a `for`
+loop works. Python comes (batteries are included!) with a built-in
+function `len` that does precisely that, but is more concise and
+faster, hence preferred. Two other built-in functions are used in
+exercises below: `range` and `enumerate`. You can look-up all built-in
+functions in the [Python
+documentation](https://docs/python.org/3/library/functions.html)
+
 An example task that we might want to repeat is printing each character in a
 word on a line of its own.
 
