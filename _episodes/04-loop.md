@@ -25,8 +25,8 @@ We want to create plots for all of our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
 Below we will define a function `length` in order to show how a `for`
-loop works. Python comes (batteries are included!) with a built-in
-function `len` that does precisely that, but is more concise and
+loop works. Python comes with a built-in function `len` that does
+precisely that (batteries are included!), but is more concise and
 faster, hence preferred. Two other built-in functions are used in
 exercises below: `range` and `enumerate`. You can look-up all built-in
 functions in the [Python
