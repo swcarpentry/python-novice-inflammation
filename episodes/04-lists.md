@@ -21,7 +21,7 @@ list[2:9]), in the same way as strings and arrays."
 ---
 
 In the previous episode, we analyzed a single file with inflammation data. Our goal, however, is to
-process all inflammation data we've got, which means that we still have eleven more files to go!
+process all the inflammation data we have, which means that we still have eleven more files to go!
 
 The natural first step is to collect the names of all the files that we have to process. In Python,
 a list is a way to store multiple values together. In this episode, we will learn how to store
@@ -29,7 +29,7 @@ multiple values in a list as well as how to work with lists.
 
 ## Python lists
 
-Unlike NumPy arrays, lists are built into the language so we don't have to load a library
+Unlike NumPy arrays, lists are built into the language so we do not have to load a library
 to use them.
 We create a list by putting values inside square brackets and separating the values with commas:
 
