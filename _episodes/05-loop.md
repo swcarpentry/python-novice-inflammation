@@ -15,7 +15,8 @@ keypoints:
 - "Use `len(thing)` to determine the length of something that contains other values."
 ---
 
-In the first episode, we wrote Python code that plots values of interest from our first
+In the episode about visualizing data,
+we wrote Python code that plots values of interest from our first
 inflammation dataset (`inflammation-01.csv`), which revealed some suspicious features in it.
 
 ![Line graphs showing average, maximum and minimum inflammation across all patients over a 40-day period.](../fig/03-loop_2_0.png)
@@ -34,7 +35,7 @@ odds = [1, 3, 5, 7]
 {: .language-python}
 
 In Python, a list is basically an ordered collection of elements, and every
-element has a unique number associated with it -- its index. This means that
+element has a unique number associated with it --- its index. This means that
 we can access elements in a list using their indices.
 For example, we can get the first number in the list `odds`,
 by using `odds[0]`. One way to print each number is to use four `print` statements:
@@ -68,7 +69,7 @@ This is a bad approach for three reasons:
 3.  **Fragile**. If we use it with a list that has more elements than what we initially
     envisioned, it will only display part of the list's elements. A shorter list, on
     the other hand, will cause an error because it will be trying to display elements of the
-    list that don't exist.
+    list that do not exist.
 
 ~~~
 odds = [1, 3, 5]
@@ -116,7 +117,7 @@ for num in odds:
 {: .output}
 
 This is shorter --- certainly shorter than something that prints every number in a
-hundred-letter list --- and more robust as well:
+hundred-number list --- and more robust as well:
 
 ~~~
 odds = [1, 3, 5, 7, 9, 11]
@@ -145,7 +146,7 @@ for variable in collection:
 ~~~
 {: .language-python}
 
-Using the example example above, the loop might look like this:
+Using the odds example above, the loop might look like this:
 
 ![Loop variable 'num' being assigned the value of each element in the list `odds` in turn and then being printed](../fig/05-loops_image_num.png)
 
@@ -215,7 +216,7 @@ The statement adds 1 to the old value of `length`,
 producing 1,
 and updates `length` to refer to that new value.
 The next time around,
-+`value` is `Darwin` and `length` is 1,
+`value` is `Darwin` and `length` is 1,
 so `length` is updated to be 2.
 After one more update,
 `length` is 3;
@@ -223,7 +224,7 @@ since there is nothing left in `names` for Python to process,
 the loop finishes
 and the `print` function on line 5 tells us our final answer.
 
-Note that a loop variable is a variable that's being used to record progress in a loop.
+Note that a loop variable is a variable that is being used to record progress in a loop.
 It still exists after the loop is over,
 and we can re-use variables previously defined as loop variables as well:
 
