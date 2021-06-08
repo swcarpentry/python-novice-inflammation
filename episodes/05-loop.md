@@ -15,7 +15,8 @@ keypoints:
 - "Use `len(thing)` to determine the length of something that contains other values."
 ---
 
-In the last episode, we wrote Python code that plots values of interest from our first
+In the episode about visualizing data,
+we wrote Python code that plots values of interest from our first
 inflammation dataset (`inflammation-01.csv`), which revealed some suspicious features in it.
 
 ![Line graphs showing average, maximum and minimum inflammation across all patients over a 40-day period.](../fig/03-loop_2_0.png)
@@ -24,64 +25,65 @@ We have a dozen data sets right now, though, and more on the way.
 We want to create plots for all of our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
-An example task that we might want to repeat is printing each character in a
-word on a line of its own.
+An example task that we might want to repeat is accessing numbers in a list,
+which we
+will do by printing each number on a line of its own.
 
 ~~~
-word = 'lead'
+odds = [1, 3, 5, 7]
 ~~~
 {: .language-python}
 
-In Python, a string is basically an ordered collection of characters, and every
-character has a unique number associated with it -- its index. This means that
-we can access characters in a string using their indices.
-For example, we can get the first character of the word `'lead'`, by using
-`word[0]`. One way to print each character is to use four `print` statements:
+In Python, a list is basically an ordered collection of elements, and every
+element has a unique number associated with it --- its index. This means that
+we can access elements in a list using their indices.
+For example, we can get the first number in the list `odds`,
+by using `odds[0]`. One way to print each number is to use four `print` statements:
 
 ~~~
-print(word[0])
-print(word[1])
-print(word[2])
-print(word[3])
+print(odds[0])
+print(odds[1])
+print(odds[2])
+print(odds[3])
 ~~~
 {: .language-python}
 
 ~~~
-l
-e
-a
-d
+1
+3
+5
+7
 ~~~
 {: .output}
 
 This is a bad approach for three reasons:
 
-1.  **Not scalable**. Imagine you need to print characters of a string that is hundreds
-    of letters long.  It might be easier to type them in manually.
+1.  **Not scalable**. Imagine you need to print a list that has hundreds
+    of elements.  It might be easier to type them in manually.
 
-2.  **Difficult to maintain**. If we want to decorate each printed character with an
+2.  **Difficult to maintain**. If we want to decorate each printed element with an
     asterisk or any other character, we would have to change four lines of code. While
-    this might not be a problem for short strings, it would definitely be a problem for
+    this might not be a problem for small lists, it would definitely be a problem for
     longer ones.
 
-3.  **Fragile**. If we use it with a word that has more characters than what we initially
-    envisioned, it will only display part of the word's characters. A shorter string, on
-    the other hand, will cause an error because it will be trying to display part of the
-    string that doesn't exist.
+3.  **Fragile**. If we use it with a list that has more elements than what we initially
+    envisioned, it will only display part of the list's elements. A shorter list, on
+    the other hand, will cause an error because it will be trying to display elements of the
+    list that do not exist.
 
 ~~~
-word = 'tin'
-print(word[0])
-print(word[1])
-print(word[2])
-print(word[3])
+odds = [1, 3, 5]
+print(odds[0])
+print(odds[1])
+print(odds[2])
+print(odds[3])
 ~~~
 {: .language-python}
 
 ~~~
-t
-i
-n
+1
+3
+5
 ~~~
 {: .output}
 
@@ -89,49 +91,48 @@ n
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-3-7974b6cdaf14> in <module>()
-      3 print(word[1])
-      4 print(word[2])
-----> 5 print(word[3])
+      3 print(odds[1])
+      4 print(odds[2])
+----> 5 print(odds[3])
 
-IndexError: string index out of range
+IndexError: list index out of range
 ~~~
 {: .error}
 
-Here's a better approach:
+Here's a better approach: a [for loop]({{ page.root }}/reference/#for-loop)
 
 ~~~
-word = 'lead'
-for char in word:
-    print(char)
-
+odds = [1, 3, 5, 7]
+for num in odds:
+    print(num)
 ~~~
 {: .language-python}
 
 ~~~
-l
-e
-a
-d
+1
+3
+5
+7
 ~~~
 {: .output}
 
-This is shorter --- certainly shorter than something that prints every character in a
-hundred-letter string --- and more robust as well:
+This is shorter --- certainly shorter than something that prints every number in a
+hundred-number list --- and more robust as well:
 
 ~~~
-word = 'oxygen'
-for char in word:
-    print(char)
+odds = [1, 3, 5, 7, 9, 11]
+for num in odds:
+    print(num)
 ~~~
 {: .language-python}
 
 ~~~
-o
-x
-y
-g
-e
-n
+1
+3
+5
+7
+9
+11
 ~~~
 {: .output}
 
@@ -145,13 +146,13 @@ for variable in collection:
 ~~~
 {: .language-python}
 
-Using the oxygen example above, the loop might look like this:
+Using the odds example above, the loop might look like this:
 
-![Loop variable 'char' being assigned the value of each character in the word 'oxygen' in turn and then being printed](../fig/loops_image.png)
+![Loop variable 'num' being assigned the value of each element in the list `odds` in turn and then being printed](../fig/05-loops_image_num.png)
 
-where each character (`char`) in the variable `word` is looped through and printed one character
-after another. The numbers in the diagram denote which loop cycle the character was printed in (1
-being the first loop, and 6 being the final loop).
+where each number (`num`) in the variable `odds` is looped through and printed one number after
+another. The other numbers in the diagram denote which loop cycle the number was printed in (1
+being the first loop cycle, and 6 being the final loop cycle).
 
 We can call the [loop variable]({{ page.root }}/reference.html#loop-variable) anything we like, but
 there must be a colon at the end of the line starting the loop, and we must indent anything we
@@ -162,24 +163,26 @@ of the loop body (e.g. `end for`); what is indented after the `for` statement be
 > ## What's in a name?
 >
 >
-> In the example above, the loop variable was given the name `char` as a mnemonic;
-> it is short for 'character'.  We can choose any name we want for variables.
-> We can even call our loop variable `banana`, as long as we use this name consistently:
+> In the example above, the loop variable was given the name `num` as a mnemonic;
+> it is short for 'number'.
+> We can choose any name we want for variables.  We might just as easily have chosen the name
+> `banana` for the loop variable, as long as we use the same name when we invoke the variable inside
+> the loop:
 >
 > ~~~
-> word = 'oxygen'
-> for banana in word:
+> odds = [1, 3, 5, 7, 9, 11]
+> for banana in odds:
 >     print(banana)
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> o
-> x
-> y
-> g
-> e
-> n
+> 1
+> 3
+> 5
+> 7
+> 9
+> 11
 > ~~~
 > {: .output}
 >
@@ -191,65 +194,66 @@ Here's another loop that repeatedly updates a variable:
 
 ~~~
 length = 0
-for vowel in 'aeiou':
+names = ['Curie', 'Darwin', 'Turing']
+for value in names:
     length = length + 1
-print('There are', length, 'vowels')
+print('There are', length, 'names in the list.')
 ~~~
 {: .language-python}
 
 ~~~
-There are 5 vowels
+There are 3 names in the list.
 ~~~
 {: .output}
 
 It's worth tracing the execution of this little program step by step.
-Since there are five characters in `'aeiou'`,
-the statement on line 3 will be executed five times.
+Since there are three names in `names`,
+the statement on line 4 will be executed three times.
 The first time around,
 `length` is zero (the value assigned to it on line 1)
-and `vowel` is `'a'`.
+and `value` is `Curie`.
 The statement adds 1 to the old value of `length`,
 producing 1,
 and updates `length` to refer to that new value.
 The next time around,
-`vowel` is `'e'` and `length` is 1,
+`value` is `Darwin` and `length` is 1,
 so `length` is updated to be 2.
-After three more updates,
-`length` is 5;
-since there is nothing left in `'aeiou'` for Python to process,
+After one more update,
+`length` is 3;
+since there is nothing left in `names` for Python to process,
 the loop finishes
-and the `print` statement on line 4 tells us our final answer.
+and the `print` function on line 5 tells us our final answer.
 
-Note that a loop variable is a variable that's being used to record progress in a loop.
+Note that a loop variable is a variable that is being used to record progress in a loop.
 It still exists after the loop is over,
 and we can re-use variables previously defined as loop variables as well:
 
 ~~~
-letter = 'z'
-for letter in 'abc':
-    print(letter)
-print('after the loop, letter is', letter)
+name = 'Rosalind'
+for name in ['Curie', 'Darwin', 'Turing']:
+    print(name)
+print('after the loop, name is', name)
 ~~~
 {: .language-python}
 
 ~~~
-a
-b
-c
-after the loop, letter is c
+Curie
+Darwin
+Turing
+after the loop, name is Turing
 ~~~
 {: .output}
 
-Note also that finding the length of a string is such a common operation
+Note also that finding the length of an object is such a common operation
 that Python actually has a built-in function to do it called `len`:
 
 ~~~
-print(len('aeiou'))
+print(len([0, 1, 2, 3]))
 ~~~
 {: .language-python}
 
 ~~~
-5
+4
 ~~~
 {: .output}
 
@@ -349,20 +353,19 @@ so we should always use it when we can.
 > {: .solution}
 {: .challenge}
 
-> ## Reverse a String
+> ## Summing a list
 >
-> Knowing that two strings can be concatenated using the `+` operator,
-> write a loop that takes a string
-> and produces a new string with the characters in reverse order,
-> so `'Newton'` becomes `'notweN'`.
+> Write a loop that calculates the sum of elements in a list
+> by adding each element and printing the final value,
+> so `[124, 402, 36]` prints 562
 >
 > > ## Solution
 > > ~~~
-> > newstring = ''
-> > oldstring = 'Newton'
-> > for char in oldstring:
-> >     newstring = char + newstring
-> > print(newstring)
+> > numbers = [124, 402, 36]
+> > summed = 0
+> > for num in numbers:
+> >     summed = summed + num
+> > print(summed)
 > > ~~~
 > > {: .language-python}
 > {: .solution}
