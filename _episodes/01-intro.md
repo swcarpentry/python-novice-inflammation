@@ -33,7 +33,8 @@ This is great but not very interesting.
 To do anything useful with data, we need to assign its value to a _variable_.
 In Python, we can [assign]({{ page.root }}/reference.html#assign) a value to a
 [variable]({{ page.root }}/reference.html#variable), using the equals sign `=`.
-For example, to assign value `60` to a variable `weight_kg`, we would execute:
+For example, we can track the weight of a patient who weighs 60 kilograms by
+assigning the value `60` to a variable `weight_kg`:
 
 ~~~
 weight_kg = 60
@@ -61,55 +62,74 @@ Python knows various types of data. Three common ones are:
 * strings.
 
 In the example above, variable `weight_kg` has an integer value of `60`.
-To create a variable with a floating point value, we can execute:
+If we want to more precisely track the weight of our patient,
+we can use a floating point value by executing:
 
 ~~~
-weight_kg = 60.0
+weight_kg = 60.3
 ~~~
 {: .language-python}
 
-And to create a string, we add single or double quotes around some text, for example:
+To create a string, we add single or double quotes around some text.
+To identify and track a patient throughout our study,
+we can assign each person a unique identifier by storing it in a string:
 
 ~~~
-weight_kg_text = 'weight in kilograms:'
+patient_id = '001'
 ~~~
 {: .language-python}
 
-## Using Variables and Functions in Python
-To display the value of a variable to the screen in Python, we can use the `print`
-[function]({{ page.root }}/reference.html#function):
+## Using Variables in Python
+
+Once we have data stored with variable names, we can make use of it in calculations.
+We may want to store our patient's weight in pounds as well as kilograms:
 
 ~~~
-print(weight_kg)
+weight_lb = 2.2 * weight_kg
+~~~
+{: .language-python}
+
+We might decide to add a prefix to our patient identifier:
+
+~~~
+patient_id = 'inflam_' + patient_id
+~~~
+{: .language-python}
+
+## Built-in Python functions
+
+To carry out common tasks with data and variables in Python,
+the language provides us with several built-in [functions]({{ page.root }}/reference.html#function).
+To display information to the screen, we use the `print` function:
+
+~~~
+print(weight_lb)
+print(patient_id)
 ~~~
 {: .language-python}
 
 ~~~
-60.0
+132.66
+'inflam_001'
 ~~~
 {: .output}
 
-> ## Built-ins Are Ready to Call
->
-> Because displaying information to the screen is commonly done in programming,
-> `print` is a built-in function, meaning it is code that is already written into Python
-> and is always available. When we reference the function name for use,
-> referred to as calling the function, it is followed by parentheses.
-> The parentheses may be empty or contain variables or literal values,
-> referred to as [arguments]({{ page.root }}/reference.html#argument),
-> that are used by the function's underlying code. In the case of `print`,
-> you use the arguments to tell the function what you want written to the screen.
-> We will learn more about how functions work and how to create our own in later episodes.
-{: .callout}
+When we want to make use of a function, referred to as calling the function,
+we follow its name by parentheses. The parentheses are important;
+if you leave them off, the function doesn't actually run!
+Sometimes you will include values or variables inside the parentheses for the function to use.
+In the case of `print`,
+we use the parentheses to tell the function what value we want to display.
+We will learn more about how functions work and how to create our own in later episodes.
 
 We can display multiple things at once using only one `print` call:
 
 ~~~
-print(weight_kg_text, weight_kg)
+print(patient_id, 'weight in kilograms:', weight_kg)
 ~~~
 {: .language-python}
 ~~~
-weight in kilograms: 60.0
+inflam_001 weight in kilograms: 60.3
 ~~~
 {: .output}
 
@@ -118,8 +138,8 @@ We can also call a function inside of another
 For example, Python has a built-in function called `type` that tells you a value's data type:
 
 ~~~
-print(type(60.0))
-print(type(weight_kg_text))
+print(type(60.3))
+print(type(patient_id))
 ~~~
 {: .language-python}
 
@@ -137,7 +157,7 @@ print('weight in pounds:', 2.2 * weight_kg)
 {: .language-python}
 
 ~~~
-weight in pounds: 132.0
+weight in pounds: 132.66
 ~~~
 {: .output}
 
@@ -148,7 +168,7 @@ print(weight_kg)
 {: .language-python}
 
 ~~~
-60.0
+60.3
 ~~~
 {: .output}
 
@@ -180,7 +200,7 @@ weight in kilograms is now: 65.0
 > ~~~
 > # There are 2.2 pounds per kilogram
 > weight_lb = 2.2 * weight_kg
-> print(weight_kg_text, weight_kg, 'and in pounds:', weight_lb)
+> print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
 > ~~~
 > {: .language-python}
 >
