@@ -5,7 +5,7 @@ exercises: 10
 questions:
 - "What basic data types can I work with in Python?"
 - "How can I create a new variable in Python?"
-- "How do I call a function?"
+- "How do I use a function?"
 - "Can I change the value associated with a variable after I create it?"
 objectives:
 - "Assign values to variables."
@@ -110,12 +110,12 @@ print(patient_id)
 
 ~~~
 132.66
-'inflam_001'
+inflam_001
 ~~~
 {: .output}
 
 When we want to make use of a function, referred to as calling the function,
-we follow its name by parentheses. The parentheses are important;
+we follow its name by parentheses. The parentheses are important:
 if you leave them off, the function doesn't actually run!
 Sometimes you will include values or variables inside the parentheses for the function to use.
 In the case of `print`,
