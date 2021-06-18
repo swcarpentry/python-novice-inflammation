@@ -282,4 +282,32 @@ stuck on it](../fig/python-sticky-note-variables-03.svg)
 > {: .solution}
 {: .challenge}
 
+> ## Seeing Data Types
+>
+> What are the data types of the following variables?
+>
+> ~~~
+> planet = 'Earth'
+> apples = 5
+> distance = 10.5
+> ~~~
+> {: .language-python}
+>
+> > ## Solution
+> > ~~~
+> > type(planet)
+> > type(apples)
+> > type(distance)
+> > ~~~
+> > {: .language-python}
+> >
+> > ~~~
+> > <class 'str'>
+> > <class 'int'>
+> > <class 'float'>
+> > ~~~
+> > {: .output}
+> {: .solution}
+{: .challenge}
+
 {% include links.md %}
