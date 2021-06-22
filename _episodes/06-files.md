@@ -13,7 +13,7 @@ keypoints:
 ---
 
 We now have almost everything we need to process all our data files.
-The only thing that's missing is a library with a rather unpleasant name:
+The only thing that's missing is a library which provides functionality for filtering files based on their naming scheme:
 
 ~~~
 import glob
