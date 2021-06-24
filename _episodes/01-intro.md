@@ -57,9 +57,9 @@ This means that, for example:
 ## Types of data
 Python knows various types of data. Three common ones are:
 
-* integer numbers
-* floating point numbers, and
-* strings.
+* integer numbers (numbers without decimals)
+* floating point numbers (numbers with decimals), and
+* strings (text data).
 
 In the example above, variable `weight_kg` has an integer value of `60`.
 If we want to more precisely track the weight of our patient,
