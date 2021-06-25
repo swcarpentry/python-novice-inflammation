@@ -12,7 +12,8 @@ keypoints:
 - "Use `*` in a pattern to match zero or more characters, and `?` to match any single character."
 ---
 
-As a final piece to processing our inflammation data, we need a way to get a list of all the files in our data directory whose names start with inflammation- and end with .csv.
+As a final piece to processing our inflammation data, we need a way to get a list of all the files
+in our `data` directory whose names start with `inflammation-` and end with `.csv`.
 The following library will help us to achieve this:
 ~~~
 import glob
