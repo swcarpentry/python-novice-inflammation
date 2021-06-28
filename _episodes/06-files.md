@@ -12,9 +12,9 @@ keypoints:
 - "Use `*` in a pattern to match zero or more characters, and `?` to match any single character."
 ---
 
-We now have almost everything we need to process all our data files.
-The only thing that's missing is a library with a rather unpleasant name:
-
+As a final piece to processing our inflammation data, we need a way to get a list of all the files
+in our `data` directory whose names start with `inflammation-` and end with `.csv`.
+The following library will help us to achieve this:
 ~~~
 import glob
 ~~~
