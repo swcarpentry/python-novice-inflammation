@@ -177,6 +177,31 @@ temperature in Kelvin was: 373.15
 ~~~
 {: .output}
 
+On the contrary, inside a function, one can read the value of a variable which has been defined outside the function, before the function is called. We refer to these variables as [global variables]({{ page.root }}/reference.html#global-variable).
+
+In the modified example below, we check the value of the global variable `temp_kelvin` inside a function.
+
+~~~
+def check_temp_kelvin():
+    print('temperature in Kelvin was:', temp_kelvin)
+
+check_temp_kelvin()
+temp_kelvin = fahr_to_kelvin(32.0)
+check_temp_kelvin()
+~~~
+{: .language-python}
+
+~~~
+temperature in Kelvin was: 373.15
+temperature in Kelvin was: 273.15
+~~~
+{: .output}
+
+> ## Avoid global variables
+> 
+> The use of global variables is generally considered as a bad practice, unless for some special cases such as constant values. Especially, never assign a new value to a global variable *inside a function*. This *will not* assign the value to the global variable. Instead, it will assign it to a local variable with the same name, which will disappear once the function is done executing.
+{: .caution}
+
 ## Tidying up
 
 Now that we know how to wrap bits of code up in functions,
