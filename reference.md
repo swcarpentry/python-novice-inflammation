@@ -114,9 +114,6 @@ function call
 global variable
 :   A variable defined outside of a function. It can be used in global statements, and read inside functions.
 
-read , that exists only in the scope of that
-    function, meaning it cannot be accessed by code outside of the function.
-
 heat map
 :   A graphical representation of two-dimensional data in which colors,
     ranging on a scale of hue or intensity, represent the data values.
