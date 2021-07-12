@@ -18,8 +18,8 @@ keypoints:
 - "Call a function using `function_name(value)`."
 - "Numbers are stored as integers or floating-point numbers."
 - "Variables defined within a function can only be seen and used within the body of the function."
-- "If a variable is not defined within the function it is used,
-   Python looks for a definition before the function call"
+- "If a variable is not locally defined within the function it is used,
+   Python looks for a global definition before the function call"
 - "Use `help(thing)` to view help for something."
 - "Put docstrings in functions to provide help for that function."
 - "Specify default values for parameters when defining a function using `name=value`
@@ -177,28 +177,27 @@ temperature in Kelvin was: 373.15
 ~~~
 {: .output}
 
-On the contrary, inside a function being executed, one can read the value of a variable which
-has been defined outside the function, before the function is called. We refer to these variables
-as [global variables]({{ page.root }}/reference.html#global-variable).
+The variable `temp_kelvin`, being defined outside any function, is said to be [global]({{ page.root }}/reference.html#global-variable).
 
-In the modified example below, we check the value of the global variable `temp_kelvin`
-inside a function.
-
+Inside a function, one can read the value of such global variables:
 ~~~
-def check_temp_kelvin():
-    print('temperature in Kelvin was:', temp_kelvin)
+def print_temperatures():
+  print('temperature in Fahrenheit was:', temp_fahr)
+  print('temperature in Kelvin was:', temp_kelvin)
 
-check_temp_kelvin()
-temp_kelvin = fahr_to_kelvin(32.0)
-check_temp_kelvin()
+temp_fahr = 212.0
+temp_kelvin = fahr_to_kelvin(temp_fahr)
+
+print_temperatures()
 ~~~
 {: .language-python}
 
 ~~~
+temperature in Fahrenheit was: 212.0
 temperature in Kelvin was: 373.15
-temperature in Kelvin was: 273.15
 ~~~
 {: .output}
+
 
 ## Tidying up
 
@@ -895,8 +894,8 @@ readable code!
 > > `k`. The function does not return any values 
 > > and does not alter `k` outside of its local copy. 
 > > Therefore the original value of `k` remains unchanged.
-> > Beware that the local `k` is created because `f2k` internal statements
-> > *affect* a new value. If `k` was only `read`, it would simply use the
+> > Beware that a local `k` is created because `f2k` internal statements
+> > *affect* a new value to it. If `k` was only `read`, it would simply retreive the
 > > global `k` value.
 > {: .solution}
 {: .challenge}
