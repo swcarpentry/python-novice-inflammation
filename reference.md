@@ -112,7 +112,8 @@ function call
 :   A use of a function in another piece of software.
 
 global variable
-:   A variable defined outside of a function. It can be used in global statements, and read inside functions.
+:   A variable defined outside of a function. It can be used in global statements,
+    and read inside functions.
 
 heat map
 :   A graphical representation of two-dimensional data in which colors,
