@@ -18,8 +18,9 @@ keypoints:
 - "Call a function using `function_name(value)`."
 - "Numbers are stored as integers or floating-point numbers."
 - "Variables defined within a function can only be seen and used within the body of the function."
-- "If a variable is not defined within the function it is used,
-   Python looks for a definition before the function call"
+- "Variables created outside of any function are called global variables."
+- "Within a function, we can access global variables."
+- "Variables created within a function override global variables if their names match."
 - "Use `help(thing)` to view help for something."
 - "Put docstrings in functions to provide help for that function."
 - "Specify default values for parameters when defining a function using `name=value`
@@ -176,6 +177,29 @@ print('temperature in Kelvin was:', temp_kelvin)
 temperature in Kelvin was: 373.15
 ~~~
 {: .output}
+
+The variable `temp_kelvin`, being defined outside any function,
+is said to be [global]({{ page.root }}/reference.html#global-variable).
+
+Inside a function, one can read the value of such global variables:
+~~~
+def print_temperatures():
+  print('temperature in Fahrenheit was:', temp_fahr)
+  print('temperature in Kelvin was:', temp_kelvin)
+
+temp_fahr = 212.0
+temp_kelvin = fahr_to_kelvin(temp_fahr)
+
+print_temperatures()
+~~~
+{: .language-python}
+
+~~~
+temperature in Fahrenheit was: 212.0
+temperature in Kelvin was: 373.15
+~~~
+{: .output}
+
 
 ## Tidying up
 
@@ -872,6 +896,9 @@ readable code!
 > > `k`. The function does not return any values 
 > > and does not alter `k` outside of its local copy. 
 > > Therefore the original value of `k` remains unchanged.
+> > Beware that a local `k` is created because `f2k` internal statements
+> > *affect* a new value to it. If `k` was only `read`, it would simply retreive the
+> > global `k` value.
 > {: .solution}
 {: .challenge}
 
