@@ -7,7 +7,7 @@ questions:
 - "How can I group several plots together?"
 objectives:
 - "Plot simple graphs from data."
-- "Group several graphs in a single figure."
+- "Plot multiple graphs in a single figure."
 keypoints:
 - "Use the `pyplot` module from the `matplotlib` library for creating simple visualizations."
 ---
