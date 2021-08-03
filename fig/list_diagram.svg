@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="150" width="300">
+<g transform="translate(0, 0)">
+<text fill="black" y="25" x="0" >
+<tspan>odds = [ </tspan>
+</text>
+</g>
+<g transform="translate(50, 0)">
+<rect x="0" y="0" dx="0" dy="15" width="25" height="30" fill="#1f77b4" opacity="0.6" stroke-width="1mm" stroke="white"> </rect>
+<text fill="black" y="25" dx="10" > 1, </text>
+<text fill="#1f77b4" dy="30" dx="40"  transform="rotate(45)" > index  0</text>
+</g>
+<g transform="translate(75, 0)">
+<rect x="0" y="0" dx="0"  dy="15" width="25" height="30" fill="#ff7f0e" opacity="0.6" stroke-width="1mm" stroke="white"> </rect>
+<text fill="black" y="25" dx="10" > 3, </text>
+<text fill="#ff7f0e" dy="30" dx="40"  transform="rotate(45)"> index  1</text>
+</g>
+<g transform="translate(100, 0)">
+<rect x="0" y="0" dx="0"  dy="15" width="25" height="30" fill="#2ca02c" opacity="0.6" stroke-width="1mm" stroke="white"> </rect>
+<text fill="black" dy="25" dx="10" > 5, </text>
+<text fill="#2ca02c" dy="30" dx="40"  transform="rotate(45)"> index  2</text>
+</g>
+<g transform="translate(125, 0)">
+<rect x="0" y="0" dx="0"  dy="15" width="25" height="30" fill="#d62728" opacity="0.6" stroke-width="1mm" stroke="white"> </rect>
+<text fill="black" dy="25" dx="10" > 7  </text>
+<text fill="#d62728" dy="30" dx="40"  transform="rotate(45)"> index  3</text> </g>
+<g transform="translate(150, 0)">
+<text fill="black" y="25" x="5" >
+<tspan>] </tspan>
+</text>
+</g>
+
+<g transform="translate(0, 100)">
+<text fill="black" y="20" x="0"> 
+<tspan> print(odds[ </tspan>
+<tspan fill="green">2</tspan>
+<tspan> ]) </tspan>
+</text>
+<text fill="green" y="20" x="0">
+<tspan dx="10" dy="20"> 5 </tspan>
+</text>
+</g>
+</svg>
