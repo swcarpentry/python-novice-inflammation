@@ -47,6 +47,9 @@ odds are: [1, 3, 5, 7]
 We can access elements of a list using indices -- numbered positions of elements in the list.
 These positions are numbered starting at 0, so the first element has an index of 0.
 
+![odds list contains values 1, 3, 5, 7, at index 0 to 3, and output of print(odds[2]) is 5
+](../fig/list_diagram.svg)
+
 ~~~
 print('first element:', odds[0])
 print('last element:', odds[3])
