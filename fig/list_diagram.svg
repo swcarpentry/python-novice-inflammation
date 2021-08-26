@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="150" width="300">
+<svg xmlns="http://www.w3.org/2000/svg" height="250" width="300">
+<g transform="scale(1.5)">
 <g transform="translate(0, 0)">
 <text fill="black" y="25" x="0" >
 <tspan>odds = [ </tspan>
@@ -38,5 +39,6 @@
 <text fill="green" y="20" x="0">
 <tspan dx="10" dy="20"> 5 </tspan>
 </text>
+</g>
 </g>
 </svg>
