@@ -160,32 +160,40 @@ does not.
 > ## Nested Lists
 > Since a list can contain any Python variables, it can even contain other lists.
 >
-> For example, we could represent the products in the shelves of a small grocery shop:
+> For example, we could represent the products on the shelves of a small grocery shop:
+>
+> [![x is represented as a shelf full of produce. There are four rows of vegetables
+> on the shelf, and each row contains five baskets of vegetables. We can label
+> each basket according to the type of vegetable it contains, so the top row
+> contains (from left to right) lettuce, lettuce, peppers, zucchini, squash,
+> and basil.](../fig/04_groceries_x.png)]
+>
+> To store the contents of the shelf in a nested list, we write it this way:
 >
 > ~~~
-> x = [['pepper', 'zucchini', 'onion'],
->      ['cabbage', 'lettuce', 'garlic'],
->      ['apple', 'pear', 'banana']]
+> x = [['lettuce', 'lettuce', 'peppers', 'zucchini', 'squash', 'basil'],
+>      ['lettuce', 'lettuce', 'peppers', 'zucchini', 'peppers', 'parsley'],
+>      ['lettuce', 'cilantro', 'peppers', 'zucchini', 'squash', 'spinach'],
+>      ['cabbage', 'broccoli', 'asparagus', 'zucchini', 'squash', 'cauliflower']]
 > ~~~
 > {: .language-python}
 >
-> Here is a visual example of how indexing a list of lists `x` works:
+> Here are some visual examples of how indexing a list of lists `x` works.
 >
-> [![x is represented as a pepper shaker containing several packets of pepper. [x[0]] is represented
-> as a pepper shaker containing a single packet of pepper. x[0] is represented as a single packet of
-> pepper. x[0][0] is represented as single grain of pepper.  Adapted
-> from @hadleywickham.](../fig/indexing_lists_python.png)][hadleywickham-tweet]
+> [![x is now shown as a list of four rows, with x[0] representing the top row of
+> five baskets, x[1] representing the second row, x[2] representing the third row,
+> and x[3] reprenting the bottom row.](../fig/04_grovceries_x0.png)]
 >
 > Using the previously declared list `x`, these would be the results of the
-> index operations shown in the image:
+> index operations shown in the image. Each row on the shelf is a separate list:
 >
 > ~~~
-> print([x[0]])
+> print(x[2])
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> [['pepper', 'zucchini', 'onion']]
+> ['lettuce', 'cilantro', 'peppers', 'zucchini', 'squash', 'spinach']
 > ~~~
 > {: .output}
 >
@@ -195,9 +203,18 @@ does not.
 > {: .language-python}
 >
 > ~~~
-> ['pepper', 'zucchini', 'onion']
+> ['lettuce', 'lettuce', 'peppers', 'zucchini', 'squash', 'basil']
 > ~~~
 > {: .output}
+>
+> To reference a specific basket on a specific shelf, we use two indexes. The first
+> index represents the row (from top to bottom) and the second index represents
+> the specific basket (from left to right).
+>
+[![x is now shown as a two-dimensional grid, with each basket labeled according to
+> its index in the nested list. The first index is the row number and the second
+> index is the basket number, so x[1][4] represents the basket on the far right
+> side of the second row (basket 4 on row 1): parsley](../fig/04_grovceries_x00.png)]
 >
 > ~~~
 > print(x[0][0])
@@ -205,12 +222,19 @@ does not.
 > {: .language-python}
 >
 > ~~~
-> 'pepper'
+> 'lettuce'
+> ~~~
+>
+> ~~~
+> print(x[3][2])
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> 'asparagus'
 > ~~~
 > {: .output}
 >
-> Thanks to [Hadley Wickham][hadleywickham-tweet]
-> for the image above.
 {: .callout}
 
 > ## Heterogeneous Lists
