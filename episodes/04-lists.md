@@ -178,14 +178,15 @@ does not.
 > ~~~
 > {: .language-python}
 >
-> Here are some visual examples of how indexing a list of lists `x` works.
+> Here are some visual examples of how indexing a list of lists `x` works. First,
+> we can reference each row on the shelf as a separate list. For example, x[2]
+> represents the list of baskets on the third row of the shelf.
 >
 > [![x is now shown as a list of four rows, with x[0] representing the top row of
 > five baskets, x[1] representing the second row, x[2] representing the third row,
 > and x[3] representing the bottom row.](../fig/04_groceries_x0.png)]
 >
-> Using the previously declared list `x`, these would be the results of the
-> index operations shown in the image. Each row on the shelf is a separate list:
+> Index operations using the image would work like this:
 >
 > ~~~
 > print(x[2])
@@ -210,8 +211,7 @@ does not.
 > To reference a specific basket on a specific shelf, we use two indexes. The first
 > index represents the row (from top to bottom) and the second index represents
 > the specific basket (from left to right).
->
-[![x is now shown as a two-dimensional grid, with each basket labeled according to
+> [![x is now shown as a two-dimensional grid, with each basket labeled according to
 > its index in the nested list. The first index is the row number and the second
 > index is the basket number, so x[1][4] represents the basket on the far right
 > side of the second row (basket 4 on row 1): parsley](../fig/04_groceries_x00.png)]
