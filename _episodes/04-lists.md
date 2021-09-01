@@ -160,7 +160,8 @@ does not.
 > ## Nested Lists
 > Since a list can contain any Python variables, it can even contain other lists.
 >
-> For example, we could represent the products on the shelves of a small grocery shop:
+> For example, we could represent the products on the shelves of a small grocery shop
+> as a nested list called x:
 >
 > [![x is represented as a shelf full of produce. There are four rows of vegetables
 > on the shelf, and each row contains five baskets of vegetables. We can label
