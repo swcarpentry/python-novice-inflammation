@@ -160,7 +160,7 @@ does not.
 > ## Nested Lists
 > Since a list can contain any Python variables, it can even contain other lists.
 >
-> For example, we could represent the products on the shelves of a small grocery shop
+> For example, you could represent the products on the shelves of a small grocery shop
 > as a nested list called x:
 >
 > [![x is represented as a shelf full of produce. There are four rows of vegetables
@@ -169,7 +169,7 @@ does not.
 > contains (from left to right) lettuce, lettuce, peppers, zucchini, squash,
 > and basil.](../fig/04_groceries_x.png)]
 >
-> To store the contents of the shelf in a nested list, we write it this way:
+> To store the contents of the shelf in a nested list, you write it this way:
 >
 > ~~~
 > x = [['lettuce', 'lettuce', 'peppers', 'zucchini', 'squash', 'basil'],
@@ -180,7 +180,7 @@ does not.
 > {: .language-python}
 >
 > Here are some visual examples of how indexing a list of lists `x` works. First,
-> we can reference each row on the shelf as a separate list. For example, x[2]
+> you can reference each row on the shelf as a separate list. For example, x[2]
 > represents the list of baskets on the third row of the shelf.
 >
 > [![x is now shown as a list of four rows, with x[0] representing the top row of
@@ -209,7 +209,7 @@ does not.
 > ~~~
 > {: .output}
 >
-> To reference a specific basket on a specific shelf, we use two indexes. The first
+> To reference a specific basket on a specific shelf, you use two indexes. The first
 > index represents the row (from top to bottom) and the second index represents
 > the specific basket (from left to right).
 > [![x is now shown as a two-dimensional grid, with each basket labeled according to
