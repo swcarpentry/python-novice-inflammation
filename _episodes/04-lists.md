@@ -182,7 +182,7 @@ does not.
 >
 > [![x is now shown as a list of four rows, with x[0] representing the top row of
 > five baskets, x[1] representing the second row, x[2] representing the third row,
-> and x[3] reprenting the bottom row.](../fig/04_grovceries_x0.png)]
+> and x[3] representing the bottom row.](../fig/04_groceries_x0.png)]
 >
 > Using the previously declared list `x`, these would be the results of the
 > index operations shown in the image. Each row on the shelf is a separate list:
@@ -214,7 +214,7 @@ does not.
 [![x is now shown as a two-dimensional grid, with each basket labeled according to
 > its index in the nested list. The first index is the row number and the second
 > index is the basket number, so x[1][4] represents the basket on the far right
-> side of the second row (basket 4 on row 1): parsley](../fig/04_grovceries_x00.png)]
+> side of the second row (basket 4 on row 1): parsley](../fig/04_groceries_x00.png)]
 >
 > ~~~
 > print(x[0][0])
