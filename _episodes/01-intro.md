@@ -55,7 +55,7 @@ This means that, for example:
  - `weight` and `Weight` are different variables
 
 ## Types of data
-Python knows various types of data. Three common ones are:
+Python recognizes various types of data. Three common ones are:
 
 * integer numbers
 * floating point numbers, and
@@ -116,7 +116,7 @@ inflam_001
 
 When we want to make use of a function, referred to as calling the function,
 we follow its name by parentheses. The parentheses are important:
-if you leave them off, the function doesn't actually run!
+if you do not include them, the function doesn't actually run!
 Sometimes you will include values or variables inside the parentheses for the function to use.
 In the case of `print`,
 we use the parentheses to tell the function what value we want to display.
