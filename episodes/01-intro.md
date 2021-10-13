@@ -295,9 +295,9 @@ stuck on it](../fig/python-sticky-note-variables-03.svg)
 >
 > > ## Solution
 > > ~~~
-> > type(planet)
-> > type(apples)
-> > type(distance)
+> > print(type(planet))
+> > print(type(apples))
+> > print(type(distance))
 > > ~~~
 > > {: .language-python}
 > >
