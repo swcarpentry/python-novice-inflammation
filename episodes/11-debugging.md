@@ -257,7 +257,7 @@ not more.
 >
 > Use the debugging principles in this exercise and locate problems
 > with the code. What suggestions would you give the researcher for
-> ensuring any later changes they make work correctly?
+> ensuring any later changes they make work correctly? What bugs do you spot?
 >
 > ~~~
 > patients = [[70, 1.8], [80, 1.9], [150, 1.7]]
@@ -280,6 +280,10 @@ not more.
 > {: .output}
 >
 > > ## Solution
+> > ### Suggestions for debugging
+> > * Add printing statement in the `calculate_bmi` function, like `print('weight:', weight, 'height:', height)`, to make clear that what the BMI is based on.
+> > * Change `print("Patient's BMI is: %f" % bmi)` to `print("Patient's BMI (weight: %f, height: %f) is: %f" % (weight, height, bmi))`, in order to be able to distinguish bugs in the function from bugs in the loop.
+> > ### Bugs found
 > > * The loop is not being utilised correctly. `height` and `weight` are always
 > >   set as the first patient's data during each iteration of the loop.
 > >
