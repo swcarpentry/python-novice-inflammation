@@ -30,7 +30,7 @@ that can be called upon when needed.
 
 ## Loading data into Python
 
-To begin processing inflammation data, we need to load it into Python.
+To begin processing the clinical trial inflammation data, we need to load it into Python.
 We can do that using a library called
 [NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation"), which stands for Numerical Python.
 In general, you should use this library when you want to do fancy things with lots of numbers,
