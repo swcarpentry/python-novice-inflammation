@@ -21,7 +21,7 @@ inflammation dataset (`inflammation-01.csv`), which revealed some suspicious fea
 
 ![Line graphs showing average, maximum and minimum inflammation across all patients over a 40-day period.](../fig/03-loop_2_0.png)
 
-We have a dozen data sets right now, though, and potentially more on the way if Dr. Maverick
+We have a dozen data sets right now and potentially more on the way if Dr. Maverick
 can keep up their surprisingly fast clinical trial rate. We want to create plots for all of
 our data sets with a single statement. To do that, we'll have to teach the computer how to
 repeat things.

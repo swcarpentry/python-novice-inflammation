@@ -21,7 +21,7 @@ list[2:9]), in the same way as strings and arrays."
 ---
 
 In the previous episode, we analyzed a single file of clinical trial inflammation data. However,
-after finding some peculiar, and potentially suspicious, trends in the trial data we ask
+after finding some peculiar and potentially suspicious trends in the trial data we ask
 Dr. Maverick if they have performed any other clinical trials. Surprisingly, they say that they
 have and provide us with 11 more CSV files for a further 11 clinical trials they have undertaken
 since the initial trial.

@@ -10,10 +10,11 @@ so this introduction to Python is built around a common scientific task:
 
 ### Scenario: A Miracle Arthritis Inflammation Cure
 
-Our colleague Dr. Maverick has invented a new "miracle drug" that promises to cure arthritis
-inflammation flare-ups after only 3 weeks since initially taking the medication! Naturally,
-we wish to see the clinical trial data and after months of asking them they have finally
-provided us with a CSV spreadsheet containing the clinical trial data.
+Our imaginary colleague "Dr. Maverick" has invented a new miracle drug that promises to
+cure arthritis inflammation flare-ups after only 3 weeks since initially taking the
+medication! Naturally, we wish to see the clinical trial data, and after months of asking
+for the data they have finally provided us with a CSV spreadsheet containing the clinical
+trial data.
 
 The CSV file contains the number of inflammation flare-ups per day for the 60 patients
 in the initial clinical trial, with the trial lasting 40 days. Each row corresponds to a
