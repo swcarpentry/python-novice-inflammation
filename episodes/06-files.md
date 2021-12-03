@@ -45,6 +45,7 @@ This means we can loop over it
 to do something with each filename in turn.
 In our case,
 the "something" we want to do is generate a set of plots for each file in our inflammation dataset.
+
 If we want to start by analyzing just the first three files in alphabetical order, we can use the
 `sorted` built-in function to generate a new sorted list from the `glob.glob` output:
 
@@ -108,13 +109,13 @@ maximum and minimum inflammation over a 40-day period for all patients in the th
 dataset.](../fig/03-loop_49_5.png)
 
 
-Hmmm. The plots generated for the second clinical trial file look very similar to the plots for
+The plots generated for the second clinical trial file look very similar to the plots for
 the first file: their average plots show similar "noisy" rises and falls; their maxima plots
 show exactly the same linear rise and fall; and their minima plots show similar staircase
 structures.
 
 The third dataset shows much noisier average and maxima plots that are far less suspicious than
-the first two datasets, however the minima plot shows that the third dataset minima are
+the first two datasets, however the minima plot shows that the third dataset minima is
 consistently zero across every day of the trial. If we produce a heat map for the third data file
 we see the following:
 
@@ -124,7 +125,7 @@ the entire dataset, and the last patient only has zero values over the 40 day st
 We can see that there are zero values sporadically distributed across all patients and days of the
 clinical trial, suggesting that there were potential issues with data collection throughout the
 trial. In addition, we can see that the last patient in the study didn't have any inflammation
-flare-ups at all throughout the trial, suggesting that they may not even suffer from arthritis.
+flare-ups at all throughout the trial, suggesting that they may not even suffer from arthritis!
 
 
 > ## Plotting Differences
@@ -213,7 +214,7 @@ flare-ups at all throughout the trial, suggesting that they may not even suffer 
 
 After spending some time investigating the heat map and statistical plots, as well as
 doing the above exercises to plot differences between datasets and to generate composite
-patient statistics, we gain some insight into the twelve clinical trial datasets:
+patient statistics, we gain some insight into the twelve clinical trial datasets.
 
 The datasets appear to fall into two categories:
 
@@ -231,11 +232,11 @@ duplicated files.
 Dr. Maverick confesses that they fabricated the clinical data after they found out
 that the initial trial suffered from a number of issues, including unreliable data-recording and
 poor participant selection. They created fake data to prove their drug worked, and when we asked
-for more trials they tried to generate more fake sets, as well as throwing in the original
-poor-quality dataset a few times to try and make all the trials seem more "realistic".
+for more data they tried to generate more fake datasets, as well as throwing in the original
+poor-quality dataset a few times to try and make all the trials seem a bit more "realistic".
 
-Congratulations! We've cracked the case and proven that the inflammation datasets have been
-synthetically generated (in python no less!).
+Congratulations! We've investigated the inflammation data and proven that the datasets have been
+synthetically generated.
 
 But it would be a shame to throw away the synthetic datasets that have taught us so much
 already, so we'll forgive the imaginary Dr. Maverick and continue to use the data to learn
