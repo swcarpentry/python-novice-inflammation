@@ -120,7 +120,8 @@ consistently zero across every day of the trial. If we produce a heat map for th
 we see the following:
 
 ![Heat map of the third inflammation dataset. Note that there are sporadic zero values throughout
-the entire dataset, and the last patient only has zero values over the 40 day study.](../fig/inflammation-03-imshow.svg)
+the entire dataset, and the last patient only has zero values over the 40 day study.
+](../fig/inflammation-03-imshow.svg)
 
 We can see that there are zero values sporadically distributed across all patients and days of the
 clinical trial, suggesting that there were potential issues with data collection throughout the
