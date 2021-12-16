@@ -45,6 +45,7 @@ This means we can loop over it
 to do something with each filename in turn.
 In our case,
 the "something" we want to do is generate a set of plots for each file in our inflammation dataset.
+
 If we want to start by analyzing just the first three files in alphabetical order, we can use the
 `sorted` built-in function to generate a new sorted list from the `glob.glob` output:
 
@@ -107,11 +108,26 @@ inflammation-03.csv
 maximum and minimum inflammation over a 40-day period for all patients in the third
 dataset.](../fig/03-loop_49_5.png)
 
-Sure enough,
-the maxima of the first two data sets show exactly the same ramp as the first,
-and their minima show the same staircase structure;
-a different situation has been revealed in the third dataset,
-where the maxima are a bit less regular, but the minima are consistently zero.
+
+The plots generated for the second clinical trial file look very similar to the plots for
+the first file: their average plots show similar "noisy" rises and falls; their maxima plots
+show exactly the same linear rise and fall; and their minima plots show similar staircase
+structures.
+
+The third dataset shows much noisier average and maxima plots that are far less suspicious than
+the first two datasets, however the minima plot shows that the third dataset minima is
+consistently zero across every day of the trial. If we produce a heat map for the third data file
+we see the following:
+
+![Heat map of the third inflammation dataset. Note that there are sporadic zero values throughout
+the entire dataset, and the last patient only has zero values over the 40 day study.
+](../fig/inflammation-03-imshow.svg)
+
+We can see that there are zero values sporadically distributed across all patients and days of the
+clinical trial, suggesting that there were potential issues with data collection throughout the
+trial. In addition, we can see that the last patient in the study didn't have any inflammation
+flare-ups at all throughout the trial, suggesting that they may not even suffer from arthritis!
+
 
 > ## Plotting Differences
 >
@@ -196,5 +212,35 @@ where the maxima are a bit less regular, but the minima are consistently zero.
 > > {: .language-python}
 >{: .solution}
 {: .challenge}
+
+After spending some time investigating the heat map and statistical plots, as well as
+doing the above exercises to plot differences between datasets and to generate composite
+patient statistics, we gain some insight into the twelve clinical trial datasets.
+
+The datasets appear to fall into two categories:
+
+* seemingly "ideal" datasets that agree excellently with Dr. Maverick's claims,
+  but display suspicious maxima and minima (such as `inflammation-01.csv` and `inflammation-02.csv`)
+* "noisy" datasets that somewhat agree with Dr. Maverick's claims, but show concerning
+  data collection issues such as sporadic missing values and even an unsuitable candidate
+  making it into the clinical trial.
+
+In fact, it appears that all three of the "noisy" datasets (`inflammation-03.csv`,
+`inflammation-08.csv`, and `inflammation-11.csv`) are identical down to the last value.
+Armed with this information, we confront Dr. Maverick about the suspicious data and
+duplicated files.
+
+Dr. Maverick confesses that they fabricated the clinical data after they found out
+that the initial trial suffered from a number of issues, including unreliable data-recording and
+poor participant selection. They created fake data to prove their drug worked, and when we asked
+for more data they tried to generate more fake datasets, as well as throwing in the original
+poor-quality dataset a few times to try and make all the trials seem a bit more "realistic".
+
+Congratulations! We've investigated the inflammation data and proven that the datasets have been
+synthetically generated.
+
+But it would be a shame to throw away the synthetic datasets that have taught us so much
+already, so we'll forgive the imaginary Dr. Maverick and continue to use the data to learn
+how to program.
 
 {% include links.md %}

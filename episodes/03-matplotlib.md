@@ -13,8 +13,8 @@ keypoints:
 ---
 
 ## Visualizing data
-The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers," and
-the best way to develop insight is often to visualize data.  Visualization deserves an entire
+The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers,"
+and the best way to develop insight is often to visualize data.  Visualization deserves an entire
 lecture of its own, but we can explore a few features of Python's `matplotlib` library here.  While
 there is no official plotting library, `matplotlib` is the _de facto_ standard.  First, we will
 import the `pyplot` module from `matplotlib` and use two of its functions to create and display a
@@ -30,9 +30,19 @@ matplotlib.pyplot.show()
 ![Heat map representing the `data` variable. Each cell is colored by value along a color gradient
 from blue to yellow.](../fig/inflammation-01-imshow.svg)
 
-Blue pixels in this heat map represent low values, while yellow pixels represent high values.  As we
-can see, inflammation rises and falls over a 40-day period.  Let's take a look at the average
-inflammation over time:
+Each row in the heat map corresponds to a patient in the clinical trial dataset, and each column
+corresponds to a day in the dataset.  Blue pixels in this heat map represent low values, while
+yellow pixels represent high values.  As we can see, the general number of inflammation flare-ups
+for the patients rises and falls over a 40-day period.
+
+So far so good as this is in line with our knowledge of the clinical trial and Dr. Maverick's
+claims:
+
+* the patients take their medication once their inflammation flare-ups begin
+* it takes around 3 weeks for the medication to take effect and begin reducing flare-ups
+* and flare-ups appear to drop to zero by the end of the clinical trial.
+
+Now let's take a look at the average inflammation over time:
 
 ~~~
 ave_inflammation = numpy.mean(data, axis=0)
@@ -45,8 +55,9 @@ matplotlib.pyplot.show()
 
 Here, we have put the average inflammation per day across all patients in the variable
 `ave_inflammation`, then asked `matplotlib.pyplot` to create and display a line graph of those
-values.  The result is a roughly linear rise and fall, which is suspicious: we might instead expect
-a sharper rise and slower fall.  Let's have a look at two other statistics:
+values.  The result is a reasonably linear rise and fall, in line with Dr. Maverick's claim that
+the medication takes 3 weeks to take effect.  But a good data scientist doesn't just consider the
+average of a dataset, so let's have a look at two other statistics:
 
 ~~~
 max_plot = matplotlib.pyplot.plot(numpy.max(data, axis=0))
@@ -64,18 +75,18 @@ matplotlib.pyplot.show()
 
 ![A line graph showing the minimum inflammation across all patients over a 40-day period.](../fig/inflammation-01-minimum.svg)
 
-The maximum value rises and falls smoothly, while the minimum seems to be a step function.  Neither
-trend seems particularly likely, so either there's a mistake in our calculations or something is
-wrong with our data.  This insight would have been difficult to reach by examining the numbers
-themselves without visualization tools.
+The maximum value rises and falls linearly, while the minimum seems to be a step function.
+Neither trend seems particularly likely, so either there's a mistake in our calculations or
+something is wrong with our data. This insight would have been difficult to reach by examining
+the numbers themselves without visualization tools.
 
 ### Grouping plots
 You can group similar plots in a single figure using subplots.
 This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
 creates a space into which we will place all of our plots. The parameter `figsize`
 tells Python how big to make this space. Each subplot is placed into the figure using
-its `add_subplot` [method]({{ page.root }}/reference.html#method). The `add_subplot` method takes 3
-parameters. The first denotes how many total rows of subplots there are, the second parameter
+its `add_subplot` [method]({{ page.root }}/reference.html#method). The `add_subplot` method takes
+3 parameters. The first denotes how many total rows of subplots there are, the second parameter
 refers to the total number of subplot columns, and the final parameter denotes which subplot
 your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a
 different variable (`axes1`, `axes2`, `axes3`). Once a subplot is created, the axes can

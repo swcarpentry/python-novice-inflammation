@@ -19,11 +19,13 @@ In the episode about visualizing data,
 we wrote Python code that plots values of interest from our first
 inflammation dataset (`inflammation-01.csv`), which revealed some suspicious features in it.
 
-![Line graphs showing average, maximum and minimum inflammation across all patients over a 40-day period.](../fig/03-loop_2_0.png)
+![Line graphs showing average, maximum and minimum inflammation across all patients over a 40-day
+period.](../fig/03-loop_2_0.png)
 
-We have a dozen data sets right now, though, and more on the way.
-We want to create plots for all of our data sets with a single statement.
-To do that, we'll have to teach the computer how to repeat things.
+We have a dozen data sets right now and potentially more on the way if Dr. Maverick
+can keep up their surprisingly fast clinical trial rate. We want to create plots for all of
+our data sets with a single statement. To do that, we'll have to teach the computer how to
+repeat things.
 
 An example task that we might want to repeat is accessing numbers in a list,
 which we
@@ -148,7 +150,8 @@ for variable in collection:
 
 Using the odds example above, the loop might look like this:
 
-![Loop variable 'num' being assigned the value of each element in the list `odds` in turn and then being printed](../fig/05-loops_image_num.png)
+![Loop variable 'num' being assigned the value of each element in the list `odds` in turn and
+then being printed](../fig/05-loops_image_num.png)
 
 where each number (`num`) in the variable `odds` is looped through and printed one number after
 another. The other numbers in the diagram denote which loop cycle the number was printed in (1
