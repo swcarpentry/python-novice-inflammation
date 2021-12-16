@@ -18,9 +18,9 @@ We use Python in our lessons because:
 We are using a dataset with records on inflammation from patients following an
 arthritis treatment.
 
-We make reference in the lesson that this data is somehow strange. It is strange
-because it is fabricated! The script used to generate the inflammation data
-is included as [`code/gen_inflammation.py`](../code/gen_inflammation.py).
+We make reference in the lesson that this data is suspicious and has been
+synthetically generated in Python by the imaginary "Dr. Maverick"! The script used to generate
+the inflammation data is included as [`code/gen_inflammation.py`](../code/gen_inflammation.py).
 
 ## Overall
 

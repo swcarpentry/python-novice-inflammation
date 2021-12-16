@@ -8,13 +8,21 @@ The best way to learn how to program is to do something useful,
 so this introduction to Python is built around a common scientific task:
 **data analysis**.
 
-### Arthritis Inflammation
-We are studying **inflammation in patients** who have been given a new treatment for arthritis.
+### Scenario: A Miracle Arthritis Inflammation Cure
 
-There are 60 patients, who had their inflammation levels recorded for 40 days.
-We want to analyze these recordings to study the effect of the new arthritis treatment.
+Our imaginary colleague "Dr. Maverick" has invented a new miracle drug that promises to
+cure arthritis inflammation flare-ups after only 3 weeks since initially taking the
+medication! Naturally, we wish to see the clinical trial data, and after months of asking
+for the data they have finally provided us with a CSV spreadsheet containing the clinical
+trial data.
 
-To see how the treatment is affecting the patients in general, we would like to:
+The CSV file contains the number of inflammation flare-ups per day for the 60 patients
+in the initial clinical trial, with the trial lasting 40 days. Each row corresponds to a
+patient, and each column corresponds to a day in the trial. Once a patient has their first
+inflammation flare-up they take the medication and wait a few weeks for it to take effect
+and reduce flare-ups.
+
+To see how effective the treatment is we would like to:
 
 1. Calculate the average inflammation per day across all patients.
 2. Plot the result to discuss and share with colleagues.
