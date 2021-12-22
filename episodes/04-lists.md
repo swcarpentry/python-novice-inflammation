@@ -179,12 +179,7 @@ does not.
 >
 > Here are some visual examples of how indexing a list of lists `veg` works. First,
 > you can reference each row on the shelf as a separate list. For example, `veg[2]`
-> represents the bottom row, which is a list of the baskets in that row:
->
-> ~~~
-> veg[2] = ['lettuce', 'lettuce', 'peppers', 'zucchini']
-> ~~~
-> {: .language-python}
+> represents the bottom row, which is a list of the baskets in that row.
 >
 > ![`veg` is now shown as a list of three rows, with `veg[0]` representing the top row of
 > three baskets, `veg[1]` representing the second row, and `veg[2]` representing the bottom row.](../fig/04_groceries_veg0.png)
