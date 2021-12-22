@@ -161,78 +161,76 @@ does not.
 > Since a list can contain any Python variables, it can even contain other lists.
 >
 > For example, you could represent the products on the shelves of a small grocery shop
-> as a nested list called x:
+> as a nested list called `veg`:
 >
-> [![x is represented as a shelf full of produce. There are four rows of vegetables
-> on the shelf, and each row contains five baskets of vegetables. We can label
+> ![`veg` is represented as a shelf full of produce. There are three rows of vegetables
+> on the shelf, and each row contains three baskets of vegetables. We can label
 > each basket according to the type of vegetable it contains, so the top row
-> contains (from left to right) lettuce, lettuce, peppers, zucchini, squash,
-> and basil.](../fig/04_groceries_x.png)]
+> contains (from left to right) lettuce, lettuce, and peppers.](../fig/04_groceries_veg.png)
 >
 > To store the contents of the shelf in a nested list, you write it this way:
 >
 > ~~~
-> x = [['lettuce', 'lettuce', 'peppers', 'zucchini', 'squash', 'basil'],
->      ['lettuce', 'lettuce', 'peppers', 'zucchini', 'peppers', 'parsley'],
->      ['lettuce', 'cilantro', 'peppers', 'zucchini', 'squash', 'spinach'],
->      ['cabbage', 'broccoli', 'asparagus', 'zucchini', 'squash', 'cauliflower']]
+> veg = [['lettuce', 'lettuce', 'peppers', 'zucchini'],
+>      ['lettuce', 'lettuce', 'peppers', 'zucchini'],
+>      ['lettuce', 'cilantro', 'peppers', 'zucchini']]
 > ~~~
 > {: .language-python}
 >
-> Here are some visual examples of how indexing a list of lists `x` works. First,
-> you can reference each row on the shelf as a separate list. For example, x[2]
-> represents the list of baskets on the third row of the shelf.
+> Here are some visual examples of how indexing a list of lists `veg` works. First,
+> you can reference each row on the shelf as a separate list. For example, `veg[2]`
+> represents the bottom row, which is a list of the baskets in that row.
 >
-> [![x is now shown as a list of four rows, with x[0] representing the top row of
-> five baskets, x[1] representing the second row, x[2] representing the third row,
-> and x[3] representing the bottom row.](../fig/04_groceries_x0.png)]
+> ![`veg` is now shown as a list of three rows, with `veg[0]` representing the top row of
+> three baskets, `veg[1]` representing the second row, and `veg[2]` representing the bottom row.](../fig/04_groceries_veg0.png)
 >
 > Index operations using the image would work like this:
 >
 > ~~~
-> print(x[2])
+> print(veg[2])
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> ['lettuce', 'cilantro', 'peppers', 'zucchini', 'squash', 'spinach']
+> ['lettuce', 'cilantro', 'peppers', 'zucchini']
 > ~~~
 > {: .output}
 >
 > ~~~
-> print(x[0])
+> print(veg[0])
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> ['lettuce', 'lettuce', 'peppers', 'zucchini', 'squash', 'basil']
+> ['lettuce', 'lettuce', 'peppers', 'zucchini']
 > ~~~
 > {: .output}
 >
 > To reference a specific basket on a specific shelf, you use two indexes. The first
 > index represents the row (from top to bottom) and the second index represents
 > the specific basket (from left to right).
-> [![x is now shown as a two-dimensional grid, with each basket labeled according to
+> ![`veg` is now shown as a two-dimensional grid, with each basket labeled according to
 > its index in the nested list. The first index is the row number and the second
-> index is the basket number, so x[1][4] represents the basket on the far right
-> side of the second row (basket 4 on row 1): parsley](../fig/04_groceries_x00.png)]
+> index is the basket number, so `veg[1][3]` represents the basket on the far right
+> side of the second row (basket 4 on row 2): zucchini](../fig/04_groceries_veg00.png)
 >
 > ~~~
-> print(x[0][0])
+> print(veg[0][0])
 > ~~~
 > {: .language-python}
 >
 > ~~~
 > 'lettuce'
 > ~~~
+> {: .output}
 >
 > ~~~
-> print(x[3][2])
+> print(veg[1][2])
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> 'asparagus'
+> 'peppers'
 > ~~~
 > {: .output}
 >
