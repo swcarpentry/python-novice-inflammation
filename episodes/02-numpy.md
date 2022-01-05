@@ -662,10 +662,11 @@ which is the average inflammation per patient across all days.
 > > ## Solution
 > >
 > > An alternative way to achieve the same result is to use Numpy's
-> > delete function to remove the second column of A.
+> > delete function to remove the second column of A. If you're not
+> > sure what the parameters of numpy.delete mean, use the help files.
 > >
 > > ~~~
-> > D = numpy.delete(A, 1, 1)
+> > D = numpy.delete(arr=A, obj=1, axis=1)
 > > print('D = ')
 > > print(D)
 > > ~~~
