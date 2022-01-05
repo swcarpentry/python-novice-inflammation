@@ -268,7 +268,7 @@ odds after reversing: [11, 7, 5, 3]
 While modifying in place, it is useful to remember that Python treats lists in a slightly
 counter-intuitive way.
 
-As we saw earlier, when we modified the `salsa` list item in-place, if we make a list, (attempt to)
+As we saw earlier, when we modified the `mild_salsa` list item in-place, if we make a list, (attempt to)
 copy it and then modify this list, we can cause all sorts of trouble. This also applies to modifying
 the list using the above functions:
 
