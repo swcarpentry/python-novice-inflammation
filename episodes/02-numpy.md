@@ -205,16 +205,16 @@ first value in data: 0.0
 {: .output}
 
 ~~~
-print('middle value in data:', data[30, 20])
+print('middle value in data:', data[29, 19])
 ~~~
 {: .language-python}
 
 ~~~
-middle value in data: 13.0
+middle value in data: 16.0
 ~~~
 {: .output}
 
-The expression `data[30, 20]` accesses the element at row 30, column 20. While this expression may
+The expression `data[29, 19]` accesses the element at row 30, column 20. While this expression may
 not surprise you,
  `data[0, 0]` might.
 Programming languages like Fortran, MATLAB and R start counting at 1
