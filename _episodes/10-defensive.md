@@ -34,11 +34,13 @@ and how to tell if it's *still* getting the right answer
 as we make changes to it.
 
 To achieve that,
-we need to:
+there are a number of tools and approaches at our disposal.
+We can:
 
-*   Write programs that check their own operation.
-*   Write and run tests for widely-used functions.
-*   Make sure we know what "correct" actually means.
+- Raise and handle errors to check and respond to program inputs.
+- Use assertions to make sure nothing crazy or unexpected has happened.
+- Write unit tests to make sure each component of our program produces expected outputs.
+- Use a logging framework to report on program activity.
 
 The good news is,
 doing these things will speed up our programming,
@@ -46,6 +48,229 @@ not slow it down.
 As in real carpentry --- the kind done with lumber --- the time saved
 by measuring carefully before cutting a piece of wood
 is much greater than the time that measuring takes.
+
+## Raising errors
+
+One of the most simple tools in the defensive programming toolkit is the `raise` keyword,
+which you can use to raise your own exceptions.
+
+~~~
+problem = True
+if problem:
+    raise Exception('There has been a problem')
+~~~
+{: .language-python}
+
+~~~
+Exception                                 Traceback (most recent call last)
+<ipython-input-2-44b57a133722> in <module>
+      1 if problem:
+----> 2     raise Exception('There has been a problem')
+      3 
+
+Exception: There has been a problem
+~~~
+{: .error}
+
+In this case we've chosen to raise a generic `Exception`,
+but we could pick any of the [builtin exception types](https://docs.python.org/3/library/exceptions.html#exception-hierarchy)
+or define our own [custom exception class](https://towardsdatascience.com/how-to-define-custom-exception-classes-in-python-bfa346629bca).
+
+A common use case for raising exceptions is to catch invalid user input.
+For example,
+some of the exercises in the previous lesson involve writing a rescaling function:
+
+~~~
+def rescale(input_array, low_val=0.0, high_val=1.0):
+    """rescales input array values to lie between low_val and high_val"""
+    L = numpy.min(input_array)
+    H = numpy.max(input_array)
+    intermed_array = (input_array - L) / (H - L)
+    output_array = intermed_array * (high_val - low_val) + low_val
+    return output_array
+    
+data = [1, 2, 3, 4, 5]
+rescale(data, low_val=0, high_val=10)
+~~~
+{: .language-python}
+
+~~~
+[ 0.   2.5  5.   7.5 10. ]
+~~~
+{: .output}
+
+We can see that the function works fine for predictable input
+(in this case a scaling between 0 and 10),
+but if the user mixes up the high and low value the function
+happily produces a non-sensical scaling.
+
+~~~
+print(rescale(test, low_val=10, high_val=0))
+~~~
+{: .language-python}
+
+~~~
+[10.   7.5  5.   2.5  0. ]
+~~~
+{: .output}
+
+In order to catch a high/low mix up,
+we could have the function raise a `ValueError` if the high value
+isn't greater than the low value.
+
+~~~
+def rescale(input_array, low_val=0.0, high_val=1.0):
+    """rescales input array values to lie between low_val and high_val"""
+    if low_val >= high_val:
+        raise ValueError('The low_val is >= the high_val')
+    L = numpy.min(input_array)
+    H = numpy.max(input_array)
+    intermed_array = (input_array - L) / (H - L)
+    output_array = intermed_array * (high_val - low_val) + low_val
+    return output_array
+    
+rescale(data, low_val=10, high_val=0)
+~~~
+{: .language-python}
+
+~~~
+ValueError                                Traceback (most recent call last)
+<ipython-input-8-a1053c5ce6f8> in <module>
+----> 1 rescale(data, low_val=10, high_val=0)
+
+<ipython-input-7-ca802222cd28> in rescale(input_array, low_val, high_val)
+      2     """rescales input array values to lie between low_val and high_val"""
+      3     if low_val >= high_val:
+----> 4         raise ValueError('The low_val is >= the high_val')
+      5     L = numpy.min(input_array)
+      6     H = numpy.max(input_array)
+
+ValueError: The low_val is >= the high_val
+~~~
+{: .error}
+
+## Handling errors
+
+As we've seen in the examples above and in the previous lesson,
+if exceptions aren't dealt with the program crashes.
+The error message upon crashing is sometimes be easy to understand
+(particularly if you wrote the `raise` statement yourself)
+but can often be cryptic.
+
+If we'd rather the program didn't crash when a particular exception occurs,
+we can use a try-except block to catch and handle the exception.
+The syntax of the try-except block is:
+
+~~~
+try:
+    <do something>
+except Exception:
+    <handle the error>
+~~~
+{: .language-python} 
+
+The code in the except block is only executed if an exception occurred in the try block.
+The except block is required with a try block, even if it contains only the `pass` statement
+(i.e. ignore the exception and carry on).
+
+An example of where error handling could be useful was the earlier lesson
+where we were looping over a list of inflammation files
+in order to visualise the data and detect problems.
+
+~~~
+def visualize(filename):
+
+    data = numpy.loadtxt(fname=filename, delimiter=',')
+
+    fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+
+    axes1 = fig.add_subplot(1, 3, 1)
+    axes2 = fig.add_subplot(1, 3, 2)
+    axes3 = fig.add_subplot(1, 3, 3)
+
+    axes1.set_ylabel('average')
+    axes1.plot(numpy.mean(data, axis=0))
+
+    axes2.set_ylabel('max')
+    axes2.plot(numpy.max(data, axis=0))
+
+    axes3.set_ylabel('min')
+    axes3.plot(numpy.min(data, axis=0))
+
+    fig.tight_layout()
+    matplotlib.pyplot.show()
+
+
+def detect_problems(filename):
+
+    data = numpy.loadtxt(fname=filename, delimiter=',')
+
+    if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+        print('Suspicious looking maxima!')
+    elif numpy.sum(numpy.min(data, axis=0)) == 0:
+        print('Minima add up to zero!')
+    else:
+        print('Seems OK!')
+
+filenames = sorted(glob.glob('inflammation*.csv'))
+
+for filename in filenames[:3]:
+    print(filename)
+    visualize(filename)
+    detect_problems(filename)
+~~~
+{: .language-python}
+
+As it stands, if there's a problem reading in any of the data files in the file list
+the `numpy.loadtxt` function will trigger an `OSError` and the loop will halt.
+
+~~~
+numpy.loadtxt(fname='inflammation-20.csv', delimiter=',')
+---------------------------------------------------------------------------
+OSError                                   Traceback (most recent call last)
+<ipython-input-9-1dadbddc47b6> in <module>
+----> 1 numpy.loadtxt(fname='inflammation-20.csv', delimiter=',')
+
+~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/npyio.py in loadtxt(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, like)
+   1063             fname = os_fspath(fname)
+   1064         if _is_string_like(fname):
+-> 1065             fh = np.lib._datasource.open(fname, 'rt', encoding=encoding)
+   1066             fencoding = getattr(fh, 'encoding', 'latin1')
+   1067             fh = iter(fh)
+
+~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/_datasource.py in open(path, mode, destpath, encoding, newline)
+    192 
+    193     ds = DataSource(destpath)
+--> 194     return ds.open(path, mode, encoding=encoding, newline=newline)
+    195 
+    196 
+
+~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/_datasource.py in open(self, path, mode, encoding, newline)
+    529                                       encoding=encoding, newline=newline)
+    530         else:
+--> 531             raise IOError("%s not found." % path)
+    532 
+    533 
+
+OSError: inflammation-20.csv not found.
+~~~  
+{: .error}
+
+If we'd prefer the loop continue on and process the remaining files,
+we need to catch and handle the `OSError`.
+
+~~~
+filenames = ['inflammation-01.csv', 'inflammation-20.csv', 'inflammation-03.csv']
+for filename in filenames:
+    try:
+        print(filename)
+        visualize(filename)
+        detect_problems(filename)
+    except OSError:
+        pass
+~~~
+{: .language-python}
+
 
 ## Assertions
 
