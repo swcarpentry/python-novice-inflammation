@@ -226,7 +226,10 @@ the `numpy.loadtxt` function will trigger an `OSError` and the loop will halt.
 
 ~~~
 numpy.loadtxt(fname='inflammation-20.csv', delimiter=',')
----------------------------------------------------------------------------
+~~~
+{: .language-python}
+
+~~~
 OSError                                   Traceback (most recent call last)
 <ipython-input-9-1dadbddc47b6> in <module>
 ----> 1 numpy.loadtxt(fname='inflammation-20.csv', delimiter=',')
