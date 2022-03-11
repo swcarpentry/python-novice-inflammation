@@ -51,18 +51,19 @@ need for each program.
 Once we've imported the library, we can ask the library to read our data file for us:
 
 ~~~
-numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+print(data)
 ~~~
 {: .language-python}
 
 ~~~
-array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
-       [ 0.,  1.,  2., ...,  1.,  0.,  1.],
-       [ 0.,  1.,  1., ...,  2.,  1.,  1.],
-       ...,
-       [ 0.,  1.,  1., ...,  1.,  1.,  1.],
-       [ 0.,  0.,  0., ...,  0.,  2.,  0.],
-       [ 0.,  0.,  1., ...,  1.,  1.,  0.]])
+[[ 0.,  0.,  1., ...,  3.,  0.,  0.],
+ [ 0.,  1.,  2., ...,  1.,  0.,  1.],
+ [ 0.,  1.,  1., ...,  2.,  1.,  1.],
+ ...,
+ [ 0.,  1.,  1., ...,  1.,  1.,  1.],
+ [ 0.,  0.,  0., ...,  0.,  2.,  0.],
+ [ 0.,  0.,  1., ...,  1.,  1.,  0.]]
 ~~~
 {: .output}
 
@@ -83,47 +84,25 @@ we want to read and the [delimiter]({{ page.root }}/reference.html#delimiter) th
 on a line. These both need to be character strings
 (or [strings]({{ page.root }}/reference.html#string) for short), so we put them in quotes.
 
+We told the Python interpreter to store the result in a variable named `data` which we then print. Seems we got kind of a table which we will inspect further.
+
+Before we do that and to illustrate how powerful the library concept is, let us take a sneak peak on the next lesson and visualize the data we just read in. We use matplotlib, the most common plotting library for Python. Normal libraries have sections like novels, science, cooking etc. So do program libraries. We indicate the section we need by the dot-notation: library.subsection:
+
+~~~
+import matplotlib.pyplot as plt
+image = plt.imshow(data)
+plt.show()
+~~~
+{: .language-python}
+
+![Heat map representing the `data` variable. Each cell is colored by value along a color gradient from blue to yellow.](../fig/inflammation-01-imshow.svg)
+
+We already can see that all rows peak around day 20. More about this in an hour. First we need to understand our "data" variable, how to get specific values like an infection rate for a patient at a given day, all rates for a patient or all rates for a day. Let us see what the type of data is:
+
 Since we haven't told it to do anything else with the function's output,
 the [notebook]({{ page.root }}/reference.html#notebook) displays it.
-In this case,
-that output is the data we just loaded.
-By default,
-only a few rows and columns are shown
-(with `...` to omit elements when displaying big arrays).
-Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros,
-so `1.0` becomes `1.`.
 
-Our call to `numpy.loadtxt` read our file
-but didn't save the data in memory.
-To do that,
-we need to assign the array to a variable. In a similar manner to how we assign a single
-value to a variable, we can also assign an array of values to a variable using the same syntax.
-Let's re-run `numpy.loadtxt` and save the returned data:
 
-~~~
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-~~~
-{: .language-python}
-
-This statement doesn't produce any output because we've assigned the output to the variable `data`.
-If we want to check that the data have been loaded,
-we can print the variable's value:
-
-~~~
-print(data)
-~~~
-{: .language-python}
-
-~~~
-[[ 0.  0.  1. ...,  3.  0.  0.]
- [ 0.  1.  2. ...,  1.  0.  1.]
- [ 0.  1.  1. ...,  2.  1.  1.]
- ...,
- [ 0.  1.  1. ...,  1.  1.  1.]
- [ 0.  0.  0. ...,  0.  2.  0.]
- [ 0.  0.  1. ...,  1.  1.  0.]]
-~~~
-{: .output}
 
 Now that the data are in memory,
 we can manipulate them.
@@ -270,10 +249,10 @@ print(data[0:4, 0:10])
 ~~~
 {: .output}
 
-The [slice]({{ page.root }}/reference.html#slice) `0:4` means, "Start at index 0 and go up to,
+Please note: **row index comes first**. The [slice]({{ page.root }}/reference.html#slice) `0:4` means, "Start at index 0 and go up to,
 but not including, index 4". Again, the up-to-but-not-including takes a bit of getting used to,
 but the rule is that the difference between the upper and lower bounds is the number of values in
-the slice.
+the slice. Please note: 
 
 We don't have to start slices at 0:
 
@@ -437,6 +416,8 @@ operation across an axis:
 ![Per-patient maximum inflammation is computed row-wise across all columns using
 numpy.max(data, axis=1). Per-day average inflammation is computed column-wise across all rows using
 numpy.mean(data, axis=0).](../fig/python-operations-across-axes.png)
+
+Please note: If we want the average of one column, we move along all rows (right image). The row index is the first one, so with Python starting a index 0, in NumPy we move along axis = 0. If we want the average of one row, we move along all columns. Column index is the second one one, so with the 0-offset we move along axis = 1.
 
 To support this functionality,
 most array functions allow us to specify the axis we want to work on.
