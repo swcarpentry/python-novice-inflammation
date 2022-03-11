@@ -149,6 +149,15 @@ print(type(patient_id))
 ~~~
 {: .output}
 
+> ## Classes and Objects
+>
+> A [class]({{ page.root }}/reference.html#class) is like a kind of recipe for a meal. It comes with `members` similar to ingredients and `methods` similar to preparation steps like "slice onions". While you will have to slice the onions yourself, a `method` named `slice_data` should do exactly that: slicing data for you.
+>
+> An `object` is like a meal: you need to create one following the recipe. In real life this is a lot of work, in Python you write `temperature = 73.5` to create an object of the `class float` having the value `73.5` and which is named `temperature`. 
+>
+> Takeaway note: **in Python 3 and higher everything is an object**. You will always see `class 'classname'` if you ask for the type of an object. 
+{: .callout}
+
 Moreover, we can do arithmetic with variables right inside the `print` function:
 
 ~~~
