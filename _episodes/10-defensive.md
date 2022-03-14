@@ -22,6 +22,8 @@ keypoints:
    what that code is supposed to do."
 ---
 
+TODO: Update objectives and keypoints.
+
 Our previous lessons have introduced the basic tools of programming:
 variables and lists,
 file I/O,
@@ -173,117 +175,57 @@ The code in the except block is only executed if an exception occurred in the tr
 The except block is required with a try block, even if it contains only the `pass` statement
 (i.e. ignore the exception and carry on).
 
-An example of where error handling could be useful was the earlier lesson
-where we were looping over a list of inflammation files
-in order to visualise the data and detect problems.
+For example, let's say we want to calculate the availability of medical professionals
+to treat arthritis patients in American cities. 
+If a given city has zero rheumatologists,
+we'd be left in a situation where dividing by zero raises a `ZeroDivisionError`.
 
 ~~~
-def visualize(filename):
-
-    data = numpy.loadtxt(fname=filename, delimiter=',')
-
-    fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
-
-    axes1 = fig.add_subplot(1, 3, 1)
-    axes2 = fig.add_subplot(1, 3, 2)
-    axes3 = fig.add_subplot(1, 3, 3)
-
-    axes1.set_ylabel('average')
-    axes1.plot(numpy.mean(data, axis=0))
-
-    axes2.set_ylabel('max')
-    axes2.plot(numpy.max(data, axis=0))
-
-    axes3.set_ylabel('min')
-    axes3.plot(numpy.min(data, axis=0))
-
-    fig.tight_layout()
-    matplotlib.pyplot.show()
-
-
-def detect_problems(filename):
-
-    data = numpy.loadtxt(fname=filename, delimiter=',')
-
-    if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
-        print('Suspicious looking maxima!')
-    elif numpy.sum(numpy.min(data, axis=0)) == 0:
-        print('Minima add up to zero!')
-    else:
-        print('Seems OK!')
-
-filenames = sorted(glob.glob('inflammation*.csv'))
-
-for filename in filenames[:3]:
-    print(filename)
-    visualize(filename)
-    detect_problems(filename)
-~~~
-{: .language-python}
-
-As it stands, if there's a problem reading in any of the data files in the file list
-the `numpy.loadtxt` function will trigger an `OSError` and the loop will halt.
-
-~~~
-numpy.loadtxt(fname='inflammation-20.csv', delimiter=',')
+n_patients = 457
+n_rheumatologists = 0
+rheumatologists_per_patient = n_patients / n_rheumatologists
 ~~~
 {: .language-python}
 
 ~~~
-OSError                                   Traceback (most recent call last)
-<ipython-input-9-1dadbddc47b6> in <module>
-----> 1 numpy.loadtxt(fname='inflammation-20.csv', delimiter=',')
+ZeroDivisionError                         Traceback (most recent call last)
+<ipython-input-3-cad92f580d24> in <module>
+----> 1 rheumatologists_per_patient = n_patients / n_rheumatologists
 
-~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/npyio.py in loadtxt(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, like)
-   1063             fname = os_fspath(fname)
-   1064         if _is_string_like(fname):
--> 1065             fh = np.lib._datasource.open(fname, 'rt', encoding=encoding)
-   1066             fencoding = getattr(fh, 'encoding', 'latin1')
-   1067             fh = iter(fh)
-
-~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/_datasource.py in open(path, mode, destpath, encoding, newline)
-    192 
-    193     ds = DataSource(destpath)
---> 194     return ds.open(path, mode, encoding=encoding, newline=newline)
-    195 
-    196 
-
-~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/_datasource.py in open(self, path, mode, encoding, newline)
-    529                                       encoding=encoding, newline=newline)
-    530         else:
---> 531             raise IOError("%s not found." % path)
-    532 
-    533 
-
-OSError: inflammation-20.csv not found.
-~~~  
+ZeroDivisionError: division by zero
+~~~
 {: .error}
 
-If we'd prefer the loop continue on and process the remaining files,
-we need to catch and handle the `OSError`.
+If we'd prefer our program carried on by setting `rheumatologists_per_patient` to NaN
+if `n_rheumatologists` is zero,
+we could catch and handle the `ZeroDivisionError` as follows.
 
 ~~~
-filenames = ['inflammation-01.csv', 'inflammation-20.csv', 'inflammation-03.csv']
-for filename in filenames:
-    try:
-        print(filename)
-        visualize(filename)
-        detect_problems(filename)
-    except OSError:
-        pass
+n_patients = 457
+n_rheumatologists = 0
+try:
+    rheumatologists_per_patient = n_patients / n_rheumatologists
+except ZeroDivisionError:
+    rheumatologists_per_patient = numpy.nan
 ~~~
 {: .language-python}
-
 
 ## Assertions
 
-The first step toward getting the right answers from our programs
-is to assume that mistakes *will* happen
-and to guard against them.
-This is called [defensive programming]({{ page.root }}/reference.html#defensive-programming),
-and the most common way to do it is to add
-[assertions]({{ page.root }}/reference.html#assertion) to our code
-so that it checks itself as it runs.
+Unexpected behaviour in a program can sometimes propagate a long way
+before triggering an exception or producing a perplexing result.
+For instance,
+if a data file contains an unrealistic inflammation value (e.g. a negative value)
+that value could be used in various downstream calculations.
+The final plot of average inflammation across all patients (for instance) might look wrong
+(or not, which would be even worse)
+to the researcher who wrote and executed the code,
+but it wouldn't be immediately obvious that the inflammation data
+was the source of the problem.
+
+In order to avoid propagation,
+it's best to nip unexpected behaviour in the bud right when it occurs.
+One way to do this is to add [assertions]({{ page.root }}/reference.html#assertion) to your code.
 An assertion is simply a statement that something must be true at a certain point in a program.
 When Python sees one,
 it evaluates the assertion's condition.
@@ -291,7 +233,7 @@ If it's true,
 Python does nothing,
 but if it's false,
 Python halts the program immediately
-and prints the error message if one is provided.
+and raises an `AssertionError` with a custom error message if one is provided.
 For example,
 this piece of code halts as soon as the loop encounters a value that isn't positive:
 
@@ -322,178 +264,14 @@ AssertionError: Data should only contain positive values
 Programs like the Firefox browser are full of assertions:
 10-20% of the code they contain
 are there to check that the other 80–90% are working correctly.
-Broadly speaking,
-assertions fall into three categories:
-
-*   A [precondition]({{ page.root }}/reference.html#precondition)
-    is something that must be true at the start of a function in order for it to work correctly.
-
-*   A [postcondition]({{ page.root }}/reference.html#postcondition)
-    is something that the function guarantees is true when it finishes.
-
-*   An [invariant]({{ page.root }}/reference.html#invariant)
-    is something that is always true at a particular point inside a piece of code.
-
-For example,
-suppose we are representing rectangles using a [tuple]({{ page.root }}/reference.html#tuple)
-of four coordinates `(x0, y0, x1, y1)`,
-representing the lower left and upper right corners of the rectangle.
-In order to do some calculations,
-we need to normalize the rectangle so that the lower left corner is at the origin
-and the longest side is 1.0 units long.
-This function does that,
-but checks that its input is correctly formatted and that its result makes sense:
-
-~~~
-def normalize_rectangle(rect):
-    """Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.
-    Input should be of the format (x0, y0, x1, y1).
-    (x0, y0) and (x1, y1) define the lower left and upper right corners
-    of the rectangle, respectively."""
-    assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
-    x0, y0, x1, y1 = rect
-    assert x0 < x1, 'Invalid X coordinates'
-    assert y0 < y1, 'Invalid Y coordinates'
-
-    dx = x1 - x0
-    dy = y1 - y0
-    if dx > dy:
-        scaled = float(dx) / dy
-        upper_x, upper_y = 1.0, scaled
-    else:
-        scaled = float(dx) / dy
-        upper_x, upper_y = scaled, 1.0
-
-    assert 0 < upper_x <= 1.0, 'Calculated upper X coordinate invalid'
-    assert 0 < upper_y <= 1.0, 'Calculated upper Y coordinate invalid'
-
-    return (0, 0, upper_x, upper_y)
-~~~
-{: .language-python}
-
-The preconditions on lines 6, 8, and 9 catch invalid inputs:
-
-~~~
-print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
-~~~
-{: .language-python}
-
-~~~
----------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-<ipython-input-2-1b9cd8e18a1f> in <module>
-----> 1 print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
-
-<ipython-input-1-c94cf5b065b9> in normalize_rectangle(rect)
-      4     (x0, y0) and (x1, y1) define the lower left and upper right corners
-      5     of the rectangle, respectively."""
-----> 6     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
-      7     x0, y0, x1, y1 = rect
-      8     assert x0 < x1, 'Invalid X coordinates'
-
-AssertionError: Rectangles must contain 4 coordinates
-~~~
-{: .error}
-
-~~~
-print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted
-~~~
-{: .language-python}
-
-~~~
----------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-<ipython-input-3-325036405532> in <module>
-----> 1 print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted
-
-<ipython-input-1-c94cf5b065b9> in normalize_rectangle(rect)
-      6     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
-      7     x0, y0, x1, y1 = rect
-----> 8     assert x0 < x1, 'Invalid X coordinates'
-      9     assert y0 < y1, 'Invalid Y coordinates'
-     10
-
-AssertionError: Invalid X coordinates
-~~~
-{: .error}
-
-The post-conditions on lines 20 and 21 help us catch bugs by telling us when our
-calculations might have been incorrect.
-For example,
-if we normalize a rectangle that is taller than it is wide everything seems OK:
-
-~~~
-print(normalize_rectangle( (0.0, 0.0, 1.0, 5.0) ))
-~~~
-{: .language-python}
-
-~~~
-(0, 0, 0.2, 1.0)
-~~~
-{: .output}
-
-but if we normalize one that's wider than it is tall,
-the assertion is triggered:
-
-~~~
-print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))
-~~~
-{: .language-python}
-
-~~~
----------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-<ipython-input-5-8d4a48f1d068> in <module>
-----> 1 print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))
-
-<ipython-input-1-c94cf5b065b9> in normalize_rectangle(rect)
-     19
-     20     assert 0 < upper_x <= 1.0, 'Calculated upper X coordinate invalid'
----> 21     assert 0 < upper_y <= 1.0, 'Calculated upper Y coordinate invalid'
-     22
-     23     return (0, 0, upper_x, upper_y)
-
-AssertionError: Calculated upper Y coordinate invalid
-~~~
-{: .error}
-
-Re-reading our function,
-we realize that line 14 should divide `dy` by `dx` rather than `dx` by `dy`.
-In a Jupyter notebook, you can display line numbers by typing <kbd>Ctrl</kbd>+<kbd>M</kbd>
-followed by <kbd>L</kbd>.
-If we had left out the assertion at the end of the function,
-we would have created and returned something that had the right shape as a valid answer,
-but wasn't.
-Detecting and debugging that would almost certainly have taken more time in the long run
-than writing the assertion.
-
-But assertions aren't just about catching errors:
+In fact, assertions aren't just about catching errors:
 they also help people understand programs.
 Each assertion gives the person reading the program
 a chance to check (consciously or otherwise)
 that their understanding matches what the code is doing.
 
-Most good programmers follow two rules when adding assertions to their code.
-The first is, *fail early, fail often*.
-The greater the distance between when and where an error occurs and when it's noticed,
-the harder the error will be to debug,
-so good code catches mistakes as early as possible.
 
-The second rule is, *turn bugs into assertions or tests*.
-Whenever you fix a bug, write an assertion that catches the mistake
-should you make it again.
-If you made a mistake in a piece of code,
-the odds are good that you have made other mistakes nearby,
-or will make the same mistake (or a related one)
-the next time you change it.
-Writing assertions to check that you haven't [regressed]({{ page.root }}/reference.html#regression)
-(i.e., haven't re-introduced an old problem)
-can save a lot of time in the long run,
-and helps to warn people who are reading the code
-(including your future self)
-that this bit is tricky.
-
-## Test-Driven Development
+## Unit Testing and Test-Driven Development
 
 An assertion checks that something is true at a particular point in the program.
 The next step is to check the overall behavior of a piece of code,
@@ -697,25 +475,126 @@ regardless of the input values.
 This violates another important rule of programming:
 *always initialize from data*.
 
-> ## Pre- and Post-Conditions
+> ## Test frameworks
 >
-> Suppose you are writing a function called `average` that calculates
-> the average of the numbers in a list.
-> What pre-conditions and post-conditions would you write for it?
-> Compare your answer to your neighbor's:
-> can you think of a function that will pass your tests but not his/hers or vice versa?
->
-> > ## Solution
-> > ~~~
-> > # a possible pre-condition:
-> > assert len(input_list) > 0, 'List length must be non-zero'
-> > # a possible post-condition:
-> > assert numpy.min(input_list) <= average <= numpy.max(input_list),
-> > 'Average should be between min and max of input values (inclusive)'
-> > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
+> A problem we haven't addressed in this example is that `test_range_overlap` will
+> halt as soon as one of the assertions fails.
+> Ideally, we'd like it to continue and run all the assertions,
+> so we can find out if there are other points of failure.
+> This is where a test framework (also called a test runner)
+> such as [pytest](https://docs.pytest.org/en/7.1.x/) can be very useful.
+> Test frameworks are beyond the scope of this lesson,
+> but as you start to incorporate unit testing into your workflows
+> they are an important tool for coordinating the process.
+{: .callout}
+
+
+## Logging
+
+So far we've considered how to make our programs halt or handle the situation when things go wrong,
+and how to write unit tests to check for correct behaviour. 
+One final option in our defensive programming toolkit is to have our programs report their own activity.
+We saw this earlier when we used `print` statements to report potential problems with our data.
+
+~~~
+def detect_problems(filename):
+
+    data = numpy.loadtxt(fname=filename, delimiter=',')
+
+    if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+        print('Suspicious looking maxima!')
+    elif numpy.sum(numpy.min(data, axis=0)) == 0:
+        print('Minima add up to zero!')
+    else:
+        print('Seems OK!') 
+~~~
+{: .language-python}
+
+The problem with this approach is that information printed to the screen is lost
+once we close our session.
+Constantly adding, removing or commenting out `print` statements from code
+is also tedious and error-prone.
+
+A better approach is to use a logging framework,
+such as Python’s `logging` library.
+This lets us leave debugging statements in our code and turn them on or off at will.
+Let's start by replacing our `print` statements with `logging` commands.
+
+In order of increasing severity, the available logging levels are:
+
+- `debug`: very detailed information used for localizing errors.
+- `info`: confirmation that things are working as expected.
+- `warning`: something unexpected happened, but the program will keep going.
+- `error`: something has gone badly wrong, but the program hasn’t hurt anything.
+- `critcal`: potential loss of data, security breach, etc.
+
+~~~
+import logging
+
+def detect_problems(filename):
+
+    data = numpy.loadtxt(fname=filename, delimiter=',')
+
+    if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
+        logging.warning(f'Suspicious looking maxima in {filename}')
+    elif numpy.sum(numpy.min(data, axis=0)) == 0:
+        logging.warning(f'Minima add up to zero in {filename}')
+    else:
+        logging.info(f'{filename} seems OK') 
+~~~
+{: .language-python}
+
+By default only information from logging levels warning and more severe is reported.
+
+~~~
+detect_problems('inflammation-03.csv')
+~~~
+{: .language-python}
+
+~~~
+WARNING:root:Minima add up to zero in inflammation-03.csv
+~~~
+{: .output}
+
+If we want to see the output from less severe levels (i.e. turn our information statement on),
+we'd need to change the minimum level in the logging configuration.
+We can also provide the name of a file to write the logging information to,
+so that it isn't lost when we finish our command line session.
+
+~~~
+# for loop only required in notebooks
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
+    
+logging.basicConfig(level=logging.info, filename='log.txt')) 
+
+detect_problems('inflammation-05.csv')
+~~~
+{: .language-python}
+
+(TODO: Edit inflammation-05.csv so that the data is ok - at the moment all files have problems.)
+
+(The for loop is needed to turn off the background logging the notebook does itself.
+It's not needed in a Python script.)
+
+By setting the logging level to "info",
+our output "log.txt" file will now capture all logging information
+with a flag of 'info' or higher - that is,
+all logging outputs will be written to our log file.
+
+~~~
+$ cat log.txt
+~~~
+{: .language-bash}
+
+~~~
+INFO:root:inflammation-05.csv seems ok
+~~~
+{: .output}
+
+
+
+TODO: Add new challenges.
 
 > ## Testing Assertions
 >
