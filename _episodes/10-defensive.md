@@ -5,24 +5,23 @@ exercises: 10
 questions:
 - "How can I make my programs more reliable?"
 objectives:
+- "Signal errors by raising exceptions."
+- "Use try-except blocks to catch and handle exceptions."
 - "Explain what an assertion is."
 - "Add assertions that check the program's state is correct."
-- "Correctly add precondition and postcondition assertions to functions."
 - "Explain what test-driven development is, and use it when creating new functions."
-- "Explain why variables should be initialized using actual data values
-   rather than arbitrary constants."
+- "Use a logging framework to report on program activity."
 keypoints:
 - "Program defensively, i.e., assume that errors are going to arise,
    and write code to detect them when they do."
+- "Raise exceptions in your own code."
+- "Put try-except blocks in programs to catch and handle exceptions."
 - "Put assertions in programs to check their state as they run,
    and to help readers understand how those programs are supposed to work."
-- "Use preconditions to check that the inputs to a function are safe to use."
-- "Use postconditions to check that the output from a function is safe to use."
 - "Write tests before writing code in order to help determine exactly
    what that code is supposed to do."
+- "Use a logging framework instead of `print` statements to report program activity."
 ---
-
-TODO: Update objectives and keypoints.
 
 Our previous lessons have introduced the basic tools of programming:
 variables and lists,
@@ -544,7 +543,7 @@ def detect_problems(filename):
 ~~~
 {: .language-python}
 
-By default only information from logging levels warning and more severe is reported.
+By default only information from logging levels "warning" and more severe is reported.
 
 ~~~
 detect_problems('inflammation-03.csv')
@@ -561,21 +560,12 @@ we'd need to change the minimum level in the logging configuration.
 We can also provide the name of a file to write the logging information to,
 so that it isn't lost when we finish our command line session.
 
-~~~
-# for loop only required in notebooks
-for handler in logging.root.handlers[:]:
-    logging.root.removeHandler(handler)
-    
-logging.basicConfig(level=logging.info, filename='log.txt')) 
+~~~    
+logging.basicConfig(level=logging.info, filename='log.txt')
 
 detect_problems('inflammation-05.csv')
 ~~~
 {: .language-python}
-
-(TODO: Edit inflammation-05.csv so that the data is ok - at the moment all files have problems.)
-
-(The for loop is needed to turn off the background logging the notebook does itself.
-It's not needed in a Python script.)
 
 By setting the logging level to "info",
 our output "log.txt" file will now capture all logging information
@@ -592,58 +582,130 @@ INFO:root:inflammation-05.csv seems ok
 ~~~
 {: .output}
 
-
-
-TODO: Add new challenges.
-
-> ## Testing Assertions
->
-> Given a sequence of a number of cars, the function `get_total_cars` returns
-> the total number of cars.
+> ## Logging configuration in notebooks
+> 
+> If you're working in a Jupyter notebook,
+> you'll need to execute the following loop before
+> running `logging.BasicConfig`.
 >
 > ~~~
-> get_total_cars([1, 2, 3, 4])
+> for handler in logging.root.handlers[:]:
+>     logging.root.removeHandler(handler)
+> ~~~
+> {: .language-python}
+{: .callout}
+
+> ## Rounding data
+>
+> The following function takes an array and rounds the data up, down
+> or to the nearest integer 
+>
+> ~~~
+> def round_to_integer(data, method):
+>     if method == 'up':
+>         rounded_data = numpy.ceil(data)
+>     elif method == 'nearest':
+>         rounded_data = numpy.round(data)
+>     else:
+>         rounded_data = numpy.floor(data)
+>
+>     return rounded_data
 > ~~~
 > {: .language-python}
 >
-> ~~~
-> 10
-> ~~~
-> {: .output}
+> The problem is that if someone using the function provides any `method` besides
+> `up` or `nearest` (e.g. they might try `closest` in instead of `nearest`)
+> the function will round down.
 >
-> ~~~
-> get_total_cars(['a', 'b', 'c'])
-> ~~~
-> {: .language-python}
->
-> ~~~
-> ValueError: invalid literal for int() with base 10: 'a'
-> ~~~
-> {: .output}
->
-> Explain in words what the assertions in this function check,
-> and for each one,
-> give an example of input that will make that assertion fail.
->
-> ~~~
-> def get_total(values):
->     assert len(values) > 0
->     for element in values:
->         assert int(element)
->     values = [int(element) for element in values]
->     total = sum(values)
->     assert total > 0
->     return total
-> ~~~
-> {: .language-python}
+> Edit `round_to_integer` so it raises a `ValueError` if any `method` besides
+> `up`, `nearest` or `down` is used.
 >
 > > ## Solution
-> > *   The first assertion checks that the input sequence `values` is not empty.
-> >     An empty sequence such as `[]` will make it fail.
-> > *   The second assertion checks that each value in the list can be turned into an integer.
-> >     Input such as `[1, 2,'c', 3]` will make it fail.
-> > *   The third assertion checks that the total of the list is greater than 0.
-> >     Input such as `[-10, 2, 3]` will make it fail.
+> > ~~~
+> > def round_to_integer(data, method):
+> >     if method == 'up':
+> >         rounded_data = numpy.ceil(data)
+> >     elif method == 'nearest':
+> >         rounded_data = numpy.round(data)
+> >     elif method == 'down':
+> >         rounded_data = numpy.floor(data)
+> >     else:
+> >         raise ValueError("""Method argument must be 'up', 'down' or 'nearest'""")
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
+> ## Ignore missing files
+>
+> In an earlier lesson we were looping over a list of inflammation files
+> in order to visualise the data and detect problems.
+>
+> ~~~
+> for filename in filenames:
+>     print(filename)
+>     visualize(filename)
+>     detect_problems(filename)
+> ~~~
+> {: .language-python}
+>
+> As it stands, if there's a problem reading in any of the data files in `filenames`
+> (e.g. if the file doesn't exist)
+> the `numpy.loadtxt` function in `visualize` will trigger an `OSError`
+> and the loop will halt. 
+> For example:
+>
+> ~~~
+> numpy.loadtxt(fname='inflammation-20.csv', delimiter=',')
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> OSError: inflammation-20.csv not found.
+> ~~~  
+> {: .error}
+>
+> Add a try-except block to the loop so that if a given `filename`
+> triggers an `OSError` the loop simply continues to the next file in the list.
+>
+> > ## Solution
+> > ~~~
+> > for filename in filenames:
+> >    try:
+> >        print(filename)
+> >        visualize(filename)
+> >        detect_problems(filename)
+> >    except OSError:
+> >        pass
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
+> ## Absolute zero
+>
+> In an earlier lesson we defined a function for converting temperature values
+> from Celsius to Kelvin.
+> 
+> ~~~
+> def celsius_to_kelvin(temp_c):
+>     return temp_c + 273.15
+> ~~~
+> {: .language-python}
+>
+> The Kelvin temperature scale is defined such that values less than zero are
+> physically impossible (0 K is often referred to as absolute zero).
+> Add an assertion to `celsius_to_kelvin` to check that the calculated
+> temperatures are not less than zero.
+>
+> > ## Solution
+> > ~~~
+> > def celsius_to_kelvin(temp_c):
+> >     temp_k = temp_c + 273.15
+> >     assert numpy.min(temp_k) >= 0, f"There is a temperature/s less than absolute zero"
+> >     return temp_k
+> > ~~~
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
