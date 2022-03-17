@@ -7,7 +7,6 @@ questions:
 objectives:
 - "Signal errors by raising exceptions."
 - "Use try-except blocks to catch and handle exceptions."
-- "Explain what an assertion is."
 - "Add assertions that check the program's state is correct."
 - "Explain what test-driven development is, and use it when creating new functions."
 - "Use a logging framework to report on program activity."
@@ -79,7 +78,7 @@ or define our own [custom exception class](https://towardsdatascience.com/how-to
 
 A common use case for raising exceptions is to catch invalid user input.
 For example,
-some of the exercises in the previous lesson involve writing a rescaling function:
+some of the exercises in the previous lesson involve writing a rescaling function.
 
 ~~~
 def rescale(input_array, low_val=0.0, high_val=1.0):
@@ -91,7 +90,7 @@ def rescale(input_array, low_val=0.0, high_val=1.0):
     return output_array
     
 data = [1, 2, 3, 4, 5]
-rescale(data, low_val=0, high_val=10)
+print(rescale(data, low_val=0, high_val=10))
 ~~~
 {: .language-python}
 
@@ -130,14 +129,14 @@ def rescale(input_array, low_val=0.0, high_val=1.0):
     output_array = intermed_array * (high_val - low_val) + low_val
     return output_array
     
-rescale(data, low_val=10, high_val=0)
+print(rescale(data, low_val=10, high_val=0))
 ~~~
 {: .language-python}
 
 ~~~
 ValueError                                Traceback (most recent call last)
 <ipython-input-8-a1053c5ce6f8> in <module>
-----> 1 rescale(data, low_val=10, high_val=0)
+----> 1 print(rescale(data, low_val=10, high_val=0))
 
 <ipython-input-7-ca802222cd28> in rescale(input_array, low_val, high_val)
       2     """rescales input array values to lie between low_val and high_val"""
@@ -206,8 +205,14 @@ try:
     rheumatologists_per_patient = n_patients / n_rheumatologists
 except ZeroDivisionError:
     rheumatologists_per_patient = numpy.nan
+print(rheumatologists_per_patient)
 ~~~
 {: .language-python}
+
+~~~
+nan
+~~~
+{: .output}
 
 ## Assertions
 
@@ -260,15 +265,11 @@ AssertionError: Data should only contain positive values
 ~~~
 {: .error}
 
-Programs like the Firefox browser are full of assertions:
-10-20% of the code they contain
-are there to check that the other 80–90% are working correctly.
-In fact, assertions aren't just about catching errors:
+Assertions aren't just about catching errors:
 they also help people understand programs.
 Each assertion gives the person reading the program
 a chance to check (consciously or otherwise)
 that their understanding matches what the code is doing.
-
 
 ## Unit Testing and Test-Driven Development
 
@@ -478,7 +479,7 @@ This violates another important rule of programming:
 >
 > A problem we haven't addressed in this example is that `test_range_overlap` will
 > halt as soon as one of the assertions fails.
-> Ideally, we'd like it to continue and run all the assertions,
+> Ideally, we'd like it to continue and run all the assertions
 > so we can find out if there are other points of failure.
 > This is where a test framework (also called a test runner)
 > such as [pytest](https://docs.pytest.org/en/7.1.x/) can be very useful.
@@ -543,7 +544,7 @@ def detect_problems(filename):
 ~~~
 {: .language-python}
 
-By default only information from logging levels "warning" and more severe is reported.
+By default, only information from logging levels "warning" and more severe is reported.
 
 ~~~
 detect_problems('inflammation-03.csv')
@@ -558,7 +559,7 @@ WARNING:root:Minima add up to zero in inflammation-03.csv
 If we want to see the output from less severe levels (i.e. turn our information statement on),
 we'd need to change the minimum level in the logging configuration.
 We can also provide the name of a file to write the logging information to,
-so that it isn't lost when we finish our command line session.
+so that it isn't lost when we finish our session.
 
 ~~~    
 logging.basicConfig(level=logging.info, filename='log.txt')
@@ -569,7 +570,7 @@ detect_problems('inflammation-05.csv')
 
 By setting the logging level to "info",
 our output "log.txt" file will now capture all logging information
-with a flag of 'info' or higher - that is,
+with a flag of "info" or higher - that is,
 all logging outputs will be written to our log file.
 
 ~~~
@@ -598,7 +599,7 @@ INFO:root:inflammation-05.csv seems ok
 > ## Rounding data
 >
 > The following function takes an array and rounds the data up, down
-> or to the nearest integer 
+> or to the nearest integer. 
 >
 > ~~~
 > def round_to_integer(data, method):
