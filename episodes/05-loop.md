@@ -101,7 +101,7 @@ IndexError: list index out of range
 ~~~
 {: .error}
 
-Here's a better approach: a [for loop]({{ page.root }}/reference/#for-loop)
+Here's a better approach: a [for loop]({{ page.root }}/reference.html#for-loop)
 
 ~~~
 odds = [1, 3, 5, 7]
@@ -376,7 +376,7 @@ so we should always use it when we can.
 
 > ## Computing the Value of a Polynomial
 >
-> The built-in function `enumerate` takes a sequence (e.g. a [list]({{ page.root }}/05-lists/)) and
+> The built-in function `enumerate` takes a sequence (e.g. a [list]({{ page.root }}/04-lists/)) and
 > generates a new sequence of the same length. Each element of the new sequence is a pair composed
 > of the index (0, 1, 2,...) and the value from the original sequence:
 >
