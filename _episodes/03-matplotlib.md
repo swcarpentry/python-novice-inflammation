@@ -30,7 +30,7 @@ import the `pyplot` module from `matplotlib` and use two of its functions to cre
 > import numpy
 > data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 > ~~~
-> {: .source}
+> {: .language-python}
 {: .callout}
 
 
