@@ -22,7 +22,7 @@ import the `pyplot` module from `matplotlib` and use two of its functions to cre
 
 > ## Making sure we have the data
 >
-> If you are continuing inthe same notebook from the previous episode you already
+> If you are continuing in the same notebook from the previous episode, you already
 > have a `data` variable and have imported `numpy`.  If you are starting a new 
 > notebook at this point you need the following two lines. 
 >
