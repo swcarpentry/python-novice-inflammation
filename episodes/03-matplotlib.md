@@ -20,6 +20,20 @@ there is no official plotting library, `matplotlib` is the _de facto_ standard. 
 import the `pyplot` module from `matplotlib` and use two of its functions to create and display a
 [heat map]({{ page.root }}/reference.html#heat-map) of our data:
 
+> ## Episode Prerequisites
+>
+> If you are continuing in the same notebook from the previous episode, you already
+> have a `data` variable and have imported `numpy`.  If you are starting a new 
+> notebook at this point, you need the following two lines:
+>
+> ~~~
+> import numpy
+> data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+> ~~~
+> {: .language-python}
+{: .prereq}
+
+
 ~~~
 import matplotlib.pyplot
 image = matplotlib.pyplot.imshow(data)
