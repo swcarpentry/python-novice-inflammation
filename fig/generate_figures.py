@@ -29,11 +29,11 @@ matplotlib.pyplot.plot(numpy.mean(data, axis=0))
 matplotlib.pyplot.savefig("inflammation-01-average.svg")
 matplotlib.pyplot.close()
 
-matplotlib.pyplot.plot(numpy.max(data, axis=0))
+matplotlib.pyplot.plot(numpy.amax(data, axis=0))
 matplotlib.pyplot.savefig("inflammation-01-maximum.svg")
 matplotlib.pyplot.close()
 
-matplotlib.pyplot.plot(numpy.min(data, axis=0))
+matplotlib.pyplot.plot(numpy.amin(data, axis=0))
 matplotlib.pyplot.savefig("inflammation-01-minimum.svg")
 matplotlib.pyplot.close()
 
@@ -48,10 +48,10 @@ axes1.set_ylabel('average')
 axes1.plot(numpy.mean(data, axis=0))
 
 axes2.set_ylabel('max')
-axes2.plot(numpy.max(data, axis=0))
+axes2.plot(numpy.amax(data, axis=0))
 
 axes3.set_ylabel('min')
-axes3.plot(numpy.min(data, axis=0))
+axes3.plot(numpy.amin(data, axis=0))
 
 fig.tight_layout()
 matplotlib.pyplot.savefig("inflammation-01-group-plot.svg")
@@ -69,10 +69,10 @@ axes1.set_ylabel('average')
 axes1.plot(numpy.mean(data, axis=0), drawstyle='steps-mid')
 
 axes2.set_ylabel('max')
-axes2.plot(numpy.max(data, axis=0), drawstyle='steps-mid')
+axes2.plot(numpy.amax(data, axis=0), drawstyle='steps-mid')
 
 axes3.set_ylabel('min')
-axes3.plot(numpy.min(data, axis=0), drawstyle='steps-mid')
+axes3.plot(numpy.amin(data, axis=0), drawstyle='steps-mid')
 
 fig.tight_layout()
 matplotlib.pyplot.savefig("inflammation-01-line-styles.svg")

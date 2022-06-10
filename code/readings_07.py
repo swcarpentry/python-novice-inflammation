@@ -17,11 +17,11 @@ def process(filename, action):
     data = numpy.loadtxt(filename, delimiter=',')
 
     if action == '-n':
-        values = numpy.min(data, axis=1)
+        values = numpy.amin(data, axis=1)
     elif action == '-m':
         values = numpy.mean(data, axis=1)
     elif action == '-x':
-        values = numpy.max(data, axis=1)
+        values = numpy.amax(data, axis=1)
 
     for val in values:
         print(val)
