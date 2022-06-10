@@ -29,6 +29,7 @@ and prints the average inflammation per patient.
 > In this lesson we are switching from typing commands in a Python interpreter to typing
 > commands in a shell terminal window (such as bash). When you see a `$` in front of a
 > command that tells you to run that command in the shell rather than the Python interpreter.
+> You will also see "Bash" instead of "Python" in the code cells in this lesson.
 {: .callout}
 
 This program does exactly what we want - it prints the average inflammation per patient
@@ -308,11 +309,11 @@ $ python ../code/readings_02.py inflammation-01.csv
 
 > ## The Right Way to Do It
 >
-> If our programs can take complex parameters or multiple filenames,
-> we shouldn't handle `sys.argv` directly.
-> Instead,
+> You should never write a program this way. We didn't implement
+> the most important optional argument: `--help` (often abbreviated `-h`).
+> Instead of manually writing handling for help,
 > we should use Python's `argparse` library,
-> which handles common cases in a systematic way,
+> which generates this for us, handles common cases in a systematic way,
 > and also makes it easy for us to provide sensible error messages for our users.
 > We will not cover this module in this lesson
 > but you can go to Tshepang Lekhonkhobe's
