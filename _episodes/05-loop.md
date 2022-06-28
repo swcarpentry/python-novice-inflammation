@@ -299,7 +299,39 @@ so we should always use it when we can.
 > {: .solution}
 {: .challenge}
 
-
+> ## Iterator of multiple collections
+>
+> `zip` function in Python can be used to build an iterator of multiple collections where the first element in each passed collection is paired together, then the second element in each passed collection is paired together etc.
+> ~~~
+> for elementofcollection1, elementofcollection2 in zip(collection1, collection2):
+>   # do things
+> ~~~
+> {: .language-python}
+> >
+> Using `zip`,
+> write a loop that iterates each element of two given `fruits` and `counts` tuples:
+>
+> ~~~
+> fruits = ('apple', 'banana', 'organge')
+> counts = (10, 5, 32)
+> ~~~
+> {: .language-python}
+>
+> > ## Solution
+> > ~~~
+> > for fruit, count in zip(fruits, counts):
+> >     print('fruit: ', fruit, '- count: ', count)
+> > ~~~
+> > {: .language-python}
+> > ## Output
+> > ~~~
+> > fruit:  apple - count:  10
+> > fruit:  banana - count:  5
+> > fruit:  organge - count:  32
+> > ~~~
+> > {: .output}
+> {: .solution}
+{: .challenge}
 
 
 > ## Understanding the loops
