@@ -273,7 +273,7 @@ copy it and then modify this list, we can cause all sorts of trouble. This also 
 the list using the above functions:
 
 ~~~
-odds = [1, 3, 5, 7]
+odds = [3, 5, 7]
 primes = odds
 primes.append(2)
 print('primes:', primes)
@@ -282,8 +282,8 @@ print('odds:', odds)
 {: .language-python}
 
 ~~~
-primes: [1, 3, 5, 7, 2]
-odds: [1, 3, 5, 7, 2]
+primes: [3, 5, 7, 2]
+odds: [3, 5, 7, 2]
 ~~~
 {: .output}
 
