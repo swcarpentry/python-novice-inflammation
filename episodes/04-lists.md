@@ -292,7 +292,7 @@ same list. If all we want to do is copy a (simple) list, we can again use the `l
 do not modify a list we did not mean to:
 
 ~~~
-odds = [1, 3, 5, 7]
+odds = [3, 5, 7]
 primes = list(odds)
 primes.append(2)
 print('primes:', primes)
@@ -301,8 +301,8 @@ print('odds:', odds)
 {: .language-python}
 
 ~~~
-primes: [1, 3, 5, 7, 2]
-odds: [1, 3, 5, 7]
+primes: [3, 5, 7, 2]
+odds: [3, 5, 7]
 ~~~
 {: .output}
 
