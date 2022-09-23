@@ -42,7 +42,7 @@ weight_kg = 60
 {: .language-python}
 
 From now on, whenever we use `weight_kg`, Python will substitute the value we assigned to
-it. In layman's terms, **a variable is a name for a value**.
+it. In layperson's terms, **a variable is a name for a value**.
 
 In Python, variable names:
 
