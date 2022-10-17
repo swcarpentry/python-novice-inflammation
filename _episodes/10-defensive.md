@@ -475,7 +475,7 @@ regardless of the input values.
 In the case of the failed test (input ranges `[ (2.0, 3.0), (2.0, 4.0) ]`)
 `min_right` starts at 1.0 and is never updated,
 despite the fact that it doesn't lie within any of the input ranges.
-We can update our function so that initialises `max_left` and `min_right`
+We can update our function so that it initialises `max_left` and `min_right`
 from the input data itself.
 
 ~~~
