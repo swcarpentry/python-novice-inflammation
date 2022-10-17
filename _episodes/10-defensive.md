@@ -51,8 +51,8 @@ is much greater than the time that measuring takes.
 
 ## Raising errors
 
-One of the most simple tools in the defensive programming toolkit is the `raise` keyword,
-which you can use to raise your own exceptions.
+One of the most commonly used tools in the defensive programming toolkit is the `raise` keyword,
+which can be used to trigger an error (otherwise known as "raising an exception").
 
 ~~~
 problem = True
@@ -78,7 +78,7 @@ or define our own [custom exception class](https://towardsdatascience.com/how-to
 
 A common use case for raising exceptions is to catch invalid user input.
 For example,
-some of the exercises in the previous lesson involve writing a rescaling function.
+some of the exercises in the previous lesson involved writing a rescaling function.
 
 ~~~
 def rescale(input_array, low_val=0.0, high_val=1.0):
