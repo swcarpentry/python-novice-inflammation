@@ -897,7 +897,7 @@ readable code!
 > > and does not alter `k` outside of its local copy. 
 > > Therefore the original value of `k` remains unchanged.
 > > Beware that a local `k` is created because `f2k` internal statements
-> > *affect* a new value to it. If `k` was only `read`, it would simply retreive the
+> > *affect* a new value to it. If `k` was only `read`, it would simply retrieve the
 > > global `k` value.
 > {: .solution}
 {: .challenge}

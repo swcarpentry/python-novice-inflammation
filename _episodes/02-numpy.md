@@ -70,9 +70,8 @@ The expression `numpy.loadtxt(...)` is a
 [function call]({{ page.root }}/reference.html#function-call)
 that asks Python to run the [function]({{ page.root }}/reference.html#function) `loadtxt` which
 belongs to the `numpy` library.
-This [dotted notation]({{ page.root }}/reference.html#dotted-notation)
-is used everywhere in Python: the thing that appears before the dot contains the thing that
-appears after.
+The dot notation in Python is used most of all as an object attribute/property specifier or for invoking its method. `object.property` will give you the object.property value,
+`object_name.method()` will invoke on object_name method.
 
 As an example, John Smith is the John that belongs to the Smith family.
 We could use the dot notation to write his name `smith.john`,
@@ -166,7 +165,7 @@ are their daily inflammation measurements.
 > {: .output}
 >
 > This tells us that the NumPy array's elements are
-> [floating-point numbers]({{ page.root }}/reference.html#floating-point number).
+> [floating-point numbers]({{ page.root }}/reference.html#floating-point-number).
 {: .callout}
 
 With the following command, we can see the array's [shape]({{ page.root }}/reference.html#shape):
