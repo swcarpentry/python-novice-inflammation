@@ -73,8 +73,9 @@ Exception: There has been a problem
 {: .error}
 
 In this case we've chosen to raise a generic `Exception`,
-but we could pick any of the [builtin exception types](https://docs.python.org/3/library/exceptions.html#exception-hierarchy)
-or define our own [custom exception class](https://towardsdatascience.com/how-to-define-custom-exception-classes-in-python-bfa346629bca).
+but we could pick any of the [builtin exception types](https://docs.python.org/3/library/exceptions.html#exception-hierarchy).
+It's also possible to define your own [custom exception class](https://towardsdatascience.com/how-to-define-custom-exception-classes-in-python-bfa346629bca),
+but that's beyond the scope of this lesson.
 
 A common use case for raising exceptions is to catch invalid user input.
 For example,
@@ -153,7 +154,7 @@ ValueError: The low_val is >= the high_val
 
 As we've seen in the examples above and in the previous lesson,
 if exceptions aren't dealt with the program crashes.
-The error message upon crashing is sometimes be easy to understand
+The error message upon crashing is sometimes easy to understand
 (particularly if you wrote the `raise` statement yourself)
 but can often be cryptic.
 
