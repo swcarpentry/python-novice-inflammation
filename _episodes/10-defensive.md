@@ -637,11 +637,25 @@ We can also provide the name of a file to write the logging information to,
 so that it isn't lost when we finish our session.
 
 ~~~    
-logging.basicConfig(level=logging.info, filename='log.txt')
+logging.basicConfig(level=logging.INFO, filename='log.txt')
 
 detect_problems('inflammation-05.csv')
 ~~~
 {: .language-python}
+
+Notice that we've used capital INFO to set the logging level.
+We used the function `logging.info` earlier to define our logging message,
+whereas `logging.INFO` is an integer value used to define the logging level.
+
+~~~
+print(logging.INFO)
+~~~
+{: .language-python}
+
+~~~
+20
+~~~
+{: .output}
 
 By setting the logging level to "info",
 our output "log.txt" file will now capture all logging information
