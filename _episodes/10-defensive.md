@@ -272,6 +272,21 @@ Each assertion gives the person reading the program
 a chance to check (consciously or otherwise)
 that their understanding matches what the code is doing.
 
+> ## Same thing
+> 
+> Our assert statement in the previous example
+> is actually no different than raising an `AssertionError`.
+> ~~~
+> if num <= 0.0:
+>     raise AssertionError('Data should only contain positive values')
+> ~~~
+> {: .language-python}
+>
+> Asserting that something is true is just such a commonly used technique in defensive programming
+> (particularly in unit testing, as we'll see in the next section)
+> that it gets its own special statement.
+{: .callout}
+
 ## Unit Testing and Test-Driven Development
 
 An assertion checks that something is true at a particular point in the program.
