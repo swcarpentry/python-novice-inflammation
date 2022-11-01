@@ -32,7 +32,7 @@ that can be called upon when needed.
 
 To begin processing the clinical trial inflammation data, we need to load it into Python.
 We can do that using a library called
-[NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation"), which stands for Numerical Python.
+[NumPy](https://numpy.org/doc/stable "NumPy Documentation"), which stands for Numerical Python.
 In general, you should use this library when you want to do fancy things with lots of numbers,
 especially if you have matrices or arrays. To tell Python that we'd like to start using NumPy,
 we need to [import]({{ page.root }}/reference.html#import) it:
