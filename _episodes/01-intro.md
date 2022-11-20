@@ -17,6 +17,10 @@ keypoints:
 - "Built-in functions are always available to use."
 ---
 
+## Opening a Python Environment 
+
+Python is a popular programming language used for data wrangling, cleaning, analysis, and visualization. One of the environments in which Python code can be written and executed is called Jupyter Notebook. For today's lesson, we recommend you download the desktop graphical user interface (GUI) Anaconda Navigator, through which you will be able to access the Jupyter Notebook environment, run the code snippets we review today, and save your work for future reference.
+
 ## Variables
 
 Any Python interpreter can be used as a calculator:
