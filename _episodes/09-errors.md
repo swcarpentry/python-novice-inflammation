@@ -1,5 +1,5 @@
 ---
-title: Errors and Exceptions
+title: Errors
 teaching: 30
 exercises: 0
 questions:
@@ -29,7 +29,7 @@ keypoints:
 Every programmer encounters errors,
 both those who are just beginning,
 and those who have been programming for years.
-Encountering errors and exceptions can be very frustrating at times,
+Encountering errors can be very frustrating at times,
 and can make coding feel like a hopeless endeavour.
 However,
 understanding what the different types of errors are

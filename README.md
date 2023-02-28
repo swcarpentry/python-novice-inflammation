@@ -36,7 +36,7 @@ This lesson is also available in [R][R] and [MATLAB][MATLAB].
 | 6 | [Analyzing Data from Multiple Files][episode06] | 20 | How can I do the same operations on many different files? |
 | 7 | [Making Choices][episode07] | 30 | How can my programs do different things based on data values? |
 | 8 | [Creating Functions][episode08] | 30 | How can I define new functions?<br>What’s the difference between defining and calling a function?<br>What happens when I call a function? |
-| 9 | [Errors and Exceptions][episode09] | 30 | How does Python report errors?<br>How can I handle errors in Python programs? |
+| 9 | [Errors][episode09] | 30 | How does Python report errors?<br>How can I handle errors in Python programs? |
 |10 | [Defensive Programming][episode10] | 30 | How can I make my programs more reliable? |
 |11 | [Debugging][episode11] | 30 | How can I debug my program? |
 |12 | [Command-Line Programs][episode12] | 30 | How can I write Python programs that will work like Unix command-line tools? |
