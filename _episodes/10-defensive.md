@@ -130,10 +130,10 @@ def normalize_rectangle(rect):
     dx = x1 - x0
     dy = y1 - y0
     if dx > dy:
-        scaled = float(dx) / dy
+        scaled = dx / dy
         upper_x, upper_y = 1.0, scaled
     else:
-        scaled = float(dx) / dy
+        scaled = dx / dy
         upper_x, upper_y = scaled, 1.0
 
     assert 0 < upper_x <= 1.0, 'Calculated upper X coordinate invalid'
