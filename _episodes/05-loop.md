@@ -307,8 +307,8 @@ so we should always use it when we can.
 > Given the following loop:
 > ~~~
 > word = 'oxygen'
-> for char in word:
->     print(char)
+> for letter in word:
+>     print(letter)
 > ~~~
 > {: .language-python}
 >
