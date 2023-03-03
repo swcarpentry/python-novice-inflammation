@@ -107,8 +107,8 @@ assertions fall into three categories:
     is something that is always true at a particular point inside a piece of code.
 
 For example,
-suppose we are representing rectangles using a [tuple]({{ page.root }}/reference.html#tuple)
-of four coordinates `(x0, y0, x1, y1)`,
+suppose we are representing rectangles using a list
+of four coordinates `[x0, y0, x1, y1]`,
 representing the lower left and upper right corners of the rectangle.
 In order to do some calculations,
 we need to normalize the rectangle so that the lower left corner is at the origin
@@ -119,7 +119,7 @@ but checks that its input is correctly formatted and that its result makes sense
 ~~~
 def normalize_rectangle(rect):
     """Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.
-    Input should be of the format (x0, y0, x1, y1).
+    Input should be of the format [x0, y0, x1, y1].
     (x0, y0) and (x1, y1) define the lower left and upper right corners
     of the rectangle, respectively."""
     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
@@ -139,14 +139,14 @@ def normalize_rectangle(rect):
     assert 0 < upper_x <= 1.0, 'Calculated upper X coordinate invalid'
     assert 0 < upper_y <= 1.0, 'Calculated upper Y coordinate invalid'
 
-    return (0, 0, upper_x, upper_y)
+    return [0, 0, upper_x, upper_y]
 ~~~
 {: .language-python}
 
 The preconditions on lines 6, 8, and 9 catch invalid inputs:
 
 ~~~
-print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
+print(normalize_rectangle( [0.0, 1.0, 2.0] )) # missing the fourth coordinate
 ~~~
 {: .language-python}
 
@@ -154,7 +154,7 @@ print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-2-1b9cd8e18a1f> in <module>
-----> 1 print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
+----> 1 print(normalize_rectangle( [0.0, 1.0, 2.0] )) # missing the fourth coordinate
 
 <ipython-input-1-c94cf5b065b9> in normalize_rectangle(rect)
       4     (x0, y0) and (x1, y1) define the lower left and upper right corners
@@ -168,7 +168,7 @@ AssertionError: Rectangles must contain 4 coordinates
 {: .error}
 
 ~~~
-print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted
+print(normalize_rectangle( [4.0, 2.0, 1.0, 5.0] )) # X axis inverted
 ~~~
 {: .language-python}
 
@@ -176,7 +176,7 @@ print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-3-325036405532> in <module>
-----> 1 print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted
+----> 1 print(normalize_rectangle( [4.0, 2.0, 1.0, 5.0] )) # X axis inverted
 
 <ipython-input-1-c94cf5b065b9> in normalize_rectangle(rect)
       6     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
@@ -195,12 +195,12 @@ For example,
 if we normalize a rectangle that is taller than it is wide everything seems OK:
 
 ~~~
-print(normalize_rectangle( (0.0, 0.0, 1.0, 5.0) ))
+print(normalize_rectangle( [0.0, 0.0, 1.0, 5.0] ))
 ~~~
 {: .language-python}
 
 ~~~
-(0, 0, 0.2, 1.0)
+[0, 0, 0.2, 1.0]
 ~~~
 {: .output}
 
@@ -208,7 +208,7 @@ but if we normalize one that's wider than it is tall,
 the assertion is triggered:
 
 ~~~
-print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))
+print(normalize_rectangle( [0.0, 0.0, 5.0, 1.0] ))
 ~~~
 {: .language-python}
 
@@ -216,14 +216,14 @@ print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))
 ---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
 <ipython-input-5-8d4a48f1d068> in <module>
-----> 1 print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))
+----> 1 print(normalize_rectangle( [0.0, 0.0, 5.0, 1.0] ))
 
 <ipython-input-1-c94cf5b065b9> in normalize_rectangle(rect)
      19
      20     assert 0 < upper_x <= 1.0, 'Calculated upper X coordinate invalid'
 ---> 21     assert 0 < upper_y <= 1.0, 'Calculated upper Y coordinate invalid'
      22
-     23     return (0, 0, upper_x, upper_y)
+     23     return [0, 0, upper_x, upper_y]
 
 AssertionError: Calculated upper Y coordinate invalid
 ~~~
