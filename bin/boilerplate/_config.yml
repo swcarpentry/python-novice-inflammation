@@ -7,13 +7,15 @@
 # dc: Data Carpentry
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor traning for instance)
+# incubator: Carpentries Incubator
 carpentry: "swc"
 
 # Overall title for pages.
 title: "Lesson Title"
 
 # Life cycle stage of the lesson
-# possible values: "pre-alpha", "alpha", "beta", "stable"
+# See this page for more details: https://cdh.carpentries.org/the-lesson-life-cycle.html
+# Possible values: "pre-alpha", "alpha", "beta", "stable"
 life_cycle: "pre-alpha"
 
 #------------------------------------------------------------
@@ -32,7 +34,7 @@ repository: <USERNAME>/<PROJECT>
 email: "team@carpentries.org"
 
 # Sites.
-amy_site: "https://amy.carpentries.org/workshops"
+amy_site: "https://amy.carpentries.org/"
 carpentries_github: "https://github.com/carpentries"
 carpentries_pages: "https://carpentries.github.io"
 carpentries_site: "https://carpentries.org/"
@@ -92,6 +94,7 @@ exclude:
   - bin/
   - .Rproj.user/
   - .vendor/
+  - vendor/
   - .docker-vendor/
 
 # Turn on built-in syntax highlighting.

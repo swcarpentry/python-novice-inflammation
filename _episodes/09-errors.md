@@ -38,7 +38,7 @@ Once you know *why* you get certain types of errors,
 they become much easier to fix.
 
 Errors in Python have a very specific form,
-called a [traceback]({{ page.root }}/reference/#traceback).
+called a [traceback]({{ page.root }}/reference.html#traceback).
 Let's examine one:
 
 ~~~
@@ -80,15 +80,15 @@ You can determine the number of levels by looking for the number of arrows on th
 In this case:
 
 1.  The first shows code from the cell above,
-    with an arrow pointing to Line 8 (which is `favorite_ice_cream()`).
+    with an arrow pointing to Line 11 (which is `favorite_ice_cream()`).
 
 2.  The second shows some code in the function `favorite_ice_cream`,
-    with an arrow pointing to Line 6 (which is `print(ice_creams[3])`).
+    with an arrow pointing to Line 9 (which is `print(ice_creams[3])`).
 
 The last level is the actual place where the error occurred.
 The other level(s) show what function the program executed to get to the next level down.
 So, in this case, the program first performed a
-[function call]({{ page.root }}/reference/#function-call) to the function `favorite_ice_cream`.
+[function call]({{ page.root }}/reference.html#function-call) to the function `favorite_ice_cream`.
 Inside this function,
 the program encountered an error on Line 6, when it tried to run the code `print(ice_creams[3])`.
 
@@ -127,12 +127,18 @@ as it is possible to create custom errors.
 In that case,
 hopefully the custom error message is informative enough to help you figure out what went wrong.
 
+> ## Better errors on newer Pythons
+>
+> Newer versions of Python have improved error printouts.  If you are debugging errors, it is often
+> helpful to use the latest Python version, even if you support older versions of Python.
+{: .callout}
+
 ## Syntax Errors
 
 When you forget a colon at the end of a line,
 accidentally add one space too many when indenting under an `if` statement,
 or forget a parenthesis,
-you will encounter a [syntax error]({{ page.root }}/reference/#syntax-error).
+you will encounter a [syntax error]({{ page.root }}/reference.html#syntax-error).
 This means that Python couldn't figure out how to read your program.
 This is similar to forgetting punctuation in English:
 for example,
@@ -196,7 +202,7 @@ it *always* means that there is a problem with how your code is indented.
 >
 > Some indentation errors are harder to spot than others.
 > In particular, mixing spaces and tabs can be difficult to spot
-> because they are both [whitespace]({{ page.root }}/reference/#whitespace).
+> because they are both [whitespace]({{ page.root }}/reference.html#whitespace).
 > In the example below, the first two lines in the body of the function
 > `some_function` are indented with tabs, while the third line &mdash; with spaces.
 > If you're working in a Jupyter notebook, be sure to copy and paste this example
@@ -253,7 +259,7 @@ because it depends on what your code is supposed to do.
 However,
 there are a few very common reasons why you might have an undefined variable.
 The first is that you meant to use a
-[string]({{ page.root }}/reference/#string), but forgot to put quotes around it:
+[string]({{ page.root }}/reference.html#string), but forgot to put quotes around it:
 
 ~~~
 print(hello)
@@ -296,7 +302,7 @@ NameError: name 'count' is not defined
 Finally, the third possibility is that you made a typo when you were writing your code.
 Let's say we fixed the error above by adding the line `Count = 0` before the for loop.
 Frustratingly, this actually does not fix the error.
-Remember that variables are [case-sensitive]({{ page.root }}/reference/#case-sensitive),
+Remember that variables are [case-sensitive]({{ page.root }}/reference.html#case-sensitive),
 so the variable `count` is different from `Count`. We still get the same error,
 because we still have not defined `count`:
 
@@ -373,7 +379,9 @@ you will receive a `FileNotFoundError` telling you so.
 If you attempt to write to a file that was opened read-only, Python 3
 returns an `UnsupportedOperationError`.
 More generally, problems with input and output manifest as
-`IOError`s or `OSError`s, depending on the version of Python you use.
+`OSError`s, which may show up as a more specific subclass; you can see
+[the list in the Python docs](https://docs.python.org/3/library/exceptions.html#os-exceptions).
+They all have a unique UNIX `errno`, which is you can see in the error message.
 
 ~~~
 file_handle = open('myfile.txt', 'r')
@@ -495,7 +503,8 @@ often reveals common reasons why you might get that error.
 > > 2. `print_message`
 > > 3. 11
 > > 4. `KeyError`
-> > 5. There isn't really a message; you're supposed to infer that `Friday` is not a key in `messages`.
+> > 5. There isn't really a message; you're supposed
+> > to infer that `Friday` is not a key in `messages`.
 > {: .solution}
 {: .challenge}
 

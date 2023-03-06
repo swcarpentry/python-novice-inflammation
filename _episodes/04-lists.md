@@ -20,10 +20,23 @@ list[2:9]), in the same way as strings and arrays."
 - "Strings are immutable (i.e., the characters in them cannot be changed)."
 ---
 
-Similar to a string that can contain many characters, a list is a container that can store many values.
-Unlike NumPy arrays,
-lists are built into the language (so we don't have to load a library
-to use them).
+In the previous episode, we analyzed a single file of clinical trial inflammation data. However,
+after finding some peculiar and potentially suspicious trends in the trial data we ask
+Dr. Maverick if they have performed any other clinical trials. Surprisingly, they say that they
+have and provide us with 11 more CSV files for a further 11 clinical trials they have undertaken
+since the initial trial.
+
+Our goal now is to process all the inflammation data we have, which means that we still have
+eleven more files to go!
+
+The natural first step is to collect the names of all the files that we have to process. In Python,
+a list is a way to store multiple values together. In this episode, we will learn how to store
+multiple values in a list as well as how to work with lists.
+
+## Python lists
+
+Unlike NumPy arrays, lists are built into the language so we do not have to load a library
+to use them.
 We create a list by putting values inside square brackets and separating the values with commas:
 
 ~~~
@@ -57,22 +70,6 @@ last element: 7
 Yes, we can use negative numbers as indices in Python. When we do so, the index `-1` gives us the
 last element in the list, `-2` the second to last, and so on.
 Because of this, `odds[3]` and `odds[-1]` point to the same element here.
-
-If we loop over a list, the loop variable is assigned to its elements one at a time:
-
-~~~
-for number in odds:
-    print(number)
-~~~
-{: .language-python}
-
-~~~
-1
-3
-5
-7
-~~~
-{: .output}
 
 There is one important difference between lists and strings:
 we can change the values in a list,
@@ -116,8 +113,9 @@ does not.
 
 > ## Ch-Ch-Ch-Ch-Changes
 >
-> Data which can be modified in place is called [mutable]({{ page.root }}/reference/#mutable),
-> while data which cannot be modified is called [immutable]({{ page.root }}/reference/#immutable).
+> Data which can be modified in place is called [mutable]({{ page.root }}/reference.html#mutable),
+> while data which cannot be modified is called
+> [immutable]({{ page.root }}/reference.html#immutable).
 > Strings and numbers are immutable. This does not mean that variables with string or number values
 > are constants, but when we want to change the value of a string or number variable, we can only
 > replace the old value with a completely new value.
@@ -181,7 +179,7 @@ does not.
 >
 > [![x is represented as a pepper shaker containing several packets of pepper. [x[0]] is represented
 > as a pepper shaker containing a single packet of pepper. x[0] is represented as a single packet of
-> pepper. x[0][0] is represented as single grain of pepper.  Adapted 
+> pepper. x[0][0] is represented as single grain of pepper.  Adapted
 > from @hadleywickham.](../fig/indexing_lists_python.png)][hadleywickham-tweet]
 >
 > Using the previously declared list `x`, these would be the results of the
@@ -270,10 +268,12 @@ odds after reversing: [11, 7, 5, 3]
 While modifying in place, it is useful to remember that Python treats lists in a slightly
 counter-intuitive way.
 
-As we saw earlier, when we modified the `salsa` list item in-place, if we make a list, (attempt to) copy it and then modify this list, we can cause all sorts of trouble. This also applies to modifying the list using the above functions:
+As we saw earlier, when we modified the `salsa` list item in-place, if we make a list, (attempt to)
+copy it and then modify this list, we can cause all sorts of trouble. This also applies to modifying
+the list using the above functions:
 
 ~~~
-odds = [1, 3, 5, 7]
+odds = [3, 5, 7]
 primes = odds
 primes.append(2)
 print('primes:', primes)
@@ -282,17 +282,17 @@ print('odds:', odds)
 {: .language-python}
 
 ~~~
-primes: [1, 3, 5, 7, 2]
-odds: [1, 3, 5, 7, 2]
+primes: [3, 5, 7, 2]
+odds: [3, 5, 7, 2]
 ~~~
 {: .output}
 
 This is because Python stores a list in memory, and then can use multiple names to refer to the
-same list. If all we want to do is copy a (simple) list, we can again use the `list` function, so we do
-not modify a list we did not mean to:
+same list. If all we want to do is copy a (simple) list, we can again use the `list` function, so we
+do not modify a list we did not mean to:
 
 ~~~
-odds = [1, 3, 5, 7]
+odds = [3, 5, 7]
 primes = list(odds)
 primes.append(2)
 print('primes:', primes)
@@ -301,37 +301,10 @@ print('odds:', odds)
 {: .language-python}
 
 ~~~
-primes: [1, 3, 5, 7, 2]
-odds: [1, 3, 5, 7]
+primes: [3, 5, 7, 2]
+odds: [3, 5, 7]
 ~~~
 {: .output}
-
-> ## Turn a String Into a List
->
-> Use a for-loop to convert the string "hello" into a list of letters:
->
-> ~~~
-> ['h', 'e', 'l', 'l', 'o']
-> ~~~
-> {: .language-python}
->
-> Hint: You can create an empty list like this:
->
-> ~~~
-> my_list = []
-> ~~~
-> {: .language-python}
->
-> > ## Solution
-> > ~~~
-> > my_list = []
-> > for char in 'hello':
-> >     my_list.append(char)
-> > print(my_list)
-> > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
 
 Subsets of lists and strings can be accessed by specifying ranges of values in brackets,
 similar to how we accessed ranges of positions in a NumPy array.

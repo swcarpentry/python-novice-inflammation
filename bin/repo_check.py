@@ -9,7 +9,8 @@ from subprocess import Popen, PIPE
 import re
 from argparse import ArgumentParser
 
-from util import Reporter, require
+from util import require
+from reporter import Reporter
 
 # Import this way to produce a more useful error message.
 try:
@@ -20,7 +21,7 @@ except ImportError:
 
 
 # Pattern to match Git command-line output for remotes => (user name, project name).
-P_GIT_REMOTE = re.compile(r'upstream\s+[^:]+:([^/]+)/([^.]+)\.git\s+\(fetch\)')
+P_GIT_REMOTE = re.compile(r'upstream\s+(?:https://|git@)github.com[:/]([^/]+)/([^.]+)(\.git)?\s+\(fetch\)')
 
 # Repository URL format string.
 F_REPO_URL = 'https://github.com/{0}/{1}/'

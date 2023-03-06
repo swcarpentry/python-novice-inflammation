@@ -4,6 +4,7 @@
 .ipynb_checkpoints
 .sass-cache
 .jekyll-cache/
+.jekyll-metadata
 __pycache__
 _site
 .Rproj.user
@@ -11,6 +12,7 @@ _site
 .RData
 .bundle/
 .vendor/
+vendor/
 .docker-vendor/
 Gemfile.lock
 .*history

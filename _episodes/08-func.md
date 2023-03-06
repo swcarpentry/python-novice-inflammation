@@ -18,8 +18,9 @@ keypoints:
 - "Call a function using `function_name(value)`."
 - "Numbers are stored as integers or floating-point numbers."
 - "Variables defined within a function can only be seen and used within the body of the function."
-- "If a variable is not defined within the function it is used,
-   Python looks for a definition before the function call"
+- "Variables created outside of any function are called global variables."
+- "Within a function, we can access global variables."
+- "Variables created within a function override global variables if their names match."
 - "Use `help(thing)` to view help for something."
 - "Put docstrings in functions to provide help for that function."
 - "Specify default values for parameters when defining a function using `name=value`
@@ -59,7 +60,7 @@ def fahr_to_celsius(temp):
 
 The function definition opens with the keyword `def` followed by the
 name of the function (`fahr_to_celsius`) and a parenthesized list of parameter names (`temp`). The
-[body]({{ page.root }}/reference/#body) of the function --- the
+[body]({{ page.root }}/reference.html#body) of the function --- the
 statements that are executed when it runs --- is indented below the
 definition line.  The body concludes with a `return` keyword followed by the return value.
 
@@ -67,7 +68,7 @@ When we call the function,
 the values we pass to it are assigned to those variables
 so that we can use them inside the function.
 Inside the function,
-we use a [return statement]({{ page.root }}/reference/#return-statement) to send a result
+we use a [return statement]({{ page.root }}/reference.html#return-statement) to send a result
 back to whoever asked for it.
 
 Let's try running our function.
@@ -118,7 +119,7 @@ What about converting Fahrenheit to Kelvin?
 We could write out the formula,
 but we don't need to.
 Instead,
-we can [compose]({{ page.root }}/reference/#compose) the two functions we have already created:
+we can [compose]({{ page.root }}/reference.html#compose) the two functions we have already created:
 
 ~~~
 def fahr_to_kelvin(temp_f):
@@ -141,6 +142,64 @@ then combine them in ever-larger chunks to get the effect we want.
 Real-life functions will usually be larger than the ones shown here --- typically half a dozen
 to a few dozen lines --- but they shouldn't ever be much longer than that,
 or the next person who reads it won't be able to understand what's going on.
+
+## Variable Scope
+
+In composing our temperature conversion functions, we created variables inside of those functions,
+`temp`, `temp_c`, `temp_f`, and `temp_k`.
+We refer to these variables as [local variables]({{ page.root }}/reference.html#local-variable)
+because they no longer exist once the function is done executing.
+If we try to access their values outside of the function, we will encounter an error:
+~~~
+print('Again, temperature in Kelvin was:', temp_k)
+~~~
+{: .language-python}
+
+~~~
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-1-eed2471d229b> in <module>
+----> 1 print('Again, temperature in Kelvin was:', temp_k)
+
+NameError: name 'temp_k' is not defined
+~~~
+{: .error}
+
+If you want to reuse the temperature in Kelvin after you have calculated it with `fahr_to_kelvin`,
+you can store the result of the function call in a variable:
+~~~
+temp_kelvin = fahr_to_kelvin(212.0)
+print('temperature in Kelvin was:', temp_kelvin)
+~~~
+{: .language-python}
+
+~~~
+temperature in Kelvin was: 373.15
+~~~
+{: .output}
+
+The variable `temp_kelvin`, being defined outside any function,
+is said to be [global]({{ page.root }}/reference.html#global-variable).
+
+Inside a function, one can read the value of such global variables:
+~~~
+def print_temperatures():
+  print('temperature in Fahrenheit was:', temp_fahr)
+  print('temperature in Kelvin was:', temp_kelvin)
+
+temp_fahr = 212.0
+temp_kelvin = fahr_to_kelvin(temp_fahr)
+
+print_temperatures()
+~~~
+{: .language-python}
+
+~~~
+temperature in Fahrenheit was: 212.0
+temperature in Kelvin was: 373.15
+~~~
+{: .output}
+
 
 ## Tidying up
 
@@ -323,11 +382,11 @@ the difference is very small.
 It's still possible that our function is wrong,
 but it seems unlikely enough that we should probably get back to doing our analysis.
 We have one more task first, though:
-we should write some [documentation]({{ page.root }}/reference/#documentation) for our function
+we should write some [documentation]({{ page.root }}/reference.html#documentation) for our function
 to remind ourselves later what it's for and how to use it.
 
 The usual way to put documentation in software is
-to add [comments]({{ page.root }}/reference/#comment) like this:
+to add [comments]({{ page.root }}/reference.html#comment) like this:
 
 ~~~
 # offset_mean(data, target_mean_value):
@@ -365,7 +424,7 @@ offset_mean(data, target_mean_value)
 ~~~
 {: .output}
 
-A string like this is called a [docstring]({{ page.root }}/reference/#docstring).
+A string like this is called a [docstring]({{ page.root }}/reference.html#docstring).
 We don't need to use triple quotes when we write one,
 but if we do,
 we can break the string across multiple lines:
@@ -484,7 +543,7 @@ print(offset_mean(test_data, 3))
 
 But we can also now call it with just one parameter,
 in which case `target_mean_value` is automatically assigned
-the [default value]({{ page.root }}/reference/#default-value) of 0.0:
+the [default value]({{ page.root }}/reference.html#default-value) of 0.0:
 
 ~~~
 more_data = 5 + numpy.zeros((2, 2))
@@ -811,12 +870,12 @@ readable code!
 > k = 0
 >
 > def f2k(f):
->     k = ((f-32)*(5.0/9.0)) + 273.15
+>     k = ((f - 32) * (5.0 / 9.0)) + 273.15
 >     return k
 >
-> f2k(8)
-> f2k(41)
-> f2k(32)
+> print(f2k(8))
+> print(f2k(41))
+> print(f2k(32))
 >
 > print(k)
 > ~~~
@@ -826,13 +885,20 @@ readable code!
 > >
 > > ~~~
 > > 259.81666666666666
-> > 287.15
+> > 278.15
 > > 273.15
 > > 0
 > > ~~~
 > > {: .output}
 > > `k` is 0 because the `k` inside the function `f2k` doesn't know
-> > about the `k` defined outside the function.
+> > about the `k` defined outside the function. When the `f2k` function is called, 
+> > it creates a [local variable]({{ page.root }}/reference.html#local-variable)
+> > `k`. The function does not return any values 
+> > and does not alter `k` outside of its local copy. 
+> > Therefore the original value of `k` remains unchanged.
+> > Beware that a local `k` is created because `f2k` internal statements
+> > *affect* a new value to it. If `k` was only `read`, it would simply retrieve the
+> > global `k` value.
 > {: .solution}
 {: .challenge}
 
@@ -882,42 +948,6 @@ readable code!
 > > The given call to `func` displays `a: -1 b: 2 c: 6`. -1 is assigned to
 > > the first parameter `a`, 2 is assigned to the next parameter `b`, and `c` is
 > > not passed a value, so it uses its default value 6.
-> {: .solution}
-{: .challenge}
-
-> ## The Old Switcheroo
->
-> Consider this code:
->
-> ~~~
-> a = 3
-> b = 7
->
-> def swap(a, b):
->     temp = a
->     a = b
->     b = temp
->
-> swap(a, b)
->
-> print(a, b)
-> ~~~
-> {: .language-python}
->
-> Which of the following would be printed if you were to run this code?
-> Why did you pick this answer?
->
-> 1. `7 3`
-> 2. `3 7`
-> 3. `3 3`
-> 4. `7 7`
->
-> > ## Solution
-> > `3 7` is the correct answer. Initially, `a` has a value of 3 and `b` has a value of 7.
-> > When the `swap` function is called, it creates local variables (also called
-> > `a` and `b` in this case) and trades their values. The function does not
-> > return any values and does not alter `a` or `b` outside of its local copy.
-> > Therefore the original values of `a` and `b` remain unchanged.
 > {: .solution}
 {: .challenge}
 
