@@ -127,6 +127,12 @@ as it is possible to create custom errors.
 In that case,
 hopefully the custom error message is informative enough to help you figure out what went wrong.
 
+> ## Better errors on newer Pythons
+>
+> Newer versions of Python have improved error printouts.  If you are debugging errors, it is often
+> helpful to use the latest Python version, even if you support older versions of Python.
+{: .callout}
+
 ## Syntax Errors
 
 When you forget a colon at the end of a line,
@@ -373,7 +379,9 @@ you will receive a `FileNotFoundError` telling you so.
 If you attempt to write to a file that was opened read-only, Python 3
 returns an `UnsupportedOperationError`.
 More generally, problems with input and output manifest as
-`IOError`s or `OSError`s, depending on the version of Python you use.
+`OSError`s, which may show up as a more specific subclass; you can see
+[the list in the Python docs](https://docs.python.org/3/library/exceptions.html#os-exceptions).
+They all have a unique UNIX `errno`, which is you can see in the error message.
 
 ~~~
 file_handle = open('myfile.txt', 'r')

@@ -534,7 +534,7 @@ This violates another important rule of programming:
 > > *   The first assertion checks that the input sequence `values` is not empty.
 > >     An empty sequence such as `[]` will make it fail.
 > > *   The second assertion checks that each value in the list can be turned into an integer.
-> >     Input such as `[1, 2,'c', 3]` will make it fail.
+> >     Input such as `[1, 2, 'c', 3]` will make it fail.
 > > *   The third assertion checks that the total of the list is greater than 0.
 > >     Input such as `[-10, 2, 3]` will make it fail.
 > {: .solution}
