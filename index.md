@@ -62,7 +62,9 @@ about programming.
 > interpreter before tackling this lesson. This lesson sometimes references Jupyter
 > Notebook although you can use any Python interpreter mentioned in the [Setup][lesson-setup].
 >
-> The commands in this lesson pertain to **Python 3**.
+> The commands in this lesson pertain to any officially supported Python version, currently **Python
+> 3.7+**.  Newer versions usually have better error printouts, so using newer Python versions is
+> recommend if possible.
 {: .prereq}
 
 ### Getting Started
