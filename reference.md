@@ -1,7 +1,5 @@
 ---
 layout: reference
-permalink: /reference/
-root: ..
 ---
 
 ## Glossary
@@ -113,6 +111,14 @@ function
 function call
 :   A use of a function in another piece of software.
 
+global variable
+:   A variable defined outside of a function. It can be used in global statements,
+    and read inside functions.
+
+heat map
+:   A graphical representation of two-dimensional data in which colors,
+    ranging on a scale of hue or intensity, represent the data values.
+
 immutable
 :   Unchangeable.
     The value of immutable data cannot be altered after it has been created.
@@ -146,6 +152,10 @@ library
 :   A family of code units (functions, classes, variables) that implement a set of
     related tasks.
 
+local variable
+:   A variable defined inside of a function, that exists only in the scope of that
+    function, meaning it cannot be accessed by code outside of the function.
+
 loop variable
 :   The variable that keeps track of the progress of the loop.
 
@@ -162,7 +172,7 @@ mutable
     created. See [immutable](#immutable)."
 
 notebook
-:   Interactive computational environment accessed via your web browser, in which you can write 
+:   Interactive computational environment accessed via your web browser, in which you can write
     and execute Python code and combine it with explanatory text, mathematics and visualizations.
     Examples are IPython or Jupyter notebooks.
 
@@ -247,10 +257,14 @@ string
 
 syntax
 :   The rules that define how code must be written for a computer to understand.
-    
+
 syntax error
 :   A programming error that occurs when statements are in an order or contain characters
     not expected by the programming language.
+
+tab completion
+:   A feature of command-line interpreters, in which the program automatically fills in partially
+    typed commands upon pressing the <kbd>Tab</kbd> key.
 
 test oracle
 :   A program, device, data set, or human being

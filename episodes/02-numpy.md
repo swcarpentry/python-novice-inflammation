@@ -24,17 +24,17 @@ keypoints:
 Words are useful, but what's more useful are the sentences and stories we build with them.
 Similarly, while a lot of powerful, general tools are built into Python,
 specialized tools built up from these basic units live in
-[libraries]({{ page.root }}/reference/#library)
+[libraries]({{ page.root }}/reference.html#library)
 that can be called upon when needed.
 
 ## Loading data into Python
 
-To begin processing inflammation data, we need to load it into Python.
+To begin processing the clinical trial inflammation data, we need to load it into Python.
 We can do that using a library called
-[NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation"), which stands for Numerical Python.
+[NumPy](https://numpy.org/doc/stable "NumPy Documentation"), which stands for Numerical Python.
 In general, you should use this library when you want to do fancy things with lots of numbers,
 especially if you have matrices or arrays. To tell Python that we'd like to start using NumPy,
-we need to [import]({{ page.root }}/reference/#import) it:
+we need to [import]({{ page.root }}/reference.html#import) it:
 
 ~~~
 import numpy
@@ -65,41 +65,31 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 ~~~
 {: .output}
 
-The expression `numpy.loadtxt(...)` is a [function call]({{ page.root }}/reference/#function-call)
-that asks Python to run the [function]({{ page.root }}/reference/#function) `loadtxt` which
-belongs to the `numpy` library. This [dotted notation]({{ page.root }}/reference/#dotted-notation)
-is used everywhere in Python: the thing that appears before the dot contains the thing that
-appears after.
+The expression `numpy.loadtxt(...)` is a
+[function call]({{ page.root }}/reference.html#function-call)
+that asks Python to run the [function]({{ page.root }}/reference.html#function) `loadtxt` which
+belongs to the `numpy` library.
+The dot notation in Python is used most of all as an object attribute/property specifier or for invoking its method. `object.property` will give you the object.property value,
+`object_name.method()` will invoke on object_name method.
 
 As an example, John Smith is the John that belongs to the Smith family.
 We could use the dot notation to write his name `smith.john`,
 just as `loadtxt` is a function that belongs to the `numpy` library.
 
-`numpy.loadtxt` has two [parameters]({{ page.root }}/reference/#parameter): the name of the file
-we want to read and the [delimiter]({{ page.root }}/reference/#delimiter) that separates values on
-a line. These both need to be character strings (or [strings]({{ page.root }}/reference/#string)
-for short), so we put them in quotes.
+`numpy.loadtxt` has two [parameters]({{ page.root }}/reference.html#parameter): the name of the file
+we want to read and the [delimiter]({{ page.root }}/reference.html#delimiter) that separates values
+on a line. These both need to be character strings
+(or [strings]({{ page.root }}/reference.html#string) for short), so we put them in quotes.
 
 Since we haven't told it to do anything else with the function's output,
-the [notebook]({{ page.root }}/reference/#notebook) displays it.
+the [notebook]({{ page.root }}/reference.html#notebook) displays it.
 In this case,
 that output is the data we just loaded.
 By default,
 only a few rows and columns are shown
 (with `...` to omit elements when displaying big arrays).
-Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros, so `1.0` becomes `1.`.
-
-> ## Importing libraries with shortcuts
->
-> In this lesson we use the `import numpy` [syntax]({{ page.root }}/reference/#syntax) to import NumPy.
-> However, shortcuts such as `import numpy as np` are frequently used.  Importing NumPy this way means that after the
-> inital import, rather than writing `numpy.loadtxt(...)`, you can now write `np.loadtxt(...)`. Some
-> people prefer this as it is quicker to type and results in shorter lines of code - especially for libraries
-> with long names! You will frequently see Python code online using a NumPy function with `np`, and it's
-> because they've used this shortcut. It makes no difference which approach you choose to take, but you must be
-> consistent as if you use `import numpy as np` then `numpy.loadtxt(...)` will not work, and you must use `np.loadtxt(...)`
-> instead. Because of this, when working with other people it is important you agree on how libraries are imported.
-{: .callout}
+Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros,
+so `1.0` becomes `1.`.
 
 Our call to `numpy.loadtxt` read our file
 but didn't save the data in memory.
@@ -136,7 +126,7 @@ print(data)
 Now that the data are in memory,
 we can manipulate them.
 First,
-let's ask what [type]({{ page.root }}/reference/#type) of thing `data` refers to:
+let's ask what [type]({{ page.root }}/reference.html#type) of thing `data` refers to:
 
 ~~~
 print(type(data))
@@ -174,10 +164,10 @@ are their daily inflammation measurements.
 > {: .output}
 >
 > This tells us that the NumPy array's elements are
-> [floating-point numbers]({{ page.root }}/reference/#floating-point number).
+> [floating-point numbers]({{ page.root }}/reference.html#floating-point-number).
 {: .callout}
 
-With the following command, we can see the array's [shape]({{ page.root }}/reference/#shape):
+With the following command, we can see the array's [shape]({{ page.root }}/reference.html#shape):
 
 ~~~
 print(data.shape)
@@ -191,14 +181,14 @@ print(data.shape)
 
 The output tells us that the `data` array variable contains 60 rows and 40 columns. When we
 created the variable `data` to store our arthritis data, we did not only create the array; we also
-created information about the array, called [members]({{ page.root }}/reference/#member) or
+created information about the array, called [members]({{ page.root }}/reference.html#member) or
 attributes. This extra information describes `data` in the same way an adjective describes a noun.
 `data.shape` is an attribute of `data` which describes the dimensions of `data`. We use the same
 dotted notation for the attributes of variables that we use for the functions in libraries because
 they have the same part-and-whole relationship.
 
 If we want to get a single number from the array, we must provide an
-[index]({{ page.root }}/reference/#index) in square brackets after the variable name, just as we
+[index]({{ page.root }}/reference.html#index) in square brackets after the variable name, just as we
 do in math when referring to an element of a matrix.  Our inflammation data has two dimensions, so
 we will need to use two indices to refer to one specific value:
 
@@ -241,7 +231,11 @@ It takes a bit of getting used to,
 but one way to remember the rule is that
 the index is how many steps we have to take from the start to get the item we want.
 
-![Zero Index](../fig/python-zero-index.svg)
+!["data" is a 3 by 3 numpy array containing row 0: ['A', 'B', 'C'], row 1: ['D', 'E', 'F'], and
+row 2: ['G', 'H', 'I']. Starting in the upper left hand corner, data[0, 0] = 'A', data[0, 1] = 'B',
+data[0, 2] = 'C', data[1, 0] = 'D', data[1, 1] = 'E', data[1, 2] = 'F', data[2, 0] = 'G',
+data[2, 1] = 'H', and data[2, 2] = 'I',
+in the bottom right hand corner.](../fig/python-zero-index.svg)
 
 > ## In the Corner
 >
@@ -274,9 +268,10 @@ print(data[0:4, 0:10])
 ~~~
 {: .output}
 
-The [slice]({{ page.root }}/reference/#slice) `0:4` means, "Start at index 0 and go up to, but not
-including, index 4". Again, the up-to-but-not-including takes a bit of getting used to, but the
-rule is that the difference between the upper and lower bounds is the number of values in the slice.
+The [slice]({{ page.root }}/reference.html#slice) `0:4` means, "Start at index 0 and go up to,
+but not including, index 4". Again, the up-to-but-not-including takes a bit of getting used to,
+but the rule is that the difference between the upper and lower bounds is the number of values in
+the slice.
 
 We don't have to start slices at 0:
 
@@ -331,8 +326,8 @@ print(numpy.mean(data))
 ~~~
 {: .output}
 
-`mean` is a [function]({{ page.root }}/reference/#function) that takes
-an array as an [argument]({{ page.root }}/reference/#argument).
+`mean` is a [function]({{ page.root }}/reference.html#function) that takes
+an array as an [argument]({{ page.root }}/reference.html#argument).
 
 > ## Not All Functions Have Input
 >
@@ -384,7 +379,8 @@ standard deviation: 4.61383319712
 >
 > How did we know what functions NumPy has and how to use them?
 > If you are working in IPython or in a Jupyter Notebook, there is an easy way to find out.
-> If you type the name of something followed by a dot, then you can use tab completion
+> If you type the name of something followed by a dot, then you can use
+> [tab completion]({{ page.root }}/reference.html#tab-completion)
 > (e.g. type `numpy.` and then press <kbd>Tab</kbd>)
 > to see a list of all functions and attributes that you can use. After selecting one, you
 > can also add a question mark (e.g. `numpy.cumprod?`), and IPython will return an
@@ -413,7 +409,6 @@ maximum inflammation for patient 0: 18.0
 ~~~
 {: .output}
 
-
 We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the function call:
 
@@ -432,8 +427,9 @@ next diagram on the left) or the average for each day (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
-![Per-patient maximum inflammation is computed row-wise across all columns using numpy.max(data, axis=1).
-Per-day average inflammation is computed column-wise across all rows using numpy.mean(data, axis=0).](../fig/python-operations-across-axes.png)
+![Per-patient maximum inflammation is computed row-wise across all columns using
+numpy.max(data, axis=1). Per-day average inflammation is computed column-wise across all rows using
+numpy.mean(data, axis=0).](../fig/python-operations-across-axes.png)
 
 To support this functionality,
 most array functions allow us to specify the axis we want to work on.
@@ -494,7 +490,7 @@ which is the average inflammation per patient across all days.
 
 > ## Slicing Strings
 >
-> A section of an array is called a [slice]({{ page.root }}/reference/#slice).
+> A section of an array is called a [slice]({{ page.root }}/reference.html#slice).
 > We can take slices of character strings as well:
 >
 > ~~~
@@ -544,7 +540,7 @@ which is the average inflammation per patient across all days.
 >
 > How can we rewrite the slice for getting the last three characters of `element`,
 > so that it works even if we assign a different string to `element`?
-> Test your solution with the following strings: `carpentry`, `clone`, `hi`. 
+> Test your solution with the following strings: `carpentry`, `clone`, `hi`.
 >
 > > ## Solution
 > > ~~~
@@ -570,7 +566,8 @@ which is the average inflammation per patient across all days.
 
 > ## Thin Slices
 >
-> The expression `element[3:3]` produces an [empty string]({{ page.root }}/reference/#empty-string),
+> The expression `element[3:3]` produces an
+> [empty string]({{ page.root }}/reference.html#empty-string),
 > i.e., a string that contains no characters.
 > If `data` holds our array of patient data,
 > what does `data[3:3, 4:4]` produce?
@@ -688,7 +685,7 @@ which is the average inflammation per patient across all days.
 > The `numpy.diff()` function takes an array and returns the differences
 > between two successive values. Let's use it to examine the changes
 > each day across the first week of patient 3 from our inflammation dataset.
-> 
+>
 > ~~~
 > patient3_week1 = data[3, :7]
 > print(patient3_week1)
@@ -722,7 +719,7 @@ which is the average inflammation per patient across all days.
 > Note that the array of differences is shorter by one element (length 6).
 >
 > When calling `numpy.diff` with a multi-dimensional array, an `axis` argument may
-> be passed to the function to specify which axis to process. When applying 
+> be passed to the function to specify which axis to process. When applying
 > `numpy.diff` to our 2D inflammation array `data`, which axis would we specify?
 >
 > > ## Solution
