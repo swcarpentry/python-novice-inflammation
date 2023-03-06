@@ -14,7 +14,9 @@ keypoints:
 - "Use `variable = value` to assign a value to a variable in order to record it in memory."
 - "Variables are created on demand whenever a value is assigned to them."
 - "Use `print(something)` to display the value of `something`."
+- "Use `# some kind of explanation` to add comments to programs."
 - "Built-in functions are always available to use."
+
 ---
 
 ## Variables
@@ -209,8 +211,12 @@ weight in kilograms is now: 65.0
 > ~~~
 > {: .output}
 >
-> ![Value of 65.0 with weight_kg label stuck on it, and value of 143.0 with weight_lb label
-stuck on it](../fig/python-sticky-note-variables-02.svg)
+> Everything in a line of code following the '#' symbol is a
+> [comment]({{ page.root }}/reference/#comment) that is ignored by Python.
+> Comments allow programmers to leave explanatory notes for other
+> programmers or their future selves.
+> 
+> ![Value of 65.0 with weight_kg label stuck on it, and value of 143.0 with weight_lb label stuck on it](../fig/python-sticky-note-variables-02.svg)
 >
 > Similar to above, the expression `2.2 * weight_kg` is evaluated to `143.0`,
 > and then this value is assigned to the variable `weight_lb` (i.e. the sticky
