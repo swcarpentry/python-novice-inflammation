@@ -50,7 +50,17 @@ Let's start by defining a function `fahr_to_celsius` that converts temperatures
 from Fahrenheit to Celsius:
 
 ~~~
+def explicit_fahr_to_celsius(temp):
+    # Assign the converted value to a variable
+    converted = ((temp - 32) * (5/9))
+    # Return the value of the new variable
+    return converted
+    
 def fahr_to_celsius(temp):
+    # Return converted value more efficiently using the return
+    # function without creating a new variable. This code does
+    # the same thing as the previous function but it is more explicit
+    # in explaining how the return command works.
     return ((temp - 32) * (5/9))
 ~~~
 {: .language-python}
