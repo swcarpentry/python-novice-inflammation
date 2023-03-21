@@ -268,7 +268,7 @@ not more.
 > for patient in patients:
 >     weight, height = patients[0]
 >     bmi = calculate_bmi(height, weight)
->     print("Patient's BMI is: %f" % bmi)
+>     print("Patient's BMI is:", bmi)
 > ~~~
 > {: .language-python}
 >

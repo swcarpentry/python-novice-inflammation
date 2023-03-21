@@ -32,7 +32,7 @@ that can be called upon when needed.
 
 To begin processing the clinical trial inflammation data, we need to load it into Python.
 We can do that using a library called
-[NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation"), which stands for Numerical Python.
+[NumPy](https://numpy.org/doc/stable "NumPy Documentation"), which stands for Numerical Python.
 In general, you should use this library when you want to do fancy things with lots of numbers,
 especially if you have matrices or arrays. To tell Python that we'd like to start using NumPy,
 we need to [import]({{ page.root }}/reference.html#import) it:
@@ -70,9 +70,8 @@ The expression `numpy.loadtxt(...)` is a
 [function call]({{ page.root }}/reference.html#function-call)
 that asks Python to run the [function]({{ page.root }}/reference.html#function) `loadtxt` which
 belongs to the `numpy` library.
-This [dotted notation]({{ page.root }}/reference.html#dotted-notation)
-is used everywhere in Python: the thing that appears before the dot contains the thing that
-appears after.
+The dot notation in Python is used most of all as an object attribute/property specifier or for invoking its method. `object.property` will give you the object.property value,
+`object_name.method()` will invoke on object_name method.
 
 As an example, John Smith is the John that belongs to the Smith family.
 We could use the dot notation to write his name `smith.john`,
@@ -205,16 +204,16 @@ first value in data: 0.0
 {: .output}
 
 ~~~
-print('middle value in data:', data[30, 20])
+print('middle value in data:', data[29, 19])
 ~~~
 {: .language-python}
 
 ~~~
-middle value in data: 13.0
+middle value in data: 16.0
 ~~~
 {: .output}
 
-The expression `data[30, 20]` accesses the element at row 30, column 20. While this expression may
+The expression `data[29, 19]` accesses the element at row 30, column 20. While this expression may
 not surprise you,
  `data[0, 0]` might.
 Programming languages like Fortran, MATLAB and R start counting at 1
@@ -410,11 +409,6 @@ print('maximum inflammation for patient 0:', numpy.amax(patient_0))
 maximum inflammation for patient 0: 18.0
 ~~~
 {: .output}
-
-Everything in a line of code following the '#' symbol is a
-[comment]({{ page.root }}/reference.html#comment) that is ignored by Python.
-Comments allow programmers to leave explanatory notes for other
-programmers or their future selves.
 
 We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the function call:
