@@ -195,7 +195,7 @@ hopefully the custom error message is informative enough to help you figure out 
 > > `7` is not the right index to use with `messages`.
 > {: .solution}
 {: .challenge}
-=======
+
 > ## Better errors on newer Pythons
 >
 > Newer versions of Python have improved error printouts.  If you are debugging errors, it is often
