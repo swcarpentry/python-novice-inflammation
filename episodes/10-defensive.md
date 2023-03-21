@@ -489,7 +489,7 @@ This violates another important rule of programming:
 > > # a possible pre-condition:
 > > assert len(input_list) > 0, 'List length must be non-zero'
 > > # a possible post-condition:
-> > assert numpy.min(input_list) <= average <= numpy.max(input_list),
+> > assert numpy.amin(input_list) <= average <= numpy.amax(input_list),
 > > 'Average should be between min and max of input values (inclusive)'
 > > ~~~
 > > {: .language-python}
