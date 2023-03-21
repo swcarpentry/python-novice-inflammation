@@ -130,10 +130,10 @@ def normalize_rectangle(rect):
     dx = x1 - x0
     dy = y1 - y0
     if dx > dy:
-        scaled = float(dx) / dy
+        scaled = dx / dy
         upper_x, upper_y = 1.0, scaled
     else:
-        scaled = float(dx) / dy
+        scaled = dx / dy
         upper_x, upper_y = scaled, 1.0
 
     assert 0 < upper_x <= 1.0, 'Calculated upper X coordinate invalid'
@@ -304,7 +304,15 @@ Its advocates believe it produces better code faster because:
     rather than to find errors.
 2.  Writing tests helps programmers figure out what the function is actually supposed to do.
 
-Here are three test functions for `range_overlap`:
+We start by defining an empty function `range_overlap`:
+
+~~~
+def range_overlap(ranges):
+    pass
+~~~
+{: .language-python}
+
+Here are three test statements for `range_overlap`:
 
 ~~~
 assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
@@ -326,10 +334,9 @@ AssertionError:
 {: .error}
 
 The error is actually reassuring:
-we haven't written `range_overlap` yet,
-so if the tests passed,
-it would be a sign that someone else had
-and that we were accidentally using their function.
+we haven't implemented any logic into `range_overlap` yet,
+so if the tests passed, it would indicate that we've written
+an entirely ineffective test.
 
 And as a bonus of writing these tests,
 we've implicitly defined what our input and output look like:
@@ -534,7 +541,7 @@ This violates another important rule of programming:
 > > *   The first assertion checks that the input sequence `values` is not empty.
 > >     An empty sequence such as `[]` will make it fail.
 > > *   The second assertion checks that each value in the list can be turned into an integer.
-> >     Input such as `[1, 2,'c', 3]` will make it fail.
+> >     Input such as `[1, 2, 'c', 3]` will make it fail.
 > > *   The third assertion checks that the total of the list is greater than 0.
 > >     Input such as `[-10, 2, 3]` will make it fail.
 > {: .solution}
