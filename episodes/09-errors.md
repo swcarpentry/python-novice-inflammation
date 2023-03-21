@@ -127,6 +127,81 @@ as it is possible to create custom errors.
 In that case,
 hopefully the custom error message is informative enough to help you figure out what went wrong.
 
+> ## Reading Error Messages
+>
+> Read the Python code and the resulting traceback below, and answer the following questions:
+>
+> 1.  How many levels does the traceback have?
+> 2.  What is the function name where the error occurred?
+> 3.  On which line number in this function did the error occur?
+> 4.  What is the type of error?
+> 5.  What is the error message?
+>
+> ~~~
+> # This code has an intentional error. Do not type it directly;
+> # use it for reference to understand the error message below.
+> def print_message(day):
+>     messages = [
+>         'Hello, world!',
+>         'Today is Tuesday!',
+>         'It is the middle of the week.',
+>         'Today is Donnerstag in German!',
+>         'Last day of the week!',
+>         'Hooray for the weekend!',
+>         'Aw, the weekend is almost over.'
+>     ]
+>     print(messages[day])
+> 
+> def print_sunday_message():
+>     print_message(7)
+> 
+> print_sunday_message()
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> ---------------------------------------------------------------------------
+> IndexError                                Traceback (most recent call last)
+> <ipython-input-7-3ad455d81842> in <module>
+>      16     print_message(7)
+>      17 
+> ---> 18 print_sunday_message()
+>      19 
+> 
+> <ipython-input-7-3ad455d81842> in print_sunday_message()
+>      14 
+>      15 def print_sunday_message():
+> ---> 16     print_message(7)
+>      17 
+>      18 print_sunday_message()
+> 
+> <ipython-input-7-3ad455d81842> in print_message(day)
+>      11         'Aw, the weekend is almost over.'
+>      12     ]
+> ---> 13     print(messages[day])
+>      14 
+>      15 def print_sunday_message():
+> 
+> IndexError: list index out of range
+> ~~~
+> {: .error}
+>
+> > ## Solution
+> > 1. 3 levels
+> > 2. `print_message`
+> > 3. 13
+> > 4. `IndexError`
+> > 5. `list index out of range` You can then infer that
+> > `7` is not the right index to use with `messages`.
+> {: .solution}
+{: .challenge}
+=======
+> ## Better errors on newer Pythons
+>
+> Newer versions of Python have improved error printouts.  If you are debugging errors, it is often
+> helpful to use the latest Python version, even if you support older versions of Python.
+{: .callout}
+
 ## Syntax Errors
 
 When you forget a colon at the end of a line,
@@ -373,7 +448,9 @@ you will receive a `FileNotFoundError` telling you so.
 If you attempt to write to a file that was opened read-only, Python 3
 returns an `UnsupportedOperationError`.
 More generally, problems with input and output manifest as
-`IOError`s or `OSError`s, depending on the version of Python you use.
+`OSError`s, which may show up as a more specific subclass; you can see
+[the list in the Python docs](https://docs.python.org/3/library/exceptions.html#os-exceptions).
+They all have a unique UNIX `errno`, which is you can see in the error message.
 
 ~~~
 file_handle = open('myfile.txt', 'r')
@@ -431,74 +508,6 @@ though many others exist.
 If you get an error that you've never seen before,
 searching the Internet for that error type
 often reveals common reasons why you might get that error.
-
-> ## Reading Error Messages
->
-> Read the Python code and the resulting traceback below, and answer the following questions:
->
-> 1.  How many levels does the traceback have?
-> 2.  What is the function name where the error occurred?
-> 3.  On which line number in this function did the error occur?
-> 4.  What is the type of error?
-> 5.  What is the error message?
->
-> ~~~
-> # This code has an intentional error. Do not type it directly;
-> # use it for reference to understand the error message below.
-> def print_message(day):
->     messages = {
->         'monday': 'Hello, world!',
->         'tuesday': 'Today is Tuesday!',
->         'wednesday': 'It is the middle of the week.',
->         'thursday': 'Today is Donnerstag in German!',
->         'friday': 'Last day of the week!',
->         'saturday': 'Hooray for the weekend!',
->         'sunday': 'Aw, the weekend is almost over.'
->     }
->     print(messages[day])
->
-> def print_friday_message():
->     print_message('Friday')
->
-> print_friday_message()
-> ~~~
-> {: .language-python}
->
-> ~~~
-> ---------------------------------------------------------------------------
-> KeyError                                  Traceback (most recent call last)
-> <ipython-input-1-4be1945adbe2> in <module>()
->      14     print_message('Friday')
->      15
-> ---> 16 print_friday_message()
->
-> <ipython-input-1-4be1945adbe2> in print_friday_message()
->      12
->      13 def print_friday_message():
-> ---> 14     print_message('Friday')
->      15
->      16 print_friday_message()
->
-> <ipython-input-1-4be1945adbe2> in print_message(day)
->       9         'sunday': 'Aw, the weekend is almost over.'
->      10     }
-> ---> 11     print(messages[day])
->      12
->      13 def print_friday_message():
->
-> KeyError: 'Friday'
-> ~~~
-> {: .error}
->
-> > ## Solution
-> > 1. 3 levels
-> > 2. `print_message`
-> > 3. 11
-> > 4. `KeyError`
-> > 5. There isn't really a message; you're supposed
-> > to infer that `Friday` is not a key in `messages`.
-> {: .solution}
-{: .challenge}
 
 > ## Identifying Syntax Errors
 >

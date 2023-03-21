@@ -268,6 +268,14 @@ freeing us from having to manually examine every plot for features we've seen be
 > > ## Solution
 > > C gets printed because the first two conditions, `4 > 5` and `4 == 5`, are not true,
 > > but `4 < 5` is true.
+> > In this case only one of these conditions can be true for at a time, but in other 
+> > scenarios multiple `elif` conditions could be met. In these scenarios only the action
+> > associated with the first true `elif` condition will occur, starting from the top of the 
+> > conditional section. 
+> > ![A flowchart diagram of a conditional section with multiple `elif` conditions and some possible outcomes.](../fig/python-else-if.png)
+> > This contrasts with the case of multiple `if` statements, where every action can occur
+> > as long as their condition is met.
+> > ![A flowchart diagram of a conditional section with multiple `if` statements and some possible outcomes.](../fig/python-multi-if.png)
 > {: .solution}
 {: .challenge}
 
