@@ -31,21 +31,30 @@ keypoints:
    then call it with different parameter values to customize its behavior."
 ---
 
-At this point,
-we've written code to draw some interesting features in our inflammation data,
-loop over all our data files to quickly draw these plots for each of them,
-and have Python make decisions based on what it sees in our data.
-But, our code is getting pretty long and complicated;
-what if we had thousands of datasets,
-and didn't want to generate a figure for every single one?
-Commenting out the figure-drawing code is a nuisance.
-Also, what if we want to use that code again,
-on a different dataset or at a different point in our program?
+At this point, we've seen that code can have Python make decisions about what it sees in our data. What if we want to convert some of our data, like taking a temperature in Fahrenheit and converting it to Celsius. We could write something like this for converting a single number 
+
+~~~
+fahrenheit_val = 99
+celsius_val = ((fahrenheit_val - 32) * (5/9))
+~~~
+{: .language-python}
+
+and for a second number we could just copy the line and rename the variables
+
+~~~
+fahrenheit_val = 99
+celsius_val = ((fahrenheit_val - 32) * (5/9))
+
+fahrenheit_val2 = 43
+celsius_val2 = ((fahrenheit_val2 - 32) * (5/9))
+~~~
+{: .language-python}
+
+But we would be in trouble as soon as we had to do this more than a couple times. 
 Cutting and pasting it is going to make our code get very long and very repetitive,
 very quickly.
 We'd like a way to package our code so that it is easier to reuse,
-and Python provides for this by letting us define things called 'functions' ---
-a shorthand way of re-executing longer pieces of code.
+a shorthand way of re-executing longer pieces of code. In Python we can use 'functions'.
 Let's start by defining a function `fahr_to_celsius` that converts temperatures
 from Fahrenheit to Celsius:
 
