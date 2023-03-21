@@ -160,7 +160,7 @@ flare-ups at all throughout the trial, suggesting that they may not even suffer 
 
 > ## Generate Composite Statistics
 >
-> Use each of the files once to generate a dataset containing values averaged over all patients:
+> Use each of the files once to generate a dataset containing values averaged over all patients by completing the code inside the loop given below:
 >
 > ~~~
 > filenames = glob.glob('inflammation*.csv')
