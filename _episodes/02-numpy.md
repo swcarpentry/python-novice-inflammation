@@ -17,7 +17,8 @@ keypoints:
 - "Use `array[x, y]` to select a single element from a 2D array."
 - "Array indices start at 0, not 1."
 - "Use `low:high` to specify a `slice` that includes the indices from `low` to `high-1`."
-- "Use `numpy.mean(array)`, `numpy.max(array)`, and `numpy.min(array)` to calculate simple statistics."
+- "Use `# some kind of explanation` to add comments to programs."
+- "Use `numpy.mean(array)`, `numpy.amax(array)`, and `numpy.amin(array)` to calculate simple statistics."
 - "Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis."
 ---
 
@@ -357,7 +358,7 @@ We'll also use multiple assignment,
 a convenient Python feature that will enable us to do this all in one line.
 
 ~~~
-maxval, minval, stdval = numpy.max(data), numpy.min(data), numpy.std(data)
+maxval, minval, stdval = numpy.amax(data), numpy.amin(data), numpy.std(data)
 
 print('maximum inflammation:', maxval)
 print('minimum inflammation:', minval)
@@ -365,8 +366,8 @@ print('standard deviation:', stdval)
 ~~~
 {: .language-python}
 
-Here we've assigned the return value from `numpy.max(data)` to the variable `maxval`, the value
-from `numpy.min(data)` to `minval`, and so on.
+Here we've assigned the return value from `numpy.amax(data)` to the variable `maxval`, the value
+from `numpy.amin(data)` to `minval`, and so on.
 
 ~~~
 maximum inflammation: 20.0
@@ -400,7 +401,7 @@ then ask it to do the calculation:
 
 ~~~
 patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)
-print('maximum inflammation for patient 0:', numpy.max(patient_0))
+print('maximum inflammation for patient 0:', numpy.amax(patient_0))
 ~~~
 {: .language-python}
 
@@ -413,7 +414,7 @@ We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the function call:
 
 ~~~
-print('maximum inflammation for patient 2:', numpy.max(data[2, :]))
+print('maximum inflammation for patient 2:', numpy.amax(data[2, :]))
 ~~~
 {: .language-python}
 
@@ -428,7 +429,7 @@ diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
 ![Per-patient maximum inflammation is computed row-wise across all columns using
-numpy.max(data, axis=1). Per-day average inflammation is computed column-wise across all rows using
+numpy.amax(data, axis=1). Per-day average inflammation is computed column-wise across all rows using
 numpy.mean(data, axis=0).](../fig/python-operations-across-axes.png)
 
 To support this functionality,
@@ -747,11 +748,11 @@ which is the average inflammation per patient across all days.
 > it matter if the change in inflammation is an increase or a decrease?
 >
 > > ## Solution
-> > By using the `numpy.max()` function after you apply the `numpy.diff()`
+> > By using the `numpy.amax()` function after you apply the `numpy.diff()`
 > > function, you will get the largest difference between days.
 > >
 > > ~~~
-> > numpy.max(numpy.diff(data, axis=1), axis=1)
+> > numpy.amax(numpy.diff(data, axis=1), axis=1)
 > > ~~~
 > > {: .language-python}
 > >
@@ -774,7 +775,7 @@ which is the average inflammation per patient across all days.
 > > between readings.
 > >
 > > ~~~
-> > numpy.max(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
+> > numpy.amax(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
 > > ~~~
 > > {: .language-python}
 > >

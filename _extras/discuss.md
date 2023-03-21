@@ -117,7 +117,7 @@ the minimum and maximum values in an array:
 import numpy
 
 def span(a):
-    diff = numpy.max(a) - numpy.min(a)
+    diff = numpy.amax(a) - numpy.amin(a)
     return diff
 
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
