@@ -160,7 +160,7 @@ being the first loop cycle, and 6 being the final loop cycle).
 We can call the [loop variable]({{ page.root }}/reference.html#loop-variable) anything we like, but
 there must be a colon at the end of the line starting the loop, and we must indent anything we
 want to run inside the loop. Unlike many other languages, there is no command to signify the end
-of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop.
+of the loop body (e.g. `end for`); everything indented after the `for` statement belongs to the loop.
 
 
 > ## What's in a name?
