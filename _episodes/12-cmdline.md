@@ -697,7 +697,7 @@ the program now does everything we set out to do.
 > >
 > >     operator = sys.argv[1]
 > >     assert operator in ['--add', '--subtract', '--multiply', '--divide'], \
-> >         'Operator is not one of add, subtract, multiply, or divide: bailing out'
+> >         'Operator is not one of --add, --subtract, --multiply, or --divide: bailing out'
 > >     try:
 > >         operand1, operand2 = float(sys.argv[2]), float(sys.argv[3])
 > >     except ValueError:
