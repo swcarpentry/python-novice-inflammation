@@ -5,8 +5,8 @@ def main():
     assert len(sys.argv) == 4, 'Need exactly 3 arguments'
 
     operator = sys.argv[1]
-    assert operator in ['add', 'subtract', 'multiply', 'divide'], (
-        'Operator is not one of add, subtract, multiply, or divide: '
+    assert operator in ['--add', '--subtract', '--multiply', '--divide'], (
+        'Operator is not one of --add, --subtract, --multiply, or --divide: '
         'bailing out')
     try:
         operand1, operand2 = float(sys.argv[2]), float(sys.argv[3])
@@ -19,13 +19,13 @@ def main():
 
 def do_arithmetic(operand1, operator, operand2):
 
-    if operator == 'add':
+    if operator == '--add':
         value = operand1 + operand2
-    elif operator == 'subtract':
+    elif operator == '--subtract':
         value = operand1 - operand2
-    elif operator == 'multiply':
+    elif operator == '--multiply':
         value = operand1 * operand2
-    elif operator == 'divide':
+    elif operator == '--divide':
         value = operand1 / operand2
     print(value)
 
