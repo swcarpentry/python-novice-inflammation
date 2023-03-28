@@ -666,25 +666,25 @@ the program now does everything we set out to do.
 
 > ## Arithmetic on the Command Line
 >
-> Write a command-line program that does addition and subtraction:
+> Write a Python program that adds, subtracts, multiplies, or divides two numbers provided on the command line:
 >
 > ~~~
-> $ python arith.py add 1 2
+> $ python arith.py --add 1 2
 > ~~~
 > {: .language-bash}
 >
 > ~~~
-> 3
+> 3.0
 > ~~~
 > {: .output}
 >
 > ~~~
-> $ python arith.py subtract 3 4
+> $ python arith.py --subtract 3 4
 > ~~~
 > {: .language-bash}
 >
 > ~~~
-> -1
+> -1.0
 > ~~~
 > {: .output}
 >
@@ -696,8 +696,8 @@ the program now does everything we set out to do.
 > >     assert len(sys.argv) == 4, 'Need exactly 3 arguments'
 > >
 > >     operator = sys.argv[1]
-> >     assert operator in ['add', 'subtract', 'multiply', 'divide'], \
-> >         'Operator is not one of add, subtract, multiply, or divide: bailing out'
+> >     assert operator in ['--add', '--subtract', '--multiply', '--divide'], \
+> >         'Operator is not one of --add, --subtract, --multiply, or --divide: bailing out'
 > >     try:
 > >         operand1, operand2 = float(sys.argv[2]), float(sys.argv[3])
 > >     except ValueError:
