@@ -165,7 +165,7 @@ does not.
 > understand. However, it is often far more efficient to modify a large data structure in place
 > than to create a modified copy for every small change. You should consider both of these aspects
 > when writing your code.
- {: .callout}
+{: .callout}
 
 > ## Nested Lists
 > Since a list can contain any Python variables, it can even contain other lists.
