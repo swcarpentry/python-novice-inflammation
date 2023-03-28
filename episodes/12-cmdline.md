@@ -666,7 +666,7 @@ the program now does everything we set out to do.
 
 > ## Arithmetic on the Command Line
 >
-> Write a command-line program that does addition and subtraction (you could also try multiplication and division operators):
+> Write a Python program that adds, subtracts, multiplies, or divides two numbers provided on the command line:
 >
 > ~~~
 > $ python arith.py --add 1 2
