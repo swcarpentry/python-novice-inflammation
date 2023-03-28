@@ -129,15 +129,17 @@ does not.
 > the list value, it will change for both variables!
 >
 > ~~~
-> salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
-> my_salsa = salsa        # <-- my_salsa and salsa point to the *same* list data in memory
-> salsa[0] = 'hot peppers'
-> print('Ingredients in my salsa:', my_salsa)
+> mild_salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
+> hot_salsa = mild_salsa        # <-- mild_salsa and hot_salsa point to the *same* list data in memory
+> hot_salsa[0] = 'hot peppers'
+> print('Ingredients in mild salsa:', mild_salsa)
+> print('Ingredients in hot salsa:', hot_salsa)
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> Ingredients in my salsa: ['hot peppers', 'onions', 'cilantro', 'tomatoes']
+> Ingredients in mild salsa: ['hot peppers', 'onions', 'cilantro', 'tomatoes']
+> Ingredients in hot salsa: ['hot peppers', 'onions', 'cilantro', 'tomatoes']
 > ~~~
 > {: .output}
 >
@@ -145,15 +147,17 @@ does not.
 > must make a copy of the value when you assign it.
 >
 > ~~~
-> salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
-> my_salsa = list(salsa)        # <-- makes a *copy* of the list
-> salsa[0] = 'hot peppers'
-> print('Ingredients in my salsa:', my_salsa)
+> mild_salsa = ['peppers', 'onions', 'cilantro', 'tomatoes']
+> hot_salsa = list(mild_salsa)        # <-- makes a *copy* of the list
+> hot_salsa[0] = 'hot peppers'
+> print('Ingredients in mild salsa:', mild_salsa)
+> print('Ingredients in hot salsa:', hot_salsa)
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> Ingredients in my salsa: ['peppers', 'onions', 'cilantro', 'tomatoes']
+> Ingredients in mild salsa: ['peppers', 'onions', 'cilantro', 'tomatoes']
+> Ingredients in hot salsa: ['hot peppers', 'onions', 'cilantro', 'tomatoes']
 > ~~~
 > {: .output}
 >
@@ -161,7 +165,7 @@ does not.
 > understand. However, it is often far more efficient to modify a large data structure in place
 > than to create a modified copy for every small change. You should consider both of these aspects
 > when writing your code.
-{: .callout}
+ {: .callout}
 
 > ## Nested Lists
 > Since a list can contain any Python variables, it can even contain other lists.
@@ -291,7 +295,7 @@ odds after reversing: [11, 7, 5, 3]
 While modifying in place, it is useful to remember that Python treats lists in a slightly
 counter-intuitive way.
 
-As we saw earlier, when we modified the `salsa` list item in-place, if we make a list, (attempt to)
+As we saw earlier, when we modified the `mild_salsa` list item in-place, if we make a list, (attempt to)
 copy it and then modify this list, we can cause all sorts of trouble. This also applies to modifying
 the list using the above functions:
 
