@@ -41,6 +41,12 @@ you like.
 A Jupyter Notebook provides a browser-based interface for working with Python.
 If you installed Anaconda, you can launch a notebook in two ways:
 
+:::::::::::::::::::::::::::::::::::::::: {.empty-div style="margin-bottom: 50px"}
+
+<!-- This div is intentionally empty to allow the solution to float alone-->
+
+::::::::::::::::::::::::::::::::::::::::
+
 :::::::::::::::  solution
 
 ## Anaconda Navigator
@@ -58,15 +64,26 @@ If you installed Anaconda, you can launch a notebook in two ways:
   ![](fig/jupyter-notebook-data-directory.png){alt='Anaconda Navigator Notebook directory'}
 4. Launch the notebook by clicking on the "New" button and then selecting "Python 3":
   ![](fig/jupyter-notebook-launch-notebook.png){alt='Anaconda Navigator Notebook directory'}
-  
 
 :::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: {.empty-div style="margin-bottom: 50px"}
+
+<!-- This div is intentionally empty to allow the solution to float alone-->
+
+::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::  solution
 
 ## Command line (Terminal)
 
 1\. Navigate to the `data` directory:
+
+:::::::::::::::::::::::::::::::::::::::: {.empty-div style="margin-bottom: 50px"}
+
+<!-- This div is intentionally empty to allow the solution to float alone-->
+
+::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::  solution
 
@@ -80,6 +97,12 @@ cd ~/Desktop/swc-python/data
 ```
 
 :::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: {.empty-div style="margin-bottom: 50px"}
+
+<!-- This div is intentionally empty to allow the solution to float alone-->
+
+::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::  solution
 
@@ -98,6 +121,12 @@ cd /D %userprofile%\Desktop\swc-python\data
 
 2\. Start Jupyter server
 
+:::::::::::::::::::::::::::::::::::::::: {.empty-div style="margin-bottom: 50px"}
+
+<!-- This div is intentionally empty to allow the solution to float alone-->
+
+::::::::::::::::::::::::::::::::::::::::
+
 :::::::::::::::  solution
 
 ## Unix shell
@@ -107,6 +136,12 @@ jupyter notebook
 ```
 
 :::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: {.empty-div style="margin-bottom: 50px"}
+
+<!-- This div is intentionally empty to allow the solution to float alone-->
+
+::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::  solution
 
@@ -121,7 +156,6 @@ python -m notebook
 3\. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
 from the drop-down menu:
 ![](fig/jupyter-notebook-launch-notebook2.png){alt='Anaconda Navigator Notebook directory'}
-
 
 :::::::::::::::::::::::::
 
@@ -160,7 +194,7 @@ winpty python
 [anaconda-instructions]: https://carpentries.github.io/workshop-template/#python
 [anaconda-install]: https://docs.anaconda.com/anaconda/install
 [zipfile1]: data/python-novice-inflammation-data.zip
-[zipfile2]: code/python-novice-inflammation-code.zip
+[zipfile2]: ../episodes/files/code/python-novice-inflammation-code.zip
 [gitbash]: https://gitforwindows.org
 
 

@@ -704,7 +704,7 @@ main()
 
 ## Finding Particular Files
 
-Using the `glob` module introduced [earlier](04-files),
+Using the `glob` module introduced [earlier](06-files.html),
 write a simple version of `ls` that shows files in the current directory
 with a particular suffix.
 A call to this script should look like this:

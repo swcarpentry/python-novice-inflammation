@@ -20,7 +20,7 @@ arthritis treatment.
 
 We make reference in the lesson that this data is suspicious and has been
 synthetically generated in Python by the imaginary "Dr. Maverick"! The script used to generate
-the inflammation data is included as [`code/gen_inflammation.py`](code/gen_inflammation.py).
+the inflammation data is included as [`code/gen_inflammation.py`](../episodes/files/code/gen_inflammation.py).
 
 ## Overall
 
@@ -99,7 +99,7 @@ which are covered in the lesson on the shell.
 
 - NumPy methods.
   
-  We used to use NumPy array methods in the first [NumPy topic](01-numpy).
+  We used to use NumPy array methods in the first [NumPy topic](02-numpy.html).
   We switched these methods to the equivalent functions because a majority
   of instructors supported the change; see
   [PR #244](https://github.com/swcarpentry/python-novice-inflammation/pull/244)
