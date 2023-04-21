@@ -1,9 +1,9 @@
 ---
-title: "Additional material"
+title: Additional material
 ---
+
 A collection of facts about Python that do not fit into the main lesson
 either due to the scope or time constraints of the main lesson.
-
 
 ## Jupyter Notebook/IPython: Who's Who in Memory
 
@@ -12,105 +12,92 @@ variables you have created and what modules you have loaded into the computer's 
 As this is an IPython command, it will only work if you are in an IPython terminal or the
 Jupyter Notebook.
 
-~~~
+```python
 %whos
-~~~
-{: .language-python}
+```
 
-~~~
+```output
 Variable    Type       Data/Info
 --------------------------------
 weight_kg   float      100.0
 weight_lb   float      143.0
-~~~
-{: .output}
-
+```
 
 <br />
 ## Integer Division
 
 We are using Python 3, where division always returns a floating point number:
 
-~~~
+```python
 5/9
-~~~
-{: .language-python}
-~~~
+```
+
+```output
 0.5555555555555556
-~~~
-{: .output}
+```
 
 Unfortunately, this wasn't the case in Python 2:
-~~~
+
+```python
 5/9
-~~~
-{: .language-python}
-~~~
+```
+
+```output
 0
-~~~
-{: .output}
+```
 
 If you are using Python 2 and want to keep the fractional part of division
 you need to convert one or the other number to floating point:
 
-~~~
+```python
 float(5)/9
-~~~
-{: .language-python}
+```
 
-~~~
+```output
 0.555555555556
-~~~
-{: .output}
+```
 
-~~~
+```python
 5/float(9)
-~~~
-{: .language-python}
+```
 
-~~~
+```output
 0.555555555556
-~~~
-{: .output}
+```
 
-~~~
+```python
 5.0/9
-~~~
-{: .language-python}
+```
 
-~~~
+```output
 0.555555555556
-~~~
-{: .output}
-~~~
+```
+
+```python
 5/9.0
-~~~
-{: .language-python}
+```
 
-~~~
+```output
 0.555555555556
-~~~
-{: .output}
+```
 
 And if you want an integer result from division in Python 3,
 use a double-slash:
 
-~~~
+```python
 4//2
-~~~
-{: .language-python}
+```
 
-~~~
+```output
 2
-~~~
-{: .output}
+```
 
-~~~
+```python
 3//2
-~~~
-{: .language-python}
+```
 
-~~~
+```output
 1
-~~~
-{: .output}
+```
+
+

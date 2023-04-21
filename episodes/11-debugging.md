@@ -2,19 +2,20 @@
 title: Debugging
 teaching: 30
 exercises: 20
-questions:
-- "How can I debug my program?"
-objectives:
-- "Debug code containing an error systematically."
-- "Identify ways of making code less error-prone and more easily tested."
-keypoints:
-- "Know what code is supposed to do *before* trying to debug it."
-- "Make it fail every time."
-- "Make it fail fast."
-- "Change one thing at a time, and for a reason."
-- "Keep track of what you've done."
-- "Be humble."
 ---
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Debug code containing an error systematically.
+- Identify ways of making code less error-prone and more easily tested.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- How can I debug my program?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Once testing has uncovered problems,
 the next step is to fix them.
@@ -48,51 +49,51 @@ we'd be writing up our results and moving on to the next program.
 In practice,
 scientists tend to do the following:
 
-1.  *Test with simplified data.*
-    Before doing statistics on a real data set,
-    we should try calculating statistics for a single record,
-    for two identical records,
-    for two records whose values are one step apart,
-    or for some other case where we can calculate the right answer by hand.
+1. *Test with simplified data.*
+  Before doing statistics on a real data set,
+  we should try calculating statistics for a single record,
+  for two identical records,
+  for two records whose values are one step apart,
+  or for some other case where we can calculate the right answer by hand.
 
-2.  *Test a simplified case.*
-    If our program is supposed to simulate
-    magnetic eddies in rapidly-rotating blobs of supercooled helium,
-    our first test should be a blob of helium that isn't rotating,
-    and isn't being subjected to any external electromagnetic fields.
-    Similarly,
-    if we're looking at the effects of climate change on speciation,
-    our first test should hold temperature, precipitation, and other factors constant.
+2. *Test a simplified case.*
+  If our program is supposed to simulate
+  magnetic eddies in rapidly-rotating blobs of supercooled helium,
+  our first test should be a blob of helium that isn't rotating,
+  and isn't being subjected to any external electromagnetic fields.
+  Similarly,
+  if we're looking at the effects of climate change on speciation,
+  our first test should hold temperature, precipitation, and other factors constant.
 
-3.  *Compare to an oracle.*
-    A [test oracle]({{ page.root }}/reference.html#test-oracle)
-    is something whose results are trusted,
-    such as experimental data, an older program, or a human expert.
-    We use test oracles to determine if our new program produces the correct results.
-    If we have a test oracle,
-    we should store its output for particular cases
-    so that we can compare it with our new results as often as we like
-    without re-running that program.
+3. *Compare to an oracle.*
+  A [test oracle](../learners/reference.md#test-oracle)
+  is something whose results are trusted,
+  such as experimental data, an older program, or a human expert.
+  We use test oracles to determine if our new program produces the correct results.
+  If we have a test oracle,
+  we should store its output for particular cases
+  so that we can compare it with our new results as often as we like
+  without re-running that program.
 
-4.  *Check conservation laws.*
-    Mass, energy, and other quantities are conserved in physical systems,
-    so they should be in programs as well.
-    Similarly,
-    if we are analyzing patient data,
-    the number of records should either stay the same or decrease
-    as we move from one analysis to the next
-    (since we might throw away outliers or records with missing values).
-    If "new" patients start appearing out of nowhere as we move through our pipeline,
-    it's probably a sign that something is wrong.
+4. *Check conservation laws.*
+  Mass, energy, and other quantities are conserved in physical systems,
+  so they should be in programs as well.
+  Similarly,
+  if we are analyzing patient data,
+  the number of records should either stay the same or decrease
+  as we move from one analysis to the next
+  (since we might throw away outliers or records with missing values).
+  If "new" patients start appearing out of nowhere as we move through our pipeline,
+  it's probably a sign that something is wrong.
 
-5.  *Visualize.*
-    Data analysts frequently use simple visualizations to check both
-    the science they're doing
-    and the correctness of their code
-    (just as we did in the [opening lesson]({{ page.root }}/01-numpy/) of this tutorial).
-    This should only be used for debugging as a last resort,
-    though,
-    since it's very hard to compare two visualizations automatically.
+5. *Visualize.*
+  Data analysts frequently use simple visualizations to check both
+  the science they're doing
+  and the correctness of their code
+  (just as we did in the [opening lesson](01-numpy) of this tutorial).
+  This should only be used for debugging as a last resort,
+  though,
+  since it's very hard to compare two visualizations automatically.
 
 ## Make It Fail Every Time
 
@@ -132,18 +133,18 @@ we want to make it fail fast in space,
 i.e.,
 we want to localize the failure to the smallest possible region of code:
 
-1.  The smaller the gap between cause and effect,
-    the easier the connection is to find.
-    Many programmers therefore use a divide and conquer strategy to find bugs,
-    i.e.,
-    if the output of a function is wrong,
-    they check whether things are OK in the middle,
-    then concentrate on either the first or second half,
-    and so on.
+1. The smaller the gap between cause and effect,
+  the easier the connection is to find.
+  Many programmers therefore use a divide and conquer strategy to find bugs,
+  i.e.,
+  if the output of a function is wrong,
+  they check whether things are OK in the middle,
+  then concentrate on either the first or second half,
+  and so on.
 
-2.  N things can interact in N! different ways,
-    so every line of code that *isn't* run as part of a test
-    means more than one thing we don't need to worry about.
+2. N things can interact in N! different ways,
+  so every line of code that *isn't* run as part of a test
+  means more than one thing we don't need to worry about.
 
 ## Change One Thing at a Time, For a Reason
 
@@ -191,16 +192,21 @@ People are more likely to listen to us
 when we can explain clearly what we did,
 and we're better able to give them the information they need to be useful.
 
-> ## Version Control Revisited
->
-> Version control is often used to reset software to a known state during debugging,
-> and to explore recent changes to code that might be responsible for bugs.
-> In particular,
-> most version control systems (e.g. git, Mercurial) have:
-> 1. a `blame` command that shows who last changed each line of a file;
-> 2. a `bisect` command that helps with finding the commit that introduced an
->    issue.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Version Control Revisited
+
+Version control is often used to reset software to a known state during debugging,
+and to explore recent changes to code that might be responsible for bugs.
+In particular,
+most version control systems (e.g. git, Mercurial) have:
+
+1. a `blame` command that shows who last changed each line of a file;
+2. a `bisect` command that helps with finding the commit that introduced an
+  issue.
+  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Be Humble
 
@@ -238,58 +244,85 @@ and to turn every assumption (or mistake) into an assertion,
 it will actually take us *less* time to produce working programs,
 not more.
 
-> ## Debug With a Neighbor
->
-> Take a function that you have written today, and introduce a tricky bug.
-> Your function should still run, but will give the wrong output.
-> Switch seats with your neighbor and attempt to debug
-> the bug that they introduced into their function.
-> Which of the principles discussed above did you find helpful?
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
 
-> ## Not Supposed to be the Same
->
-> You are assisting a researcher with Python code that computes the
-> Body Mass Index (BMI) of patients.  The researcher is concerned because
-> all patients seemingly have unusual and identical BMIs, despite having different
-> physiques.  BMI is calculated as **weight in kilograms**
-> divided by the square of **height in metres**.
->
-> Use the debugging principles in this exercise and locate problems
-> with the code. What suggestions would you give the researcher for
-> ensuring any later changes they make work correctly? What bugs do you spot?
->
-> ~~~
-> patients = [[70, 1.8], [80, 1.9], [150, 1.7]]
->
-> def calculate_bmi(weight, height):
->     return weight / (height ** 2)
->
-> for patient in patients:
->     weight, height = patients[0]
->     bmi = calculate_bmi(height, weight)
->     print("Patient's BMI is:", bmi)
-> ~~~
-> {: .language-python}
->
-> ~~~
-> Patient's BMI is: 0.000367
-> Patient's BMI is: 0.000367
-> Patient's BMI is: 0.000367
-> ~~~
-> {: .output}
->
-> > ## Solution
-> > ### Suggestions for debugging
-> > * Add printing statement in the `calculate_bmi` function, like `print('weight:', weight, 'height:', height)`, to make clear that what the BMI is based on.
-> > * Change `print("Patient's BMI is: %f" % bmi)` to `print("Patient's BMI (weight: %f, height: %f) is: %f" % (weight, height, bmi))`, in order to be able to distinguish bugs in the function from bugs in the loop.
-> > ### Bugs found
-> > * The loop is not being utilised correctly. `height` and `weight` are always
-> >   set as the first patient's data during each iteration of the loop.
-> >
-> > * The height/weight variables are reversed in the function call to
-> >   `calculate_bmi(...)`, the correct BMIs are 21.604938, 22.160665 and 51.903114.
-> {: .solution}
-{: .challenge}
+## Debug With a Neighbor
 
-{% include links.md %}
+Take a function that you have written today, and introduce a tricky bug.
+Your function should still run, but will give the wrong output.
+Switch seats with your neighbor and attempt to debug
+the bug that they introduced into their function.
+Which of the principles discussed above did you find helpful?
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Not Supposed to be the Same
+
+You are assisting a researcher with Python code that computes the
+Body Mass Index (BMI) of patients.  The researcher is concerned because
+all patients seemingly have unusual and identical BMIs, despite having different
+physiques.  BMI is calculated as **weight in kilograms**
+divided by the square of **height in metres**.
+
+Use the debugging principles in this exercise and locate problems
+with the code. What suggestions would you give the researcher for
+ensuring any later changes they make work correctly? What bugs do you spot?
+
+```python
+patients = [[70, 1.8], [80, 1.9], [150, 1.7]]
+
+def calculate_bmi(weight, height):
+    return weight / (height ** 2)
+
+for patient in patients:
+    weight, height = patients[0]
+    bmi = calculate_bmi(height, weight)
+    print("Patient's BMI is:", bmi)
+```
+
+```output
+Patient's BMI is: 0.000367
+Patient's BMI is: 0.000367
+Patient's BMI is: 0.000367
+```
+
+:::::::::::::::  solution
+
+## Solution
+
+### Suggestions for debugging
+
+- Add printing statement in the `calculate_bmi` function, like `print('weight:', weight, 'height:', height)`, to make clear that what the BMI is based on.
+- Change `print("Patient's BMI is: %f" % bmi)` to `print("Patient's BMI (weight: %f, height: %f) is: %f" % (weight, height, bmi))`, in order to be able to distinguish bugs in the function from bugs in the loop.
+
+### Bugs found
+
+- The loop is not being utilised correctly. `height` and `weight` are always
+  set as the first patient's data during each iteration of the loop.
+
+- The height/weight variables are reversed in the function call to
+  `calculate_bmi(...)`, the correct BMIs are 21.604938, 22.160665 and 51.903114.
+  
+  
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Know what code is supposed to do *before* trying to debug it.
+- Make it fail every time.
+- Make it fail fast.
+- Change one thing at a time, and for a reason.
+- Keep track of what you've done.
+- Be humble.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

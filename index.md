@@ -1,7 +1,6 @@
 ---
-layout: lesson
-root: .
 permalink: index.html
+site: sandpaper::sandpaper_site
 ---
 
 The best way to learn how to program is to do something useful,
@@ -27,26 +26,24 @@ To see how effective the treatment is we would like to:
 1. Calculate the average inflammation per day across all patients.
 2. Plot the result to discuss and share with colleagues.
 
-![3-step flowchart shows inflammation data records for patients moving to the Analysis step
-where a heat map of provided data is generated moving to the Conclusion step that asks the
-question, How does the medication affect patients?](
-fig/lesson-overview.svg "Lesson Overview")
-
+![](fig/lesson-overview.svg "Lesson Overview"){alt='3-step flowchart shows inflammation data records for patients moving to the Analysis stepwhere a heat map of provided data is generated moving to the Conclusion step that asks thequestion, How does the medication affect patients?'}
 
 ### Data Format
+
 The data sets are stored in
-[comma-separated values]({{ page.root }}/reference.html#comma-separated-values) (CSV) format:
+[comma-separated values](learners/reference.md#comma-separated-values) (CSV) format:
 
 - each row holds information for a single patient,
 - columns represent successive days.
 
 The first three rows of our first file look like this:
-~~~
+
+```source
 0,0,1,3,1,2,4,7,8,3,3,3,10,5,7,4,7,7,12,18,6,13,11,11,7,7,4,6,8,8,4,4,5,7,3,4,2,3,0,0
 0,1,2,1,2,1,3,2,2,6,10,11,5,9,4,4,7,16,8,6,18,4,12,5,12,7,11,5,11,3,3,5,4,4,5,5,1,1,0,1
 0,1,1,3,3,2,6,2,5,9,5,7,4,5,4,15,5,11,9,10,19,14,12,17,7,12,11,7,4,2,10,5,4,2,2,3,2,2,1,1
-~~~
-{: .source}
+```
+
 Each number represents the number of inflammation bouts that a particular patient experienced on a
 given day.
 
@@ -56,19 +53,26 @@ patient was experiencing inflammation six times on the seventh day of the clinic
 In order to analyze this data and report to our colleagues, we'll have to learn a little bit
 about programming.
 
-> ## Prerequisites
->
-> You need to understand the concepts of **files** and **directories** and how to start a Python
-> interpreter before tackling this lesson. This lesson sometimes references Jupyter
-> Notebook although you can use any Python interpreter mentioned in the [Setup][lesson-setup].
->
-> The commands in this lesson pertain to any officially supported Python version, currently **Python
-> 3.7+**.  Newer versions usually have better error printouts, so using newer Python versions is
-> recommend if possible.
-{: .prereq}
+::::::::::::::::::::::::::::::::::::::::::  prereq
+
+## Prerequisites
+
+You need to understand the concepts of **files** and **directories** and how to start a Python
+interpreter before tackling this lesson. This lesson sometimes references Jupyter
+Notebook although you can use any Python interpreter mentioned in the [Setup][lesson-setup].
+
+The commands in this lesson pertain to any officially supported Python version, currently **Python
+3\.7+**.  Newer versions usually have better error printouts, so using newer Python versions is
+recommend if possible.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Getting Started
+
 To get started, follow the directions on the "[Setup][lesson-setup]" page to download data
 and install a Python interpreter.
 
-{% include links.md %}
+
+
+
