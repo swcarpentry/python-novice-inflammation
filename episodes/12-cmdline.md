@@ -816,9 +816,13 @@ def main():
     script = sys.argv[0]
     if len(sys.argv) == 1: # no arguments, so print help message
         print("""Usage: python readings_08.py action filenames
-              action must be one of --min --mean --max
-              if filenames is blank, input is taken from stdin;
-              otherwise, each filename in the list of arguments is processed in turn""")
+
+action:
+    Must be one of --min, --mean, or --max.
+
+filenames:
+    If blank, input is taken from standard input (stdin).
+    Otherwise, each filename in the list of arguments is processed in turn.""")
         return
 
     action = sys.argv[1]
