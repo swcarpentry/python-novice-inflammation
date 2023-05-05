@@ -4,11 +4,12 @@ import numpy
 def main():
     script = sys.argv[0]
     if len(sys.argv) == 1:  # no arguments, so print help message
-        print('Usage: python readings_08.py action filenames\n'
-              'action must be one of --min --mean --max\n'
-              'if filenames is blank, input is taken from stdin;\n'
-              'otherwise, each filename in the list of arguments\n'
-              'is processed in turn')
+        print("Usage: python readings_08.py action filenames\n"
+              "Action:\n"
+              "    Must be one of --min, --mean, or --max.\n"
+              "Filenames:\n"
+              "    If blank, input is taken from standard input (stdin).\n"
+              "    Otherwise, each filename in the list of arguments is processed in turn.")
         return
 
     action = sys.argv[1]
