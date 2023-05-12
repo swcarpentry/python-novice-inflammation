@@ -59,7 +59,7 @@ about programming.
 
 You need to understand the concepts of **files** and **directories** and how to start a Python
 interpreter before tackling this lesson. This lesson sometimes references Jupyter
-Notebook although you can use any Python interpreter mentioned in the [Setup][lesson-setup].
+Notebook although you can use any Python interpreter mentioned in the [Setup](learners/setup.md).
 
 The commands in this lesson pertain to any officially supported Python version, currently **Python
 3\.7+**.  Newer versions usually have better error printouts, so using newer Python versions is
@@ -70,7 +70,7 @@ recommend if possible.
 
 ### Getting Started
 
-To get started, follow the directions on the "[Setup][lesson-setup]" page to download data
+To get started, follow the directions on the [Setup](learners/setup.md) page to download data
 and install a Python interpreter.
 
 
