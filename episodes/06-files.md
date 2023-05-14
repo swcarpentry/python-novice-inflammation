@@ -230,11 +230,7 @@ In fact, it appears that all three of the "noisy" datasets (`inflammation-03.csv
 Armed with this information, we confront Dr. Maverick about the suspicious data and
 duplicated files.
 
-Dr. Maverick confesses that they fabricated the clinical data after they found out
-that the initial trial suffered from a number of issues, including unreliable data-recording and
-poor participant selection. They created fake data to prove their drug worked, and when we asked
-for more data they tried to generate more fake datasets, as well as throwing in the original
-poor-quality dataset a few times to try and make all the trials seem a bit more "realistic".
+Dr. Maverick has admitted to fabricating the clinical data for their drug trial. They did this after discovering that the initial trial had several issues, including unreliable data recording and poor participant selection. In order to prove the efficacy of their drug, they created fake data. When asked for additional data, they attempted to generate more fake datasets, and also included the original poor-quality dataset several times in order to make the trials seem more realistic.
 
 Congratulations! We've investigated the inflammation data and proven that the datasets have been
 synthetically generated.
