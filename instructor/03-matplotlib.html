@@ -353,12 +353,12 @@ standard. First, we will import the <code>pyplot</code> module from
 <code>matplotlib</code> and use two of its functions to create and
 display a <a href="reference.html#heat-map">heat map</a> of our
 data:</p>
-<div id="prereq1" class="callout prereq">
+<div id="episode-prerequisites" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
 </div>
 <div id="episode-prerequisites" class="callout-inner">
-<h3 class="callout-title">Episode Prerequisites<a class="anchor" aria-label="anchor" href="#prereq1"></a>
+<h3 class="callout-title">Episode Prerequisites<a class="anchor" aria-label="anchor" href="#episode-prerequisites"></a>
 </h3>
 <div class="callout-content">
 <p>If you are continuing in the same notebook from the previous episode,
@@ -483,12 +483,12 @@ documents, web pages etc. The graphics format is automatically
 determined by Matplotlib from the file name ending we specify; here PNG
 from ‘inflammation.png’. Matplotlib supports many different graphics
 formats, including SVG, PDF, and JPEG.</p>
-<div id="callout1" class="callout callout">
+<div id="importing-libraries-with-shortcuts" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="importing-libraries-with-shortcuts" class="callout-inner">
-<h3 class="callout-title">Importing libraries with shortcuts<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Importing libraries with shortcuts<a class="anchor" aria-label="anchor" href="#importing-libraries-with-shortcuts"></a>
 </h3>
 <div class="callout-content">
 <p>In this lesson we use the <code>import matplotlib.pyplot</code> <a href="reference.html#syntax">syntax</a> to import the
@@ -515,12 +515,12 @@ imported.</p>
 </div>
 </div>
 </div>
-<div id="challenge1" class="callout challenge">
+<div id="plot-scaling" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="plot-scaling" class="callout-inner">
-<h3 class="callout-title">Plot Scaling<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Plot Scaling<a class="anchor" aria-label="anchor" href="#plot-scaling"></a>
 </h3>
 <div class="callout-content">
 <p>Why do all of our plots stop just short of the upper end of our
@@ -535,7 +535,7 @@ graph?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Because matplotlib normally sets x and y axes limits to the min and
 max of our data (depending on data range)</p>
@@ -543,12 +543,12 @@ max of our data (depending on data range)</p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="plot-scaling" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="plot-scaling" class="callout-inner">
-<h3 class="callout-title">Plot Scaling<em> (continued)</em><a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Plot Scaling<em> (continued)</em><a class="anchor" aria-label="anchor" href="#plot-scaling"></a>
 </h3>
 <div class="callout-content">
 <p>If we want to change this, we can use the
@@ -571,7 +571,7 @@ scale. (Hint: you can make use of the <code>max</code> and
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -592,7 +592,7 @@ scale. (Hint: you can make use of the <code>max</code> and
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -607,12 +607,12 @@ scale. (Hint: you can make use of the <code>max</code> and
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="drawing-straight-lines" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="drawing-straight-lines" class="callout-inner">
-<h3 class="callout-title">Drawing Straight Lines<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Drawing Straight Lines<a class="anchor" aria-label="anchor" href="#drawing-straight-lines"></a>
 </h3>
 <div class="callout-content">
 <p>In the center and right subplots above, we expect all lines to look
@@ -630,7 +630,7 @@ the subplot on the right looks slanted. Why is this?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Because matplotlib interpolates (draws a straight line) between the
 points. One way to do avoid this is to use the Matplotlib
@@ -666,12 +666,12 @@ points. One way to do avoid this is to use the Matplotlib
 </div>
 </div>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="make-your-own-plot" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="make-your-own-plot" class="callout-inner">
-<h3 class="callout-title">Make Your Own Plot<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Make Your Own Plot<a class="anchor" aria-label="anchor" href="#make-your-own-plot"></a>
 </h3>
 <div class="callout-content">
 <p>Create a plot showing the standard deviation (<code>numpy.std</code>)
@@ -686,7 +686,7 @@ of the inflammation data for each day across all patients.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -698,12 +698,12 @@ of the inflammation data for each day across all patients.</p>
 </div>
 </div>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="moving-plots-around" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="moving-plots-around" class="callout-inner">
-<h3 class="callout-title">Moving Plots Around<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Moving Plots Around<a class="anchor" aria-label="anchor" href="#moving-plots-around"></a>
 </h3>
 <div class="callout-content">
 <p>Modify the program to display the three plots on top of one another
@@ -718,7 +718,7 @@ instead of side by side.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -797,7 +797,7 @@ library for creating simple visualizations.</li>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -821,7 +821,7 @@ library for creating simple visualizations.</li>
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/03-matplotlib.html",
   "dateCreated": "2014-11-25",
   "dateModified": "2023-04-21",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>

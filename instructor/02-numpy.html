@@ -458,12 +458,12 @@ N-dimensional array, the functionality for which is provided by the
 NumPy library. These data correspond to arthritis patients’
 inflammation. The rows are the individual patients, and the columns are
 their daily inflammation measurements.</p>
-<div id="callout1" class="callout callout">
+<div id="data-type" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="data-type" class="callout-inner">
-<h3 class="callout-title">Data Type<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Data Type<a class="anchor" aria-label="anchor" href="#data-type"></a>
 </h3>
 <div class="callout-content">
 <p>A Numpy array contains one or more elements of the same type. The
@@ -546,12 +546,12 @@ its indices go from 0 to M-1 on the first axis and 0 to N-1 on the
 second. It takes a bit of getting used to, but one way to remember the
 rule is that the index is how many steps we have to take from the start
 to get the item we want.</p>
-<figure><img src="../fig/python-zero-index.svg" alt="'data' is a 3 by 3 numpy array containing row 0: ['A', 'B', 'C'], row 1: ['D', 'E', 'F'], androw 2: ['G', 'H', 'I']. Starting in the upper left hand corner, data[0, 0] = 'A', data[0, 1] = 'B',data[0, 2] = 'C', data[1, 0] = 'D', data[1, 1] = 'E', data[1, 2] = 'F', data[2, 0] = 'G',data[2, 1] = 'H', and data[2, 2] = 'I',in the bottom right hand corner." class="figure mx-auto d-block"></figure><div id="callout2" class="callout callout">
+<figure><img src="../fig/python-zero-index.svg" alt="'data' is a 3 by 3 numpy array containing row 0: ['A', 'B', 'C'], row 1: ['D', 'E', 'F'], androw 2: ['G', 'H', 'I']. Starting in the upper left hand corner, data[0, 0] = 'A', data[0, 1] = 'B',data[0, 2] = 'C', data[1, 0] = 'D', data[1, 1] = 'E', data[1, 2] = 'F', data[2, 0] = 'G',data[2, 1] = 'H', and data[2, 2] = 'I',in the bottom right hand corner." class="figure mx-auto d-block"></figure><div id="in-the-corner" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="in-the-corner" class="callout-inner">
-<h3 class="callout-title">In the Corner<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">In the Corner<a class="anchor" aria-label="anchor" href="#in-the-corner"></a>
 </h3>
 <div class="callout-content">
 <p>What may also surprise you is that when Python displays an array, it
@@ -642,12 +642,12 @@ to compute <code>data</code>’s mean value:</p>
 </div>
 <p><code>mean</code> is a <a href="reference.html#function">function</a>
 that takes an array as an <a href="reference.html#argument">argument</a>.</p>
-<div id="callout3" class="callout callout">
+<div id="not-all-functions-have-input" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="not-all-functions-have-input" class="callout-inner">
-<h3 class="callout-title">Not All Functions Have Input<a class="anchor" aria-label="anchor" href="#callout3"></a>
+<h3 class="callout-title">Not All Functions Have Input<a class="anchor" aria-label="anchor" href="#not-all-functions-have-input"></a>
 </h3>
 <div class="callout-content">
 <p>Generally, a function uses inputs to produce outputs. However, some
@@ -693,12 +693,12 @@ on.</p>
 minimum inflammation: 0.0
 standard deviation: 4.61383319712</code></pre>
 </div>
-<div id="callout4" class="callout callout">
+<div id="mystery-functions-in-ipython" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="mystery-functions-in-ipython" class="callout-inner">
-<h3 class="callout-title">Mystery Functions in IPython<a class="anchor" aria-label="anchor" href="#callout4"></a>
+<h3 class="callout-title">Mystery Functions in IPython<a class="anchor" aria-label="anchor" href="#mystery-functions-in-ipython"></a>
 </h3>
 <div class="callout-content">
 <p>How did we know what functions NumPy has and how to use them? If you
@@ -801,12 +801,12 @@ across axis 1 (columns in our 2D example), we get:</p>
   6.1    6.825  5.975  6.725  5.7    6.25   6.4    7.05   5.9  ]</code></pre>
 </div>
 <p>which is the average inflammation per patient across all days.</p>
-<div id="challenge1" class="callout challenge">
+<div id="slicing-strings" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="slicing-strings" class="callout-inner">
-<h3 class="callout-title">Slicing Strings<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Slicing Strings<a class="anchor" aria-label="anchor" href="#slicing-strings"></a>
 </h3>
 <div class="callout-content">
 <p>A section of an array is called a <a href="reference.html#slice">slice</a>. We can take slices of character
@@ -849,12 +849,12 @@ last three characters: gen</code></pre>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="slicing-strings" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="slicing-strings" class="callout-inner">
-<h3 class="callout-title">Slicing Strings<em> (continued)</em><a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Slicing Strings<em> (continued)</em><a class="anchor" aria-label="anchor" href="#slicing-strings"></a>
 </h3>
 <div class="callout-content">
 <p>What is <code>element[-1]</code>? What is
@@ -881,12 +881,12 @@ last three characters: gen</code></pre>
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="slicing-strings" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="slicing-strings" class="callout-inner">
-<h3 class="callout-title">Slicing Strings<em> (continued)</em><a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Slicing Strings<em> (continued)</em><a class="anchor" aria-label="anchor" href="#slicing-strings"></a>
 </h3>
 <div class="callout-content">
 <p>Given those answers, explain what <code>element[1:-1]</code>
@@ -909,12 +909,12 @@ index, effectively removing the first and last letters from ‘oxygen’</p>
 </div>
 </div>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="slicing-strings" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="slicing-strings" class="callout-inner">
-<h3 class="callout-title">Slicing Strings<em> (continued)</em><a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Slicing Strings<em> (continued)</em><a class="anchor" aria-label="anchor" href="#slicing-strings"></a>
 </h3>
 <div class="callout-content">
 <p>How can we rewrite the slice for getting the last three characters of
@@ -958,12 +958,12 @@ last three characters: hi</code></pre>
 </div>
 </div>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="thin-slices" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="thin-slices" class="callout-inner">
-<h3 class="callout-title">Thin Slices<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Thin Slices<a class="anchor" aria-label="anchor" href="#thin-slices"></a>
 </h3>
 <div class="callout-content">
 <p>The expression <code>element[3:3]</code> produces an <a href="reference.html#empty-string">empty string</a>, i.e., a string that
@@ -992,12 +992,12 @@ array([], shape=(0, 40), dtype=float64)</code></pre>
 </div>
 </div>
 </div>
-<div id="challenge6" class="callout challenge">
+<div id="stacking-arrays" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="stacking-arrays" class="callout-inner">
-<h3 class="callout-title">Stacking Arrays<a class="anchor" aria-label="anchor" href="#challenge6"></a>
+<h3 class="callout-title">Stacking Arrays<a class="anchor" aria-label="anchor" href="#stacking-arrays"></a>
 </h3>
 <div class="callout-content">
 <p>Arrays can be concatenated and stacked on top of one another, using
@@ -1110,12 +1110,12 @@ what the parameters of numpy.delete mean, use the help files.</p>
 </div>
 </div>
 </div>
-<div id="challenge7" class="callout challenge">
+<div id="change-in-inflammation" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="change-in-inflammation" class="callout-inner">
-<h3 class="callout-title">Change In Inflammation<a class="anchor" aria-label="anchor" href="#challenge7"></a>
+<h3 class="callout-title">Change In Inflammation<a class="anchor" aria-label="anchor" href="#change-in-inflammation"></a>
 </h3>
 <div class="callout-content">
 <p>The patient data is <em>longitudinal</em> in the sense that each row
@@ -1187,13 +1187,13 @@ concept.</p>
 </div>
 </div>
 </div>
-<div id="challenge8" class="callout challenge">
+<div id="change-in-inflammation" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="change-in-inflammation" class="callout-inner">
 <h3 class="callout-title">Change In Inflammation<em>
-(continued)</em><a class="anchor" aria-label="anchor" href="#challenge8"></a>
+(continued)</em><a class="anchor" aria-label="anchor" href="#change-in-inflammation"></a>
 </h3>
 <div class="callout-content">
 <p>If the shape of an individual data file is <code>(60, 40)</code> (60
@@ -1217,13 +1217,13 @@ difference between columns than there are columns in the data.</p>
 </div>
 </div>
 </div>
-<div id="challenge9" class="callout challenge">
+<div id="change-in-inflammation" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="change-in-inflammation" class="callout-inner">
 <h3 class="callout-title">Change In Inflammation<em>
-(continued)</em><a class="anchor" aria-label="anchor" href="#challenge9"></a>
+(continued)</em><a class="anchor" aria-label="anchor" href="#change-in-inflammation"></a>
 </h3>
 <div class="callout-content">
 <p>How would you find the largest change in inflammation for each
@@ -1344,7 +1344,7 @@ the specified axis.</li>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -1368,7 +1368,7 @@ the specified axis.</li>
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/02-numpy.html",
   "dateCreated": "2014-11-25",
   "dateModified": "2023-04-21",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>

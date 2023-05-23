@@ -414,12 +414,12 @@ which is short for “else if”. The following Python code uses
 <p>Note that to test for equality we use a double equals sign
 <code>==</code> rather than a single equals sign <code>=</code> which is
 used to assign values.</p>
-<div id="callout1" class="callout callout">
+<div id="comparing-in-python" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="comparing-in-python" class="callout-inner">
-<h3 class="callout-title">Comparing in Python<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Comparing in Python<a class="anchor" aria-label="anchor" href="#comparing-in-python"></a>
 </h3>
 <div class="callout-content">
 <p>Along with the <code>&gt;</code> and <code>==</code> operators we
@@ -467,13 +467,13 @@ few more options to know about:</p>
 </h3>
 <pre class="output" tabindex="0"><code>at least one test is true</code></pre>
 </div>
-<div id="callout2" class="callout callout">
+<div id="true-and-false" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="true-and-false" class="callout-inner">
 <h3 class="callout-title">
-<code>True</code> and <code>False</code><a class="anchor" aria-label="anchor" href="#callout2"></a>
+<code>True</code> and <code>False</code><a class="anchor" aria-label="anchor" href="#true-and-false"></a>
 </h3>
 <div class="callout-content">
 <p><code>True</code> and <code>False</code> are special words in Python
@@ -575,12 +575,12 @@ we could also imagine not using the <code>else</code> catch-all so that
 messages are only printed when something is wrong, freeing us from
 having to manually examine every plot for features we’ve seen
 before.</p>
-<div id="challenge1" class="callout challenge">
+<div id="how-many-paths" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="how-many-paths" class="callout-inner">
-<h3 class="callout-title">How Many Paths?<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">How Many Paths?<a class="anchor" aria-label="anchor" href="#how-many-paths"></a>
 </h3>
 <div class="callout-content">
 <p>Consider this code:</p>
@@ -610,26 +610,27 @@ Why did you pick this answer?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<figure>C gets printed because the first two conditions,
+<p>C gets printed because the first two conditions,
 <code>4 &gt; 5</code> and <code>4 == 5</code>, are not true, but
 <code>4 &lt; 5</code> is true. In this case only one of these conditions
 can be true for at a time, but in other scenarios multiple
 <code>elif</code> conditions could be met. In these scenarios only the
 action associated with the first true <code>elif</code> condition will
-occur, starting from the top of the conditional section. <img src="fig/python-else-if.png" alt="A flowchart diagram of a conditional section with multiple elif conditions and some possible outcomes." class="figure mx-auto d-block">
+occur, starting from the top of the conditional section. <img src="fig/python-else-if.png" alt="A flowchart diagram of a conditional section with multiple elif conditions and some possible outcomes." class="figure">
 This contrasts with the case of multiple <code>if</code> statements,
-where every action can occur as long as their condition is met. <img src="fig/python-multi-if.png" alt="A flowchart diagram of a conditional section with multiple if statements and some possible outcomes." class="figure mx-auto d-block"></figure></div>
+where every action can occur as long as their condition is met. <img src="fig/python-multi-if.png" alt="A flowchart diagram of a conditional section with multiple if statements and some possible outcomes." class="figure"></p>
 </div>
 </div>
 </div>
-<div id="discussion1" class="callout discussion">
+</div>
+<div id="what-is-truth" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="what-is-truth" class="callout-inner">
-<h3 class="callout-title">What Is Truth?<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">What Is Truth?<a class="anchor" aria-label="anchor" href="#what-is-truth"></a>
 </h3>
 <div class="callout-content">
 <p><code>True</code> and <code>False</code> booleans are not the only
@@ -656,12 +657,12 @@ are considered true and which are considered false.</p>
 </div>
 </div>
 </div>
-<div id="discussion2" class="callout discussion">
+<div id="thats-not-not-what-i-meant" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="thats-not-not-what-i-meant" class="callout-inner">
-<h3 class="callout-title">That’s Not Not What I Meant<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+<h3 class="callout-title">That’s Not Not What I Meant<a class="anchor" aria-label="anchor" href="#thats-not-not-what-i-meant"></a>
 </h3>
 <div class="callout-content">
 <p>Sometimes it is useful to check whether some condition is not true.
@@ -682,12 +683,12 @@ formulated in the previous challenge.</p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="close-enough" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="close-enough" class="callout-inner">
-<h3 class="callout-title">Close Enough<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Close Enough<a class="anchor" aria-label="anchor" href="#close-enough"></a>
 </h3>
 <div class="callout-content">
 <p>Write some conditions that print <code>True</code> if the variable
@@ -705,7 +706,7 @@ numbers?</p>
   Hint
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>There is a <a href="https://docs.python.org/3/library/functions.html#abs" class="external-link">built-in
 function <code>abs</code></a> that returns the absolute value of a
@@ -731,7 +732,7 @@ number:</p>
   Solution 1
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -755,7 +756,7 @@ number:</p>
   Solution 2
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -768,12 +769,12 @@ number:</p>
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="in-place-operators" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="in-place-operators" class="callout-inner">
-<h3 class="callout-title">In-Place Operators<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">In-Place Operators<a class="anchor" aria-label="anchor" href="#in-place-operators"></a>
 </h3>
 <div class="callout-content">
 <p>Python (and most other languages in the C family) provides <a href="reference.html#in-place-operators">in-place operators</a> that
@@ -804,7 +805,7 @@ less readable than writing the same without in-place operators?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -829,12 +830,12 @@ sum needs to change, but it illustrates the use of <code>elif</code> and
 </div>
 </div>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="sorting-a-list-into-buckets" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="sorting-a-list-into-buckets" class="callout-inner">
-<h3 class="callout-title">Sorting a List Into Buckets<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Sorting a List Into Buckets<a class="anchor" aria-label="anchor" href="#sorting-a-list-into-buckets"></a>
 </h3>
 <div class="callout-content">
 <p>In our <code>data</code> folder, large data sets are stored in files
@@ -903,7 +904,7 @@ starts with the string passed as an argument, that is:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -924,12 +925,12 @@ starts with the string passed as an argument, that is:</p>
 </div>
 </div>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="counting-vowels" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="counting-vowels" class="callout-inner">
-<h3 class="callout-title">Counting Vowels<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Counting Vowels<a class="anchor" aria-label="anchor" href="#counting-vowels"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li>Write a loop that counts the number of vowels in a character
@@ -948,7 +949,7 @@ people think is a vowel, and some do not)?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1024,7 +1025,7 @@ values.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -1048,7 +1049,7 @@ values.</li>
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/07-cond.html",
   "dateCreated": "2014-11-25",
   "dateModified": "2023-04-21",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>

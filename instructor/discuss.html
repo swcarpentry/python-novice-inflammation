@@ -438,12 +438,12 @@ call instead of a dozen or a hundred statements each time we want to do
 something. That only works if functions don’t interfere with each other;
 if they do, we have to pay attention to the details once again, which
 quickly overloads our short-term memory.</p>
-<div id="discussion1" class="callout discussion">
+<div id="following-the-call-stack" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="following-the-call-stack" class="callout-inner">
-<h3 class="callout-title">Following the Call Stack<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Following the Call Stack<a class="anchor" aria-label="anchor" href="#following-the-call-stack"></a>
 </h3>
 <div class="callout-content">
 <p>We previously wrote functions called <code>fence</code> and
@@ -596,12 +596,12 @@ provides a function called <code>show_color</code>:</p>
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>c[<span class="dv">2</span>, <span class="dv">1</span>] <span class="op">=</span> colors[<span class="st">'HotPink'</span>]</span>
 <span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>c.show()</span></code></pre>
 </div>
-<figure><img src="../fig/grid-03.png" alt="3 by 2 grid of colored squares. Row1: salmon, lavender, hot-pink. Row2: fuchsia, orchid, lime-green" class="figure mx-auto d-block"></figure><div id="discussion2" class="callout discussion">
+<figure><img src="../fig/grid-03.png" alt="3 by 2 grid of colored squares. Row1: salmon, lavender, hot-pink. Row2: fuchsia, orchid, lime-green" class="figure mx-auto d-block"></figure><div id="making-a-colorbar" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="making-a-colorbar" class="callout-inner">
-<h3 class="callout-title">Making a Colorbar<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+<h3 class="callout-title">Making a Colorbar<a class="anchor" aria-label="anchor" href="#making-a-colorbar"></a>
 </h3>
 <div class="callout-content">
 <p>Fill in the <code>____</code> in the code below to create a bar that
@@ -617,12 +617,12 @@ changes color from dark blue to black.</p>
 </div>
 </div>
 </div>
-<div id="discussion3" class="callout discussion">
+<div id="why-rgb" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="why-rgb" class="callout-inner">
-<h3 class="callout-title">Why RGB?<a class="anchor" aria-label="anchor" href="#discussion3"></a>
+<h3 class="callout-title">Why RGB?<a class="anchor" aria-label="anchor" href="#why-rgb"></a>
 </h3>
 <div class="callout-content">
 <p>Why do computers use red, green, and blue as their primary
@@ -630,12 +630,12 @@ colors?</p>
 </div>
 </div>
 </div>
-<div id="discussion4" class="callout discussion">
+<div id="nested-loops" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="nested-loops" class="callout-inner">
-<h3 class="callout-title">Nested Loops<a class="anchor" aria-label="anchor" href="#discussion4"></a>
+<h3 class="callout-title">Nested Loops<a class="anchor" aria-label="anchor" href="#nested-loops"></a>
 </h3>
 <div class="callout-content">
 <p>Will changing the nesting of the loops in the code above — i.e.,
@@ -644,12 +644,12 @@ image? Why or why not?</p>
 </div>
 </div>
 </div>
-<div id="discussion5" class="callout discussion">
+<div id="where-to-change-data" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="where-to-change-data" class="callout-inner">
-<h3 class="callout-title">Where to Change Data<a class="anchor" aria-label="anchor" href="#discussion5"></a>
+<h3 class="callout-title">Where to Change Data<a class="anchor" aria-label="anchor" href="#where-to-change-data"></a>
 </h3>
 <div class="callout-content">
 <p>Why did we transpose our data outside our heat map function? Why not
@@ -657,12 +657,12 @@ have the function perform the transpose?</p>
 </div>
 </div>
 </div>
-<div id="discussion6" class="callout discussion">
+<div id="return-versus-display" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="return-versus-display" class="callout-inner">
-<h3 class="callout-title">Return Versus Display<a class="anchor" aria-label="anchor" href="#discussion6"></a>
+<h3 class="callout-title">Return Versus Display<a class="anchor" aria-label="anchor" href="#return-versus-display"></a>
 </h3>
 <div class="callout-content">
 <p>Why does the heat map function return the grid rather than displaying
@@ -700,7 +700,7 @@ it immediately? Do you think this is a good or bad design choice?</p>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -724,7 +724,7 @@ it immediately? Do you think this is a good or bad design choice?</p>
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/discuss.html",
   "dateCreated": "2014-11-25",
   "dateModified": "2023-04-21",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>
