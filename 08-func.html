@@ -203,7 +203,7 @@
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        Creating Functions
+        8. Creating Functions
         </span>
       </button>
     </div><!--/div.accordion-header-->
@@ -309,7 +309,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Creating Functions</h1>
-        <p> Last updated on 2023-04-21 | 
+        <p> Last updated on 2023-05-28 | 
         
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/08-func.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -662,13 +662,12 @@ correct, but there are a few tests that we can run to reassure us:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>original min, mean, and max are: 0.0 6.14875 20.0
-min, mean, and and max of offset data are: -6.14875 2.84217094304e-16 13.85125</code></pre>
+min, mean, and max of offset data are: -6.14875 2.842170943040401e-16 13.85125</code></pre>
 </div>
 <p>That seems almost right: the original mean was about 6.1, so the
 lower bound from zero is now about -6.1. The mean of the offset data
-isn’t quite zero — we’ll explore why not in the challenges — but it’s
-pretty close. We can even go further and check that the standard
-deviation hasn’t changed:</p>
+isn’t quite zero, but it’s pretty close. We can even go further and
+check that the standard deviation hasn’t changed:</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -677,7 +676,7 @@ deviation hasn’t changed:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>std dev before and after: 4.61383319712 4.61383319712</code></pre>
+<pre class="output" tabindex="0"><code>std dev before and after: 4.613833197118566 4.613833197118566</code></pre>
 </div>
 <p>Those values look the same, but we probably wouldn’t notice if they
 were different in the sixth decimal place. Let’s do this instead:</p>
@@ -690,12 +689,10 @@ were different in the sixth decimal place. Let’s do this instead:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>difference in standard deviations before and after: -3.5527136788e-15</code></pre>
+<pre class="output" tabindex="0"><code>difference in standard deviations before and after: 0.0</code></pre>
 </div>
-<p>Again, the difference is very small. It’s still possible that our
-function is wrong, but it seems unlikely enough that we should probably
-get back to doing our analysis. We have one more task first, though: we
-should write some <a href="reference.html#documentation">documentation</a> for our function
+<p>Everything looks good, and we should probably get back to doing our
+analysis. We have one more task first, though: we should write some <a href="reference.html#documentation">documentation</a> for our function
 to remind ourselves later what it’s for and how to use it.</p>
 <p>The usual way to put documentation in software is to add <a href="reference.html#comment">comments</a> like this:</p>
 <div class="codewrapper sourceCode" id="cb31">
@@ -1035,7 +1032,7 @@ A call to your function should look like this:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1084,7 +1081,7 @@ following commands?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Python will first execute the function <code>add</code> with
 <code>a = 7</code> and <code>b = 3</code>, and, therefore, print
@@ -1137,7 +1134,7 @@ call to your function should look like this:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb63">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1172,7 +1169,7 @@ value <code>v</code> should be <code>(v-L) / (H-L)</code>.)</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1210,7 +1207,7 @@ function, add a docstring that explains what it does.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb65">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1253,7 +1250,7 @@ behave the same way?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb66">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1305,7 +1302,7 @@ behave the same way?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1378,7 +1375,7 @@ run?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>Attempting to define the <code>numbers</code> function results in
 <code>4. SyntaxError</code>. The defined parameters <code>two</code> and
@@ -1473,9 +1470,9 @@ it with different parameter values to customize its behavior.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.1" class="external-link">sandpaper (0.12.1)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.17" class="external-link">varnish (0.2.17)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1496,8 +1493,8 @@ it with different parameter values to customize its behavior.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/08-func.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/08-func.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2023-04-21",
-  "datePublished": "2023-05-23"
+  "dateModified": "2023-05-28",
+  "datePublished": "2023-05-28"
 }
 
   </script><script>
