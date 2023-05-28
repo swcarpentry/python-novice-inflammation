@@ -327,7 +327,7 @@ print('min, mean, and max of offset data are:',
 
 ```output
 original min, mean, and max are: 0.0 6.14875 20.0
-min, mean, and and max of offset data are: -6.14875 2.84217094304e-16 13.85125
+min, mean, and max of offset data are: -6.14875 2.842170943040401e-16 13.85125
 ```
 
 That seems almost right:
@@ -342,7 +342,7 @@ print('std dev before and after:', numpy.std(data), numpy.std(offset_data))
 ```
 
 ```output
-std dev before and after: 4.61383319712 4.61383319712
+std dev before and after: 4.613833197118566 4.613833197118566
 ```
 
 Those values look the same,
@@ -355,13 +355,11 @@ print('difference in standard deviations before and after:',
 ```
 
 ```output
-difference in standard deviations before and after: -3.5527136788e-15
+difference in standard deviations before and after: 0.0
 ```
 
-Again,
-the difference is very small.
-It's still possible that our function is wrong,
-but it seems unlikely enough that we should probably get back to doing our analysis.
+Everything looks good,
+and we should probably get back to doing our analysis.
 We have one more task first, though:
 we should write some [documentation](../learners/reference.md#documentation) for our function
 to remind ourselves later what it's for and how to use it.
