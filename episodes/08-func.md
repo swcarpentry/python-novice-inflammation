@@ -333,8 +333,7 @@ min, mean, and max of offset data are: -6.14875 2.842170943040401e-16 13.85125
 That seems almost right:
 the original mean was about 6.1,
 so the lower bound from zero is now about -6.1.
-The mean of the offset data isn't quite zero --- we'll explore why not in the challenges --- but
-it's pretty close.
+The mean of the offset data isn't quite zero, but it's pretty close.
 We can even go further and check that the standard deviation hasn't changed:
 
 ```python
