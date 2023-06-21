@@ -311,6 +311,8 @@ We will not cover this module in this lesson
 but you can go to Tshepang Lekhonkhobe's
 [Argparse tutorial](https://docs.python.org/3/howto/argparse.html)
 that is part of Python's Official Documentation.
+We can also use the `argh` library, a wrapper around the `argparse` library that simplifies
+its usage (see [here](https://pythonhosted.org/argh/) for more information).
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
