@@ -55,7 +55,8 @@ and the most common way to do it is to add
 [assertions](../learners/reference.md#assertion) to our code
 so that it checks itself as it runs.
 An assertion is simply a statement that something must be true at a certain point in a program.
-When Python sees one,
+The structure of an assertion is "assert [test condition] [helpful error message].
+ When Python sees one,
 it evaluates the assertion's condition.
 If it's true,
 Python does nothing,
