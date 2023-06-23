@@ -280,7 +280,7 @@ def calculate_bmi(weight, height):
 for patient in patients:
     weight, height = patients[0]
     bmi = calculate_bmi(height, weight)
-    print("Patient's BMI is:", bmi)
+    print("Patient's BMI is: %f", %f bmi)
 ```
 
 ```output
