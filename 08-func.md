@@ -48,7 +48,7 @@ Let's start by defining a function `fahr_to_celsius` that converts temperatures
 from Fahrenheit to Celsius:
 
 ```python
-def explicit_fahr_to_celsius(temp):
+def fahr_to_celsius(temp):
     # Assign the converted value to a variable
     converted = ((temp - 32) * (5/9))
     # Return the value of the new variable
