@@ -312,6 +312,8 @@ but you can go to Tshepang Lekhonkhobe's
 [Argparse tutorial](https://docs.python.org/3/howto/argparse.html)
 that is part of Python's Official Documentation.
 
+We can also use the `argh` library, a wrapper around the `argparse` library that simplifies
+its usage (see [the argh documentation](https://pythonhosted.org/argh/) for more information).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
