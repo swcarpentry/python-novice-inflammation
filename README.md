@@ -56,7 +56,7 @@ ways to render the lesson locally, and even how to write new episodes!
 ## Maintainers
 
 Lesson maintainers are [Trevor Bekolay][trevor_bekolay], [Maxim Belkin][maxim_belkin],
-[Anne Fouilloux][anne_fouilloux], [Lauren Ko][lauren_ko], [Valentina Staneva][valentina_staneva],
+[Anne Fouilloux][anne_fouilloux], [Lauren Ko][lauren_ko], [Valentina Staneva][valentina_staneva], [Toan Phung][noatgnu], [Indraneel Chakraborty][ineelhere]
 and [creator][swc_history] of Software Carpentry: [Greg Wilson][greg_wilson].
 
 ## Authors
@@ -115,6 +115,8 @@ industry and government. More information can be found [here][cp-about].
 [maxim_belkin]: https://github.com/maxim-belkin
 [anne_fouilloux]: https://github.com/annefou
 [lauren_ko]: https://github.com/ldko
+[noatgnu]: https://github.com/noatgnu
+[ineelhere]: https://github.com/ineelhere
 [valentina_staneva]: https://software-carpentry.org/team/#staneva_valentina
 [swc_history]: https://software-carpentry.org/scf/history/
 [greg_wilson]: https://github.com/gvwilson
