@@ -191,7 +191,7 @@ winpty python
 ```
 
 [anaconda-website]: https://www.anaconda.com/
-[anaconda-instructions]: https://carpentries.github.io/workshop-template/#python
+[anaconda-instructions]: https://carpentries.github.io/workshop-template/install_instructions/#python
 [anaconda-install]: https://docs.anaconda.com/anaconda/install
 [zipfile1]: data/python-novice-inflammation-data.zip
 [zipfile2]: ../episodes/files/code/python-novice-inflammation-code.zip
