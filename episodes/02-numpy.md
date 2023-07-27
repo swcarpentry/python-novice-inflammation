@@ -37,6 +37,7 @@ we need to [import](../learners/reference.md#import) it:
 
 ```python
 import numpy
+import numpy as np
 ```
 
 Importing a library is like getting a piece of lab equipment out of a storage locker and setting it
