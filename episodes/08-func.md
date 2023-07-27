@@ -182,8 +182,8 @@ Inside a function, one can read the value of such global variables:
 
 ```python
 def print_temperatures():
-  print('temperature in Fahrenheit was:', temp_fahr)
-  print('temperature in Kelvin was:', temp_kelvin)
+    print('temperature in Fahrenheit was:', temp_fahr)
+    print('temperature in Kelvin was:', temp_kelvin)
 
 temp_fahr = 212.0
 temp_kelvin = fahr_to_kelvin(temp_fahr)
