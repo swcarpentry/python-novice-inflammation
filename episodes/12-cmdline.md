@@ -994,7 +994,7 @@ def main():
 
 def count_file(filename):
     """count the number of lines in a file"""
-    f = open(filename,'r')
+    f = open(filename, 'r')
     nlines = len(f.readlines())
     f.close()
     return(nlines)

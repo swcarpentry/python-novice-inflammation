@@ -286,7 +286,7 @@ let's use NumPy to create a matrix of 0's
 and then offset its values to have a mean value of 3:
 
 ```python
-z = numpy.zeros((2,2))
+z = numpy.zeros((2, 2))
 print(offset_mean(z, 3))
 ```
 
