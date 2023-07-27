@@ -50,6 +50,7 @@ Once we've imported the library, we can ask the library to read our data file fo
 
 ```python
 numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+np.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ```
 
 ```output
@@ -97,6 +98,7 @@ Let's re-run `numpy.loadtxt` and save the returned data:
 
 ```python
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ```
 
 This statement doesn't produce any output because we've assigned the output to the variable `data`.
@@ -302,6 +304,7 @@ all days, for example, we can ask NumPy to compute `data`'s mean value:
 
 ```python
 print(numpy.mean(data))
+print(np.mean(data))
 ```
 
 ```output
@@ -342,6 +345,7 @@ a convenient Python feature that will enable us to do this all in one line.
 
 ```python
 maxval, minval, stdval = numpy.amax(data), numpy.amin(data), numpy.std(data)
+maxval, minval, stdval = np.amax(data), np.amin(data), np.std(data)
 
 print('maximum inflammation:', maxval)
 print('minimum inflammation:', minval)
@@ -398,6 +402,7 @@ Instead, we can combine the selection and the function call:
 
 ```python
 print('maximum inflammation for patient 2:', numpy.amax(data[2, :]))
+print('maximum inflammation for patient 2:', np.amax(data[2, :]))
 ```
 
 ```output
@@ -418,6 +423,7 @@ we get:
 
 ```python
 print(numpy.mean(data, axis=0))
+print(np.mean(data, axis=0))
 ```
 
 ```output
@@ -436,6 +442,7 @@ we can ask this array what its shape is:
 
 ```python
 print(numpy.mean(data, axis=0).shape)
+print(np.mean(data, axis=0).shape)
 ```
 
 ```output
@@ -448,6 +455,7 @@ If we average across axis 1 (columns in our 2D example), we get:
 
 ```python
 print(numpy.mean(data, axis=1))
+print(np.mean(data, axis=1))
 ```
 
 ```output
@@ -585,16 +593,17 @@ using NumPy's `vstack` and `hstack` functions for vertical and horizontal stacki
 
 ```python
 import numpy
+import numpy as np
 
-A = numpy.array([[1,2,3], [4,5,6], [7, 8, 9]])
+A = np.array([[1,2,3], [4,5,6], [7, 8, 9]])
 print('A = ')
 print(A)
 
-B = numpy.hstack([A, A])
+B = np.hstack([A, A])
 print('B = ')
 print(B)
 
-C = numpy.vstack([A, A])
+C = np.vstack([A, A])
 print('C = ')
 print(C)
 ```
@@ -633,7 +642,7 @@ a two dimensional array with one singleton dimension (i.e. a column
 vector).
 
 ```python
-D = numpy.hstack((A[:, :1], A[:, -1:]))
+D = np.hstack((A[:, :1], A[:, -1:]))
 print('D = ')
 print(D)
 ```
@@ -656,7 +665,7 @@ delete function to remove the second column of A. If you're not
 sure what the parameters of numpy.delete mean, use the help files.
 
 ```python
-D = numpy.delete(arr=A, obj=1, axis=1)
+D = np.delete(arr=A, obj=1, axis=1)
 print('D = ')
 print(D)
 ```
@@ -704,7 +713,7 @@ Calling `numpy.diff(patient3_week1)` would do the following calculations
 and return the 6 difference values in a new array.
 
 ```python
-numpy.diff(patient3_week1)
+np.diff(patient3_week1)
 ```
 
 ```output
@@ -727,7 +736,7 @@ days, so the difference is the change in inflammation -- a meaningful
 concept.
 
 ```python
-numpy.diff(data, axis=1)
+np.diff(data, axis=1)
 ```
 
 :::::::::::::::::::::::::
@@ -757,7 +766,7 @@ By using the `numpy.amax()` function after you apply the `numpy.diff()`
 function, you will get the largest difference between days.
 
 ```python
-numpy.amax(numpy.diff(data, axis=1), axis=1)
+np.amax(np.diff(data, axis=1), axis=1)
 ```
 
 ```python
@@ -778,7 +787,7 @@ Notice the difference if you get the largest *absolute* difference
 between readings.
 
 ```python
-numpy.amax(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
+np.amax(np.absolute(np.diff(data, axis=1)), axis=1)
 ```
 
 ```python
