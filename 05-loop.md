@@ -268,7 +268,7 @@ accept 1, 2, or 3 parameters.
   For example, `range(3, 10, 2)` produces `3, 5, 7, 9`.
 
 Using `range`,
-write a loop that uses `range` to print the first 3 natural numbers:
+write a loop that prints the first 3 natural numbers:
 
 ```python
 1
