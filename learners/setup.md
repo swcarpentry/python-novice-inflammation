@@ -41,13 +41,7 @@ you like.
 A Jupyter Notebook provides a browser-based interface for working with Python.
 If you installed Anaconda, you can launch a notebook in two ways:
 
-:::::::::::::::::::::::::::::::::::::::: {.empty-div style="margin-bottom: 50px"}
-
-<!-- This div is intentionally empty to allow the solution to float alone-->
-
-::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::  solution
+::::::::::::::::: spoiler
 
 ## Anaconda Navigator
 
@@ -67,25 +61,14 @@ If you installed Anaconda, you can launch a notebook in two ways:
 
 :::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: {.empty-div style="margin-bottom: 50px"}
 
-<!-- This div is intentionally empty to allow the solution to float alone-->
-
-::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::  solution
+::::::::::::::::: spoiler
 
 ## Command line (Terminal)
 
 1\. Navigate to the `data` directory:
 
-:::::::::::::::::::::::::::::::::::::::: {.empty-div style="margin-bottom: 50px"}
-
-<!-- This div is intentionally empty to allow the solution to float alone-->
-
-::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::  solution
+::::::::::::::::: spoiler
 
 ## Unix shell
 
@@ -98,13 +81,7 @@ cd ~/Desktop/swc-python/data
 
 :::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: {.empty-div style="margin-bottom: 50px"}
-
-<!-- This div is intentionally empty to allow the solution to float alone-->
-
-::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::  solution
+::::::::::::::::: spoiler
 
 ## Command Prompt (Windows)
 
@@ -121,13 +98,7 @@ cd /D %userprofile%\Desktop\swc-python\data
 
 2\. Start Jupyter server
 
-:::::::::::::::::::::::::::::::::::::::: {.empty-div style="margin-bottom: 50px"}
-
-<!-- This div is intentionally empty to allow the solution to float alone-->
-
-::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::  solution
+::::::::::::::::: spoiler
 
 ## Unix shell
 
@@ -137,13 +108,8 @@ jupyter notebook
 
 :::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: {.empty-div style="margin-bottom: 50px"}
 
-<!-- This div is intentionally empty to allow the solution to float alone-->
-
-::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::  solution
+::::::::::::::::: spoiler
 
 ## Command Prompt (Windows)
 
