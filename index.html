@@ -20,7 +20,7 @@
       <div class="large-logo">
         <img alt="Software Carpentry" src="assets/images/software-logo.svg"></div>
     </div>
-    <div class="selector-container ">
+    <div class="selector-container">
       
       
       <div class="dropdown">
@@ -88,9 +88,11 @@
 </aside><div class="container">
       <div class="row">
         <!-- START: inst/pkgdown/templates/navbar.html -->
-  <div id="sidebar-col" class="col-lg-4">
-    <div id="sidebar" class="sidebar">
-      <nav aria-labelledby="flush-headingEleven"><button role="button" aria-label="close menu" alt="close menu" aria-expanded="true" aria-controls="sidebar" class="collapse-toggle"><i class="search-icon" data-feather="x" role="img"></i></button>
+<div id="sidebar-col" class="col-lg-4">
+  <div id="sidebar" class="sidebar">
+      <nav aria-labelledby="flush-headingEleven"><button role="button" aria-label="close menu" alt="close menu" aria-expanded="true" aria-controls="sidebar" class="collapse-toggle">
+          <i class="search-icon" data-feather="x" role="img"></i>
+        </button>
         <div class="sidebar-inner">
           <div class="row mobile-row">
             <div class="col">
@@ -287,6 +289,7 @@
               </div>
             </div>
             <hr class="half-width resources"><a href="aio.html">See all in one page</a>
+            
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
             
@@ -411,17 +414,15 @@ interface you like.</p>
 <hr class="half-width"><p>A Jupyter Notebook provides a browser-based interface for working
 with Python. If you installed Anaconda, you can launch a notebook in two
 ways:</p>
-<div class="empty-div" style="margin-bottom: 50px">
-<!-- This div is intentionally empty to allow the solution to float alone-->
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   Anaconda Navigator
-  </h4>
+  </h3>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Launch Anaconda Navigator. It might ask you if you’d like to send
 anonymized usage information to Anaconda developers: <img src="fig/anaconda-navigator-first-launch.png" alt="Anaconda Navigator first launch" class="figure"> Make your choice and click “Ok,
@@ -438,30 +439,26 @@ selecting “Python 3”: <img src="fig/jupyter-notebook-launch-notebook.png" al
 </div>
 </div>
 </div>
-<div class="empty-div" style="margin-bottom: 50px">
-<!-- This div is intentionally empty to allow the solution to float alone-->
-</div>
-<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSpoiler6" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
-  <h4 class="accordion-header" id="headingSolution6">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler6" aria-expanded="false" aria-controls="collapseSpoiler6">
+  <h3 class="accordion-header" id="headingSpoiler6">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   Command line (Terminal)
-  </h4>
+  </h3>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSpoiler6" class="accordion-collapse collapse" aria-labelledby="headingSpoiler6" data-bs-parent="#accordionSpoiler6">
 <div class="accordion-body">
 <p>1. Navigate to the <code>data</code> directory:</p>
-<div class="empty-div" style="margin-bottom: 50px">
-<!-- This div is intentionally empty to allow the solution to float alone-->
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   Unix shell
-  </h4>
+  </h3>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>If you’re using a Unix shell application, such as Terminal app in
 macOS, Console or Terminal in Linux, or <a href="https://gitforwindows.org" class="external-link">Git Bash</a> on Windows, execute the
@@ -475,17 +472,15 @@ following command:</p>
 </div>
 </div>
 </div>
-<div class="empty-div" style="margin-bottom: 50px">
-<!-- This div is intentionally empty to allow the solution to float alone-->
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
+  <h3 class="accordion-header" id="headingSpoiler3">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   Command Prompt (Windows)
-  </h4>
+  </h3>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>On Windows, you can use its native Command Prompt program. The
 easiest way to start it up is pressing <kbd>Windows Logo
@@ -498,17 +493,15 @@ navigate to the <code>data</code> folder:</p>
 </div>
 </div>
 <p>2. Start Jupyter server</p>
-<div class="empty-div" style="margin-bottom: 50px">
-<!-- This div is intentionally empty to allow the solution to float alone-->
-</div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSpoiler4" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
+  <h3 class="accordion-header" id="headingSpoiler4">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   Unix shell
-  </h4>
+  </h3>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -519,17 +512,15 @@ navigate to the <code>data</code> folder:</p>
 </div>
 </div>
 </div>
-<div class="empty-div" style="margin-bottom: 50px">
-<!-- This div is intentionally empty to allow the solution to float alone-->
-</div>
-<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSpoiler5" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler5" aria-expanded="false" aria-controls="collapseSpoiler5">
+  <h3 class="accordion-header" id="headingSpoiler5">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
   Command Prompt (Windows)
-  </h4>
+  </h3>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
 <div class="accordion-body">
 <pre class="source"><code>python -m notebook</code></pre>
 </div>
@@ -588,9 +579,9 @@ Windows</a>, you have to call Python <em>via</em>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.4" class="external-link">sandpaper (0.12.4)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.6.0" class="external-link">pegboard (0.6.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.18" class="external-link">varnish (0.2.18)</a>.</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.13.0" class="external-link">sandpaper (0.13.0)</a>,
+        <a href="https://github.com/carpentries/pegboard/tree/0.6.1" class="external-link">pegboard (0.6.1)</a>,
+      and <a href="https://github.com/carpentries/varnish/tree/0.3.0" class="external-link">varnish (0.3.0)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -611,8 +602,8 @@ Windows</a>, you have to call Python <em>via</em>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/index.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/index.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2023-09-05",
-  "datePublished": "2023-09-05"
+  "dateModified": "2023-09-06",
+  "datePublished": "2023-09-06"
 }
 
   </script><script>
