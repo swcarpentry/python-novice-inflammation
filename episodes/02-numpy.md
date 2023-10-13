@@ -376,6 +376,18 @@ for example: `help(numpy.cumprod)`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Confusing Function Names
+
+One might wonder why the functions are called `amax` and `amin` and not `max` and `min` or why the other is called `mean` and not `amean`.
+The package `numpy` does provide functions `max` and `min` that are fully equivalent to `amax` and `amin`, but they share a name with standard library functions `max` and `min` that come with Python itself.
+Referring to the functions like we did above, that is `numpy.max` for example, does not cause problems, but there are other ways to refer to them that could.
+In addition, text editors might highlight (color) these functions like standard library function, even though they belong to NumPy, which can be confusing and lead to errors.
+Since there is no function called `mean` in the standard library, there is no function called `amean`.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 When analyzing data, though,
 we often want to look at variations in statistical values,
 such as the maximum inflammation per patient
