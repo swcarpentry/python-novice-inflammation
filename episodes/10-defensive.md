@@ -505,7 +505,7 @@ and for each one,
 give an example of input that will make that assertion fail.
 
 ```python
-def get_total(values):
+def get_total_cars(values):
     assert len(values) > 0
     for element in values:
         assert int(element)
