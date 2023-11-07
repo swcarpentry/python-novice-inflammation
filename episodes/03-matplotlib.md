@@ -202,7 +202,7 @@ If we want to change this, we can use the `set_ylim(min, max)` method of each 'a
 for example:
 
 ```python
-axes3.set_ylim(0,6)
+axes3.set_ylim(0, 6)
 ```
 
 Update your plotting code to automatically set a more appropriate scale.
@@ -216,7 +216,7 @@ Update your plotting code to automatically set a more appropriate scale.
 # One method
 axes3.set_ylabel('min')
 axes3.plot(numpy.amin(data, axis=0))
-axes3.set_ylim(0,6)
+axes3.set_ylim(0, 6)
 ```
 
 :::::::::::::::::::::::::

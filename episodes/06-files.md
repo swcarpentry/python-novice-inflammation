@@ -87,19 +87,19 @@ for filename in filenames:
 inflammation-01.csv
 ```
 
-![](fig/03-loop_49_1.png){alt='Output from the first iteration of the for loop. Three line graphs showing the daily average,maximum and minimum inflammation over a 40-day period for all patients in the first dataset.'}
+![](fig/03-loop_49_1.png){alt='Output from the first iteration of the for loop. Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period for all patients in the first dataset.'}
 
 ```output
 inflammation-02.csv
 ```
 
-![](fig/03-loop_49_3.png){alt='Output from the second iteration of the for loop. Three line graphs showing the daily average,maximum and minimum inflammation over a 40-day period for all patients in the seconddataset.'}
+![](fig/03-loop_49_3.png){alt='Output from the second iteration of the for loop. Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period for all patients in the seconddataset.'}
 
 ```output
 inflammation-03.csv
 ```
 
-![](fig/03-loop_49_5.png){alt='Output from the third iteration of the for loop. Three line graphs showing the daily average,maximum and minimum inflammation over a 40-day period for all patients in the thirddataset.'}
+![](fig/03-loop_49_5.png){alt='Output from the third iteration of the for loop. Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period for all patients in the thirddataset.'}
 
 The plots generated for the second clinical trial file look very similar to the plots for
 the first file: their average plots show similar "noisy" rises and falls; their maxima plots
@@ -161,7 +161,7 @@ Use each of the files once to generate a dataset containing values averaged over
 
 ```python
 filenames = glob.glob('inflammation*.csv')
-composite_data = numpy.zeros((60,40))
+composite_data = numpy.zeros((60, 40))
 for filename in filenames:
     # sum each new file's data into composite_data as it's read
     #
@@ -181,7 +181,7 @@ import numpy
 import matplotlib.pyplot
 
 filenames = glob.glob('inflammation*.csv')
-composite_data = numpy.zeros((60,40))
+composite_data = numpy.zeros((60, 40))
 
 for filename in filenames:
     data = numpy.loadtxt(fname = filename, delimiter=',')
