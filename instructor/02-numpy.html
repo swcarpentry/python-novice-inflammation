@@ -728,6 +728,31 @@ function you’re interested in, for example:
 </div>
 </div>
 </div>
+<div id="confusing-function-names" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="confusing-function-names" class="callout-inner">
+<h3 class="callout-title">Confusing Function Names<a class="anchor" aria-label="anchor" href="#confusing-function-names"></a>
+</h3>
+<div class="callout-content">
+<p>One might wonder why the functions are called <code>amax</code> and
+<code>amin</code> and not <code>max</code> and <code>min</code> or why
+the other is called <code>mean</code> and not <code>amean</code>. The
+package <code>numpy</code> does provide functions <code>max</code> and
+<code>min</code> that are fully equivalent to <code>amax</code> and
+<code>amin</code>, but they share a name with standard library functions
+<code>max</code> and <code>min</code> that come with Python itself.
+Referring to the functions like we did above, that is
+<code>numpy.max</code> for example, does not cause problems, but there
+are other ways to refer to them that could. In addition, text editors
+might highlight (color) these functions like standard library function,
+even though they belong to NumPy, which can be confusing and lead to
+errors. Since there is no function called <code>mean</code> in the
+standard library, there is no function called <code>amean</code>.</p>
+</div>
+</div>
+</div>
 <p>When analyzing data, though, we often want to look at variations in
 statistical values, such as the maximum inflammation per patient or the
 average inflammation per day. One way to do this is to create a new
