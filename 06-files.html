@@ -306,7 +306,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Analyzing Data from Multiple Files</h1>
-        <p> Last updated on 2023-05-14 | 
+        <p> Last updated on 2023-11-07 | 
         
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/06-files.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -415,17 +415,17 @@ output:</p>
 </h3>
 <pre class="output" tabindex="0"><code>inflammation-01.csv</code></pre>
 </div>
-<figure><img src="fig/03-loop_49_1.png" alt="Output from the first iteration of the for loop. Three line graphs showing the daily average,maximum and minimum inflammation over a 40-day period for all patients in the first dataset." class="figure mx-auto d-block"></figure><div class="codewrapper">
+<figure><img src="fig/03-loop_49_1.png" alt="Output from the first iteration of the for loop. Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period for all patients in the first dataset." class="figure mx-auto d-block"></figure><div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>inflammation-02.csv</code></pre>
 </div>
-<figure><img src="fig/03-loop_49_3.png" alt="Output from the second iteration of the for loop. Three line graphs showing the daily average,maximum and minimum inflammation over a 40-day period for all patients in the seconddataset." class="figure mx-auto d-block"></figure><div class="codewrapper">
+<figure><img src="fig/03-loop_49_3.png" alt="Output from the second iteration of the for loop. Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period for all patients in the seconddataset." class="figure mx-auto d-block"></figure><div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>inflammation-03.csv</code></pre>
 </div>
-<figure><img src="fig/03-loop_49_5.png" alt="Output from the third iteration of the for loop. Three line graphs showing the daily average,maximum and minimum inflammation over a 40-day period for all patients in the thirddataset." class="figure mx-auto d-block"></figure><p>The plots generated for the second clinical trial file look very
+<figure><img src="fig/03-loop_49_5.png" alt="Output from the third iteration of the for loop. Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period for all patients in the thirddataset." class="figure mx-auto d-block"></figure><p>The plots generated for the second clinical trial file look very
 similar to the plots for the first file: their average plots show
 similar “noisy” rises and falls; their maxima plots show exactly the
 same linear rise and fall; and their minima plots show similar staircase
@@ -504,7 +504,7 @@ below:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>filenames <span class="op">=</span> glob.glob(<span class="st">'inflammation*.csv'</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>composite_data <span class="op">=</span> numpy.zeros((<span class="dv">60</span>,<span class="dv">40</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>composite_data <span class="op">=</span> numpy.zeros((<span class="dv">60</span>, <span class="dv">40</span>))</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># sum each new file's data into composite_data as it's read</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#</span></span>
@@ -533,7 +533,7 @@ patients.</p>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>filenames <span class="op">=</span> glob.glob(<span class="st">'inflammation*.csv'</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>composite_data <span class="op">=</span> numpy.zeros((<span class="dv">60</span>,<span class="dv">40</span>))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>composite_data <span class="op">=</span> numpy.zeros((<span class="dv">60</span>, <span class="dv">40</span>))</span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(fname <span class="op">=</span> filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
@@ -670,7 +670,7 @@ and <code>?</code> to match any single character.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/06-files.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/06-files.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2023-05-14",
+  "dateModified": "2023-11-07",
   "datePublished": "2023-11-07"
 }
 
