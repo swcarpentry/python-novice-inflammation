@@ -448,8 +448,73 @@ some information is better than none,
 and if we trace the behavior of the function with that input,
 we realize that we're initializing `max_left` and `min_right` to 0.0 and 1.0 respectively,
 regardless of the input values.
-This violates another important rule of programming:
-*always initialize from data*.
+In the case of the failed test (input ranges `[ (2.0, 3.0), (2.0, 4.0) ]`)
+`min_right` starts at 1.0 and is never updated,
+despite the fact that it doesn't lie within any of the input ranges.
+We can update our function so that it initialises `max_left` and `min_right`
+from the input data itself.
+
+```python
+def range_overlap(ranges):
+    """Return common overlap among a set of [left, right] ranges."""
+    max_left, min_right = ranges[0]
+    for (left, right) in ranges[1:]:
+        max_left = max(max_left, left)
+        min_right = min(min_right, right)
+    return (max_left, min_right)
+```
+
+Re-running our tests we see that we now pass the second test,
+but fail one of the non-overlapping cases.
+
+```python
+test_range_overlap()
+```
+```error
+---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+<ipython-input-29-cf9215c96457> in <module>()
+----> 1 test_range_overlap()
+
+<ipython-input-28-5d4cd6fd41d9> in test_range_overlap()
+      3 assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
+      4 assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
+----> 5 assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
+      6 assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
+AssertionError:
+```
+It turns out that for our current implementation of the `range_overlap` function,
+`max_left` is either equal to or greater than `min_right` for non-overlapping cases.
+
+```python
+range_overlap([ (0.0, 1.0), (5.0, 6.0) ])
+```
+```output
+(5.0, 1.0)
+```
+
+We can edit our function one last time to catch this behaviour and return `None`.
+
+```python
+def range_overlap(ranges):
+    """Return common overlap among a set of [left, right] ranges."""
+    max_left, min_right = ranges[0]
+    for (left, right) in ranges[1:]:
+        max_left = max(max_left, left)
+        min_right = min(min_right, right)
+    if max_left >= min_right:
+        overlap = None
+    else:
+        overlap = (max_left, min_right)
+    return overlap
+```
+
+```python
+test_range_overlap()
+```
+
+We get no output from `test_range_overlap()`,
+which means all the tests passed.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
