@@ -24,4 +24,4 @@ def process(filename, action):
         print(val)
 
 if __name__ == '__main__':
-   main()
+    main()
