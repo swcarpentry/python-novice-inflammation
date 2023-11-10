@@ -194,7 +194,7 @@ def main():
         print(row_mean)
 
 if __name__ == '__main__':
-   main()
+    main()
 ```
 
 and run that:
@@ -393,7 +393,7 @@ def main():
             print(row_mean)
 
 if __name__ == '__main__':
-   main()
+    main()
 ```
 
 and here it is in action:
@@ -460,7 +460,7 @@ def main():
             print(val)
 
 if __name__ == '__main__':
-   main()
+    main()
 ```
 
 This works:
@@ -523,7 +523,7 @@ def process(filename, action):
         print(val)
 
 if __name__ == '__main__':
-   main()
+    main()
 ```
 
 This is four lines longer than its predecessor,
@@ -621,7 +621,7 @@ def process(filename, action):
         print(val)
 
 if __name__ == '__main__':
-   main()
+    main()
 ```
 
 Let's try it out:
