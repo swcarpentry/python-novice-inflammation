@@ -27,6 +27,15 @@ runs only when certain conditions are true.
 
 We can ask Python to take different actions, depending on a condition, with an `if` statement:
 
+::::::::::::::::::::::::::::::::::::::: instructor
+
+The following example will lead to a syntax error in the Python prompt, as it seems to expect exactly one top-level statement per invocation.
+Removing `print('done')` from the example will fix the problem.
+
+IPython executes the example from a single prompt without throwing an error.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 ```python
 num = 37
 if num > 100:
