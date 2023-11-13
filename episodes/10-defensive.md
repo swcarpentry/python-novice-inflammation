@@ -467,7 +467,7 @@ can you think of a function that will pass your tests but not his/hers or vice v
 
 ```python
 # a possible pre-condition:
-assert len(input_array) > 0, 'List length must be non-zero'
+assert len(input_array) > 0, 'Array length must be non-zero'
 # a possible post-condition:
 assert numpy.amin(input_array) <= average <= numpy.amax(input_array),
 'Average should be between min and max of input values (inclusive)'
