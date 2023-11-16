@@ -314,7 +314,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Defensive Programming</h1>
-        <p> Last updated on 2023-11-10 | 
+        <p> Last updated on 2023-11-16 | 
         
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/10-defensive.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -750,10 +750,10 @@ input values. This violates another important rule of programming:
 </h3>
 <div class="callout-content">
 <p>Suppose you are writing a function called <code>average</code> that
-calculates the average of the numbers in a list. What pre-conditions and
-post-conditions would you write for it? Compare your answer to your
-neighbor’s: can you think of a function that will pass your tests but
-not his/hers or vice versa?</p>
+calculates the average of the numbers in a NumPy array. What
+pre-conditions and post-conditions would you write for it? Compare your
+answer to your neighbor’s: can you think of a function that will pass
+your tests but not his/hers or vice versa?</p>
 </div>
 </div>
 </div>
@@ -764,15 +764,15 @@ not his/hers or vice versa?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a possible pre-condition:</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(input_list) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">'List length must be non-zero'</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(input_array) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">'Array length must be non-zero'</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># a possible post-condition:</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> numpy.amin(input_list) <span class="op">&lt;=</span> average <span class="op">&lt;=</span> numpy.amax(input_list),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> numpy.amin(input_array) <span class="op">&lt;=</span> average <span class="op">&lt;=</span> numpy.amax(input_array),</span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">'Average should be between min and max of input values (inclusive)'</span></span></code></pre>
 </div>
 </div>
@@ -834,7 +834,7 @@ fail.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ul><li>The first assertion checks that the input sequence
 <code>values</code> is not empty. An empty sequence such as
@@ -928,8 +928,8 @@ what that code is supposed to do.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/10-defensive.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/10-defensive.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2023-11-10",
-  "datePublished": "2023-11-14"
+  "dateModified": "2023-11-16",
+  "datePublished": "2023-11-16"
 }
 
   </script><script>
