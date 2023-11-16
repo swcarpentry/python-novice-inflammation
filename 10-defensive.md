@@ -456,7 +456,7 @@ This violates another important rule of programming:
 ## Pre- and Post-Conditions
 
 Suppose you are writing a function called `average` that calculates
-the average of the numbers in a list.
+the average of the numbers in a NumPy array.
 What pre-conditions and post-conditions would you write for it?
 Compare your answer to your neighbor's:
 can you think of a function that will pass your tests but not his/hers or vice versa?
@@ -467,9 +467,9 @@ can you think of a function that will pass your tests but not his/hers or vice v
 
 ```python
 # a possible pre-condition:
-assert len(input_list) > 0, 'List length must be non-zero'
+assert len(input_array) > 0, 'Array length must be non-zero'
 # a possible post-condition:
-assert numpy.amin(input_list) <= average <= numpy.amax(input_list),
+assert numpy.amin(input_array) <= average <= numpy.amax(input_array),
 'Average should be between min and max of input values (inclusive)'
 ```
 
