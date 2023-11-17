@@ -158,10 +158,11 @@ Now that we've seen how conditionals work,
 we can use them to check for the suspicious features we saw in our inflammation data.
 We are about to use functions provided by the `numpy` module again.
 Therefore, if you're working in a new Python session, make sure to load the
-module with:
+module and data with:
 
 ```python
 import numpy
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ```
 
 From the first couple of plots, we saw that maximum daily inflammation exhibits
