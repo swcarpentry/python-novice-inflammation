@@ -1,8 +1,6 @@
 ---
-title: 'FIXME'
+title: 'Glossary'
 ---
-
-## Glossary
 
 ## Glossary
 
