@@ -368,19 +368,19 @@ number</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fahrenheit_val <span class="op">=</span> <span class="dv">99</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>celsius_val <span class="op">=</span> ((fahrenheit_val <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>fahrenheit_val <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>celsius_val <span class="op">=</span> ((fahrenheit_val <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span></code></pre>
 </div>
 <p>and for a second number we could just copy the line and rename the
 variables</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fahrenheit_val <span class="op">=</span> <span class="dv">99</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>celsius_val <span class="op">=</span> ((fahrenheit_val <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>fahrenheit_val2 <span class="op">=</span> <span class="dv">43</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>celsius_val2 <span class="op">=</span> ((fahrenheit_val2 <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>fahrenheit_val <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>celsius_val <span class="op">=</span> ((fahrenheit_val <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>fahrenheit_val2 <span class="op">=</span> <span class="dv">43</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>celsius_val2 <span class="op">=</span> ((fahrenheit_val2 <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span></code></pre>
 </div>
 <p>But we would be in trouble as soon as we had to do this more than a
 couple times. Cutting and pasting it is going to make our code get very
@@ -392,18 +392,18 @@ temperatures from Fahrenheit to Celsius:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> explicit_fahr_to_celsius(temp):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Assign the converted value to a variable</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    converted <span class="op">=</span> ((temp <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return the value of the new variable</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> converted</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fahr_to_celsius(temp):</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return converted value more efficiently using the return</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># function without creating a new variable. This code does</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the same thing as the previous function but it is more explicit</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># in explaining how the return command works.</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ((temp <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> explicit_fahr_to_celsius(temp):</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>    <span class="co"># Assign the converted value to a variable</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    converted <span class="op">=</span> ((temp <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    <span class="co"># Return the value of the new variable</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    <span class="cf">return</span> converted</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    </span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="kw">def</span> fahr_to_celsius(temp):</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    <span class="co"># Return converted value more efficiently using the return</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>    <span class="co"># function without creating a new variable. This code does</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    <span class="co"># the same thing as the previous function but it is more explicit</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>    <span class="co"># in explaining how the return command works.</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>    <span class="cf">return</span> ((temp <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span></code></pre>
 </div>
 <figure><img src="../fig/python-function.svg" alt="Labeled parts of a Python function definition" class="figure mx-auto d-block"></figure><p>The function definition opens with the keyword <code>def</code>
 followed by the name of the function (<code>fahr_to_celsius</code>) and
@@ -419,7 +419,7 @@ statement</a> to send a result back to whoever asked for it.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fahr_to_celsius(<span class="dv">32</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>fahr_to_celsius(<span class="dv">32</span>)</span></code></pre>
 </div>
 <p>This command should call our function, using “32” as the input and
 return the function value.</p>
@@ -428,8 +428,8 @@ other function:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'freezing point of water:'</span>, fahr_to_celsius(<span class="dv">32</span>), <span class="st">'C'</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'boiling point of water:'</span>, fahr_to_celsius(<span class="dv">212</span>), <span class="st">'C'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'freezing point of water:'</span>, fahr_to_celsius(<span class="dv">32</span>), <span class="st">'C'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'boiling point of water:'</span>, fahr_to_celsius(<span class="dv">212</span>), <span class="st">'C'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -446,10 +446,10 @@ write the function to turn Celsius into Kelvin:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> celsius_to_kelvin(temp_c):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> temp_c <span class="op">+</span> <span class="fl">273.15</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'freezing point of water in Kelvin:'</span>, celsius_to_kelvin(<span class="fl">0.</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> celsius_to_kelvin(temp_c):</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="cf">return</span> temp_c <span class="op">+</span> <span class="fl">273.15</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'freezing point of water in Kelvin:'</span>, celsius_to_kelvin(<span class="fl">0.</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -462,12 +462,12 @@ already created:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fahr_to_kelvin(temp_f):</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    temp_c <span class="op">=</span> fahr_to_celsius(temp_f)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    temp_k <span class="op">=</span> celsius_to_kelvin(temp_c)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> temp_k</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'boiling point of water in Kelvin:'</span>, fahr_to_kelvin(<span class="fl">212.0</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span> fahr_to_kelvin(temp_f):</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>    temp_c <span class="op">=</span> fahr_to_celsius(temp_f)</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>    temp_k <span class="op">=</span> celsius_to_kelvin(temp_c)</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>    <span class="cf">return</span> temp_k</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'boiling point of water in Kelvin:'</span>, fahr_to_kelvin(<span class="fl">212.0</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -491,7 +491,7 @@ their values outside of the function, we will encounter an error:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Again, temperature in Kelvin was:'</span>, temp_k)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Again, temperature in Kelvin was:'</span>, temp_k)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -509,8 +509,8 @@ of the function call in a variable:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>temp_kelvin <span class="op">=</span> fahr_to_kelvin(<span class="fl">212.0</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'temperature in Kelvin was:'</span>, temp_kelvin)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>temp_kelvin <span class="op">=</span> fahr_to_kelvin(<span class="fl">212.0</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'temperature in Kelvin was:'</span>, temp_kelvin)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -524,14 +524,14 @@ variables:</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_temperatures():</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'temperature in Fahrenheit was:'</span>, temp_fahr)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'temperature in Kelvin was:'</span>, temp_kelvin)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>temp_fahr <span class="op">=</span> <span class="fl">212.0</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>temp_kelvin <span class="op">=</span> fahr_to_kelvin(temp_fahr)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>print_temperatures()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">def</span> print_temperatures():</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'temperature in Fahrenheit was:'</span>, temp_fahr)</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'temperature in Kelvin was:'</span>, temp_kelvin)</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>temp_fahr <span class="op">=</span> <span class="fl">212.0</span></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>temp_kelvin <span class="op">=</span> fahr_to_kelvin(temp_fahr)</span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>print_temperatures()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -548,43 +548,43 @@ plots:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> visualize(filename):</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    fig <span class="op">=</span> matplotlib.pyplot.figure(figsize<span class="op">=</span>(<span class="fl">10.0</span>, <span class="fl">3.0</span>))</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    axes1 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    axes2 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    axes3 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    axes1.set_ylabel(<span class="st">'average'</span>)</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    axes2.set_ylabel(<span class="st">'max'</span>)</span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    axes2.plot(numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    axes3.set_ylabel(<span class="st">'min'</span>)</span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    axes3.plot(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    fig.tight_layout()</span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>    matplotlib.pyplot.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">def</span> visualize(filename):</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>    fig <span class="op">=</span> matplotlib.pyplot.figure(figsize<span class="op">=</span>(<span class="fl">10.0</span>, <span class="fl">3.0</span>))</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>    axes1 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>    axes2 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>    axes3 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a>    axes1.set_ylabel(<span class="st">'average'</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a>    axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a>    axes2.set_ylabel(<span class="st">'max'</span>)</span>
+<span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a>    axes2.plot(numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a></span>
+<span id="cb17-17"><a href="#cb17-17" tabindex="-1"></a>    axes3.set_ylabel(<span class="st">'min'</span>)</span>
+<span id="cb17-18"><a href="#cb17-18" tabindex="-1"></a>    axes3.plot(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb17-19"><a href="#cb17-19" tabindex="-1"></a></span>
+<span id="cb17-20"><a href="#cb17-20" tabindex="-1"></a>    fig.tight_layout()</span>
+<span id="cb17-21"><a href="#cb17-21" tabindex="-1"></a>    matplotlib.pyplot.show()</span></code></pre>
 </div>
 <p>and another function called <code>detect_problems</code> that checks
 for those systematics we noticed:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> detect_problems(filename):</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Suspicious looking maxima!'</span>)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Minima add up to zero!'</span>)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Seems OK!'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="kw">def</span> detect_problems(filename):</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>    <span class="cf">if</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Suspicious looking maxima!'</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>    <span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Minima add up to zero!'</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Seems OK!'</span>)</span></code></pre>
 </div>
 <p>Wait! Didn’t we forget to specify what both of these functions should
 return? Well, we didn’t. In Python, functions are not required to
@@ -599,12 +599,12 @@ We can reproduce the previous analysis with a much simpler
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>filenames <span class="op">=</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'inflammation*.csv'</span>))</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> filenames[:<span class="dv">3</span>]:</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(filename)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    visualize(filename)</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    detect_problems(filename)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>filenames <span class="op">=</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'inflammation*.csv'</span>))</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> filenames[:<span class="dv">3</span>]:</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>    <span class="bu">print</span>(filename)</span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>    visualize(filename)</span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>    detect_problems(filename)</span></code></pre>
 </div>
 <p>By giving our functions human-readable names, we can more easily read
 and understand what is happening in the <code>for</code> loop. Even
@@ -619,8 +619,8 @@ it’s mean value shifts to a user-defined value:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> offset_mean(data, target_mean_value):</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> target_mean_value</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="kw">def</span> offset_mean(data, target_mean_value):</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> target_mean_value</span></code></pre>
 </div>
 <p>We could test this on our actual data, but since we don’t know what
 the values ought to be, it will be hard to tell if the result was
@@ -629,8 +629,8 @@ offset its values to have a mean value of 3:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(offset_mean(z, <span class="dv">3</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>z <span class="op">=</span> numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="bu">print</span>(offset_mean(z, <span class="dv">3</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -643,8 +643,8 @@ data:</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">'inflammation-01.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(offset_mean(data, <span class="dv">0</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">'inflammation-01.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="bu">print</span>(offset_mean(data, <span class="dv">0</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -662,12 +662,12 @@ correct, but there are a few tests that we can run to reassure us:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'original min, mean, and max are:'</span>, numpy.amin(data), numpy.mean(data), numpy.amax(data))</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>offset_data <span class="op">=</span> offset_mean(data, <span class="dv">0</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'min, mean, and max of offset data are:'</span>,</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>      numpy.amin(offset_data),</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>      numpy.mean(offset_data),</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>      numpy.amax(offset_data))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'original min, mean, and max are:'</span>, numpy.amin(data), numpy.mean(data), numpy.amax(data))</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>offset_data <span class="op">=</span> offset_mean(data, <span class="dv">0</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'min, mean, and max of offset data are:'</span>,</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>      numpy.amin(offset_data),</span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a>      numpy.mean(offset_data),</span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a>      numpy.amax(offset_data))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -682,7 +682,7 @@ check that the standard deviation hasn’t changed:</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'std dev before and after:'</span>, numpy.std(data), numpy.std(offset_data))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'std dev before and after:'</span>, numpy.std(data), numpy.std(offset_data))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -694,8 +694,8 @@ were different in the sixth decimal place. Let’s do this instead:</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'difference in standard deviations before and after:'</span>,</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>      numpy.std(data) <span class="op">-</span> numpy.std(offset_data))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'difference in standard deviations before and after:'</span>,</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>      numpy.std(data) <span class="op">-</span> numpy.std(offset_data))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -709,10 +709,10 @@ to remind ourselves later what it’s for and how to use it.</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># offset_mean(data, target_mean_value):</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># return a new array containing the original data with its mean offset to match the desired value.</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> offset_mean(data, target_mean_value):</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> target_mean_value</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="co"># offset_mean(data, target_mean_value):</span></span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="co"># return a new array containing the original data with its mean offset to match the desired value.</span></span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a><span class="kw">def</span> offset_mean(data, target_mean_value):</span>
+<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a>    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> target_mean_value</span></code></pre>
 </div>
 <p>There’s a better way, though. If the first thing in a function is a
 string that isn’t assigned to a variable, that string is attached to the
@@ -720,17 +720,17 @@ function as its documentation:</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> offset_mean(data, target_mean_value):</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return a new array containing the original data</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">       with its mean offset to match the desired value."""</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> target_mean_value</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="kw">def</span> offset_mean(data, target_mean_value):</span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a>    <span class="co">"""Return a new array containing the original data</span></span>
+<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a><span class="co">       with its mean offset to match the desired value."""</span></span>
+<span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a>    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> target_mean_value</span></code></pre>
 </div>
 <p>This is better because we can now ask Python’s built-in help system
 to show us the documentation for the function:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(offset_mean)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="bu">help</span>(offset_mean)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -746,18 +746,18 @@ across multiple lines:</p>
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> offset_mean(data, target_mean_value):</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return a new array containing the original data</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co">       with its mean offset to match the desired value.</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Examples</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="co">    --------</span></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; offset_mean([1, 2, 3], 0)</span></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="co">    array([-1.,  0.,  1.])</span></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> target_mean_value</span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(offset_mean)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="kw">def</span> offset_mean(data, target_mean_value):</span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a>    <span class="co">"""Return a new array containing the original data</span></span>
+<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a><span class="co">       with its mean offset to match the desired value.</span></span>
+<span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a><span class="co">    Examples</span></span>
+<span id="cb35-6"><a href="#cb35-6" tabindex="-1"></a><span class="co">    --------</span></span>
+<span id="cb35-7"><a href="#cb35-7" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; offset_mean([1, 2, 3], 0)</span></span>
+<span id="cb35-8"><a href="#cb35-8" tabindex="-1"></a><span class="co">    array([-1.,  0.,  1.])</span></span>
+<span id="cb35-9"><a href="#cb35-9" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb35-10"><a href="#cb35-10" tabindex="-1"></a>    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> target_mean_value</span>
+<span id="cb35-11"><a href="#cb35-11" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="#cb35-12" tabindex="-1"></a><span class="bu">help</span>(offset_mean)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -783,7 +783,7 @@ fact, we can pass the filename to <code>loadtxt</code> without the
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>numpy.loadtxt(<span class="st">'inflammation-01.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a>numpy.loadtxt(<span class="st">'inflammation-01.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -800,7 +800,7 @@ fact, we can pass the filename to <code>loadtxt</code> without the
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>numpy.loadtxt(<span class="st">'inflammation-01.csv'</span>, <span class="st">','</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a>numpy.loadtxt(<span class="st">'inflammation-01.csv'</span>, <span class="st">','</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -824,16 +824,16 @@ this:</p>
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> offset_mean(data, target_mean_value<span class="op">=</span><span class="fl">0.0</span>):</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return a new array containing the original data</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co">       with its mean offset to match the desired value, (0 by default).</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Examples</span></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co">    --------</span></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; offset_mean([1, 2, 3])</span></span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="co">    array([-1.,  0.,  1.])</span></span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> target_mean_value</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="kw">def</span> offset_mean(data, target_mean_value<span class="op">=</span><span class="fl">0.0</span>):</span>
+<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a>    <span class="co">"""Return a new array containing the original data</span></span>
+<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a><span class="co">       with its mean offset to match the desired value, (0 by default).</span></span>
+<span id="cb41-4"><a href="#cb41-4" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" tabindex="-1"></a><span class="co">    Examples</span></span>
+<span id="cb41-6"><a href="#cb41-6" tabindex="-1"></a><span class="co">    --------</span></span>
+<span id="cb41-7"><a href="#cb41-7" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; offset_mean([1, 2, 3])</span></span>
+<span id="cb41-8"><a href="#cb41-8" tabindex="-1"></a><span class="co">    array([-1.,  0.,  1.])</span></span>
+<span id="cb41-9"><a href="#cb41-9" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb41-10"><a href="#cb41-10" tabindex="-1"></a>    <span class="cf">return</span> (data <span class="op">-</span> numpy.mean(data)) <span class="op">+</span> target_mean_value</span></code></pre>
 </div>
 <p>The key change is that the second parameter is now written
 <code>target_mean_value=0.0</code> instead of just
@@ -842,8 +842,8 @@ arguments, it works as it did before:</p>
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>test_data <span class="op">=</span> numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(offset_mean(test_data, <span class="dv">3</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a>test_data <span class="op">=</span> numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a><span class="bu">print</span>(offset_mean(test_data, <span class="dv">3</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -856,11 +856,11 @@ arguments, it works as it did before:</p>
 <div class="codewrapper sourceCode" id="cb44">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>more_data <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'data before mean offset:'</span>)</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(more_data)</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'offset data:'</span>)</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(offset_mean(more_data))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a>more_data <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> numpy.zeros((<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'data before mean offset:'</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" tabindex="-1"></a><span class="bu">print</span>(more_data)</span>
+<span id="cb44-4"><a href="#cb44-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'offset data:'</span>)</span>
+<span id="cb44-5"><a href="#cb44-5" tabindex="-1"></a><span class="bu">print</span>(offset_mean(more_data))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -880,15 +880,15 @@ parameters:</p>
 <div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">2</span>, c<span class="op">=</span><span class="dv">3</span>):</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'a:'</span>, a, <span class="st">'b:'</span>, b, <span class="st">'c:'</span>, c)</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'no parameters:'</span>)</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>display()</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'one parameter:'</span>)</span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>display(<span class="dv">55</span>)</span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'two parameters:'</span>)</span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>display(<span class="dv">55</span>, <span class="dv">66</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a><span class="kw">def</span> display(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">2</span>, c<span class="op">=</span><span class="dv">3</span>):</span>
+<span id="cb46-2"><a href="#cb46-2" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'a:'</span>, a, <span class="st">'b:'</span>, b, <span class="st">'c:'</span>, c)</span>
+<span id="cb46-3"><a href="#cb46-3" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'no parameters:'</span>)</span>
+<span id="cb46-5"><a href="#cb46-5" tabindex="-1"></a>display()</span>
+<span id="cb46-6"><a href="#cb46-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'one parameter:'</span>)</span>
+<span id="cb46-7"><a href="#cb46-7" tabindex="-1"></a>display(<span class="dv">55</span>)</span>
+<span id="cb46-8"><a href="#cb46-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'two parameters:'</span>)</span>
+<span id="cb46-9"><a href="#cb46-9" tabindex="-1"></a>display(<span class="dv">55</span>, <span class="dv">66</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -907,8 +907,8 @@ in:</p>
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'only setting the value of c'</span>)</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>display(c<span class="op">=</span><span class="dv">77</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'only setting the value of c'</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" tabindex="-1"></a>display(c<span class="op">=</span><span class="dv">77</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -921,7 +921,7 @@ a: 1 b: 2 c: 77</code></pre>
 <div class="codewrapper sourceCode" id="cb50">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(numpy.loadtxt)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" tabindex="-1"></a><span class="bu">help</span>(numpy.loadtxt)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -952,7 +952,7 @@ that do. If we call the function like this:</p>
 <div class="codewrapper sourceCode" id="cb53">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>numpy.loadtxt(<span class="st">'inflammation-01.csv'</span>, <span class="st">','</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" tabindex="-1"></a>numpy.loadtxt(<span class="st">'inflammation-01.csv'</span>, <span class="st">','</span>)</span></code></pre>
 </div>
 <p>then the filename is assigned to <code>fname</code> (which is what we
 want), but the delimiter string <code>','</code> is assigned to
@@ -972,28 +972,28 @@ the list.</p>
 <div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> s(p):</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> p:</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>        a <span class="op">+=</span> v</span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> a <span class="op">/</span> <span class="bu">len</span>(p)</span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> p:</span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>        d <span class="op">+=</span> (v <span class="op">-</span> m) <span class="op">*</span> (v <span class="op">-</span> m)</span>
-<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numpy.sqrt(d <span class="op">/</span> (<span class="bu">len</span>(p) <span class="op">-</span> <span class="dv">1</span>))</span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> std_dev(sample):</span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>    sample_sum <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> value <span class="kw">in</span> sample:</span>
-<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>        sample_sum <span class="op">+=</span> value</span>
-<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>    sample_mean <span class="op">=</span> sample_sum <span class="op">/</span> <span class="bu">len</span>(sample)</span>
-<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>    sum_squared_devs <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> value <span class="kw">in</span> sample:</span>
-<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>        sum_squared_devs <span class="op">+=</span> (value <span class="op">-</span> sample_mean) <span class="op">*</span> (value <span class="op">-</span> sample_mean)</span>
-<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numpy.sqrt(sum_squared_devs <span class="op">/</span> (<span class="bu">len</span>(sample) <span class="op">-</span> <span class="dv">1</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" tabindex="-1"></a><span class="kw">def</span> s(p):</span>
+<span id="cb54-2"><a href="#cb54-2" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb54-3"><a href="#cb54-3" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> p:</span>
+<span id="cb54-4"><a href="#cb54-4" tabindex="-1"></a>        a <span class="op">+=</span> v</span>
+<span id="cb54-5"><a href="#cb54-5" tabindex="-1"></a>    m <span class="op">=</span> a <span class="op">/</span> <span class="bu">len</span>(p)</span>
+<span id="cb54-6"><a href="#cb54-6" tabindex="-1"></a>    d <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb54-7"><a href="#cb54-7" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> p:</span>
+<span id="cb54-8"><a href="#cb54-8" tabindex="-1"></a>        d <span class="op">+=</span> (v <span class="op">-</span> m) <span class="op">*</span> (v <span class="op">-</span> m)</span>
+<span id="cb54-9"><a href="#cb54-9" tabindex="-1"></a>    <span class="cf">return</span> numpy.sqrt(d <span class="op">/</span> (<span class="bu">len</span>(p) <span class="op">-</span> <span class="dv">1</span>))</span>
+<span id="cb54-10"><a href="#cb54-10" tabindex="-1"></a></span>
+<span id="cb54-11"><a href="#cb54-11" tabindex="-1"></a><span class="kw">def</span> std_dev(sample):</span>
+<span id="cb54-12"><a href="#cb54-12" tabindex="-1"></a>    sample_sum <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb54-13"><a href="#cb54-13" tabindex="-1"></a>    <span class="cf">for</span> value <span class="kw">in</span> sample:</span>
+<span id="cb54-14"><a href="#cb54-14" tabindex="-1"></a>        sample_sum <span class="op">+=</span> value</span>
+<span id="cb54-15"><a href="#cb54-15" tabindex="-1"></a></span>
+<span id="cb54-16"><a href="#cb54-16" tabindex="-1"></a>    sample_mean <span class="op">=</span> sample_sum <span class="op">/</span> <span class="bu">len</span>(sample)</span>
+<span id="cb54-17"><a href="#cb54-17" tabindex="-1"></a></span>
+<span id="cb54-18"><a href="#cb54-18" tabindex="-1"></a>    sum_squared_devs <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb54-19"><a href="#cb54-19" tabindex="-1"></a>    <span class="cf">for</span> value <span class="kw">in</span> sample:</span>
+<span id="cb54-20"><a href="#cb54-20" tabindex="-1"></a>        sum_squared_devs <span class="op">+=</span> (value <span class="op">-</span> sample_mean) <span class="op">*</span> (value <span class="op">-</span> sample_mean)</span>
+<span id="cb54-21"><a href="#cb54-21" tabindex="-1"></a></span>
+<span id="cb54-22"><a href="#cb54-22" tabindex="-1"></a>    <span class="cf">return</span> numpy.sqrt(sum_squared_devs <span class="op">/</span> (<span class="bu">len</span>(sample) <span class="op">-</span> <span class="dv">1</span>))</span></code></pre>
 </div>
 <p>The functions <code>s</code> and <code>std_dev</code> are
 computationally equivalent (they both calculate the sample standard
@@ -1026,7 +1026,7 @@ A call to your function should look like this:</p>
 <div class="codewrapper sourceCode" id="cb55">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fence(<span class="st">'name'</span>, <span class="st">'*'</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" tabindex="-1"></a><span class="bu">print</span>(fence(<span class="st">'name'</span>, <span class="st">'*'</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1041,13 +1041,13 @@ A call to your function should look like this:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fence(original, wrapper):</span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> wrapper <span class="op">+</span> original <span class="op">+</span> wrapper</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" tabindex="-1"></a><span class="kw">def</span> fence(original, wrapper):</span>
+<span id="cb57-2"><a href="#cb57-2" tabindex="-1"></a>    <span class="cf">return</span> wrapper <span class="op">+</span> original <span class="op">+</span> wrapper</span></code></pre>
 </div>
 </div>
 </div>
@@ -1069,16 +1069,16 @@ visible to the program. Let’s have a look at the following function:</p>
 <div class="codewrapper sourceCode" id="cb58">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(a <span class="op">+</span> b)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb58-2"><a href="#cb58-2" tabindex="-1"></a>    <span class="bu">print</span>(a <span class="op">+</span> b)</span></code></pre>
 </div>
 <p><strong>Question</strong>: What will we see if we execute the
 following commands?</p>
 <div class="codewrapper sourceCode" id="cb59">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> add(<span class="dv">7</span>, <span class="dv">3</span>)</span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" tabindex="-1"></a>A <span class="op">=</span> add(<span class="dv">7</span>, <span class="dv">3</span>)</span>
+<span id="cb59-2"><a href="#cb59-2" tabindex="-1"></a><span class="bu">print</span>(A)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1088,7 +1088,7 @@ following commands?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Python will first execute the function <code>add</code> with
 <code>a = 7</code> and <code>b = 3</code>, and, therefore, print
@@ -1124,7 +1124,7 @@ call to your function should look like this:</p>
 <div class="codewrapper sourceCode" id="cb61">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(outer(<span class="st">'helium'</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" tabindex="-1"></a><span class="bu">print</span>(outer(<span class="st">'helium'</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1139,13 +1139,13 @@ call to your function should look like this:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb63">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> outer(input_string):</span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> input_string[<span class="dv">0</span>] <span class="op">+</span> input_string[<span class="op">-</span><span class="dv">1</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" tabindex="-1"></a><span class="kw">def</span> outer(input_string):</span>
+<span id="cb63-2"><a href="#cb63-2" tabindex="-1"></a>    <span class="cf">return</span> input_string[<span class="dv">0</span>] <span class="op">+</span> input_string[<span class="op">-</span><span class="dv">1</span>]</span></code></pre>
 </div>
 </div>
 </div>
@@ -1172,16 +1172,16 @@ value <code>v</code> should be <code>(v-L) / (H-L)</code>.)</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rescale(input_array):</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    L <span class="op">=</span> numpy.amin(input_array)</span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>    H <span class="op">=</span> numpy.amax(input_array)</span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>    output_array <span class="op">=</span> (input_array <span class="op">-</span> L) <span class="op">/</span> (H <span class="op">-</span> L)</span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> output_array</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" tabindex="-1"></a><span class="kw">def</span> rescale(input_array):</span>
+<span id="cb64-2"><a href="#cb64-2" tabindex="-1"></a>    L <span class="op">=</span> numpy.amin(input_array)</span>
+<span id="cb64-3"><a href="#cb64-3" tabindex="-1"></a>    H <span class="op">=</span> numpy.amax(input_array)</span>
+<span id="cb64-4"><a href="#cb64-4" tabindex="-1"></a>    output_array <span class="op">=</span> (input_array <span class="op">-</span> L) <span class="op">/</span> (H <span class="op">-</span> L)</span>
+<span id="cb64-5"><a href="#cb64-5" tabindex="-1"></a>    <span class="cf">return</span> output_array</span></code></pre>
 </div>
 </div>
 </div>
@@ -1208,21 +1208,21 @@ function, add a docstring that explains what it does.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb65">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""Takes an array as input, and returns a corresponding array scaled so</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="co">that 0 corresponds to the minimum and 1 to the maximum value of the input array.</span></span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="co">Examples:</span></span>
-<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="co">&gt;&gt;&gt; rescale(numpy.arange(10.0))</span></span>
-<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="co">array([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,</span></span>
-<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="co">       0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])</span></span>
-<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="co">&gt;&gt;&gt; rescale(numpy.linspace(0, 100, 5))</span></span>
-<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a><span class="co">array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])</span></span>
-<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" tabindex="-1"></a><span class="co">"""Takes an array as input, and returns a corresponding array scaled so</span></span>
+<span id="cb65-2"><a href="#cb65-2" tabindex="-1"></a><span class="co">that 0 corresponds to the minimum and 1 to the maximum value of the input array.</span></span>
+<span id="cb65-3"><a href="#cb65-3" tabindex="-1"></a></span>
+<span id="cb65-4"><a href="#cb65-4" tabindex="-1"></a><span class="co">Examples:</span></span>
+<span id="cb65-5"><a href="#cb65-5" tabindex="-1"></a><span class="co">&gt;&gt;&gt; rescale(numpy.arange(10.0))</span></span>
+<span id="cb65-6"><a href="#cb65-6" tabindex="-1"></a><span class="co">array([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,</span></span>
+<span id="cb65-7"><a href="#cb65-7" tabindex="-1"></a><span class="co">       0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])</span></span>
+<span id="cb65-8"><a href="#cb65-8" tabindex="-1"></a><span class="co">&gt;&gt;&gt; rescale(numpy.linspace(0, 100, 5))</span></span>
+<span id="cb65-9"><a href="#cb65-9" tabindex="-1"></a><span class="co">array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])</span></span>
+<span id="cb65-10"><a href="#cb65-10" tabindex="-1"></a><span class="co">"""</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1249,18 +1249,18 @@ behave the same way?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb66">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rescale(input_array, low_val<span class="op">=</span><span class="fl">0.0</span>, high_val<span class="op">=</span><span class="fl">1.0</span>):</span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""rescales input array values to lie between low_val and high_val"""</span></span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>    L <span class="op">=</span> numpy.amin(input_array)</span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>    H <span class="op">=</span> numpy.amax(input_array)</span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>    intermed_array <span class="op">=</span> (input_array <span class="op">-</span> L) <span class="op">/</span> (H <span class="op">-</span> L)</span>
-<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>    output_array <span class="op">=</span> intermed_array <span class="op">*</span> (high_val <span class="op">-</span> low_val) <span class="op">+</span> low_val</span>
-<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> output_array</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" tabindex="-1"></a><span class="kw">def</span> rescale(input_array, low_val<span class="op">=</span><span class="fl">0.0</span>, high_val<span class="op">=</span><span class="fl">1.0</span>):</span>
+<span id="cb66-2"><a href="#cb66-2" tabindex="-1"></a>    <span class="co">"""rescales input array values to lie between low_val and high_val"""</span></span>
+<span id="cb66-3"><a href="#cb66-3" tabindex="-1"></a>    L <span class="op">=</span> numpy.amin(input_array)</span>
+<span id="cb66-4"><a href="#cb66-4" tabindex="-1"></a>    H <span class="op">=</span> numpy.amax(input_array)</span>
+<span id="cb66-5"><a href="#cb66-5" tabindex="-1"></a>    intermed_array <span class="op">=</span> (input_array <span class="op">-</span> L) <span class="op">/</span> (H <span class="op">-</span> L)</span>
+<span id="cb66-6"><a href="#cb66-6" tabindex="-1"></a>    output_array <span class="op">=</span> intermed_array <span class="op">*</span> (high_val <span class="op">-</span> low_val) <span class="op">+</span> low_val</span>
+<span id="cb66-7"><a href="#cb66-7" tabindex="-1"></a>    <span class="cf">return</span> output_array</span></code></pre>
 </div>
 </div>
 </div>
@@ -1278,18 +1278,18 @@ behave the same way?</p>
 <div class="codewrapper sourceCode" id="cb67">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f2k(f):</span>
-<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> ((f <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="fl">5.0</span> <span class="op">/</span> <span class="fl">9.0</span>)) <span class="op">+</span> <span class="fl">273.15</span></span>
-<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> k</span>
-<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f2k(<span class="dv">8</span>))</span>
-<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f2k(<span class="dv">41</span>))</span>
-<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f2k(<span class="dv">32</span>))</span>
-<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(k)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" tabindex="-1"></a>f <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb67-2"><a href="#cb67-2" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb67-3"><a href="#cb67-3" tabindex="-1"></a></span>
+<span id="cb67-4"><a href="#cb67-4" tabindex="-1"></a><span class="kw">def</span> f2k(f):</span>
+<span id="cb67-5"><a href="#cb67-5" tabindex="-1"></a>    k <span class="op">=</span> ((f <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="fl">5.0</span> <span class="op">/</span> <span class="fl">9.0</span>)) <span class="op">+</span> <span class="fl">273.15</span></span>
+<span id="cb67-6"><a href="#cb67-6" tabindex="-1"></a>    <span class="cf">return</span> k</span>
+<span id="cb67-7"><a href="#cb67-7" tabindex="-1"></a></span>
+<span id="cb67-8"><a href="#cb67-8" tabindex="-1"></a><span class="bu">print</span>(f2k(<span class="dv">8</span>))</span>
+<span id="cb67-9"><a href="#cb67-9" tabindex="-1"></a><span class="bu">print</span>(f2k(<span class="dv">41</span>))</span>
+<span id="cb67-10"><a href="#cb67-10" tabindex="-1"></a><span class="bu">print</span>(f2k(<span class="dv">32</span>))</span>
+<span id="cb67-11"><a href="#cb67-11" tabindex="-1"></a></span>
+<span id="cb67-12"><a href="#cb67-12" tabindex="-1"></a><span class="bu">print</span>(k)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1299,7 +1299,7 @@ behave the same way?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1336,11 +1336,11 @@ value.</p>
 <div class="codewrapper sourceCode" id="cb69">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> numbers(one, two<span class="op">=</span><span class="dv">2</span>, three, four<span class="op">=</span><span class="dv">4</span>):</span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">str</span>(one) <span class="op">+</span> <span class="bu">str</span>(two) <span class="op">+</span> <span class="bu">str</span>(three) <span class="op">+</span> <span class="bu">str</span>(four)</span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n</span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numbers(<span class="dv">1</span>, three<span class="op">=</span><span class="dv">3</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" tabindex="-1"></a><span class="kw">def</span> numbers(one, two<span class="op">=</span><span class="dv">2</span>, three, four<span class="op">=</span><span class="dv">4</span>):</span>
+<span id="cb69-2"><a href="#cb69-2" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">str</span>(one) <span class="op">+</span> <span class="bu">str</span>(two) <span class="op">+</span> <span class="bu">str</span>(three) <span class="op">+</span> <span class="bu">str</span>(four)</span>
+<span id="cb69-3"><a href="#cb69-3" tabindex="-1"></a>    <span class="cf">return</span> n</span>
+<span id="cb69-4"><a href="#cb69-4" tabindex="-1"></a></span>
+<span id="cb69-5"><a href="#cb69-5" tabindex="-1"></a><span class="bu">print</span>(numbers(<span class="dv">1</span>, three<span class="op">=</span><span class="dv">3</span>))</span></code></pre>
 </div>
 <p>what do you expect will be printed? What is actually printed? What
 rule do you think Python is following?</p>
@@ -1353,10 +1353,10 @@ run?</p>
 <div class="codewrapper sourceCode" id="cb70">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func(a, b<span class="op">=</span><span class="dv">3</span>, c<span class="op">=</span><span class="dv">6</span>):</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'a: '</span>, a, <span class="st">'b: '</span>, b, <span class="st">'c:'</span>, c)</span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>func(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" tabindex="-1"></a><span class="kw">def</span> func(a, b<span class="op">=</span><span class="dv">3</span>, c<span class="op">=</span><span class="dv">6</span>):</span>
+<span id="cb70-2"><a href="#cb70-2" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'a: '</span>, a, <span class="st">'b: '</span>, b, <span class="st">'c:'</span>, c)</span>
+<span id="cb70-3"><a href="#cb70-3" tabindex="-1"></a></span>
+<span id="cb70-4"><a href="#cb70-4" tabindex="-1"></a>func(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>)</span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li><code>a: b: 3 c: 6</code></li>
 <li><code>a: -1 b: 3 c: 6</code></li>
@@ -1370,7 +1370,7 @@ run?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <p>Attempting to define the <code>numbers</code> function results in
 <code>4. SyntaxError</code>. The defined parameters <code>two</code> and
@@ -1494,7 +1494,7 @@ it with different parameter values to customize its behavior.</li>
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/08-func.html",
   "dateCreated": "2014-11-25",
   "dateModified": "2023-11-10",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

@@ -474,13 +474,12 @@ working more systematically.</p>
 People are more likely to listen to us when we can explain clearly what
 we did, and we’re better able to give them the information they need to
 be useful.</p>
-<div id="version-control-revisited" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="version-control-revisited" class="callout-inner">
-<h3 class="callout-title">Version Control Revisited<a class="anchor" aria-label="anchor" href="#version-control-revisited"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="version-control-revisited">Version Control Revisited<a class="anchor" aria-label="anchor" href="#version-control-revisited"></a></h3>
 <div class="callout-content">
 <p>Version control is often used to reset software to a known state
 during debugging, and to explore recent changes to code that might be
@@ -556,15 +555,15 @@ spot?</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>patients <span class="op">=</span> [[<span class="dv">70</span>, <span class="fl">1.8</span>], [<span class="dv">80</span>, <span class="fl">1.9</span>], [<span class="dv">150</span>, <span class="fl">1.7</span>]]</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_bmi(weight, height):</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> weight <span class="op">/</span> (height <span class="op">**</span> <span class="dv">2</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> patient <span class="kw">in</span> patients:</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    weight, height <span class="op">=</span> patients[<span class="dv">0</span>]</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    bmi <span class="op">=</span> calculate_bmi(height, weight)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Patient's BMI is:"</span>, bmi)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>patients <span class="op">=</span> [[<span class="dv">70</span>, <span class="fl">1.8</span>], [<span class="dv">80</span>, <span class="fl">1.9</span>], [<span class="dv">150</span>, <span class="fl">1.7</span>]]</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">def</span> calculate_bmi(weight, height):</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="cf">return</span> weight <span class="op">/</span> (height <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="cf">for</span> patient <span class="kw">in</span> patients:</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    weight, height <span class="op">=</span> patients[<span class="dv">0</span>]</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    bmi <span class="op">=</span> calculate_bmi(height, weight)</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Patient's BMI is:"</span>, bmi)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -581,7 +580,7 @@ Patient's BMI is: 0.000367</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="suggestions-for-debugging">Suggestions for debugging<a class="anchor" aria-label="anchor" href="#suggestions-for-debugging"></a></h3>
@@ -683,7 +682,7 @@ it.</li>
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/11-debugging.html",
   "dateCreated": "2014-11-25",
   "dateModified": "2023-04-21",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

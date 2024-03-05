@@ -338,8 +338,8 @@ result in one as well:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> <span class="fl">32.0</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>final <span class="op">=</span> fahr_to_celsius(original)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>original <span class="op">=</span> <span class="fl">32.0</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>final <span class="op">=</span> fahr_to_celsius(original)</span></code></pre>
 </div>
 <p>The diagram below shows what memory looks like after the first line
 has been executed:</p>
@@ -381,7 +381,7 @@ running, Python tells us that there’s no such thing:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'final value of temp after all function calls:'</span>, temp)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'final value of temp after all function calls:'</span>, temp)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -404,14 +404,14 @@ maximum values in an array:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> span(a):</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    diff <span class="op">=</span> numpy.amax(a) <span class="op">-</span> numpy.amin(a)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> diff</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">'inflammation-01.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'span of data:'</span>, span(data))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">def</span> span(a):</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    diff <span class="op">=</span> numpy.amax(a) <span class="op">-</span> numpy.amin(a)</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    <span class="cf">return</span> diff</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">'inflammation-01.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'span of data:'</span>, span(data))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -424,8 +424,8 @@ to hold data:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>diff <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">'inflammation-01.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'span of data:'</span>, span(diff))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>diff <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">'inflammation-01.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'span of data:'</span>, span(diff))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -461,7 +461,7 @@ when we run the following:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(outer(fence(<span class="st">'carbon'</span>, <span class="st">'+'</span>)))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="bu">print</span>(outer(fence(<span class="st">'carbon'</span>, <span class="st">'+'</span>)))</span></code></pre>
 </div>
 </div>
 </div>
@@ -474,7 +474,7 @@ our own “image”:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipythonblocks <span class="im">import</span> ImageGrid</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="im">from</span> ipythonblocks <span class="im">import</span> ImageGrid</span></code></pre>
 </div>
 <p>Unlike the <code>import</code> statements we have seen earlier, this
 one doesn’t load the entire <code>ipythonblocks</code> library. Instead,
@@ -485,17 +485,17 @@ very simple grid of colored cells:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>grid <span class="op">=</span> ImageGrid(<span class="dv">5</span>, <span class="dv">3</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>grid.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>grid <span class="op">=</span> ImageGrid(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>grid.show()</span></code></pre>
 </div>
 <figure><img src="../fig/grid-01.png" alt="Grid of black squares with white outlines, 5 across by 3 down, demonstrating ImageGrid" class="figure mx-auto d-block"></figure><p>Just like a NumPy array, an <code>ImageGrid</code> has some
 properties that hold information about it:</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'grid width:'</span>, grid.width)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'grid height:'</span>, grid.height)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'grid lines on:'</span>, grid.lines_on)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'grid width:'</span>, grid.width)</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'grid height:'</span>, grid.height)</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'grid lines on:'</span>, grid.lines_on)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -518,10 +518,10 @@ list:</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>position <span class="op">=</span> (<span class="fl">12.3</span>, <span class="fl">45.6</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'position is:'</span>, position)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'color is:'</span>, color)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>position <span class="op">=</span> (<span class="fl">12.3</span>, <span class="fl">45.6</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'position is:'</span>, position)</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>color <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'color is:'</span>, color)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -534,7 +534,7 @@ lists and arrays:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first element of color is:'</span>, color[<span class="dv">0</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first element of color is:'</span>, color[<span class="dv">0</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -546,8 +546,8 @@ are created — in technical terms, they are <a href="reference.html#immutable">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>color[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">40</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first element of color after change:'</span>, color[<span class="dv">0</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>color[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">40</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first element of color after change:'</span>, color[<span class="dv">0</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -570,16 +570,16 @@ human eyes, most of the time.</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>row <span class="op">=</span> ImageGrid(<span class="dv">8</span>, <span class="dv">1</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>row[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)   <span class="co"># no color =&gt; black</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>row[<span class="dv">1</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">255</span>) <span class="co"># all colors =&gt; white</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>row[<span class="dv">2</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>) <span class="co"># all red</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>row[<span class="dv">3</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">0</span>) <span class="co"># all green</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>row[<span class="dv">4</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">255</span>) <span class="co"># all blue</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>row[<span class="dv">5</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">0</span>) <span class="co"># red and green</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>row[<span class="dv">6</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">255</span>) <span class="co"># red and blue</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>row[<span class="dv">7</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">255</span>) <span class="co"># green and blue</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>row.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>row <span class="op">=</span> ImageGrid(<span class="dv">8</span>, <span class="dv">1</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>row[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)   <span class="co"># no color =&gt; black</span></span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>row[<span class="dv">1</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">255</span>) <span class="co"># all colors =&gt; white</span></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>row[<span class="dv">2</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>) <span class="co"># all red</span></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>row[<span class="dv">3</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">0</span>) <span class="co"># all green</span></span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a>row[<span class="dv">4</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">255</span>) <span class="co"># all blue</span></span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a>row[<span class="dv">5</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">0</span>) <span class="co"># red and green</span></span>
+<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a>row[<span class="dv">6</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">255</span>) <span class="co"># red and blue</span></span>
+<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a>row[<span class="dv">7</span>, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">255</span>) <span class="co"># green and blue</span></span>
+<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a>row.show()</span></code></pre>
 </div>
 <figure><img src="../fig/grid-02.png" alt="Row of 8 squares colored black, white, red, lime green, blue, yellow, fuchsia, and cyan" class="figure mx-auto d-block"></figure><p>Simple color values like <code>(0,255,0)</code> are easy enough to
 decipher with a bit of practice, but what color is
@@ -588,22 +588,22 @@ provides a function called <code>show_color</code>:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipythonblocks <span class="im">import</span> show_color</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>show_color(<span class="dv">214</span>, <span class="dv">90</span>, <span class="dv">127</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="im">from</span> ipythonblocks <span class="im">import</span> show_color</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>show_color(<span class="dv">214</span>, <span class="dv">90</span>, <span class="dv">127</span>)</span></code></pre>
 </div>
 <figure><img src="../fig/ipythonblocks_show_color_example.png" class="figure mx-auto d-block"></figure><p>It also provides a table of standard colors:</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipythonblocks <span class="im">import</span> colors</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> ImageGrid(<span class="dv">3</span>, <span class="dv">2</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>c[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">=</span> colors[<span class="st">'Fuchsia'</span>]</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>c[<span class="dv">0</span>, <span class="dv">1</span>] <span class="op">=</span> colors[<span class="st">'Salmon'</span>]</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>c[<span class="dv">1</span>, <span class="dv">0</span>] <span class="op">=</span> colors[<span class="st">'Orchid'</span>]</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>c[<span class="dv">1</span>, <span class="dv">1</span>] <span class="op">=</span> colors[<span class="st">'Lavender'</span>]</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>c[<span class="dv">2</span>, <span class="dv">0</span>] <span class="op">=</span> colors[<span class="st">'LimeGreen'</span>]</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>c[<span class="dv">2</span>, <span class="dv">1</span>] <span class="op">=</span> colors[<span class="st">'HotPink'</span>]</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>c.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="im">from</span> ipythonblocks <span class="im">import</span> colors</span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>c <span class="op">=</span> ImageGrid(<span class="dv">3</span>, <span class="dv">2</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>c[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">=</span> colors[<span class="st">'Fuchsia'</span>]</span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>c[<span class="dv">0</span>, <span class="dv">1</span>] <span class="op">=</span> colors[<span class="st">'Salmon'</span>]</span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a>c[<span class="dv">1</span>, <span class="dv">0</span>] <span class="op">=</span> colors[<span class="st">'Orchid'</span>]</span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a>c[<span class="dv">1</span>, <span class="dv">1</span>] <span class="op">=</span> colors[<span class="st">'Lavender'</span>]</span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a>c[<span class="dv">2</span>, <span class="dv">0</span>] <span class="op">=</span> colors[<span class="st">'LimeGreen'</span>]</span>
+<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a>c[<span class="dv">2</span>, <span class="dv">1</span>] <span class="op">=</span> colors[<span class="st">'HotPink'</span>]</span>
+<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a>c.show()</span></code></pre>
 </div>
 <figure><img src="../fig/grid-03.png" alt="3 by 2 grid of colored squares. Row1: salmon, lavender, hot-pink. Row2: fuchsia, orchid, lime-green" class="figure mx-auto d-block"></figure><div id="making-a-colorbar" class="callout discussion">
 <div class="callout-square">
@@ -618,10 +618,10 @@ changes color from dark blue to black.</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>bar <span class="op">=</span> ImageGrid(<span class="dv">10</span>, <span class="dv">1</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    bar[x, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, ____)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>bar.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>bar <span class="op">=</span> ImageGrid(<span class="dv">10</span>, <span class="dv">1</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>    bar[x, <span class="dv">0</span>] <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, ____)</span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>bar.show()</span></code></pre>
 </div>
 </div>
 </div>
@@ -738,7 +738,7 @@ it immediately? Do you think this is a good or bad design choice?</p>
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/discuss.html",
   "dateCreated": "2014-11-25",
   "dateModified": "2023-04-21",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

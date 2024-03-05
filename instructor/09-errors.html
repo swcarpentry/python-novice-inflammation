@@ -367,17 +367,17 @@ errors, they become much easier to fix.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code has an intentional error. You can type it directly or</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># use it for reference to understand the error message below.</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> favorite_ice_cream():</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    ice_creams <span class="op">=</span> [</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'chocolate'</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'vanilla'</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'strawberry'</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    ]</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(ice_creams[<span class="dv">3</span>])</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>favorite_ice_cream()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># This code has an intentional error. You can type it directly or</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co"># use it for reference to understand the error message below.</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">def</span> favorite_ice_cream():</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    ice_creams <span class="op">=</span> [</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>        <span class="st">'chocolate'</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>        <span class="st">'vanilla'</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>        <span class="st">'strawberry'</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    ]</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>    <span class="bu">print</span>(ice_creams[<span class="dv">3</span>])</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>favorite_ice_cream()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -412,13 +412,12 @@ next level down. So, in this case, the program first performed a <a href="refere
 <code>favorite_ice_cream</code>. Inside this function, the program
 encountered an error on Line 6, when it tried to run the code
 <code>print(ice_creams[3])</code>.</p>
-<div id="long-tracebacks" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="long-tracebacks" class="callout-inner">
-<h3 class="callout-title">Long Tracebacks<a class="anchor" aria-label="anchor" href="#long-tracebacks"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="long-tracebacks">Long Tracebacks<a class="anchor" aria-label="anchor" href="#long-tracebacks"></a></h3>
 <div class="callout-content">
 <p>Sometimes, you might see a traceback that is very long -- sometimes
 they might even be 20 levels deep! This can make it seem like something
@@ -463,24 +462,24 @@ the following questions:</p>
 </ol><div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code has an intentional error. Do not type it directly;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># use it for reference to understand the error message below.</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_message(day):</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    messages <span class="op">=</span> [</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Hello, world!'</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Today is Tuesday!'</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'It is the middle of the week.'</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Today is Donnerstag in German!'</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Last day of the week!'</span>,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Hooray for the weekend!'</span>,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Aw, the weekend is almost over.'</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    ]</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(messages[day])</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_sunday_message():</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    print_message(<span class="dv">7</span>)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>print_sunday_message()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># This code has an intentional error. Do not type it directly;</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># use it for reference to understand the error message below.</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">def</span> print_message(day):</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    messages <span class="op">=</span> [</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>        <span class="st">'Hello, world!'</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>        <span class="st">'Today is Tuesday!'</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>        <span class="st">'It is the middle of the week.'</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>        <span class="st">'Today is Donnerstag in German!'</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>        <span class="st">'Last day of the week!'</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>        <span class="st">'Hooray for the weekend!'</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>        <span class="st">'Aw, the weekend is almost over.'</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>    ]</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>    <span class="bu">print</span>(messages[day])</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="kw">def</span> print_sunday_message():</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>    print_message(<span class="dv">7</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>print_sunday_message()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -531,13 +530,12 @@ IndexError: list index out of range</code></pre>
 </div>
 </div>
 </div>
-<div id="better-errors-on-newer-pythons" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="better-errors-on-newer-pythons" class="callout-inner">
-<h3 class="callout-title">Better errors on newer Pythons<a class="anchor" aria-label="anchor" href="#better-errors-on-newer-pythons"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="better-errors-on-newer-pythons">Better errors on newer Pythons<a class="anchor" aria-label="anchor" href="#better-errors-on-newer-pythons"></a></h3>
 <div class="callout-content">
 <p>Newer versions of Python have improved error printouts. If you are
 debugging errors, it is often helpful to use the latest Python version,
@@ -563,10 +561,10 @@ with an error. For example:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> some_function()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    msg <span class="op">=</span> <span class="st">'hello, world!'</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(msg)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span> msg</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> some_function()</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    msg <span class="op">=</span> <span class="st">'hello, world!'</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    <span class="bu">print</span>(msg)</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>     <span class="cf">return</span> msg</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -587,10 +585,10 @@ function definition do not all have the same indentation:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> some_function():</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    msg <span class="op">=</span> <span class="st">'hello, world!'</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(msg)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span> msg</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> some_function():</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    msg <span class="op">=</span> <span class="st">'hello, world!'</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="bu">print</span>(msg)</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>     <span class="cf">return</span> msg</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -604,13 +602,12 @@ IndentationError: unexpected indent</code></pre>
 indicate a problem with the syntax of your program, but an
 <code>IndentationError</code> is more specific: it <em>always</em> means
 that there is a problem with how your code is indented.</p>
-<div id="tabs-and-spaces" class="callout callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="tabs-and-spaces" class="callout-inner">
-<h3 class="callout-title">Tabs and Spaces<a class="anchor" aria-label="anchor" href="#tabs-and-spaces"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="tabs-and-spaces">Tabs and Spaces<a class="anchor" aria-label="anchor" href="#tabs-and-spaces"></a></h3>
 <div class="callout-content">
 <p>Some indentation errors are harder to spot than others. In
 particular, mixing spaces and tabs can be difficult to spot because they
@@ -623,10 +620,10 @@ Jupyter automatically replaces tabs with spaces.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> some_function():</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>	msg <span class="op">=</span> <span class="st">'hello, world!'</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>	<span class="bu">print</span>(msg)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> msg</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span> some_function():</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>	msg <span class="op">=</span> <span class="st">'hello, world!'</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>	<span class="bu">print</span>(msg)</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>        <span class="cf">return</span> msg</span></code></pre>
 </div>
 <p>Visually it is impossible to spot the error. Fortunately, Python does
 not allow you to mix tabs and spaces.</p>
@@ -649,7 +646,7 @@ example:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="bu">print</span>(a)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -672,7 +669,7 @@ it:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hello)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="bu">print</span>(hello)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -691,9 +688,9 @@ loop:</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> count <span class="op">+</span> number</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The count is:'</span>, count)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    count <span class="op">=</span> count <span class="op">+</span> number</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The count is:'</span>, count)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -717,10 +714,10 @@ the same error, because we still have not defined
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>Count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> count <span class="op">+</span> number</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The count is:'</span>, count)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>Count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>    count <span class="op">=</span> count <span class="op">+</span> number</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The count is:'</span>, count)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -747,11 +744,11 @@ exist:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>letters <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Letter #1 is'</span>, letters[<span class="dv">0</span>])</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Letter #2 is'</span>, letters[<span class="dv">1</span>])</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Letter #3 is'</span>, letters[<span class="dv">2</span>])</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Letter #4 is'</span>, letters[<span class="dv">3</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>letters <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Letter #1 is'</span>, letters[<span class="dv">0</span>])</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Letter #2 is'</span>, letters[<span class="dv">1</span>])</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Letter #3 is'</span>, letters[<span class="dv">2</span>])</span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Letter #4 is'</span>, letters[<span class="dv">3</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -790,7 +787,7 @@ list in the Python docs</a>. They all have a unique UNIX
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>file_handle <span class="op">=</span> <span class="bu">open</span>(<span class="st">'myfile.txt'</span>, <span class="st">'r'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>file_handle <span class="op">=</span> <span class="bu">open</span>(<span class="st">'myfile.txt'</span>, <span class="st">'r'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -819,8 +816,8 @@ not opened for reading:</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>file_handle <span class="op">=</span> <span class="bu">open</span>(<span class="st">'myfile.txt'</span>, <span class="st">'w'</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>file_handle.read()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>file_handle <span class="op">=</span> <span class="bu">open</span>(<span class="st">'myfile.txt'</span>, <span class="st">'w'</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>file_handle.read()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -854,10 +851,10 @@ the errors are.</li>
 </ol><div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> another_function</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">'Syntax errors are annoying.'</span>)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'But at least Python tells us about them!'</span>)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">'So they are usually not too hard to fix.'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="kw">def</span> another_function</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">'Syntax errors are annoying.'</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'But at least Python tells us about them!'</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">'So they are usually not too hard to fix.'</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -875,10 +872,10 @@ third lines. A fixed version is:</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> another_function():</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Syntax errors are annoying.'</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'But at least Python tells us about them!'</span>)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'So they are usually not too hard to fix.'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="kw">def</span> another_function():</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Syntax errors are annoying.'</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'But at least Python tells us about them!'</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'So they are usually not too hard to fix.'</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -903,13 +900,13 @@ have been defined but was not?</li>
 </ol><div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># use a if the number is a multiple of 3, otherwise use b</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (Number <span class="op">%</span> <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        message <span class="op">=</span> message <span class="op">+</span> a</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>        message <span class="op">=</span> message <span class="op">+</span> <span class="st">'b'</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(message)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>    <span class="co"># use a if the number is a multiple of 3, otherwise use b</span></span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>    <span class="cf">if</span> (Number <span class="op">%</span> <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>        message <span class="op">=</span> message <span class="op">+</span> a</span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a>        message <span class="op">=</span> message <span class="op">+</span> <span class="st">'b'</span></span>
+<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a><span class="bu">print</span>(message)</span></code></pre>
 </div>
 </div>
 </div>
@@ -928,14 +925,14 @@ in quotes.</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> <span class="st">''</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># use a if the number is a multiple of 3, otherwise use b</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (number <span class="op">%</span> <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        message <span class="op">=</span> message <span class="op">+</span> <span class="st">'a'</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>        message <span class="op">=</span> message <span class="op">+</span> <span class="st">'b'</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(message)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>message <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>    <span class="co"># use a if the number is a multiple of 3, otherwise use b</span></span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>    <span class="cf">if</span> (number <span class="op">%</span> <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a>        message <span class="op">=</span> message <span class="op">+</span> <span class="st">'a'</span></span>
+<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a>        message <span class="op">=</span> message <span class="op">+</span> <span class="st">'b'</span></span>
+<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a><span class="bu">print</span>(message)</span></code></pre>
 </div>
 </div>
 </div>
@@ -957,8 +954,8 @@ it?</li>
 </ol><div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">'Spring'</span>, <span class="st">'Summer'</span>, <span class="st">'Fall'</span>, <span class="st">'Winter'</span>]</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'My favorite season is '</span>, seasons[<span class="dv">4</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">'Spring'</span>, <span class="st">'Summer'</span>, <span class="st">'Fall'</span>, <span class="st">'Winter'</span>]</span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'My favorite season is '</span>, seasons[<span class="dv">4</span>])</span></code></pre>
 </div>
 </div>
 </div>
@@ -975,8 +972,8 @@ so <code>seasons[4]</code> doesn’t make sense. A fixed version is:</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">'Spring'</span>, <span class="st">'Summer'</span>, <span class="st">'Fall'</span>, <span class="st">'Winter'</span>]</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'My favorite season is '</span>, seasons[<span class="op">-</span><span class="dv">1</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">'Spring'</span>, <span class="st">'Summer'</span>, <span class="st">'Fall'</span>, <span class="st">'Winter'</span>]</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'My favorite season is '</span>, seasons[<span class="op">-</span><span class="dv">1</span>])</span></code></pre>
 </div>
 </div>
 </div>
@@ -1071,7 +1068,7 @@ writing, or writing to a file that is open for reading, will give you an
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/09-errors.html",
   "dateCreated": "2014-11-25",
   "dateModified": "2023-04-21",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

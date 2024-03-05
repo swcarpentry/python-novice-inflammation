@@ -360,13 +360,12 @@ thousands of data files. In order to do that in an efficient way, we
 need to make our programs work like other Unix command-line tools. For
 example, we may want a program that reads a dataset and prints the
 average inflammation per patient.</p>
-<div id="switching-to-shell-commands" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="switching-to-shell-commands" class="callout-inner">
-<h3 class="callout-title">Switching to Shell Commands<a class="anchor" aria-label="anchor" href="#switching-to-shell-commands"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="switching-to-shell-commands">Switching to Shell Commands<a class="anchor" aria-label="anchor" href="#switching-to-shell-commands"></a></h3>
 <div class="callout-content">
 <p>In this lesson we are switching from typing commands in a Python
 interpreter to typing commands in a shell terminal window (such as
@@ -381,7 +380,7 @@ inflammation per patient for a given file.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_04.py <span class="at">--mean</span> inflammation-01.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_04.py <span class="at">--mean</span> inflammation-01.csv</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -398,13 +397,13 @@ inflammation per patient for a given file.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> head <span class="at">-4</span> inflammation-01.csv <span class="kw">|</span> <span class="ex">python</span> ../code/readings_06.py <span class="at">--min</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> head <span class="at">-4</span> inflammation-01.csv <span class="kw">|</span> <span class="ex">python</span> ../code/readings_06.py <span class="at">--min</span></span></code></pre>
 </div>
 <p>or the maximum inflammations in several files one after another:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_04.py <span class="at">--max</span> inflammation-<span class="pp">*</span>.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_04.py <span class="at">--max</span> inflammation-<span class="pp">*</span>.csv</span></code></pre>
 </div>
 <p>Our scripts should do the following:</p>
 <ol style="list-style-type: decimal"><li>If no filename is given on the command line, read data from <a href="reference.html#standard-input">standard input</a>.</li>
@@ -423,8 +422,8 @@ the following in a text file called <code>sys_version.py</code>:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'version is'</span>, sys.version)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'version is'</span>, sys.version)</span></code></pre>
 </div>
 <p>The first line imports a library called <code>sys</code>, which is
 short for “system”. It defines values such as <code>sys.version</code>,
@@ -433,7 +432,7 @@ script from the command line like this:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python sys_version.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> python sys_version.py</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -446,8 +445,8 @@ following text to it.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'sys.argv is'</span>, sys.argv)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'sys.argv is'</span>, sys.argv)</span></code></pre>
 </div>
 <p>The strange name <code>argv</code> stands for “argument values”.
 Whenever Python runs a program, it takes all of the values given on the
@@ -457,7 +456,7 @@ arguments:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python argv_list.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> python argv_list.py</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -470,7 +469,7 @@ however:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python argv_list.py first second third</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> python argv_list.py first second third</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -487,21 +486,21 @@ whatever we want:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat ../code/readings_01.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> cat ../code/readings_01.py</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    filename <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row_mean <span class="kw">in</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>):</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row_mean)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>    filename <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>    <span class="cf">for</span> row_mean <span class="kw">in</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>        <span class="bu">print</span>(row_mean)</span></code></pre>
 </div>
 <p>This function gets the name of the script from
 <code>sys.argv[0]</code>, because that’s where it’s always put, and the
@@ -510,36 +509,36 @@ simple test:</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_01.py inflammation-01.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_01.py inflammation-01.csv</span></code></pre>
 </div>
 <p>There is no output because we have defined a function, but haven’t
 actually called it. Let’s add a call to <code>main</code>:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat ../code/readings_02.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> cat ../code/readings_02.py</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    filename <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row_mean <span class="kw">in</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>):</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row_mean)</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>    filename <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>    <span class="cf">for</span> row_mean <span class="kw">in</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>        <span class="bu">print</span>(row_mean)</span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a>    main()</span></code></pre>
 </div>
 <p>and run that:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_02.py inflammation-01.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_02.py inflammation-01.csv</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -605,13 +604,12 @@ actually called it. Let’s add a call to <code>main</code>:</p>
 <span><span class="fl">7.05</span></span>
 <span><span class="fl">5.9</span></span></code></pre>
 </div>
-<div id="running-versus-importing" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="running-versus-importing" class="callout-inner">
-<h3 class="callout-title">Running Versus Importing<a class="anchor" aria-label="anchor" href="#running-versus-importing"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="running-versus-importing">Running Versus Importing<a class="anchor" aria-label="anchor" href="#running-versus-importing"></a></h3>
 <div class="callout-content">
 <p>Running a Python script in bash is very similar to importing that
 file in Python. The biggest difference is that we don’t expect anything
@@ -623,8 +621,8 @@ produces output in the following if statement:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    main()  <span class="co"># Or whatever function produces output</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>    main()  <span class="co"># Or whatever function produces output</span></span></code></pre>
 </div>
 <p>When you import a Python file, <code>__name__</code> is the name of
 that file (e.g., when importing <code>readings.py</code>,
@@ -635,13 +633,12 @@ file is being imported or run as a script.</p>
 </div>
 </div>
 </div>
-<div id="the-right-way-to-do-it" class="callout callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="the-right-way-to-do-it" class="callout-inner">
-<h3 class="callout-title">The Right Way to Do It<a class="anchor" aria-label="anchor" href="#the-right-way-to-do-it"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="the-right-way-to-do-it">The Right Way to Do It<a class="anchor" aria-label="anchor" href="#the-right-way-to-do-it"></a></h3>
 <div class="callout-content">
 <p>If our programs can take complex parameters or multiple filenames, we
 shouldn’t handle <code>sys.argv</code> directly. Instead, we should use
@@ -665,7 +662,7 @@ two patients:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls small-<span class="pp">*</span>.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> ls small-<span class="pp">*</span>.csv</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -675,7 +672,7 @@ two patients:</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat small-01.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> cat small-01.csv</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -686,7 +683,7 @@ two patients:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_02.py small-01.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_02.py small-01.csv</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -715,29 +712,29 @@ the filenames. Here’s our changed program
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat ../code/readings_03.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> cat ../code/readings_03.py</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> filename <span class="kw">in</span> sys.argv[<span class="dv">1</span>:]:</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> row_mean <span class="kw">in</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>):</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(row_mean)</span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a>    <span class="cf">for</span> filename <span class="kw">in</span> sys.argv[<span class="dv">1</span>:]:</span>
+<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a>        data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb28-8"><a href="#cb28-8" tabindex="-1"></a>        <span class="cf">for</span> row_mean <span class="kw">in</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb28-9"><a href="#cb28-9" tabindex="-1"></a>            <span class="bu">print</span>(row_mean)</span>
+<span id="cb28-10"><a href="#cb28-10" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="#cb28-11" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb28-12"><a href="#cb28-12" tabindex="-1"></a>    main()</span></code></pre>
 </div>
 <p>and here it is in action:</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_03.py small-01.csv small-02.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_03.py small-01.csv small-02.csv</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -747,13 +744,12 @@ the filenames. Here’s our changed program
 <span><span class="fl">13.6666666667</span></span>
 <span><span class="fl">11.0</span></span></code></pre>
 </div>
-<div id="the-right-way-to-do-it-1" class="callout callout">
+<div id="callout4" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="the-right-way-to-do-it-1" class="callout-inner">
-<h3 class="callout-title">The Right Way to Do It<a class="anchor" aria-label="anchor" href="#the-right-way-to-do-it-1"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="the-right-way-to-do-it-1">The Right Way to Do It<a class="anchor" aria-label="anchor" href="#the-right-way-to-do-it-1"></a></h3>
 <div class="callout-content">
 <p>At this point, we have created three versions of our script called
 <code>readings_01.py</code>, <code>readings_02.py</code>, and
@@ -773,40 +769,40 @@ this:</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat ../code/readings_04.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="ex">$</span> cat ../code/readings_04.py</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>            values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>            values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>            values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> val <span class="kw">in</span> values:</span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(val)</span>
-<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb32-5"><a href="#cb32-5" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb32-6"><a href="#cb32-6" tabindex="-1"></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb32-7"><a href="#cb32-7" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
+<span id="cb32-8"><a href="#cb32-8" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" tabindex="-1"></a>    <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb32-10"><a href="#cb32-10" tabindex="-1"></a>        data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb32-11"><a href="#cb32-11" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="#cb32-12" tabindex="-1"></a>        <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
+<span id="cb32-13"><a href="#cb32-13" tabindex="-1"></a>            values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb32-14"><a href="#cb32-14" tabindex="-1"></a>        <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
+<span id="cb32-15"><a href="#cb32-15" tabindex="-1"></a>            values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb32-16"><a href="#cb32-16" tabindex="-1"></a>        <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
+<span id="cb32-17"><a href="#cb32-17" tabindex="-1"></a>            values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb32-18"><a href="#cb32-18" tabindex="-1"></a></span>
+<span id="cb32-19"><a href="#cb32-19" tabindex="-1"></a>        <span class="cf">for</span> val <span class="kw">in</span> values:</span>
+<span id="cb32-20"><a href="#cb32-20" tabindex="-1"></a>            <span class="bu">print</span>(val)</span>
+<span id="cb32-21"><a href="#cb32-21" tabindex="-1"></a></span>
+<span id="cb32-22"><a href="#cb32-22" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb32-23"><a href="#cb32-23" tabindex="-1"></a>    main()</span></code></pre>
 </div>
 <p>This works:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_04.py <span class="at">--max</span> small-01.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_04.py <span class="at">--max</span> small-01.csv</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -832,38 +828,38 @@ fast:</p>
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat ../code/readings_05.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">$</span> cat ../code/readings_05.py</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> action <span class="kw">in</span> [<span class="st">'--min'</span>, <span class="st">'--mean'</span>, <span class="st">'--max'</span>], <span class="op">\</span></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Action is not one of --min, --mean, or --max: '</span> <span class="op">+</span> action</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>        process(filename, action)</span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process(filename, action):</span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
-<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
-<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(val)</span>
-<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb36-3"><a href="#cb36-3" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb36-5"><a href="#cb36-5" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb36-6"><a href="#cb36-6" tabindex="-1"></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb36-7"><a href="#cb36-7" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
+<span id="cb36-8"><a href="#cb36-8" tabindex="-1"></a>    <span class="cf">assert</span> action <span class="kw">in</span> [<span class="st">'--min'</span>, <span class="st">'--mean'</span>, <span class="st">'--max'</span>], <span class="op">\</span></span>
+<span id="cb36-9"><a href="#cb36-9" tabindex="-1"></a>           <span class="st">'Action is not one of --min, --mean, or --max: '</span> <span class="op">+</span> action</span>
+<span id="cb36-10"><a href="#cb36-10" tabindex="-1"></a>    <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb36-11"><a href="#cb36-11" tabindex="-1"></a>        process(filename, action)</span>
+<span id="cb36-12"><a href="#cb36-12" tabindex="-1"></a></span>
+<span id="cb36-13"><a href="#cb36-13" tabindex="-1"></a><span class="kw">def</span> process(filename, action):</span>
+<span id="cb36-14"><a href="#cb36-14" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb36-15"><a href="#cb36-15" tabindex="-1"></a></span>
+<span id="cb36-16"><a href="#cb36-16" tabindex="-1"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
+<span id="cb36-17"><a href="#cb36-17" tabindex="-1"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-18"><a href="#cb36-18" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
+<span id="cb36-19"><a href="#cb36-19" tabindex="-1"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-20"><a href="#cb36-20" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
+<span id="cb36-21"><a href="#cb36-21" tabindex="-1"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-22"><a href="#cb36-22" tabindex="-1"></a></span>
+<span id="cb36-23"><a href="#cb36-23" tabindex="-1"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
+<span id="cb36-24"><a href="#cb36-24" tabindex="-1"></a>        <span class="bu">print</span>(val)</span>
+<span id="cb36-25"><a href="#cb36-25" tabindex="-1"></a></span>
+<span id="cb36-26"><a href="#cb36-26" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb36-27"><a href="#cb36-27" tabindex="-1"></a>    main()</span></code></pre>
 </div>
 <p>This is four lines longer than its predecessor, but broken into more
 digestible chunks of 8 and 12 lines.</p>
@@ -876,18 +872,18 @@ input to it, and so on. Let’s experiment in another script called
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat ../code/count_stdin.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> cat ../code/count_stdin.py</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> sys.stdin:</span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count, <span class="st">'lines in standard input'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> sys.stdin:</span>
+<span id="cb38-5"><a href="#cb38-5" tabindex="-1"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb38-6"><a href="#cb38-6" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="#cb38-7" tabindex="-1"></a><span class="bu">print</span>(count, <span class="st">'lines in standard input'</span>)</span></code></pre>
 </div>
 <p>This little program reads lines from a special “file” called
 <code>sys.stdin</code>, which is automatically connected to the
@@ -898,7 +894,7 @@ try running it as if it were a regular command-line program:</p>
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python ../code/count_stdin.py <span class="op">&lt;</span> small-01.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="ex">$</span> python ../code/count_stdin.py <span class="op">&lt;</span> small-01.csv</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -910,7 +906,7 @@ input like this:</p>
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python ../code/count_stdin.py small-01.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="ex">$</span> python ../code/count_stdin.py small-01.csv</span></code></pre>
 </div>
 <p>i.e., to forget the <code>&lt;</code> character that redirects the
 file to standard input. In this case, there’s nothing in standard input,
@@ -927,47 +923,47 @@ as its first parameter, so we don’t actually need to change
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat ../code/readings_06.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="ex">$</span> cat ../code/readings_06.py</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> action <span class="kw">in</span> [<span class="st">'--min'</span>, <span class="st">'--mean'</span>, <span class="st">'--max'</span>], <span class="op">\</span></span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Action is not one of --min, --mean, or --max: '</span> <span class="op">+</span> action</span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>        process(sys.stdin, action)</span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
-<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>            process(filename, action)</span>
-<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process(filename, action):</span>
-<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
-<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
-<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(val)</span>
-<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb43-30"><a href="#cb43-30" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb43-2"><a href="#cb43-2" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb43-3"><a href="#cb43-3" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb43-5"><a href="#cb43-5" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb43-6"><a href="#cb43-6" tabindex="-1"></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb43-7"><a href="#cb43-7" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
+<span id="cb43-8"><a href="#cb43-8" tabindex="-1"></a>    <span class="cf">assert</span> action <span class="kw">in</span> [<span class="st">'--min'</span>, <span class="st">'--mean'</span>, <span class="st">'--max'</span>], <span class="op">\</span></span>
+<span id="cb43-9"><a href="#cb43-9" tabindex="-1"></a>           <span class="st">'Action is not one of --min, --mean, or --max: '</span> <span class="op">+</span> action</span>
+<span id="cb43-10"><a href="#cb43-10" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb43-11"><a href="#cb43-11" tabindex="-1"></a>        process(sys.stdin, action)</span>
+<span id="cb43-12"><a href="#cb43-12" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb43-13"><a href="#cb43-13" tabindex="-1"></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb43-14"><a href="#cb43-14" tabindex="-1"></a>            process(filename, action)</span>
+<span id="cb43-15"><a href="#cb43-15" tabindex="-1"></a></span>
+<span id="cb43-16"><a href="#cb43-16" tabindex="-1"></a><span class="kw">def</span> process(filename, action):</span>
+<span id="cb43-17"><a href="#cb43-17" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb43-18"><a href="#cb43-18" tabindex="-1"></a></span>
+<span id="cb43-19"><a href="#cb43-19" tabindex="-1"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
+<span id="cb43-20"><a href="#cb43-20" tabindex="-1"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb43-21"><a href="#cb43-21" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
+<span id="cb43-22"><a href="#cb43-22" tabindex="-1"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb43-23"><a href="#cb43-23" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
+<span id="cb43-24"><a href="#cb43-24" tabindex="-1"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb43-25"><a href="#cb43-25" tabindex="-1"></a></span>
+<span id="cb43-26"><a href="#cb43-26" tabindex="-1"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
+<span id="cb43-27"><a href="#cb43-27" tabindex="-1"></a>        <span class="bu">print</span>(val)</span>
+<span id="cb43-28"><a href="#cb43-28" tabindex="-1"></a></span>
+<span id="cb43-29"><a href="#cb43-29" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb43-30"><a href="#cb43-30" tabindex="-1"></a>    main()</span></code></pre>
 </div>
 <p>Let’s try it out:</p>
 <div class="codewrapper sourceCode" id="cb44">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_06.py <span class="at">--mean</span> <span class="op">&lt;</span> small-01.csv</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="ex">$</span> python ../code/readings_06.py <span class="at">--mean</span> <span class="op">&lt;</span> small-01.csv</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -990,7 +986,7 @@ two numbers provided on the command line:</p>
 <div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python arith.py <span class="at">--add</span> 1 2</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a><span class="ex">$</span> python arith.py <span class="at">--add</span> 1 2</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1000,7 +996,7 @@ two numbers provided on the command line:</p>
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python arith.py <span class="at">--subtract</span> 3 4</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="ex">$</span> python arith.py <span class="at">--subtract</span> 3 4</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1015,40 +1011,40 @@ two numbers provided on the command line:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb50">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(sys.argv) <span class="op">==</span> <span class="dv">4</span>, <span class="st">'Need exactly 3 arguments'</span></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    operator <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> operator <span class="kw">in</span> [<span class="st">'--add'</span>, <span class="st">'--subtract'</span>, <span class="st">'--multiply'</span>, <span class="st">'--divide'</span>], <span class="op">\</span></span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Operator is not one of --add, --subtract, --multiply, or --divide: bailing out'</span></span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>        operand1, operand2 <span class="op">=</span> <span class="bu">float</span>(sys.argv[<span class="dv">2</span>]), <span class="bu">float</span>(sys.argv[<span class="dv">3</span>])</span>
-<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'cannot convert input to a number: bailing out'</span>)</span>
-<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
-<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>    do_arithmetic(operand1, operator, operand2)</span>
-<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> do_arithmetic(operand1, operator, operand2):</span>
-<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> operator <span class="op">==</span> <span class="st">'add'</span>:</span>
-<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> operand1 <span class="op">+</span> operand2</span>
-<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> operator <span class="op">==</span> <span class="st">'subtract'</span>:</span>
-<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> operand1 <span class="op">-</span> operand2</span>
-<span id="cb50-23"><a href="#cb50-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> operator <span class="op">==</span> <span class="st">'multiply'</span>:</span>
-<span id="cb50-24"><a href="#cb50-24" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> operand1 <span class="op">*</span> operand2</span>
-<span id="cb50-25"><a href="#cb50-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> operator <span class="op">==</span> <span class="st">'divide'</span>:</span>
-<span id="cb50-26"><a href="#cb50-26" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> operand1 <span class="op">/</span> operand2</span>
-<span id="cb50-27"><a href="#cb50-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(value)</span>
-<span id="cb50-28"><a href="#cb50-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-29"><a href="#cb50-29" aria-hidden="true" tabindex="-1"></a>main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb50-2"><a href="#cb50-2" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb50-4"><a href="#cb50-4" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(sys.argv) <span class="op">==</span> <span class="dv">4</span>, <span class="st">'Need exactly 3 arguments'</span></span>
+<span id="cb50-5"><a href="#cb50-5" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="#cb50-6" tabindex="-1"></a>    operator <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb50-7"><a href="#cb50-7" tabindex="-1"></a>    <span class="cf">assert</span> operator <span class="kw">in</span> [<span class="st">'--add'</span>, <span class="st">'--subtract'</span>, <span class="st">'--multiply'</span>, <span class="st">'--divide'</span>], <span class="op">\</span></span>
+<span id="cb50-8"><a href="#cb50-8" tabindex="-1"></a>        <span class="st">'Operator is not one of --add, --subtract, --multiply, or --divide: bailing out'</span></span>
+<span id="cb50-9"><a href="#cb50-9" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb50-10"><a href="#cb50-10" tabindex="-1"></a>        operand1, operand2 <span class="op">=</span> <span class="bu">float</span>(sys.argv[<span class="dv">2</span>]), <span class="bu">float</span>(sys.argv[<span class="dv">3</span>])</span>
+<span id="cb50-11"><a href="#cb50-11" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb50-12"><a href="#cb50-12" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'cannot convert input to a number: bailing out'</span>)</span>
+<span id="cb50-13"><a href="#cb50-13" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb50-14"><a href="#cb50-14" tabindex="-1"></a></span>
+<span id="cb50-15"><a href="#cb50-15" tabindex="-1"></a>    do_arithmetic(operand1, operator, operand2)</span>
+<span id="cb50-16"><a href="#cb50-16" tabindex="-1"></a></span>
+<span id="cb50-17"><a href="#cb50-17" tabindex="-1"></a><span class="kw">def</span> do_arithmetic(operand1, operator, operand2):</span>
+<span id="cb50-18"><a href="#cb50-18" tabindex="-1"></a></span>
+<span id="cb50-19"><a href="#cb50-19" tabindex="-1"></a>    <span class="cf">if</span> operator <span class="op">==</span> <span class="st">'add'</span>:</span>
+<span id="cb50-20"><a href="#cb50-20" tabindex="-1"></a>        value <span class="op">=</span> operand1 <span class="op">+</span> operand2</span>
+<span id="cb50-21"><a href="#cb50-21" tabindex="-1"></a>    <span class="cf">elif</span> operator <span class="op">==</span> <span class="st">'subtract'</span>:</span>
+<span id="cb50-22"><a href="#cb50-22" tabindex="-1"></a>        value <span class="op">=</span> operand1 <span class="op">-</span> operand2</span>
+<span id="cb50-23"><a href="#cb50-23" tabindex="-1"></a>    <span class="cf">elif</span> operator <span class="op">==</span> <span class="st">'multiply'</span>:</span>
+<span id="cb50-24"><a href="#cb50-24" tabindex="-1"></a>        value <span class="op">=</span> operand1 <span class="op">*</span> operand2</span>
+<span id="cb50-25"><a href="#cb50-25" tabindex="-1"></a>    <span class="cf">elif</span> operator <span class="op">==</span> <span class="st">'divide'</span>:</span>
+<span id="cb50-26"><a href="#cb50-26" tabindex="-1"></a>        value <span class="op">=</span> operand1 <span class="op">/</span> operand2</span>
+<span id="cb50-27"><a href="#cb50-27" tabindex="-1"></a>    <span class="bu">print</span>(value)</span>
+<span id="cb50-28"><a href="#cb50-28" tabindex="-1"></a></span>
+<span id="cb50-29"><a href="#cb50-29" tabindex="-1"></a>main()</span></code></pre>
 </div>
 </div>
 </div>
@@ -1068,7 +1064,7 @@ particular suffix. A call to this script should look like this:</p>
 <div class="codewrapper sourceCode" id="cb51">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python my_ls.py py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" tabindex="-1"></a><span class="ex">$</span> python my_ls.py py</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1085,25 +1081,25 @@ particular suffix. A call to this script should look like this:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb53">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""prints names of all files with sys.argv as suffix"""</span></span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(sys.argv) <span class="op">&gt;=</span> <span class="dv">2</span>, <span class="st">'Argument list cannot be empty'</span></span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    suffix <span class="op">=</span> sys.argv[<span class="dv">1</span>] <span class="co"># NB: behaviour is not as you'd expect if sys.argv[1] is *</span></span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>    glob_input <span class="op">=</span> <span class="st">'*.'</span> <span class="op">+</span> suffix <span class="co"># construct the input</span></span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>    glob_output <span class="op">=</span> <span class="bu">sorted</span>(glob.glob(glob_input)) <span class="co"># call the glob function</span></span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> item <span class="kw">in</span> glob_output: <span class="co"># print the output</span></span>
-<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(item)</span>
-<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span></span>
-<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb53-2"><a href="#cb53-2" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb53-3"><a href="#cb53-3" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb53-5"><a href="#cb53-5" tabindex="-1"></a>    <span class="co">"""prints names of all files with sys.argv as suffix"""</span></span>
+<span id="cb53-6"><a href="#cb53-6" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(sys.argv) <span class="op">&gt;=</span> <span class="dv">2</span>, <span class="st">'Argument list cannot be empty'</span></span>
+<span id="cb53-7"><a href="#cb53-7" tabindex="-1"></a>    suffix <span class="op">=</span> sys.argv[<span class="dv">1</span>] <span class="co"># NB: behaviour is not as you'd expect if sys.argv[1] is *</span></span>
+<span id="cb53-8"><a href="#cb53-8" tabindex="-1"></a>    glob_input <span class="op">=</span> <span class="st">'*.'</span> <span class="op">+</span> suffix <span class="co"># construct the input</span></span>
+<span id="cb53-9"><a href="#cb53-9" tabindex="-1"></a>    glob_output <span class="op">=</span> <span class="bu">sorted</span>(glob.glob(glob_input)) <span class="co"># call the glob function</span></span>
+<span id="cb53-10"><a href="#cb53-10" tabindex="-1"></a>    <span class="cf">for</span> item <span class="kw">in</span> glob_output: <span class="co"># print the output</span></span>
+<span id="cb53-11"><a href="#cb53-11" tabindex="-1"></a>        <span class="bu">print</span>(item)</span>
+<span id="cb53-12"><a href="#cb53-12" tabindex="-1"></a>    <span class="cf">return</span></span>
+<span id="cb53-13"><a href="#cb53-13" tabindex="-1"></a></span>
+<span id="cb53-14"><a href="#cb53-14" tabindex="-1"></a>main()</span></code></pre>
 </div>
 </div>
 </div>
@@ -1129,41 +1125,41 @@ easier to read? Is the program easier to understand?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this is code/readings_07.py</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
-<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> action <span class="kw">in</span> [<span class="st">'-n'</span>, <span class="st">'-m'</span>, <span class="st">'-x'</span>], <span class="op">\</span></span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Action is not one of -n, -m, or -x: '</span> <span class="op">+</span> action</span>
-<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>        process(sys.stdin, action)</span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
-<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>            process(filename, action)</span>
-<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process(filename, action):</span>
-<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'-n'</span>:</span>
-<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'-m'</span>:</span>
-<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'-x'</span>:</span>
-<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-27"><a href="#cb54-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
-<span id="cb54-28"><a href="#cb54-28" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(val)</span>
-<span id="cb54-29"><a href="#cb54-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-30"><a href="#cb54-30" aria-hidden="true" tabindex="-1"></a>main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" tabindex="-1"></a><span class="co"># this is code/readings_07.py</span></span>
+<span id="cb54-2"><a href="#cb54-2" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb54-3"><a href="#cb54-3" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb54-4"><a href="#cb54-4" tabindex="-1"></a></span>
+<span id="cb54-5"><a href="#cb54-5" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb54-6"><a href="#cb54-6" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb54-7"><a href="#cb54-7" tabindex="-1"></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb54-8"><a href="#cb54-8" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
+<span id="cb54-9"><a href="#cb54-9" tabindex="-1"></a>    <span class="cf">assert</span> action <span class="kw">in</span> [<span class="st">'-n'</span>, <span class="st">'-m'</span>, <span class="st">'-x'</span>], <span class="op">\</span></span>
+<span id="cb54-10"><a href="#cb54-10" tabindex="-1"></a>           <span class="st">'Action is not one of -n, -m, or -x: '</span> <span class="op">+</span> action</span>
+<span id="cb54-11"><a href="#cb54-11" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb54-12"><a href="#cb54-12" tabindex="-1"></a>        process(sys.stdin, action)</span>
+<span id="cb54-13"><a href="#cb54-13" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb54-14"><a href="#cb54-14" tabindex="-1"></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb54-15"><a href="#cb54-15" tabindex="-1"></a>            process(filename, action)</span>
+<span id="cb54-16"><a href="#cb54-16" tabindex="-1"></a></span>
+<span id="cb54-17"><a href="#cb54-17" tabindex="-1"></a><span class="kw">def</span> process(filename, action):</span>
+<span id="cb54-18"><a href="#cb54-18" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb54-19"><a href="#cb54-19" tabindex="-1"></a></span>
+<span id="cb54-20"><a href="#cb54-20" tabindex="-1"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'-n'</span>:</span>
+<span id="cb54-21"><a href="#cb54-21" tabindex="-1"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-22"><a href="#cb54-22" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'-m'</span>:</span>
+<span id="cb54-23"><a href="#cb54-23" tabindex="-1"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-24"><a href="#cb54-24" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'-x'</span>:</span>
+<span id="cb54-25"><a href="#cb54-25" tabindex="-1"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-26"><a href="#cb54-26" tabindex="-1"></a></span>
+<span id="cb54-27"><a href="#cb54-27" tabindex="-1"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
+<span id="cb54-28"><a href="#cb54-28" tabindex="-1"></a>        <span class="bu">print</span>(val)</span>
+<span id="cb54-29"><a href="#cb54-29" tabindex="-1"></a></span>
+<span id="cb54-30"><a href="#cb54-30" tabindex="-1"></a>main()</span></code></pre>
 </div>
 </div>
 </div>
@@ -1188,51 +1184,51 @@ prints a message explaining how it should be used.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb55">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this is code/readings_08.py</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(sys.argv) <span class="op">==</span> <span class="dv">1</span>:  <span class="co"># no arguments, so print help message</span></span>
-<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Usage: python readings_08.py action filenames</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Action:</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>              <span class="st">"    Must be one of --min, --mean, or --max.</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Filenames:</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>              <span class="st">"    If blank, input is taken from standard input (stdin).</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>              <span class="st">"    Otherwise, each filename in the list of arguments is processed in turn."</span>)</span>
-<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
-<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
-<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
-<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> action <span class="kw">in</span> [<span class="st">'--min'</span>, <span class="st">'--mean'</span>, <span class="st">'--max'</span>], (</span>
-<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Action is not one of --min, --mean, or --max: '</span> <span class="op">+</span> action)</span>
-<span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a>        process(sys.stdin, action)</span>
-<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
-<span id="cb55-24"><a href="#cb55-24" aria-hidden="true" tabindex="-1"></a>            process(filename, action)</span>
-<span id="cb55-25"><a href="#cb55-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-26"><a href="#cb55-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process(filename, action):</span>
-<span id="cb55-27"><a href="#cb55-27" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb55-28"><a href="#cb55-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-29"><a href="#cb55-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb55-30"><a href="#cb55-30" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb55-31"><a href="#cb55-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
-<span id="cb55-32"><a href="#cb55-32" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb55-33"><a href="#cb55-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb55-34"><a href="#cb55-34" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb55-35"><a href="#cb55-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-36"><a href="#cb55-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
-<span id="cb55-37"><a href="#cb55-37" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(val)</span>
-<span id="cb55-38"><a href="#cb55-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-39"><a href="#cb55-39" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb55-40"><a href="#cb55-40" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" tabindex="-1"></a><span class="co"># this is code/readings_08.py</span></span>
+<span id="cb55-2"><a href="#cb55-2" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb55-3"><a href="#cb55-3" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb55-4"><a href="#cb55-4" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="#cb55-5" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb55-6"><a href="#cb55-6" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb55-7"><a href="#cb55-7" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(sys.argv) <span class="op">==</span> <span class="dv">1</span>:  <span class="co"># no arguments, so print help message</span></span>
+<span id="cb55-8"><a href="#cb55-8" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Usage: python readings_08.py action filenames</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb55-9"><a href="#cb55-9" tabindex="-1"></a>              <span class="st">"Action:</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb55-10"><a href="#cb55-10" tabindex="-1"></a>              <span class="st">"    Must be one of --min, --mean, or --max.</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb55-11"><a href="#cb55-11" tabindex="-1"></a>              <span class="st">"Filenames:</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb55-12"><a href="#cb55-12" tabindex="-1"></a>              <span class="st">"    If blank, input is taken from standard input (stdin).</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb55-13"><a href="#cb55-13" tabindex="-1"></a>              <span class="st">"    Otherwise, each filename in the list of arguments is processed in turn."</span>)</span>
+<span id="cb55-14"><a href="#cb55-14" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb55-15"><a href="#cb55-15" tabindex="-1"></a></span>
+<span id="cb55-16"><a href="#cb55-16" tabindex="-1"></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb55-17"><a href="#cb55-17" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
+<span id="cb55-18"><a href="#cb55-18" tabindex="-1"></a>    <span class="cf">assert</span> action <span class="kw">in</span> [<span class="st">'--min'</span>, <span class="st">'--mean'</span>, <span class="st">'--max'</span>], (</span>
+<span id="cb55-19"><a href="#cb55-19" tabindex="-1"></a>        <span class="st">'Action is not one of --min, --mean, or --max: '</span> <span class="op">+</span> action)</span>
+<span id="cb55-20"><a href="#cb55-20" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb55-21"><a href="#cb55-21" tabindex="-1"></a>        process(sys.stdin, action)</span>
+<span id="cb55-22"><a href="#cb55-22" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb55-23"><a href="#cb55-23" tabindex="-1"></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb55-24"><a href="#cb55-24" tabindex="-1"></a>            process(filename, action)</span>
+<span id="cb55-25"><a href="#cb55-25" tabindex="-1"></a></span>
+<span id="cb55-26"><a href="#cb55-26" tabindex="-1"></a><span class="kw">def</span> process(filename, action):</span>
+<span id="cb55-27"><a href="#cb55-27" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb55-28"><a href="#cb55-28" tabindex="-1"></a></span>
+<span id="cb55-29"><a href="#cb55-29" tabindex="-1"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
+<span id="cb55-30"><a href="#cb55-30" tabindex="-1"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb55-31"><a href="#cb55-31" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
+<span id="cb55-32"><a href="#cb55-32" tabindex="-1"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb55-33"><a href="#cb55-33" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
+<span id="cb55-34"><a href="#cb55-34" tabindex="-1"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb55-35"><a href="#cb55-35" tabindex="-1"></a></span>
+<span id="cb55-36"><a href="#cb55-36" tabindex="-1"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
+<span id="cb55-37"><a href="#cb55-37" tabindex="-1"></a>        <span class="bu">print</span>(val)</span>
+<span id="cb55-38"><a href="#cb55-38" tabindex="-1"></a></span>
+<span id="cb55-39"><a href="#cb55-39" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb55-40"><a href="#cb55-40" tabindex="-1"></a>    main()</span></code></pre>
 </div>
 </div>
 </div>
@@ -1256,44 +1252,44 @@ given it displays the means of the data.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb56">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this is code/readings_09.py</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> action <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'--min'</span>, <span class="st">'--mean'</span>, <span class="st">'--max'</span>]: <span class="co"># if no action given</span></span>
-<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>        action <span class="op">=</span> <span class="st">'--mean'</span>    <span class="co"># set a default action, that being mean</span></span>
-<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>        filenames <span class="op">=</span> sys.argv[<span class="dv">1</span>:] <span class="co"># start the filenames one place earlier in the argv list</span></span>
-<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>        filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
-<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>        process(sys.stdin, action)</span>
-<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
-<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a>            process(filename, action)</span>
-<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process(filename, action):</span>
-<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
-<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
-<span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(val)</span>
-<span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a>main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" tabindex="-1"></a><span class="co"># this is code/readings_09.py</span></span>
+<span id="cb56-2"><a href="#cb56-2" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb56-3"><a href="#cb56-3" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb56-4"><a href="#cb56-4" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb56-6"><a href="#cb56-6" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb56-7"><a href="#cb56-7" tabindex="-1"></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb56-8"><a href="#cb56-8" tabindex="-1"></a>    <span class="cf">if</span> action <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'--min'</span>, <span class="st">'--mean'</span>, <span class="st">'--max'</span>]: <span class="co"># if no action given</span></span>
+<span id="cb56-9"><a href="#cb56-9" tabindex="-1"></a>        action <span class="op">=</span> <span class="st">'--mean'</span>    <span class="co"># set a default action, that being mean</span></span>
+<span id="cb56-10"><a href="#cb56-10" tabindex="-1"></a>        filenames <span class="op">=</span> sys.argv[<span class="dv">1</span>:] <span class="co"># start the filenames one place earlier in the argv list</span></span>
+<span id="cb56-11"><a href="#cb56-11" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb56-12"><a href="#cb56-12" tabindex="-1"></a>        filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
+<span id="cb56-13"><a href="#cb56-13" tabindex="-1"></a></span>
+<span id="cb56-14"><a href="#cb56-14" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb56-15"><a href="#cb56-15" tabindex="-1"></a>        process(sys.stdin, action)</span>
+<span id="cb56-16"><a href="#cb56-16" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb56-17"><a href="#cb56-17" tabindex="-1"></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb56-18"><a href="#cb56-18" tabindex="-1"></a>            process(filename, action)</span>
+<span id="cb56-19"><a href="#cb56-19" tabindex="-1"></a></span>
+<span id="cb56-20"><a href="#cb56-20" tabindex="-1"></a><span class="kw">def</span> process(filename, action):</span>
+<span id="cb56-21"><a href="#cb56-21" tabindex="-1"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb56-22"><a href="#cb56-22" tabindex="-1"></a></span>
+<span id="cb56-23"><a href="#cb56-23" tabindex="-1"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
+<span id="cb56-24"><a href="#cb56-24" tabindex="-1"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb56-25"><a href="#cb56-25" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
+<span id="cb56-26"><a href="#cb56-26" tabindex="-1"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb56-27"><a href="#cb56-27" tabindex="-1"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
+<span id="cb56-28"><a href="#cb56-28" tabindex="-1"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb56-29"><a href="#cb56-29" tabindex="-1"></a></span>
+<span id="cb56-30"><a href="#cb56-30" tabindex="-1"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
+<span id="cb56-31"><a href="#cb56-31" tabindex="-1"></a>        <span class="bu">print</span>(val)</span>
+<span id="cb56-32"><a href="#cb56-32" tabindex="-1"></a></span>
+<span id="cb56-33"><a href="#cb56-33" tabindex="-1"></a>main()</span></code></pre>
 </div>
 </div>
 </div>
@@ -1319,41 +1315,41 @@ test your program?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
-<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">1</span>:]</span>
-<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">&lt;=</span><span class="dv">1</span>: <span class="co">#nothing to check</span></span>
-<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Only 1 file specified on input'</span>)</span>
-<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>        nrow0, ncol0 <span class="op">=</span> row_col_count(filenames[<span class="dv">0</span>])</span>
-<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'First file </span><span class="sc">%s</span><span class="st">: </span><span class="sc">%d</span><span class="st"> rows and </span><span class="sc">%d</span><span class="st"> columns'</span> <span class="op">%</span> (filenames[<span class="dv">0</span>], nrow0, ncol0))</span>
-<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames[<span class="dv">1</span>:]:</span>
-<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a>            nrow, ncol <span class="op">=</span> row_col_count(filename)</span>
-<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> nrow <span class="op">!=</span> nrow0 <span class="kw">or</span> ncol <span class="op">!=</span> ncol0:</span>
-<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">'File </span><span class="sc">%s</span><span class="st"> does not check: </span><span class="sc">%d</span><span class="st"> rows and </span><span class="sc">%d</span><span class="st"> columns'</span> <span class="op">%</span> (filename, nrow, ncol))</span>
-<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">'File </span><span class="sc">%s</span><span class="st"> checks'</span> <span class="op">%</span> filename)</span>
-<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
-<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> row_col_count(filename):</span>
-<span id="cb57-21"><a href="#cb57-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb57-22"><a href="#cb57-22" aria-hidden="true" tabindex="-1"></a>        nrow, ncol <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>).shape</span>
-<span id="cb57-23"><a href="#cb57-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb57-24"><a href="#cb57-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 'ValueError' error is raised when numpy encounters lines that</span></span>
-<span id="cb57-25"><a href="#cb57-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># have different number of data elements in them than the rest of the lines,</span></span>
-<span id="cb57-26"><a href="#cb57-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># or when lines have non-numeric elements</span></span>
-<span id="cb57-27"><a href="#cb57-27" aria-hidden="true" tabindex="-1"></a>        nrow, ncol <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb57-28"><a href="#cb57-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> nrow, ncol</span>
-<span id="cb57-29"><a href="#cb57-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-30"><a href="#cb57-30" aria-hidden="true" tabindex="-1"></a>main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb57-2"><a href="#cb57-2" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb57-3"><a href="#cb57-3" tabindex="-1"></a></span>
+<span id="cb57-4"><a href="#cb57-4" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb57-5"><a href="#cb57-5" tabindex="-1"></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb57-6"><a href="#cb57-6" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">1</span>:]</span>
+<span id="cb57-7"><a href="#cb57-7" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">&lt;=</span><span class="dv">1</span>: <span class="co">#nothing to check</span></span>
+<span id="cb57-8"><a href="#cb57-8" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Only 1 file specified on input'</span>)</span>
+<span id="cb57-9"><a href="#cb57-9" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb57-10"><a href="#cb57-10" tabindex="-1"></a>        nrow0, ncol0 <span class="op">=</span> row_col_count(filenames[<span class="dv">0</span>])</span>
+<span id="cb57-11"><a href="#cb57-11" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'First file </span><span class="sc">%s</span><span class="st">: </span><span class="sc">%d</span><span class="st"> rows and </span><span class="sc">%d</span><span class="st"> columns'</span> <span class="op">%</span> (filenames[<span class="dv">0</span>], nrow0, ncol0))</span>
+<span id="cb57-12"><a href="#cb57-12" tabindex="-1"></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames[<span class="dv">1</span>:]:</span>
+<span id="cb57-13"><a href="#cb57-13" tabindex="-1"></a>            nrow, ncol <span class="op">=</span> row_col_count(filename)</span>
+<span id="cb57-14"><a href="#cb57-14" tabindex="-1"></a>            <span class="cf">if</span> nrow <span class="op">!=</span> nrow0 <span class="kw">or</span> ncol <span class="op">!=</span> ncol0:</span>
+<span id="cb57-15"><a href="#cb57-15" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">'File </span><span class="sc">%s</span><span class="st"> does not check: </span><span class="sc">%d</span><span class="st"> rows and </span><span class="sc">%d</span><span class="st"> columns'</span> <span class="op">%</span> (filename, nrow, ncol))</span>
+<span id="cb57-16"><a href="#cb57-16" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb57-17"><a href="#cb57-17" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">'File </span><span class="sc">%s</span><span class="st"> checks'</span> <span class="op">%</span> filename)</span>
+<span id="cb57-18"><a href="#cb57-18" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb57-19"><a href="#cb57-19" tabindex="-1"></a></span>
+<span id="cb57-20"><a href="#cb57-20" tabindex="-1"></a><span class="kw">def</span> row_col_count(filename):</span>
+<span id="cb57-21"><a href="#cb57-21" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb57-22"><a href="#cb57-22" tabindex="-1"></a>        nrow, ncol <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>).shape</span>
+<span id="cb57-23"><a href="#cb57-23" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb57-24"><a href="#cb57-24" tabindex="-1"></a>        <span class="co"># 'ValueError' error is raised when numpy encounters lines that</span></span>
+<span id="cb57-25"><a href="#cb57-25" tabindex="-1"></a>        <span class="co"># have different number of data elements in them than the rest of the lines,</span></span>
+<span id="cb57-26"><a href="#cb57-26" tabindex="-1"></a>        <span class="co"># or when lines have non-numeric elements</span></span>
+<span id="cb57-27"><a href="#cb57-27" tabindex="-1"></a>        nrow, ncol <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb57-28"><a href="#cb57-28" tabindex="-1"></a>    <span class="cf">return</span> nrow, ncol</span>
+<span id="cb57-29"><a href="#cb57-29" tabindex="-1"></a></span>
+<span id="cb57-30"><a href="#cb57-30" tabindex="-1"></a>main()</span></code></pre>
 </div>
 </div>
 </div>
@@ -1381,44 +1377,44 @@ in each, followed by the total number of lines.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb58">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""print each input filename and the number of lines in it,</span></span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="co">       and print the sum of the number of lines"""</span></span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">1</span>:]</span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    sum_nlines <span class="op">=</span> <span class="dv">0</span> <span class="co">#initialize counting variable</span></span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>: <span class="co"># no filenames, just stdin</span></span>
-<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>        sum_nlines <span class="op">=</span> count_file_like(sys.stdin)</span>
-<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'stdin: </span><span class="sc">%d</span><span class="st">'</span> <span class="op">%</span> sum_nlines)</span>
-<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
-<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>            nlines <span class="op">=</span> count_file(filename)</span>
-<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">'</span><span class="sc">%s</span><span class="st"> </span><span class="sc">%d</span><span class="st">'</span> <span class="op">%</span> (filename, nlines))</span>
-<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a>            sum_nlines <span class="op">+=</span> nlines</span>
-<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'total: </span><span class="sc">%d</span><span class="st">'</span> <span class="op">%</span> sum_nlines)</span>
-<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-19"><a href="#cb58-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_file(filename):</span>
-<span id="cb58-20"><a href="#cb58-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""count the number of lines in a file"""</span></span>
-<span id="cb58-21"><a href="#cb58-21" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> <span class="bu">open</span>(filename, <span class="st">'r'</span>)</span>
-<span id="cb58-22"><a href="#cb58-22" aria-hidden="true" tabindex="-1"></a>    nlines <span class="op">=</span> <span class="bu">len</span>(f.readlines())</span>
-<span id="cb58-23"><a href="#cb58-23" aria-hidden="true" tabindex="-1"></a>    f.close()</span>
-<span id="cb58-24"><a href="#cb58-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(nlines)</span>
-<span id="cb58-25"><a href="#cb58-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-26"><a href="#cb58-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_file_like(file_like):</span>
-<span id="cb58-27"><a href="#cb58-27" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""count the number of lines in a file-like object (eg stdin)"""</span></span>
-<span id="cb58-28"><a href="#cb58-28" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb58-29"><a href="#cb58-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> file_like:</span>
-<span id="cb58-30"><a href="#cb58-30" aria-hidden="true" tabindex="-1"></a>        n <span class="op">=</span> n<span class="op">+</span><span class="dv">1</span></span>
-<span id="cb58-31"><a href="#cb58-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n</span>
-<span id="cb58-32"><a href="#cb58-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-33"><a href="#cb58-33" aria-hidden="true" tabindex="-1"></a>main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb58-2"><a href="#cb58-2" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="#cb58-3" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb58-4"><a href="#cb58-4" tabindex="-1"></a>    <span class="co">"""print each input filename and the number of lines in it,</span></span>
+<span id="cb58-5"><a href="#cb58-5" tabindex="-1"></a><span class="co">       and print the sum of the number of lines"""</span></span>
+<span id="cb58-6"><a href="#cb58-6" tabindex="-1"></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">1</span>:]</span>
+<span id="cb58-7"><a href="#cb58-7" tabindex="-1"></a>    sum_nlines <span class="op">=</span> <span class="dv">0</span> <span class="co">#initialize counting variable</span></span>
+<span id="cb58-8"><a href="#cb58-8" tabindex="-1"></a></span>
+<span id="cb58-9"><a href="#cb58-9" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>: <span class="co"># no filenames, just stdin</span></span>
+<span id="cb58-10"><a href="#cb58-10" tabindex="-1"></a>        sum_nlines <span class="op">=</span> count_file_like(sys.stdin)</span>
+<span id="cb58-11"><a href="#cb58-11" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'stdin: </span><span class="sc">%d</span><span class="st">'</span> <span class="op">%</span> sum_nlines)</span>
+<span id="cb58-12"><a href="#cb58-12" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb58-13"><a href="#cb58-13" tabindex="-1"></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb58-14"><a href="#cb58-14" tabindex="-1"></a>            nlines <span class="op">=</span> count_file(filename)</span>
+<span id="cb58-15"><a href="#cb58-15" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">'</span><span class="sc">%s</span><span class="st"> </span><span class="sc">%d</span><span class="st">'</span> <span class="op">%</span> (filename, nlines))</span>
+<span id="cb58-16"><a href="#cb58-16" tabindex="-1"></a>            sum_nlines <span class="op">+=</span> nlines</span>
+<span id="cb58-17"><a href="#cb58-17" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'total: </span><span class="sc">%d</span><span class="st">'</span> <span class="op">%</span> sum_nlines)</span>
+<span id="cb58-18"><a href="#cb58-18" tabindex="-1"></a></span>
+<span id="cb58-19"><a href="#cb58-19" tabindex="-1"></a><span class="kw">def</span> count_file(filename):</span>
+<span id="cb58-20"><a href="#cb58-20" tabindex="-1"></a>    <span class="co">"""count the number of lines in a file"""</span></span>
+<span id="cb58-21"><a href="#cb58-21" tabindex="-1"></a>    f <span class="op">=</span> <span class="bu">open</span>(filename, <span class="st">'r'</span>)</span>
+<span id="cb58-22"><a href="#cb58-22" tabindex="-1"></a>    nlines <span class="op">=</span> <span class="bu">len</span>(f.readlines())</span>
+<span id="cb58-23"><a href="#cb58-23" tabindex="-1"></a>    f.close()</span>
+<span id="cb58-24"><a href="#cb58-24" tabindex="-1"></a>    <span class="cf">return</span>(nlines)</span>
+<span id="cb58-25"><a href="#cb58-25" tabindex="-1"></a></span>
+<span id="cb58-26"><a href="#cb58-26" tabindex="-1"></a><span class="kw">def</span> count_file_like(file_like):</span>
+<span id="cb58-27"><a href="#cb58-27" tabindex="-1"></a>    <span class="co">"""count the number of lines in a file-like object (eg stdin)"""</span></span>
+<span id="cb58-28"><a href="#cb58-28" tabindex="-1"></a>    n <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb58-29"><a href="#cb58-29" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> file_like:</span>
+<span id="cb58-30"><a href="#cb58-30" tabindex="-1"></a>        n <span class="op">=</span> n<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb58-31"><a href="#cb58-31" tabindex="-1"></a>    <span class="cf">return</span> n</span>
+<span id="cb58-32"><a href="#cb58-32" tabindex="-1"></a></span>
+<span id="cb58-33"><a href="#cb58-33" tabindex="-1"></a>main()</span></code></pre>
 </div>
 </div>
 </div>
@@ -1438,7 +1434,7 @@ can use <code>sys.exit()</code> to exit the program.)</p>
 <div class="codewrapper sourceCode" id="cb59">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python check_arguments.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1" tabindex="-1"></a><span class="ex">$</span> python check_arguments.py</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1448,7 +1444,7 @@ can use <code>sys.exit()</code> to exit the program.)</p>
 <div class="codewrapper sourceCode" id="cb61">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python check_arguments.py filename.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1" tabindex="-1"></a><span class="ex">$</span> python check_arguments.py filename.txt</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1535,7 +1531,7 @@ standard input.</li>
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/12-cmdline.html",
   "dateCreated": "2014-11-25",
   "dateModified": "2023-11-10",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>
