@@ -465,12 +465,13 @@ N-dimensional array, the functionality for which is provided by the
 NumPy library. These data correspond to arthritis patients’
 inflammation. The rows are the individual patients, and the columns are
 their daily inflammation measurements.</p>
-<div id="callout1" class="callout">
+<div id="data-type" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="data-type">Data Type<a class="anchor" aria-label="anchor" href="#data-type"></a></h3>
+<div id="data-type" class="callout-inner">
+<h3 class="callout-title">Data Type<a class="anchor" aria-label="anchor" href="#data-type"></a>
+</h3>
 <div class="callout-content">
 <p>A Numpy array contains one or more elements of the same type. The
 <code>type</code> function will only tell you that a variable is a NumPy
@@ -552,12 +553,13 @@ its indices go from 0 to M-1 on the first axis and 0 to N-1 on the
 second. It takes a bit of getting used to, but one way to remember the
 rule is that the index is how many steps we have to take from the start
 to get the item we want.</p>
-<figure><img src="fig/python-zero-index.svg" alt="'data' is a 3 by 3 numpy array containing row 0: ['A', 'B', 'C'], row 1: ['D', 'E', 'F'], androw 2: ['G', 'H', 'I']. Starting in the upper left hand corner, data[0, 0] = 'A', data[0, 1] = 'B',data[0, 2] = 'C', data[1, 0] = 'D', data[1, 1] = 'E', data[1, 2] = 'F', data[2, 0] = 'G',data[2, 1] = 'H', and data[2, 2] = 'I', in the bottom right hand corner." class="figure mx-auto d-block"></figure><div id="callout2" class="callout">
+<figure><img src="fig/python-zero-index.svg" alt="'data' is a 3 by 3 numpy array containing row 0: ['A', 'B', 'C'], row 1: ['D', 'E', 'F'], androw 2: ['G', 'H', 'I']. Starting in the upper left hand corner, data[0, 0] = 'A', data[0, 1] = 'B',data[0, 2] = 'C', data[1, 0] = 'D', data[1, 1] = 'E', data[1, 2] = 'F', data[2, 0] = 'G',data[2, 1] = 'H', and data[2, 2] = 'I', in the bottom right hand corner." class="figure mx-auto d-block"></figure><div id="in-the-corner" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="in-the-corner">In the Corner<a class="anchor" aria-label="anchor" href="#in-the-corner"></a></h3>
+<div id="in-the-corner" class="callout-inner">
+<h3 class="callout-title">In the Corner<a class="anchor" aria-label="anchor" href="#in-the-corner"></a>
+</h3>
 <div class="callout-content">
 <p>What may also surprise you is that when Python displays an array, it
 shows the element with index <code>[0, 0]</code> in the upper left
@@ -647,12 +649,13 @@ to compute <code>data</code>’s mean value:</p>
 </div>
 <p><code>mean</code> is a <a href="reference.html#function">function</a>
 that takes an array as an <a href="reference.html#argument">argument</a>.</p>
-<div id="callout3" class="callout">
+<div id="not-all-functions-have-input" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="not-all-functions-have-input">Not All Functions Have Input<a class="anchor" aria-label="anchor" href="#not-all-functions-have-input"></a></h3>
+<div id="not-all-functions-have-input" class="callout-inner">
+<h3 class="callout-title">Not All Functions Have Input<a class="anchor" aria-label="anchor" href="#not-all-functions-have-input"></a>
+</h3>
 <div class="callout-content">
 <p>Generally, a function uses inputs to produce outputs. However, some
 functions produce outputs without needing any input. For example,
@@ -697,12 +700,13 @@ on.</p>
 minimum inflammation: 0.0
 standard deviation: 4.61383319712</code></pre>
 </div>
-<div id="callout4" class="callout">
+<div id="mystery-functions-in-ipython" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="mystery-functions-in-ipython">Mystery Functions in IPython<a class="anchor" aria-label="anchor" href="#mystery-functions-in-ipython"></a></h3>
+<div id="mystery-functions-in-ipython" class="callout-inner">
+<h3 class="callout-title">Mystery Functions in IPython<a class="anchor" aria-label="anchor" href="#mystery-functions-in-ipython"></a>
+</h3>
 <div class="callout-content">
 <p>How did we know what functions NumPy has and how to use them? If you
 are working in IPython or in a Jupyter Notebook, there is an easy way to
@@ -722,12 +726,13 @@ function you’re interested in, for example:
 </div>
 </div>
 </div>
-<div id="callout5" class="callout">
+<div id="confusing-function-names" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="confusing-function-names">Confusing Function Names<a class="anchor" aria-label="anchor" href="#confusing-function-names"></a></h3>
+<div id="confusing-function-names" class="callout-inner">
+<h3 class="callout-title">Confusing Function Names<a class="anchor" aria-label="anchor" href="#confusing-function-names"></a>
+</h3>
 <div class="callout-content">
 <p>One might wonder why the functions are called <code>amax</code> and
 <code>amin</code> and not <code>max</code> and <code>min</code> or why
@@ -1355,7 +1360,7 @@ the specified axis.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.2" class="external-link">sandpaper (0.16.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.3" class="external-link">sandpaper (0.16.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
