@@ -61,7 +61,7 @@ print(odds[3])
 This is a bad approach for three reasons:
 
 1. **Not scalable**. Imagine you need to print a list that has hundreds
-  of elements.  It might be easier to type them in manually.
+  of elements. It might be easier to type them in manually.
 
 2. **Difficult to maintain**. If we want to decorate each printed element with an
   asterisk or any other character, we would have to change four lines of code. While
@@ -159,7 +159,7 @@ of the loop body (e.g. `end for`); everything indented after the `for` statement
 
 In the example above, the loop variable was given the name `num` as a mnemonic;
 it is short for 'number'.
-We can choose any name we want for variables.  We might just as easily have chosen the name
+We can choose any name we want for variables. We might just as easily have chosen the name
 `banana` for the loop variable, as long as we use the same name when we invoke the variable inside
 the loop:
 
