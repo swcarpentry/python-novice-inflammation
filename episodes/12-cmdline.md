@@ -55,7 +55,7 @@ $ python ../code/readings_04.py --mean inflammation-01.csv
 5.9
 ```
 
-We might also want to look at the minimum of the first four lines
+We might also want to look at the minimum of the first four lines. For that purpose, we use the shell `head` command with the flag `-4` to give us 4 lines and the pipe (using the `|` symbol) only these four lines to our script.
 
 ```bash
 $ head -4 inflammation-01.csv | python ../code/readings_06.py --min
