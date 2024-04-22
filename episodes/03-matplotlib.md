@@ -124,7 +124,7 @@ axes2 = fig.add_subplot(1, 3, 2)
 axes3 = fig.add_subplot(1, 3, 3)
 
 axes1.set_ylabel('average')
-axes1.plot(numpy.mean(data, axis=0))
+axes1.plot(numpy.mean(data, axis=0), 'x'))
 
 axes2.set_ylabel('max')
 axes2.plot(numpy.amax(data, axis=0))
