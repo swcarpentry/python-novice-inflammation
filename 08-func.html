@@ -321,10 +321,10 @@
               </div>
             </div>
 
-            <hr class="half-width"><div class="accordion accordion-flush resources" id="accordionFlush12">
+            <hr class="half-width"><div class="accordion accordion-flush lesson-resources" id="accordionFlush12">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwelve">
-                  <button class="accordion-button collapsed" id="resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                  <button class="accordion-button collapsed" id="lesson-resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
                     RESOURCES
                   </button>
                 </h2>
@@ -344,7 +344,7 @@
                 </div>
               </div>
             </div>
-            <hr class="half-width resources"><a href="aio.html">See all in one page</a>
+            <hr class="half-width lesson-resources"><a href="aio.html">See all in one page</a>
 
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
@@ -494,8 +494,7 @@ boiling point of water: 100.0 C</code></pre>
 </div>
 <p>We’ve successfully called the function that we defined, and we have
 access to the value that we returned.</p>
-<section><h2 class="section-heading" id="composing-functions">Composing Functions<a class="anchor" aria-label="anchor" href="#composing-functions"></a>
-<a class="anchor" aria-label="anchor" href="#composing-functions"></a></h2>
+<section><h2 class="section-heading" id="composing-functions">Composing Functions<a class="anchor" aria-label="anchor" href="#composing-functions"></a></h2>
 <hr class="half-width"><p>Now that we’ve seen how to turn Fahrenheit into Celsius, we can also
 write the function to turn Celsius into Kelvin:</p>
 <div class="codewrapper sourceCode" id="cb7">
@@ -535,8 +534,7 @@ effect we want. Real-life functions will usually be larger than the ones
 shown here — typically half a dozen to a few dozen lines — but they
 shouldn’t ever be much longer than that, or the next person who reads it
 won’t be able to understand what’s going on.</p>
-</section><section><h2 class="section-heading" id="variable-scope">Variable Scope<a class="anchor" aria-label="anchor" href="#variable-scope"></a>
-<a class="anchor" aria-label="anchor" href="#variable-scope"></a></h2>
+</section><section><h2 class="section-heading" id="variable-scope">Variable Scope<a class="anchor" aria-label="anchor" href="#variable-scope"></a></h2>
 <hr class="half-width"><p>In composing our temperature conversion functions, we created
 variables inside of those functions, <code>temp</code>,
 <code>temp_c</code>, <code>temp_f</code>, and <code>temp_k</code>. We
@@ -594,8 +592,7 @@ variables:</p>
 <pre class="output" tabindex="0"><code>temperature in Fahrenheit was: 212.0
 temperature in Kelvin was: 373.15</code></pre>
 </div>
-</section><section><h2 class="section-heading" id="tidying-up">Tidying up<a class="anchor" aria-label="anchor" href="#tidying-up"></a>
-<a class="anchor" aria-label="anchor" href="#tidying-up"></a></h2>
+</section><section><h2 class="section-heading" id="tidying-up">Tidying up<a class="anchor" aria-label="anchor" href="#tidying-up"></a></h2>
 <hr class="half-width"><p>Now that we know how to wrap bits of code up in functions, we can
 make our inflammation analysis easier to read and easier to reuse.
 First, let’s make a <code>visualize</code> function that generates our
@@ -665,8 +662,7 @@ We can reproduce the previous analysis with a much simpler
 and understand what is happening in the <code>for</code> loop. Even
 better, if at some later date we want to use either of those pieces of
 code again, we can do so in a single line.</p>
-</section><section><h2 class="section-heading" id="testing-and-documenting">Testing and Documenting<a class="anchor" aria-label="anchor" href="#testing-and-documenting"></a>
-<a class="anchor" aria-label="anchor" href="#testing-and-documenting"></a></h2>
+</section><section><h2 class="section-heading" id="testing-and-documenting">Testing and Documenting<a class="anchor" aria-label="anchor" href="#testing-and-documenting"></a></h2>
 <hr class="half-width"><p>Once we start putting things in functions so that we can re-use them,
 we need to start testing that those functions are working correctly. To
 see how to do this, let’s write a function to offset a dataset so that
@@ -828,8 +824,7 @@ offset_mean(data, target_mean_value)
     &gt;&gt;&gt; offset_mean([1, 2, 3], 0)
     array([-1.,  0.,  1.])</code></pre>
 </div>
-</section><section><h2 class="section-heading" id="defining-defaults">Defining Defaults<a class="anchor" aria-label="anchor" href="#defining-defaults"></a>
-<a class="anchor" aria-label="anchor" href="#defining-defaults"></a></h2>
+</section><section><h2 class="section-heading" id="defining-defaults">Defining Defaults<a class="anchor" aria-label="anchor" href="#defining-defaults"></a></h2>
 <hr class="half-width"><p>We have passed parameters to functions in two ways: directly, as in
 <code>type(data)</code>, and by name, as in
 <code>numpy.loadtxt(fname='something.csv', delimiter=',')</code>. In
@@ -1021,8 +1016,7 @@ the filename because it’s the first item in the list, but if we want the
 we <em>do</em> have to provide <code>delimiter=</code> for the second
 parameter since <code>delimiter</code> is not the second parameter in
 the list.</p>
-</section><section><h2 class="section-heading" id="readable-functions">Readable functions<a class="anchor" aria-label="anchor" href="#readable-functions"></a>
-<a class="anchor" aria-label="anchor" href="#readable-functions"></a></h2>
+</section><section><h2 class="section-heading" id="readable-functions">Readable functions<a class="anchor" aria-label="anchor" href="#readable-functions"></a></h2>
 <hr class="half-width"><p>Consider these two functions:</p>
 <div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1069,8 +1063,7 @@ readable code!</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="combining-strings" class="callout-inner">
-<h3 class="callout-title">Combining Strings<a class="anchor" aria-label="anchor" href="#combining-strings"></a>
-</h3>
+<h3 class="callout-title">Combining Strings</h3>
 <div class="callout-content">
 <p>“Adding” two strings produces their concatenation:
 <code>'a' + 'b'</code> is <code>'ab'</code>. Write a function called
@@ -1113,8 +1106,7 @@ A call to your function should look like this:</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="return-versus-print" class="callout-inner">
-<h3 class="callout-title">Return versus print<a class="anchor" aria-label="anchor" href="#return-versus-print"></a>
-</h3>
+<h3 class="callout-title">Return versus print</h3>
 <div class="callout-content">
 <p>Note that <code>return</code> and <code>print</code> are not
 interchangeable. <code>print</code> is a Python function that
@@ -1168,8 +1160,7 @@ will print <code>None</code>. As a result, we will see:</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="selecting-characters-from-strings" class="callout-inner">
-<h3 class="callout-title">Selecting Characters From Strings<a class="anchor" aria-label="anchor" href="#selecting-characters-from-strings"></a>
-</h3>
+<h3 class="callout-title">Selecting Characters From Strings</h3>
 <div class="callout-content">
 <p>If the variable <code>s</code> refers to a string, then
 <code>s[0]</code> is the string’s first character and <code>s[-1]</code>
@@ -1211,8 +1202,7 @@ call to your function should look like this:</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="rescaling-an-array" class="callout-inner">
-<h3 class="callout-title">Rescaling an Array<a class="anchor" aria-label="anchor" href="#rescaling-an-array"></a>
-</h3>
+<h3 class="callout-title">Rescaling an Array</h3>
 <div class="callout-content">
 <p>Write a function <code>rescale</code> that takes an array as input
 and returns a corresponding array of values scaled to lie in the range
@@ -1247,8 +1237,7 @@ value <code>v</code> should be <code>(v-L) / (H-L)</code>.)</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="testing-and-documenting-your-function" class="callout-inner">
-<h3 class="callout-title">Testing and Documenting Your Function<a class="anchor" aria-label="anchor" href="#testing-and-documenting-your-function"></a>
-</h3>
+<h3 class="callout-title">Testing and Documenting Your Function</h3>
 <div class="callout-content">
 <p>Run the commands <code>help(numpy.arange)</code> and
 <code>help(numpy.linspace)</code> to see how to use these functions to
@@ -1288,8 +1277,7 @@ function, add a docstring that explains what it does.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="defining-defaults-1" class="callout-inner">
-<h3 class="callout-title">Defining Defaults<a class="anchor" aria-label="anchor" href="#defining-defaults-1"></a>
-</h3>
+<h3 class="callout-title">Defining Defaults</h3>
 <div class="callout-content">
 <p>Rewrite the <code>rescale</code> function so that it scales data to
 lie between <code>0.0</code> and <code>1.0</code> by default, but will
@@ -1326,8 +1314,7 @@ behave the same way?</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="variables-inside-and-outside-functions" class="callout-inner">
-<h3 class="callout-title">Variables Inside and Outside Functions<a class="anchor" aria-label="anchor" href="#variables-inside-and-outside-functions"></a>
-</h3>
+<h3 class="callout-title">Variables Inside and Outside Functions</h3>
 <div class="callout-content">
 <p>What does the following piece of code display when run — and why?</p>
 <div class="codewrapper sourceCode" id="cb67">
@@ -1384,8 +1371,7 @@ value.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="mixing-default-and-non-default-parameters" class="callout-inner">
-<h3 class="callout-title">Mixing Default and Non-Default Parameters<a class="anchor" aria-label="anchor" href="#mixing-default-and-non-default-parameters"></a>
-</h3>
+<h3 class="callout-title">Mixing Default and Non-Default Parameters</h3>
 <div class="callout-content">
 <p>Given the following code:</p>
 <div class="codewrapper sourceCode" id="cb69">
@@ -1448,8 +1434,7 @@ definition.</p>
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="readable-code" class="callout-inner">
-<h3 class="callout-title">Readable Code<a class="anchor" aria-label="anchor" href="#readable-code"></a>
-</h3>
+<h3 class="callout-title">Readable Code</h3>
 <div class="callout-content">
 <p>Revise a function you wrote for one of the previous exercises to try
 to make the code more readable. Then, collaborate with one of your
@@ -1464,8 +1449,7 @@ readable.</p>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul><li>Define a function using
 <code>def function_name(parameter)</code>.</li>
@@ -1526,7 +1510,7 @@ it with different parameter values to customize its behavior.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.6" class="external-link">sandpaper (0.16.6)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1549,7 +1533,7 @@ it with different parameter values to customize its behavior.</li>
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/08-func.html",
   "dateCreated": "2014-11-25",
   "dateModified": "2023-11-10",
-  "datePublished": "2024-08-20"
+  "datePublished": "2024-08-25"
 }
 
   </script><script>
