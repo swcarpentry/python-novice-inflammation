@@ -392,7 +392,7 @@ The code above loops through `a_list`, assigning the index to `idx` and the valu
 Suppose you have encoded a polynomial as a list of coefficients in
 the following way: the first element is the constant term, the
 second element is the coefficient of the linear term, the third is the
-coefficient of the quadratic term, etc.
+coefficient of the quadratic term, where the polynomial is of the form $ax^0 + bx^1 + cx^2$.
 
 ```python
 x = 5
