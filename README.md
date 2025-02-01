@@ -79,8 +79,7 @@ Software Carpentry is a volunteer project that teaches basic computing skills to
 
 ## About The Carpentries
 
-The Carpentries is a fiscally sponsored project of [Community Initiatives][community-initiatives],
-a registered 501(c)3 non-profit organisation based in California, USA. We are a global community
+The Carpentries is a registered 501(c)3 non-profit organisation based in Delaware, USA. We are a global community
 teaching foundational computational and data science skills to researchers in academia,
 industry and government. More information can be found [here][cp-about].
 
