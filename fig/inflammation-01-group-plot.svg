@@ -1,0 +1,110 @@
+<svg width="720pt" height="216pt" version="1.1" viewBox="0 0 720 216" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <style type="text/css">*{stroke-linecap:butt;stroke-linejoin:round;white-space:pre;}</style>
+  </defs>
+  <path d="m0 216h720v-216h-720z" fill="#ffffff"/>
+  <path d="m44.57 188.1h189.2v-177.3h-189.2z" fill="#ffffff"/>
+  <defs>
+    <path id="b" d="m0 0v3.5" stroke="#000000" />
+  </defs>
+  <use x="53.168378" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="53.168378" y="202.718437"  font-size="10px" text-anchor="middle">0</text>
+  <use x="97.262622" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="97.262622" y="202.718437"  font-size="10px" text-anchor="middle">10</text>
+  <use x="141.356866" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="141.356866" y="202.718437"  font-size="10px" text-anchor="middle">20</text>
+  <use x="185.45111" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="185.45111" y="202.718437"  font-size="10px" text-anchor="middle">30</text>
+  <use x="229.545354" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="229.545354" y="202.718437"  font-size="10px" text-anchor="middle">40</text>
+  <defs>
+    <path id="a" d="m0 0h-3.5" stroke="#000000" />
+  </defs>
+  <use x="44.57" y="180.06" stroke="#000000"  xlink:href="#a"/>
+  <text x="37.57" y="183.859219"  font-size="10px" text-anchor="end">0</text>
+  <use x="44.57" y="155.727925" stroke="#000000"  xlink:href="#a"/>
+  <text x="37.57" y="159.527143"  font-size="10px" text-anchor="end">2</text>
+  <use x="44.57" y="131.395849" stroke="#000000"  xlink:href="#a"/>
+  <text x="37.57" y="135.195068"  font-size="10px" text-anchor="end">4</text>
+  <use x="44.57" y="107.063774" stroke="#000000"  xlink:href="#a"/>
+  <text x="37.57" y="110.862992"  font-size="10px" text-anchor="end">6</text>
+  <use x="44.57" y="82.731698" stroke="#000000"  xlink:href="#a"/>
+  <text x="37.57" y="86.530917"  font-size="10px" text-anchor="end">8</text>
+  <use x="44.57" y="58.399623" stroke="#000000"  xlink:href="#a"/>
+  <text x="37.57" y="62.198841"  font-size="10px" text-anchor="end">10</text>
+  <use x="44.57" y="34.067547" stroke="#000000"  xlink:href="#a"/>
+  <text x="37.57" y="37.866766"  font-size="10px" text-anchor="end">12</text>
+  <text transform="rotate(-90 18.77 99.46)" x="18.765312" y="99.46"  font-size="10px" text-anchor="middle">average</text>
+  <path d="m53.17 180.1 4.409-5.475 4.409-8.111 4.409-7.705 4.409-8.313 4.409-8.719 4.409-7.908 4.409-1.014 4.409-16.42 4.409-3.447 4.409-5.272 4.409 0.6083 4.409-29.81 4.409 7.502 4.409-7.705 4.409-13.79 4.409-1.014 4.409-12.77 4.409-11.35 4.409-9.53 4.409-10.95 4.409 15.61 4.409 11.35 4.409 10.54 4.409 2.028 4.409 16.22 4.409-5.88 4.409 23.12 4.409-1.014 4.409 9.125 4.409 6.286 4.409 1.419 4.409 10.14 4.409 18.45 4.409 3.65 4.409-3.244 4.409 13.18 4.409 11.96 4.409 4.461 4.409 6.894" clip-path="url(#d)" fill="none" stroke="#1f77b4" stroke-linecap="square" stroke-width="1.5"/>
+  <path d="m44.57 188.1v-177.3" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m233.7 188.1v-177.3" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m44.57 188.1h189.2" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m44.57 10.8h189.2" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m281 188.1h189.2v-177.3h-189.2z" fill="#ffffff"/>
+  <use x="289.568378" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="289.568378" y="202.718437"  font-size="10px" text-anchor="middle">0</text>
+  <use x="333.662622" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="333.662622" y="202.718437"  font-size="10px" text-anchor="middle">10</text>
+  <use x="377.756866" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="377.756866" y="202.718437"  font-size="10px" text-anchor="middle">20</text>
+  <use x="421.85111" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="421.85111" y="202.718437"  font-size="10px" text-anchor="middle">30</text>
+  <use x="465.945354" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="465.945354" y="202.718437"  font-size="10px" text-anchor="middle">40</text>
+  <use x="280.97" y="180.06" stroke="#000000"  xlink:href="#a"/>
+  <text x="273.97" y="183.859219"  font-size="10px" text-anchor="end">0</text>
+  <use x="280.97" y="139.76" stroke="#000000"  xlink:href="#a"/>
+  <text x="273.97" y="143.559219"  font-size="10px" text-anchor="end">5</text>
+  <use x="280.97" y="99.46" stroke="#000000"  xlink:href="#a"/>
+  <text x="273.97" y="103.259219"  font-size="10px" text-anchor="end">10</text>
+  <use x="280.97" y="59.16" stroke="#000000"  xlink:href="#a"/>
+  <text x="273.97" y="62.959219"  font-size="10px" text-anchor="end">15</text>
+  <use x="280.97" y="18.86" stroke="#000000"  xlink:href="#a"/>
+  <text x="273.97" y="22.659219"  font-size="10px" text-anchor="end">20</text>
+  <text transform="rotate(-90 255.2 99.46)" x="255.165312" y="99.46"  font-size="10px" text-anchor="middle">max</text>
+  <path d="m289.6 180.1 88.19-161.2 83.78 153.1" clip-path="url(#e)" fill="none" stroke="#1f77b4" stroke-linecap="square" stroke-width="1.5"/>
+  <path d="m281 188.1v-177.3" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m470.1 188.1v-177.3" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m281 188.1h189.2" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m281 10.8h189.2" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m517.4 188.1h189.2v-177.3h-189.2z" fill="#ffffff"/>
+  <use x="525.968378" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="525.968378" y="202.718437"  font-size="10px" text-anchor="middle">0</text>
+  <use x="570.062622" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="570.062622" y="202.718437"  font-size="10px" text-anchor="middle">10</text>
+  <use x="614.156866" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="614.156866" y="202.718437"  font-size="10px" text-anchor="middle">20</text>
+  <use x="658.25111" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="658.25111" y="202.718437"  font-size="10px" text-anchor="middle">30</text>
+  <use x="702.345354" y="188.12" stroke="#000000"  xlink:href="#b"/>
+  <text x="702.345354" y="202.718437"  font-size="10px" text-anchor="middle">40</text>
+  <use x="517.37" y="180.06" stroke="#000000"  xlink:href="#a"/>
+  <text x="510.37" y="183.859219"  font-size="10px" text-anchor="end">0</text>
+  <use x="517.37" y="147.82" stroke="#000000"  xlink:href="#a"/>
+  <text x="510.37" y="151.619219"  font-size="10px" text-anchor="end">1</text>
+  <use x="517.37" y="115.58" stroke="#000000"  xlink:href="#a"/>
+  <text x="510.37" y="119.379219"  font-size="10px" text-anchor="end">2</text>
+  <use x="517.37" y="83.34" stroke="#000000"  xlink:href="#a"/>
+  <text x="510.37" y="87.139219"  font-size="10px" text-anchor="end">3</text>
+  <use x="517.37" y="51.1" stroke="#000000"  xlink:href="#a"/>
+  <text x="510.37" y="54.899219"  font-size="10px" text-anchor="end">4</text>
+  <use x="517.37" y="18.86" stroke="#000000"  xlink:href="#a"/>
+  <text x="510.37" y="22.659219"  font-size="10px" text-anchor="end">5</text>
+  <text transform="rotate(-90 497.9 99.46)" x="497.927812" y="99.46"  font-size="10px" text-anchor="middle">min</text>
+  <path d="m526 180.1h4.409 4.409 4.409l4.409-32.24h4.409 4.409 4.409l4.409-32.24h4.409 4.409 4.409l4.409-32.24h4.409 4.409 4.409l8.819-64.48h4.409 4.409 4.409l4.409 32.24h4.409 4.409 4.409l4.409 32.24h4.409 4.409 4.409l4.409 32.24h4.409 4.409 4.409l4.409 32.24h4.409 4.409 4.409l4.409 32.24h4.409 4.409" clip-path="url(#c)" fill="none" stroke="#1f77b4" stroke-linecap="square" stroke-width="1.5"/>
+  <path d="m517.4 188.1v-177.3" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m706.5 188.1v-177.3" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m517.4 188.1h189.2" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m517.4 10.8h189.2" fill="none" stroke="#000000" stroke-linecap="square" />
+  <defs>
+    <clipPath id="d">
+      <rect x="44.57" y="10.8" width="189.2" height="177.3"/>
+    </clipPath>
+    <clipPath id="e">
+      <rect x="281" y="10.8" width="189.2" height="177.3"/>
+    </clipPath>
+    <clipPath id="c">
+      <rect x="517.4" y="10.8" width="189.2" height="177.3"/>
+    </clipPath>
+  </defs>
+</svg>
