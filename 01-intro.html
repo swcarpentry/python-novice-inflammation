@@ -210,6 +210,7 @@
 <li><a href="#types-of-data">Types of data</a></li>
 <li><a href="#using-variables-in-python">Using Variables in Python</a></li>
 <li><a href="#built-in-python-functions">Built-in Python functions</a></li>
+<li><a href="#getting-help">Getting Help</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -373,7 +374,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Python Fundamentals</h1>
-        <p>Last updated on 2023-04-21 |
+        <p>Last updated on 2025-05-07 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/01-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -397,6 +398,7 @@
 <li>How do I use a function?</li>
 <li>Can I change the value associated with a variable after I create
 it?</li>
+<li>How can I get help while learning to program?</li>
 </ul></div>
 </div>
 </div>
@@ -572,7 +574,119 @@ equals <code>=</code> sign:</p>
 </h3>
 <pre class="output" tabindex="0"><code>weight in kilograms is now: 65.0</code></pre>
 </div>
-<div id="variables-as-sticky-notes" class="callout">
+</section><section><h2 class="section-heading" id="getting-help">Getting Help<a class="anchor" aria-label="anchor" href="#getting-help"></a></h2>
+<hr class="half-width"><p>Use the built-in function <code>help</code> to get help for a
+function. Every built-in function has extensive <a href="https://docs.python.org/3/library/index.html" class="external-link">documentation that
+can also be found online</a>.</p>
+<div class="codewrapper sourceCode" id="cb20">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">print</span>)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Help on built-in function print in module builtins:
+
+print(*args, sep=' ', end='\n', file=None, flush=False)
+    Prints the values to a stream, or to sys.stdout by default.
+
+    sep
+      string inserted between values, default a space.
+    end
+      string appended after the last value, default a newline.
+    file
+      a file-like object (stream); defaults to the current sys.stdout.
+    flush
+      whether to forcibly flush the stream.</code></pre>
+</div>
+<p>This help message (the function’s “docstring”) includes a usage
+statement, a list of parameters accepted by the function, and their
+default values if they have them.</p>
+<p>It is normal to encounter error messages while programming, whether
+you are learning for the first time or have been programming for many
+years. <a href="./09-errors.html">We will discuss error messages in more
+detail later</a>. For now, let’s explore how people use them to get more
+help when they are stuck with their Python code.</p>
+<ul><li>Search the internet: paste the last line of your error message or
+the word “python” and a short description of what you want to do into
+your favourite search engine and you will usually find several examples
+where other people have encountered the same problem and came looking
+for help.
+<ul><li>
+<a href="https://stackoverflow.com/questions" class="external-link">StackOverflow</a> can
+be particularly helpful for this: answers to questions are presented as
+a ranked thread ordered according to how useful other users found them
+to be.</li>
+<li>
+<strong>Take care:</strong> copying and pasting code written by
+somebody else is risky unless you understand exactly what it is
+doing!</li>
+</ul></li>
+<li>Ask somebody “in the real world”. If you have a colleague or friend
+with more expertise in Python than you have, show them the problem you
+are having and ask them for help.</li>
+</ul><p><a href="./11-debugging.html">We will discuss more debugging
+strategies in greater depth later in the lesson</a>.</p>
+<div class="section level3">
+<h3 id="generative-ai">Generative AI<a class="anchor" aria-label="anchor" href="#generative-ai"></a></h3>
+
+<p>It is increasingly common for people to use <em>generative AI</em>
+chatbots such as ChatGPT to get help while coding. You will probably
+receive some useful guidance by presenting your error message to the
+chatbot and asking it what went wrong. However, the way this help is
+provided by the chatbot is different. Answers on StackOverflow have
+(probably) been given by a human as a direct response to the question
+asked. But generative AI chatbots, which are based on an advanced
+statistical model, respond by generating the <em>most likely</em>
+sequence of text that would follow the prompt they are given.</p>
+<p>While responses from generative AI tools can often be helpful, they
+are not always reliable. These tools sometimes generate plausible but
+incorrect or misleading information, so (just as with an answer found on
+the internet) it is essential to verify their accuracy. You need the
+knowledge and skills to be able to understand these responses, to judge
+whether or not they are accurate, and to fix any errors in the code it
+offers you.</p>
+<p>In addition to asking for help, programmers can use generative AI
+tools to generate code from scratch; extend, improve and reorganise
+existing code; translate code between programming languages; figure out
+what terms to use in a search of the internet; and more. However, there
+are drawbacks that you should be aware of.</p>
+<p>The models used by these tools have been “trained” on very large
+volumes of data, much of it taken from the internet, and the responses
+they produce reflect that training data, and may recapitulate its
+inaccuracies or biases. The environmental costs (energy and water use)
+of LLMs are a lot higher than other technologies, both during
+development (known as training) and when an individual user uses one
+(also called inference). For more information see the <a href="https://huggingface.co/blog/sasha/ai-environment-primer" class="external-link">AI
+Environmental Impact Primer</a> developed by researchers at HuggingFace,
+an AI hosting platform. Concerns also exist about the way the data for
+this training was obtained, with questions raised about whether the
+people developing the LLMs had permission to use it. Other ethical
+concerns have also been raised, such as reports that workers were
+exploited during the training process.</p>
+<p><strong>We recommend that you avoid getting help from generative AI
+during the workshop</strong> for several reasons:</p>
+<ol style="list-style-type: decimal"><li>For most problems you will encounter at this stage, help and answers
+can be found among the first results returned by searching the
+internet.</li>
+<li>The foundational knowledge and skills you will learn in this lesson
+by writing and fixing your own programs are essential to be able to
+evaluate the correctness and safety of any code you receive from online
+help or a generative AI chatbot. If you choose to use these tools in the
+future, the expertise you gain from learning and practising these
+fundamentals on your own will help you use them more effectively.</li>
+<li>As you start out with programming, the mistakes you make will be the
+kinds that have also been made – and overcome! – by everybody else who
+learned to program before you. Since these mistakes and the questions
+you are likely to have at this stage are common, they are also better
+represented than other, more specialised problems and tasks in the data
+that was used to train generative AI tools. This means that a generative
+AI chatbot is <em>more likely to produce accurate responses</em> to
+questions that novices ask, which could give you a false impression of
+how reliable they will be when you are ready to do things that are more
+advanced.</li>
+</ol><div id="variables-as-sticky-notes" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -586,12 +700,12 @@ sticky note on a particular value.</p>
 variable does <strong>not</strong> change values of other, seemingly
 related, variables. For example, let’s store the subject’s weight in
 pounds in its own variable:</p>
-<div class="codewrapper sourceCode" id="cb20">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># There are 2.2 pounds per kilogram</span></span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>weight_lb <span class="op">=</span> <span class="fl">2.2</span> <span class="op">*</span> weight_kg</span>
-<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'weight in kilograms:'</span>, weight_kg, <span class="st">'and in pounds:'</span>, weight_lb)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># There are 2.2 pounds per kilogram</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>weight_lb <span class="op">=</span> <span class="fl">2.2</span> <span class="op">*</span> weight_kg</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'weight in kilograms:'</span>, weight_kg, <span class="st">'and in pounds:'</span>, weight_lb)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -608,11 +722,11 @@ variable <code>weight_lb</code> (i.e. the sticky note
 each variable is “stuck” to completely distinct and unrelated
 values.</p>
 <p>Let’s now change <code>weight_kg</code>:</p>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>weight_kg <span class="op">=</span> <span class="fl">100.0</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'weight in kilograms is now:'</span>, weight_kg, <span class="st">'and weight in pounds is still:'</span>, weight_lb)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>weight_kg <span class="op">=</span> <span class="fl">100.0</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'weight in kilograms is now:'</span>, weight_kg, <span class="st">'and weight in pounds is still:'</span>, weight_lb)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -634,13 +748,13 @@ from, it is not updated when we change <code>weight_kg</code>.</p>
 <p>What values do the variables <code>mass</code> and <code>age</code>
 have after each of the following statements? Test your answer by
 executing the lines.</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>mass <span class="op">=</span> <span class="fl">47.5</span></span>
-<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">122</span></span>
-<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>mass <span class="op">=</span> mass <span class="op">*</span> <span class="fl">2.0</span></span>
-<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>age <span class="op">=</span> age <span class="op">-</span> <span class="dv">20</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>mass <span class="op">=</span> <span class="fl">47.5</span></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">122</span></span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>mass <span class="op">=</span> mass <span class="op">*</span> <span class="fl">2.0</span></span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>age <span class="op">=</span> age <span class="op">-</span> <span class="dv">20</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -674,12 +788,12 @@ executing the lines.</p>
 <p>Python allows you to assign multiple values to multiple variables in
 one line by separating the variables and values with commas. What does
 the following program print out?</p>
-<div class="codewrapper sourceCode" id="cb26">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>first, second <span class="op">=</span> <span class="st">'Grace'</span>, <span class="st">'Hopper'</span></span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>third, fourth <span class="op">=</span> second, first</span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="bu">print</span>(third, fourth)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>first, second <span class="op">=</span> <span class="st">'Grace'</span>, <span class="st">'Hopper'</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>third, fourth <span class="op">=</span> second, first</span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="bu">print</span>(third, fourth)</span></code></pre>
 </div>
 </div>
 </div>
@@ -708,12 +822,12 @@ the following program print out?</p>
 <h3 class="callout-title">Seeing Data Types</h3>
 <div class="callout-content">
 <p>What are the data types of the following variables?</p>
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>planet <span class="op">=</span> <span class="st">'Earth'</span></span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>apples <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>distance <span class="op">=</span> <span class="fl">10.5</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a>planet <span class="op">=</span> <span class="st">'Earth'</span></span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>apples <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>distance <span class="op">=</span> <span class="fl">10.5</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -725,12 +839,12 @@ the following program print out?</p>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb29">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(planet))</span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(apples))</span>
-<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(distance))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(planet))</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(apples))</span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(distance))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -761,7 +875,11 @@ them.</li>
 <li>Use <code># some kind of explanation</code> to add comments to
 programs.</li>
 <li>Built-in functions are always available to use.</li>
+<li>Use <code>help(thing)</code> to view help for something.</li>
+<li>Error messages provide information about what has gone wrong with
+your program and where.</li>
 </ul></div>
+</div>
 </div>
 </div>
 </section></div> <!-- / div.lesson-content -->
@@ -822,7 +940,7 @@ programs.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/01-intro.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/01-intro.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2023-04-21",
+  "dateModified": "2025-05-07",
   "datePublished": "2025-05-07"
 }
 
