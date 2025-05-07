@@ -16,6 +16,7 @@ exercises: 10
 - How can I create a new variable in Python?
 - How do I use a function?
 - Can I change the value associated with a variable after I create it?
+- How can I get help while learning to program?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -175,6 +176,91 @@ print('weight in kilograms is now:', weight_kg)
 weight in kilograms is now: 65.0
 ```
 
+## Getting Help
+Use the built-in function `help` to get help for a function.
+Every built-in function has extensive [documentation that can also be found online](https://docs.python.org/3/library/index.html).
+
+```python
+help(print)
+```
+
+```output
+Help on built-in function print in module builtins:
+
+print(*args, sep=' ', end='\n', file=None, flush=False)
+    Prints the values to a stream, or to sys.stdout by default.
+
+    sep
+      string inserted between values, default a space.
+    end
+      string appended after the last value, default a newline.
+    file
+      a file-like object (stream); defaults to the current sys.stdout.
+    flush
+      whether to forcibly flush the stream.
+```
+
+This help message (the function's "docstring") includes a usage statement, a list of parameters accepted by the function, and their default values if they have them.
+
+It is normal to encounter error messages while programming, whether you are learning for the first time or have been programming for many years.
+[We will discuss error messages in more detail later](./09-errors.md). 
+For now, let's explore how people use them to get more help when they are stuck with their Python code.
+
+* Search the internet: 
+  paste the last line of your error message or the word "python" and a short description of what you want to do into your favourite search engine 
+  and you will usually find several examples where other people have encountered the same problem and came looking for help.
+    * [StackOverflow](https://stackoverflow.com/questions) can be particularly helpful for this: answers to questions are presented as a ranked thread ordered according to how useful other users found them to be.
+    * **Take care:** copying and pasting code written by somebody else is risky unless you understand exactly what it is doing!
+* ask somebody "in the real world". 
+  If you have a colleague or friend with more expertise in Python than you have, show them the problem you are having and ask them for help.
+* Sometimes, the act of articulating your question can help you to identify what is going wrong.
+  This is known as ["rubber duck debugging"](https://en.wikipedia.org/wiki/Rubber_duck_debugging) among programmers.
+
+### Generative AI
+
+::::::::::::::::::::::::::::: instructor
+
+### Choose how to teach this section
+The section on generative AI is intended to be concise but Instructors may choose to devote more time to the topic in a workshop.
+Depending on your own level of experience and comfort with talking about and using these tools, you could choose to do any of the following:
+
+* Explain how large language models work and are trained, and/or the difference between generative AI, other forms of AI that currently exist, and the limits of what LLMs can do (e.g., they can't "reason").
+* Demonstrate how you recommend that learners use generative AI.
+* Discuss the ethical concerns listed below, as well as others that you are aware of, to help learners make an informed choice about whether or not to use generative AI tools.
+
+This is a fast-moving technology. 
+If you are preparing to teach this section and you feel it has become outdated, please open an issue on the lesson repository to let the Maintainers know and/or a pull request to suggest updates and improvements.
+
+::::::::::::::::::::::::::::::::::::::::
+
+It is increasingly common for people to use _generative AI_ chatbots such as ChatGPT to get help while coding. 
+You will probably receive some useful guidance by presenting your error message to the chatbot and asking it what went wrong. 
+However, the way this help is provided by the chatbot is different. 
+Answers on StackOverflow have (probably) been given by a human as a direct response to the question asked. 
+But generative AI chatbots, which are based on an advanced statistical model, respond by generating the _most likely_ sequence of text that would follow the prompt they are given.
+
+While responses from generative AI tools can often be helpful, they are not always reliable. 
+These tools sometimes generate plausible but incorrect or misleading information, so (just as with an answer found on the internet) it is essential to verify their accuracy.
+You need the knowledge and skills to be able to understand these responses, to judge whether or not they are accurate, and to fix any errors in the code it offers you.
+
+In addition to asking for help, programmers can use generative AI tools to generate code from scratch; extend, improve and reorganise existing code; translate code between programming languages; figure out what terms to use in a search of the internet; and more.
+However, there are drawbacks that you should be aware of.
+
+The models used by these tools have been "trained" on very large volumes of data, much of it taken from the internet, and the responses they produce reflect that training data, and may recapitulate its inaccuracies or biases.
+The environmental costs (energy and water use) of LLMs are a lot higher than other technologies, both during development (known as training) and when an individual user uses one (also called inference). For more information see the [AI Environmental Impact Primer](https://huggingface.co/blog/sasha/ai-environment-primer) developed by researchers at HuggingFace, an AI hosting platform. 
+Concerns also exist about the way the data for this training was obtained, with questions raised about whether the people developing the LLMs had permission to use it.
+Other ethical concerns have also been raised, such as reports that workers were exploited during the training process.
+
+**We recommend that you avoid getting help from generative AI during the workshop** for several reasons:
+
+1. For most problems you will encounter at this stage, help and answers can be found among the first results returned by searching the internet.
+2. The foundational knowledge and skills you will learn in this lesson by writing and fixing your own programs  are essential to be able to evaluate the correctness and safety of any code you receive from online help or a generative AI chatbot. 
+   If you choose to use these tools in the future, the expertise you gain from learning and practising these fundamentals on your own will help you use them more effectively.
+3. As you start out with programming, the mistakes you make will be the kinds that have also been made -- and overcome! -- by everybody else who learned to program before you. 
+  Since these mistakes and the questions you are likely to have at this stage are common, they are also better represented than other, more specialised problems and tasks in the data that was used to train generative AI tools.
+  This means that a generative AI chatbot is _more likely to produce accurate responses_ to questions that novices ask, which could give you a false impression of how reliable they will be when you are ready to do things that are more advanced.
+
+
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Variables as Sticky Notes
@@ -325,6 +411,8 @@ print(type(distance))
 - Use `print(something)` to display the value of `something`.
 - Use `# some kind of explanation` to add comments to programs.
 - Built-in functions are always available to use.
+- Use `help(thing)` to view help for something.
+- Error messages provide information about what has gone wrong with your program and where.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
