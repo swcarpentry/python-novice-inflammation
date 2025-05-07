@@ -212,7 +212,7 @@ most version control systems (e.g. git, Mercurial) have:
 
 And speaking of help:
 if we can't find a bug in 10 minutes,
-we should *be humble* and ask for help.
+we should *be humble* and [ask for help](./01-intro.md#getting-help).
 Explaining the problem to someone else is often useful,
 since hearing what we're thinking helps us spot inconsistencies and hidden assumptions.
 If you don't have someone nearby to share your problem description with, get a
