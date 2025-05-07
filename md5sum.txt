@@ -19,6 +19,6 @@
 "instructors/extra_exercises.md" "3cf917b8a4324afbfc26db087018a3be" "site/built/extra_exercises.md" "2023-04-21"
 "instructors/instructor-notes.md" "a492a732a51a4f3601b440636aa569f5" "site/built/instructor-notes.md" "2023-04-21"
 "learners/discuss.md" "0472061d33c7331f16f8e8aeb1ba72cd" "site/built/discuss.md" "2023-04-21"
-"learners/reference.md" "1215ba7b4e245de11527725d4164d175" "site/built/reference.md" "2024-12-03"
+"learners/reference.md" "2ba17bebfebeb00ebe6aed6a384006f4" "site/built/reference.md" "2025-05-07"
 "learners/setup.md" "1c1270e5a9934be95250683be8b2bfbc" "site/built/setup.md" "2023-09-06"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2023-04-21"
