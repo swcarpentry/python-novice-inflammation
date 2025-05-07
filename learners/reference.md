@@ -300,4 +300,5 @@ See also: [syntax error](#syntax-error).
 :   A loop that keeps executing as long as some condition is true.
 See also: [for loop](#for-loop).
 
-
+[whitespace]{#whitespace}
+:   The space, newline, carriage return, and horizontal and vertical tab characters that take up space but do not create a visible mark.
