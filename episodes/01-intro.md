@@ -211,10 +211,10 @@ For now, let's explore how people use them to get more help when they are stuck 
   and you will usually find several examples where other people have encountered the same problem and came looking for help.
     * [StackOverflow](https://stackoverflow.com/questions) can be particularly helpful for this: answers to questions are presented as a ranked thread ordered according to how useful other users found them to be.
     * **Take care:** copying and pasting code written by somebody else is risky unless you understand exactly what it is doing!
-* ask somebody "in the real world". 
+* Ask somebody "in the real world". 
   If you have a colleague or friend with more expertise in Python than you have, show them the problem you are having and ask them for help.
-* Sometimes, the act of articulating your question can help you to identify what is going wrong.
-  This is known as ["rubber duck debugging"](https://en.wikipedia.org/wiki/Rubber_duck_debugging) among programmers.
+
+[We will discuss more debugging strategies in greater depth later in the lesson](./11-debugging.md).
 
 ### Generative AI
 
