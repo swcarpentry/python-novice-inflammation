@@ -169,7 +169,7 @@ Since a list can contain any Python variables, it can even contain other lists.
 For example, you could represent the products on the shelves of a small grocery shop
 as a nested list called `veg`:
 
-![](fig/04_groceries_veg.png){alt='veg is represented as a shelf full of produce. There are three rows of vegetableson the shelf, and each row contains three baskets of vegetables. We can labeleach basket according to the type of vegetable it contains, so the top rowcontains (from left to right) lettuce, lettuce, and peppers.'}
+![](fig/04_groceries_veg.png){alt='veg is represented as a shelf full of produce. There are three rows of vegetables on the shelf, and each row contains three baskets of vegetables. We can label each basket according to the type of vegetable it contains, so the top row contains (from left to right) lettuce, lettuce, and peppers.'}
 
 To store the contents of the shelf in a nested list, you write it this way:
 
@@ -183,7 +183,7 @@ Here are some visual examples of how indexing a list of lists `veg` works. First
 you can reference each row on the shelf as a separate list. For example, `veg[2]`
 represents the bottom row, which is a list of the baskets in that row.
 
-![](fig/04_groceries_veg0.png){alt='veg is now shown as a list of three rows, with veg\[0\] representing the top row ofthree baskets, veg\[1\] representing the second row, and veg\[2\] representing the bottom row.'}
+![](fig/04_groceries_veg0.png){alt='veg is now shown as a list of three rows, with veg\[0\] representing the top row of three baskets, veg\[1\] representing the second row, and veg\[2\] representing the bottom row.'}
 
 Index operations using the image would work like this:
 
@@ -206,7 +206,7 @@ print(veg[0])
 To reference a specific basket on a specific shelf, you use two indexes. The first
 index represents the row (from top to bottom) and the second index represents
 the specific basket (from left to right).
-![](fig/04_groceries_veg00.png){alt='veg is now shown as a two-dimensional grid, with each basket labeled according toits index in the nested list. The first index is the row number and the secondindex is the basket number, so veg\[1\]\[3\] represents the basket on the far rightside of the second row (basket 4 on row 2): zucchini'}
+![](fig/04_groceries_veg00.png){alt='veg is now shown as a two-dimensional grid, with each basket labeled according to its index in the nested list. The first index is the row number and the second index is the basket number, so veg\[1\]\[3\] represents the basket on the far right side of the second row (basket 4 on row 2): zucchini'}
 
 ```python
 print(veg[0][0])
