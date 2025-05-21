@@ -48,7 +48,7 @@ image = matplotlib.pyplot.imshow(data)
 matplotlib.pyplot.show()
 ```
 
-![](fig/inflammation-01-imshow.svg){alt='Heat map representing the data variable. Each cell is colored by value along a color gradientfrom blue to yellow.'}
+![](fig/inflammation-01-imshow.svg){alt='Heat map representing the data variable. Each cell is colored by value along a color gradient from blue to yellow.'}
 
 Each row in the heat map corresponds to a patient in the clinical trial dataset, and each column
 corresponds to a day in the dataset.  Blue pixels in this heat map represent low values, while
