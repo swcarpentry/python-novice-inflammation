@@ -719,7 +719,7 @@ strategies in greater depth later in the lesson</a>.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Choose how to teach this section </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>The section on generative AI is intended to be concise but
 Instructors may choose to devote more time to the topic in a workshop.
@@ -878,7 +878,7 @@ executing the lines.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -917,7 +917,7 @@ the following program print out?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -951,7 +951,7 @@ the following program print out?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2007,7 +2007,7 @@ the specified axis.</li>
 </div>
 </section></section><section id="aio-03-matplotlib"><p>Content from <a href="03-matplotlib.html">Visualizing Tabular Data</a></p>
 <hr>
-<p>Last updated on 2023-11-07 |
+<p>Last updated on 2025-05-22 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/03-matplotlib.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 50 minutes</p>
@@ -2081,7 +2081,7 @@ you need the following two lines:</p>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>image <span class="op">=</span> matplotlib.pyplot.imshow(data)</span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>matplotlib.pyplot.show()</span></code></pre>
 </div>
-<figure><img src="../fig/inflammation-01-imshow.svg" alt="Heat map representing the data variable. Each cell is colored by value along a color gradientfrom blue to yellow." class="figure mx-auto d-block"></figure><p>Each row in the heat map corresponds to a patient in the clinical
+<figure><img src="../fig/inflammation-01-imshow.svg" alt="Heat map representing the data variable. Each cell is colored by value along a color gradient from blue to yellow." class="figure mx-auto d-block"></figure><p>Each row in the heat map corresponds to a patient in the clinical
 trial dataset, and each column corresponds to a day in the dataset. Blue
 pixels in this heat map represent low values, while yellow pixels
 represent high values. As we can see, the general number of inflammation
@@ -2310,7 +2310,7 @@ scale. (Hint: you can make use of the <code>max</code> and
 <h3 class="callout-title">Drawing Straight Lines</h3>
 <div class="callout-content">
 <p>In the center and right subplots above, we expect all lines to look
-like step functions because non-integer value are not realistic for the
+like step functions because non-integer values are not realistic for the
 minimum and maximum values. However, you can see that the lines are not
 always vertical or horizontal, and in particular the step function in
 the subplot on the right looks slanted. Why is this?</p>
@@ -2457,7 +2457,7 @@ library for creating simple visualizations.</li>
 </div>
 </section></section><section id="aio-04-lists"><p>Content from <a href="04-lists.html">Storing Multiple Values in Lists</a></p>
 <hr>
-<p>Last updated on 2023-11-07 |
+<p>Last updated on 2025-05-22 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/04-lists.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 45 minutes</p>
@@ -2654,7 +2654,7 @@ writing your code.</p>
 other lists.</p>
 <p>For example, you could represent the products on the shelves of a
 small grocery shop as a nested list called <code>veg</code>:</p>
-<figure><img src="../fig/04_groceries_veg.png" alt="veg is represented as a shelf full of produce. There are three rows of vegetableson the shelf, and each row contains three baskets of vegetables. We can labeleach basket according to the type of vegetable it contains, so the top rowcontains (from left to right) lettuce, lettuce, and peppers." class="figure mx-auto d-block"></figure><p>To store the contents of the shelf in a nested list, you write it
+<figure><img src="../fig/04_groceries_veg.png" alt="veg is represented as a shelf full of produce. There are three rows of vegetables on the shelf, and each row contains three baskets of vegetables. We can label each basket according to the type of vegetable it contains, so the top row contains (from left to right) lettuce, lettuce, and peppers." class="figure mx-auto d-block"></figure><p>To store the contents of the shelf in a nested list, you write it
 this way:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2667,7 +2667,7 @@ this way:</p>
 <code>veg</code> works. First, you can reference each row on the shelf
 as a separate list. For example, <code>veg[2]</code> represents the
 bottom row, which is a list of the baskets in that row.</p>
-<figure><img src="../fig/04_groceries_veg0.png" alt="veg is now shown as a list of three rows, with veg[0] representing the top row ofthree baskets, veg[1] representing the second row, and veg[2] representing the bottom row." class="figure mx-auto d-block"></figure><p>Index operations using the image would work like this:</p>
+<figure><img src="../fig/04_groceries_veg0.png" alt="veg is now shown as a list of three rows, with veg[0] representing the top row of three baskets, veg[1] representing the second row, and veg[2] representing the bottom row." class="figure mx-auto d-block"></figure><p>Index operations using the image would work like this:</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2690,7 +2690,7 @@ bottom row, which is a list of the baskets in that row.</p>
 </div>
 <p>To reference a specific basket on a specific shelf, you use two
 indexes. The first index represents the row (from top to bottom) and the
-second index represents the specific basket (from left to right). <img src="../fig/04_groceries_veg00.png" alt="veg is now shown as a two-dimensional grid, with each basket labeled according toits index in the nested list. The first index is the row number and the secondindex is the basket number, so veg[1][3] represents the basket on the far rightside of the second row (basket 4 on row 2): zucchini" class="figure"></p>
+second index represents the specific basket (from left to right). <img src="../fig/04_groceries_veg00.png" alt="veg is now shown as a two-dimensional grid, with each basket labeled according to its index in the nested list. The first index is the row number and the second index is the basket number, so veg[1][3] represents the basket on the far right side of the second row (basket 4 on row 2): zucchini" class="figure"></p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3090,7 +3090,7 @@ changed).</li>
 </div>
 </section></section><section id="aio-05-loop"><p>Content from <a href="05-loop.html">Repeating Actions with Loops</a></p>
 <hr>
-<p>Last updated on 2024-08-25 |
+<p>Last updated on 2025-05-22 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/05-loop.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 30 minutes</p>
@@ -3131,7 +3131,7 @@ calculations.</li>
 plots values of interest from our first inflammation dataset
 (<code>inflammation-01.csv</code>), which revealed some suspicious
 features in it.</p>
-<figure><img src="../fig/03-loop_2_0.png" alt="Line graphs showing average, maximum and minimum inflammation across all patients over a 40-dayperiod." class="figure mx-auto d-block"></figure><p>We have a dozen data sets right now and potentially more on the way
+<figure><img src="../fig/03-loop_2_0.png" alt="Line graphs showing average, maximum and minimum inflammation across all patients over a 40-day period." class="figure mx-auto d-block"></figure><p>We have a dozen data sets right now and potentially more on the way
 if Dr. Maverick can keep up their surprisingly fast clinical trial rate.
 We want to create plots for all of our data sets with a single
 statement. To do that, we’ll have to teach the computer how to repeat
@@ -3255,7 +3255,7 @@ thing in a sequence. The general form of a loop is:</p>
 <span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>    <span class="co"># do things using variable, such as print</span></span></code></pre>
 </div>
 <p>Using the odds example above, the loop might look like this:</p>
-<figure><img src="../fig/05-loops_image_num.png" alt="Loop variable 'num' being assigned the value of each element in the list odds in turn andthen being printed" class="figure mx-auto d-block"></figure><p>where each number (<code>num</code>) in the variable
+<figure><img src="../fig/05-loops_image_num.png" alt="Loop variable 'num' being assigned the value of each element in the list odds in turn and then being printed" class="figure mx-auto d-block"></figure><p>where each number (<code>num</code>) in the variable
 <code>odds</code> is looped through and printed one number after
 another. The other numbers in the diagram denote which loop cycle the
 number was printed in (1 being the first loop cycle, and 6 being the
@@ -3606,7 +3606,7 @@ that contains other values.</li>
 </div>
 </div></section><section id="aio-06-files"><p>Content from <a href="06-files.html">Analyzing Data from Multiple Files</a></p>
 <hr>
-<p>Last updated on 2023-11-07 |
+<p>Last updated on 2025-05-22 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/06-files.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -3719,12 +3719,12 @@ output:</p>
 </h3>
 <pre class="output" tabindex="0"><code>inflammation-02.csv</code></pre>
 </div>
-<figure><img src="../fig/03-loop_49_3.png" alt="Output from the second iteration of the for loop. Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period for all patients in the seconddataset." class="figure mx-auto d-block"></figure><div class="codewrapper">
+<figure><img src="../fig/03-loop_49_3.png" alt="Output from the second iteration of the for loop. Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period for all patients in the second dataset." class="figure mx-auto d-block"></figure><div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>inflammation-03.csv</code></pre>
 </div>
-<figure><img src="../fig/03-loop_49_5.png" alt="Output from the third iteration of the for loop. Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period for all patients in the thirddataset." class="figure mx-auto d-block"></figure><p>The plots generated for the second clinical trial file look very
+<figure><img src="../fig/03-loop_49_5.png" alt="Output from the third iteration of the for loop. Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period for all patients in the third dataset." class="figure mx-auto d-block"></figure><p>The plots generated for the second clinical trial file look very
 similar to the plots for the first file: their average plots show
 similar “noisy” rises and falls; their maxima plots show exactly the
 same linear rise and fall; and their minima plots show similar staircase
@@ -3734,7 +3734,7 @@ are far less suspicious than the first two datasets, however the minima
 plot shows that the third dataset minima is consistently zero across
 every day of the trial. If we produce a heat map for the third data file
 we see the following:</p>
-<figure><img src="../fig/inflammation-03-imshow.svg" alt="Heat map of the third inflammation dataset. Note that there are sporadic zero values throughoutthe entire dataset, and the last patient only has zero values over the 40 day study." class="figure mx-auto d-block"></figure><p>We can see that there are zero values sporadically distributed across
+<figure><img src="../fig/inflammation-03-imshow.svg" alt="Heat map of the third inflammation dataset. Note that there are sporadic zero values throughout the entire dataset, and the last patient only has zero values over the 40 day study." class="figure mx-auto d-block"></figure><p>We can see that there are zero values sporadically distributed across
 all patients and days of the clinical trial, suggesting that there were
 potential issues with data collection throughout the trial. In addition,
 we can see that the last patient in the study didn’t have any
@@ -3759,7 +3759,7 @@ difference between the leftmost plots of the first two figures.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3816,7 +3816,7 @@ patients.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3955,7 +3955,7 @@ condition, with an <code>if</code> statement:</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>The following example will lead to a syntax error in the Python
 prompt, as it seems to expect exactly one top-level statement per
@@ -4229,7 +4229,7 @@ Why did you pick this answer?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>C gets printed because the first two conditions,
 <code>4 &gt; 5</code> and <code>4 == 5</code>, are not true, but
@@ -4320,7 +4320,7 @@ numbers?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Hint </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>There is a <a href="https://docs.python.org/3/library/functions.html#abs" class="external-link">built-in
 function <code>abs</code></a> that returns the absolute value of a
@@ -4344,7 +4344,7 @@ number:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Solution 1 </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4366,7 +4366,7 @@ number:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Solution 2 </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4412,7 +4412,7 @@ less readable than writing the same without in-place operators?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4510,7 +4510,7 @@ starts with the string passed as an argument, that is:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4554,7 +4554,7 @@ people think is a vowel, and some do not)?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4603,7 +4603,7 @@ values.</li>
 </div>
 </section></section><section id="aio-08-func"><p>Content from <a href="08-func.html">Creating Functions</a></p>
 <hr>
-<p>Last updated on 2025-05-07 |
+<p>Last updated on 2025-05-22 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/08-func.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 30 minutes</p>
@@ -5328,7 +5328,7 @@ A call to your function should look like this:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5374,7 +5374,7 @@ following commands?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Python will first execute the function <code>add</code> with
 <code>a = 7</code> and <code>b = 3</code>, and, therefore, print
@@ -5424,7 +5424,7 @@ call to your function should look like this:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb63">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5456,7 +5456,7 @@ value <code>v</code> should be <code>(v-L) / (H-L)</code>.)</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5491,7 +5491,7 @@ function, add a docstring that explains what it does.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb65">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5531,7 +5531,7 @@ behave the same way?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb66">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5580,7 +5580,7 @@ behave the same way?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5622,7 +5622,7 @@ value.</p>
 <span id="cb69-4"><a href="#cb69-4" tabindex="-1"></a></span>
 <span id="cb69-5"><a href="#cb69-5" tabindex="-1"></a><span class="bu">print</span>(numbers(<span class="dv">1</span>, three<span class="op">=</span><span class="dv">3</span>))</span></code></pre>
 </div>
-<p>what do you expect will be printed? What is actually printed? What
+<p>What do you expect will be printed? What is actually printed? What
 rule do you think Python is following?</p>
 <ol style="list-style-type: decimal">
 <li><code>1234</code></li>
@@ -5654,7 +5654,7 @@ run?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <p>Attempting to define the <code>numbers</code> function results in
 <code>4. SyntaxError</code>. The defined parameters <code>two</code> and
@@ -6885,7 +6885,7 @@ your tests but not his/hers or vice versa?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6952,7 +6952,7 @@ fail.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ul>
 <li>The first assertion checks that the input sequence
@@ -8518,8 +8518,8 @@ standard input.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/instructor/aio.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/aio.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2025-05-20",
-  "datePublished": "2025-05-20"
+  "dateModified": "2025-05-22",
+  "datePublished": "2025-05-22"
 }
 
   </script><script>
