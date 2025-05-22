@@ -909,7 +909,7 @@ def numbers(one, two=2, three, four=4):
 print(numbers(1, three=3))
 ```
 
-what do you expect will be printed?  What is actually printed?
+What do you expect will be printed?  What is actually printed?
 What rule do you think Python is following?
 
 1. `1234`

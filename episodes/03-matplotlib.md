@@ -48,7 +48,7 @@ image = matplotlib.pyplot.imshow(data)
 matplotlib.pyplot.show()
 ```
 
-![](fig/inflammation-01-imshow.svg){alt='Heat map representing the data variable. Each cell is colored by value along a color gradientfrom blue to yellow.'}
+![](fig/inflammation-01-imshow.svg){alt='Heat map representing the data variable. Each cell is colored by value along a color gradient from blue to yellow.'}
 
 Each row in the heat map corresponds to a patient in the clinical trial dataset, and each column
 corresponds to a day in the dataset.  Blue pixels in this heat map represent low values, while
@@ -242,7 +242,7 @@ axes3.set_ylim(numpy.amin(min_data), numpy.amax(min_data) * 1.1)
 ## Drawing Straight Lines
 
 In the center and right subplots above, we expect all lines to look like step functions because
-non-integer value are not realistic for the minimum and maximum values. However, you can see
+non-integer values are not realistic for the minimum and maximum values. However, you can see
 that the lines are not always vertical or horizontal, and in particular the step function
 in the subplot on the right looks slanted. Why is this?
 
