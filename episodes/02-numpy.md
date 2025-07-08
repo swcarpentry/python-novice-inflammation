@@ -424,7 +424,7 @@ operation across an axis:
 
 To find the **maximum inflammation reported for each patient**, you would apply the `max` function moving across the columns (axis 1). To find the **daily average inflammation reported across patients**, you would apply the `mean` function moving down the rows (axis 0). 
 
-o support this functionality, most array functions allow us to specify the axis we want to work on. If we ask for the max across axis 1 (columns in our 2D example), we get:
+To support this functionality, most array functions allow us to specify the axis we want to work on. If we ask for the max across axis 1 (columns in our 2D example), we get:
 
 ```python
 print(numpy.max(data, axis=1))
