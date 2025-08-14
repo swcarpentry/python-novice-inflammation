@@ -36,6 +36,8 @@ you like.
 A Jupyter Notebook provides a browser-based interface for working with Python.
 You can launch a notebook from the command line:
 
+:::::::::::::::: spoiler
+
 ## Command line (Terminal)
 
 1\. Navigate to the `data` directory:
