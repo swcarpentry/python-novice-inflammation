@@ -38,8 +38,6 @@ You can launch a notebook from the command line:
 
 :::::::::::::::: spoiler
 
-:::::::::::::::: spoiler
-
 ## Command line (Terminal)
 
 1\. Navigate to the `data` directory:
