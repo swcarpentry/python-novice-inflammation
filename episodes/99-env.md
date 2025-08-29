@@ -43,6 +43,34 @@ In which would it be better to continue working in the existing environment?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::: challenge
+
+### Creating and Managing Environments
+You want to begin a new project to keep track of the side effects from Dr. Maverick's new medication.
+
+1. Create an environment for this project, called `side-effects`. 
+1. Activate the new environment.
+1. Install the following dependencies for the project:
+    * `numpy`
+    * `matplotlib`
+    * `skimage`, a popular library for image processing
+1. Deactivate the environment.
+1. Finally, activate the `carpentries` environment for the workshop again.
+
+::::::::::::::::::::: solution
+
+1. `conda create --name=side-effects`
+1. `conda activate side-effects`
+1. `conda install numpy matplotlib skimage`
+1. `conda deactivate side-effects`
+1. `conda activate carpentries`
+
+::::::::::::::::::::::::::::::
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 :::::::::::::::::::::::::::::: keypoints
 
