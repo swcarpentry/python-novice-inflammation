@@ -61,8 +61,8 @@ You need to understand the concepts of **files** and **directories** and how to 
 interpreter before tackling this lesson. This lesson sometimes references Jupyter
 Notebook although you can use any Python interpreter mentioned in the [Setup](learners/setup.md).
 
-The commands in this lesson pertain to any officially supported Python version, currently **Python
-3\.8+**.  Newer versions usually have better error printouts, so using newer Python versions is
+The commands in this lesson pertain to any [officially supported Python version](https://devguide.python.org/versions/#supported-versions).
+Newer versions usually have better error printouts, so using newer Python versions is
 recommend if possible.
 
 
