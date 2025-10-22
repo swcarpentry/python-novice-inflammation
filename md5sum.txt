@@ -20,5 +20,5 @@
 "instructors/instructor-notes.md" "a492a732a51a4f3601b440636aa569f5" "site/built/instructor-notes.md" "2023-04-21"
 "learners/discuss.md" "0472061d33c7331f16f8e8aeb1ba72cd" "site/built/discuss.md" "2023-04-21"
 "learners/reference.md" "2ba17bebfebeb00ebe6aed6a384006f4" "site/built/reference.md" "2025-05-07"
-"learners/setup.md" "ece13107c5c1890b54d5ca5eeabfa3d8" "site/built/setup.md" "2025-08-14"
+"learners/setup.md" "fddd90282c9c7ba596e22d56d4888fa1" "site/built/setup.md" "2025-10-22"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2023-04-21"
