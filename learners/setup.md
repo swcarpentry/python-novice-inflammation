@@ -11,7 +11,10 @@ and instructions on how to obtain them are provided below.
 ## Install Python
 
 In this lesson, we will be using Python 3 with some of its most popular scientific libraries.
-One can install a plain-vanilla Python and all required libraries by hand.
+One can install a plain-vanilla Python and all required libraries by hand. If you've followed
+the [Carpentry workshop installation instructions](https://carpentries.github.io/workshop-template/install_instructions/#python-1)
+you will have installed miniforge and the required libraries in an environment called `carpentries`. 
+Before starting you'll want to type `conda activate carpentries` in order to activate that environment.
 
 ## Obtain lesson materials
 
