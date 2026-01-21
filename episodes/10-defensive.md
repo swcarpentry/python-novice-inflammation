@@ -126,7 +126,7 @@ def normalize_rectangle(rect):
     dx = x1 - x0
     dy = y1 - y0
     if dx > dy:
-        scaled = dx / dy
+        scaled = dy / dx
         upper_x, upper_y = 1.0, scaled
     else:
         scaled = dx / dy
