@@ -372,7 +372,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Defensive Programming</h1>
-        <p>Last updated on 2023-11-16 |
+        <p>Last updated on 2026-04-10 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/10-defensive.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -757,12 +757,11 @@ function:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="kw">def</span> test_range_overlap():</span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>    <span class="cf">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">5.0</span>, <span class="fl">6.0</span>) ]) <span class="op">==</span> <span class="va">None</span></span>
-<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>    <span class="cf">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">1.0</span>, <span class="fl">2.0</span>) ]) <span class="op">==</span> <span class="va">None</span></span>
-<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>    <span class="cf">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>) ]) <span class="op">==</span> (<span class="fl">0.0</span>, <span class="fl">1.0</span>)</span>
-<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>    <span class="cf">assert</span> range_overlap([ (<span class="fl">2.0</span>, <span class="fl">3.0</span>), (<span class="fl">2.0</span>, <span class="fl">4.0</span>) ]) <span class="op">==</span> (<span class="fl">2.0</span>, <span class="fl">3.0</span>)</span>
-<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a>    <span class="cf">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">0.0</span>, <span class="fl">2.0</span>), (<span class="op">-</span><span class="fl">1.0</span>, <span class="fl">1.0</span>) ]) <span class="op">==</span> (<span class="fl">0.0</span>, <span class="fl">1.0</span>)</span>
-<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a>    <span class="cf">assert</span> range_overlap([]) <span class="op">==</span> <span class="va">None</span></span></code></pre>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>    <span class="cf">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>) ]) <span class="op">==</span> (<span class="fl">0.0</span>, <span class="fl">1.0</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>    <span class="cf">assert</span> range_overlap([ (<span class="fl">2.0</span>, <span class="fl">3.0</span>), (<span class="fl">2.0</span>, <span class="fl">4.0</span>) ]) <span class="op">==</span> (<span class="fl">2.0</span>, <span class="fl">3.0</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>    <span class="cf">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">0.0</span>, <span class="fl">2.0</span>), (<span class="op">-</span><span class="fl">1.0</span>, <span class="fl">1.0</span>) ]) <span class="op">==</span> (<span class="fl">0.0</span>, <span class="fl">1.0</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>    <span class="cf">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">5.0</span>, <span class="fl">6.0</span>) ]) <span class="op">==</span> <span class="va">None</span></span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a>    <span class="cf">assert</span> range_overlap([ (<span class="fl">0.0</span>, <span class="fl">1.0</span>), (<span class="fl">1.0</span>, <span class="fl">2.0</span>) ]) <span class="op">==</span> <span class="va">None</span></span></code></pre>
 </div>
 <p>We can now test <code>range_overlap</code> with a single function
 call:</p>
@@ -776,20 +775,20 @@ call:</p>
 </h3>
 <pre class="error" tabindex="0"><code>---------------------------------------------------------------------------
 AssertionError                            Traceback (most recent call last)
-&lt;ipython-input-29-cf9215c96457&gt; in &lt;module&gt;()
+Cell , line 1
 ----&gt; 1 test_range_overlap()
 
-&lt;ipython-input-28-5d4cd6fd41d9&gt; in test_range_overlap()
+Cell , line 3, in test_range_overlap()
       1 def test_range_overlap():
-----&gt; 2     assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
-      3     assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
-      4     assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
-      5     assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
+      2     assert range_overlap([ (0.0, 1.0) ]) == (0.0, 1.0)
+----&gt; 3     assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
+      4     assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
+      5     assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
 
-AssertionError:</code></pre>
+AssertionError: </code></pre>
 </div>
-<p>The first test that was supposed to produce <code>None</code> fails,
-so we know something is wrong with our function. We <em>don’t</em> know
+<p>The test that was supposed to produce a simple range fails, so we
+know something is wrong with our function. We <em>don’t</em> know
 whether the other tests passed or failed because Python halted the
 program as soon as it spotted the first error. Still, some information
 is better than none, and if we trace the behavior of the function with
@@ -797,6 +796,71 @@ that input, we realize that we’re initializing <code>max_left</code> and
 <code>min_right</code> to 0.0 and 1.0 respectively, regardless of the
 input values. This violates another important rule of programming:
 <em>always initialize from data</em>.</p>
+<p>We can update our function so that it initializes
+<code>max_left</code> and <code>min_right</code> from the input data
+itself.</p>
+<div class="codewrapper sourceCode" id="cb23">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="kw">def</span> range_overlap(ranges):</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>    <span class="co">"""Return common overlap among a set of [left, right] ranges."""</span></span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>    max_left, min_right <span class="op">=</span> ranges[<span class="dv">0</span>]</span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>    <span class="cf">for</span> (left, right) <span class="kw">in</span> ranges:</span>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a>        max_left <span class="op">=</span> <span class="bu">max</span>(max_left, left)</span>
+<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a>        min_right <span class="op">=</span> <span class="bu">min</span>(min_right, right)</span>
+<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a>    <span class="cf">return</span> (max_left, min_right)</span></code></pre>
+</div>
+<p>Re-running our tests we see that we now pass the second test, but
+fail one of the non-overlapping cases.</p>
+<div class="codewrapper sourceCode" id="cb24">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>test_range_overlap()</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+Cell , line 1
+----&gt; 1 test_range_overlap()
+
+Cell , line 5, in test_range_overlap()
+      3 assert range_overlap([ (2.0, 3.0), (2.0, 4.0) ]) == (2.0, 3.0)
+      4 assert range_overlap([ (0.0, 1.0), (0.0, 2.0), (-1.0, 1.0) ]) == (0.0, 1.0)
+----&gt; 5 assert range_overlap([ (0.0, 1.0), (5.0, 6.0) ]) == None
+      6 assert range_overlap([ (0.0, 1.0), (1.0, 2.0) ]) == None
+
+AssertionError: </code></pre>
+</div>
+<p>It turns out that for our current implementation of the
+<code>range_overlap</code> function we never handled the case where
+there is no overlap. This shows up when <code>max_left</code> is either
+equal to or greater than <code>min_right</code>, which isn’t an actual
+range. We can edit our function one last time to catch this behaviour
+and return <code>None</code>.</p>
+<div class="codewrapper sourceCode" id="cb26">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="kw">def</span> range_overlap(ranges):</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>    <span class="co">"""Return common overlap among a set of [left, right] ranges."""</span></span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>    max_left, min_right <span class="op">=</span> ranges[<span class="dv">0</span>]</span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>    <span class="cf">for</span> (left, right) <span class="kw">in</span> ranges:</span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a>        max_left <span class="op">=</span> <span class="bu">max</span>(max_left, left)</span>
+<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a>        min_right <span class="op">=</span> <span class="bu">min</span>(min_right, right)</span>
+<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a>    <span class="cf">if</span> max_left <span class="op">&gt;=</span> min_right:</span>
+<span id="cb26-8"><a href="#cb26-8" tabindex="-1"></a>        overlap <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb26-9"><a href="#cb26-9" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb26-10"><a href="#cb26-10" tabindex="-1"></a>        overlap <span class="op">=</span> (max_left, min_right)</span>
+<span id="cb26-11"><a href="#cb26-11" tabindex="-1"></a>    <span class="cf">return</span> overlap</span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb27">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>test_range_overlap()</span></code></pre>
+</div>
+<p>We get no output from <code>test_range_overlap()</code>, which means
+all the tests passed.</p>
 <div id="pre--and-post-conditions" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -818,16 +882,16 @@ your tests but not his/hers or vice versa?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="co"># a possible pre-condition:</span></span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(input_array) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">'Array length must be non-zero'</span></span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="co"># a possible post-condition:</span></span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a><span class="cf">assert</span> numpy.amin(input_array) <span class="op">&lt;=</span> average <span class="op">&lt;=</span> numpy.amax(input_array),</span>
-<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a><span class="co">'Average should be between min and max of input values (inclusive)'</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co"># a possible pre-condition:</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(input_array) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">'Array length must be non-zero'</span></span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="co"># a possible post-condition:</span></span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="cf">assert</span> numpy.amin(input_array) <span class="op">&lt;=</span> average <span class="op">&lt;=</span> numpy.amax(input_array),</span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="co">'Average should be between min and max of input values (inclusive)'</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -843,20 +907,20 @@ your tests but not his/hers or vice versa?</p>
 <div class="callout-content">
 <p>Given a sequence of a number of cars, the function
 <code>get_total_cars</code> returns the total number of cars.</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>get_total_cars([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>get_total_cars([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="fl">10</span></span></code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb26">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>get_total_cars([<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a>get_total_cars([<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -866,17 +930,17 @@ your tests but not his/hers or vice versa?</p>
 <p>Explain in words what the assertions in this function check, and for
 each one, give an example of input that will make that assertion
 fail.</p>
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="kw">def</span> get_total_cars(values):</span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(values) <span class="op">&gt;</span> <span class="dv">0</span></span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>    <span class="cf">for</span> element <span class="kw">in</span> values:</span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>        <span class="cf">assert</span> <span class="bu">int</span>(element)</span>
-<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a>    values <span class="op">=</span> [<span class="bu">int</span>(element) <span class="cf">for</span> element <span class="kw">in</span> values]</span>
-<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a>    total <span class="op">=</span> <span class="bu">sum</span>(values)</span>
-<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a>    <span class="cf">assert</span> total <span class="op">&gt;</span> <span class="dv">0</span></span>
-<span id="cb28-8"><a href="#cb28-8" tabindex="-1"></a>    <span class="cf">return</span> total</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="kw">def</span> get_total_cars(values):</span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(values) <span class="op">&gt;</span> <span class="dv">0</span></span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a>    <span class="cf">for</span> element <span class="kw">in</span> values:</span>
+<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a>        <span class="cf">assert</span> <span class="bu">int</span>(element)</span>
+<span id="cb33-5"><a href="#cb33-5" tabindex="-1"></a>    values <span class="op">=</span> [<span class="bu">int</span>(element) <span class="cf">for</span> element <span class="kw">in</span> values]</span>
+<span id="cb33-6"><a href="#cb33-6" tabindex="-1"></a>    total <span class="op">=</span> <span class="bu">sum</span>(values)</span>
+<span id="cb33-7"><a href="#cb33-7" tabindex="-1"></a>    <span class="cf">assert</span> total <span class="op">&gt;</span> <span class="dv">0</span></span>
+<span id="cb33-8"><a href="#cb33-8" tabindex="-1"></a>    <span class="cf">return</span> total</span></code></pre>
 </div>
 </div>
 </div>
@@ -886,7 +950,7 @@ fail.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ul><li>The first assertion checks that the input sequence
 <code>values</code> is not empty. An empty sequence such as
@@ -980,8 +1044,8 @@ what that code is supposed to do.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/10-defensive.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/10-defensive.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2023-11-16",
-  "datePublished": "2026-04-07"
+  "dateModified": "2026-04-10",
+  "datePublished": "2026-04-10"
 }
 
   </script><script>
