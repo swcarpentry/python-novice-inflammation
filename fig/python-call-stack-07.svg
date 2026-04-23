@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="705" height="375">
+  <defs>
+      <style type="text/css"><![CDATA[
+      .gray { fill: rgb(220,220,220); stroke-width:0; }
+      .white { fill: none; stroke-width:2; stroke: #000; }
+      .text { fill: #000; font-size: 60px; text-anchor: middle; }]]>
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+      refX="0" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7"/>
+    </marker>
+  </defs>
+  <!-- 1st row, text: "final 0.0" -->
+  <rect width="300" height="100" x="5" y="5" class="gray"/>
+  <text x="150" y="70" class="text">final</text>
+  <rect width="300" height="100" x="400" y="5" class="white"/>
+  <text x="550" y="70" class="text">0.0</text>
+  <!-- 2nd row, text: "original 32"-->
+  <rect width="300" height="100" x="5" y="150" class="gray"/>
+  <text x="150" y="220" class="text">original</text>
+  <rect width="300" height="100" x="400" y="150" class="white"/>
+  <text x="550" y="220" class="text">32</text>
+  <!-- 3rd row, text: "variables values" -->
+  <text x="150" y="360" class="text">variables</text>
+  <text x="550" y="360" class="text">values</text>
+  <!-- dashed lines -->
+  <line x1="5" y1="290" x2="705" y2="290" stroke="black"
+     stroke-dasharray="4" />
+  <line x1="350" y1="5" x2="350" y2="370" stroke="black"
+    stroke-dasharray="4" />
+  <!-- arrowhead lines -->
+  <line x1="310" y1="55" x2="375" y2="55" stroke="#000"
+            stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="310" y1="200" x2="375" y2="200" stroke="#000"
+            stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>
