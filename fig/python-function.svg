@@ -1,0 +1,24 @@
+<svg height="130" width="340" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <marker id="arrowhead" orient="auto" overflow="visible" refX="0" refY="0">
+      <path d="m8.7 4-10.9-4 10.9-4c-1.7 2.4-1.7 5.6 0 8z" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".6" transform="scale(-.6)"/>
+    </marker>
+  </defs>
+  <text font-family="monospace" font-size="16" text-anchor="middle" x="34.2" xml:space="preserve" y="56.3"><tspan text-anchor="start" x="34.2" y="56.3"><tspan fill="#008000" font-weight="bold">def</tspan> <tspan fill="#00f">fahr_to_celsius</tspan><tspan fill="#6e5494">(temp):</tspan></tspan><tspan text-anchor="start" x="34.2" y="85.1">    <tspan fill="#008000" font-weight="bold">return</tspan> <tspan fill="#6e5494">((temp - 32) * (5/9))</tspan></tspan></text>
+  <g fill="none" marker-end="url(#arrowhead)" pointer-events="none" stroke="#000" stroke-miterlimit="10">
+    <path d="m66.1 14.7-14.7 21.7"/>
+    <path d="m153.8 14.7-14.7 21.7"/>
+    <path d="m263.9 14.7-14.7 21.7"/>
+    <path d="m220.2 116.5 14.7-21.7"/>
+    <path d="m86.1 116.5 14.8-21.8"/>
+  </g>
+  <g font-size="12" font-family="sans-serif" text-anchor="middle">
+    <text x="58.3" y="10.6">def statement</text>
+    <text x="153.9" y="10.6">name</text>
+    <text x="256.1" y="10.6">parameter names</text>
+    <text x="14.9" y="82.5">body</text>
+    <text x="93.4" y="128">return statement</text>
+    <text x="227.6" y="128.4">return value</text>
+  </g>
+  <path d="m48.9 61.9h-13.7v34.5h13.7" fill="none" stroke="#000"/>
+</svg>
