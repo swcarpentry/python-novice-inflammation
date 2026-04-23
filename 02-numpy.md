@@ -420,14 +420,14 @@ next diagram on the left) or the average for each day (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
-![](fig/python-operations-across-axes.png){alt="Per-patient maximum inflammation is computed row-wise across all columns usingnumpy.amax(data, axis=1). Per-day average inflammation is computed column-wise across all rows usingnumpy.mean(data, axis=0)."}
+![](fig/python-operations-across-axes.svg){alt="Per-patient maximum inflammation is computed row-wise across all columns usingnumpy.amax(data, axis=1). Per-day average inflammation is computed column-wise across all rows usingnumpy.mean(data, axis=0)."}
 
-To find the **maximum inflammation reported for each patient**, you would apply the `max` function moving across the columns (axis 1). To find the **daily average inflammation reported across patients**, you would apply the `mean` function moving down the rows (axis 0). 
+To find the **maximum inflammation reported for each patient**, you would apply the `amax` function moving across the columns (axis 1). To find the **daily average inflammation reported across patients**, you would apply the `mean` function moving down the rows (axis 0).
 
-To support this functionality, most array functions allow us to specify the axis we want to work on. If we ask for the max across axis 1 (columns in our 2D example), we get:
+To support this functionality, most array functions allow us to specify the axis we want to work on. If we ask for the maximum across axis 1 (columns in our 2D example), we get:
 
 ```python
-print(numpy.max(data, axis=1))
+print(numpy.amax(data, axis=1))
 ```
 
 ```output
@@ -437,10 +437,10 @@ print(numpy.max(data, axis=1))
  17. 16. 17. 19. 18. 18.]
 ```
 
-As a quick check, we can ask this array what its shape is. We expect 60 patient maximums:
+As a quick check, we can ask this array what its shape is. We expect 60 patient maxima:
 
 ```python
-print(numpy.max(data, axis=1).shape)
+print(numpy.amax(data, axis=1).shape)
 ```
 
 ```output
