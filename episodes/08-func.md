@@ -48,24 +48,24 @@ Let's start by defining a function `fahr_to_celsius` that converts temperatures
 from Fahrenheit to Celsius:
 
 ```python
-def explicit_fahr_to_celsius(temp):
+def explicit_fahr_to_celsius(temp_f):
     # Assign the converted value to a variable
-    converted = ((temp - 32) * (5/9))
+    temp_c = ((temp_f - 32) * (5/9))
     # Return the value of the new variable
-    return converted
-    
-def fahr_to_celsius(temp):
+    return temp_f
+
+def fahr_to_celsius(temp_f):
     # Return converted value more efficiently using the return
     # function without creating a new variable. This code does
     # the same thing as the previous function but it is more explicit
     # in explaining how the return command works.
-    return ((temp - 32) * (5/9))
+    return ((temp_f - 32) * (5/9))
 ```
 
 ![](fig/python-function.svg){alt='Labeled parts of a Python function definition'}
 
 The function definition opens with the keyword `def` followed by the
-name of the function (`fahr_to_celsius`) and a parenthesized list of parameter names (`temp`). The
+name of the function (`fahr_to_celsius`) and a parenthesized list of parameter names (`temp_f`). The
 [body](../learners/reference.md#body) of the function --- the
 statements that are executed when it runs --- is indented below the
 definition line.  The body concludes with a `return` keyword followed by the return value.
