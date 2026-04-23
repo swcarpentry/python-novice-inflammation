@@ -79,14 +79,14 @@ the medication takes 3 weeks to take effect.  But a good data scientist doesn't 
 average of a dataset, so let's have a look at two other statistics:
 
 ```python
-max_plot = matplotlib.pyplot.plot(numpy.amax(data, axis=0))
+max_plot = matplotlib.pyplot.plot(numpy.max(data, axis=0))
 matplotlib.pyplot.show()
 ```
 
 ![](fig/inflammation-01-maximum.svg){alt='A line graph showing the maximum inflammation across all patients over a 40-day period.'}
 
 ```python
-min_plot = matplotlib.pyplot.plot(numpy.amin(data, axis=0))
+min_plot = matplotlib.pyplot.plot(numpy.min(data, axis=0))
 matplotlib.pyplot.show()
 ```
 
@@ -127,10 +127,10 @@ axes1.set_ylabel('average')
 axes1.plot(numpy.mean(data, axis=0))
 
 axes2.set_ylabel('max')
-axes2.plot(numpy.amax(data, axis=0))
+axes2.plot(numpy.max(data, axis=0))
 
 axes3.set_ylabel('min')
-axes3.plot(numpy.amin(data, axis=0))
+axes3.plot(numpy.min(data, axis=0))
 
 fig.tight_layout()
 
@@ -215,7 +215,7 @@ Update your plotting code to automatically set a more appropriate scale.
 ```python
 # One method
 axes3.set_ylabel('min')
-axes3.plot(numpy.amin(data, axis=0))
+axes3.plot(numpy.min(data, axis=0))
 axes3.set_ylim(0, 6)
 ```
 
@@ -227,10 +227,10 @@ axes3.set_ylim(0, 6)
 
 ```python
 # A more automated approach
-min_data = numpy.amin(data, axis=0)
+min_data = numpy.min(data, axis=0)
 axes3.set_ylabel('min')
 axes3.plot(min_data)
-axes3.set_ylim(numpy.amin(min_data), numpy.amax(min_data) * 1.1)
+axes3.set_ylim(numpy.min(min_data), numpy.max(min_data) * 1.1)
 ```
 
 :::::::::::::::::::::::::
@@ -269,10 +269,10 @@ axes1.set_ylabel('average')
 axes1.plot(numpy.mean(data, axis=0), drawstyle='steps-mid')
 
 axes2.set_ylabel('max')
-axes2.plot(numpy.amax(data, axis=0), drawstyle='steps-mid')
+axes2.plot(numpy.max(data, axis=0), drawstyle='steps-mid')
 
 axes3.set_ylabel('min')
-axes3.plot(numpy.amin(data, axis=0), drawstyle='steps-mid')
+axes3.plot(numpy.min(data, axis=0), drawstyle='steps-mid')
 
 fig.tight_layout()
 
@@ -336,10 +336,10 @@ axes1.set_ylabel('average')
 axes1.plot(numpy.mean(data, axis=0))
 
 axes2.set_ylabel('max')
-axes2.plot(numpy.amax(data, axis=0))
+axes2.plot(numpy.max(data, axis=0))
 
 axes3.set_ylabel('min')
-axes3.plot(numpy.amin(data, axis=0))
+axes3.plot(numpy.min(data, axis=0))
 
 fig.tight_layout()
 
