@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="820"
+   height="620"
+   viewBox="0 0 820 620"
+   role="img"
+   font-family="ui-sans-serif, system-ui, sans-serif"
+   version="1.1"
+   id="svg67"
+   sodipodi:docname="python_indexing_slicing.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview67"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="2.636824"
+     inkscape:cx="383.98468"
+     inkscape:cy="273.43502"
+     inkscape:window-width="2874"
+     inkscape:window-height="1751"
+     inkscape:window-x="280"
+     inkscape:window-y="1486"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg67">
+    <sodipodi:guide
+       position="605.34815,494.83304"
+       orientation="1,0"
+       id="guide67"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <title
+     id="title1">Python indexing vs slicing</title>
+  <desc
+     id="desc1">Visual showing that indexing refers to positions of elements, slicing refers to gaps between elements, and step-slicing picks every Nth gap.</desc>
+  <defs
+     id="defs1">
+    <marker
+       id="arrow"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M2 1L8 5L2 9"
+         fill="none"
+         stroke="context-stroke"
+         stroke-width="1.5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path1" />
+    </marker>
+    <style
+       id="style1">
+      text { fill: #1a1a18; font-family: ui-sans-serif, system-ui, sans-serif; }
+      .th  { font-size: 14px; font-weight: 500; }
+      .ts  { font-size: 12px; font-weight: 400; fill: #5f5e5a; }
+      .cell      { fill: #f1efe8; stroke: #b4b2a9; }
+      .cell-teal { fill: #e1f5ee; stroke: #0f6e56; }
+      .cell-hi   { fill: #faeeda; stroke: #ba7517; }
+    </style>
+  </defs>
+  <text
+     class="th"
+     x="40"
+     y="36"
+     id="text1">Indexing - position of each element</text>
+  <rect
+     x="100"
+     y="50"
+     width="100"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect1" />
+  <text
+     class="th"
+     x="150"
+     y="72"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text2">212</text>
+  <rect
+     x="210"
+     y="50"
+     width="100"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect2" />
+  <text
+     class="th"
+     x="260"
+     y="72"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text3">540</text>
+  <rect
+     x="320"
+     y="50"
+     width="100"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect3" />
+  <text
+     class="th"
+     x="370"
+     y="72"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text4">376</text>
+  <rect
+     x="430"
+     y="50"
+     width="100"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect4" />
+  <text
+     class="th"
+     x="480"
+     y="72"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text5">101</text>
+  <circle
+     cx="150"
+     cy="113"
+     r="9"
+     fill="#fac775"
+     stroke="#ba7517"
+     stroke-width="0.5"
+     id="circle5" />
+  <text
+     class="th"
+     x="150"
+     y="114.60899"
+     text-anchor="middle"
+     dominant-baseline="central"
+     font-size="11"
+     fill="#633806"
+     id="text6">0</text>
+  <circle
+     cx="260"
+     cy="113"
+     r="9"
+     fill="#fac775"
+     stroke="#ba7517"
+     stroke-width="0.5"
+     id="circle6" />
+  <text
+     class="th"
+     x="260"
+     y="114.60899"
+     text-anchor="middle"
+     dominant-baseline="central"
+     font-size="11"
+     fill="#633806"
+     id="text7">1</text>
+  <circle
+     cx="370"
+     cy="113"
+     r="9"
+     fill="#fac775"
+     stroke="#ba7517"
+     stroke-width="0.5"
+     id="circle7" />
+  <text
+     class="th"
+     x="370"
+     y="114.60899"
+     text-anchor="middle"
+     dominant-baseline="central"
+     font-size="11"
+     fill="#633806"
+     id="text8">2</text>
+  <circle
+     cx="480"
+     cy="113"
+     r="9"
+     fill="#fac775"
+     stroke="#ba7517"
+     stroke-width="0.5"
+     id="circle8" />
+  <text
+     class="th"
+     x="480"
+     y="114.60899"
+     text-anchor="middle"
+     dominant-baseline="central"
+     font-size="11"
+     fill="#633806"
+     id="text9">3</text>
+  <line
+     x1="150"
+     y1="94"
+     x2="150"
+     y2="104"
+     stroke="#888780"
+     stroke-width="0.5"
+     id="line9" />
+  <line
+     x1="260"
+     y1="94"
+     x2="260"
+     y2="104"
+     stroke="#888780"
+     stroke-width="0.5"
+     id="line10" />
+  <line
+     x1="370"
+     y1="94"
+     x2="370"
+     y2="104"
+     stroke="#888780"
+     stroke-width="0.5"
+     id="line11" />
+  <line
+     x1="480"
+     y1="94"
+     x2="480"
+     y2="104"
+     stroke="#888780"
+     stroke-width="0.5"
+     id="line12" />
+  <line
+     x1="425.09579"
+     y1="72"
+     x2="605.1582"
+     y2="72"
+     stroke="#888780"
+     stroke-width="0.800002"
+     stroke-dasharray="3, 2"
+     marker-end="url(#arrow)"
+     id="line13"
+     style="stroke:#fac775;stroke-opacity:1" />
+  <text
+     class="ts"
+     x="614"
+     y="76"
+     dominant-baseline="auto"
+     id="text13">data[<tspan
+   style="fill:#fac775;fill-opacity:1"
+   id="tspan1">2</tspan>] → 376</text>
+  <text
+     class="th"
+     x="40"
+     y="162"
+     id="text15">Slicing - gaps between elements</text>
+  <rect
+     x="100"
+     y="176"
+     width="100"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect15" />
+  <text
+     class="th"
+     x="150"
+     y="198"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text16">212</text>
+  <rect
+     x="210"
+     y="176"
+     width="100"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect16" />
+  <text
+     class="th"
+     x="260"
+     y="198"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text17">540</text>
+  <rect
+     x="320"
+     y="176"
+     width="100"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect17" />
+  <text
+     class="th"
+     x="370"
+     y="198"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text18">376</text>
+  <rect
+     x="430"
+     y="176"
+     width="100"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect18" />
+  <text
+     class="th"
+     x="480"
+     y="198"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text19">101</text>
+  <rect
+     x="96"
+     y="234"
+     width="8"
+     height="16"
+     rx="2"
+     fill="#9fe1cb"
+     stroke="#0f6e56"
+     stroke-width="0.5"
+     id="rect19" />
+  <text
+     class="th"
+     x="100"
+     y="260"
+     text-anchor="middle"
+     dominant-baseline="central"
+     font-size="11"
+     fill="#085041"
+     id="text20">0</text>
+  <rect
+     x="200.10036"
+     y="234"
+     width="8"
+     height="16"
+     rx="2"
+     fill="#9fe1cb"
+     stroke="#0f6e56"
+     stroke-width="0.5"
+     id="rect20" />
+  <text
+     class="th"
+     x="204.10036"
+     y="260"
+     text-anchor="middle"
+     dominant-baseline="central"
+     font-size="11"
+     fill="#085041"
+     id="text21">1</text>
+  <rect
+     x="311.70923"
+     y="234"
+     width="8"
+     height="16"
+     rx="2"
+     fill="#9fe1cb"
+     stroke="#0f6e56"
+     stroke-width="0.5"
+     id="rect21" />
+  <text
+     class="th"
+     x="315.70923"
+     y="260"
+     text-anchor="middle"
+     dominant-baseline="central"
+     font-size="11"
+     fill="#085041"
+     id="text22">2</text>
+  <rect
+     x="420.63654"
+     y="234"
+     width="8"
+     height="16"
+     rx="2"
+     fill="#9fe1cb"
+     stroke="#0f6e56"
+     stroke-width="0.5"
+     id="rect22" />
+  <text
+     class="th"
+     x="424.63654"
+     y="260"
+     text-anchor="middle"
+     dominant-baseline="central"
+     font-size="11"
+     fill="#085041"
+     id="text23">3</text>
+  <rect
+     x="526"
+     y="234"
+     width="8"
+     height="16"
+     rx="2"
+     fill="#9fe1cb"
+     stroke="#0f6e56"
+     stroke-width="0.5"
+     id="rect23" />
+  <text
+     class="th"
+     x="530"
+     y="260"
+     text-anchor="middle"
+     dominant-baseline="central"
+     font-size="11"
+     fill="#085041"
+     id="text24">4</text>
+  <rect
+     x="208.54227"
+     y="174"
+     width="212.71396"
+     height="48"
+     rx="4.0516939"
+     fill="none"
+     stroke="#1d9e75"
+     stroke-width="1.80538"
+     opacity="0.75"
+     id="rect24" />
+  <rect
+     x="318.03845"
+     y="47.772636"
+     width="103.68127"
+     height="48"
+     rx="1.9748811"
+     fill="none"
+     stroke="#1d9e75"
+     stroke-width="1.80538"
+     opacity="0.75"
+     id="rect24-7"
+     style="stroke:#fac775;stroke-opacity:1" />
+  <path
+     d="m 209.99967,226 v 6 h 209.53166 v -6"
+     fill="none"
+     stroke="#1d9e75"
+     stroke-width="0.999733"
+     opacity="0.5"
+     id="path24" />
+  <line
+     x1="422"
+     y1="198"
+     x2="605.34814"
+     y2="198"
+     stroke="#1d9e75"
+     stroke-width="0.617238"
+     stroke-dasharray="3, 2"
+     marker-end="url(#arrow)"
+     id="line24" />
+  <text
+     class="ts"
+     x="614"
+     y="200"
+     dominant-baseline="central"
+     fill="#0f6e56"
+     id="text25">data[<tspan
+   style="fill:#1d9e75;fill-opacity:1"
+   id="tspan2">1:3</tspan>] → [540, 376]</text>
+  <line
+     x1="40"
+     y1="278"
+     x2="780"
+     y2="278"
+     stroke="#b4b2a9"
+     stroke-width="0.5"
+     id="line25" />
+  <text
+     class="th"
+     x="40"
+     y="300"
+     id="text26">Step slicing - pick every Nth gap</text>
+  <text
+     class="ts"
+     x="40"
+     y="318"
+     id="text27">Example: Slice with step 3 → data[::3] → is taking every 3rd element of the list, or making 3 rows and keeping only the first</text>
+  <text
+     class="ts"
+     x="86"
+     y="351"
+     text-anchor="end"
+     dominant-baseline="central"
+     id="text28">data</text>
+  <rect
+     x="90"
+     y="332"
+     width="60"
+     height="38"
+     rx="4"
+     class="cell-hi"
+     stroke-width="0.8"
+     id="rect28" />
+  <text
+     class="th"
+     x="120"
+     y="351"
+     text-anchor="middle"
+     dominant-baseline="central"
+     fill="#633806"
+     id="text29">212</text>
+  <rect
+     x="155"
+     y="332"
+     width="60"
+     height="38"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect29" />
+  <text
+     class="ts"
+     x="185"
+     y="351"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text30">540</text>
+  <rect
+     x="220"
+     y="332"
+     width="60"
+     height="38"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect30" />
+  <text
+     class="ts"
+     x="250"
+     y="351"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text31">376</text>
+  <rect
+     x="285"
+     y="332"
+     width="60"
+     height="38"
+     rx="4"
+     class="cell-hi"
+     stroke-width="0.8"
+     id="rect31" />
+  <text
+     class="th"
+     x="315"
+     y="351"
+     text-anchor="middle"
+     dominant-baseline="central"
+     fill="#633806"
+     id="text32">101</text>
+  <rect
+     x="350"
+     y="332"
+     width="60"
+     height="38"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect32" />
+  <text
+     class="ts"
+     x="380"
+     y="351"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text33">104</text>
+  <rect
+     x="415"
+     y="332"
+     width="60"
+     height="38"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect33" />
+  <text
+     class="ts"
+     x="445"
+     y="351"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text34">482</text>
+  <rect
+     x="480"
+     y="332"
+     width="60"
+     height="38"
+     rx="4"
+     class="cell-hi"
+     stroke-width="0.8"
+     id="rect34" />
+  <text
+     class="th"
+     x="510"
+     y="351"
+     text-anchor="middle"
+     dominant-baseline="central"
+     fill="#633806"
+     id="text35">582</text>
+  <rect
+     x="545"
+     y="332"
+     width="60"
+     height="38"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect35" />
+  <text
+     class="ts"
+     x="575"
+     y="351"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text36">101</text>
+  <rect
+     x="610"
+     y="332"
+     width="60"
+     height="38"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect36" />
+  <text
+     class="ts"
+     x="640"
+     y="351"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text37">200</text>
+  <path
+     d="M90 372 L90 378 L150 378 L150 372"
+     fill="none"
+     stroke="#ba7517"
+     stroke-width="0.8"
+     opacity="0.7"
+     id="path37" />
+  <path
+     d="M155 372 L155 378 L280 378 L280 372"
+     fill="none"
+     stroke="#b4b2a9"
+     stroke-width="0.6"
+     opacity="0.4"
+     id="path38" />
+  <path
+     d="M285 372 L285 378 L345 378 L345 372"
+     fill="none"
+     stroke="#ba7517"
+     stroke-width="0.8"
+     opacity="0.7"
+     id="path39" />
+  <path
+     d="M350 372 L350 378 L475 378 L475 372"
+     fill="none"
+     stroke="#b4b2a9"
+     stroke-width="0.6"
+     opacity="0.4"
+     id="path40" />
+  <path
+     d="M480 372 L480 378 L540 378 L540 372"
+     fill="none"
+     stroke="#ba7517"
+     stroke-width="0.8"
+     opacity="0.7"
+     id="path41" />
+  <path
+     d="M545 372 L545 378 L670 378 L670 372"
+     fill="none"
+     stroke="#b4b2a9"
+     stroke-width="0.6"
+     opacity="0.4"
+     id="path42" />
+  <text
+     class="ts"
+     x="120"
+     y="390"
+     text-anchor="middle"
+     fill="#854f0b"
+     id="text42">step</text>
+  <text
+     class="ts"
+     x="315"
+     y="390"
+     text-anchor="middle"
+     fill="#854f0b"
+     id="text43">step</text>
+  <text
+     class="ts"
+     x="510"
+     y="390"
+     text-anchor="middle"
+     fill="#854f0b"
+     id="text44">step</text>
+  <text
+     class="ts"
+     x="86"
+     y="434"
+     text-anchor="end"
+     dominant-baseline="central"
+     id="text45">row 0</text>
+  <text
+     class="ts"
+     x="86"
+     y="476"
+     text-anchor="end"
+     dominant-baseline="central"
+     opacity="0.5"
+     id="text46">row 1</text>
+  <text
+     class="ts"
+     x="86"
+     y="518"
+     text-anchor="end"
+     dominant-baseline="central"
+     opacity="0.35"
+     id="text47">row 2</text>
+  <rect
+     x="90"
+     y="412"
+     width="80"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect47" />
+  <text
+     class="th"
+     x="130"
+     y="434"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text48">212</text>
+  <rect
+     x="90"
+     y="456"
+     width="80"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     opacity="0.55"
+     id="rect48" />
+  <text
+     class="ts"
+     x="130"
+     y="478"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text49">540</text>
+  <rect
+     x="90"
+     y="500"
+     width="80"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     opacity="0.3"
+     id="rect49" />
+  <text
+     class="ts"
+     x="130"
+     y="522"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text50">376</text>
+  <rect
+     x="220"
+     y="412"
+     width="80"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect50" />
+  <text
+     class="th"
+     x="260"
+     y="434"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text51">101</text>
+  <rect
+     x="220"
+     y="456"
+     width="80"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     opacity="0.55"
+     id="rect51" />
+  <text
+     class="ts"
+     x="260"
+     y="478"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text52">104</text>
+  <rect
+     x="220"
+     y="500"
+     width="80"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     opacity="0.3"
+     id="rect52" />
+  <text
+     class="ts"
+     x="260"
+     y="522"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text53">482</text>
+  <rect
+     x="350"
+     y="412"
+     width="80"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     id="rect53" />
+  <text
+     class="th"
+     x="390"
+     y="434"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text54">582</text>
+  <rect
+     x="350"
+     y="456"
+     width="80"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     opacity="0.55"
+     id="rect54" />
+  <text
+     class="ts"
+     x="390"
+     y="478"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text55">101</text>
+  <rect
+     x="350"
+     y="500"
+     width="80"
+     height="44"
+     rx="4"
+     class="cell"
+     stroke-width="0.5"
+     opacity="0.3"
+     id="rect55" />
+  <text
+     class="ts"
+     x="390"
+     y="522"
+     text-anchor="middle"
+     dominant-baseline="central"
+     id="text56">200</text>
+  <line
+     x1="120"
+     y1="371"
+     x2="130"
+     y2="410"
+     stroke="#ba7517"
+     stroke-width="1"
+     stroke-dasharray="3 2"
+     marker-end="url(#arrow)"
+     opacity="0.7"
+     id="line56" />
+  <line
+     x1="315"
+     y1="371"
+     x2="260"
+     y2="410"
+     stroke="#ba7517"
+     stroke-width="1"
+     stroke-dasharray="3 2"
+     marker-end="url(#arrow)"
+     opacity="0.7"
+     id="line57" />
+  <line
+     x1="510"
+     y1="371"
+     x2="390"
+     y2="410"
+     stroke="#ba7517"
+     stroke-width="1"
+     stroke-dasharray="3 2"
+     marker-end="url(#arrow)"
+     opacity="0.7"
+     id="line58" />
+  <rect
+     x="88"
+     y="410"
+     width="344"
+     height="48"
+     rx="5"
+     fill="none"
+     stroke="#1D9E75"
+     stroke-width="1.5"
+     opacity="0.7"
+     id="rect58" />
+  <rect
+     x="88"
+     y="454"
+     width="344"
+     height="94"
+     rx="5"
+     fill="#f1efe8"
+     opacity="0.35"
+     id="rect59" />
+  <line
+     x1="429.14343"
+     y1="434"
+     x2="605.34814"
+     y2="434"
+     stroke="#1d9e75"
+     stroke-width="0.617238"
+     stroke-dasharray="3, 2"
+     marker-end="url(#arrow)"
+     id="line59" />
+  <text
+     class="ts"
+     x="614"
+     y="436"
+     dominant-baseline="central"
+     fill="#0f6e56"
+     id="text59">top row - kept</text>
+  <line
+     x1="429.14343"
+     y1="496"
+     x2="605.34814"
+     y2="496"
+     stroke="#888780"
+     stroke-width="0.800003"
+     stroke-dasharray="3, 2"
+     marker-end="url(#arrow)"
+     id="line60" />
+  <text
+     class="ts"
+     x="614"
+     y="498"
+     dominant-baseline="central"
+     id="text60">lower rows - discarded</text>
+  <text
+     class="ts"
+     x="86"
+     y="582"
+     text-anchor="end"
+     dominant-baseline="central"
+     id="text61">result</text>
+  <rect
+     x="90"
+     y="560"
+     width="80"
+     height="44"
+     rx="4"
+     class="cell-teal"
+     stroke-width="0.5"
+     id="rect61" />
+  <text
+     class="th"
+     x="130"
+     y="582"
+     text-anchor="middle"
+     dominant-baseline="central"
+     fill="#085041"
+     id="text62">212</text>
+  <rect
+     x="220"
+     y="560"
+     width="80"
+     height="44"
+     rx="4"
+     class="cell-teal"
+     stroke-width="0.5"
+     id="rect62" />
+  <text
+     class="th"
+     x="260"
+     y="582"
+     text-anchor="middle"
+     dominant-baseline="central"
+     fill="#085041"
+     id="text63">101</text>
+  <rect
+     x="350"
+     y="560"
+     width="80"
+     height="44"
+     rx="4"
+     class="cell-teal"
+     stroke-width="0.5"
+     id="rect63" />
+  <text
+     class="th"
+     x="390"
+     y="582"
+     text-anchor="middle"
+     dominant-baseline="central"
+     fill="#085041"
+     id="text64">582</text>
+  <line
+     x1="130"
+     y1="458"
+     x2="130"
+     y2="558"
+     stroke="#1D9E75"
+     stroke-width="1"
+     stroke-dasharray="3 2"
+     marker-end="url(#arrow)"
+     opacity="0.6"
+     id="line64" />
+  <line
+     x1="260"
+     y1="458"
+     x2="260"
+     y2="558"
+     stroke="#1D9E75"
+     stroke-width="1"
+     stroke-dasharray="3 2"
+     marker-end="url(#arrow)"
+     opacity="0.6"
+     id="line65" />
+  <line
+     x1="390"
+     y1="458"
+     x2="390"
+     y2="558"
+     stroke="#1D9E75"
+     stroke-width="1"
+     stroke-dasharray="3 2"
+     marker-end="url(#arrow)"
+     opacity="0.6"
+     id="line66" />
+  <line
+     x1="427.95285"
+     y1="582"
+     x2="605.34814"
+     y2="582"
+     stroke="#1d9e75"
+     stroke-width="0.617238"
+     stroke-dasharray="3, 2"
+     marker-end="url(#arrow)"
+     id="line67" />
+  <text
+     class="ts"
+     x="614"
+     y="584"
+     dominant-baseline="central"
+     fill="#0f6e56"
+     id="text67">data[<tspan
+   style="fill:#1d9e75;fill-opacity:1"
+   id="tspan3">::3</tspan>] → [212, 101, 582]</text>
+  <metadata
+     id="metadata67">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Python indexing vs slicing</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
