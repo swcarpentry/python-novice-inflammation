@@ -534,6 +534,9 @@ counts + counts
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Visual intuition for indexing versus slicing
+
+![Indexing and slicing with steps](fig/python_indexing_slicing.svg){alt="Visual illustration of indexing, slicing and slicing with a step"}
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
