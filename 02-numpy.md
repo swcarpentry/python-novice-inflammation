@@ -340,15 +340,15 @@ We'll also use multiple assignment,
 a convenient Python feature that will enable us to do this all in one line.
 
 ```python
-maxval, minval, stdval = numpy.amax(data), numpy.amin(data), numpy.std(data)
+maxval, minval, stdval = numpy.max(data), numpy.min(data), numpy.std(data)
 
 print('maximum inflammation:', maxval)
 print('minimum inflammation:', minval)
 print('standard deviation:', stdval)
 ```
 
-Here we've assigned the return value from `numpy.amax(data)` to the variable `maxval`, the value
-from `numpy.amin(data)` to `minval`, and so on.
+Here we've assigned the return value from `numpy.max(data)` to the variable `maxval`, the value
+from `numpy.min(data)` to `minval`, and so on.
 
 ```output
 maximum inflammation: 20.0
@@ -376,18 +376,6 @@ for example: `help(numpy.cumprod)`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Confusing Function Names
-
-One might wonder why the functions are called `amax` and `amin` and not `max` and `min` or why the other is called `mean` and not `amean`.
-The package `numpy` does provide functions `max` and `min` that are fully equivalent to `amax` and `amin`, but they share a name with standard library functions `max` and `min` that come with Python itself.
-Referring to the functions like we did above, that is `numpy.max` for example, does not cause problems, but there are other ways to refer to them that could.
-In addition, text editors might highlight (color) these functions like standard library function, even though they belong to NumPy, which can be confusing and lead to errors.
-Since there is no function called `mean` in the standard library, there is no function called `amean`.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
 When analyzing data, though,
 we often want to look at variations in statistical values,
 such as the maximum inflammation per patient
@@ -397,7 +385,7 @@ then ask it to do the calculation:
 
 ```python
 patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)
-print('maximum inflammation for patient 0:', numpy.amax(patient_0))
+print('maximum inflammation for patient 0:', numpy.max(patient_0))
 ```
 
 ```output
@@ -408,7 +396,7 @@ We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the function call:
 
 ```python
-print('maximum inflammation for patient 2:', numpy.amax(data[2, :]))
+print('maximum inflammation for patient 2:', numpy.max(data[2, :]))
 ```
 
 ```output
@@ -420,11 +408,11 @@ next diagram on the left) or the average for each day (as in the
 diagram on the right)? As the diagram below shows, we want to perform the
 operation across an axis:
 
-![](fig/python-operations-across-axes.png){alt="Per-patient maximum inflammation is computed row-wise across all columns usingnumpy.amax(data, axis=1). Per-day average inflammation is computed column-wise across all rows usingnumpy.mean(data, axis=0)."}
+![](fig/python-operations-across-axes.svg){alt="Per-patient maximum inflammation is computed row-wise across all columns usingnumpy.max(data, axis=1). Per-day average inflammation is computed column-wise across all rows usingnumpy.mean(data, axis=0)."}
 
-To find the **maximum inflammation reported for each patient**, you would apply the `max` function moving across the columns (axis 1). To find the **daily average inflammation reported across patients**, you would apply the `mean` function moving down the rows (axis 0). 
+To find the **maximum inflammation reported for each patient**, you would apply the `max` function moving across the columns (axis 1). To find the **daily average inflammation reported across patients**, you would apply the `mean` function moving down the rows (axis 0).
 
-To support this functionality, most array functions allow us to specify the axis we want to work on. If we ask for the max across axis 1 (columns in our 2D example), we get:
+To support this functionality, most array functions allow us to specify the axis we want to work on. If we ask for the maximum across axis 1 (columns in our 2D example), we get:
 
 ```python
 print(numpy.max(data, axis=1))
@@ -437,7 +425,7 @@ print(numpy.max(data, axis=1))
  17. 16. 17. 19. 18. 18.]
 ```
 
-As a quick check, we can ask this array what its shape is. We expect 60 patient maximums:
+As a quick check, we can ask this array what its shape is. We expect 60 patient maxima:
 
 ```python
 print(numpy.max(data, axis=1).shape)
@@ -779,11 +767,11 @@ it matter if the change in inflammation is an increase or a decrease?
 
 ## Solution
 
-By using the `numpy.amax()` function after you apply the `numpy.diff()`
+By using the `numpy.max()` function after you apply the `numpy.diff()`
 function, you will get the largest difference between days.
 
 ```python
-numpy.amax(numpy.diff(data, axis=1), axis=1)
+numpy.max(numpy.diff(data, axis=1), axis=1)
 ```
 
 ```python
@@ -804,7 +792,7 @@ Notice the difference if you get the largest *absolute* difference
 between readings.
 
 ```python
-numpy.amax(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
+numpy.max(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
 ```
 
 ```python
@@ -831,7 +819,7 @@ array([ 12.,  14.,  11.,  13.,  11.,  13.,  10.,  12.,  10.,  10.,  10.,
 - Array indices start at 0, not 1.
 - Use `low:high` to specify a `slice` that includes the indices from `low` to `high-1`.
 - Use `# some kind of explanation` to add comments to programs.
-- Use `numpy.mean(array)`, `numpy.amax(array)`, and `numpy.amin(array)` to calculate simple statistics.
+- Use `numpy.mean(array)`, `numpy.max(array)`, and `numpy.min(array)` to calculate simple statistics.
 - Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

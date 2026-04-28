@@ -217,10 +217,10 @@ def visualize(filename):
     axes1.plot(numpy.mean(data, axis=0))
 
     axes2.set_ylabel('max')
-    axes2.plot(numpy.amax(data, axis=0))
+    axes2.plot(numpy.max(data, axis=0))
 
     axes3.set_ylabel('min')
-    axes3.plot(numpy.amin(data, axis=0))
+    axes3.plot(numpy.min(data, axis=0))
 
     fig.tight_layout()
     matplotlib.pyplot.show()
@@ -234,9 +234,9 @@ def detect_problems(filename):
 
     data = numpy.loadtxt(fname=filename, delimiter=',')
 
-    if numpy.amax(data, axis=0)[0] == 0 and numpy.amax(data, axis=0)[20] == 20:
+    if numpy.max(data, axis=0)[0] == 0 and numpy.max(data, axis=0)[20] == 20:
         print('Suspicious looking maxima!')
-    elif numpy.sum(numpy.amin(data, axis=0)) == 0:
+    elif numpy.sum(numpy.min(data, axis=0)) == 0:
         print('Minima add up to zero!')
     else:
         print('Seems OK!')
@@ -317,12 +317,12 @@ It's hard to tell from the default output whether the result is correct,
 but there are a few tests that we can run to reassure us:
 
 ```python
-print('original min, mean, and max are:', numpy.amin(data), numpy.mean(data), numpy.amax(data))
+print('original min, mean, and max are:', numpy.min(data), numpy.mean(data), numpy.max(data))
 offset_data = offset_mean(data, 0)
 print('min, mean, and max of offset data are:',
-      numpy.amin(offset_data),
+      numpy.min(offset_data),
       numpy.mean(offset_data),
-      numpy.amax(offset_data))
+      numpy.max(offset_data))
 ```
 
 ```output
@@ -779,8 +779,8 @@ then the replacement for a value `v` should be `(v-L) / (H-L)`.)
 
 ```python
 def rescale(input_array):
-    L = numpy.amin(input_array)
-    H = numpy.amax(input_array)
+    L = numpy.min(input_array)
+    H = numpy.max(input_array)
     output_array = (input_array - L) / (H - L)
     return output_array
 ```
@@ -836,8 +836,8 @@ do the two functions always behave the same way?
 ```python
 def rescale(input_array, low_val=0.0, high_val=1.0):
     """rescales input array values to lie between low_val and high_val"""
-    L = numpy.amin(input_array)
-    H = numpy.amax(input_array)
+    L = numpy.min(input_array)
+    H = numpy.max(input_array)
     intermed_array = (input_array - L) / (H - L)
     output_array = intermed_array * (high_val - low_val) + low_val
     return output_array
