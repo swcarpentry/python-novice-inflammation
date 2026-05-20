@@ -74,10 +74,10 @@ for filename in filenames:
     axes1.plot(numpy.mean(data, axis=0))
 
     axes2.set_ylabel('max')
-    axes2.plot(numpy.amax(data, axis=0))
+    axes2.plot(numpy.max(data, axis=0))
 
     axes3.set_ylabel('min')
-    axes3.plot(numpy.amin(data, axis=0))
+    axes3.plot(numpy.min(data, axis=0))
 
     fig.tight_layout()
     matplotlib.pyplot.show()
@@ -199,10 +199,10 @@ axes1.set_ylabel('average')
 axes1.plot(numpy.mean(composite_data, axis=0))
 
 axes2.set_ylabel('max')
-axes2.plot(numpy.amax(composite_data, axis=0))
+axes2.plot(numpy.max(composite_data, axis=0))
 
 axes3.set_ylabel('min')
-axes3.plot(numpy.amin(composite_data, axis=0))
+axes3.plot(numpy.min(composite_data, axis=0))
 
 fig.tight_layout()
 
