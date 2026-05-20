@@ -372,7 +372,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Creating Functions</h1>
-        <p>Last updated on 2025-05-22 |
+        <p>Last updated on 2026-05-20 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/08-func.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -611,10 +611,10 @@ plots:</p>
 <span id="cb17-12"><a href="#cb17-12" tabindex="-1" aria-label="code-block-17-12"></a>    axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb17-13"><a href="#cb17-13" tabindex="-1" aria-label="code-block-17-13"></a></span>
 <span id="cb17-14"><a href="#cb17-14" tabindex="-1" aria-label="code-block-17-14"></a>    axes2.set_ylabel(<span class="st">'max'</span>)</span>
-<span id="cb17-15"><a href="#cb17-15" tabindex="-1" aria-label="code-block-17-15"></a>    axes2.plot(numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb17-15"><a href="#cb17-15" tabindex="-1" aria-label="code-block-17-15"></a>    axes2.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb17-16"><a href="#cb17-16" tabindex="-1" aria-label="code-block-17-16"></a></span>
 <span id="cb17-17"><a href="#cb17-17" tabindex="-1" aria-label="code-block-17-17"></a>    axes3.set_ylabel(<span class="st">'min'</span>)</span>
-<span id="cb17-18"><a href="#cb17-18" tabindex="-1" aria-label="code-block-17-18"></a>    axes3.plot(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb17-18"><a href="#cb17-18" tabindex="-1" aria-label="code-block-17-18"></a>    axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb17-19"><a href="#cb17-19" tabindex="-1" aria-label="code-block-17-19"></a></span>
 <span id="cb17-20"><a href="#cb17-20" tabindex="-1" aria-label="code-block-17-20"></a>    fig.tight_layout()</span>
 <span id="cb17-21"><a href="#cb17-21" tabindex="-1" aria-label="code-block-17-21"></a>    matplotlib.pyplot.show()</span></code></pre>
@@ -628,9 +628,9 @@ for those systematics we noticed:</p>
 <span id="cb18-2"><a href="#cb18-2" tabindex="-1" aria-label="code-block-18-2"></a></span>
 <span id="cb18-3"><a href="#cb18-3" tabindex="-1" aria-label="code-block-18-3"></a>    data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb18-4"><a href="#cb18-4" tabindex="-1" aria-label="code-block-18-4"></a></span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1" aria-label="code-block-18-5"></a>    <span class="cf">if</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:</span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1" aria-label="code-block-18-5"></a>    <span class="cf">if</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:</span>
 <span id="cb18-6"><a href="#cb18-6" tabindex="-1" aria-label="code-block-18-6"></a>        <span class="bu">print</span>(<span class="st">'Suspicious looking maxima!'</span>)</span>
-<span id="cb18-7"><a href="#cb18-7" tabindex="-1" aria-label="code-block-18-7"></a>    <span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1" aria-label="code-block-18-7"></a>    <span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb18-8"><a href="#cb18-8" tabindex="-1" aria-label="code-block-18-8"></a>        <span class="bu">print</span>(<span class="st">'Minima add up to zero!'</span>)</span>
 <span id="cb18-9"><a href="#cb18-9" tabindex="-1" aria-label="code-block-18-9"></a>    <span class="cf">else</span>:</span>
 <span id="cb18-10"><a href="#cb18-10" tabindex="-1" aria-label="code-block-18-10"></a>        <span class="bu">print</span>(<span class="st">'Seems OK!'</span>)</span></code></pre>
@@ -710,12 +710,12 @@ correct, but there are a few tests that we can run to reassure us:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1" aria-label="code-block-25-1"></a><span class="bu">print</span>(<span class="st">'original min, mean, and max are:'</span>, numpy.amin(data), numpy.mean(data), numpy.amax(data))</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1" aria-label="code-block-25-1"></a><span class="bu">print</span>(<span class="st">'original min, mean, and max are:'</span>, numpy.<span class="bu">min</span>(data), numpy.mean(data), numpy.<span class="bu">max</span>(data))</span>
 <span id="cb25-2"><a href="#cb25-2" tabindex="-1" aria-label="code-block-25-2"></a>offset_data <span class="op">=</span> offset_mean(data, <span class="dv">0</span>)</span>
 <span id="cb25-3"><a href="#cb25-3" tabindex="-1" aria-label="code-block-25-3"></a><span class="bu">print</span>(<span class="st">'min, mean, and max of offset data are:'</span>,</span>
-<span id="cb25-4"><a href="#cb25-4" tabindex="-1" aria-label="code-block-25-4"></a>      numpy.amin(offset_data),</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1" aria-label="code-block-25-4"></a>      numpy.<span class="bu">min</span>(offset_data),</span>
 <span id="cb25-5"><a href="#cb25-5" tabindex="-1" aria-label="code-block-25-5"></a>      numpy.mean(offset_data),</span>
-<span id="cb25-6"><a href="#cb25-6" tabindex="-1" aria-label="code-block-25-6"></a>      numpy.amax(offset_data))</span></code></pre>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1" aria-label="code-block-25-6"></a>      numpy.<span class="bu">max</span>(offset_data))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1224,8 +1224,8 @@ value <code>v</code> should be <code>(v-L) / (H-L)</code>.)</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" tabindex="-1" aria-label="code-block-64-1"></a><span class="kw">def</span> rescale(input_array):</span>
-<span id="cb64-2"><a href="#cb64-2" tabindex="-1" aria-label="code-block-64-2"></a>    L <span class="op">=</span> numpy.amin(input_array)</span>
-<span id="cb64-3"><a href="#cb64-3" tabindex="-1" aria-label="code-block-64-3"></a>    H <span class="op">=</span> numpy.amax(input_array)</span>
+<span id="cb64-2"><a href="#cb64-2" tabindex="-1" aria-label="code-block-64-2"></a>    L <span class="op">=</span> numpy.<span class="bu">min</span>(input_array)</span>
+<span id="cb64-3"><a href="#cb64-3" tabindex="-1" aria-label="code-block-64-3"></a>    H <span class="op">=</span> numpy.<span class="bu">max</span>(input_array)</span>
 <span id="cb64-4"><a href="#cb64-4" tabindex="-1" aria-label="code-block-64-4"></a>    output_array <span class="op">=</span> (input_array <span class="op">-</span> L) <span class="op">/</span> (H <span class="op">-</span> L)</span>
 <span id="cb64-5"><a href="#cb64-5" tabindex="-1" aria-label="code-block-64-5"></a>    <span class="cf">return</span> output_array</span></code></pre>
 </div>
@@ -1302,8 +1302,8 @@ behave the same way?</p>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" tabindex="-1" aria-label="code-block-66-1"></a><span class="kw">def</span> rescale(input_array, low_val<span class="op">=</span><span class="fl">0.0</span>, high_val<span class="op">=</span><span class="fl">1.0</span>):</span>
 <span id="cb66-2"><a href="#cb66-2" tabindex="-1" aria-label="code-block-66-2"></a>    <span class="co">"""rescales input array values to lie between low_val and high_val"""</span></span>
-<span id="cb66-3"><a href="#cb66-3" tabindex="-1" aria-label="code-block-66-3"></a>    L <span class="op">=</span> numpy.amin(input_array)</span>
-<span id="cb66-4"><a href="#cb66-4" tabindex="-1" aria-label="code-block-66-4"></a>    H <span class="op">=</span> numpy.amax(input_array)</span>
+<span id="cb66-3"><a href="#cb66-3" tabindex="-1" aria-label="code-block-66-3"></a>    L <span class="op">=</span> numpy.<span class="bu">min</span>(input_array)</span>
+<span id="cb66-4"><a href="#cb66-4" tabindex="-1" aria-label="code-block-66-4"></a>    H <span class="op">=</span> numpy.<span class="bu">max</span>(input_array)</span>
 <span id="cb66-5"><a href="#cb66-5" tabindex="-1" aria-label="code-block-66-5"></a>    intermed_array <span class="op">=</span> (input_array <span class="op">-</span> L) <span class="op">/</span> (H <span class="op">-</span> L)</span>
 <span id="cb66-6"><a href="#cb66-6" tabindex="-1" aria-label="code-block-66-6"></a>    output_array <span class="op">=</span> intermed_array <span class="op">*</span> (high_val <span class="op">-</span> low_val) <span class="op">+</span> low_val</span>
 <span id="cb66-7"><a href="#cb66-7" tabindex="-1" aria-label="code-block-66-7"></a>    <span class="cf">return</span> output_array</span></code></pre>
@@ -1539,8 +1539,8 @@ it with different parameter values to customize its behavior.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/08-func.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/08-func.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2025-05-22",
-  "datePublished": "2026-05-19"
+  "dateModified": "2026-05-20",
+  "datePublished": "2026-05-20"
 }
 
   </script><script>

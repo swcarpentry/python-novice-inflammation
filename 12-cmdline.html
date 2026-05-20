@@ -370,7 +370,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Command-Line Programs</h1>
-        <p>Last updated on 2023-11-10 |
+        <p>Last updated on 2026-05-20 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/12-cmdline.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -841,11 +841,11 @@ this:</p>
 <span id="cb32-10"><a href="#cb32-10" tabindex="-1" aria-label="code-block-32-10"></a>        data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb32-11"><a href="#cb32-11" tabindex="-1" aria-label="code-block-32-11"></a></span>
 <span id="cb32-12"><a href="#cb32-12" tabindex="-1" aria-label="code-block-32-12"></a>        <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb32-13"><a href="#cb32-13" tabindex="-1" aria-label="code-block-32-13"></a>            values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb32-13"><a href="#cb32-13" tabindex="-1" aria-label="code-block-32-13"></a>            values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb32-14"><a href="#cb32-14" tabindex="-1" aria-label="code-block-32-14"></a>        <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
 <span id="cb32-15"><a href="#cb32-15" tabindex="-1" aria-label="code-block-32-15"></a>            values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb32-16"><a href="#cb32-16" tabindex="-1" aria-label="code-block-32-16"></a>        <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb32-17"><a href="#cb32-17" tabindex="-1" aria-label="code-block-32-17"></a>            values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb32-17"><a href="#cb32-17" tabindex="-1" aria-label="code-block-32-17"></a>            values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb32-18"><a href="#cb32-18" tabindex="-1" aria-label="code-block-32-18"></a></span>
 <span id="cb32-19"><a href="#cb32-19" tabindex="-1" aria-label="code-block-32-19"></a>        <span class="cf">for</span> val <span class="kw">in</span> values:</span>
 <span id="cb32-20"><a href="#cb32-20" tabindex="-1" aria-label="code-block-32-20"></a>            <span class="bu">print</span>(val)</span>
@@ -904,11 +904,11 @@ fast:</p>
 <span id="cb36-14"><a href="#cb36-14" tabindex="-1" aria-label="code-block-36-14"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb36-15"><a href="#cb36-15" tabindex="-1" aria-label="code-block-36-15"></a></span>
 <span id="cb36-16"><a href="#cb36-16" tabindex="-1" aria-label="code-block-36-16"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb36-17"><a href="#cb36-17" tabindex="-1" aria-label="code-block-36-17"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-17"><a href="#cb36-17" tabindex="-1" aria-label="code-block-36-17"></a>        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb36-18"><a href="#cb36-18" tabindex="-1" aria-label="code-block-36-18"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
 <span id="cb36-19"><a href="#cb36-19" tabindex="-1" aria-label="code-block-36-19"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb36-20"><a href="#cb36-20" tabindex="-1" aria-label="code-block-36-20"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb36-21"><a href="#cb36-21" tabindex="-1" aria-label="code-block-36-21"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-21"><a href="#cb36-21" tabindex="-1" aria-label="code-block-36-21"></a>        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb36-22"><a href="#cb36-22" tabindex="-1" aria-label="code-block-36-22"></a></span>
 <span id="cb36-23"><a href="#cb36-23" tabindex="-1" aria-label="code-block-36-23"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
 <span id="cb36-24"><a href="#cb36-24" tabindex="-1" aria-label="code-block-36-24"></a>        <span class="bu">print</span>(val)</span>
@@ -1001,11 +1001,11 @@ as its first parameter, so we don’t actually need to change
 <span id="cb43-17"><a href="#cb43-17" tabindex="-1" aria-label="code-block-43-17"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb43-18"><a href="#cb43-18" tabindex="-1" aria-label="code-block-43-18"></a></span>
 <span id="cb43-19"><a href="#cb43-19" tabindex="-1" aria-label="code-block-43-19"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb43-20"><a href="#cb43-20" tabindex="-1" aria-label="code-block-43-20"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb43-20"><a href="#cb43-20" tabindex="-1" aria-label="code-block-43-20"></a>        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb43-21"><a href="#cb43-21" tabindex="-1" aria-label="code-block-43-21"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
 <span id="cb43-22"><a href="#cb43-22" tabindex="-1" aria-label="code-block-43-22"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb43-23"><a href="#cb43-23" tabindex="-1" aria-label="code-block-43-23"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb43-24"><a href="#cb43-24" tabindex="-1" aria-label="code-block-43-24"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb43-24"><a href="#cb43-24" tabindex="-1" aria-label="code-block-43-24"></a>        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb43-25"><a href="#cb43-25" tabindex="-1" aria-label="code-block-43-25"></a></span>
 <span id="cb43-26"><a href="#cb43-26" tabindex="-1" aria-label="code-block-43-26"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
 <span id="cb43-27"><a href="#cb43-27" tabindex="-1" aria-label="code-block-43-27"></a>        <span class="bu">print</span>(val)</span>
@@ -1204,11 +1204,11 @@ easier to read? Is the program easier to understand?</p>
 <span id="cb54-18"><a href="#cb54-18" tabindex="-1" aria-label="code-block-54-18"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb54-19"><a href="#cb54-19" tabindex="-1" aria-label="code-block-54-19"></a></span>
 <span id="cb54-20"><a href="#cb54-20" tabindex="-1" aria-label="code-block-54-20"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'-n'</span>:</span>
-<span id="cb54-21"><a href="#cb54-21" tabindex="-1" aria-label="code-block-54-21"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-21"><a href="#cb54-21" tabindex="-1" aria-label="code-block-54-21"></a>        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb54-22"><a href="#cb54-22" tabindex="-1" aria-label="code-block-54-22"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'-m'</span>:</span>
 <span id="cb54-23"><a href="#cb54-23" tabindex="-1" aria-label="code-block-54-23"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb54-24"><a href="#cb54-24" tabindex="-1" aria-label="code-block-54-24"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'-x'</span>:</span>
-<span id="cb54-25"><a href="#cb54-25" tabindex="-1" aria-label="code-block-54-25"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-25"><a href="#cb54-25" tabindex="-1" aria-label="code-block-54-25"></a>        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb54-26"><a href="#cb54-26" tabindex="-1" aria-label="code-block-54-26"></a></span>
 <span id="cb54-27"><a href="#cb54-27" tabindex="-1" aria-label="code-block-54-27"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
 <span id="cb54-28"><a href="#cb54-28" tabindex="-1" aria-label="code-block-54-28"></a>        <span class="bu">print</span>(val)</span>
@@ -1272,11 +1272,11 @@ prints a message explaining how it should be used.</p>
 <span id="cb55-27"><a href="#cb55-27" tabindex="-1" aria-label="code-block-55-27"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb55-28"><a href="#cb55-28" tabindex="-1" aria-label="code-block-55-28"></a></span>
 <span id="cb55-29"><a href="#cb55-29" tabindex="-1" aria-label="code-block-55-29"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb55-30"><a href="#cb55-30" tabindex="-1" aria-label="code-block-55-30"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb55-30"><a href="#cb55-30" tabindex="-1" aria-label="code-block-55-30"></a>        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb55-31"><a href="#cb55-31" tabindex="-1" aria-label="code-block-55-31"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
 <span id="cb55-32"><a href="#cb55-32" tabindex="-1" aria-label="code-block-55-32"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb55-33"><a href="#cb55-33" tabindex="-1" aria-label="code-block-55-33"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb55-34"><a href="#cb55-34" tabindex="-1" aria-label="code-block-55-34"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb55-34"><a href="#cb55-34" tabindex="-1" aria-label="code-block-55-34"></a>        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb55-35"><a href="#cb55-35" tabindex="-1" aria-label="code-block-55-35"></a></span>
 <span id="cb55-36"><a href="#cb55-36" tabindex="-1" aria-label="code-block-55-36"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
 <span id="cb55-37"><a href="#cb55-37" tabindex="-1" aria-label="code-block-55-37"></a>        <span class="bu">print</span>(val)</span>
@@ -1334,11 +1334,11 @@ given it displays the means of the data.</p>
 <span id="cb56-21"><a href="#cb56-21" tabindex="-1" aria-label="code-block-56-21"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb56-22"><a href="#cb56-22" tabindex="-1" aria-label="code-block-56-22"></a></span>
 <span id="cb56-23"><a href="#cb56-23" tabindex="-1" aria-label="code-block-56-23"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb56-24"><a href="#cb56-24" tabindex="-1" aria-label="code-block-56-24"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb56-24"><a href="#cb56-24" tabindex="-1" aria-label="code-block-56-24"></a>        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb56-25"><a href="#cb56-25" tabindex="-1" aria-label="code-block-56-25"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
 <span id="cb56-26"><a href="#cb56-26" tabindex="-1" aria-label="code-block-56-26"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb56-27"><a href="#cb56-27" tabindex="-1" aria-label="code-block-56-27"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb56-28"><a href="#cb56-28" tabindex="-1" aria-label="code-block-56-28"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb56-28"><a href="#cb56-28" tabindex="-1" aria-label="code-block-56-28"></a>        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb56-29"><a href="#cb56-29" tabindex="-1" aria-label="code-block-56-29"></a></span>
 <span id="cb56-30"><a href="#cb56-30" tabindex="-1" aria-label="code-block-56-30"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
 <span id="cb56-31"><a href="#cb56-31" tabindex="-1" aria-label="code-block-56-31"></a>        <span class="bu">print</span>(val)</span>
@@ -1585,8 +1585,8 @@ standard input.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/12-cmdline.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/12-cmdline.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2023-11-10",
-  "datePublished": "2026-05-19"
+  "dateModified": "2026-05-20",
+  "datePublished": "2026-05-20"
 }
 
   </script><script>

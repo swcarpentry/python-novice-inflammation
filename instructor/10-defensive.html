@@ -368,7 +368,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Defensive Programming</h1>
-        <p>Last updated on 2026-04-10 |
+        <p>Last updated on 2026-05-20 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/10-defensive.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -888,7 +888,7 @@ your tests but not his/hers or vice versa?</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1" aria-label="code-block-28-1"></a><span class="co"># a possible pre-condition:</span></span>
 <span id="cb28-2"><a href="#cb28-2" tabindex="-1" aria-label="code-block-28-2"></a><span class="cf">assert</span> <span class="bu">len</span>(input_array) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">'Array length must be non-zero'</span></span>
 <span id="cb28-3"><a href="#cb28-3" tabindex="-1" aria-label="code-block-28-3"></a><span class="co"># a possible post-condition:</span></span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1" aria-label="code-block-28-4"></a><span class="cf">assert</span> numpy.amin(input_array) <span class="op">&lt;=</span> average <span class="op">&lt;=</span> numpy.amax(input_array),</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1" aria-label="code-block-28-4"></a><span class="cf">assert</span> numpy.<span class="bu">min</span>(input_array) <span class="op">&lt;=</span> average <span class="op">&lt;=</span> numpy.<span class="bu">max</span>(input_array),</span>
 <span id="cb28-5"><a href="#cb28-5" tabindex="-1" aria-label="code-block-28-5"></a><span class="co">'Average should be between min and max of input values (inclusive)'</span></span></code></pre>
 </div>
 </div>
@@ -1042,8 +1042,8 @@ what that code is supposed to do.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/instructor/10-defensive.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/10-defensive.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2026-04-10",
-  "datePublished": "2026-05-19"
+  "dateModified": "2026-05-20",
+  "datePublished": "2026-05-20"
 }
 
   </script><script>

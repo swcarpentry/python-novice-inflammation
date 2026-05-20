@@ -369,7 +369,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Analyzing Patient Data</h1>
-        <p>Last updated on 2025-07-12 |
+        <p>Last updated on 2026-05-20 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/02-numpy.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -736,15 +736,15 @@ Python feature that will enable us to do this all in one line.</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1" aria-label="code-block-27-1"></a>maxval, minval, stdval <span class="op">=</span> numpy.amax(data), numpy.amin(data), numpy.std(data)</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1" aria-label="code-block-27-1"></a>maxval, minval, stdval <span class="op">=</span> numpy.<span class="bu">max</span>(data), numpy.<span class="bu">min</span>(data), numpy.std(data)</span>
 <span id="cb27-2"><a href="#cb27-2" tabindex="-1" aria-label="code-block-27-2"></a></span>
 <span id="cb27-3"><a href="#cb27-3" tabindex="-1" aria-label="code-block-27-3"></a><span class="bu">print</span>(<span class="st">'maximum inflammation:'</span>, maxval)</span>
 <span id="cb27-4"><a href="#cb27-4" tabindex="-1" aria-label="code-block-27-4"></a><span class="bu">print</span>(<span class="st">'minimum inflammation:'</span>, minval)</span>
 <span id="cb27-5"><a href="#cb27-5" tabindex="-1" aria-label="code-block-27-5"></a><span class="bu">print</span>(<span class="st">'standard deviation:'</span>, stdval)</span></code></pre>
 </div>
 <p>Here we’ve assigned the return value from
-<code>numpy.amax(data)</code> to the variable <code>maxval</code>, the
-value from <code>numpy.amin(data)</code> to <code>minval</code>, and so
+<code>numpy.max(data)</code> to the variable <code>maxval</code>, the
+value from <code>numpy.min(data)</code> to <code>minval</code>, and so
 on.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -779,31 +779,6 @@ function you’re interested in, for example:
 </div>
 </div>
 </div>
-<div id="confusing-function-names" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="confusing-function-names" class="callout-inner">
-<h3 class="callout-title">Confusing Function Names</h3>
-<div class="callout-content">
-<p>One might wonder why the functions are called <code>amax</code> and
-<code>amin</code> and not <code>max</code> and <code>min</code> or why
-the other is called <code>mean</code> and not <code>amean</code>. The
-package <code>numpy</code> does provide functions <code>max</code> and
-<code>min</code> that are fully equivalent to <code>amax</code> and
-<code>amin</code>, but they share a name with standard library functions
-<code>max</code> and <code>min</code> that come with Python itself.
-Referring to the functions like we did above, that is
-<code>numpy.max</code> for example, does not cause problems, but there
-are other ways to refer to them that could. In addition, text editors
-might highlight (color) these functions like standard library function,
-even though they belong to NumPy, which can be confusing and lead to
-errors. Since there is no function called <code>mean</code> in the
-standard library, there is no function called <code>amean</code>.</p>
-</div>
-</div>
-</div>
 <p>When analyzing data, though, we often want to look at variations in
 statistical values, such as the maximum inflammation per patient or the
 average inflammation per day. One way to do this is to create a new
@@ -813,7 +788,7 @@ calculation:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1" aria-label="code-block-29-1"></a>patient_0 <span class="op">=</span> data[<span class="dv">0</span>, :] <span class="co"># 0 on the first axis (rows), everything on the second (columns)</span></span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1" aria-label="code-block-29-2"></a><span class="bu">print</span>(<span class="st">'maximum inflammation for patient 0:'</span>, numpy.amax(patient_0))</span></code></pre>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1" aria-label="code-block-29-2"></a><span class="bu">print</span>(<span class="st">'maximum inflammation for patient 0:'</span>, numpy.<span class="bu">max</span>(patient_0))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -825,7 +800,7 @@ Instead, we can combine the selection and the function call:</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1" aria-label="code-block-31-1"></a><span class="bu">print</span>(<span class="st">'maximum inflammation for patient 2:'</span>, numpy.amax(data[<span class="dv">2</span>, :]))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1" aria-label="code-block-31-1"></a><span class="bu">print</span>(<span class="st">'maximum inflammation for patient 2:'</span>, numpy.<span class="bu">max</span>(data[<span class="dv">2</span>, :]))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -836,14 +811,14 @@ Instead, we can combine the selection and the function call:</p>
 days (as in the next diagram on the left) or the average for each day
 (as in the diagram on the right)? As the diagram below shows, we want to
 perform the operation across an axis:</p>
-<figure><img src="../fig/python-operations-across-axes.png" alt="Per-patient maximum inflammation is computed row-wise across all columns usingnumpy.amax(data, axis=1). Per-day average inflammation is computed column-wise across all rows usingnumpy.mean(data, axis=0)." class="figure mx-auto d-block"></figure><p>To find the <strong>maximum inflammation reported for each
+<figure><img src="../fig/python-operations-across-axes.svg" alt="Per-patient maximum inflammation is computed row-wise across all columns usingnumpy.max(data, axis=1). Per-day average inflammation is computed column-wise across all rows usingnumpy.mean(data, axis=0)." class="figure mx-auto d-block"></figure><p>To find the <strong>maximum inflammation reported for each
 patient</strong>, you would apply the <code>max</code> function moving
 across the columns (axis 1). To find the <strong>daily average
 inflammation reported across patients</strong>, you would apply the
 <code>mean</code> function moving down the rows (axis 0).</p>
 <p>To support this functionality, most array functions allow us to
-specify the axis we want to work on. If we ask for the max across axis 1
-(columns in our 2D example), we get:</p>
+specify the axis we want to work on. If we ask for the maximum across
+axis 1 (columns in our 2D example), we get:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -858,7 +833,7 @@ specify the axis we want to work on. If we ask for the max across axis 1
  17. 16. 17. 19. 18. 18.]</code></pre>
 </div>
 <p>As a quick check, we can ask this array what its shape is. We expect
-60 patient maximums:</p>
+60 patient maxima:</p>
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1343,13 +1318,13 @@ a decrease?</p>
 </button>
 <div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
 <div class="accordion-body">
-<p>By using the <code>numpy.amax()</code> function after you apply the
+<p>By using the <code>numpy.max()</code> function after you apply the
 <code>numpy.diff()</code> function, you will get the largest difference
 between days.</p>
 <div class="codewrapper sourceCode" id="cb62">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" tabindex="-1" aria-label="code-block-62-1"></a>numpy.amax(numpy.diff(data, axis<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" tabindex="-1" aria-label="code-block-62-1"></a>numpy.<span class="bu">max</span>(numpy.diff(data, axis<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb63">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1371,7 +1346,7 @@ difference between readings.</p>
 <div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" tabindex="-1" aria-label="code-block-64-1"></a>numpy.amax(numpy.absolute(numpy.diff(data, axis<span class="op">=</span><span class="dv">1</span>)), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" tabindex="-1" aria-label="code-block-64-1"></a>numpy.<span class="bu">max</span>(numpy.absolute(numpy.diff(data, axis<span class="op">=</span><span class="dv">1</span>)), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb65">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1407,8 +1382,8 @@ array.</li>
 includes the indices from <code>low</code> to <code>high-1</code>.</li>
 <li>Use <code># some kind of explanation</code> to add comments to
 programs.</li>
-<li>Use <code>numpy.mean(array)</code>, <code>numpy.amax(array)</code>,
-and <code>numpy.amin(array)</code> to calculate simple statistics.</li>
+<li>Use <code>numpy.mean(array)</code>, <code>numpy.max(array)</code>,
+and <code>numpy.min(array)</code> to calculate simple statistics.</li>
 <li>Use <code>numpy.mean(array, axis=0)</code> or
 <code>numpy.mean(array, axis=1)</code> to calculate statistics across
 the specified axis.</li>
@@ -1475,8 +1450,8 @@ the specified axis.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/instructor/02-numpy.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/02-numpy.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2025-07-12",
-  "datePublished": "2026-05-19"
+  "dateModified": "2026-05-20",
+  "datePublished": "2026-05-20"
 }
 
   </script><script>

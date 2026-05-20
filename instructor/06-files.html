@@ -360,7 +360,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Analyzing Data from Multiple Files</h1>
-        <p>Last updated on 2025-05-22 |
+        <p>Last updated on 2026-05-20 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/06-files.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -458,10 +458,10 @@ output:</p>
 <span id="cb4-19"><a href="#cb4-19" tabindex="-1" aria-label="code-block-4-19"></a>    axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb4-20"><a href="#cb4-20" tabindex="-1" aria-label="code-block-4-20"></a></span>
 <span id="cb4-21"><a href="#cb4-21" tabindex="-1" aria-label="code-block-4-21"></a>    axes2.set_ylabel(<span class="st">'max'</span>)</span>
-<span id="cb4-22"><a href="#cb4-22" tabindex="-1" aria-label="code-block-4-22"></a>    axes2.plot(numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1" aria-label="code-block-4-22"></a>    axes2.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb4-23"><a href="#cb4-23" tabindex="-1" aria-label="code-block-4-23"></a></span>
 <span id="cb4-24"><a href="#cb4-24" tabindex="-1" aria-label="code-block-4-24"></a>    axes3.set_ylabel(<span class="st">'min'</span>)</span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1" aria-label="code-block-4-25"></a>    axes3.plot(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1" aria-label="code-block-4-25"></a>    axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb4-26"><a href="#cb4-26" tabindex="-1" aria-label="code-block-4-26"></a></span>
 <span id="cb4-27"><a href="#cb4-27" tabindex="-1" aria-label="code-block-4-27"></a>    fig.tight_layout()</span>
 <span id="cb4-28"><a href="#cb4-28" tabindex="-1" aria-label="code-block-4-28"></a>    matplotlib.pyplot.show()</span></code></pre>
@@ -517,7 +517,7 @@ difference between the leftmost plots of the first two figures.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -575,7 +575,7 @@ patients.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -603,10 +603,10 @@ patients.</p>
 <span id="cb10-21"><a href="#cb10-21" tabindex="-1" aria-label="code-block-10-21"></a>axes1.plot(numpy.mean(composite_data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb10-22"><a href="#cb10-22" tabindex="-1" aria-label="code-block-10-22"></a></span>
 <span id="cb10-23"><a href="#cb10-23" tabindex="-1" aria-label="code-block-10-23"></a>axes2.set_ylabel(<span class="st">'max'</span>)</span>
-<span id="cb10-24"><a href="#cb10-24" tabindex="-1" aria-label="code-block-10-24"></a>axes2.plot(numpy.amax(composite_data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb10-24"><a href="#cb10-24" tabindex="-1" aria-label="code-block-10-24"></a>axes2.plot(numpy.<span class="bu">max</span>(composite_data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb10-25"><a href="#cb10-25" tabindex="-1" aria-label="code-block-10-25"></a></span>
 <span id="cb10-26"><a href="#cb10-26" tabindex="-1" aria-label="code-block-10-26"></a>axes3.set_ylabel(<span class="st">'min'</span>)</span>
-<span id="cb10-27"><a href="#cb10-27" tabindex="-1" aria-label="code-block-10-27"></a>axes3.plot(numpy.amin(composite_data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb10-27"><a href="#cb10-27" tabindex="-1" aria-label="code-block-10-27"></a>axes3.plot(numpy.<span class="bu">min</span>(composite_data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb10-28"><a href="#cb10-28" tabindex="-1" aria-label="code-block-10-28"></a></span>
 <span id="cb10-29"><a href="#cb10-29" tabindex="-1" aria-label="code-block-10-29"></a>fig.tight_layout()</span>
 <span id="cb10-30"><a href="#cb10-30" tabindex="-1" aria-label="code-block-10-30"></a></span>
@@ -722,8 +722,8 @@ and <code>?</code> to match any single character.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/instructor/06-files.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/06-files.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2025-05-22",
-  "datePublished": "2026-05-19"
+  "dateModified": "2026-05-20",
+  "datePublished": "2026-05-20"
 }
 
   </script><script>

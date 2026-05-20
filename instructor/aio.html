@@ -713,7 +713,7 @@ strategies in greater depth later in the lesson</a>.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Choose how to teach this section </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>The section on generative AI is intended to be concise but
 Instructors may choose to devote more time to the topic in a workshop.
@@ -874,7 +874,7 @@ executing the lines.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -914,7 +914,7 @@ the following program print out?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -949,7 +949,7 @@ the following program print out?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -998,7 +998,7 @@ your program and where.</li>
 </div>
 </section></section><section id="aio-02-numpy"><p>Content from <a href="02-numpy.html">Analyzing Patient Data</a></p>
 <hr>
-<p>Last updated on 2025-07-12 |
+<p>Last updated on 2026-05-20 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/02-numpy.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
@@ -1368,15 +1368,15 @@ Python feature that will enable us to do this all in one line.</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1" aria-label="code-block-27-1"></a>maxval, minval, stdval <span class="op">=</span> numpy.amax(data), numpy.amin(data), numpy.std(data)</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1" aria-label="code-block-27-1"></a>maxval, minval, stdval <span class="op">=</span> numpy.<span class="bu">max</span>(data), numpy.<span class="bu">min</span>(data), numpy.std(data)</span>
 <span id="cb27-2"><a href="#cb27-2" tabindex="-1" aria-label="code-block-27-2"></a></span>
 <span id="cb27-3"><a href="#cb27-3" tabindex="-1" aria-label="code-block-27-3"></a><span class="bu">print</span>(<span class="st">'maximum inflammation:'</span>, maxval)</span>
 <span id="cb27-4"><a href="#cb27-4" tabindex="-1" aria-label="code-block-27-4"></a><span class="bu">print</span>(<span class="st">'minimum inflammation:'</span>, minval)</span>
 <span id="cb27-5"><a href="#cb27-5" tabindex="-1" aria-label="code-block-27-5"></a><span class="bu">print</span>(<span class="st">'standard deviation:'</span>, stdval)</span></code></pre>
 </div>
 <p>Here we’ve assigned the return value from
-<code>numpy.amax(data)</code> to the variable <code>maxval</code>, the
-value from <code>numpy.amin(data)</code> to <code>minval</code>, and so
+<code>numpy.max(data)</code> to the variable <code>maxval</code>, the
+value from <code>numpy.min(data)</code> to <code>minval</code>, and so
 on.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1411,31 +1411,6 @@ function you’re interested in, for example:
 </div>
 </div>
 </div>
-<div id="confusing-function-names" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="confusing-function-names" class="callout-inner">
-<h3 class="callout-title">Confusing Function Names</h3>
-<div class="callout-content">
-<p>One might wonder why the functions are called <code>amax</code> and
-<code>amin</code> and not <code>max</code> and <code>min</code> or why
-the other is called <code>mean</code> and not <code>amean</code>. The
-package <code>numpy</code> does provide functions <code>max</code> and
-<code>min</code> that are fully equivalent to <code>amax</code> and
-<code>amin</code>, but they share a name with standard library functions
-<code>max</code> and <code>min</code> that come with Python itself.
-Referring to the functions like we did above, that is
-<code>numpy.max</code> for example, does not cause problems, but there
-are other ways to refer to them that could. In addition, text editors
-might highlight (color) these functions like standard library function,
-even though they belong to NumPy, which can be confusing and lead to
-errors. Since there is no function called <code>mean</code> in the
-standard library, there is no function called <code>amean</code>.</p>
-</div>
-</div>
-</div>
 <p>When analyzing data, though, we often want to look at variations in
 statistical values, such as the maximum inflammation per patient or the
 average inflammation per day. One way to do this is to create a new
@@ -1445,7 +1420,7 @@ calculation:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1" aria-label="code-block-29-1"></a>patient_0 <span class="op">=</span> data[<span class="dv">0</span>, :] <span class="co"># 0 on the first axis (rows), everything on the second (columns)</span></span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1" aria-label="code-block-29-2"></a><span class="bu">print</span>(<span class="st">'maximum inflammation for patient 0:'</span>, numpy.amax(patient_0))</span></code></pre>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1" aria-label="code-block-29-2"></a><span class="bu">print</span>(<span class="st">'maximum inflammation for patient 0:'</span>, numpy.<span class="bu">max</span>(patient_0))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1457,7 +1432,7 @@ Instead, we can combine the selection and the function call:</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1" aria-label="code-block-31-1"></a><span class="bu">print</span>(<span class="st">'maximum inflammation for patient 2:'</span>, numpy.amax(data[<span class="dv">2</span>, :]))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1" aria-label="code-block-31-1"></a><span class="bu">print</span>(<span class="st">'maximum inflammation for patient 2:'</span>, numpy.<span class="bu">max</span>(data[<span class="dv">2</span>, :]))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1468,14 +1443,14 @@ Instead, we can combine the selection and the function call:</p>
 days (as in the next diagram on the left) or the average for each day
 (as in the diagram on the right)? As the diagram below shows, we want to
 perform the operation across an axis:</p>
-<figure><img src="../fig/python-operations-across-axes.png" alt="Per-patient maximum inflammation is computed row-wise across all columns usingnumpy.amax(data, axis=1). Per-day average inflammation is computed column-wise across all rows usingnumpy.mean(data, axis=0)." class="figure mx-auto d-block"></figure><p>To find the <strong>maximum inflammation reported for each
+<figure><img src="../fig/python-operations-across-axes.svg" alt="Per-patient maximum inflammation is computed row-wise across all columns usingnumpy.max(data, axis=1). Per-day average inflammation is computed column-wise across all rows usingnumpy.mean(data, axis=0)." class="figure mx-auto d-block"></figure><p>To find the <strong>maximum inflammation reported for each
 patient</strong>, you would apply the <code>max</code> function moving
 across the columns (axis 1). To find the <strong>daily average
 inflammation reported across patients</strong>, you would apply the
 <code>mean</code> function moving down the rows (axis 0).</p>
 <p>To support this functionality, most array functions allow us to
-specify the axis we want to work on. If we ask for the max across axis 1
-(columns in our 2D example), we get:</p>
+specify the axis we want to work on. If we ask for the maximum across
+axis 1 (columns in our 2D example), we get:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1490,7 +1465,7 @@ specify the axis we want to work on. If we ask for the max across axis 1
  17. 16. 17. 19. 18. 18.]</code></pre>
 </div>
 <p>As a quick check, we can ask this array what its shape is. We expect
-60 patient maximums:</p>
+60 patient maxima:</p>
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1975,13 +1950,13 @@ a decrease?</p>
 </button>
 <div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
 <div class="accordion-body">
-<p>By using the <code>numpy.amax()</code> function after you apply the
+<p>By using the <code>numpy.max()</code> function after you apply the
 <code>numpy.diff()</code> function, you will get the largest difference
 between days.</p>
 <div class="codewrapper sourceCode" id="cb62">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" tabindex="-1" aria-label="code-block-62-1"></a>numpy.amax(numpy.diff(data, axis<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" tabindex="-1" aria-label="code-block-62-1"></a>numpy.<span class="bu">max</span>(numpy.diff(data, axis<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb63">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2003,7 +1978,7 @@ difference between readings.</p>
 <div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" tabindex="-1" aria-label="code-block-64-1"></a>numpy.amax(numpy.absolute(numpy.diff(data, axis<span class="op">=</span><span class="dv">1</span>)), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" tabindex="-1" aria-label="code-block-64-1"></a>numpy.<span class="bu">max</span>(numpy.absolute(numpy.diff(data, axis<span class="op">=</span><span class="dv">1</span>)), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb65">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2040,8 +2015,8 @@ array.</li>
 includes the indices from <code>low</code> to <code>high-1</code>.</li>
 <li>Use <code># some kind of explanation</code> to add comments to
 programs.</li>
-<li>Use <code>numpy.mean(array)</code>, <code>numpy.amax(array)</code>,
-and <code>numpy.amin(array)</code> to calculate simple statistics.</li>
+<li>Use <code>numpy.mean(array)</code>, <code>numpy.max(array)</code>,
+and <code>numpy.min(array)</code> to calculate simple statistics.</li>
 <li>Use <code>numpy.mean(array, axis=0)</code> or
 <code>numpy.mean(array, axis=1)</code> to calculate statistics across
 the specified axis.</li>
@@ -2051,7 +2026,7 @@ the specified axis.</li>
 </div>
 </section></section><section id="aio-03-matplotlib"><p>Content from <a href="03-matplotlib.html">Visualizing Tabular Data</a></p>
 <hr>
-<p>Last updated on 2025-05-22 |
+<p>Last updated on 2026-05-20 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/03-matplotlib.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 50 minutes</p>
@@ -2159,13 +2134,13 @@ dataset, so let’s have a look at two other statistics:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a>max_plot <span class="op">=</span> matplotlib.pyplot.plot(numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a>max_plot <span class="op">=</span> matplotlib.pyplot.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a>matplotlib.pyplot.show()</span></code></pre>
 </div>
 <figure><img src="../fig/inflammation-01-maximum.svg" alt="A line graph showing the maximum inflammation across all patients over a 40-day period." class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a>min_plot <span class="op">=</span> matplotlib.pyplot.plot(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a>min_plot <span class="op">=</span> matplotlib.pyplot.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a>matplotlib.pyplot.show()</span></code></pre>
 </div>
 <figure><img src="../fig/inflammation-01-minimum.svg" alt="A line graph showing the minimum inflammation across all patients over a 40-day period." class="figure mx-auto d-block"></figure><p>The maximum value rises and falls linearly, while the minimum seems
@@ -2208,10 +2183,10 @@ using the <code>set_xlabel()</code> command (or
 <span id="cb6-13"><a href="#cb6-13" tabindex="-1" aria-label="code-block-6-13"></a>axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb6-14"><a href="#cb6-14" tabindex="-1" aria-label="code-block-6-14"></a></span>
 <span id="cb6-15"><a href="#cb6-15" tabindex="-1" aria-label="code-block-6-15"></a>axes2.set_ylabel(<span class="st">'max'</span>)</span>
-<span id="cb6-16"><a href="#cb6-16" tabindex="-1" aria-label="code-block-6-16"></a>axes2.plot(numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1" aria-label="code-block-6-16"></a>axes2.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb6-17"><a href="#cb6-17" tabindex="-1" aria-label="code-block-6-17"></a></span>
 <span id="cb6-18"><a href="#cb6-18" tabindex="-1" aria-label="code-block-6-18"></a>axes3.set_ylabel(<span class="st">'min'</span>)</span>
-<span id="cb6-19"><a href="#cb6-19" tabindex="-1" aria-label="code-block-6-19"></a>axes3.plot(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1" aria-label="code-block-6-19"></a>axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb6-20"><a href="#cb6-20" tabindex="-1" aria-label="code-block-6-20"></a></span>
 <span id="cb6-21"><a href="#cb6-21" tabindex="-1" aria-label="code-block-6-21"></a>fig.tight_layout()</span>
 <span id="cb6-22"><a href="#cb6-22" tabindex="-1" aria-label="code-block-6-22"></a></span>
@@ -2281,7 +2256,7 @@ graph?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Because matplotlib normally sets x and y axes limits to the min and
 max of our data (depending on data range)</p>
@@ -2316,14 +2291,14 @@ scale. (Hint: you can make use of the <code>max</code> and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a><span class="co"># One method</span></span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1" aria-label="code-block-8-2"></a>axes3.set_ylabel(<span class="st">'min'</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1" aria-label="code-block-8-3"></a>axes3.plot(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1" aria-label="code-block-8-3"></a>axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb8-4"><a href="#cb8-4" tabindex="-1" aria-label="code-block-8-4"></a>axes3.set_ylim(<span class="dv">0</span>, <span class="dv">6</span>)</span></code></pre>
 </div>
 </div>
@@ -2335,16 +2310,16 @@ scale. (Hint: you can make use of the <code>max</code> and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a><span class="co"># A more automated approach</span></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1" aria-label="code-block-9-2"></a>min_data <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1" aria-label="code-block-9-2"></a>min_data <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1" aria-label="code-block-9-3"></a>axes3.set_ylabel(<span class="st">'min'</span>)</span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1" aria-label="code-block-9-4"></a>axes3.plot(min_data)</span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1" aria-label="code-block-9-5"></a>axes3.set_ylim(numpy.amin(min_data), numpy.amax(min_data) <span class="op">*</span> <span class="fl">1.1</span>)</span></code></pre>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1" aria-label="code-block-9-5"></a>axes3.set_ylim(numpy.<span class="bu">min</span>(min_data), numpy.<span class="bu">max</span>(min_data) <span class="op">*</span> <span class="fl">1.1</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -2371,7 +2346,7 @@ the subplot on the right looks slanted. Why is this?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Because matplotlib interpolates (draws a straight line) between the
 points. One way to do avoid this is to use the Matplotlib
@@ -2394,10 +2369,10 @@ points. One way to do avoid this is to use the Matplotlib
 <span id="cb10-13"><a href="#cb10-13" tabindex="-1" aria-label="code-block-10-13"></a>axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>), drawstyle<span class="op">=</span><span class="st">'steps-mid'</span>)</span>
 <span id="cb10-14"><a href="#cb10-14" tabindex="-1" aria-label="code-block-10-14"></a></span>
 <span id="cb10-15"><a href="#cb10-15" tabindex="-1" aria-label="code-block-10-15"></a>axes2.set_ylabel(<span class="st">'max'</span>)</span>
-<span id="cb10-16"><a href="#cb10-16" tabindex="-1" aria-label="code-block-10-16"></a>axes2.plot(numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>), drawstyle<span class="op">=</span><span class="st">'steps-mid'</span>)</span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1" aria-label="code-block-10-16"></a>axes2.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>), drawstyle<span class="op">=</span><span class="st">'steps-mid'</span>)</span>
 <span id="cb10-17"><a href="#cb10-17" tabindex="-1" aria-label="code-block-10-17"></a></span>
 <span id="cb10-18"><a href="#cb10-18" tabindex="-1" aria-label="code-block-10-18"></a>axes3.set_ylabel(<span class="st">'min'</span>)</span>
-<span id="cb10-19"><a href="#cb10-19" tabindex="-1" aria-label="code-block-10-19"></a>axes3.plot(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>), drawstyle<span class="op">=</span><span class="st">'steps-mid'</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1" aria-label="code-block-10-19"></a>axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>), drawstyle<span class="op">=</span><span class="st">'steps-mid'</span>)</span>
 <span id="cb10-20"><a href="#cb10-20" tabindex="-1" aria-label="code-block-10-20"></a></span>
 <span id="cb10-21"><a href="#cb10-21" tabindex="-1" aria-label="code-block-10-21"></a>fig.tight_layout()</span>
 <span id="cb10-22"><a href="#cb10-22" tabindex="-1" aria-label="code-block-10-22"></a></span>
@@ -2426,7 +2401,7 @@ of the inflammation data for each day across all patients.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2456,7 +2431,7 @@ instead of side by side.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2478,10 +2453,10 @@ instead of side by side.</p>
 <span id="cb12-15"><a href="#cb12-15" tabindex="-1" aria-label="code-block-12-15"></a>axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb12-16"><a href="#cb12-16" tabindex="-1" aria-label="code-block-12-16"></a></span>
 <span id="cb12-17"><a href="#cb12-17" tabindex="-1" aria-label="code-block-12-17"></a>axes2.set_ylabel(<span class="st">'max'</span>)</span>
-<span id="cb12-18"><a href="#cb12-18" tabindex="-1" aria-label="code-block-12-18"></a>axes2.plot(numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb12-18"><a href="#cb12-18" tabindex="-1" aria-label="code-block-12-18"></a>axes2.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb12-19"><a href="#cb12-19" tabindex="-1" aria-label="code-block-12-19"></a></span>
 <span id="cb12-20"><a href="#cb12-20" tabindex="-1" aria-label="code-block-12-20"></a>axes3.set_ylabel(<span class="st">'min'</span>)</span>
-<span id="cb12-21"><a href="#cb12-21" tabindex="-1" aria-label="code-block-12-21"></a>axes3.plot(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb12-21"><a href="#cb12-21" tabindex="-1" aria-label="code-block-12-21"></a>axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb12-22"><a href="#cb12-22" tabindex="-1" aria-label="code-block-12-22"></a></span>
 <span id="cb12-23"><a href="#cb12-23" tabindex="-1" aria-label="code-block-12-23"></a>fig.tight_layout()</span>
 <span id="cb12-24"><a href="#cb12-24" tabindex="-1" aria-label="code-block-12-24"></a></span>
@@ -3462,7 +3437,7 @@ natural numbers:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3505,7 +3480,7 @@ natural numbers:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The body of the loop is executed 6 times.</p>
 </div>
@@ -3541,7 +3516,7 @@ using multiplication (and without exponentiation).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3574,7 +3549,7 @@ each element and printing the final value, so
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3638,7 +3613,7 @@ value <code>y</code> of any polynomial, given <code>x</code> and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3669,7 +3644,7 @@ that contains other values.</li>
 </div>
 </div></section><section id="aio-06-files"><p>Content from <a href="06-files.html">Analyzing Data from Multiple Files</a></p>
 <hr>
-<p>Last updated on 2025-05-22 |
+<p>Last updated on 2026-05-20 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/06-files.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -3764,10 +3739,10 @@ output:</p>
 <span id="cb4-19"><a href="#cb4-19" tabindex="-1" aria-label="code-block-4-19"></a>    axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb4-20"><a href="#cb4-20" tabindex="-1" aria-label="code-block-4-20"></a></span>
 <span id="cb4-21"><a href="#cb4-21" tabindex="-1" aria-label="code-block-4-21"></a>    axes2.set_ylabel(<span class="st">'max'</span>)</span>
-<span id="cb4-22"><a href="#cb4-22" tabindex="-1" aria-label="code-block-4-22"></a>    axes2.plot(numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1" aria-label="code-block-4-22"></a>    axes2.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb4-23"><a href="#cb4-23" tabindex="-1" aria-label="code-block-4-23"></a></span>
 <span id="cb4-24"><a href="#cb4-24" tabindex="-1" aria-label="code-block-4-24"></a>    axes3.set_ylabel(<span class="st">'min'</span>)</span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1" aria-label="code-block-4-25"></a>    axes3.plot(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1" aria-label="code-block-4-25"></a>    axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb4-26"><a href="#cb4-26" tabindex="-1" aria-label="code-block-4-26"></a></span>
 <span id="cb4-27"><a href="#cb4-27" tabindex="-1" aria-label="code-block-4-27"></a>    fig.tight_layout()</span>
 <span id="cb4-28"><a href="#cb4-28" tabindex="-1" aria-label="code-block-4-28"></a>    matplotlib.pyplot.show()</span></code></pre>
@@ -3823,7 +3798,7 @@ difference between the leftmost plots of the first two figures.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3881,7 +3856,7 @@ patients.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3909,10 +3884,10 @@ patients.</p>
 <span id="cb10-21"><a href="#cb10-21" tabindex="-1" aria-label="code-block-10-21"></a>axes1.plot(numpy.mean(composite_data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb10-22"><a href="#cb10-22" tabindex="-1" aria-label="code-block-10-22"></a></span>
 <span id="cb10-23"><a href="#cb10-23" tabindex="-1" aria-label="code-block-10-23"></a>axes2.set_ylabel(<span class="st">'max'</span>)</span>
-<span id="cb10-24"><a href="#cb10-24" tabindex="-1" aria-label="code-block-10-24"></a>axes2.plot(numpy.amax(composite_data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb10-24"><a href="#cb10-24" tabindex="-1" aria-label="code-block-10-24"></a>axes2.plot(numpy.<span class="bu">max</span>(composite_data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb10-25"><a href="#cb10-25" tabindex="-1" aria-label="code-block-10-25"></a></span>
 <span id="cb10-26"><a href="#cb10-26" tabindex="-1" aria-label="code-block-10-26"></a>axes3.set_ylabel(<span class="st">'min'</span>)</span>
-<span id="cb10-27"><a href="#cb10-27" tabindex="-1" aria-label="code-block-10-27"></a>axes3.plot(numpy.amin(composite_data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb10-27"><a href="#cb10-27" tabindex="-1" aria-label="code-block-10-27"></a>axes3.plot(numpy.<span class="bu">min</span>(composite_data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb10-28"><a href="#cb10-28" tabindex="-1" aria-label="code-block-10-28"></a></span>
 <span id="cb10-29"><a href="#cb10-29" tabindex="-1" aria-label="code-block-10-29"></a>fig.tight_layout()</span>
 <span id="cb10-30"><a href="#cb10-30" tabindex="-1" aria-label="code-block-10-30"></a></span>
@@ -3970,7 +3945,7 @@ and <code>?</code> to match any single character.</li>
 </div>
 </div></section><section id="aio-07-cond"><p>Content from <a href="07-cond.html">Making Choices</a></p>
 <hr>
-<p>Last updated on 2023-11-17 |
+<p>Last updated on 2026-05-20 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/07-cond.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 30 minutes</p>
@@ -4020,7 +3995,7 @@ condition, with an <code>if</code> statement:</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>The following example will lead to a syntax error in the Python
 prompt, as it seems to expect exactly one top-level statement per
@@ -4192,8 +4167,8 @@ the corresponding day numbers.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1" aria-label="code-block-12-1"></a>max_inflammation_0 <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>]</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1" aria-label="code-block-12-2"></a>max_inflammation_20 <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>]</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1" aria-label="code-block-12-1"></a>max_inflammation_0 <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1" aria-label="code-block-12-2"></a>max_inflammation_20 <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>]</span>
 <span id="cb12-3"><a href="#cb12-3" tabindex="-1" aria-label="code-block-12-3"></a></span>
 <span id="cb12-4"><a href="#cb12-4" tabindex="-1" aria-label="code-block-12-4"></a><span class="cf">if</span> max_inflammation_0 <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> max_inflammation_20 <span class="op">==</span> <span class="dv">20</span>:</span>
 <span id="cb12-5"><a href="#cb12-5" tabindex="-1" aria-label="code-block-12-5"></a>    <span class="bu">print</span>(<span class="st">'Suspicious looking maxima!'</span>)</span></code></pre>
@@ -4204,7 +4179,7 @@ can also check for this with an <code>elif</code> condition:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1" aria-label="code-block-13-1"></a><span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1" aria-label="code-block-13-1"></a><span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb13-2"><a href="#cb13-2" tabindex="-1" aria-label="code-block-13-2"></a>    <span class="bu">print</span>(<span class="st">'Minima add up to zero!'</span>)</span></code></pre>
 </div>
 <p>And if neither of these conditions are true, we can use
@@ -4221,12 +4196,12 @@ can also check for this with an <code>elif</code> condition:</p>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a>data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">'inflammation-01.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" tabindex="-1" aria-label="code-block-15-2"></a></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1" aria-label="code-block-15-3"></a>max_inflammation_0 <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>]</span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1" aria-label="code-block-15-4"></a>max_inflammation_20 <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>]</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1" aria-label="code-block-15-3"></a>max_inflammation_0 <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>]</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1" aria-label="code-block-15-4"></a>max_inflammation_20 <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>]</span>
 <span id="cb15-5"><a href="#cb15-5" tabindex="-1" aria-label="code-block-15-5"></a></span>
 <span id="cb15-6"><a href="#cb15-6" tabindex="-1" aria-label="code-block-15-6"></a><span class="cf">if</span> max_inflammation_0 <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> max_inflammation_20 <span class="op">==</span> <span class="dv">20</span>:</span>
 <span id="cb15-7"><a href="#cb15-7" tabindex="-1" aria-label="code-block-15-7"></a>    <span class="bu">print</span>(<span class="st">'Suspicious looking maxima!'</span>)</span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1" aria-label="code-block-15-8"></a><span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1" aria-label="code-block-15-8"></a><span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb15-9"><a href="#cb15-9" tabindex="-1" aria-label="code-block-15-9"></a>    <span class="bu">print</span>(<span class="st">'Minima add up to zero!'</span>)</span>
 <span id="cb15-10"><a href="#cb15-10" tabindex="-1" aria-label="code-block-15-10"></a><span class="cf">else</span>:</span>
 <span id="cb15-11"><a href="#cb15-11" tabindex="-1" aria-label="code-block-15-11"></a>    <span class="bu">print</span>(<span class="st">'Seems OK!'</span>)</span></code></pre>
@@ -4241,12 +4216,12 @@ can also check for this with an <code>elif</code> condition:</p>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1" aria-label="code-block-17-1"></a>data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">'inflammation-03.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" tabindex="-1" aria-label="code-block-17-2"></a></span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1" aria-label="code-block-17-3"></a>max_inflammation_0 <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>]</span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1" aria-label="code-block-17-4"></a>max_inflammation_20 <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>]</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1" aria-label="code-block-17-3"></a>max_inflammation_0 <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>]</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1" aria-label="code-block-17-4"></a>max_inflammation_20 <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>]</span>
 <span id="cb17-5"><a href="#cb17-5" tabindex="-1" aria-label="code-block-17-5"></a></span>
 <span id="cb17-6"><a href="#cb17-6" tabindex="-1" aria-label="code-block-17-6"></a><span class="cf">if</span> max_inflammation_0 <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> max_inflammation_20 <span class="op">==</span> <span class="dv">20</span>:</span>
 <span id="cb17-7"><a href="#cb17-7" tabindex="-1" aria-label="code-block-17-7"></a>    <span class="bu">print</span>(<span class="st">'Suspicious looking maxima!'</span>)</span>
-<span id="cb17-8"><a href="#cb17-8" tabindex="-1" aria-label="code-block-17-8"></a><span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1" aria-label="code-block-17-8"></a><span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb17-9"><a href="#cb17-9" tabindex="-1" aria-label="code-block-17-9"></a>    <span class="bu">print</span>(<span class="st">'Minima add up to zero!'</span>)</span>
 <span id="cb17-10"><a href="#cb17-10" tabindex="-1" aria-label="code-block-17-10"></a><span class="cf">else</span>:</span>
 <span id="cb17-11"><a href="#cb17-11" tabindex="-1" aria-label="code-block-17-11"></a>    <span class="bu">print</span>(<span class="st">'Seems OK!'</span>)</span></code></pre>
@@ -4297,7 +4272,7 @@ Why did you pick this answer?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>C gets printed because the first two conditions,
 <code>4 &gt; 5</code> and <code>4 == 5</code>, are not true, but
@@ -4391,7 +4366,7 @@ numbers?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Hint </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>There is a <a href="https://docs.python.org/3/library/functions.html#abs" class="external-link">built-in
 function <code>abs</code></a> that returns the absolute value of a
@@ -4415,7 +4390,7 @@ number:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Solution 1 </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4437,7 +4412,7 @@ number:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Solution 2 </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4484,7 +4459,7 @@ less readable than writing the same without in-place operators?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4583,7 +4558,7 @@ starts with the string passed as an argument, that is:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4628,7 +4603,7 @@ people think is a vowel, and some do not)?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4677,7 +4652,7 @@ values.</li>
 </div>
 </section></section><section id="aio-08-func"><p>Content from <a href="08-func.html">Creating Functions</a></p>
 <hr>
-<p>Last updated on 2025-05-22 |
+<p>Last updated on 2026-05-20 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/08-func.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 30 minutes</p>
@@ -4921,10 +4896,10 @@ plots:</p>
 <span id="cb17-12"><a href="#cb17-12" tabindex="-1" aria-label="code-block-17-12"></a>    axes1.plot(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb17-13"><a href="#cb17-13" tabindex="-1" aria-label="code-block-17-13"></a></span>
 <span id="cb17-14"><a href="#cb17-14" tabindex="-1" aria-label="code-block-17-14"></a>    axes2.set_ylabel(<span class="st">'max'</span>)</span>
-<span id="cb17-15"><a href="#cb17-15" tabindex="-1" aria-label="code-block-17-15"></a>    axes2.plot(numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb17-15"><a href="#cb17-15" tabindex="-1" aria-label="code-block-17-15"></a>    axes2.plot(numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb17-16"><a href="#cb17-16" tabindex="-1" aria-label="code-block-17-16"></a></span>
 <span id="cb17-17"><a href="#cb17-17" tabindex="-1" aria-label="code-block-17-17"></a>    axes3.set_ylabel(<span class="st">'min'</span>)</span>
-<span id="cb17-18"><a href="#cb17-18" tabindex="-1" aria-label="code-block-17-18"></a>    axes3.plot(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb17-18"><a href="#cb17-18" tabindex="-1" aria-label="code-block-17-18"></a>    axes3.plot(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb17-19"><a href="#cb17-19" tabindex="-1" aria-label="code-block-17-19"></a></span>
 <span id="cb17-20"><a href="#cb17-20" tabindex="-1" aria-label="code-block-17-20"></a>    fig.tight_layout()</span>
 <span id="cb17-21"><a href="#cb17-21" tabindex="-1" aria-label="code-block-17-21"></a>    matplotlib.pyplot.show()</span></code></pre>
@@ -4938,9 +4913,9 @@ for those systematics we noticed:</p>
 <span id="cb18-2"><a href="#cb18-2" tabindex="-1" aria-label="code-block-18-2"></a></span>
 <span id="cb18-3"><a href="#cb18-3" tabindex="-1" aria-label="code-block-18-3"></a>    data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span>filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb18-4"><a href="#cb18-4" tabindex="-1" aria-label="code-block-18-4"></a></span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1" aria-label="code-block-18-5"></a>    <span class="cf">if</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:</span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1" aria-label="code-block-18-5"></a>    <span class="cf">if</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">0</span>)[<span class="dv">20</span>] <span class="op">==</span> <span class="dv">20</span>:</span>
 <span id="cb18-6"><a href="#cb18-6" tabindex="-1" aria-label="code-block-18-6"></a>        <span class="bu">print</span>(<span class="st">'Suspicious looking maxima!'</span>)</span>
-<span id="cb18-7"><a href="#cb18-7" tabindex="-1" aria-label="code-block-18-7"></a>    <span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.amin(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1" aria-label="code-block-18-7"></a>    <span class="cf">elif</span> numpy.<span class="bu">sum</span>(numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">0</span>)) <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb18-8"><a href="#cb18-8" tabindex="-1" aria-label="code-block-18-8"></a>        <span class="bu">print</span>(<span class="st">'Minima add up to zero!'</span>)</span>
 <span id="cb18-9"><a href="#cb18-9" tabindex="-1" aria-label="code-block-18-9"></a>    <span class="cf">else</span>:</span>
 <span id="cb18-10"><a href="#cb18-10" tabindex="-1" aria-label="code-block-18-10"></a>        <span class="bu">print</span>(<span class="st">'Seems OK!'</span>)</span></code></pre>
@@ -5022,12 +4997,12 @@ correct, but there are a few tests that we can run to reassure us:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1" aria-label="code-block-25-1"></a><span class="bu">print</span>(<span class="st">'original min, mean, and max are:'</span>, numpy.amin(data), numpy.mean(data), numpy.amax(data))</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1" aria-label="code-block-25-1"></a><span class="bu">print</span>(<span class="st">'original min, mean, and max are:'</span>, numpy.<span class="bu">min</span>(data), numpy.mean(data), numpy.<span class="bu">max</span>(data))</span>
 <span id="cb25-2"><a href="#cb25-2" tabindex="-1" aria-label="code-block-25-2"></a>offset_data <span class="op">=</span> offset_mean(data, <span class="dv">0</span>)</span>
 <span id="cb25-3"><a href="#cb25-3" tabindex="-1" aria-label="code-block-25-3"></a><span class="bu">print</span>(<span class="st">'min, mean, and max of offset data are:'</span>,</span>
-<span id="cb25-4"><a href="#cb25-4" tabindex="-1" aria-label="code-block-25-4"></a>      numpy.amin(offset_data),</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1" aria-label="code-block-25-4"></a>      numpy.<span class="bu">min</span>(offset_data),</span>
 <span id="cb25-5"><a href="#cb25-5" tabindex="-1" aria-label="code-block-25-5"></a>      numpy.mean(offset_data),</span>
-<span id="cb25-6"><a href="#cb25-6" tabindex="-1" aria-label="code-block-25-6"></a>      numpy.amax(offset_data))</span></code></pre>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1" aria-label="code-block-25-6"></a>      numpy.<span class="bu">max</span>(offset_data))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5540,8 +5515,8 @@ value <code>v</code> should be <code>(v-L) / (H-L)</code>.)</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" tabindex="-1" aria-label="code-block-64-1"></a><span class="kw">def</span> rescale(input_array):</span>
-<span id="cb64-2"><a href="#cb64-2" tabindex="-1" aria-label="code-block-64-2"></a>    L <span class="op">=</span> numpy.amin(input_array)</span>
-<span id="cb64-3"><a href="#cb64-3" tabindex="-1" aria-label="code-block-64-3"></a>    H <span class="op">=</span> numpy.amax(input_array)</span>
+<span id="cb64-2"><a href="#cb64-2" tabindex="-1" aria-label="code-block-64-2"></a>    L <span class="op">=</span> numpy.<span class="bu">min</span>(input_array)</span>
+<span id="cb64-3"><a href="#cb64-3" tabindex="-1" aria-label="code-block-64-3"></a>    H <span class="op">=</span> numpy.<span class="bu">max</span>(input_array)</span>
 <span id="cb64-4"><a href="#cb64-4" tabindex="-1" aria-label="code-block-64-4"></a>    output_array <span class="op">=</span> (input_array <span class="op">-</span> L) <span class="op">/</span> (H <span class="op">-</span> L)</span>
 <span id="cb64-5"><a href="#cb64-5" tabindex="-1" aria-label="code-block-64-5"></a>    <span class="cf">return</span> output_array</span></code></pre>
 </div>
@@ -5618,8 +5593,8 @@ behave the same way?</p>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" tabindex="-1" aria-label="code-block-66-1"></a><span class="kw">def</span> rescale(input_array, low_val<span class="op">=</span><span class="fl">0.0</span>, high_val<span class="op">=</span><span class="fl">1.0</span>):</span>
 <span id="cb66-2"><a href="#cb66-2" tabindex="-1" aria-label="code-block-66-2"></a>    <span class="co">"""rescales input array values to lie between low_val and high_val"""</span></span>
-<span id="cb66-3"><a href="#cb66-3" tabindex="-1" aria-label="code-block-66-3"></a>    L <span class="op">=</span> numpy.amin(input_array)</span>
-<span id="cb66-4"><a href="#cb66-4" tabindex="-1" aria-label="code-block-66-4"></a>    H <span class="op">=</span> numpy.amax(input_array)</span>
+<span id="cb66-3"><a href="#cb66-3" tabindex="-1" aria-label="code-block-66-3"></a>    L <span class="op">=</span> numpy.<span class="bu">min</span>(input_array)</span>
+<span id="cb66-4"><a href="#cb66-4" tabindex="-1" aria-label="code-block-66-4"></a>    H <span class="op">=</span> numpy.<span class="bu">max</span>(input_array)</span>
 <span id="cb66-5"><a href="#cb66-5" tabindex="-1" aria-label="code-block-66-5"></a>    intermed_array <span class="op">=</span> (input_array <span class="op">-</span> L) <span class="op">/</span> (H <span class="op">-</span> L)</span>
 <span id="cb66-6"><a href="#cb66-6" tabindex="-1" aria-label="code-block-66-6"></a>    output_array <span class="op">=</span> intermed_array <span class="op">*</span> (high_val <span class="op">-</span> low_val) <span class="op">+</span> low_val</span>
 <span id="cb66-7"><a href="#cb66-7" tabindex="-1" aria-label="code-block-66-7"></a>    <span class="cf">return</span> output_array</span></code></pre>
@@ -6005,7 +5980,7 @@ IndexError: list index out of range</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>3 levels</li>
@@ -6363,7 +6338,7 @@ the errors are.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p><code>SyntaxError</code> for missing <code>():</code> at end of first
 line, <code>IndentationError</code> for mismatch between second and
@@ -6417,7 +6392,7 @@ have been defined but was not?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>3 <code>NameError</code>s for <code>number</code> being misspelled,
 for <code>message</code> not defined, and for <code>a</code> not being
@@ -6468,7 +6443,7 @@ it?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p><code>IndexError</code>; the last entry is <code>seasons[3]</code>,
 so <code>seasons[4]</code> doesn’t make sense. A fixed version is:</p>
@@ -6515,7 +6490,7 @@ writing, or writing to a file that is open for reading, will give you an
 </div>
 </section></section><section id="aio-10-defensive"><p>Content from <a href="10-defensive.html">Defensive Programming</a></p>
 <hr>
-<p>Last updated on 2026-04-10 |
+<p>Last updated on 2026-05-20 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/10-defensive.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
@@ -7048,7 +7023,7 @@ your tests but not his/hers or vice versa?</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1" aria-label="code-block-28-1"></a><span class="co"># a possible pre-condition:</span></span>
 <span id="cb28-2"><a href="#cb28-2" tabindex="-1" aria-label="code-block-28-2"></a><span class="cf">assert</span> <span class="bu">len</span>(input_array) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">'Array length must be non-zero'</span></span>
 <span id="cb28-3"><a href="#cb28-3" tabindex="-1" aria-label="code-block-28-3"></a><span class="co"># a possible post-condition:</span></span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1" aria-label="code-block-28-4"></a><span class="cf">assert</span> numpy.amin(input_array) <span class="op">&lt;=</span> average <span class="op">&lt;=</span> numpy.amax(input_array),</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1" aria-label="code-block-28-4"></a><span class="cf">assert</span> numpy.<span class="bu">min</span>(input_array) <span class="op">&lt;=</span> average <span class="op">&lt;=</span> numpy.<span class="bu">max</span>(input_array),</span>
 <span id="cb28-5"><a href="#cb28-5" tabindex="-1" aria-label="code-block-28-5"></a><span class="co">'Average should be between min and max of input values (inclusive)'</span></span></code></pre>
 </div>
 </div>
@@ -7419,7 +7394,7 @@ Patient's BMI is: 0.000367</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="suggestions-for-debugging">Suggestions for debugging<a class="anchor" aria-label="anchor" href="#suggestions-for-debugging"></a>
@@ -7471,7 +7446,7 @@ it.</li>
 </div>
 </section></section><section id="aio-12-cmdline"><p>Content from <a href="12-cmdline.html">Command-Line Programs</a></p>
 <hr>
-<p>Last updated on 2023-11-10 |
+<p>Last updated on 2026-05-20 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/12-cmdline.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 30 minutes</p>
@@ -7949,11 +7924,11 @@ this:</p>
 <span id="cb32-10"><a href="#cb32-10" tabindex="-1" aria-label="code-block-32-10"></a>        data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb32-11"><a href="#cb32-11" tabindex="-1" aria-label="code-block-32-11"></a></span>
 <span id="cb32-12"><a href="#cb32-12" tabindex="-1" aria-label="code-block-32-12"></a>        <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb32-13"><a href="#cb32-13" tabindex="-1" aria-label="code-block-32-13"></a>            values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb32-13"><a href="#cb32-13" tabindex="-1" aria-label="code-block-32-13"></a>            values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb32-14"><a href="#cb32-14" tabindex="-1" aria-label="code-block-32-14"></a>        <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
 <span id="cb32-15"><a href="#cb32-15" tabindex="-1" aria-label="code-block-32-15"></a>            values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb32-16"><a href="#cb32-16" tabindex="-1" aria-label="code-block-32-16"></a>        <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb32-17"><a href="#cb32-17" tabindex="-1" aria-label="code-block-32-17"></a>            values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb32-17"><a href="#cb32-17" tabindex="-1" aria-label="code-block-32-17"></a>            values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb32-18"><a href="#cb32-18" tabindex="-1" aria-label="code-block-32-18"></a></span>
 <span id="cb32-19"><a href="#cb32-19" tabindex="-1" aria-label="code-block-32-19"></a>        <span class="cf">for</span> val <span class="kw">in</span> values:</span>
 <span id="cb32-20"><a href="#cb32-20" tabindex="-1" aria-label="code-block-32-20"></a>            <span class="bu">print</span>(val)</span>
@@ -8014,11 +7989,11 @@ fast:</p>
 <span id="cb36-14"><a href="#cb36-14" tabindex="-1" aria-label="code-block-36-14"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb36-15"><a href="#cb36-15" tabindex="-1" aria-label="code-block-36-15"></a></span>
 <span id="cb36-16"><a href="#cb36-16" tabindex="-1" aria-label="code-block-36-16"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb36-17"><a href="#cb36-17" tabindex="-1" aria-label="code-block-36-17"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-17"><a href="#cb36-17" tabindex="-1" aria-label="code-block-36-17"></a>        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb36-18"><a href="#cb36-18" tabindex="-1" aria-label="code-block-36-18"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
 <span id="cb36-19"><a href="#cb36-19" tabindex="-1" aria-label="code-block-36-19"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb36-20"><a href="#cb36-20" tabindex="-1" aria-label="code-block-36-20"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb36-21"><a href="#cb36-21" tabindex="-1" aria-label="code-block-36-21"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-21"><a href="#cb36-21" tabindex="-1" aria-label="code-block-36-21"></a>        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb36-22"><a href="#cb36-22" tabindex="-1" aria-label="code-block-36-22"></a></span>
 <span id="cb36-23"><a href="#cb36-23" tabindex="-1" aria-label="code-block-36-23"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
 <span id="cb36-24"><a href="#cb36-24" tabindex="-1" aria-label="code-block-36-24"></a>        <span class="bu">print</span>(val)</span>
@@ -8113,11 +8088,11 @@ as its first parameter, so we don’t actually need to change
 <span id="cb43-17"><a href="#cb43-17" tabindex="-1" aria-label="code-block-43-17"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb43-18"><a href="#cb43-18" tabindex="-1" aria-label="code-block-43-18"></a></span>
 <span id="cb43-19"><a href="#cb43-19" tabindex="-1" aria-label="code-block-43-19"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb43-20"><a href="#cb43-20" tabindex="-1" aria-label="code-block-43-20"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb43-20"><a href="#cb43-20" tabindex="-1" aria-label="code-block-43-20"></a>        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb43-21"><a href="#cb43-21" tabindex="-1" aria-label="code-block-43-21"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
 <span id="cb43-22"><a href="#cb43-22" tabindex="-1" aria-label="code-block-43-22"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb43-23"><a href="#cb43-23" tabindex="-1" aria-label="code-block-43-23"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb43-24"><a href="#cb43-24" tabindex="-1" aria-label="code-block-43-24"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb43-24"><a href="#cb43-24" tabindex="-1" aria-label="code-block-43-24"></a>        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb43-25"><a href="#cb43-25" tabindex="-1" aria-label="code-block-43-25"></a></span>
 <span id="cb43-26"><a href="#cb43-26" tabindex="-1" aria-label="code-block-43-26"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
 <span id="cb43-27"><a href="#cb43-27" tabindex="-1" aria-label="code-block-43-27"></a>        <span class="bu">print</span>(val)</span>
@@ -8316,11 +8291,11 @@ easier to read? Is the program easier to understand?</p>
 <span id="cb54-18"><a href="#cb54-18" tabindex="-1" aria-label="code-block-54-18"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb54-19"><a href="#cb54-19" tabindex="-1" aria-label="code-block-54-19"></a></span>
 <span id="cb54-20"><a href="#cb54-20" tabindex="-1" aria-label="code-block-54-20"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'-n'</span>:</span>
-<span id="cb54-21"><a href="#cb54-21" tabindex="-1" aria-label="code-block-54-21"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-21"><a href="#cb54-21" tabindex="-1" aria-label="code-block-54-21"></a>        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb54-22"><a href="#cb54-22" tabindex="-1" aria-label="code-block-54-22"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'-m'</span>:</span>
 <span id="cb54-23"><a href="#cb54-23" tabindex="-1" aria-label="code-block-54-23"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb54-24"><a href="#cb54-24" tabindex="-1" aria-label="code-block-54-24"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'-x'</span>:</span>
-<span id="cb54-25"><a href="#cb54-25" tabindex="-1" aria-label="code-block-54-25"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-25"><a href="#cb54-25" tabindex="-1" aria-label="code-block-54-25"></a>        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb54-26"><a href="#cb54-26" tabindex="-1" aria-label="code-block-54-26"></a></span>
 <span id="cb54-27"><a href="#cb54-27" tabindex="-1" aria-label="code-block-54-27"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
 <span id="cb54-28"><a href="#cb54-28" tabindex="-1" aria-label="code-block-54-28"></a>        <span class="bu">print</span>(val)</span>
@@ -8384,11 +8359,11 @@ prints a message explaining how it should be used.</p>
 <span id="cb55-27"><a href="#cb55-27" tabindex="-1" aria-label="code-block-55-27"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb55-28"><a href="#cb55-28" tabindex="-1" aria-label="code-block-55-28"></a></span>
 <span id="cb55-29"><a href="#cb55-29" tabindex="-1" aria-label="code-block-55-29"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb55-30"><a href="#cb55-30" tabindex="-1" aria-label="code-block-55-30"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb55-30"><a href="#cb55-30" tabindex="-1" aria-label="code-block-55-30"></a>        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb55-31"><a href="#cb55-31" tabindex="-1" aria-label="code-block-55-31"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
 <span id="cb55-32"><a href="#cb55-32" tabindex="-1" aria-label="code-block-55-32"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb55-33"><a href="#cb55-33" tabindex="-1" aria-label="code-block-55-33"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb55-34"><a href="#cb55-34" tabindex="-1" aria-label="code-block-55-34"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb55-34"><a href="#cb55-34" tabindex="-1" aria-label="code-block-55-34"></a>        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb55-35"><a href="#cb55-35" tabindex="-1" aria-label="code-block-55-35"></a></span>
 <span id="cb55-36"><a href="#cb55-36" tabindex="-1" aria-label="code-block-55-36"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
 <span id="cb55-37"><a href="#cb55-37" tabindex="-1" aria-label="code-block-55-37"></a>        <span class="bu">print</span>(val)</span>
@@ -8446,11 +8421,11 @@ given it displays the means of the data.</p>
 <span id="cb56-21"><a href="#cb56-21" tabindex="-1" aria-label="code-block-56-21"></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb56-22"><a href="#cb56-22" tabindex="-1" aria-label="code-block-56-22"></a></span>
 <span id="cb56-23"><a href="#cb56-23" tabindex="-1" aria-label="code-block-56-23"></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
-<span id="cb56-24"><a href="#cb56-24" tabindex="-1" aria-label="code-block-56-24"></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb56-24"><a href="#cb56-24" tabindex="-1" aria-label="code-block-56-24"></a>        values <span class="op">=</span> numpy.<span class="bu">min</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb56-25"><a href="#cb56-25" tabindex="-1" aria-label="code-block-56-25"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
 <span id="cb56-26"><a href="#cb56-26" tabindex="-1" aria-label="code-block-56-26"></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb56-27"><a href="#cb56-27" tabindex="-1" aria-label="code-block-56-27"></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
-<span id="cb56-28"><a href="#cb56-28" tabindex="-1" aria-label="code-block-56-28"></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb56-28"><a href="#cb56-28" tabindex="-1" aria-label="code-block-56-28"></a>        values <span class="op">=</span> numpy.<span class="bu">max</span>(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb56-29"><a href="#cb56-29" tabindex="-1" aria-label="code-block-56-29"></a></span>
 <span id="cb56-30"><a href="#cb56-30" tabindex="-1" aria-label="code-block-56-30"></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
 <span id="cb56-31"><a href="#cb56-31" tabindex="-1" aria-label="code-block-56-31"></a>        <span class="bu">print</span>(val)</span>
@@ -8691,8 +8666,8 @@ standard input.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/instructor/aio.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/aio.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2026-05-19",
-  "datePublished": "2026-05-19"
+  "dateModified": "2026-05-20",
+  "datePublished": "2026-05-20"
 }
 
   </script><script>
