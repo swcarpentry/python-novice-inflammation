@@ -55,7 +55,7 @@ ways to render the lesson locally, and even how to write new episodes!
 
 ## Maintainers
 
-Lesson maintainers are [Toan Phung][noatgnu] and [Indraneel Chakraborty][ineelhere].
+Lesson maintainers are [Toan Phung][noatgnu], [Indraneel Chakraborty][ineelhere] and [Olushola Ogunkelu][Shorla].
 
 ## Authors
 
@@ -110,6 +110,7 @@ industry and government. More information can be found [here][cp-about].
 [lesson-example]: https://carpentries.github.io/lesson-example
 [noatgnu]: https://github.com/noatgnu
 [ineelhere]: https://github.com/ineelhere
+[Shorla]: https://github.com/Shorla
 [valentina_staneva]: https://software-carpentry.org/team/#staneva_valentina
 [swc_history]: https://software-carpentry.org/scf/history/
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
