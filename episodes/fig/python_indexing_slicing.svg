@@ -148,14 +148,14 @@
      cx="150"
      cy="113"
      r="9"
-     fill="#fac775"
+     fill="#e5971a"
      stroke="#ba7517"
      stroke-width="0.5"
      id="circle5" />
   <text
      class="th"
      x="150"
-     y="114.60899"
+     y="114.07266"
      text-anchor="middle"
      dominant-baseline="central"
      font-size="11"
@@ -165,14 +165,14 @@
      cx="260"
      cy="113"
      r="9"
-     fill="#fac775"
+     fill="#e5971a"
      stroke="#ba7517"
      stroke-width="0.5"
      id="circle6" />
   <text
      class="th"
      x="260"
-     y="114.60899"
+     y="114.07266"
      text-anchor="middle"
      dominant-baseline="central"
      font-size="11"
@@ -182,14 +182,14 @@
      cx="370"
      cy="113"
      r="9"
-     fill="#fac775"
+     fill="#e5971a"
      stroke="#ba7517"
      stroke-width="0.5"
      id="circle7" />
   <text
      class="th"
      x="370"
-     y="114.60899"
+     y="114.07266"
      text-anchor="middle"
      dominant-baseline="central"
      font-size="11"
@@ -199,14 +199,14 @@
      cx="480"
      cy="113"
      r="9"
-     fill="#fac775"
+     fill="#e5971a"
      stroke="#ba7517"
      stroke-width="0.5"
      id="circle8" />
   <text
      class="th"
      x="480"
-     y="114.60899"
+     y="114.07266"
      text-anchor="middle"
      dominant-baseline="central"
      font-size="11"
@@ -254,14 +254,14 @@
      stroke-dasharray="3, 2"
      marker-end="url(#arrow)"
      id="line13"
-     style="stroke:#fac775;stroke-opacity:1" />
+     style="stroke:#e5971a;stroke-opacity:1" />
   <text
      class="ts"
      x="614"
      y="76"
      dominant-baseline="auto"
      id="text13">data[<tspan
-   style="fill:#fac775;fill-opacity:1"
+   style="fill:#e5971a;fill-opacity:1"
    id="tspan1">2</tspan>] → 376</text>
   <text
      class="th"
@@ -449,7 +449,7 @@
      stroke-width="1.80538"
      opacity="0.75"
      id="rect24-7"
-     style="stroke:#fac775;stroke-opacity:1" />
+     style="stroke:#e5971a;stroke-opacity:1" />
   <path
      d="m 209.99967,226 v 6 h 209.53166 v -6"
      fill="none"
@@ -470,7 +470,7 @@
   <text
      class="ts"
      x="614"
-     y="200"
+     y="198"
      dominant-baseline="central"
      fill="#0f6e56"
      id="text25">data[<tspan
