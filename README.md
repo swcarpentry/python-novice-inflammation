@@ -55,7 +55,7 @@ ways to render the lesson locally, and even how to write new episodes!
 
 ## Maintainers
 
-Lesson maintainers are [Toan Phung][noatgnu], [Indraneel Chakraborty][ineelhere] and [Olushola Ogunkelu][Shorla].
+Lesson maintainers are [Toan Phung][noatgnu], [Indraneel Chakraborty][ineelhere] and [Olushola Ogunkelu](Shorla).
 
 ## Authors
 
