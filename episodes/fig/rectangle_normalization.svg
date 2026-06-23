@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="rectangle_normalization-carpentries-contribution.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.063988"
+     inkscape:cx="94.961792"
+     inkscape:cy="196.22207"
+     inkscape:window-width="3434"
+     inkscape:window-height="1415"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="Triangle-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-6-0"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-2-9" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-55.562496,-41.102022)">
+    <g
+       id="g1"
+       transform="translate(2.2734443,2.4955912)">
+      <rect
+         style="fill:#18974c;fill-rule:evenodd;stroke-width:100"
+         id="rect1"
+         width="43.793564"
+         height="32.447048"
+         x="80.389091"
+         y="48.639065" />
+      <rect
+         style="fill:#18974c;fill-rule:evenodd;stroke-width:100"
+         id="rect1-0"
+         width="43.793564"
+         height="32.447048"
+         x="55.562496"
+         y="98.160469" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.46944px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
+         x="83.955193"
+         y="84.171761"
+         id="text1"><tspan
+           sodipodi:role="line"
+           id="tspan1"
+           style="stroke-width:0.264583"
+           x="83.955193"
+           y="84.171761">(x0, y0)</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.46944px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
+         x="81.264984"
+         y="48.372925"
+         id="text1-7"><tspan
+           sodipodi:role="line"
+           id="tspan1-4"
+           style="stroke-width:0.264583"
+           x="81.264984"
+           y="48.372925">x0</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.46944px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
+         x="125.58923"
+         y="83.358704"
+         id="text1-7-4"><tspan
+           sodipodi:role="line"
+           id="tspan1-4-7"
+           style="stroke-width:0.264583"
+           x="125.58923"
+           y="83.358704">y0</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.46944px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
+         x="108.28574"
+         y="42.816643"
+         id="text1-1"><tspan
+           sodipodi:role="line"
+           id="tspan1-5"
+           style="stroke-width:0.264583"
+           x="108.28574"
+           y="42.816643">dx = x1 - x0</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.46944px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
+         x="78.607758"
+         y="95.906334"
+         id="text1-1-8"><tspan
+           sodipodi:role="line"
+           id="tspan1-5-8"
+           style="stroke-width:0.264583"
+           x="78.607758"
+           y="95.906334">1.0</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.46944px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
+         x="151.07951"
+         y="116.16708"
+         id="text1-1-8-8"><tspan
+           sodipodi:role="line"
+           id="tspan1-5-8-92"
+           style="stroke-width:0.264583"
+           x="151.07951"
+           y="116.16708">1.0</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.46944px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
+         x="107.68819"
+         y="115.10876"
+         id="text1-1-8-4"><tspan
+           sodipodi:role="line"
+           id="tspan1-5-8-9"
+           style="stroke-width:0.264583"
+           x="107.68819"
+           y="115.10876">scaled</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.46944px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
+         x="135.29738"
+         y="92.466705"
+         id="text1-1-8-4-9"><tspan
+           sodipodi:role="line"
+           id="tspan1-5-8-9-5"
+           style="stroke-width:0.264583"
+           x="135.29738"
+           y="92.466705">scaled</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.46944px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
+         x="140.52019"
+         y="64.685463"
+         id="text1-1-6"><tspan
+           sodipodi:role="line"
+           id="tspan1-5-5"
+           style="stroke-width:0.264583"
+           x="140.52019"
+           y="64.685463">dy = y1 - y0</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.46944px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
+         x="128.44235"
+         y="47.711269"
+         id="text1-6"><tspan
+           sodipodi:role="line"
+           id="tspan1-3"
+           style="stroke-width:0.264583"
+           x="128.44235"
+           y="47.711269">(x1, y1)</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 126.7562,48.98279 V 80.727702"
+         id="path1" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 81.153826,44.267365 H 124.18217"
+         id="path2" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle-6)"
+         d="m 112.38191,83.567898 7.92868,7.865968"
+         id="path2-5-1" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle-6-0)"
+         d="m 95.11531,83.702395 -7.928635,7.865968"
+         id="path2-5-1-6" />
+      <rect
+         style="fill:#18974c;fill-rule:evenodd;stroke-width:110.581"
+         id="rect2"
+         width="28.797771"
+         height="41.701378"
+         x="117.90917"
+         y="94.409462" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.46944px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
+         x="81.745758"
+         y="114.01562"
+         id="text2"><tspan
+           sodipodi:role="line"
+           id="tspan2"
+           style="stroke-width:0.264583"
+           x="81.745758"
+           y="114.01562">dx &gt; dy</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.46944px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;stroke-width:0.264583"
+         x="135.89136"
+         y="115.75004"
+         id="text2-7"><tspan
+           sodipodi:role="line"
+           id="tspan2-1"
+           style="stroke-width:0.264583"
+           x="135.89136"
+           y="115.75004">dy &gt; dx</tspan></text>
+    </g>
+  </g>
+</svg>
