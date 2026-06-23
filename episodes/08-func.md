@@ -48,24 +48,24 @@ Let's start by defining a function `fahr_to_celsius` that converts temperatures
 from Fahrenheit to Celsius:
 
 ```python
-def explicit_fahr_to_celsius(temp):
+def explicit_fahr_to_celsius(temp_f):
     # Assign the converted value to a variable
-    converted = ((temp - 32) * (5/9))
+    temp_c = ((temp_f - 32) * (5/9))
     # Return the value of the new variable
-    return converted
-    
-def fahr_to_celsius(temp):
+    return temp_f
+
+def fahr_to_celsius(temp_f):
     # Return converted value more efficiently using the return
     # function without creating a new variable. This code does
     # the same thing as the previous function but it is more explicit
     # in explaining how the return command works.
-    return ((temp - 32) * (5/9))
+    return ((temp_f - 32) * (5/9))
 ```
 
 ![](fig/python-function.svg){alt='Labeled parts of a Python function definition'}
 
 The function definition opens with the keyword `def` followed by the
-name of the function (`fahr_to_celsius`) and a parenthesized list of parameter names (`temp`). The
+name of the function (`fahr_to_celsius`) and a parenthesized list of parameter names (`temp_f`). The
 [body](../learners/reference.md#body) of the function --- the
 statements that are executed when it runs --- is indented below the
 definition line.  The body concludes with a `return` keyword followed by the return value.
@@ -103,36 +103,36 @@ and we have access to the value that we returned.
 ## Composing Functions
 
 Now that we've seen how to turn Fahrenheit into Celsius,
-we can also write the function to turn Celsius into Kelvin:
+we can also write the function to turn Celsius into kelvins:
 
 ```python
-def celsius_to_kelvin(temp_c):
+def celsius_to_kelvins(temp_c):
     return temp_c + 273.15
 
-print('freezing point of water in Kelvin:', celsius_to_kelvin(0.))
+print('freezing point of water in Kelvin:', celsius_to_kelvins(0.0))
 ```
 
 ```output
-freezing point of water in Kelvin: 273.15
+freezing point of water in kelvins: 273.15
 ```
 
-What about converting Fahrenheit to Kelvin?
+What about converting Fahrenheit to kelvins?
 We could write out the formula,
 but we don't need to.
 Instead,
 we can [compose](../learners/reference.md#compose) the two functions we have already created:
 
 ```python
-def fahr_to_kelvin(temp_f):
+def fahr_to_kelvins(temp_f):
     temp_c = fahr_to_celsius(temp_f)
-    temp_k = celsius_to_kelvin(temp_c)
+    temp_k = celsius_to_kelvins(temp_c)
     return temp_k
 
-print('boiling point of water in Kelvin:', fahr_to_kelvin(212.0))
+print('boiling point of water in kelvins:', fahr_to_kelvins(212.0))
 ```
 
 ```output
-boiling point of water in Kelvin: 373.15
+boiling point of water in kelvins: 373.15
 ```
 
 This is our first taste of how larger programs are built:
@@ -145,37 +145,38 @@ or the next person who reads it won't be able to understand what's going on.
 ## Variable Scope
 
 In composing our temperature conversion functions, we created variables inside of those functions,
-`temp`, `temp_c`, `temp_f`, and `temp_k`.
+`temp_c`, `temp_f`, and `temp_k`.
 We refer to these variables as [local variables](../learners/reference.md#local-variable)
 because they no longer exist once the function is done executing.
 If we try to access their values outside of the function, we will encounter an error:
 
 ```python
-print('Again, temperature in Kelvin was:', temp_k)
+print('Again, temperature in kelvins was:', temp_k)
 ```
 
 ```error
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 <ipython-input-1-eed2471d229b> in <module>
-----> 1 print('Again, temperature in Kelvin was:', temp_k)
+----> 1 print('Again, temperature in kelvins was:', temp_k)
 
 NameError: name 'temp_k' is not defined
 ```
 
-If you want to reuse the temperature in Kelvin after you have calculated it with `fahr_to_kelvin`,
+If you want to reuse the temperature in kelvins
+after you have calculated it with `fahr_to_kelvins`,
 you can store the result of the function call in a variable:
 
 ```python
-temp_kelvin = fahr_to_kelvin(212.0)
-print('temperature in Kelvin was:', temp_kelvin)
+temp_kelvins = fahr_to_kelvins(212.0)
+print('temperature in kelvins was:', temp_kelvins)
 ```
 
 ```output
-temperature in Kelvin was: 373.15
+temperature in kelvins was: 373.15
 ```
 
-The variable `temp_kelvin`, being defined outside any function,
+The variable `temp_kelvins`, being defined outside any function,
 is said to be [global](../learners/reference.md#global-variable).
 
 Inside a function, one can read the value of such global variables:
@@ -183,17 +184,17 @@ Inside a function, one can read the value of such global variables:
 ```python
 def print_temperatures():
     print('temperature in Fahrenheit was:', temp_fahr)
-    print('temperature in Kelvin was:', temp_kelvin)
+    print('temperature in kelvins was:', temp_kelvins)
 
 temp_fahr = 212.0
-temp_kelvin = fahr_to_kelvin(temp_fahr)
+temp_kelvins = fahr_to_kelvins(temp_fahr)
 
 print_temperatures()
 ```
 
 ```output
 temperature in Fahrenheit was: 212.0
-temperature in Kelvin was: 373.15
+temperature in kelvins was: 373.15
 ```
 
 ## Tidying up
