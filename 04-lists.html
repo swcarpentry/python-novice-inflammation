@@ -227,6 +227,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#python-lists">Python lists</a></li>
+<li><a href="#visual-intuition-for-indexing-versus-slicing">Visual intuition for indexing versus slicing</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -363,7 +364,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Storing Multiple Values in Lists</h1>
-        <p>Last updated on 2025-05-22 |
+        <p>Last updated on 2026-06-29 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/04-lists.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -783,7 +784,7 @@ your approach to make it more robust.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Use negative indices to count elements from the end of a container
 (such as list or string):</p>
@@ -864,7 +865,7 @@ through the end of the string)?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>To obtain every other character you need to provide a slice with the
 step size of 2:</p>
@@ -956,7 +957,7 @@ things depending on what it’s applied to.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The multiplication operator <code>*</code> used on a list replicates
 elements of the list and concatenates them together:</p>
@@ -975,7 +976,9 @@ elements of the list and concatenates them together:</p>
 </div>
 </div>
 </div>
-<div id="keypoints1" class="callout keypoints">
+</section><section><h2 class="section-heading" id="visual-intuition-for-indexing-versus-slicing">Visual intuition for indexing versus slicing<a class="anchor" aria-label="anchor" href="#visual-intuition-for-indexing-versus-slicing"></a></h2>
+<hr class="half-width"><figure><img src="fig/python_indexing_slicing.svg" alt="Visual illustration of indexing, slicing and slicing with a step" class="figure mx-auto d-block"><div class="figcaption">Indexing and slicing with steps</div>
+</figure><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -1055,8 +1058,8 @@ changed).</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/04-lists.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/04-lists.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2025-05-22",
-  "datePublished": "2026-06-23"
+  "dateModified": "2026-06-29",
+  "datePublished": "2026-06-29"
 }
 
   </script><script>
