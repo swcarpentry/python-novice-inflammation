@@ -61,9 +61,9 @@ This means that, for example:
 
 Python knows various types of data. Three common ones are:
 
-- integer numbers
-- floating point numbers, and
-- strings.
+- [integer numbers](https://en.wikipedia.org/wiki/Integer)
+- [floating point numbers](https://en.wikipedia.org/wiki/Floating-point_arithmetic), and
+- [strings](https://en.wikipedia.org/wiki/String_(computer_science)).
 
 In the example above, variable `weight_kg` has an integer value of `60`.
 If we want to more precisely track the weight of our patient,
