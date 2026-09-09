@@ -8,7 +8,22 @@ This lesson is designed to be run on a personal computer.
 All of the software and data used in this lesson are freely available online,
 and instructions on how to obtain them are provided below.
 
-## Install Python
+There are two main ways to set up python for this workshop:
+
+- A premade Google Colab worksheet (easiest!)
+- Your own laptop
+
+## Google Colabs
+
+We have prepared a worksheet with all the required software.
+This means you don't need to install anything on your laptop.
+All your code runs on a computer in the 'cloud'.
+
+See this link to access the Colab worksheet: https://colab.research.google.com/drive/1K9Z6h_uri8L1gw1F4tLY49s0AWRaHse5?usp=sharing
+
+## Set up your own laptop
+
+### Install Python
 
 In this lesson, we will be using Python 3 with some of its most popular scientific libraries.
 One can install a plain-vanilla Python and all required libraries by hand. If you've followed
@@ -16,7 +31,7 @@ the [Carpentry workshop installation instructions](https://carpentries.github.io
 you will have installed miniforge and the required libraries in an environment called `carpentries`. 
 Before starting you'll want to type `conda activate carpentries` in order to activate that environment.
 
-## Obtain lesson materials
+### Obtain lesson materials
 
 1. Download [python-novice-inflammation-data.zip][zipfile1]
   and [python-novice-inflammation-code.zip][zipfile2].
@@ -27,14 +42,14 @@ Before starting you'll want to type `conda activate carpentries` in order to act
 You should see two folders called `data` and `code` in the `swc-python` directory on your
 Desktop.
 
-## Launch Python interface
+### Launch Python interface
 
 To start working with Python, we need to launch a program that will interpret and execute our
 Python commands. Below we list several options. If you don't have a preference, proceed with the
 top option in the list that is available on your machine. Otherwise, you may use any interface
 you like.
 
-## Option A: Jupyter Notebook
+### Option A: Jupyter Notebook
 
 A Jupyter Notebook provides a browser-based interface for working with Python.
 You can launch a notebook from the command line:
@@ -104,7 +119,7 @@ from the drop-down menu:
 
   <!-- vertical spacer -->
 
-## Option B: IPython interpreter
+### Option B: IPython interpreter
 
 IPython is an alternative solution situated somewhere in between the plain-vanilla Python
 interpreter and Jupyter Notebook. It provides an interactive command-line based interpreter with
@@ -119,7 +134,7 @@ ipython
 
   <!-- vertical spacer -->
 
-## Option C: plain-vanilla Python interpreter
+### Option C: plain-vanilla Python interpreter
 
 To launch a plain-vanilla Python interpreter, execute:
 
