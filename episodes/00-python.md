@@ -112,6 +112,12 @@ python my-script.py
 hello from my-script.py
 ```
 
+### Example script
+
+See the [intro-script.py](./files/code/intro-script.py) file as an example script.
+In this workshop, we will work towards understanding how elements of this script works and how to write your own similar scripts.
+
+
 ## Running Python from notebooks
 
 Notebooks are a way run python code in an interactive and graphical way.
