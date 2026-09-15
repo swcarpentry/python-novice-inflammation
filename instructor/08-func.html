@@ -368,7 +368,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Creating Functions</h1>
-        <p>Last updated on 2026-05-20 |
+        <p>Last updated on 2026-09-15 |
 
         <a href="https://github.com/swcarpentry/python-novice-inflammation/edit/main/episodes/08-func.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -442,22 +442,22 @@ temperatures from Fahrenheit to Celsius:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="kw">def</span> explicit_fahr_to_celsius(temp):</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="kw">def</span> explicit_fahr_to_celsius(temp_f):</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a>    <span class="co"># Assign the converted value to a variable</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a>    converted <span class="op">=</span> ((temp <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a>    temp_c <span class="op">=</span> ((temp_f <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a>    <span class="co"># Return the value of the new variable</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a>    <span class="cf">return</span> converted</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a>    </span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a><span class="kw">def</span> fahr_to_celsius(temp):</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a>    <span class="cf">return</span> temp_f</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a><span class="kw">def</span> fahr_to_celsius(temp_f):</span>
 <span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a>    <span class="co"># Return converted value more efficiently using the return</span></span>
 <span id="cb3-9"><a href="#cb3-9" tabindex="-1" aria-label="code-block-3-9"></a>    <span class="co"># function without creating a new variable. This code does</span></span>
 <span id="cb3-10"><a href="#cb3-10" tabindex="-1" aria-label="code-block-3-10"></a>    <span class="co"># the same thing as the previous function but it is more explicit</span></span>
 <span id="cb3-11"><a href="#cb3-11" tabindex="-1" aria-label="code-block-3-11"></a>    <span class="co"># in explaining how the return command works.</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1" aria-label="code-block-3-12"></a>    <span class="cf">return</span> ((temp <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span></code></pre>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1" aria-label="code-block-3-12"></a>    <span class="cf">return</span> ((temp_f <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>))</span></code></pre>
 </div>
 <figure><img src="../fig/python-function.svg" alt="Labeled parts of a Python function definition" class="figure mx-auto d-block"></figure><p>The function definition opens with the keyword <code>def</code>
 followed by the name of the function (<code>fahr_to_celsius</code>) and
-a parenthesized list of parameter names (<code>temp</code>). The <a href="reference.html#body">body</a> of the function — the statements
+a parenthesized list of parameter names (<code>temp_f</code>). The <a href="reference.html#body">body</a> of the function — the statements
 that are executed when it runs — is indented below the definition line.
 The body concludes with a <code>return</code> keyword followed by the
 return value.</p>
@@ -491,37 +491,37 @@ boiling point of water: 100.0 C</code></pre>
 access to the value that we returned.</p>
 <section><h2 class="section-heading" id="composing-functions">Composing Functions<a class="anchor" aria-label="anchor" href="#composing-functions"></a></h2>
 <hr class="half-width"><p>Now that we’ve seen how to turn Fahrenheit into Celsius, we can also
-write the function to turn Celsius into Kelvin:</p>
+write the function to turn Celsius into kelvins:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a><span class="kw">def</span> celsius_to_kelvin(temp_c):</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a><span class="kw">def</span> celsius_to_kelvins(temp_c):</span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1" aria-label="code-block-7-2"></a>    <span class="cf">return</span> temp_c <span class="op">+</span> <span class="fl">273.15</span></span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1" aria-label="code-block-7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1" aria-label="code-block-7-4"></a><span class="bu">print</span>(<span class="st">'freezing point of water in Kelvin:'</span>, celsius_to_kelvin(<span class="fl">0.</span>))</span></code></pre>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1" aria-label="code-block-7-4"></a><span class="bu">print</span>(<span class="st">'freezing point of water in Kelvin:'</span>, celsius_to_kelvins(<span class="fl">0.0</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>freezing point of water in Kelvin: 273.15</code></pre>
+<pre class="output" tabindex="0"><code>freezing point of water in kelvins: 273.15</code></pre>
 </div>
-<p>What about converting Fahrenheit to Kelvin? We could write out the
+<p>What about converting Fahrenheit to kelvins? We could write out the
 formula, but we don’t need to. Instead, we can <a href="reference.html#compose">compose</a> the two functions we have
 already created:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a><span class="kw">def</span> fahr_to_kelvin(temp_f):</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a><span class="kw">def</span> fahr_to_kelvins(temp_f):</span>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1" aria-label="code-block-9-2"></a>    temp_c <span class="op">=</span> fahr_to_celsius(temp_f)</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1" aria-label="code-block-9-3"></a>    temp_k <span class="op">=</span> celsius_to_kelvin(temp_c)</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1" aria-label="code-block-9-3"></a>    temp_k <span class="op">=</span> celsius_to_kelvins(temp_c)</span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1" aria-label="code-block-9-4"></a>    <span class="cf">return</span> temp_k</span>
 <span id="cb9-5"><a href="#cb9-5" tabindex="-1" aria-label="code-block-9-5"></a></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1" aria-label="code-block-9-6"></a><span class="bu">print</span>(<span class="st">'boiling point of water in Kelvin:'</span>, fahr_to_kelvin(<span class="fl">212.0</span>))</span></code></pre>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1" aria-label="code-block-9-6"></a><span class="bu">print</span>(<span class="st">'boiling point of water in kelvins:'</span>, fahr_to_kelvins(<span class="fl">212.0</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>boiling point of water in Kelvin: 373.15</code></pre>
+<pre class="output" tabindex="0"><code>boiling point of water in kelvins: 373.15</code></pre>
 </div>
 <p>This is our first taste of how larger programs are built: we define
 basic operations, then combine them in ever-larger chunks to get the
@@ -531,15 +531,16 @@ shouldn’t ever be much longer than that, or the next person who reads it
 won’t be able to understand what’s going on.</p>
 </section><section><h2 class="section-heading" id="variable-scope">Variable Scope<a class="anchor" aria-label="anchor" href="#variable-scope"></a></h2>
 <hr class="half-width"><p>In composing our temperature conversion functions, we created
-variables inside of those functions, <code>temp</code>,
-<code>temp_c</code>, <code>temp_f</code>, and <code>temp_k</code>. We
-refer to these variables as <a href="reference.html#local-variable">local variables</a> because they no
-longer exist once the function is done executing. If we try to access
-their values outside of the function, we will encounter an error:</p>
+variables inside of those functions, <code>temp_c</code>,
+<code>temp_f</code>, and <code>temp_k</code>. We refer to these
+variables as <a href="reference.html#local-variable">local variables</a>
+because they no longer exist once the function is done executing. If we
+try to access their values outside of the function, we will encounter an
+error:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1" aria-label="code-block-11-1"></a><span class="bu">print</span>(<span class="st">'Again, temperature in Kelvin was:'</span>, temp_k)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1" aria-label="code-block-11-1"></a><span class="bu">print</span>(<span class="st">'Again, temperature in kelvins was:'</span>, temp_k)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -547,25 +548,25 @@ their values outside of the function, we will encounter an error:</p>
 <pre class="error" tabindex="0"><code>---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 &lt;ipython-input-1-eed2471d229b&gt; in &lt;module&gt;
-----&gt; 1 print('Again, temperature in Kelvin was:', temp_k)
+----&gt; 1 print('Again, temperature in kelvins was:', temp_k)
 
 NameError: name 'temp_k' is not defined</code></pre>
 </div>
-<p>If you want to reuse the temperature in Kelvin after you have
-calculated it with <code>fahr_to_kelvin</code>, you can store the result
-of the function call in a variable:</p>
+<p>If you want to reuse the temperature in kelvins after you have
+calculated it with <code>fahr_to_kelvins</code>, you can store the
+result of the function call in a variable:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1" aria-label="code-block-13-1"></a>temp_kelvin <span class="op">=</span> fahr_to_kelvin(<span class="fl">212.0</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1" aria-label="code-block-13-2"></a><span class="bu">print</span>(<span class="st">'temperature in Kelvin was:'</span>, temp_kelvin)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1" aria-label="code-block-13-1"></a>temp_kelvins <span class="op">=</span> fahr_to_kelvins(<span class="fl">212.0</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1" aria-label="code-block-13-2"></a><span class="bu">print</span>(<span class="st">'temperature in kelvins was:'</span>, temp_kelvins)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>temperature in Kelvin was: 373.15</code></pre>
+<pre class="output" tabindex="0"><code>temperature in kelvins was: 373.15</code></pre>
 </div>
-<p>The variable <code>temp_kelvin</code>, being defined outside any
+<p>The variable <code>temp_kelvins</code>, being defined outside any
 function, is said to be <a href="reference.html#global-variable">global</a>.</p>
 <p>Inside a function, one can read the value of such global
 variables:</p>
@@ -574,10 +575,10 @@ variables:</p>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="kw">def</span> print_temperatures():</span>
 <span id="cb15-2"><a href="#cb15-2" tabindex="-1" aria-label="code-block-15-2"></a>    <span class="bu">print</span>(<span class="st">'temperature in Fahrenheit was:'</span>, temp_fahr)</span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1" aria-label="code-block-15-3"></a>    <span class="bu">print</span>(<span class="st">'temperature in Kelvin was:'</span>, temp_kelvin)</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1" aria-label="code-block-15-3"></a>    <span class="bu">print</span>(<span class="st">'temperature in kelvins was:'</span>, temp_kelvins)</span>
 <span id="cb15-4"><a href="#cb15-4" tabindex="-1" aria-label="code-block-15-4"></a></span>
 <span id="cb15-5"><a href="#cb15-5" tabindex="-1" aria-label="code-block-15-5"></a>temp_fahr <span class="op">=</span> <span class="fl">212.0</span></span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1" aria-label="code-block-15-6"></a>temp_kelvin <span class="op">=</span> fahr_to_kelvin(temp_fahr)</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1" aria-label="code-block-15-6"></a>temp_kelvins <span class="op">=</span> fahr_to_kelvins(temp_fahr)</span>
 <span id="cb15-7"><a href="#cb15-7" tabindex="-1" aria-label="code-block-15-7"></a></span>
 <span id="cb15-8"><a href="#cb15-8" tabindex="-1" aria-label="code-block-15-8"></a>print_temperatures()</span></code></pre>
 </div>
@@ -585,7 +586,7 @@ variables:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>temperature in Fahrenheit was: 212.0
-temperature in Kelvin was: 373.15</code></pre>
+temperature in kelvins was: 373.15</code></pre>
 </div>
 </section><section><h2 class="section-heading" id="tidying-up">Tidying up<a class="anchor" aria-label="anchor" href="#tidying-up"></a></h2>
 <hr class="half-width"><p>Now that we know how to wrap bits of code up in functions, we can
@@ -1085,7 +1086,7 @@ A call to your function should look like this:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1132,7 +1133,7 @@ following commands?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Python will first execute the function <code>add</code> with
 <code>a = 7</code> and <code>b = 3</code>, and, therefore, print
@@ -1183,7 +1184,7 @@ call to your function should look like this:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb63">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1216,7 +1217,7 @@ value <code>v</code> should be <code>(v-L) / (H-L)</code>.)</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1252,7 +1253,7 @@ function, add a docstring that explains what it does.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb65">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1293,7 +1294,7 @@ behave the same way?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb66">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1343,7 +1344,7 @@ behave the same way?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1414,7 +1415,7 @@ run?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>Attempting to define the <code>numbers</code> function results in
 <code>4. SyntaxError</code>. The defined parameters <code>two</code> and
@@ -1537,7 +1538,7 @@ it with different parameter values to customize its behavior.</li>
   "url": "https://swcarpentry.github.io/python-novice-inflammation/instructor/08-func.html",
   "identifier": "https://swcarpentry.github.io/python-novice-inflammation/instructor/08-func.html",
   "dateCreated": "2014-11-25",
-  "dateModified": "2026-05-20",
+  "dateModified": "2026-09-15",
   "datePublished": "2026-09-15"
 }
 
