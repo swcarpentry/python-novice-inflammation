@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     x="0" y="0" viewBox="0 0 705.9 239.8">
+
+<!-- Top headers -->
+<g style="font-family:'Helvetica'; font-size:21px;">
+    <text x="107.0696" y="26.747">Inflammation data</text>
+    <text x="394.6773" y="26.747">Analysis</text>
+    <text x="554.9006" y="26.747">Conclusion</text>
+</g>
+
+<!-- Conclusion section -->
+<g>
+    <circle style="fill:#FFFFFF;stroke:#005FA3;stroke-width:10;" cx="605.1" cy="107.8" r="50.2"/>
+    <text x="583.309" y="134.1006" style="fill:#005FA3; font-family:'Helvetica-Bold'; font-size:72px;">?</text>
+
+    <g style="fill:#005FA3; font-family:'Helvetica-Bold'; font-size:18px;">
+        <text transform="matrix(1 0 0 1 546.6282 184.9851)">
+            <tspan x="0" y="0">How does the</tspan>
+            <tspan x="-15.5" y="21.6">medication affect</tspan>
+            <tspan x="18.5" y="43.2">patients?</tspan>
+        </text>
+    </g>
+</g>
+
+<!-- Table headers -->
+<g style="font-family:'Helvetica-Bold'; font-size:10px;">
+    <text transform="matrix(0.7071 -0.7071 0.7071 0.7071 87.266 70.2494)">Day 1</text>
+    <text transform="matrix(0.7071 -0.7071 0.7071 0.7071 118.8451 70.2498)">Day 2</text>
+    <text transform="matrix(0.7071 -0.7071 0.7071 0.7071 150.7304 70.2498)">Day 3</text>
+    <text transform="matrix(0.7071 -0.7071 0.7071 0.7071 183.3095 70.2503)">Day 4</text>
+    <text transform="matrix(0.7071 -0.7071 0.7071 0.7071 214.6142 70.2494)">Day 5</text>
+    <text transform="matrix(0.7071 -0.7071 0.7071 0.7071 246.1933 70.2498)">Day 6</text>
+    <text transform="matrix(0.7071 -0.7071 0.7071 0.7071 278.0314 70.2498)">Day 7</text>
+    <text transform="matrix(1 0 0 1 29.0003 60.7761)">Patients</text>
+</g>
+
+<!-- Table lines -->
+<g style="fill:none;stroke:#000000;stroke-width:0.5;">
+    <!-- vertical lines -->
+    <line x1="78" y1="43.8" x2="78" y2="228"/>
+    <line x1="109.9" y1="43.8" x2="109.9" y2="228"/>
+    <line x1="141.7" y1="43.8" x2="141.7" y2="228"/>
+    <line x1="173.5" y1="43.8" x2="173.5" y2="228"/>
+    <line x1="205.3" y1="43.8" x2="205.3" y2="228"/>
+    <line x1="237.1" y1="43.8" x2="237.1" y2="228"/>
+    <line x1="268.9" y1="43.8" x2="268.9" y2="228"/>
+    <line x1="300.7" y1="43.8" x2="300.7" y2="228"/>
+
+    <!-- horizontal lines -->
+    <line x1="316.3" y1="43.8" x2="78" y2="43.8"/>
+    <line x1="316.3" y1="73.2" x2="20" y2="73.2"/>
+    <line x1="316.3" y1="101.3" x2="20" y2="101.3"/>
+    <line x1="316.3" y1="129.4" x2="20" y2="129.4"/>
+    <line x1="316.3" y1="157.5" x2="20" y2="157.5"/>
+    <line x1="316.3" y1="185.6" x2="20" y2="185.6"/>
+    <line x1="316.3" y1="213.7" x2="20" y2="213.7"/>
+</g>
+
+<!-- Patient 1 -->
+<g fill="#0072B2" style="font-family:'Helvetica'; font-size:14px;">
+    <path d="M47.9,88.7h2.3c3.2,0,5.8,2.6,5.8,5.8v0c0,1.4-1.2,2.6-2.6,2.6h-8.8c-1.4,0-2.6-1.2-2.6-2.6v0
+          C42,91.3,44.6,88.7,47.9,88.7z"/>
+    <ellipse cx="49" cy="84.6" rx="4.8" ry="5.3" stroke="white" stroke-width="1"/>
+    <text x="90" y="92.07">
+        <tspan dx="0" dy="0">0</tspan>
+        <tspan dx="20.2" dy="0">0</tspan>
+        <tspan dx="20.2" dy="0">1</tspan>
+        <tspan dx="20.2" dy="0">3</tspan>
+        <tspan dx="20.2" dy="0">1</tspan>
+        <tspan dx="20.2" dy="0">2</tspan>
+        <tspan dx="20.2" dy="0">4</tspan>
+    </text>
+</g>
+
+<!-- Patient 2 -->
+<g fill="#D55E00" style="font-family:'Helvetica'; font-size:14px;">
+    <path d="M44.6,125.6c-1.6,0-3-1.3-3-3c0-3.4,2.8-6.2,6.2-6.2h2.3c3.4,0,6.2,2.8,6.2,6.2c0,1.6-1.3,3-3,3
+          H44.6z"/>
+    <ellipse cx="49" cy="112.7" rx="4.8" ry="5.3" stroke="white" stroke-width="1"/>
+    <text x="90" y="120.16">
+        <tspan dx="0" dy="0">0</tspan>
+        <tspan dx="20.2" dy="0">1</tspan>
+        <tspan dx="20.2" dy="0">2</tspan>
+        <tspan dx="20.2" dy="0">1</tspan>
+        <tspan dx="20.2" dy="0">2</tspan>
+        <tspan dx="20.2" dy="0">1</tspan>
+        <tspan dx="20.2" dy="0">3</tspan>
+    </text>
+</g>
+
+<!-- Patient 3 -->
+<g fill="#009E9E" style="font-family:'Helvetica'; font-size:14px;">
+    <path d="M44.6,153.7c-1.6,0-3-1.3-3-3c0-3.4,2.8-6.2,6.2-6.2h2.3c3.4,0,6.2,2.8,6.2,6.2c0,1.6-1.3,3-3,3
+          H44.6z"/>
+    <ellipse cx="49" cy="140.8" rx="4.8" ry="5.3" stroke="white" stroke-width="1"/>
+    <text x="90" y="148.26">
+        <tspan dx="0" dy="0">0</tspan>
+        <tspan dx="20.2" dy="0">1</tspan>
+        <tspan dx="20.2" dy="0">1</tspan>
+        <tspan dx="20.2" dy="0">3</tspan>
+        <tspan dx="20.2" dy="0">3</tspan>
+        <tspan dx="20.2" dy="0">2</tspan>
+        <tspan dx="20.2" dy="0">6</tspan>
+    </text>
+</g>
+
+<!-- Patient 4 -->
+<g fill="#56B4E9" style="font-family:'Helvetica'; font-size:14px;">
+    <path d="M47.9,173h2.3c3.2,0,5.8,2.6,5.8,5.8v0c0,1.4-1.2,2.6-2.6,2.6h-8.8c-1.4,0-2.6-1.2-2.6-2.6v0
+        C42,175.6,44.6,173,47.9,173z"/>
+    <ellipse cx="49" cy="168.9" rx="4.8" ry="5.3" stroke="white" stroke-width="1"/>
+    <text x="90" y="176.35">
+        <tspan dx="0" dy="0">0</tspan>
+        <tspan dx="20.2" dy="0">0</tspan>
+        <tspan dx="20.2" dy="0">2</tspan>
+        <tspan dx="20.2" dy="0">0</tspan>
+        <tspan dx="20.2" dy="0">4</tspan>
+        <tspan dx="20.2" dy="0">2</tspan>
+        <tspan dx="20.2" dy="0">2</tspan>
+    </text>
+</g>
+
+<!-- Patient 5 -->
+<g fill="#7221BC" style="font-family:'Helvetica'; font-size:14px;">
+    <path d="M47.9,200.2h2.3c3.2,0,5.8,2.6,5.8,5.8v0c0,1.4-1.2,2.6-2.6,2.6h-8.8c-1.4,0-2.6-1.2-2.6-2.6v0
+        C42,202.8,44.6,200.2,47.9,200.2z"/>
+    <ellipse cx="49" cy="196.2" rx="4.8" ry="5.3" stroke="white" stroke-width="1"/>
+    <text x="90" y="204.6">
+        <tspan dx="0" dy="0">0</tspan>
+        <tspan dx="20.2" dy="0">1</tspan>
+        <tspan dx="20.2" dy="0">1</tspan>
+        <tspan dx="20.2" dy="0">3</tspan>
+        <tspan dx="20.2" dy="0">3</tspan>
+        <tspan dx="20.2" dy="0">1</tspan>
+        <tspan dx="20.2" dy="0">3</tspan>
+    </text>
+</g>
+
+<!-- Arrow pointing from 'Inflammation data' to 'Analysis' -->
+<polygon style="fill:none;stroke:#000000;stroke-miterlimit:10;" points="359.3,116.3 346.5,103.2 346.5,110.4 328.1,110.4
+    328.1,122.2 346.5,122.2 346.5,129.5 "/>
+
+<!-- Arrow pointing from 'Analysis' to 'Conclusion'-->
+<polygon style="fill:none;stroke:#000000;stroke-miterlimit:10;" points="530.5,116.3 517.8,103.2 517.8,110.4 499.3,110.4
+    499.3,122.2 517.8,122.2 517.8,129.5 "/>
+
+<!-- 2D inflammation heatmap -->
+<image style="overflow:visible;enable-background:new;image-rendering:crisp-edges;image-rendering:pixelated" width="40" height="60" id="imagec41252dd71" xlink:href="data:image/png;base64,
+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" transform="matrix(2.2639 0 0 2.2689 391.4555 50.6092)">
+</image>
+
+<g style="font-family:Helvetica; font-size:6px;">
+    <!-- horizontal ticks -->
+    <g stroke="black" stroke-width="0.5">
+        <path d="M392.6,186.7v2.1"/>
+        <path d="M415.2,186.7v2.1"/>
+        <path d="M437.8,186.7v2.1"/>
+        <path d="M460.5,186.7v2.1"/>
+    </g>
+
+    <text x="390.92" y="195.50">0</text>
+    <text x="411.88" y="195.50">10</text>
+    <text x="434.50" y="195.50">20</text>
+    <text x="457.12" y="195.50">30</text>
+    <text x="431.37" y="203.70">Day</text>
+
+    <!-- vertical ticks -->
+    <g stroke="black" stroke-width="0.5">
+        <path d="M391.5,120h-2.1"/>
+        <path d="M391.5,142.6h-2.1"/>
+        <path d="M391.5,165.3h-2.1"/>
+        <path d="M391.5,52.1h-2.1"/>
+        <path d="M391.5,74.8h-2.1"/>
+        <path d="M391.5,97.4h-2.1"/>
+    </g>
+
+    <text x="383.92" y="54.42">0</text>
+    <text x="380.59" y="77.04">10</text>
+    <text x="380.59" y="99.66">20</text>
+    <text x="380.59" y="122.29">30</text>
+    <text x="380.59" y="144.91">40</text>
+    <text x="380.59" y="167.53">50</text>
+    <text transform="matrix(0 -1 1 0 375.98 128.21)">Patient</text>
+
+    <text x="416.10" y="45.41" style="font-size:7.2px;">Inflammation</text>
+    <text x="411.36" y="234.42">Inflammation bouts</text>
+</g>
+
+<!-- rectangle around the 2D heatmap-->
+<rect x="391.2" y="50.5" width="91" height="136.5" stroke="black" stroke-width="0.5" fill="none"/>
+
+<!-- colorbar -->
+<image style="overflow:visible;enable-background:new;image-rendering:crisp-edges;image-rendering:pixelated" width="244" height="12" id="imagecb56d3a6d1" xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAPQAAAAMCAYAAABV7pCKAAABDUlEQVR4nO2TUW7EQAhDbaZ7s55h73+QdujHAJnZZvcAyE+KwMZBkSL4bU+nEaAhK4wACZoBJFCV4DY/ZvkMO3ZcuVWdBAzH7NXbted7qZk5VM5L7xkAdvX77NyV+v/77ytPbfe5w8ONd5PLfbczvNldnn/Y6WtB+V4zbHqf8TWH9B20M0N6/L4tg6gxs+pPbXAMi55XNWz9/uCTN0t/2S9GzZY/9p4OQ/rpzfU9nDDOyg84Hvyp7JHDxKgdM+Ye/tKZHbj8R2bj2wfy+xA5YBAYYPSEgaEZ2qK36IUQbdBBC9EIHbQQjdBBC9EIHbQQjdBBC9EIHbQQjdBBC9EIHbQQjdBBC9EIHbQQjfgDx2OGIAoY5wwAAAAASUVORK5CYII=" transform="matrix(0.4318 0 0 -0.4318 384.0227 217.5361)">
+</image>
+
+<!-- colorbar ticks -->
+<g stroke="black" stroke-width="0.5">
+    <path d="M384,217.5v2.1"/>
+    <path d="M410.4,217.5v2.1"/>
+    <path d="M436.7,217.5v2.1"/>
+    <path d="M463,217.5v2.1"/>
+    <path d="M489.4,217.5v2.1"/>
+</g>
+
+<!-- rectangle around the colorbar -->
+<rect x="384" y="212.5" width="105.4" height="5.2" stroke="black" stroke-width="0.5" fill="none"/>
+
+<!-- colorbar labels -->
+<g style="font-family:Helvetica; font-size:6px;">
+    <text x="382.36" y="226.22">0</text>
+    <text x="408.69" y="226.22">5</text>
+    <text x="433.37" y="226.22">10</text>
+    <text x="459.71" y="226.22">15</text>
+    <text x="486.05" y="226.22">20</text>
+</g>
+</svg>

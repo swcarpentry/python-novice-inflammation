@@ -1,0 +1,59 @@
+<svg width="460.8pt" height="345.6pt" version="1.1" viewBox="0 0 460.8 345.6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <style type="text/css">*{stroke-linecap:butt;stroke-linejoin:round;white-space:pre;}</style>
+  </defs>
+  <path d="m0 345.6h460.8v-345.6h-460.8z" fill="#ffffff"/>
+  <path d="m57.6 307.6h357.1v-266.1h-357.1z" fill="#ffffff"/>
+  <defs>
+    <path id="b" d="m0 0v3.5" stroke="#000000" />
+  </defs>
+  <use x="73.832727" y="307.584" stroke="#000000"  xlink:href="#b"/>
+  <text x="73.832727" y="322.182437"  font-size="10px" text-anchor="middle">0</text>
+  <use x="115.455105" y="307.584" stroke="#000000"  xlink:href="#b"/>
+  <text x="115.455105" y="322.182437"  font-size="10px" text-anchor="middle">5</text>
+  <use x="157.077483" y="307.584" stroke="#000000"  xlink:href="#b"/>
+  <text x="157.077483" y="322.182437"  font-size="10px" text-anchor="middle">10</text>
+  <use x="198.69986" y="307.584" stroke="#000000"  xlink:href="#b"/>
+  <text x="198.69986" y="322.182437"  font-size="10px" text-anchor="middle">15</text>
+  <use x="240.322238" y="307.584" stroke="#000000"  xlink:href="#b"/>
+  <text x="240.322238" y="322.182437"  font-size="10px" text-anchor="middle">20</text>
+  <use x="281.944615" y="307.584" stroke="#000000"  xlink:href="#b"/>
+  <text x="281.944615" y="322.182437"  font-size="10px" text-anchor="middle">25</text>
+  <use x="323.566993" y="307.584" stroke="#000000"  xlink:href="#b"/>
+  <text x="323.566993" y="322.182437"  font-size="10px" text-anchor="middle">30</text>
+  <use x="365.189371" y="307.584" stroke="#000000"  xlink:href="#b"/>
+  <text x="365.189371" y="322.182437"  font-size="10px" text-anchor="middle">35</text>
+  <use x="406.811748" y="307.584" stroke="#000000"  xlink:href="#b"/>
+  <text x="406.811748" y="322.182437"  font-size="10px" text-anchor="middle">40</text>
+  <defs>
+    <path id="a" d="m0 0h-3.5" stroke="#000000" />
+  </defs>
+  <use x="57.6" y="295.488" stroke="#000000"  xlink:href="#a"/>
+  <text x="50.6" y="299.287219"  font-size="10px" text-anchor="end">0.0</text>
+  <use x="57.6" y="265.248" stroke="#000000"  xlink:href="#a"/>
+  <text x="50.6" y="269.047219"  font-size="10px" text-anchor="end">2.5</text>
+  <use x="57.6" y="235.008" stroke="#000000"  xlink:href="#a"/>
+  <text x="50.6" y="238.807219"  font-size="10px" text-anchor="end">5.0</text>
+  <use x="57.6" y="204.768" stroke="#000000"  xlink:href="#a"/>
+  <text x="50.6" y="208.567219"  font-size="10px" text-anchor="end">7.5</text>
+  <use x="57.6" y="174.528" stroke="#000000"  xlink:href="#a"/>
+  <text x="50.6" y="178.327219"  font-size="10px" text-anchor="end">10.0</text>
+  <use x="57.6" y="144.288" stroke="#000000"  xlink:href="#a"/>
+  <text x="50.6" y="148.087219"  font-size="10px" text-anchor="end">12.5</text>
+  <use x="57.6" y="114.048" stroke="#000000"  xlink:href="#a"/>
+  <text x="50.6" y="117.847219"  font-size="10px" text-anchor="end">15.0</text>
+  <use x="57.6" y="83.808" stroke="#000000"  xlink:href="#a"/>
+  <text x="50.6" y="87.607219"  font-size="10px" text-anchor="end">17.5</text>
+  <use x="57.6" y="53.568" stroke="#000000"  xlink:href="#a"/>
+  <text x="50.6" y="57.367219"  font-size="10px" text-anchor="end">20.0</text>
+  <path d="m73.83 295.5 166.5-241.9 158.2 229.8" clip-path="url(#c)" fill="none" stroke="#1f77b4" stroke-linecap="square" stroke-width="1.5"/>
+  <path d="m57.6 307.6v-266.1" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m414.7 307.6v-266.1" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m57.6 307.6h357.1" fill="none" stroke="#000000" stroke-linecap="square" />
+  <path d="m57.6 41.47h357.1" fill="none" stroke="#000000" stroke-linecap="square" />
+  <defs>
+    <clipPath id="c">
+      <rect x="57.6" y="41.47" width="357.1" height="266.1"/>
+    </clipPath>
+  </defs>
+</svg>
