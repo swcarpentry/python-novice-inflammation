@@ -200,7 +200,7 @@ print(*args, sep=' ', end='\n', file=None, flush=False)
       whether to forcibly flush the stream.
 ```
 
-This help message (the function's "docstring") includes a usage statement, a list of parameters accepted by the function, and their default values if they have them.
+This help message, which includes information from the function's documentation, provides a usage statement, a list of parameters accepted by the function, and their default values.
 
 It is normal to encounter error messages while programming, whether you are learning for the first time or have been programming for many years.
 [We will discuss error messages in more detail later](./09-errors.md). 
