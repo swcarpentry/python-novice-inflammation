@@ -307,7 +307,7 @@ from ipythonblocks import show_color
 show_color(214, 90, 127)
 ```
 
-![](fig/ipythonblocks_show_color_example.png)
+![](fig/ipythonblocks_show_color_example.png){alt='A wide horizontal bar filled with a single dark pink color, the color with RGB value (214, 90, 127).'}
 
 It also provides a table of standard colors:
 
