@@ -1,0 +1,79 @@
+<svg width="195mm" height="125mm" version="1.1" viewBox="0 0 195 125" xmlns="http://www.w3.org/2000/svg">
+  <style>.outerbox {
+      fill: #dddddd;
+      stroke: #000000;
+      stroke-width: 1.2;
+      stroke-miterlimit: 3.9;
+    }
+    .thinline {
+      stroke: #000000;
+      stroke-width: 0.299406;
+      stroke-miterlimit: 3.9;
+    }
+    .columnhead {
+      font-size: 4.23162px;
+      font-family: sans-serif;
+      text-align: center;
+      text-anchor: middle;
+      fill: #000000;
+    }
+    .rowhead {
+      font-size: 4.23162px;
+      font-family: sans-serif;
+      text-align: right;
+      text-anchor: middle;
+      fill: #000000;
+    }
+    .arrow {
+      fill: #729fcf;
+      stroke: #406faa;
+      stroke-width: 0.25;
+    }</style>
+  <g transform="translate(-5.732 -85.4)">
+    <rect class="outerbox" x="27.93" y="98.47" width="52.3" height="69.19"/>
+    <rect class="outerbox" x="91.13" y="98.47" width="12.26" height="69.19"/>
+    <path class="thinline" d="m27.52 154.4h52.3m-52.3-14.03h52.3m-52.3-14.03h52.3m-52.3-14.03h52.3"/>
+    <path class="thinline" d="m91.19 154.4h12.22m-12.22-14.03h12.22m-12.22-14.03h12.22m-12.22-14.03h12.22"/>
+    <text class="columnhead" letter-spacing="0px" word-spacing="0px" style="line-height:0" xml:space="preserve"><tspan x="35" y="91.415474">Day</tspan><tspan x="35" y="95.647095">0</tspan></text>
+    <text class="columnhead" xml:space="preserve"><tspan class="columnhead" x="47.8" y="91.415474">Day</tspan><tspan class="columnhead" x="47.8" y="95.647095">1</tspan></text>
+    <text class="columnhead" xml:space="preserve"><tspan class="columnhead" x="60.5" y="91.415474">Day</tspan><tspan class="columnhead" x="60.5" y="95.647095">2</tspan></text>
+    <text class="columnhead" xml:space="preserve"><tspan class="columnhead" x="73.5" y="92.969917">…</tspan></text>
+    <text class="columnhead" xml:space="preserve"><tspan x="100" y="91.415474">Patient</tspan><tspan x="100" y="95.647095">Maximum</tspan></text>
+    <text class="rowhead" xml:space="preserve"><tspan x="17" y="106.53797">Patient 0</tspan></text>
+    <text class="rowhead" xml:space="preserve"><tspan x="17" y="120.64497">Patient 1</tspan></text>
+    <text class="rowhead" xml:space="preserve"><tspan x="17" y="134.75093">Patient 2</tspan></text>
+    <text class="rowhead" xml:space="preserve"><tspan x="17" y="148.85587">Patient 3</tspan></text>
+    <text class="rowhead" transform="rotate(90)" xml:space="preserve"><tspan x="160" y="-17">…</tspan></text>
+    <text class="columnhead" xml:space="preserve"><tspan x="64" y="177">Maximum for each patient</tspan><tspan x="64" y="184" font-family="monospace">numpy.max(data, axis=1)</tspan></text>
+    <path class="thinline" d="m40.5 98.65v68.71m13.33-68.71v68.71m13.33-68.71v68.71"/>
+    <rect class="outerbox" x="143.1" y="98.47" width="52.3" height="69.19"/>
+    <path class="thinline" d="m142.7 154.4h52.3m-52.3-14.03h52.3m-52.3-14.03h52.3m-52.3-14.03h52.3"/>
+    <text class="columnhead" xml:space="preserve"><tspan x="149" y="91.415474">Day</tspan><tspan x="149" y="95.647095">0</tspan></text>
+    <text class="columnhead" xml:space="preserve"><tspan x="162.5" y="91.415474">Day</tspan><tspan x="162.5" y="95.647095">1</tspan></text>
+    <text class="columnhead" xml:space="preserve"><tspan x="175.5" y="91.415474">Day</tspan><tspan x="175.5" y="95.647095">2</tspan></text>
+    <text class="columnhead" xml:space="preserve"><tspan x="189" y="92.969917">…</tspan></text>
+    <text class="rowhead" xml:space="preserve"><tspan x="132" y="106.53797">Patient 0</tspan></text>
+    <text class="rowhead" xml:space="preserve"><tspan x="132" y="120.64497">Patient 1</tspan></text>
+    <text class="rowhead" xml:space="preserve"><tspan x="132" y="134.75093">Patient 2</tspan></text>
+    <text class="rowhead" xml:space="preserve">
+<tspan x="132" y="148.85587">Patient 3</tspan>
+</text>
+    <text class="rowhead" transform="rotate(90)" xml:space="preserve">
+<tspan x="160" y="-131.38533">…</tspan>
+</text>
+    <path class="thinline" d="m155.7 98.65v68.71m13.33-68.71v68.71m13.33-68.71v68.71"/>
+    <rect class="outerbox" x="143.1" y="177.7" width="52.3" height="13.02"/>
+    <path class="thinline" d="m155.7 177.9v13.23m13.33-13.23v13.23m13.33-13.23v13.23"/>
+    <text class="rowhead" xml:space="preserve"><tspan x="135" y="183.55058">Daily</tspan><tspan x="132.7" y="187.7822">Average</tspan></text>
+    <text class="columnhead" xml:space="preserve"><tspan x="168" y="200">Average for each day</tspan><tspan x="168" y="207" font-family="monospace">numpy.mean(data, axis=0)</tspan></text>
+    <path class="arrow" d="m147.6 101.9v68.62h-2.053l3.584 4.807 3.584-4.807h-2.122v-68.62z"/>
+    <path class="arrow" d="m160.8 101.9v68.62h-2.053l3.584 4.807 3.584-4.807h-2.122v-68.62z"/>
+    <path class="arrow" d="m174 101.9v68.62h-2.053l3.584 4.807 3.584-4.807h-2.122v-68.62z"/>
+    <path class="arrow" d="m187.2 101.9v68.62h-2.053l3.584 4.807 3.584-4.807h-2.122v-68.62z"/>
+    <path class="arrow" d="m83.81 157.3v2.479h-52.95v3.505h52.95v2.468l4.876-4.226z"/>
+    <path class="arrow" d="m83.81 143.2v2.479h-52.95v3.505h52.95v2.468l4.876-4.226z"/>
+    <path class="arrow" d="m83.81 129v2.479h-52.95v3.505h52.95v2.468l4.876-4.226z"/>
+    <path class="arrow" d="m83.81 114.9v2.479h-52.95v3.505h52.95v2.468l4.876-4.226z"/>
+    <path class="arrow" d="m83.81 100.8v2.479h-52.95v3.505h52.95v2.468l4.876-4.226z"/>
+  </g>
+</svg>

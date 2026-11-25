@@ -1,0 +1,141 @@
+<svg viewBox="0 0 1150 183.2" xmlns="http://www.w3.org/2000/svg">
+  <g fill-opacity=".25">
+    <!-- vertical rectangles showing columns -->
+    <rect x="150" y="54" height="130" rx="8" width="28" fill="#ec008c" stroke="#ec008c"/>
+    <rect x="202" y="54" height="130" rx="8" width="28" fill="#f7941d" stroke="#f7941d"/>
+    <rect x="254" y="54" height="130" rx="8" width="28" fill="#ebd700" stroke="#ebd700"/>
+
+    <!-- horizontal rectangles showing "rows" -->
+    <rect x="142.1" y="104"   width="147.7" height="29.8" style="fill: #00addc;"/>
+    <rect x="142.1" y="62.5"  width="147.7" height="29.8" style="fill: #00a651;"/>
+    <rect x="142.1" y="145.4" width="147.7" height="29.8" style="fill: #662d91;"/>
+  </g>
+
+  <g font-family="UbuntuMono-Bold, Ubuntu Mono" font-size="34.6" font-weight="700">
+    <!-- column indices: 0, 1, 2 -->
+    <text fill="#ec008c" x="155" y="29">0</text>
+    <text fill="#f7941d" x="207" y="29">1</text>
+    <text fill="#ebd700" x="260" y="29">2</text>
+    <!-- row indices: 0, 1, 2  -->
+    <text fill="#008a43" x="333" y="87">0</text>
+    <text fill="#007899" x="333" y="128">1</text>
+    <text fill="#662d91" x="333" y="170">2</text>
+  </g>
+
+  <!-- Triangles pointing down -->
+  <path d="m215.7 48.7-3.8-6.7-3.9-6.6h7.7 7.7l-3.8 6.6z" fill="#f7941d"/>
+  <path d="m163.6 48.7-3.9-6.7-3.8-6.6h7.7 7.7l-3.9 6.6z" fill="#ec008c"/>
+  <path d="m267.9 48.7-3.9-6.7-3.8-6.6h7.7 7.7l-3.9 6.6z" fill="#ebd700"/>
+
+  <!-- Triangles pointing left -->
+  <path d="m312.3 118.7 6.7-3.8 6.6-3.9v7.7 7.7l-6.6-3.8z" fill="#007899"/>
+  <path d="m312.3 76.7 6.7-3.8 6.6-3.9v7.7 7.8l-6.6-3.9z" fill="#008a43"/>
+  <path d="m312.3 160.3 6.7-3.8 6.6-3.9v7.7 7.8l-6.6-3.9z" fill="#662d91"/>
+
+  <g font-family="UbuntuMono-Bold, Ubuntu Mono" font-size="34.6" font-weight="700">
+    <!--
+      data = [[A, B, C]
+              [D, E, F]
+              [G, H, I]]
+    -->
+    <text transform="translate(.2 86.2)">
+      data = [
+      <tspan fill="#008a43" x="138.3" y="0">[A, B, C]</tspan>
+      <tspan x="293.9" y="0">,</tspan>
+      <tspan fill="#007899" x="138.3" y="41.5">[D, E, F]</tspan>
+      <tspan x="293.9" y="41.5">,</tspan>
+      <tspan fill="#662d91" x="138.3" y="83">[G, H, I]</tspan>
+      <tspan x="293.9" y="83">]</tspan>
+    </text>
+
+    <!-- data[0,0] = A -->
+    <text transform="translate(405.1 86.6)">
+      data[
+      <tspan fill="#008a43" x="86.4" y="0">0</tspan>
+      <tspan x="103.7" y="0">,</tspan>
+      <tspan fill="#ec008c" x="121" y="0">0</tspan>
+      <tspan x="138.3" y="0">] = </tspan>
+      <tspan fill="#00a651" x="207.4" y="0">A</tspan>
+    </text>
+
+    <!-- data[0,1] = B -->
+    <text transform="translate(661.7 86.6)">
+      data[
+      <tspan fill="#008a43" x="86.4" y="0">0</tspan>
+      <tspan x="103.7" y="0">,</tspan>
+      <tspan fill="#f7941d" x="121" y="0">1</tspan>
+      <tspan x="138.3" y="0">] = </tspan>
+      <tspan fill="#00a651" x="207.4" y="0">B</tspan>
+    </text>
+
+    <!-- data[0,2] = C -->
+    <text transform="translate(916.5 86.6)">
+      data[
+      <tspan fill="#008a43" x="86.4" y="0">0</tspan>
+      <tspan x="103.7" y="0">,</tspan>
+      <tspan fill="#ebd700" x="121" y="0">2</tspan>
+      <tspan x="138.3" y="0">] = </tspan>
+      <tspan fill="#00a651" x="207.4" y="0">C</tspan>
+    </text>
+
+    <!-- data[1,0] = D -->
+    <text transform="translate(405.1 129.1)">
+      data[
+      <tspan fill="#007899" x="86.4" y="0">1</tspan>
+      <tspan x="103.7" y="0">,</tspan>
+      <tspan fill="#ec008c" x="121" y="0">0</tspan>
+      <tspan x="138.3" y="0">] = </tspan>
+      <tspan fill="#007899" x="207.4" y="0">D</tspan>
+    </text>
+
+    <!-- data[1,1] = E -->
+    <text transform="translate(661.7 129.1)">
+      data[
+      <tspan fill="#007899" x="86.4" y="0">1</tspan>
+      <tspan x="103.7" y="0">,</tspan>
+      <tspan fill="#f7941d" x="121" y="0">1</tspan>
+      <tspan x="138.3" y="0">] = </tspan>
+      <tspan fill="#007899" x="207.4" y="0">E</tspan>
+    </text>
+
+    <!-- data[1,2] = F -->
+    <text transform="translate(916.5 129.1)">
+      data[
+      <tspan fill="#007899" x="86.4" y="0">1</tspan>
+      <tspan x="103.7" y="0">,</tspan>
+      <tspan fill="#ebd700" x="121" y="0">2</tspan>
+      <tspan x="138.3" y="0">] = </tspan>
+      <tspan fill="#007899" x="207.4" y="0">F</tspan>
+    </text>
+
+    <!-- data[2,0] = G -->
+    <text transform="translate(404.8 171.2)">
+      data[
+      <tspan fill="#662d91" x="86.4" y="0">2</tspan>
+      <tspan x="103.7" y="0">,</tspan>
+      <tspan fill="#ec008c" x="121" y="0">0</tspan>
+      <tspan x="138.3" y="0">] = </tspan>
+      <tspan fill="#662d91" x="207.4" y="0">G</tspan>
+    </text>
+
+    <!-- data[2,1] = H -->
+    <text transform="translate(661.7 171.2)">
+      data[
+      <tspan fill="#662d91" x="86.4" y="0">2</tspan>
+      <tspan x="103.7" y="0">,</tspan>
+      <tspan fill="#f7941d" x="121" y="0">1</tspan>
+      <tspan x="138.3" y="0">] = </tspan>
+      <tspan fill="#662d91" x="207.4" y="0">H</tspan>
+    </text>
+
+    <!-- data[2,2] = I -->
+    <text transform="translate(916.5 171.2)">
+      data[
+      <tspan fill="#662d91" x="86.4" y="0">2</tspan>
+      <tspan x="103.7" y="0">,</tspan>
+      <tspan fill="#ebd700" x="121" y="0">2</tspan>
+      <tspan x="138.3" y="0">] = </tspan>
+      <tspan fill="#662d91" x="207.4" y="0">I</tspan>
+    </text>
+  </g>
+</svg>
