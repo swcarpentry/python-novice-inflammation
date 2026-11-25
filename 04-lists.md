@@ -334,6 +334,41 @@ autosomes: ['2', '3', '4']
 last: 4
 ```
 
+If you want to take a slice from the beginning of a sequence, you can omit the first index in the
+range:
+
+```python
+date = 'Monday 4 January 2016'
+day = date[0:6]
+print('Using 0 to begin range:', day)
+day = date[:6]
+print('Omitting beginning index:', day)
+```
+
+```output
+Using 0 to begin range: Monday
+Omitting beginning index: Monday
+```
+
+And similarly, you can omit the ending index in the range to take a slice to the very end of the
+sequence:
+
+```python
+months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+sond = months[8:12]
+print('With known last position:', sond)
+sond = months[8:len(months)]
+print('Using len() to get last entry:', sond)
+sond = months[8:]
+print('Omitting ending index:', sond)
+```
+
+```output
+With known last position: ['sep', 'oct', 'nov', 'dec']
+Using len() to get last entry: ['sep', 'oct', 'nov', 'dec']
+Omitting ending index: ['sep', 'oct', 'nov', 'dec']
+```
+
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Slicing From the End
@@ -454,41 +489,6 @@ beatles[::2]
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-If you want to take a slice from the beginning of a sequence, you can omit the first index in the
-range:
-
-```python
-date = 'Monday 4 January 2016'
-day = date[0:6]
-print('Using 0 to begin range:', day)
-day = date[:6]
-print('Omitting beginning index:', day)
-```
-
-```output
-Using 0 to begin range: Monday
-Omitting beginning index: Monday
-```
-
-And similarly, you can omit the ending index in the range to take a slice to the very end of the
-sequence:
-
-```python
-months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
-sond = months[8:12]
-print('With known last position:', sond)
-sond = months[8:len(months)]
-print('Using len() to get last entry:', sond)
-sond = months[8:]
-print('Omitting ending index:', sond)
-```
-
-```output
-With known last position: ['sep', 'oct', 'nov', 'dec']
-Using len() to get last entry: ['sep', 'oct', 'nov', 'dec']
-Omitting ending index: ['sep', 'oct', 'nov', 'dec']
-```
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
