@@ -45,6 +45,8 @@ data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ```python
 import matplotlib.pyplot
 image = matplotlib.pyplot.imshow(data)
+matplotlib.pyplot.xlabel("Day")
+matplotlib.pyplot.ylabel("Patient")
 matplotlib.pyplot.show()
 ```
 
